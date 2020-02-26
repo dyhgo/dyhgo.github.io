@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        Graph Theory - This is DYH
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="Graph Theory" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>Graph Theory - This is DYH</title>
+  
+  
+  <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="Graph Theory" />
+<meta property="og:description" content="Graph Theory" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/2020/02/graph-theory/" />
+<meta property="article:published_time" content="2020-02-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-05T00:00:00+00:00" />
+<meta itemprop="name" content="Graph Theory">
+<meta itemprop="description" content="Graph Theory">
+<meta itemprop="datePublished" content="2020-02-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-02-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1932">
+
+
+
+<meta itemprop="keywords" content="cpp,graph_theory," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Graph Theory"/>
+<meta name="twitter:description" content="Graph Theory"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/dyhgo" target="_blank">
+            <img class="img-circle img-rotate" src="https://dyhgo.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">DYH</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">244882973@qq</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>HHU , Nanjing</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/hduoj/" class="category-list-link">hduoj</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/note/" class="category-list-link">note</a><span class="category-list-count">11</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/nowcoder/" class="category-list-link">nowcoder</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/poj/" class="category-list-link">poj</a><span class="category-list-count">10</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/bfs/" class="tag-list-link">bfs</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary/" class="tag-list-link">binary</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary_search/" class="tag-list-link">binary_search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/computational_geometry/" class="tag-list-link">computational_geometry</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
+                    class="tag-list-count">27</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dp/" class="tag-list-link">dp</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/graph_theory/" class="tag-list-link">graph_theory</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/greedy/" class="tag-list-link">greedy</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/number_theory/" class="tag-list-link">number_theory</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/search/" class="tag-list-link">search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/segment_tree/" class="tag-list-link">segment_tree</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/sort/" class="tag-list-link">sort</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/string/" class="tag-list-link">string</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/union_find/" class="tag-list-link">union_find</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/" class="title">二进制表示集合</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/number-theory/" class="title">Number Theory</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" class="title">hduoj2089(数位dp &#43; 记忆化搜索)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/segment-tree/" class="title">Segment Tree</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/" class="title">牛客基础训练营5B</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/02/graph-theory/"
+    >Graph Theory</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://dyhgo.github.io/2020/02/graph-theory/" class="article-date">
+  <time datetime="2020-02-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-05</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/algorithm/"> algorithm </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
+    <a class="article-tag-link" href="/tags/graph_theory/"> graph_theory </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/graph-theory/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1932words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 4minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>图的存储：邻接表、邻接矩阵、前向星、链式前向星等</p>
+<h2 id="二分图判定">二分图判定</h2>
+<p>通过着色来判定，整个图只染两种颜色，如果相邻点颜色不同就是二分图</p>
+<p>用dfs判断每个点是否可染色，如果每个点都是可染色的，就是二分图</p>
+<pre><code class="language-cpp">//input
+vector&lt;int&gt; G[max_v];
+int V;
+int color[max_v]  //顶点i的颜色 1或-1
+
+bool dfs(int v,int c)
+{
+	color[v]=c;   //染色
+	for(int i=0;i&lt;G[v].size();i++)
+	{
+		if(color[v][i]==c) return false;    //相邻顶点同色
+		if(color[G[v][i]]==0 &amp;&amp; !dfs(G[v][i],-c)) return false;     //对于还没染色的点，如果不能染色则返回false 
+	 } 
+	return true;
+}
+
+bool bipartite_graph()
+{
+	for(int i=0;i&lt;V;i++)
+	{
+		if(color[i]==0)    //还未着色//如果是连通图，遍历一次就够
+		if(!dfs(i,1)) return false; 
+	}
+	return true;
+} 
+</code></pre>
+<p>把顶点和边都算的话，时间复杂度是O(|V|+|E|)</p>
+<h2 id="求dag的拓扑序">求DAG的拓扑序</h2>
+<p>求拓扑序可以dfs，删边法（通过栈或队列）</p>
+<p>求每个点的入度，将入度为0的点入栈，遍历栈里的点，将于这些点相邻的点的入度减1，如果有点入度为0，则入栈。依靠这个顺序，得到的就是拓扑序。如果点访问两次，则有圈。可以通过这个方法判断有向图是否有圈</p>
+<pre><code class="language-cpp">//input
+vector&lt;int&gt; G[max_v]
+int V;
+int indgree[max_v]      //每个顶点的入度
+vector&lt;int&gt; res;         //拓扑排序的结果
+
+bool topological_sort()  //判断是否能拓扑排序 ，若果有圈就不能 
+{
+	stack&lt;int&gt; s;
+	//int counter=0;       //遍历的点的个数 
+	
+	for(int i=0;i&lt;V;i++) 
+		if(indegree[i]==0) s.push(i);    //入度为0 的顶点入栈
+	 
+	while(!s.empty())
+	{
+		int v=s.top();                
+		s.pop();
+		res.push_back(v);
+		//counter++;
+		for(int i=0;i&lt;G[v].size();i++)
+		{
+			int k=G[v][i];
+			if(--indegree[k] == 0) s.push(k);      //遍历到的点入度间1，入度为0则入栈 
+		}
+	}	
+	if(res.size()==n) return true;
+	else return false;
+}
+</code></pre>
+<p>时间复杂度是O(|V|+|E|)</p>
+<h2 id="bellman-ford算法">Bellman-Ford算法</h2>
+<p>求单源最短路</p>
+<p>d[i]=min{d[j]+e(j,i)}</p>
+<p>只要图中不存在负圈，这样的更新操作是有限的（由于最短路不会经过一个顶点两次，所以这种操作只会重复|v|-1次）</p>
+<p>时间复杂度O(|V|*|E|)</p>
+<pre><code class="language-cpp">struct edge
+{
+	int from,to,cost;
+}es[max_e];
+
+int d[max_v];
+int V,E;
+
+void bellman_ford(int s)
+{
+	for(int i=0;i&lt;V;i++) d[i]=inf;         //把最短距离初始化成无限
+	d[s]=0; 
+	while(true)
+	{
+		bool update=false;                //判断while是否进行了更新操作，没有更新操作则退出循环 
+		for(int i=0;i&lt;E;i++)              //根据公式，遍历边
+		{
+			edge e=es[i];
+			if(d[e.from]!=inf &amp;&amp; d[e.to]&gt;d[e.from]+e.cost)
+			{
+				d[e.to]=d[e.from]+e.cost;
+				update=true;
+			}
+		}
+		if(!update) break;
+	}
+}
+</code></pre>
+<p>如果更新操作（while循环）进行了超过|V|-1次，则存在负圈</p>
+<p>所以判断负圈的一个方法可以是</p>
+<p>把所有d[i]都变成0，如果有负圈，则一定执行超过|V|-1次</p>
+<pre><code class="language-cpp">bool find_negative_loop()
+{
+	memset(d,0,sizeof(d));
+	for(int i=0;i&lt;V;i++)
+	{
+		for(int j=0;j&lt;E;j++)
+		{
+			edge e=es[j];
+			if(d[e.to]&gt;d[e.from]+e.cost)
+			{
+				d[e.to]&gt;d[e.from]+e.cost;
+				if(i==V-1) return true;          //这条语句不能放在if外，如果放在if外需要加update	
+			}
+		}
+	}
+	return false;	
+}
+</code></pre>
+<h2 id="dijkstra算法">Dijkstra算法</h2>
+<p>求单源最短路，适用于没有负边的情况</p>
+<p>将已求出最短路的点，放入一个集合中 ，每次从集合外找到一个和集合距离最近的点，加入集合</p>
+<pre><code class="language-cpp">int cost[max_v][max_v];       //权值，不存在时为inf
+int d[max_v];
+bool used[max_v];
+int V;
+void dijkstra(int s)
+{
+	fill(d,d+v,inf);
+	fill(used,used+v,false);
+	d[s]=0;
+	
+	while(true)
+	{
+		int v=-1;
+		//从尚未使用过的点中选一个距离最小的点
+		for(int u=0;u&lt;V;u++)
+		{
+			if(!used[u] &amp;&amp; (v==-1 || d[u]&lt;d[v])) v=u;
+		} 
+		 
+		if(v==-1) break;
+		used[v]=true;
+		for(int u=0;u&lt;V;u++)
+			d[u]=min(d[u],d[v]+cost[v][u]); 
+	}
+} 
+</code></pre>
+<p>时间复杂度O(V^2)</p>
+<p>优化</p>
+<p>如果将点放入优先队列中，这要查找和更新就会节省很多时间，时间复杂度O(ElgV)</p>
+<pre><code class="language-cpp">struct edge
+{
+	int to,cost;
+}
+typedef pair&lt;int,int&gt; pii;       //first 是距离 ，second是点编号
+int V;
+vector&lt;edge&gt; G[max_v];
+int d[max_v];
+void dijkstra(int s)
+{
+	priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt; &gt; q;           //使小的在上面
+	fill(d,d+V,inf);
+	d[s]=0;
+	q.push(pii(0,s));
+	while(!q.empty())
+	{
+		pii p=q.top();
+		q.pop();
+		int v=p.second;
+		if(d[v]&lt;p.first) continue;
+		for(int i=0;i&lt;G[v].size();i++)
+		{
+			edge e=G[v][i];
+			if(d[e.to]&gt;d[v]+e.cost)
+			{
+				d[e.to]=d[v]+e.cost;
+				q.push(pii(d[e.to],e.to));
+			}
+		}
+	 } 
+} 
+</code></pre>
+<h2 id="floyd-warshall算法">Floyd-Warshall算法</h2>
+<p>求任意两点最短路，暴力枚举思想</p>
+<p>d[i][j]=min(d[i][j],d[i][k]+d[k][j])  遍历所有的k</p>
+<p>时间复杂度O(V^3)</p>
+<pre><code class="language-cpp">int d[max_v][max_v];   //存储权值，边不存在时为inf，d[i][i]=0 
+int V;
+void floyd_warshall()
+{
+	for(k=0;k&lt;V;k++)
+		for(int i=0;i&lt;V;i++)
+			for(int j=0;j&lt;V;j++)
+				d[i][j]=min(d[i][j],d[i][k]+d[k][j]);
+}
+</code></pre>
+<h2 id="路径还原">路径还原</h2>
+<p>通过找满足d[j]=d[k]+cost[k][j]的顶点k，来寻找前趋节点，不断寻找前趋节点来还原路径，时间复杂度O(E)</p>
+<p>还可以用prev[j]在算法内直接记录前趋节点，最后遍历数组即可，时间复杂度O(V)</p>
+<pre><code class="language-cpp">//算法内记录前趋节点 (优化的dijkstra算法)
+int prev[max_v]          //前趋节点
+struct edge
+{
+	int to,cost;
+}
+typedef pair&lt;int,int&gt; pii;       //first 是距离 ，second是点编号
+int V;
+vector&lt;edge&gt; G[max_v];
+int d[max_v];
+void dijkstra(int s)
+{
+	priority_queue&lt;pii,vector&lt;pii&gt;,greater&lt;pii&gt; &gt; q;           //使小的在上面
+	fill(d,d+V,inf);
+	fill(prev,prev+V,-1);                                        //!!!!                            
+	d[s]=0;
+	q.push(pii(0,s));
+	while(!q.empty())
+	{
+		pii p=q.top();
+		q.pop();
+		int v=p.second;
+		if(d[v]&lt;p.first) continue;
+		for(int i=0;i&lt;G[v].size();i++)
+		{
+			edge e=G[v][i];
+			if(d[e.to]&gt;d[v]+e.cost)
+			{
+				d[e.to]=d[v]+e.cost;
+				prev[e.to]=v;                                   //!!!!
+				q.push(pii(d[e.to],e.to));
+			}
+		}
+	 } 
+}
+ 
+vector&lt;int&gt; get_path(int t)
+{
+	vector&lt;int&gt; path;
+	for(;t!=-1;t=prev[t]) path.push_back(t);
+	reverse(path.begin(),path.end());
+	return path;
+}
+</code></pre>
+<h2 id="prim算法">Prim算法</h2>
+<p>求最小生成树</p>
+<p>prim算法和dijkstra算法很像，也是把已确定的点放入一个集合中，贪心地选取集合和未确定的点相连的最小权边，并加入到集合中，得到一棵生成树，可以证明是MST(minimum spanning tree)</p>
+<pre><code class="language-cpp">//也可以堆优化 
+int cost[max_v][max_v]      //权值
+int mincost[max_v];          //从集合出发到其他点的最小权值,!!!这个权值是 集合 和 点 之间的 
+bool used[max_v];               //是否在集合中
+int V;
+
+int prim()                   //返回MST的权值
+{
+	fill(mincost,mincost+V,inf);      //初始化 
+	fill(used,used+V,false);
+	mincost[0]=0;             //从0开始 
+	
+	int res=0;
+	while(true)
+	{
+		int v=-1;
+		for(int u=0;u&lt;V;u++)
+		{
+			if(!used[u] &amp;&amp; (v==-1 || mincost[u]&lt;mincost[v])) v=u;
+		}
+		if(v==-1) break;
+		used[v]=true;
+		res+=mincost[v];
+		
+		for(int u=0;u&lt;V;u++)
+		{
+			mincost[u]=min(mincost[u],cost[v][u]);    //每次往集合中加入一个点，所有点的mincost都有可能改变 
+		}
+	}
+	return res; 
+ } 
+</code></pre>
+<p>时间复杂度与dijkstra算法一样</p>
+<h2 id="kruskal算法">Kruskal算法</h2>
+<p>求MST</p>
+<p>将边的权值按大小排序，如果不产生<!-- raw HTML omitted -->圈和重边<!-- raw HTML omitted -->，就依次把边加入到生成树中</p>
+<p>要判断是否产生圈和重边，只需要判断加入这条边前，这条边的两个端点是否已在同一个连通分量里，这样就可以用并查集</p>
+<p>Kruskal在边的排序上最费时，算法复杂度O(ElgV)</p>
+<p>Kruskal适用于sparse graph</p>
+<p>Prim适用于dense graph</p>
+<p>在实际应用中，Kruskal更普遍</p>
+<pre><code class="language-cpp">struct edge
+{
+	int u,v,cost;
+}es[max_e];
+int V,E;
+int par[max_v];                           //union find需要 
+int rankk[max_v];                         //key word &quot;rank&quot;
+bool cmp(const edge&amp; e1,const edge&amp; e2)
+{
+	return e1.cost&lt;e2.cost;
+}
+void init_union_find(int x)
+{
+	for(int i=0;i&lt;x;i++)
+	{
+		par[i]=i;
+		rankk[i]=0;
+	}
+}
+int find(int x)
+{
+	if(par[x]==x)
+		return x;
+	else
+		return par[x]=find(par[x]);
+}
+void unite(int x,int y)
+{
+	x=find(x);
+	y=find(y);
+	if(x==y) return;
+	if(rankk[x]&lt;rankk[y]) par[x]=y;
+	else
+	{
+		par[y]=x;
+		if(rankk[x]==rankk[y]) rankk[x]++;
+	}
+}
+bool same(int x,int y)
+{
+	return find(x)==find(y);
+}
+int kruskal()
+{
+	sort(es,es+E,cmp);
+	init_union_find(V);
+	int res=0;
+	for(int i=0;i&lt;E;i++)
+	{
+		edge e=es[i];
+		if(!same(e.u,e.v))
+		{
+			unite(e.u,e.v);
+			res+=e.cost;
+		}
+	}
+	return res;
+}
+</code></pre>
+<p><img src="https://img-blog.csdnimg.cn/20200205145500420.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://dyhgo.github.io/2020/02/graph-theory/" title="Graph Theory" target="_blank" rel="external">https://dyhgo.github.io/2020/02/graph-theory/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dyhgo" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://dyhgo.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dyhgo" target="_blank"><span class="text-dark">DYH</span><small class="ml-1x">244882973@qq</small></a></h3>
+        <div>Be happy and independent</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://dyhgo.github.io/2020/02/poj1182/" title="poj1182"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/"
+                    title="牛客基础训练营5B"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>$</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,wechat"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>Maybe you could buy me a cup of coffee.</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/alipayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/wechatpayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    wechat payment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/dyhgo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://dyhgo.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    © dyh 2020
+    <div class="publishby">
+        base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/cpp.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://dyhgo.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://dyhgo.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/dyhgo.github.io',
+            CONTENT_URL: 'https:\/\/dyhgo.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://dyhgo.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '2f311539c5a5aef2912a',
+        clientSecret: '8511ba39ff7db2afe2e983ed0c953f9dcd75fc22',
+        repo: 'dyhgo.github.io',
+        owner: 'dyhgo',
+        admin: ['dyhgo'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>

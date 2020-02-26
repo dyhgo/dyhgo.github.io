@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        poj3069 - This is DYH
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="poj3069" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>poj3069 - This is DYH</title>
+  
+  
+  <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="poj3069" />
+<meta property="og:description" content="poj3069" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/2020/01/poj3069/" />
+<meta property="article:published_time" content="2020-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-01-18T00:00:00+00:00" />
+<meta itemprop="name" content="poj3069">
+<meta itemprop="description" content="poj3069">
+<meta itemprop="datePublished" content="2020-01-18T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-01-18T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="549">
+
+
+
+<meta itemprop="keywords" content="cpp,greedy," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="poj3069"/>
+<meta name="twitter:description" content="poj3069"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/dyhgo" target="_blank">
+            <img class="img-circle img-rotate" src="https://dyhgo.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">DYH</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">244882973@qq</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>HHU , Nanjing</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>enjoy~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/hduoj/" class="category-list-link">hduoj</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/note/" class="category-list-link">note</a><span class="category-list-count">11</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/nowcoder/" class="category-list-link">nowcoder</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/poj/" class="category-list-link">poj</a><span class="category-list-count">10</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/bfs/" class="tag-list-link">bfs</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary/" class="tag-list-link">binary</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary_search/" class="tag-list-link">binary_search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/computational_geometry/" class="tag-list-link">computational_geometry</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
+                    class="tag-list-count">27</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dp/" class="tag-list-link">dp</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/graph_theory/" class="tag-list-link">graph_theory</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/greedy/" class="tag-list-link">greedy</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/number_theory/" class="tag-list-link">number_theory</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/search/" class="tag-list-link">search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/segment_tree/" class="tag-list-link">segment_tree</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/sort/" class="tag-list-link">sort</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/string/" class="tag-list-link">string</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/union_find/" class="tag-list-link">union_find</a><span
+                    class="tag-list-count">1</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/" class="title">二进制表示集合</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-24 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-24</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/number-theory/" class="title">Number Theory</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-22 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-22</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/" class="title">hduoj2089(数位dp &#43; 记忆化搜索)</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/segment-tree/" class="title">Segment Tree</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-20 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-20</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/" class="title">牛客基础训练营5B</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-02-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-02-14</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/poj3069/"
+    >poj3069</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://dyhgo.github.io/2020/01/poj3069/" class="article-date">
+  <time datetime="2020-01-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-18</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/poj/"> poj </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
+    <a class="article-tag-link" href="/tags/greedy/"> greedy </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/poj3069/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 549words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="font-colorbluesarumans-army"><!-- raw HTML omitted -->Saruman&rsquo;s Army</h1>
+<h3 id="time-limit-1000msmemory-limit-65536k">Time Limit: 1000MS		Memory Limit: 65536K</h3>
+<p><a href="http://poj.org/problem?id=3069">题目链接</a></p>
+<h2 id="font-colorbluedescription"><!-- raw HTML omitted -->Description</h2>
+<p>Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army (i.e., palantirs are not allowed to “free float” in mid-air). Help Saruman take control of Middle Earth by determining the minimum number of palantirs needed for Saruman to ensure that each of his minions is within R units of some palantir.</p>
+<h2 id="font-colorblueinput"><!-- raw HTML omitted -->Input</h2>
+<p>The input test file will contain multiple cases. Each test case begins with a single line containing an integer R, the maximum effective range of all palantirs (where 0 ≤ R ≤ 1000), and an integer n, the number of troops in Saruman’s army (where 1 ≤ n ≤ 1000). The next line contains n integers, indicating the positions x1, …, xn of each troop (where 0 ≤ xi ≤ 1000). The end-of-file is marked by a test case with R = n = −1.</p>
+<h2 id="font-colorblueoutput"><!-- raw HTML omitted -->Output</h2>
+<p>For each test case, print a single integer indicating the minimum number of palantirs needed.</p>
+<h2 id="font-colorbluesample-input"><!-- raw HTML omitted -->Sample Input</h2>
+<p>0 3
+10 20 20
+10 7
+70 30 1 7 15 20 50
+-1 -1</p>
+<h2 id="font-colorbluesample-output"><!-- raw HTML omitted -->Sample Output</h2>
+<p>2
+4</p>
+<h2 id="font-colorbluehint"><!-- raw HTML omitted -->Hint</h2>
+<p>In the first test case, Saruman may place a palantir at positions 10 and 20. Here, note that a single palantir with range 0 can cover both of the troops at position 20.</p>
+<p>In the second test case, Saruman can place palantirs at position 7 (covering troops at 1, 7, and 15), position 20 (covering positions 20 and 30), position 50, and position 70. Here, note that palantirs must be distributed among troops and are not allowed to “free float.” Thus, Saruman cannot place a palantir at position 60 to cover the troops at positions 50 and 70.</p>
+<h2 id="font-colorbluesource"><!-- raw HTML omitted -->Source</h2>
+<p><a href="http://poj.org/searchproblem?field=source&amp;key=Stanford%20Local%202006">Stanford Local 2006</a></p>
+<h2 id="font-colorbluesolution"><!-- raw HTML omitted -->Solution</h2>
+<p>题意：一条路上有n个路灯，每个路灯都能照亮左右的一段距离，问最少需要多少路灯才能使街道都亮着</p>
+<p><!-- raw HTML omitted --><strong>greedy</strong></p>
+<p>从最左开始向右延伸r，在r的范围内将最右的路灯点亮，此时这盏路灯将照亮左边和右边，从暗处的最左路灯开始，已知重复下去。
+<!-- raw HTML omitted -->时间复杂度 O(n)<!-- raw HTML omitted --></p>
+<p>!!!!需要将路灯位置排序</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int r,n;
+int x[1006];
+int main()
+{
+	//freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
+	while(scanf(&quot;%d%d&quot;,&amp;r,&amp;n)==2 &amp;&amp; r!=-1)
+	{
+		for(int i=0;i&lt;n;i++)
+			scanf(&quot;%d&quot;,&amp;x[i]);
+		
+		sort(x,x+n);                               // ！！！记得排序
+		
+		int j=0,ans=0;
+		while(j&lt;n)
+		{
+			int s=x[j++];
+			while(j&lt;n &amp;&amp; x[j]&lt;=s+r) j++;
+			int p=x[j-1];
+			while(j&lt;n &amp;&amp; p+r&gt;=x[j]) j++;
+			ans++;
+		} 
+		printf(&quot;%d\n&quot;,ans);
+	}
+	return 0;
+} 
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://dyhgo.github.io/2020/01/poj3069/" title="poj3069" target="_blank" rel="external">https://dyhgo.github.io/2020/01/poj3069/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dyhgo" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://dyhgo.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dyhgo" target="_blank"><span class="text-dark">DYH</span><small class="ml-1x">244882973@qq</small></a></h3>
+        <div>Be happy and independent</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://dyhgo.github.io/2020/01/poj3617/" title="poj3617"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/"
+                    title="时间复杂度与计算时间的关系"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>$</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,wechat"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>Maybe you could buy me a cup of coffee.</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/alipayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/wechatpayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    wechat payment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/dyhgo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://dyhgo.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    © dyh 2020
+    <div class="publishby">
+        base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/cpp.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://dyhgo.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://dyhgo.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/dyhgo.github.io',
+            CONTENT_URL: 'https:\/\/dyhgo.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://dyhgo.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '2f311539c5a5aef2912a',
+        clientSecret: '8511ba39ff7db2afe2e983ed0c953f9dcd75fc22',
+        repo: 'dyhgo.github.io',
+        owner: 'dyhgo',
+        admin: ['dyhgo'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>
