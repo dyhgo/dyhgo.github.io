@@ -3,6 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/test/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/test/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/02/test/</loc>
+    <lastmod>2020-02-27T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/about/</loc>
     <lastmod>2020-02-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -24,13 +66,6 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/categories/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/tags/cpp/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -39,20 +74,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/categories/note/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
-    <lastmod>2020-02-24T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/</loc>
     <lastmod>2020-02-24T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
