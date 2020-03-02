@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        poj1127 - This is DYH
+        abc157 - This is DYH
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,9 +23,9 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="poj1127" />
+  <meta name="description" content="abc157" />
   <meta name="generator" content="Hugo 0.65.3 with theme pure" />
-  <title>poj1127 - This is DYH</title>
+  <title>abc157 - This is DYH</title>
   
   
   <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
@@ -33,23 +33,23 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="poj1127" />
-<meta property="og:description" content="poj1127" />
+  <meta property="og:title" content="abc157" />
+<meta property="og:description" content="abc157" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/2020/01/poj1127/" />
-<meta property="article:published_time" content="2020-01-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-27T00:00:00+00:00" />
-<meta itemprop="name" content="poj1127">
-<meta itemprop="description" content="poj1127">
-<meta itemprop="datePublished" content="2020-01-27T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-27T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1392">
+<meta property="og:url" content="https://dyhgo.github.io/2020/03/abc157/" />
+<meta property="article:published_time" content="2020-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-02T00:00:00+00:00" />
+<meta itemprop="name" content="abc157">
+<meta itemprop="description" content="abc157">
+<meta itemprop="datePublished" content="2020-03-02T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-02T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1815">
 
 
 
-<meta itemprop="keywords" content="cpp,computational_geometry," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="poj1127"/>
-<meta name="twitter:description" content="poj1127"/>
+<meta itemprop="keywords" content="cpp,computational_geometry,string,union_find," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="abc157"/>
+<meta name="twitter:description" content="abc157"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -328,8 +328,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/01/poj1127/"
-    >poj1127</a
+    href="/2020/03/abc157/"
+    >abc157</a
   >
 </h1>
 
@@ -337,18 +337,20 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://dyhgo.github.io/2020/01/poj1127/" class="article-date">
-  <time datetime="2020-01-27 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-27</time>
+<a href="https://dyhgo.github.io/2020/03/abc157/" class="article-date">
+  <time datetime="2020-03-02 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-03-02</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/poj/"> poj </a>
+  <a class="article-category-link" href="/categories/abc/"> abc </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
     <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
     <a class="article-tag-link" href="/tags/computational_geometry/"> computational_geometry </a>
+    <a class="article-tag-link" href="/tags/string/"> string </a>
+    <a class="article-tag-link" href="/tags/union_find/"> union_find </a>
   </span>
 
 	<span class="article-read hidden-xs">
@@ -357,145 +359,466 @@
 			<span id="busuanzi_value_page_pv">0</span>
 		</span>
 	</span>
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/poj1127/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/03/abc157/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1392words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1815words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 4minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="font-colorbluejack-straws"><!-- raw HTML omitted -->Jack Straws</h1>
-<h4 id="time-limit-1000msmemory-limit-10000k">Time Limit: 1000MS		Memory Limit: 10000K</h4>
-<h2 id="font-colorbluedescription"><!-- raw HTML omitted -->Description</h2>
-<p>In the game of Jack Straws, a number of plastic or wooden &ldquo;straws&rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws (as if they were dumped on a large piece of graph paper) and then will be asked if various pairs of straws are connected. Note that touching is connecting, but also two straws can be connected indirectly via other connected straws.</p>
-<h2 id="font-colorblueinput"><!-- raw HTML omitted -->Input</h2>
-<p>Input consist multiple case,each case consists of multiple lines. The first line will be an integer n (1 &lt; n &lt; 13) giving the number of straws on the table. Each of the next n lines contain 4 positive integers,x1,y1,x2 and y2, giving the coordinates, (x1,y1),(x2,y2) of the endpoints of a single straw. All coordinates will be less than 100. (Note that the straws will be of varying lengths.) The first straw entered will be known as straw #1, the second as straw #2, and so on. The remaining lines of the current case(except for the final line) will each contain two positive integers, a and b, both between 1 and n, inclusive. You are to determine if straw a can be connected to straw b. When a = 0 = b, the current case is terminated.</p>
-<p>When n=0,the input is terminated.</p>
-<p>There will be no illegal input and there are no zero-length straws.</p>
-<h2 id="font-colorblueoutput"><!-- raw HTML omitted -->Output</h2>
-<p>You should generate a line of output for each line containing a pair a and b, except the final line where a = 0 = b. The line should say simply &ldquo;CONNECTED&rdquo;, if straw a is connected to straw b, or &ldquo;NOT CONNECTED&rdquo;, if straw a is not connected to straw b. For our purposes, a straw is considered connected to itself.</p>
-<h2 id="font-colorbluesample-input"><!-- raw HTML omitted -->Sample Input</h2>
-<p>7
-1 6 3 3 
-4 6 4 9 
-4 5 6 7 
-1 4 3 5 
-3 5 5 5 
-5 2 6 3 
-5 4 7 2 
-1 4 
-1 6 
-3 3 
-6 7 
-2 3 
-1 3 
-0 0</p>
-<p>2
-0 2 0 0
-0 0 0 1
-1 1
-2 2
-1 2
-0 0</p>
-<p>0</p>
-<h2 id="font-colorbluesample-output"><!-- raw HTML omitted -->Sample Output</h2>
-<p>CONNECTED 
-NOT CONNECTED 
-CONNECTED 
-CONNECTED 
-NOT CONNECTED 
-CONNECTED
-CONNECTED
-CONNECTED
-CONNECTED</p>
-<h2 id="font-colorbluesource"><!-- raw HTML omitted -->Source</h2>
-<p><a href="http://poj.org/searchproblem?field=source&amp;key=East%20Central%20North%20America%201994">East Central North America 1994</a></p>
-<h2 id="font-colorbluesolution"><!-- raw HTML omitted -->Solution</h2>
-<p>题意：判断两条线段是否相交，对于N条线段，间接相交也算相交。对于每次询问，判
-断给定的两条线段是否相交。</p>
-<p>这个题目分成两部分，一部分是基础的判断两条线段是否相交，用一个bool数组来存储信息。另一部分是判断间接相交，可以用floyd-warshall（比较巧妙）或者并查集.第一部分就是套模板。</p>
-<p>点可以用结构体存储（推荐），线段也可以用结构体存储或pair</p>
-<p>判断两条线段相交有多重模板，比如判是否平行、重合、求两条直线交点，判断交点是否在线段上，还有ccw（counter clock wise）函数，可参考discuss</p>
-<p>比较常见的是<!-- raw HTML omitted -->快速排斥<!-- raw HTML omitted -->和<!-- raw HTML omitted -->跨立检验</p>
-<p>以线段为对角线，作平行于x轴、y轴的射线，使之形成矩形，若两个矩形没有相交，则线段不相交（可以排除大部分）</p>
-<p>不满足快速排斥进入跨立检验,判断两个点是否在线段的两侧（即跨立），判断方法是外积的符号是否相反，<!-- raw HTML omitted -->等于0说明在线上</p>
-<p>如果两两互相跨立，则线段相交</p>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
-#include&lt;algorithm&gt;
+      <h1 id="a---duplex-printing">A - Duplex Printing</h1>
+<h4 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_a"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_a">题目链接</a></h4>
+<h3 id="题意">题意</h3>
+<p>每一页正反两面可以分别写一个数，问有n个不同的数可以写几页</p>
+<h3 id="思路">思路</h3>
+<p>简单模拟</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
-int n;
-bool con[15][15];
-int p,q;
-struct point
+int main()
 {
-	double x,y;
-	//point(double a,double b) : x(a),y(b) {}            //!!!!!会发生编译错误 
-};
-pair&lt;point,point&gt; seg[15];
-double dir(point a,point b,point c) //用外积 
-{
-	return (c.x-a.x)*(c.y-b.y) - (c.y-a.y)*(c.x-b.x); 
+	int a;
+	cin&gt;&gt;a;
+	if(a&amp;1)
+	cout&lt;&lt;a/2+1&lt;&lt;endl;
+	else
+	cout&lt;&lt;a/2;
+	return 0;
 }
-bool judge(pair&lt;point,point&gt; p1,pair&lt;point,point&gt; p2)
+
+</code></pre>
+<h1 id="b---bingo">B - Bingo</h1>
+<h5 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_b"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_b">题目链接</a></h5>
+<h3 id="题意-1">题意</h3>
+<p>有一个3*3的网格填满数字，接下来给出一些数字，如果网格中有，就标记。</p>
+<p>问是否存在一行或一列或对角线满足它们都被标记</p>
+<h3 id="思路-1">思路</h3>
+<p>由于数据不是很大，所以暴力模拟</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+bool b[3][3];
+int main()
 {
-	point a,b,c,d;
-	a=p1.first; 
-	b=p1.second;
-	c=p2.first;
-	d=p2.second;
-	//快速排斥
-	if(min(a.x,b.x)&gt;max(c.x,d.x) or min(c.x,d.x)&gt;max(a.x,b.x) or
-	   min(a.y,b.y)&gt;max(c.y,d.y) or min(c.y,d.y)&gt;max(a.y,b.y))
-	   return false;
-	//跨立检验 (int 可改成double)
+	int d[3][3];
+	
+	int n;
+	for(int i=0;i&lt;3;i++)
+	for(int j=0;j&lt;3;j++)
+	cin&gt;&gt;d[i][j];
+	cin&gt;&gt;n;
+	int t;
+	while(n--)
+	{
+		cin&gt;&gt;t;
+		for(int i=0;i&lt;3;i++)
+		for(int j=0;j&lt;3;j++)
+		{
+			if(d[i][j]==t)
+			{
+				b[i][j]=true;
+				break;
+			}
+		}
+	}
+	
+	
+	bool flag=false;
+	for(int i=0;i&lt;3;i++)
+	{
+		if(b[0][i]== true and b[1][i]==true and b[2][i]==true) 
+		{
+			flag=true;
+			break;
+		}
+	}
+	for(int i=0;i&lt;3;i++)
+	{
+		if(b[i][0]== true and b[i][1]==true and b[i][2]==true) 
+		{
+			flag=true;
+			break;
+		}
+	}
+	if(b[0][0]==true and b[1][1]==true and b[2][2]==true) 
+	{
+		flag=true;
+		
+	}
+	if(b[0][2]==true and b[1][1]==true and b[2][0]==true)
+	{
+		flag=true;
+		
+	}
+	if(flag) cout&lt;&lt;&quot;Yes&quot;&lt;&lt;endl;
+	else cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+<h1 id="c---guess-the-number">C - Guess The Number</h1>
+<h4 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_c"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_c">题目链接</a></h4>
+<h3 id="题意-2">题意</h3>
+<p>给一个数位n，和若干个条件，条件类型为ai位必须是数字bi，求满足这些条件的最小n</p>
+<p>位数，不满足输出-1</p>
+<h3 id="思路-2">思路</h3>
+<p>数据很小，简单模拟，有很多的细节，注意一位数、前导0等特殊情况</p>
+<p>由于边打代码边想，所以代码很乱</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+bool use[3];
+int main()
+{
+	int d[3];
+	int n,m;
+	cin&gt;&gt;n&gt;&gt;m;
+	int s,c;
+	bool flag=true;
+	for(int i=0;i&lt;m;i++)
+	{                                                
+		cin&gt;&gt;s&gt;&gt;c;
+		s--;
+		if(n!=1 and s==0 and c==0)
+		{
+			flag=false;
+			break;
+		}
+		else if(s&gt;n)
+		{
+			flag=false;
+			break;
+		}
+		else if(use[s] and c!=d[s])
+		{
+			flag=false;
+			break;
+		}
+		else
+		{
+			d[s]=c;
+			use[s]=true;
+		}
+	}
+	if(n!=1 and !use[0]) 
+	{
+		d[0]=1;
+		for(int i=1;i&lt;n;i++)
+		{
+			if(!use[i]) d[i]=0;
+		}
+	}
 	else
 	{
-		int d1,d2,d3,d4;
-		d1=dir(a,b,c);
-		d2=dir(a,b,d);
-		d3=dir(c,d,a);
-		d4=dir(c,d,b);
-		return d1*d2&lt;=0 and d3*d4&lt;=0;    //!!!
+		for(int i=0;i&lt;n;i++)
+	{
+		
+		if(!use[i])
+		d[i]=0;
 	}
+	}
+	
+	if(!flag) cout&lt;&lt;-1&lt;&lt;endl;
+	else 
+	{
+		for(int i=0;i&lt;n;i++)
+		{
+			cout&lt;&lt;d[i];
+		}
+		cout&lt;&lt;endl;
+	}
+	//cout&lt;&lt;use[2]&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+<h1 id="d---friend-suggestions">D - Friend Suggestions</h1>
+<h4 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_d"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_d">题目链接</a></h4>
+<h3 id="题意-3">题意</h3>
+<p>有n个人和两种关系（双向的）friendship 和 blockship</p>
+<p>定义：一个人为另一个人的friend candidate</p>
+<p>当且仅当满足他们没有这两种关系且他们之间存在着friendship的传导链</p>
+<p>问每个人的friend candidate数量</p>
+<h3 id="思路-3">思路</h3>
+<p>由于需要friendship传导链，又存在friendship的双向关系，所以考虑并查集</p>
+<p>再遍历一遍信息，如果是直接的friendship和blockship关系就减掉这个人（数量减1）</p>
+<p>（需要计算集合元素个数）</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+int n,m,k;
+//union find
+int par[100005];  
+int rankk[100005];   
+int sizz[100005];
+int ans[100005];
+int a[100005];
+int b[100005];
+int c[100005];
+int d[100005];
+void init(int n)      
+{
+    for(int i=0;i&lt;n;i++)
+    {
+        par[i]=i;
+        rankk[i]=0;
+    }
+} 
+
+int find(int x)
+{
+    if(par[x]==x) return x;
+    else return par[x]=find(par[x]);     
+} 
+
+void unite(int x,int y)
+{
+    x=find(x);
+    y=find(y);
+    if(x==y) return ;                
+    
+    if(rankk[x]&lt;rankk[y]) par[x]=y,sizz[y]+=sizz[x];    
+    else
+    {
+        par[y]=x;
+        sizz[x]+=sizz[y];
+        if(rankk[x]==rankk[y]) rankk[x]++;    
+     } 
+} 
+
+bool  same(int x,int y)
+{
+    return find(x)==find(y);
 }
 int main()
 {
+	ios::sync_with_stdio(0);cin.tie(0);
 	//freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
-	while(scanf(&quot;%d&quot;,&amp;n)==1 and n!=0)
+	cin&gt;&gt;n&gt;&gt;m&gt;&gt;k;
+	init(n);
+	fill(sizz,sizz+n,1);
+	for(int i=0;i&lt;m;i++)
 	{
-		for(int i=1;i&lt;=n;i++) con[i][i]=true;
-		for(int i=1;i&lt;=n;i++)
-			scanf(&quot;%lf%lf%lf%lf&quot;,&amp;seg[i].first.x,&amp;seg[i].first.y,&amp;seg[i].second.x,&amp;seg[i].second.y);
-		for(int i=1;i&lt;=n;i++)
-			for(int j=1;j&lt;i;j++)
+		cin&gt;&gt;a[i]&gt;&gt;b[i];
+	}
+	for(int i=0;i&lt;k;i++)
+	{
+		cin&gt;&gt;c[i]&gt;&gt;d[i];
+	}
+	for(int i=0;i&lt;m;i++)
+	{
+		unite(a[i],b[i]);
+	}
+	for(int i=1;i&lt;=n;i++)
+	{
+		ans[i]=sizz[find(i)];
+	}
+	for(int i=0;i&lt;m;i++)
+	{
+		if(same(a[i],b[i]))
+		{
+			ans[a[i]]--;
+			ans[b[i]]--;
+		}
+	}
+	for(int i=0;i&lt;k;i++)
+	{
+		if(same(c[i],d[i]))
+		{
+			ans[c[i]]--;
+			ans[d[i]]--;
+		}
+	}
+	cout&lt;&lt;ans[1]-1;
+	for(int i=2;i&lt;=n;i++)
+	{
+		cout&lt;&lt;&quot; &quot;&lt;&lt;ans[i]-1;
+	}
+	cout&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+<h1 id="e---simple-string-queries">E - Simple String Queries</h1>
+<h4 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_e"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_e">题目链接</a></h4>
+<h3 id="题意-4">题意</h3>
+<p>给一个只有小写字母的字符串s，和两种操作</p>
+<p>将ai下标的字符替换成bi</p>
+<p>查询l到r区间内有多少个不同的字母，输出结果</p>
+<h3 id="思路-4">思路</h3>
+<p>数据太大，不能简单模拟</p>
+<p>用合理的数据结构</p>
+<p>用26个集合存储有这个字母对应的下标</p>
+<p>对于查询区间，遍历26个集合，查询这个区间是否存在该字母（如果存在 ans++）</p>
+<p>只需要对每个集合二分搜索左边界的标号，如果这个标号在右边界内，即存在</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,q;
+string s;
+set&lt;int&gt; st[27];
+int main()
+{
+	ios::sync_with_stdio(false);cin.tie(false);
+	//freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
+	cin&gt;&gt;n;
+	cin&gt;&gt;s;
+	cin&gt;&gt;q;
+	for(int i=0;i&lt;26;i++)
+	{
+		st[i].insert(n);       //防止使用lower_bound时集合为空 
+	}
+	for(int i=0;i&lt;n;i++)
+	{
+		st[s[i]-'a'].insert(i);
+	}
+	int t;
+	for(int i=0;i&lt;q;i++)
+	{
+		cin&gt;&gt;t;
+		if(t==1)
+		{
+			int a;char b;
+			cin&gt;&gt;a&gt;&gt;b;
+			st[s[a-1]-'a'].erase(a-1);
+			st[b-'a'].insert(a-1);
+			s[a-1]=b;
+		}
+		else
+		{
+			int l,r;
+			cin&gt;&gt;l&gt;&gt;r;
+			int ans=0;
+			for(int i=0;i&lt;26;i++)
 			{
-				if(judge(seg[i],seg[j])) con[i][j]=con[j][i]=true;
-				else con[i][j]=con[j][i]=false;
+				auto it=st[i].lower_bound(l-1);
+				if(*it&lt;=r-1) ans++;
 			}
-		for(int k=1;k&lt;=n;k++)                                               //Floyd-Warshall算法或并查集都可以 
-			for(int i=1;i&lt;=n;i++)
-				for(int j=1;j&lt;=n;j++)
-					con[i][j] |= con[i][k] and con[k][j];
-		while(scanf(&quot;%d%d&quot;,&amp;p,&amp;q)==2 and p!=0)
-			puts(con[p][q] ? &quot;CONNECTED&quot; : &quot;NOT CONNECTED&quot;);
+			cout&lt;&lt;ans&lt;&lt;endl;
+		}
 	}
 	return 0;
 }
+
 </code></pre>
-<h5 id="艰难的debug">艰难的debug</h5>
-<p>计算几何有些很麻烦，代码太相似，debug比较难，有时还要考虑精度问题（即误差eps）</p>
-<p>debug一个上午</p>
-<p>写完代码CE，seg[i].first.x错误，把stl_pair.h中的代码小改一下可以通过，但放到oj上肯定不行，怕污染代码还是不这样做。最后发现<!-- raw HTML omitted -->把构造函数去掉<!-- raw HTML omitted -->可以通过</p>
-<p>自测，最后一个样例没过，发现是边界情况，<!-- raw HTML omitted -->把跨立检验最后一步的等号加上</p>
-<p>自测，中间有一个样例没过，作图，把样例分离出来，过了。说明可能不是judge函数的问题。</p>
-<p>单测样例，没过，说明错误不是受别组影响</p>
-<p>编译器debug，把函数内的局部变量，变成全局变量，add watch</p>
-<p>发现d1 d2 d3 d4都等于0，a.x a.y b.x b.y  &hellip;.有问题</p>
-<p>继续add watch</p>
-<p>发现seg[1].first的内容就有问题，是double边界数，然后发现最终问题 %d 赋值给了double型变量</p>
-<h4 id="总结">总结</h4>
-<p>提高debug能力，少犯白痴错误。</p>
-<p>写代码要有清晰性和完整性，这样鲁棒性更强。</p>
+<h1 id="f---yakiniku-optimization-problem">F - Yakiniku Optimization Problem</h1>
+<h4 id="题目链接httpsatcoderjpcontestsabc157tasksabc157_f"><a href="https://atcoder.jp/contests/abc157/tasks/abc157_f">题目链接</a></h4>
+<h3 id="题意-5">题意</h3>
+<p>平面上有n个点，每个点有一个属性ci，坐标上至少存在一个点使得这个点到其中k个点</p>
+<p>的距离*ci（只对k个点中的一点）的值的最大值最小</p>
+<p>输出最小值</p>
+<h3 id="思路-5">思路</h3>
+<p>有趣的计算几何</p>
+<p>很难通过找到点来求最小值</p>
+<p>很常见的做法是用二分法</p>
+<p>区间的值为“最大值“</p>
+<p>每一次检查满足“最大值”的点是否超过k个</p>
+<p>超过则将最大值减小</p>
+<p>否则将最大值增大（理论上直到满足k个点）</p>
+<p>通过精度来停机</p>
+<p>怎样检查？</p>
+<p>每个点的属性=当前“最大值”  /  ci</p>
+<p>以点为圆心，每个点的属性为半径，每两个圆可能存在交点</p>
+<p>遍历每个点，如果交点在某个点的属性范围内，这个点也满足条件</p>
+<p>遍历所有情况，求最多有多少个点满足条件</p>
+<p>以此来检查是否超过k</p>
+<p><!-- raw HTML omitted -->注意点</p>
+<p><!-- raw HTML omitted -->1.只有一个点的特判</p>
+<p><!-- raw HTML omitted -->2.要有eps，而且eps不能太大也不能太小</p>
+<p><!-- raw HTML omitted -->3.为避免重复计算，j从i开始，但不能从i+1开始，因为有可能目标点就在某一点上</p>
+<p><!-- raw HTML omitted -->从i+1开始会wa掉1个测试点</p>
+<p>ac代码如下</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int n, k;
+double x[65], y[65], c[65], r[65];
+double eps = 1e-8;   //!!!
+
+double dist(pair&lt;double, double&gt; p, pair&lt;double, double&gt; q) {
+	double xx = (p.first - q.first)*(p.first - q.first);
+	double yy = (p.second - q.second)*(p.second - q.second);
+
+	return sqrt(xx + yy);
+}
+
+vector&lt;pair&lt;double, double&gt;&gt; circle_circle_intersection(double x1, double y1, double r1, double x2, double y2, double r2) {
+	vector&lt;pair&lt;double, double&gt; &gt; ans;
+	double d = dist(make_pair(x1, y1), make_pair(x2, y2));
+	if (d &gt; r1 + r2) {
+		return ans;
+	}
+	if (x1 == x2 &amp;&amp; y1 == y2) {
+		ans.push_back(make_pair(x1, y1)); return ans;
+	}
+	if (d &lt; abs(r1 - r2)) {
+		ans.push_back(make_pair(x1, y1)); return ans;
+	}
+
+	double a = (r1*r1 - r2*r2 + d*d)/(2*d);
+	double h = sqrt(r1*r1 - a*a);
+
+
+	double x3 = (x2 - x1)*(a/d) + x1;
+	double y3 = (y2 - y1)*(a/d) + y1;
+
+	ans.emplace_back(x3 + h*(y2 - y1)/d, y3 - h*(x2 - x1)/d);
+	ans.emplace_back(x3 - h*(y2 - y1)/d, y3 + h*(x2 - x1)/d);
+
+	return ans;
+}
+
+int check(double t) {
+	int ans = 0;
+	for (int i = 0; i &lt; n; i++) {
+		r[i] = t/c[i];
+	}
+
+	for (int i = 0; i &lt; n; i++) {
+		for (int j = i; j &lt; n; j++) {                 //!!!
+			vector&lt;pair&lt;double, double&gt; &gt; pts = circle_circle_intersection(x[i], y[i], r[i], x[j], y[j], r[j]);
+			for (auto p: pts) {
+				int cnt = 0;
+				for (int k = 0; k &lt; n; k++) {
+					if (dist(p, make_pair(x[k], y[k])) &lt;= r[k] +eps) cnt++;
+				}
+				ans = max(ans, cnt);
+			}
+		}
+	}
+	
+
+	return ans;
+}
+
+int main() {
+	ios::sync_with_stdio(0); cin.tie(0);
+	cin &gt;&gt; n &gt;&gt; k;
+	if (k == 1) {
+		cout &lt;&lt; &quot;0\n&quot;; exit(0);
+	}
+	for (int i = 0; i &lt; n; i++) {
+		cin &gt;&gt; x[i] &gt;&gt; y[i] &gt;&gt; c[i];
+	}
+
+	double l = 0, r = 100000000;
+	while(r-l&gt;=1e-8)
+	{
+		double mid = (l + r)/2;
+
+		if (check(mid) &gt;= k) {
+			r = mid;
+		} else {
+			l = mid;
+		}
+	}
+	cout &lt;&lt; fixed &lt;&lt; setprecision(9) &lt;&lt; r &lt;&lt; '\n'; 
+
+	return 0;
+}
+
+</code></pre>
+<p>个人感觉abc很考验思维和对数据结构的熟练度</p>
 
     </div>
     <div class="article-footer">
@@ -503,7 +826,7 @@ int main()
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://dyhgo.github.io/2020/01/poj1127/" title="poj1127" target="_blank" rel="external">https://dyhgo.github.io/2020/01/poj1127/</a>
+      <a href="https://dyhgo.github.io/2020/03/abc157/" title="abc157" target="_blank" rel="external">https://dyhgo.github.io/2020/03/abc157/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -535,14 +858,9 @@ int main()
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/" title="简易对拍"><i
+                <a href="https://dyhgo.github.io/2020/02/test/" title="test"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://dyhgo.github.io/2020/01/poj2932/"
-                    title="poj2932"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">

@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/</link>
     <description>Recent content in Tags on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 27 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj3069</title>
+      <link>https://dyhgo.github.io/2020/01/poj3069/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj3069/</guid>
+      <description>Saruman&amp;rsquo;s Army Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army</description>
+    </item>
     
     <item>
       <title>poj3617</title>

@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/cpp/</link>
     <description>Recent content in cpp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 24 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc157</title>
+      <link>https://dyhgo.github.io/2020/03/abc157/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc157/</guid>
+      <description>A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a; cin&amp;gt;&amp;gt;a; if(a&amp;amp;1) cout&amp;lt;&amp;lt;a/2+1&amp;lt;&amp;lt;endl; else cout&amp;lt;&amp;lt;a/2; return 0; } B -</description>
+    </item>
     
     <item>
       <title>test</title>
@@ -186,15 +195,6 @@ or number &amp;ldquo;+86 15850656951&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>poj3069</title>
-      <link>https://dyhgo.github.io/2020/01/poj3069/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj3069/</guid>
-      <description>Saruman&amp;rsquo;s Army Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army</description>
     </item>
     
   </channel>
