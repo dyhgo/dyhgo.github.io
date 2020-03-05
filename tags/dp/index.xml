@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/dp/</link>
     <description>Recent content in dp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj1458</title>
+      <link>https://dyhgo.github.io/2020/03/poj1458/</link>
+      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/poj1458/</guid>
+      <description>Common Subsequence Time Limit: 1000MS Memory Limit: 10000K Description A subsequence of a given sequence is the given sequence with some elements (possible none) left out. Given a sequence X = &amp;lt; x1, x2, &amp;hellip;, xm &amp;gt; another sequence Z = &amp;lt; z1, z2, &amp;hellip;, zk &amp;gt; is a subsequence of X if there exists a strictly increasing sequence &amp;lt; i1, i2, &amp;hellip;, ik &amp;gt; of indices of X such</description>
+    </item>
     
     <item>
       <title>poj2686</title>
@@ -186,15 +195,6 @@ or number &amp;ldquo;+86 15850656951&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/poj1384/</guid>
       <description>Piggy-Bank Time Limit: 1000MS Memory Limit: 10000K 题目链接 Description Before ACM can do anything, a budget must be prepared and the necessary financial support obtained. The main income for this action comes from Irreversibly Bound Money (IBM). The idea behind is simple. Whenever some ACM member has any small money, he takes all the coins and throws them into a piggy-bank. You know that this process is</description>
-    </item>
-    
-    <item>
-      <title>poj3624</title>
-      <link>https://dyhgo.github.io/2020/01/poj3624/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj3624/</guid>
-      <description>Charm Bracelet Time Limit: 1000MS Memory Limit: 65536K Description Bessie has gone to the mall&amp;rsquo;s jewelry store and spies a charm bracelet. Of course, she&amp;rsquo;d like to fill it with the best charms possible from the N (1 ≤ N ≤ 3,402) available charms. Each charm i in the supplied list has a weight Wi (1 ≤ Wi ≤ 400), a &amp;lsquo;desirability&amp;rsquo; factor Di (1 ≤ Di ≤ 100), and</description>
     </item>
     
   </channel>
