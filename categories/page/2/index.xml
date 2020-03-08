@@ -5,10 +5,55 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 05 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj2932</title>
+      <link>https://dyhgo.github.io/2020/01/poj2932/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2932/</guid>
+      <description>Coneology 题目链接 Time Limit: 5000MS Memory Limit: 65536K Description A student named Round Square loved to play with cones. He would arrange cones with different base radii arbitrarily on the floor and would admire the intrinsic beauty of the arrangement. The student even began theorizing about how some cones dominate other cones: a cone A dominates another cone B when cone B is completely within the cone</description>
+    </item>
+    
+    <item>
+      <title>poj1127</title>
+      <link>https://dyhgo.github.io/2020/01/poj1127/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1127/</guid>
+      <description>Jack Straws Time Limit: 1000MS Memory Limit: 10000K Description In the game of Jack Straws, a number of plastic or wooden &amp;ldquo;straws&amp;rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws</description>
+    </item>
+    
+    <item>
+      <title>简易对拍</title>
+      <link>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</guid>
+      <description>以这道题为例 准备一个对拍的文件夹，里面装这些东西 duipai_random_input_src.cpp是产生随机测试数据的代码 #include&amp;lt;cstdlib&amp;gt; #include&amp;lt;iostream&amp;gt; #include&amp;lt;ctime&amp;gt; using namespace std; int</description>
+    </item>
+    
+    <item>
+      <title>abc152-D</title>
+      <link>https://dyhgo.github.io/2020/01/abc152-d/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/abc152-d/</guid>
+      <description>题目链接 题意：找正整数对（A,B），A、B都不大于N，满足A的第一个数字是B的最后一个数 字，B的第一个数字是A的最后一个数字，个位数也算，输</description>
+    </item>
+    
+    <item>
+      <title>poj1384</title>
+      <link>https://dyhgo.github.io/2020/01/poj1384/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1384/</guid>
+      <description>Piggy-Bank Time Limit: 1000MS Memory Limit: 10000K 题目链接 Description Before ACM can do anything, a budget must be prepared and the necessary financial support obtained. The main income for this action comes from Irreversibly Bound Money (IBM). The idea behind is simple. Whenever some ACM member has any small money, he takes all the coins and throws them into a piggy-bank. You know that this process is</description>
+    </item>
     
     <item>
       <title>poj3624</title>
