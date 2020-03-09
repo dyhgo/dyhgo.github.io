@@ -3,6 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/anime/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/03/ef-a-tale-of-memories/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-03-09T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/categories/abc/</loc>
     <lastmod>2020-03-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -11,13 +39,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/2020/03/abc158/</loc>
-    <lastmod>2020-03-08T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/</loc>
     <lastmod>2020-03-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -39,13 +60,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/categories/game/</loc>
-    <lastmod>2020-03-08T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
     <lastmod>2020-03-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
