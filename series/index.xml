@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>二进制编码</title>
+      <link>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
+      <description>二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; 10.1875*2=0.375 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.375*2=0.75 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.75*2=1.5 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;10.5*2=1 &amp;mdash;&amp;mda</description>
+    </item>
+    
+    <item>
       <title>Codeforces Round #627 (Div. 3)</title>
       <link>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
@@ -185,15 +194,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/</guid>
       <description>题目在这 这道题可以用二分法，三分法更好一点（反正当时完全没想到），0.618法应该最快 三分是中间的两个点 mid = l + (r - l) / 2 midmid = mid + (r - mid) / 2</description>
-    </item>
-    
-    <item>
-      <title>Graph Theory</title>
-      <link>https://dyhgo.github.io/2020/02/graph-theory/</link>
-      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/graph-theory/</guid>
-      <description>图的存储：邻接表、邻接矩阵、前向星、链式前向星等 二分图判定 通过着色来判定，整个图只染两种颜色，如果相邻点颜色不同就是二分图 用dfs判断每个点</description>
     </item>
     
   </channel>
