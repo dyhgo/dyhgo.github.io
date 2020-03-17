@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/hduoj/</link>
     <description>Recent content in hduoj on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 20 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/hduoj/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hduoj1711(kmp)</title>
+      <link>https://dyhgo.github.io/2020/03/hduoj1711kmp/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/hduoj1711kmp/</guid>
+      <description>Number Sequence Problem Description Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1], b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</description>
+    </item>
     
     <item>
       <title>Codeforces Round #628 (Div. 2) A~D</title>
@@ -186,15 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
       <description>Problem Description 杭州人称那些傻乎乎粘嗒嗒的人为62（音：laoer）。 杭州交通管理局经常会扩充一些的士车牌照，新近出来一个好消息，以后上牌照，不再含有不</description>
-    </item>
-    
-    <item>
-      <title>Segment Tree</title>
-      <link>https://dyhgo.github.io/2020/02/segment-tree/</link>
-      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/segment-tree/</guid>
-      <description>线段树是把区间分割，然后把数据按树存储的数据结构。线段树是一颗完美二叉树 用一个例子来介绍线段树 RMQ（range minimum query） 实现功能 对于一</description>
     </item>
     
   </channel>

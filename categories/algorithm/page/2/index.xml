@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/algorithm/</link>
     <description>Recent content in algorithm on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 22 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Segment Tree</title>
+      <link>https://dyhgo.github.io/2020/02/segment-tree/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/segment-tree/</guid>
+      <description>线段树是把区间分割，然后把数据按树存储的数据结构。线段树是一颗完美二叉树 用一个例子来介绍线段树 RMQ（range minimum query） 实现功能 对于一</description>
+    </item>
     
     <item>
       <title>牛客基础训练营5B</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/01/poj3984/</guid>
       <description>迷宫问题 Time Limit: 1000MS Memory Limit: 65536K Description 定义一个二维数组： int maze[5][5] = { 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, }; 它表示一个迷宫，其中的1表示墙壁，0表示</description>
-    </item>
-    
-    <item>
-      <title>字符串匹配算法(未完成)</title>
-      <link>https://dyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
-      <description>从学习方法和代码实现debug花了挺长时间。。。 这个算法是从字符串s中找子串p出现的第一个位置 以下是两个常见的字符串匹配算法（还有其他更高效</description>
     </item>
     
   </channel>
