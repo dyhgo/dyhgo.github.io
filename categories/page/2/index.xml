@@ -5,10 +5,62 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用hugo搭建个人博客网站</title>
+      <link>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description>效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://dyhgo.github.io/about/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/about/</guid>
+      <description>this is dyh from hhu
+major in cs
+love swimming,coding,poppin
+it&amp;rsquo;s the first time to set up a site(fyi:just for fun as the domain)(based on hugo and github server)
+thanks to &amp;ldquo;xiaoheiah&amp;rdquo; offering me theme template
+i set up this site as a self blog and paste some study experience but maybe i&amp;rsquo;m not gonna manage it
+if u wanna leave a message
+you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>二进制表示集合</title>
+      <link>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</guid>
+      <description>以二进制的原理表示集合，以整数呈现 1表示在集合内，0表示不在集合内 一位运算优先于按位逻辑运算 空集 0 只含有第i个元素的集合{i} 1&amp;laquo;i 含有全部n个</description>
+    </item>
+    
+    <item>
+      <title>Number Theory</title>
+      <link>https://dyhgo.github.io/2020/02/number-theory/</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/number-theory/</guid>
+      <description>求最大公约数和最小公倍数 辗转相除法 时间复杂度O(log(max(a,b))) int gcd(int a,int b) { if(b==0) return a; else return gcd(b,a%b); } int lcm(int a,int b) { return a*b/gcd(a,b); } 或直接调用algorit</description>
+    </item>
+    
+    <item>
+      <title>hduoj2089(数位dp &#43; 记忆化搜索)</title>
+      <link>https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <description>Problem Description 杭州人称那些傻乎乎粘嗒嗒的人为62（音：laoer）。 杭州交通管理局经常会扩充一些的士车牌照，新近出来一个好消息，以后上牌照，不再含有不</description>
+    </item>
     
     <item>
       <title>Segment Tree</title>
@@ -143,51 +195,6 @@
       
       <guid>https://dyhgo.github.io/2020/01/poj3617/</guid>
       <description>Best Cow Line Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description FJ is about to take his N (1 ≤ N ≤ 2,000) cows to the annual&amp;quot;Farmer of the Year&amp;rdquo; competition. In this contest every farmer arranges his cows in a line and herds them past the judges. The contest organizers adopted a new registration scheme this year: simply register the initial letter of every cow in</description>
-    </item>
-    
-    <item>
-      <title>c&#43;&#43;交集、并集、差、对称差函数</title>
-      <link>https://dyhgo.github.io/2020/01/c-%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86%E5%B7%AE%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/c-%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86%E5%B7%AE%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%87%BD%E6%95%B0/</guid>
-      <description>#include&amp;lt;iostream&amp;gt; #include&amp;lt;set&amp;gt; //#include&amp;lt;map&amp;gt; //#include&amp;lt;string&amp;gt; #include&amp;lt;algorithm&amp;gt; #include&amp;lt;iterator&amp;gt; using namespace std; int main() { int a[]={3,2,1}; int b[]={3,4,5,6}; set&amp;lt;int&amp;gt; s1(a,a+3); set&amp;lt;int&amp;gt; s2(b,b+4); set&amp;lt;int&amp;gt; s3; set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),inserter(s3,s3.begin())); for(set&amp;lt;int&amp;gt;::iterator it=s3.begin();it!=s3.end();it++) cout&amp;lt;&amp;lt;*it&amp;lt;&amp;lt;&amp;quot; &amp;quot;; cout&amp;lt;&amp;lt;endl; set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot;*&amp;quot;)); cout&amp;lt;&amp;lt;endl; set_intersection(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); cout&amp;lt;&amp;lt;endl; set_difference(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); cout&amp;lt;&amp;lt;endl; set_symmetric_difference(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); return 0; }</description>
-    </item>
-    
-    <item>
-      <title>c&#43;&#43;每种类型的值域</title>
-      <link>https://dyhgo.github.io/2020/01/c-%E6%AF%8F%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC%E5%9F%9F/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/c-%E6%AF%8F%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%80%BC%E5%9F%9F/</guid>
-      <description>#include&amp;lt;iostream&amp;gt; #include&amp;lt;string&amp;gt; #include &amp;lt;limits&amp;gt; using namespace std; int main() { cout &amp;lt;&amp;lt; &amp;quot;type: \t\t&amp;quot; &amp;lt;&amp;lt; &amp;quot;************size**************&amp;quot;&amp;lt;&amp;lt; endl; cout &amp;lt;&amp;lt; &amp;quot;bool: \t\t&amp;quot; &amp;lt;&amp;lt; &amp;quot;所占字节数：&amp;quot; &amp;lt;&amp;lt; sizeof(bool); cout &amp;lt;&amp;lt; &amp;quot;\t最大值：&amp;quot; &amp;lt;&amp;lt; (numeric_limits&amp;lt;bool&amp;gt;::max)(); cout &amp;lt;&amp;lt; &amp;quo</description>
-    </item>
-    
-    <item>
-      <title>extended euclidean algorithm</title>
-      <link>https://dyhgo.github.io/2020/01/extended-euclidean-algorithm/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/extended-euclidean-algorithm/</guid>
-      <description>#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int ex_gcd(int a,int b,int&amp;amp; x,int&amp;amp; y){int t,res;if(!b){x=1;y=0;return a;}else{res=ex_gcd(b,a%b,x,y);t=x;x=y;y=t-a/b*y;return res;}}int main(){int a,b,x,y;a=60;b=22;cout&amp;lt;&amp;lt;ex_gcd(a,b,x,y)&amp;lt;&amp;lt;endl;cout&amp;lt;&amp;lt;x&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;y&amp;lt;&amp;lt;endl;return 0;} </description>
-    </item>
-    
-    <item>
-      <title>ford fulkerson algorithm</title>
-      <link>https://dyhgo.github.io/2020/01/ford-fulkerson-algorithm/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/ford-fulkerson-algorithm/</guid>
-      <description>//O(FE) /* input 5 71 3 63 5 82 5 53 2 31 2 64 1 104 2 24 5output11*/#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;#define maxv 100#define inf 0x3f3f3f3fint v,e;int s,t;struct edge{int to,cap,rev;};vector&amp;lt;edge&amp;gt; G[maxv];bool used[maxv];void add_edge(int from ,int to,int cap){G[from].push_back((edge){to,cap,G[to].size()});G[to].push_back((edge){from,0,G[from].size()-1});}int dfs(int s,int t,int f){if(s==t) return f;used[s]=true;for(int i=0;i&amp;lt;G[s].</description>
-    </item>
-    
-    <item>
-      <title>poj3984</title>
-      <link>https://dyhgo.github.io/2020/01/poj3984/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj3984/</guid>
-      <description>迷宫问题 Time Limit: 1000MS Memory Limit: 65536K Description 定义一个二维数组： int maze[5][5] = { 0, 1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, }; 它表示一个迷宫，其中的1表示墙壁，0表示</description>
     </item>
     
   </channel>
