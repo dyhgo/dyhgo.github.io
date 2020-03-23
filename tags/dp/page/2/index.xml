@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/dp/</link>
     <description>Recent content in dp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 13 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc157</title>
+      <link>https://dyhgo.github.io/2020/03/abc157/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc157/</guid>
+      <description>A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a; cin&amp;gt;&amp;gt;a; if(a&amp;amp;1) cout&amp;lt;&amp;lt;a/2+1&amp;lt;&amp;lt;endl; else cout&amp;lt;&amp;lt;a/2; return 0; } B -</description>
+    </item>
     
     <item>
       <title>test for music and video</title>
@@ -185,15 +194,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>时间复杂度与计算时间的关系</title>
-      <link>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
       <description></description>
     </item>
     

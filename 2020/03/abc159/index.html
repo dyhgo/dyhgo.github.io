@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        poj3617 - This is DYH
+        abc159 - This is DYH
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,9 +23,9 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="poj3617" />
+  <meta name="description" content="abc159" />
   <meta name="generator" content="Hugo 0.65.3 with theme pure" />
-  <title>poj3617 - This is DYH</title>
+  <title>abc159 - This is DYH</title>
   
   
   <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
@@ -33,23 +33,23 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="poj3617" />
-<meta property="og:description" content="poj3617" />
+  <meta property="og:title" content="abc159" />
+<meta property="og:description" content="abc159" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/2020/01/poj3617/" />
-<meta property="article:published_time" content="2020-01-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-18T00:00:00+00:00" />
-<meta itemprop="name" content="poj3617">
-<meta itemprop="description" content="poj3617">
-<meta itemprop="datePublished" content="2020-01-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="438">
+<meta property="og:url" content="https://dyhgo.github.io/2020/03/abc159/" />
+<meta property="article:published_time" content="2020-03-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-23T00:00:00+00:00" />
+<meta itemprop="name" content="abc159">
+<meta itemprop="description" content="abc159">
+<meta itemprop="datePublished" content="2020-03-23T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-23T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="621">
 
 
 
-<meta itemprop="keywords" content="cpp,greedy," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="poj3617"/>
-<meta name="twitter:description" content="poj3617"/>
+<meta itemprop="keywords" content="cpp,greedy,binary,dp," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="abc159"/>
+<meta name="twitter:description" content="abc159"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -344,8 +344,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/01/poj3617/"
-    >poj3617</a
+    href="/2020/03/abc159/"
+    >abc159</a
   >
 </h1>
 
@@ -353,18 +353,20 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://dyhgo.github.io/2020/01/poj3617/" class="article-date">
-  <time datetime="2020-01-18 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-18</time>
+<a href="https://dyhgo.github.io/2020/03/abc159/" class="article-date">
+  <time datetime="2020-03-23 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-03-23</time>
 </a>
 </span>
 <span class="article-category">
   <i class="icon icon-folder"></i>&nbsp;
-  <a class="article-category-link" href="/categories/poj/"> poj </a>
+  <a class="article-category-link" href="/categories/abc/"> abc </a>
 </span>  
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
     <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
     <a class="article-tag-link" href="/tags/greedy/"> greedy </a>
+    <a class="article-tag-link" href="/tags/binary/"> binary </a>
+    <a class="article-tag-link" href="/tags/dp/"> dp </a>
   </span>
 
 	<span class="article-read hidden-xs">
@@ -373,86 +375,140 @@
 			<span id="busuanzi_value_page_pv">0</span>
 		</span>
 	</span>
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/poj3617/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/03/abc159/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 438words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 621words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <h1 id="font-colorbluebest-cow-line"><!-- raw HTML omitted -->Best Cow Line</h1>
-<h4 id="time-limit-1000msmemory-limit-65536k">Time Limit: 1000MS		Memory Limit: 65536K</h4>
-<p><a href="http://poj.org/problem?id=3617">题目链接</a></p>
-<h2 id="font-colorbluedescription"><!-- raw HTML omitted -->Description</h2>
-<p>FJ is about to take his N (1 ≤ N ≤ 2,000) cows to the annual&quot;Farmer of the Year&rdquo; competition. In this contest every farmer arranges his cows in a line and herds them past the judges.</p>
-<p>The contest organizers adopted a new registration scheme this year: simply register the initial letter of every cow in the order they will appear (i.e., If FJ takes Bessie, Sylvia, and Dora in that order he just registers BSD). After the registration phase ends, every group is judged in increasing lexicographic order according to the string of the initials of the cows&rsquo; names.</p>
-<p>FJ is very busy this year and has to hurry back to his farm, so he wants to be judged as early as possible. He decides to rearrange his cows, who have already lined up, before registering them.</p>
-<p>FJ marks a location for a new line of the competing cows. He then proceeds to marshal the cows from the old line to the new one by repeatedly sending either the first or last cow in the (remainder of the) original line to the end of the new line. When he&rsquo;s finished, FJ takes his cows for registration in this new order.</p>
-<p>Given the initial order of his cows, determine the least lexicographic string of initials he can make this way.</p>
-<h2 id="font-colorblueinput"><!-- raw HTML omitted -->Input</h2>
-<ul>
-<li>Line 1: A single integer: N</li>
-<li>Lines 2..N+1: Line i+1 contains a single initial (&lsquo;A&rsquo;..&lsquo;Z&rsquo;) of the cow in the ith position in the original line</li>
-</ul>
-<h2 id="font-colorblueoutput"><!-- raw HTML omitted -->Output</h2>
-<p>The least lexicographic string he can make. Every line (except perhaps the last one) contains the initials of 80 cows (&lsquo;A&rsquo;..&lsquo;Z&rsquo;) in the new line.</p>
-<h2 id="font-colorbluesample-input"><!-- raw HTML omitted -->Sample Input</h2>
-<p>6
-A
-C
-D
-B
-C
-B</p>
-<h2 id="font-colorbluesample-output"><!-- raw HTML omitted -->Sample Output</h2>
-<p>ABCBCD</p>
-<h2 id="font-colorbluesource"><!-- raw HTML omitted -->Source</h2>
-<p><a href="http://poj.org/searchproblem?field=source&amp;key=USACO%202007%20November%20Silver">USACO 2007 November Silver</a></p>
-<h2 id="font-colorbluesolution"><!-- raw HTML omitted -->Solution</h2>
-<p>题意：给一个字符串s和空字符串p，每次进行以下操作之一
-删除s的头部字符，加入到p的尾部
-删除s的尾部字符，加入到p的尾部
-最后s为空，p的字典序最小
-<!-- raw HTML omitted --><strong>greedy</strong>
-时间复杂度最坏 O($n^2$)</p>
-<pre><code class="language-cpp">#include&lt;iostream&gt;
+      <h1 id="a---the-number-of-even-pairshttpsatcoderjpcontestsabc159tasksabc159_a"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_a">A - The Number of Even Pairs</a></h1>
+<h2 id="题解">题解</h2>
+<p>ac代码 (awk语言)</p>
+<pre><code class="language-awk">$0=$1*--$1/2+$2*--$2/2_
+</code></pre>
+<h1 id="b---string-palindromehttpsatcoderjpcontestsabc159tasksabc159_b"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_b">B - String Palindrome</a></h1>
+<h2 id="题解-1">题解</h2>
+<p>ac代码 (perl语言)</p>
+<pre><code class="language-perl">print&lt;&gt;=~/^(.+).\1$/?Yes:No
+</code></pre>
+<h1 id="c---maximum-volumehttpsatcoderjpcontestsabc159tasksabc159_c"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_c">C - Maximum Volume</a></h1>
+<h2 id="题解-2">题解</h2>
+<p>ac代码 (perl语言)</p>
+<pre><code class="language-perl">print&lt;&gt;**3/27
+</code></pre>
+<h1 id="d---banned-khttpsatcoderjpcontestsabc159tasksabc159_d"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_d">D - Banned K</a></h1>
+<h2 id="题解-3">题解</h2>
+<p>ac代码 (perl语言)</p>
+<pre><code class="language-perl">&lt;&gt;;print$.-@$_,$/for grep$.+=++$#$_,glob`dd`
+</code></pre>
+<h1 id="e---dividing-chocolatehttpsatcoderjpcontestsabc159tasksabc159_e"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_e">E - Dividing Chocolate</a></h1>
+<h2 id="题意">题意</h2>
+<p>一块巧克力由h行w列的方块组成，每个方块为白或黑</p>
+<p>你可以对巧克力进行切割，切割只能沿着方块边缘横切或竖切切到底</p>
+<p>问最少需要切几刀，使每个独立块都有不多于k个白巧克力方块</p>
+<h2 id="题解-4">题解</h2>
+<h3 id="贪心-枚举">贪心 枚举</h3>
+<p>和牛客小白月赛26的A题很像</p>
+<p>由于h的数据不大，枚举行的所有可能情况，先考虑横切，横切不够再竖切</p>
+<p>考虑竖切时，如果最大的块大于k，就实施竖切</p>
+<p>遍历所有情况求最小值</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
-int n;
-char s[2005];
-int c=0;
-int main()
-{
+int h,w,k;
+string s[12];
+int main(){
 	//freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
-	cin&gt;&gt;n;
-	for(int i=0;i&lt;n;i++)
-	{
+	int coun=0;
+	cin&gt;&gt;h&gt;&gt;w&gt;&gt;k;
+	for(int i=0;i&lt;h;i++){
 		cin&gt;&gt;s[i];
 	}
-	int a=0,b=n-1;
-	bool left=false;
-	while(a&lt;=b)
-	{
-		for(int i=0;a+i&lt;=b;i++)
-		{
-			if(s[a+i]&lt;s[b-i])
-			{
-				left=true;
-				break;
+	//特判                                                                   //没有特判，用u=0代替 WA 
+	for(int i=0;i&lt;h;i++) for(int j=0;j&lt;w;j++) if(s[i][j]=='1') coun++;
+	 if(coun&lt;=k) cout&lt;&lt;0&lt;&lt;endl;
+	else{
+		int ans=1e9;
+	for(int u=1;u&lt;(1&lt;&lt;(h-1));u++){
+		int x=__builtin_popcount(u);
+		int cut_num=x;
+		int block[x+1]={0};
+		int p=0;
+		int mx=0;
+		bool flag=true;                                                      //没有设置flag WA 
+		for(int j=0;j&lt;w;j++){
+			for(int i=0;i&lt;h;i++){
+				block[p]+=s[i][j]-'0';
+				mx=max(mx,block[p]);
+				if(u&gt;&gt;i&amp;1) p++;
 			}
-			else if(s[a+i]&gt;s[b-i])
-			{
-				left=false;
-				break;
+			//mx=max(mx,block[p]);
+			if(mx&gt;k) {
+				if(j==0) { flag=false;break;                                 
+				}
+				cut_num++;
+				mx=0;
+				memset(block,0,sizeof(block));
+				p=0;                                                        //没有重置p WA 
+				for(int i=0;i&lt;h;i++){                                       //没有记忆（重新计算） WA 
+				block[p]+=s[i][j]-'0';
+				mx=max(mx,block[p]);
+				if(u&gt;&gt;i&amp;1) p++;
 			}
+			}
+			p=0;                                                            //没有重置p WA 
 		}
-		if(left) putchar(s[a++]);
-		else putchar(s[b--]);
-		c++;
-		if(c%80==0) putchar('\n');
+		if(flag) ans=min(ans,cut_num);
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
 	}
 	return 0;
 }
+
 </code></pre>
+<p>这道题做了快一个小时，WA了特别多次，每次都WA两三个测试点，主要是细节，WA点在代码中已标注</p>
+<p><img src="https://img-blog.csdnimg.cn/20200323210555483.PNG" alt="在这里插入图片描述"></p>
+<h1 id="f---knapsack-for-all-segmentshttpsatcoderjpcontestsabc159tasksabc159_f"><a href="https://atcoder.jp/contests/abc159/tasks/abc159_f">F - Knapsack for All Segments</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>给一数列，求对每一可能区间，其子区间内的数和等于s的子区间个数</p>
+<p>对所有可能区间求和</p>
+<h2 id="题解-5">题解</h2>
+<h3 id="动态规划">动态规划</h3>
+<p>奇妙的动态规划</p>
+<p><code>dp[i][j]  = sum(f(left,i))</code>  当和为 <code>j</code> 时</p>
+<p>可以的得到递推式</p>
+<p><code>dp[i][j]=dp[i-1][j] </code></p>
+<p><code>dp[i][j]+=dp[i-1][j-data[i]]</code></p>
+<p>有一个很重要的点在代码中标出</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+using ll = long long;
+ll n,s;
+ll data[3005];
+ll dp[3005][3005];
+const ll mod=998244353;
+int main(){
+	//freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
+	cin&gt;&gt;n&gt;&gt;s;
+	for(ll i=1;i&lt;=n;i++) cin&gt;&gt;data[i];
+	dp[0][0]=1;
+	for(ll i=1;i&lt;=n;i++) for(ll j=0;j&lt;=s;j++)
+	{
+		dp[i][j]=dp[i-1][j];
+		if(j-data[i]&gt;=0) dp[i][j]+=dp[i-1][j-data[i]];
+		if(j==0) dp[i][j]++;  //当j-data[i]==0时，a[i]这一个也要算上 
+		dp[i][j]%=mod;
+	}
+	ll ans=0;
+	for(ll i=1;i&lt;=n;i++) ans=(ans+dp[i][s])%mod;
+	cout&lt;&lt;ans%mod&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+<p>一遍过，芜湖~</p>
+<p>have a good day ^_^</p>
 
     </div>
     <div class="article-footer">
@@ -460,7 +516,7 @@ int main()
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://dyhgo.github.io/2020/01/poj3617/" title="poj3617" target="_blank" rel="external">https://dyhgo.github.io/2020/01/poj3617/</a>
+      <a href="https://dyhgo.github.io/2020/03/abc159/" title="abc159" target="_blank" rel="external">https://dyhgo.github.io/2020/03/abc159/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -492,14 +548,9 @@ int main()
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://dyhgo.github.io/2020/01/c-%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86%E5%B7%AE%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%87%BD%E6%95%B0/" title="c&#43;&#43;交集、并集、差、对称差函数"><i
+                <a href="https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" title="Android 数据存储"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://dyhgo.github.io/2020/01/poj3069/"
-                    title="poj3069"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">
