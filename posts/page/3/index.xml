@@ -5,10 +5,37 @@
     <link>https://dyhgo.github.io/posts/</link>
     <description>Recent content in Posts on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 23 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj1384</title>
+      <link>https://dyhgo.github.io/2020/01/poj1384/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1384/</guid>
+      <description>Piggy-Bank Time Limit: 1000MS Memory Limit: 10000K 题目链接 Description Before ACM can do anything, a budget must be prepared and the necessary financial support obtained. The main income for this action comes from Irreversibly Bound Money (IBM). The idea behind is simple. Whenever some ACM member has any small money, he takes all the coins and throws them into a piggy-bank. You know that this process is</description>
+    </item>
+    
+    <item>
+      <title>poj3624</title>
+      <link>https://dyhgo.github.io/2020/01/poj3624/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj3624/</guid>
+      <description>Charm Bracelet Time Limit: 1000MS Memory Limit: 65536K Description Bessie has gone to the mall&amp;rsquo;s jewelry store and spies a charm bracelet. Of course, she&amp;rsquo;d like to fill it with the best charms possible from the N (1 ≤ N ≤ 3,402) available charms. Each charm i in the supplied list has a weight Wi (1 ≤ Wi ≤ 400), a &amp;lsquo;desirability&amp;rsquo; factor Di (1 ≤ Di ≤ 100), and</description>
+    </item>
+    
+    <item>
+      <title>排序算法的时间复杂度</title>
+      <link>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>时间复杂度与计算时间的关系</title>

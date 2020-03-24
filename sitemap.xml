@@ -3,6 +3,76 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/android/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/03/android-fragment/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/game/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/java/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/xml/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</loc>
+    <lastmod>2020-03-24T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/categories/abc/</loc>
     <lastmod>2020-03-23T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -18,13 +88,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/tags/binary/</loc>
-    <lastmod>2020-03-23T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/</loc>
     <lastmod>2020-03-23T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,27 +115,6 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
-    <lastmod>2020-03-23T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/</loc>
-    <lastmod>2020-03-23T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/android/</loc>
-    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -94,13 +136,6 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/tags/java/</loc>
-    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/categories/nowcoder/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -109,13 +144,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/tags/number_theory/</loc>
-    <lastmod>2020-03-22T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/xml/</loc>
     <lastmod>2020-03-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -242,13 +270,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/2020/03/abc158/</loc>
-    <lastmod>2020-03-08T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/game/</loc>
     <lastmod>2020-03-08T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

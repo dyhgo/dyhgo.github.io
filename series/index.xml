@@ -10,6 +10,33 @@
     
     
     <item>
+      <title>Android Fragment</title>
+      <link>https://dyhgo.github.io/2020/03/android-fragment/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-fragment/</guid>
+      <description>生命周期 在containerActivity的布局中放入一个fragment，然后点击按钮，切换成另一个fragment containerA</description>
+    </item>
+    
+    <item>
+      <title>Android 属性动画</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</guid>
+      <description>简单演示 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.anim2Activity&amp;quot;&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;70dp&amp;quot; android:id=&amp;quot;@+id/a2tv1&amp;quot; android:textSize=&amp;quot;30sp&amp;quot; android:text=&amp;quot;animation_test&amp;quot; android:gravity=&amp;quot;center&amp;quot; android:textColor=&amp;quot;#FFFFFF&amp;quot; android:background=&amp;quot;#AAAAAA&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.widget.TextView; public class anim2Activity extends AppCompatActivity { private TextView a2tv1; @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_anim2); a2tv1 = findViewById(R.id.a2tv1); a2tv1.animate().translationYBy(500).setDuration(2000).start(); } } package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.animation.ObjectAnimator; import android.animation.ValueAnimator; import android.os.Bundle; import android.util.Log; import android.widget.TextView; public</description>
+    </item>
+    
+    <item>
+      <title>看门狗2</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
+      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 完了130+小时 看门狗2的这个特色很新颖，但是</description>
+    </item>
+    
+    <item>
       <title>abc159</title>
       <link>https://dyhgo.github.io/2020/03/abc159/</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
@@ -160,33 +187,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</guid>
       <description>《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第</description>
-    </item>
-    
-    <item>
-      <title>波斯王子</title>
-      <link>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
-      <description>波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏 波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生 这是我201</description>
-    </item>
-    
-    <item>
-      <title>poj1458</title>
-      <link>https://dyhgo.github.io/2020/03/poj1458/</link>
-      <pubDate>Thu, 05 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/poj1458/</guid>
-      <description>Common Subsequence Time Limit: 1000MS Memory Limit: 10000K Description A subsequence of a given sequence is the given sequence with some elements (possible none) left out. Given a sequence X = &amp;lt; x1, x2, &amp;hellip;, xm &amp;gt; another sequence Z = &amp;lt; z1, z2, &amp;hellip;, zk &amp;gt; is a subsequence of X if there exists a strictly increasing sequence &amp;lt; i1, i2, &amp;hellip;, ik &amp;gt; of indices of X such</description>
-    </item>
-    
-    <item>
-      <title>poj2686</title>
-      <link>https://dyhgo.github.io/2020/03/poj2686/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/poj2686/</guid>
-      <description>Traveling by Stagecoach Description Once upon a time, there was a traveler. He plans to travel using stagecoaches (horse wagons). His starting point and destination are fixed, but he cannot determine his route. Your job in this problem is to write a program which determines the route for him. There are several cities in the country, and a road network connecting them. If there is a road between two cities,</description>
     </item>
     
   </channel>
