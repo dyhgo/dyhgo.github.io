@@ -5,10 +5,46 @@
     <link>https://dyhgo.github.io/categories/game/</link>
     <description>Recent content in GAME on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc160</title>
+      <link>https://dyhgo.github.io/2020/03/abc160/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc160/</guid>
+      <description>A - Coffee 题意 判断一个长度为6的字符串，第3位和第4位是否相等，第5位和第6位是否相等 题解 模拟 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main(){ string s; cin&amp;gt;&amp;gt;s; if(s[2]==s[3] and s[4]==s[5]) cout&amp;lt;&amp;lt;&amp;quot;Yes&amp;quot;; else cout&amp;lt;&amp;lt;&amp;quot;No&amp;quot;; return 0; } B - Golden</description>
+    </item>
+    
+    <item>
+      <title>星际牛仔</title>
+      <link>https://dyhgo.github.io/2020/03/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</guid>
+      <description>《星际牛仔》（カウボーイビバップ；Cowboy Bebop），是日本SUNRISE动画 公司制作的原创电视动画，于1998年10月23日-199</description>
+    </item>
+    
+    <item>
+      <title>Codeforces Round #629 (Div. 3)</title>
+      <link>https://dyhgo.github.io/2020/03/codeforces-round-629-div.-3/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/codeforces-round-629-div.-3/</guid>
+      <description>A. Divisibility Problem 题意 求一个数加上多少能被另一个数整除 题解 如果b|(a+k) 则k=b-a%b注意k=0特判 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int t,a,b; int main(){ //freopen(&amp;quot;input.txt&amp;quot;,&amp;quot;r&amp;quot;,stdin); cin&amp;gt;&amp;gt;t; while(t--){ cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b; cout&amp;lt;&amp;lt;(b-(a%b)==b?0:b-(a%b))&amp;lt;&amp;lt;endl; } return 0; } B. K-th</description>
+    </item>
+    
+    <item>
+      <title>杀手2</title>
+      <link>https://dyhgo.github.io/2020/03/%E6%9D%80%E6%89%8B2/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E6%9D%80%E6%89%8B2/</guid>
+      <description>杀手2由IO Interactive开发，2018年发行的潜行刺杀游戏，与羞辱不同的是这是第三人称 杀手2最大的特点是刺杀方法的丰富性 游玩过程中</description>
+    </item>
     
     <item>
       <title>Android Fragment</title>
@@ -34,7 +70,7 @@
       <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
-      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 完了130+小时 看门狗2的这个特色很新颖，但是</description>
+      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是</description>
     </item>
     
     <item>
@@ -152,42 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</guid>
       <description>《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故</description>
-    </item>
-    
-    <item>
-      <title>abc158</title>
-      <link>https://dyhgo.github.io/2020/03/abc158/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/abc158/</guid>
-      <description>A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { string s; cin&amp;gt;&amp;gt;s; if((s[0]==&#39;A&#39; and s[1]==&#39;A&#39; and s[2]==&#39;A&#39;) or(s[0]==&#39;B&#39; and</description>
-    </item>
-    
-    <item>
-      <title>光环1</title>
-      <link>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</guid>
-      <description>halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这</description>
-    </item>
-    
-    <item>
-      <title>刺客信条2</title>
-      <link>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
-      <description>ac2由育碧蒙特利尔工作室开发 十年前玩的游戏，环境渲染和剧情真的超棒 背景音乐选的十分用心 后来主角ezio也成为了刺客信条系列的标志 刺客信条系</description>
-    </item>
-    
-    <item>
-      <title>刻痕</title>
-      <link>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</guid>
-      <description>《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第</description>
     </item>
     
   </channel>

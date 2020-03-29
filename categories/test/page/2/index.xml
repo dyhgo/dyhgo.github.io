@@ -11,6 +11,42 @@
     
     
     <item>
+      <title>abc158</title>
+      <link>https://dyhgo.github.io/2020/03/abc158/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc158/</guid>
+      <description>A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { string s; cin&amp;gt;&amp;gt;s; if((s[0]==&#39;A&#39; and s[1]==&#39;A&#39; and s[2]==&#39;A&#39;) or(s[0]==&#39;B&#39; and</description>
+    </item>
+    
+    <item>
+      <title>光环1</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</guid>
+      <description>halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这</description>
+    </item>
+    
+    <item>
+      <title>刺客信条2</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
+      <description>ac2由育碧蒙特利尔工作室开发 十年前玩的游戏，环境渲染和剧情真的超棒 背景音乐选的十分用心 后来主角ezio也成为了刺客信条系列的标志 刺客信条系</description>
+    </item>
+    
+    <item>
+      <title>刻痕</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</guid>
+      <description>《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第</description>
+    </item>
+    
+    <item>
       <title>波斯王子</title>
       <link>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
       <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
@@ -159,42 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/poj2187/</guid>
       <description>Beauty Contest Time Limit: 3000MS Memory Limit: 65536K Description Bessie, Farmer John&amp;rsquo;s prize cow, has just won first place in a bovine beauty contest, earning the title &amp;lsquo;Miss Cow World&amp;rsquo;. As a result, Bessie will make a tour of N (2 &amp;lt;= N &amp;lt;= 50,000) farms around the world in order to spread goodwill between farmers and their cows. For simplicity, the world will be represented as a two-dimensional plane,</description>
-    </item>
-    
-    <item>
-      <title>poj2932</title>
-      <link>https://dyhgo.github.io/2020/01/poj2932/</link>
-      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj2932/</guid>
-      <description>Coneology 题目链接 Time Limit: 5000MS Memory Limit: 65536K Description A student named Round Square loved to play with cones. He would arrange cones with different base radii arbitrarily on the floor and would admire the intrinsic beauty of the arrangement. The student even began theorizing about how some cones dominate other cones: a cone A dominates another cone B when cone B is completely within the cone</description>
-    </item>
-    
-    <item>
-      <title>poj1127</title>
-      <link>https://dyhgo.github.io/2020/01/poj1127/</link>
-      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj1127/</guid>
-      <description>Jack Straws Time Limit: 1000MS Memory Limit: 10000K Description In the game of Jack Straws, a number of plastic or wooden &amp;ldquo;straws&amp;rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws</description>
-    </item>
-    
-    <item>
-      <title>简易对拍</title>
-      <link>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</link>
-      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</guid>
-      <description>以这道题为例 准备一个对拍的文件夹，里面装这些东西 duipai_random_input_src.cpp是产生随机测试数据的代码 #include&amp;lt;cstdlib&amp;gt; #include&amp;lt;iostream&amp;gt; #include&amp;lt;ctime&amp;gt; using namespace std; int</description>
-    </item>
-    
-    <item>
-      <title>abc152-D</title>
-      <link>https://dyhgo.github.io/2020/01/abc152-d/</link>
-      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/abc152-d/</guid>
-      <description>题目链接 题意：找正整数对（A,B），A、B都不大于N，满足A的第一个数字是B的最后一个数 字，B的第一个数字是A的最后一个数字，个位数也算，输</description>
     </item>
     
   </channel>
