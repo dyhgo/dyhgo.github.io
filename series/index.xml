@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>Codeforces Round 630 (Div. 2) A~E</title>
+      <link>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</guid>
+      <description>A. Exercising Walk 题意 给一坐标范围，初始位置，和左右上下移动的步数，问是否会出界 题解 加各种条件判断即可 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int t; int a,b,c,d,x,y,x1,y1,x2,y2; bool ok; int main(){ //freopen(&amp;quot;input.txt&amp;quot;,&amp;quot;r&amp;quot;,stdin); cin&amp;gt;&amp;gt;t; while(t--){ ok=true; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c&amp;gt;&amp;gt;d&amp;gt;&amp;gt;x&amp;gt;&amp;gt;y&amp;gt;&amp;gt;x1&amp;gt;&amp;gt;y1&amp;gt;&amp;gt;x2&amp;gt;&amp;gt;y2; if( (a-b&amp;gt;=0 and x-x1&amp;lt;a-b)</description>
+    </item>
+    
+    <item>
+      <title>poj2816</title>
+      <link>https://dyhgo.github.io/2020/03/poj2816/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/poj2816/</guid>
+      <description>Popular Cows Description Every cow&amp;rsquo;s dream is to become the most popular cow in the herd. In a herd of N (1 &amp;lt;= N &amp;lt;= 10,000) cows, you are given up to M (1 &amp;lt;= M &amp;lt;= 50,000) ordered pairs of the form (A, B) that tell you that cow A thinks that cow B is popular. Since popularity is transitive, if A thinks B is popular and B thinks</description>
+    </item>
+    
+    <item>
       <title>abc160</title>
       <link>https://dyhgo.github.io/2020/03/abc160/</link>
       <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
@@ -169,24 +187,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
       <description>二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; 10.1875*2=0.375 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.375*2=0.75 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.75*2=1.5 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;10.5*2=1 &amp;mdash;&amp;mda</description>
-    </item>
-    
-    <item>
-      <title>Codeforces Round #627 (Div. 3)</title>
-      <link>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</link>
-      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</guid>
-      <description>A. Yet Another Tetris Problem link B. Yet Another Palindrome Problem link C. Frog Jumps link D. Pair of Topics link E. Sleeping Schedule link 题意 假设一天有h个小时，DIO一共要睡n次，每次睡ai个小时（按顺序睡觉），每次刚睡醒，就</description>
-    </item>
-    
-    <item>
-      <title>ef - a tale of melodies</title>
-      <link>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</guid>
-      <description>《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故</description>
     </item>
     
   </channel>

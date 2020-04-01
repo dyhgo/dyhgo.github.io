@@ -5,10 +5,28 @@
     <link>https://dyhgo.github.io/posts/</link>
     <description>Recent content in Posts on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj1182</title>
+      <link>https://dyhgo.github.io/2020/02/poj1182/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/poj1182/</guid>
+      <description>食物链 Time Limit: 1000MS Memory Limit: 10000K Description 动物王国中有三类动物A,B,C，这三类动物的食物链构成了有趣的环形。A吃B， B吃C，C吃A。 现有N个动物，以1－N编号。</description>
+    </item>
+    
+    <item>
+      <title>poj2187</title>
+      <link>https://dyhgo.github.io/2020/01/poj2187/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2187/</guid>
+      <description>Beauty Contest Time Limit: 3000MS Memory Limit: 65536K Description Bessie, Farmer John&amp;rsquo;s prize cow, has just won first place in a bovine beauty contest, earning the title &amp;lsquo;Miss Cow World&amp;rsquo;. As a result, Bessie will make a tour of N (2 &amp;lt;= N &amp;lt;= 50,000) farms around the world in order to spread goodwill between farmers and their cows. For simplicity, the world will be represented as a two-dimensional plane,</description>
+    </item>
     
     <item>
       <title>poj2932</title>
@@ -170,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/01/poj2386/</guid>
       <description>Lake Counting http://poj.org/problem?id=2386 Time Limit: 1000MS Memory Limit: 65536K Description Due to recent rains, water has pooled in various places in Farmer John&amp;rsquo;s field, which is represented by a rectangle of N x M (1 &amp;lt;= N &amp;lt;= 100; 1 &amp;lt;= M &amp;lt;= 100) squares. Each square contains either water (&amp;lsquo;W&amp;rsquo;) or dry land (&#39;.&#39;). Farmer John would like to figure out how many ponds have formed in his field.</description>
-    </item>
-    
-    <item>
-      <title>输入输出优化(提高读入输出速度)</title>
-      <link>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</link>
-      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</guid>
-      <description>参考https://blog.csdn.net/weixin_43960287/article/details/85337291 1.用sca</description>
     </item>
     
   </channel>
