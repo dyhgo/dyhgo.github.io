@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        浮点数加减法 - This is DYH
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="浮点数加减法" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>浮点数加减法 - This is DYH</title>
+  
+  
+  <link rel="stylesheet" href="https://fyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="浮点数加减法" />
+<meta property="og:description" content="浮点数加减法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" />
+<meta property="article:published_time" content="2020-04-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-03T00:00:00+00:00" />
+<meta itemprop="name" content="浮点数加减法">
+<meta itemprop="description" content="浮点数加减法">
+<meta itemprop="datePublished" content="2020-04-03T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-03T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="817">
+
+
+
+<meta itemprop="keywords" content="cs," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浮点数加减法"/>
+<meta name="twitter:description" content="浮点数加减法"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/dyhgo" target="_blank">
+            <img class="img-circle img-rotate" src="https://fyhgo.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">DYH</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">244882973@qq</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>HHU , Nanjing</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=421091290&auto=0&height=66"></iframe> 每日一题<br>31252<br>31333<br>31368<br>31573<br>31665<br>31875<br>31989<br>32093</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/android/" class="category-list-link">android</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/anime/" class="category-list-link">anime</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/codeforces/" class="category-list-link">codeforces</a><span class="category-list-count">5</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/cources/" class="category-list-link">cources</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/game/" class="category-list-link">game</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/hduoj/" class="category-list-link">hduoj</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/note/" class="category-list-link">note</a><span class="category-list-count">14</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/nowcoder/" class="category-list-link">nowcoder</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/poj/" class="category-list-link">poj</a><span class="category-list-count">13</span></li>
+            <li class="category-list-item"><a href="https://fyhgo.github.io/categories/test/" class="category-list-link">test</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/bfs/" class="tag-list-link">bfs</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/binary/" class="tag-list-link">binary</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/binary_search/" class="tag-list-link">binary_search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/computational_geometry/" class="tag-list-link">computational_geometry</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/construct/" class="tag-list-link">construct</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
+                    class="tag-list-count">42</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/cs/" class="tag-list-link">cs</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/data_structure/" class="tag-list-link">data_structure</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/dp/" class="tag-list-link">dp</a><span
+                    class="tag-list-count">9</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/graph/" class="tag-list-link">graph</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/graph_theory/" class="tag-list-link">graph_theory</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/greedy/" class="tag-list-link">greedy</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/lca/" class="tag-list-link">lca</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/number_theory/" class="tag-list-link">number_theory</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/scc/" class="tag-list-link">scc</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/search/" class="tag-list-link">search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/segment_tree/" class="tag-list-link">segment_tree</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/sort/" class="tag-list-link">sort</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/string/" class="tag-list-link">string</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/suffix/" class="tag-list-link">suffix</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/test/" class="tag-list-link">test</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/union_find/" class="tag-list-link">union_find</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://fyhgo.github.io/tags/xml/" class="tag-list-link">xml</a><span
+                    class="tag-list-count">8</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fyhgo.github.io/2020/04/abc161/" class="title">abc161</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-05</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/" class="title">Codeforces Round #631 (Div. 2) A~D</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-05</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" class="title">浮点数加减法</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/" class="title">Codeforces Round #630 (Div. 2) A~E</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-04-01 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-01</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://fyhgo.github.io/2020/03/poj2816/" class="title">poj2816</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-03-31 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-03-31</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/"
+    >浮点数加减法</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://fyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" class="article-date">
+  <time datetime="2020-04-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-03</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/note/"> note </a>
+  <a class="article-category-link" href="/categories/cources/"> cources </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cs/"> cs </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 817words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="0-0操作数检查">#0 0操作数检查</h1>
+<p>如果有一个数为0，则可以直接得出结果</p>
+<h1 id="1-用补码表示阶码尾数">#1 用补码表示阶码，尾数</h1>
+<p>阶码的符号位为两位</p>
+<p>尾数的个位为符号位</p>
+<h1 id="2-对阶">#2 对阶</h1>
+<p>小阶向大阶对齐（看原码），被对阶的数尾数右移阶差个</p>
+<h1 id="3-尾数加">#3 尾数加</h1>
+<p>将两个尾数相加得到新的尾数</p>
+<h1 id="s4-溢出处理s"><!-- raw HTML omitted -->#4 溢出处理<!-- raw HTML omitted --></h1>
+<p>太复杂，不作考虑</p>
+<h1 id="4-规格化处理">#4 规格化处理</h1>
+<p>先检查是否规格化，如果尾数符号位与最高位相同则非规格化</p>
+<p>尾数左移直到规格化为止，阶码减少左移的位数（不含符号位）</p>
+<h1 id="5-舍入处理">#5 舍入处理</h1>
+<p>最低有效位为0舍去，为1则尾数+1</p>
+<h1 id="6-还原">#6 还原</h1>
+<p>将补码还原成原码</p>
+<h1 id="eg">E.G.</h1>
+<p>1.设阶码3位，尾数6位，按浮点数运算方法计算[x+y] [x-y]</p>
+<p><code>x= 2^(-011) * (0.100101)</code></p>
+<p><code>y = 2^(-010) * (-0.011110)</code></p>
+<p>解：</p>
+<p>第一步，补码表示</p>
+<p><code>x :11 101 ,  0.100101</code></p>
+<p><code> y : 11 110 , 1.100010</code></p>
+<p>第二步</p>
+<p>对阶，x阶小，y阶大，x向y对阶，阶差为1，所以x尾数右移一个</p>
+<p>x阶码变成与y相同，阶码为 <code>11 110</code></p>
+<p>尾数<code>0.010010(1)</code></p>
+<p>第三步</p>
+<p>尾数加</p>
+<pre><code>     0. 0 1 0 0 1 0 (1)
+     1. 1 0 0 0 1 0
+   -------------------------
+     1. 1 1 0 1 0 0 (1)   
+</code></pre>
+<p>结果为</p>
+<p><code>1.110110(1)</code>  符号位与最高位都是1，非规格化</p>
+<p>第四步</p>
+<p>规格化</p>
+<p>尾数左移两位变成 <code>1.010010</code></p>
+<p>阶码减2（符号位不变），变成 <code>11 100 </code></p>
+<p>第五步</p>
+<p>舍入处理</p>
+<p>没得舍入</p>
+<p>第六步</p>
+<p>还原</p>
+<p><code>x+y = 2^(-4) * (-0.101110)</code></p>
+<p>对于[x-y]</p>
+<p>根据[x-y]补码 = [x]补码 + [-y]补码</p>
+<p>在第三步尾数加时</p>
+<pre><code>     0. 0 1 0 0 1 0 (1)
+     0. 0 1 1 1 1 0
+   -------------------------
+     0. 1 1 0 0 0 0 (1)   
+</code></pre>
+<p>结果为 <code>0.110000(1)</code></p>
+<p>最高有效位和符号位不同，是规格化</p>
+<p>最低有效位为1</p>
+<p>尾数+1变成 <code>0.110001</code></p>
+<p>还原</p>
+<p><code>x-y = 2^(-2) * (0.110001)</code></p>
+<p>=========================================================</p>
+<ol start="2">
+<li>设阶码3位，尾数6位，按浮点数运算方法计算[x+y] [x-y]</li>
+</ol>
+<p><code>x=2^(-101) × （-0.010110）</code></p>
+<p><code> y=2^(-100) × （0.010110）</code></p>
+<p>解：</p>
+<p>第一步</p>
+<p>补码表示</p>
+<p>x : 11 011 , 1.101010</p>
+<p>y : 11 100 , 0.010110</p>
+<p>第二步</p>
+<p>对阶，x阶小，y阶大</p>
+<p>x阶码变成y，阶差1，x尾数右移1位</p>
+<p><code>x : 11100 , 1.110101(0)</code></p>
+<p>第三步</p>
+<p>尾数加</p>
+<pre><code>     1. 1 1 0 1 0 1 (0)
+     0. 0 1 0 1 1 0
+   -------------------------
+     0. 0 0 1 0 1 1 (0)   
+</code></pre>
+<p>结果为 <code>0.001011(0)</code></p>
+<p>符号位与最高有效位相同，非规格化</p>
+<p>第四步</p>
+<p>规格化</p>
+<p>尾数左移两位，阶码减2</p>
+<p>尾数 <code>0.101100</code></p>
+<p>阶码 <code>11 010</code></p>
+<p>第五步</p>
+<p>舍入处理</p>
+<p>无需舍入</p>
+<p>第六步</p>
+<p>还原</p>
+<p><code>x+y = 2^(-6) * (0.101100)</code></p>
+<p>同理x-y的尾数加为</p>
+<pre><code>     1. 1 1 0 1 0 1 (0)
+     1. 1 0 1 0 1 0
+   -------------------------
+     1. 0 1 1 1 1 1 (0)   
+</code></pre>
+<p>结果为 <code>1.011111(0)</code></p>
+<p>符号位和最高有效位不同，为规格化</p>
+<p>最低有效位为0，全舍弃</p>
+<p>还原</p>
+<p><code>x-y = 2^(-4) * (-0.100001)</code></p>
+<p>（有缺漏，待改正）</p>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://fyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" title="浮点数加减法" target="_blank" rel="external">https://fyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dyhgo" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://fyhgo.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dyhgo" target="_blank"><span class="text-dark">DYH</span><small class="ml-1x">244882973@qq</small></a></h3>
+        <div>Be happy and independent</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://fyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/" title="Codeforces Round #630 (Div. 2) A~E"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://fyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/"
+                    title="Codeforces Round #631 (Div. 2) A~D"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>$</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,wechat"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>Maybe you could buy me a cup of coffee.</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://fyhgo.github.io/donate/alipayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://fyhgo.github.io/donate/wechatpayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    wechat payment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/dyhgo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://fyhgo.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    © dyh 2020
+    <div class="publishby">
+        base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/cpp.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/xml.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://fyhgo.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://fyhgo.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/fyhgo.github.io',
+            CONTENT_URL: 'https:\/\/fyhgo.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://fyhgo.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '2f311539c5a5aef2912a',
+        clientSecret: '8511ba39ff7db2afe2e983ed0c953f9dcd75fc22',
+        repo: 'dyhgo.github.io',
+        owner: 'dyhgo',
+        admin: ['dyhgo'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>
