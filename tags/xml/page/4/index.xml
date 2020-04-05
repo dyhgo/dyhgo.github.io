@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>xml on This is DYH</title>
-    <link>https://fyhgo.github.io/tags/xml/</link>
+    <link>https://dyhgo.github.io/tags/xml/</link>
     <description>Recent content in xml on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="https://fyhgo.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://dyhgo.github.io/tags/xml/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>字符串匹配算法(未完成)</title>
-      <link>https://fyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
+      <link>https://dyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
+      <guid>https://dyhgo.github.io/2020/01/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
       <description>从学习方法和代码实现debug花了挺长时间。。。 这个算法是从字符串s中找子串p出现的第一个位置 以下是两个常见的字符串匹配算法（还有其他更高效</description>
     </item>
     
     <item>
       <title>筛法求区间内质数个数？</title>
-      <link>https://fyhgo.github.io/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</link>
+      <link>https://dyhgo.github.io/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fyhgo.github.io/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</guid>
+      <guid>https://dyhgo.github.io/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</guid>
       <description>很早以前写的懒得去审查。。。 不知道对不对。。。 Eprime #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; #define MAX 10000 long long prime1[MAX],num1; long long prime2[MAX],num2; bool isprime1[MAX],isprime2[MAX]; int qprime1(int n) { num1=0; memset(isprime1,1,sizeof(isprime1)); isprime1[0]=isprime1[1]=0; for(int i=2;i&amp;lt;=n;i++) { if(isprime1[i]) { prime1[num1++]=i; for(int j=2;j*i&amp;lt;=n;j++) isprime1[j*i]=0; } } return num1; } int qprime2(int m,int n) { num2=0; qprime1((int)sqrt(n)); memset(isprime2,1,sizeof(isprime2)); for(int i=0;i&amp;lt;num1;i++)</description>
     </item>
     
     <item>
       <title>poj2386</title>
-      <link>https://fyhgo.github.io/2020/01/poj2386/</link>
+      <link>https://dyhgo.github.io/2020/01/poj2386/</link>
       <pubDate>Wed, 15 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fyhgo.github.io/2020/01/poj2386/</guid>
+      <guid>https://dyhgo.github.io/2020/01/poj2386/</guid>
       <description>Lake Counting http://poj.org/problem?id=2386 Time Limit: 1000MS Memory Limit: 65536K Description Due to recent rains, water has pooled in various places in Farmer John&amp;rsquo;s field, which is represented by a rectangle of N x M (1 &amp;lt;= N &amp;lt;= 100; 1 &amp;lt;= M &amp;lt;= 100) squares. Each square contains either water (&amp;lsquo;W&amp;rsquo;) or dry land (&#39;.&#39;). Farmer John would like to figure out how many ponds have formed in his field.</description>
     </item>
     
     <item>
       <title>输入输出优化(提高读入输出速度)</title>
-      <link>https://fyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</link>
+      <link>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</link>
       <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://fyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</guid>
+      <guid>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</guid>
       <description>参考https://blog.csdn.net/weixin_43960287/article/details/85337291 1.用sca</description>
     </item>
     
