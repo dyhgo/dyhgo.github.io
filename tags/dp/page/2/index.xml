@@ -5,10 +5,46 @@
     <link>https://dyhgo.github.io/tags/dp/</link>
     <description>Recent content in dp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>牛客小白月赛23(部分题解)</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
+      <description>A 膜法记录 题目链接 题解 贪心 枚举 集合的整数表示 由于n的数据较小，直接枚举n的所有情况，有2^n种 对于每种情况判断剩下的点列blast能否用完 其</description>
+    </item>
+    
+    <item>
+      <title>Android 事件处理机制</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+      <description>事件处理 基于监听的事件处理机制 匿名内部类 mbt1.setOnTouchListener(new View.OnTouchListener() { @Override public boolean onTouch(View v, MotionEvent event) { switch (event.getAction()){ case MotionEvent.ACTION_DOWN: Log.d(&amp;quot;listener&amp;quot;,&amp;quot;touch&amp;quot;); break; } return false; } }); 事件源所在类（activity类） public class eventActivity extends AppCompatActivity implements View.OnClickListener ebt1 = findViewById(R.id.ebt1); ebt1.setOnClickListener(eventActivity.this);</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Activity</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/</guid>
+      <description>Activity activity的生命周期 运行以下代码可以看到activity经历的生命周期 package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.util.Log; public class lifeCircleActivity extends AppCompatActivity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_life_circle); Log.d(&amp;quot;lifecircle&amp;quot;,&amp;quot;-----onCreate----&amp;quot;); } @Override protected void onStart() { super.onStart(); Log.d(&amp;quot;lifecircle&amp;quot;,&amp;quot;-----onStart----&amp;quot;);</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Broadcast Receiver</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bbroadcast-receiver/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bbroadcast-receiver/</guid>
+      <description>Broadcast Receiver 通过LoaclBroadcastManager发送广播并接收广播 点击broadactivity的click,跳转到broad2activ</description>
+    </item>
     
     <item>
       <title>Android 四大组件之Content Provider</title>
@@ -152,49 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/test-for-music-and-video/</guid>
       <description>paste a music below [video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://pl</description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://dyhgo.github.io/2020/02/test/</link>
-      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>用hugo搭建个人博客网站</title>
-      <link>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
-      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
-      <description>效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://dyhgo.github.io/about/</link>
-      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/about/</guid>
-      <description>this is dyh from hhu
-major in cs
-love swimming,coding,poppin
-it&amp;rsquo;s the first time to set up a site(fyi:just for fun as the domain)(based on hugo and github server)
-thanks to &amp;ldquo;xiaoheiah&amp;rdquo; offering me theme template
-i set up this site as a self blog and paste some study experience but maybe i&amp;rsquo;m not gonna manage it
-if u wanna leave a message
-you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
-    </item>
-    
-    <item>
-      <title>二进制表示集合</title>
-      <link>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</link>
-      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</guid>
-      <description>以二进制的原理表示集合，以整数呈现 1表示在集合内，0表示不在集合内 一位运算优先于按位逻辑运算 空集 0 只含有第i个元素的集合{i} 1&amp;laquo;i 含有全部n个</description>
     </item>
     
   </channel>
