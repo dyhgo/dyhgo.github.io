@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/cpp/</link>
     <description>Recent content in cpp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 13 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/cpp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android 数据存储</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</guid>
+      <description>SharedPreferences sharedpreferences的布局 布局文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.datastorage.sharedPreferencesActivity&amp;quot;&amp;gt; &amp;lt;EditText android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/spet1&amp;quot; android:hint=&amp;quot;input&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toTopOf=&amp;quot;parent&amp;quot; app:layout_constraintBottom_toBottomOf=&amp;quot;parent&amp;quot; app:layout_constraintVertical_bias=&amp;quot;0.1&amp;quot; /&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;sava&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spet1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn1&amp;quot;/&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;show&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn2&amp;quot;/&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/sptv1&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn2&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; /&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt;</description>
+    </item>
     
     <item>
       <title>牛客小白月赛23(部分题解)</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/abc157/</guid>
       <description>A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a; cin&amp;gt;&amp;gt;a; if(a&amp;amp;1) cout&amp;lt;&amp;lt;a/2+1&amp;lt;&amp;lt;endl; else cout&amp;lt;&amp;lt;a/2; return 0; } B -</description>
-    </item>
-    
-    <item>
-      <title>test for music and video</title>
-      <link>https://dyhgo.github.io/2020/03/test-for-music-and-video/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/test-for-music-and-video/</guid>
-      <description>paste a music below [video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://pl</description>
     </item>
     
   </channel>

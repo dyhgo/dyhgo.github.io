@@ -3,6 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/codeforces/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/04/codeforces-round-634-div.-3-a~e/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/cpp/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/prefix/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/string/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/categories/abc/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -11,20 +67,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/2020/04/abc162/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/cpp/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -46,20 +88,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/tags/number_theory/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -129,21 +157,7 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/categories/codeforces/</loc>
-    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/2020/04/codeforces-round-632-div.-2-a~c/</loc>
-    <lastmod>2020-04-09T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/prefix/</loc>
     <lastmod>2020-04-09T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -242,13 +256,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</loc>
-    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/string/</loc>
     <lastmod>2020-04-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
