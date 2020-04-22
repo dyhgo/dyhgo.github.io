@@ -3,8 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/abc/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/04/abc163/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/categories/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/cpp/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/dp/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/graph/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/graph_theory/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/greedy/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/</loc>
+    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -18,20 +81,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/2020/04/codeforces-round-634-div.-3-a~e/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/cpp/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -52,35 +101,7 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/tags/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/categories/abc/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/2020/04/abc162/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/dp/</loc>
-    <lastmod>2020-04-13T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/greedy/</loc>
     <lastmod>2020-04-13T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -109,20 +130,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/tags/dfs/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/graph/</loc>
-    <lastmod>2020-04-11T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/graph_theory/</loc>
     <lastmod>2020-04-11T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
