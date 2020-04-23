@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>看门狗2</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
+      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是</description>
+    </item>
+    
+    <item>
       <title>abc159</title>
       <link>https://dyhgo.github.io/2020/03/abc159/</link>
       <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/poj1458/</guid>
       <description>Common Subsequence Time Limit: 1000MS Memory Limit: 10000K Description A subsequence of a given sequence is the given sequence with some elements (possible none) left out. Given a sequence X = &amp;lt; x1, x2, &amp;hellip;, xm &amp;gt; another sequence Z = &amp;lt; z1, z2, &amp;hellip;, zk &amp;gt; is a subsequence of X if there exists a strictly increasing sequence &amp;lt; i1, i2, &amp;hellip;, ik &amp;gt; of indices of X such</description>
-    </item>
-    
-    <item>
-      <title>poj2686</title>
-      <link>https://dyhgo.github.io/2020/03/poj2686/</link>
-      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/poj2686/</guid>
-      <description>Traveling by Stagecoach Description Once upon a time, there was a traveler. He plans to travel using stagecoaches (horse wagons). His starting point and destination are fixed, but he cannot determine his route. Your job in this problem is to write a program which determines the route for him. There are several cities in the country, and a road network connecting them. If there is a road between two cities,</description>
     </item>
     
   </channel>

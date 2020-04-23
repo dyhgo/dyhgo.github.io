@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Apr 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj2686</title>
+      <link>https://dyhgo.github.io/2020/03/poj2686/</link>
+      <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/poj2686/</guid>
+      <description>Traveling by Stagecoach Description Once upon a time, there was a traveler. He plans to travel using stagecoaches (horse wagons). His starting point and destination are fixed, but he cannot determine his route. Your job in this problem is to write a program which determines the route for him. There are several cities in the country, and a road network connecting them. If there is a road between two cities,</description>
+    </item>
     
     <item>
       <title>abc157</title>
@@ -186,15 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/poj3624/</guid>
       <description>Charm Bracelet Time Limit: 1000MS Memory Limit: 65536K Description Bessie has gone to the mall&amp;rsquo;s jewelry store and spies a charm bracelet. Of course, she&amp;rsquo;d like to fill it with the best charms possible from the N (1 ≤ N ≤ 3,402) available charms. Each charm i in the supplied list has a weight Wi (1 ≤ Wi ≤ 400), a &amp;lsquo;desirability&amp;rsquo; factor Di (1 ≤ Di ≤ 100), and</description>
-    </item>
-    
-    <item>
-      <title>排序算法的时间复杂度</title>
-      <link>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
-      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
-      <description></description>
     </item>
     
   </channel>
