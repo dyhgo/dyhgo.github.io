@@ -5,10 +5,28 @@
     <link>https://dyhgo.github.io/categories/abc/</link>
     <description>Recent content in abc on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/abc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc164</title>
+      <link>https://dyhgo.github.io/2020/05/abc164/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/05/abc164/</guid>
+      <description>A - Sheep and Wolves 题意 判断两个数的大小 题解 ac代码 n,m = map(int,input().split()) if n&amp;gt;m: print(&#39;safe&#39;) else : print(&#39;unsafe&#39;) B - Battle 题意 给定两个人的生命值和攻击力，两个人回合制battle，谁的生命值先小于</description>
+    </item>
+    
+    <item>
+      <title>NC17134</title>
+      <link>https://dyhgo.github.io/2020/05/nc17134/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/05/nc17134/</guid>
+      <description>Symmetric Matrix 题目描述 Count the number of n x n matrices A satisfying the following condition modulo m. Ai, j ∈ {0, 1, 2} for all 1 ≤ i, j ≤ n. Ai, j = Aj, i for all 1 ≤ i, j ≤ n. Ai, 1 + Ai, 2 + &amp;hellip; + Ai, n = 2 for all 1 ≤ i ≤ n. A1, 1 =</description>
+    </item>
     
     <item>
       <title>Codeforces Round #636 (Div. 3) A~E</title>
@@ -170,24 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/%E6%9D%80%E6%89%8B2/</guid>
       <description>杀手2由IO Interactive开发，2018年发行的潜行刺杀游戏，与羞辱不同的是这是第三人称 杀手2最大的特点是刺杀方法的丰富性 游玩过程中</description>
-    </item>
-    
-    <item>
-      <title>Android Fragment</title>
-      <link>https://dyhgo.github.io/2020/03/android-fragment/</link>
-      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/android-fragment/</guid>
-      <description>生命周期 在containerActivity的布局中放入一个fragment，然后点击按钮，切换成另一个fragment containerA</description>
-    </item>
-    
-    <item>
-      <title>Android 属性动画</title>
-      <link>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</link>
-      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</guid>
-      <description>简单演示 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.anim2Activity&amp;quot;&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;70dp&amp;quot; android:id=&amp;quot;@+id/a2tv1&amp;quot; android:textSize=&amp;quot;30sp&amp;quot; android:text=&amp;quot;animation_test&amp;quot; android:gravity=&amp;quot;center&amp;quot; android:textColor=&amp;quot;#FFFFFF&amp;quot; android:background=&amp;quot;#AAAAAA&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.widget.TextView; public class anim2Activity extends AppCompatActivity { private TextView a2tv1; @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_anim2); a2tv1 = findViewById(R.id.a2tv1); a2tv1.animate().translationYBy(500).setDuration(2000).start(); } } package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.animation.ObjectAnimator; import android.animation.ValueAnimator; import android.os.Bundle; import android.util.Log; import android.widget.TextView; public</description>
     </item>
     
   </channel>
