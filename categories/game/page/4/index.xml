@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>abc152-D</title>
+      <link>https://dyhgo.github.io/2020/01/abc152-d/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/abc152-d/</guid>
+      <description>题目链接 题意：找正整数对（A,B），A、B都不大于N，满足A的第一个数字是B的最后一个数 字，B的第一个数字是A的最后一个数字，个位数也算，输</description>
+    </item>
+    
+    <item>
       <title>poj1384</title>
       <link>https://dyhgo.github.io/2020/01/poj1384/</link>
       <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>

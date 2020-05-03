@@ -154,7 +154,7 @@
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">9</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">10</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">10</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/android/" class="category-list-link">android</a><span class="category-list-count">8</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/anime/" class="category-list-link">anime</a><span class="category-list-count">2</span></li>
@@ -192,7 +192,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/construct/" class="tag-list-link">construct</a><span
-                    class="tag-list-count">2</span></li>
+                    class="tag-list-count">3</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/counting/" class="tag-list-link">counting</a><span
@@ -200,7 +200,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
-                    class="tag-list-count">53</span></li>
+                    class="tag-list-count">54</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cs/" class="tag-list-link">cs</a><span
@@ -212,11 +212,11 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
-                    class="tag-list-count">6</span></li>
+                    class="tag-list-count">7</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dp/" class="tag-list-link">dp</a><span
-                    class="tag-list-count">13</span></li>
+                    class="tag-list-count">14</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/graph/" class="tag-list-link">graph</a><span
@@ -298,6 +298,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/05/abc165/" class="title">abc165</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-05-03 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-03</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://dyhgo.github.io/2020/05/abc164/" class="title">abc164</a>
                     </p>
                     <p class="item-date">
@@ -335,16 +345,6 @@
                     </p>
                 </div>
             </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://dyhgo.github.io/2020/04/codeforces-round-634-div.-3-a~e/" class="title">Codeforces Round #634 (Div. 3) A~E</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-04-14 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-14</time>
-                    </p>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
@@ -360,6 +360,45 @@
     
     
     
+    <article
+      class="article article-type-page"
+      itemscope
+      itemtype="http://schema.org/BlogPosting"
+    >
+      <div class="article-header">
+        <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/"
+    >筛法求区间内质数个数？</a
+  >
+</h1>
+
+      </div>
+      <div class="article-entry text-muted" itemprop="description">很早以前写的懒得去审查。。。 不知道对不对。。。 Eprime #include&lt;bits/stdc++.h&gt; using namespace std; #define MAX 10000 long long prime1[MAX],num1; long long prime2[MAX],num2; bool isprime1[MAX],isprime2[MAX]; int qprime1(int n) { num1=0; memset(isprime1,1,sizeof(isprime1)); isprime1[0]=isprime1[1]=0; for(int i=2;i&lt;=n;i++) { if(isprime1[i]) { prime1[num1++]=i; for(int j=2;j*i&lt;=n;j++) isprime1[j*i]=0; } } return num1; } int qprime2(int m,int n) { num2=0; qprime1((int)sqrt(n)); memset(isprime2,1,sizeof(isprime2)); for(int i=0;i&lt;num1;i++)</div>
+      <p class="article-meta">
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://dyhgo.github.io/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/" class="">
+  <time datetime="2020-01-17 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-17</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/algorithm/"> algorithm </a>
+  <a class="article-category-link" href="/categories/note/"> note </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
+    <a class="article-tag-link" href="/tags/number_theory/"> number_theory </a>
+  </span>
+
+        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/01/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/#comments" class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 91words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1minutes </span>
+      </p>
+    </article>
     <article
       class="article article-type-page"
       itemscope
