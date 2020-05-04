@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>简易对拍</title>
+      <link>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</guid>
+      <description>以这道题为例 准备一个对拍的文件夹，里面装这些东西 duipai_random_input_src.cpp是产生随机测试数据的代码 #include&amp;lt;cstdlib&amp;gt; #include&amp;lt;iostream&amp;gt; #include&amp;lt;ctime&amp;gt; using namespace std; int</description>
+    </item>
     
     <item>
       <title>abc152-D</title>
