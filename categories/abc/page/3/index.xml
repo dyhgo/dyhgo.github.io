@@ -11,6 +11,15 @@
     
     
     <item>
+      <title>光环1</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</guid>
+      <description>halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这</description>
+    </item>
+    
+    <item>
       <title>刺客信条2</title>
       <link>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
       <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
@@ -186,15 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/poj2932/</guid>
       <description>Coneology 题目链接 Time Limit: 5000MS Memory Limit: 65536K Description A student named Round Square loved to play with cones. He would arrange cones with different base radii arbitrarily on the floor and would admire the intrinsic beauty of the arrangement. The student even began theorizing about how some cones dominate other cones: a cone A dominates another cone B when cone B is completely within the cone</description>
-    </item>
-    
-    <item>
-      <title>poj1127</title>
-      <link>https://dyhgo.github.io/2020/01/poj1127/</link>
-      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj1127/</guid>
-      <description>Jack Straws Time Limit: 1000MS Memory Limit: 10000K Description In the game of Jack Straws, a number of plastic or wooden &amp;ldquo;straws&amp;rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws</description>
     </item>
     
   </channel>

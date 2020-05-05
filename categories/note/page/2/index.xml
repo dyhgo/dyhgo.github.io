@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/note/</link>
     <description>Recent content in note on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>星际牛仔</title>
+      <link>https://dyhgo.github.io/2020/03/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</guid>
+      <description>《星际牛仔》（カウボーイビバップ；Cowboy Bebop），是日本SUNRISE动画 公司制作的原创电视动画，于1998年10月23日-199</description>
+    </item>
     
     <item>
       <title>Codeforces Round #629 (Div. 3)</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/abc158/</guid>
       <description>A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { string s; cin&amp;gt;&amp;gt;s; if((s[0]==&#39;A&#39; and s[1]==&#39;A&#39; and s[2]==&#39;A&#39;) or(s[0]==&#39;B&#39; and</description>
-    </item>
-    
-    <item>
-      <title>光环1</title>
-      <link>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</link>
-      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</guid>
-      <description>halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这</description>
     </item>
     
   </channel>

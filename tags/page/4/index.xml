@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/</link>
     <description>Recent content in Tags on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj1127</title>
+      <link>https://dyhgo.github.io/2020/01/poj1127/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1127/</guid>
+      <description>Jack Straws Time Limit: 1000MS Memory Limit: 10000K Description In the game of Jack Straws, a number of plastic or wooden &amp;ldquo;straws&amp;rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws</description>
+    </item>
     
     <item>
       <title>简易对拍</title>
