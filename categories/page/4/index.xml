@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 05 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj2932</title>
+      <link>https://dyhgo.github.io/2020/01/poj2932/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2932/</guid>
+      <description>Coneology 题目链接 Time Limit: 5000MS Memory Limit: 65536K Description A student named Round Square loved to play with cones. He would arrange cones with different base radii arbitrarily on the floor and would admire the intrinsic beauty of the arrangement. The student even began theorizing about how some cones dominate other cones: a cone A dominates another cone B when cone B is completely within the cone</description>
+    </item>
     
     <item>
       <title>poj1127</title>
