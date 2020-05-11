@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj2187</title>
+      <link>https://dyhgo.github.io/2020/01/poj2187/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2187/</guid>
+      <description>Beauty Contest Time Limit: 3000MS Memory Limit: 65536K Description Bessie, Farmer John&amp;rsquo;s prize cow, has just won first place in a bovine beauty contest, earning the title &amp;lsquo;Miss Cow World&amp;rsquo;. As a result, Bessie will make a tour of N (2 &amp;lt;= N &amp;lt;= 50,000) farms around the world in order to spread goodwill between farmers and their cows. For simplicity, the world will be represented as a two-dimensional plane,</description>
+    </item>
     
     <item>
       <title>poj2932</title>

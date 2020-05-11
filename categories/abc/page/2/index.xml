@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/abc/</link>
     <description>Recent content in abc on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 04 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/abc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj2816</title>
+      <link>https://dyhgo.github.io/2020/03/poj2816/</link>
+      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/poj2816/</guid>
+      <description>Popular Cows Description Every cow&amp;rsquo;s dream is to become the most popular cow in the herd. In a herd of N (1 &amp;lt;= N &amp;lt;= 10,000) cows, you are given up to M (1 &amp;lt;= M &amp;lt;= 50,000) ordered pairs of the form (A, B) that tell you that cow A thinks that cow B is popular. Since popularity is transitive, if A thinks B is popular and B thinks</description>
+    </item>
     
     <item>
       <title>abc160</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</guid>
       <description>A. Yet Another Tetris Problem link B. Yet Another Palindrome Problem link C. Frog Jumps link D. Pair of Topics link E. Sleeping Schedule link 题意 假设一天有h个小时，DIO一共要睡n次，每次睡ai个小时（按顺序睡觉），每次刚睡醒，就</description>
-    </item>
-    
-    <item>
-      <title>ef - a tale of melodies</title>
-      <link>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</link>
-      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</guid>
-      <description>《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故</description>
     </item>
     
   </channel>
