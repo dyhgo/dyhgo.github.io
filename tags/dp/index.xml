@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/dp/</link>
     <description>Recent content in dp on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Codeforces Round #641 (Div. 2) A~D</title>
+      <link>https://dyhgo.github.io/2020/05/codeforces-round-641-div.-2-a~d/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/05/codeforces-round-641-div.-2-a~d/</guid>
+      <description>A. Orac and Factors 题意 对于一个数，每一次操作加上他的最小因子（除1外） 问k次操作后，这个数是多少 题解 奇数找最小因子加一下就变成偶数，偶数最小因子是2 #include&amp;lt;bits/stdc++.h&amp;gt;</description>
+    </item>
     
     <item>
       <title>abc167</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
       <description>#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），</description>
-    </item>
-    
-    <item>
-      <title>Codeforces Round #630 (Div. 2) A~E</title>
-      <link>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</link>
-      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</guid>
-      <description>A. Exercising Walk 题意 给一坐标范围，初始位置，和左右上下移动的步数，问是否会出界 题解 加各种条件判断即可 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int t; int a,b,c,d,x,y,x1,y1,x2,y2; bool ok; int main(){ //freopen(&amp;quot;input.txt&amp;quot;,&amp;quot;r&amp;quot;,stdin); cin&amp;gt;&amp;gt;t; while(t--){ ok=true; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c&amp;gt;&amp;gt;d&amp;gt;&amp;gt;x&amp;gt;&amp;gt;y&amp;gt;&amp;gt;x1&amp;gt;&amp;gt;y1&amp;gt;&amp;gt;x2&amp;gt;&amp;gt;y2; if( (a-b&amp;gt;=0 and x-x1&amp;lt;a-b)</description>
     </item>
     
   </channel>

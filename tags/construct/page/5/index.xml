@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>construct on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/construct/</link>
+    <description>Recent content in construct on This is DYH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://dyhgo.github.io/tags/construct/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>输入输出优化(提高读入输出速度)</title>
+      <link>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</link>
+      <pubDate>Tue, 14 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</guid>
+      <description>参考https://blog.csdn.net/weixin_43960287/article/details/85337291 1.用sca</description>
+    </item>
+    
+  </channel>
+</rss>
