@@ -11,6 +11,24 @@
     
     
     <item>
+      <title>abc168</title>
+      <link>https://dyhgo.github.io/2020/05/abc168/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/05/abc168/</guid>
+      <description>A - ∴ (Therefore) 题意 看题目 题解 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main(){ string s; cin&amp;gt;&amp;gt;s; char c=s[s.length()-1]; switch(c){ case &#39;2&#39; :case &#39;4&#39;: case &#39;5&#39;: case &#39;7&#39;: case &#39;9&#39;: cout&amp;lt;&amp;lt;&amp;quot;hon\n&amp;quot;; break; case &#39;3&#39;: cout&amp;lt;&amp;lt;&amp;quot;bon\n&amp;quot;; break; default :cout&amp;lt;&amp;lt;&amp;quot;pon\n&amp;quot;; } return 0; } B - &amp;hellip; (Triple Dots) 题意 看题目 题解 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main(){ int k; cin&amp;gt;&amp;gt;k; string s; cin&amp;gt;&amp;gt;s; if(s.length()&amp;lt;=k)cout&amp;lt;&amp;lt;s&amp;lt;&amp;lt;endl;</description>
+    </item>
+    
+    <item>
+      <title>Codeforces Round #643 (Div. 2) A~D</title>
+      <link>https://dyhgo.github.io/2020/05/codeforces-round-643-div.-2-a~d/</link>
+      <pubDate>Sat, 16 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/05/codeforces-round-643-div.-2-a~d/</guid>
+      <description>A. Sequence with Digits 题意 看题目 题解 模拟，minDigit(x) 等于0 时打断 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; using ll = long long; const int inf = 0x3f3f3f3f; const int ninf = 0xc0c0c0c0; ll t; ll a,k; ll maxD(ll n) { ll res=n%10; while(n) { res=max(res,n%10); n/=10; } return res; } ll minD(ll</description>
+    </item>
+    
+    <item>
       <title>Codeforces Round #641 (Div. 2) A~D</title>
       <link>https://dyhgo.github.io/2020/05/codeforces-round-641-div.-2-a~d/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
@@ -170,24 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/04/abc161/</guid>
       <description>A - ABC Swap 题意 给三个数a,b,c，交换ab的值，交换ac的值，输出 题解 模拟 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main(){ int a,b,c; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c; swap(a,b); swap(a,c); cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;c&amp;lt;&amp;lt;endl; return 0; } B - Popular Vote 题意 有n件商品，每</description>
-    </item>
-    
-    <item>
-      <title>Codeforces Round #631 (Div. 2) A~D</title>
-      <link>https://dyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/</link>
-      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/</guid>
-      <description>A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数</description>
-    </item>
-    
-    <item>
-      <title>浮点数加减法</title>
-      <link>https://dyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</link>
-      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
-      <description>#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），</description>
     </item>
     
   </channel>

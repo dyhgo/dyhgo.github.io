@@ -5,10 +5,28 @@
     <link>https://dyhgo.github.io/categories/codeforces/</link>
     <description>Recent content in codeforces on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/codeforces/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Codeforces Round #631 (Div. 2) A~D</title>
+      <link>https://dyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/</guid>
+      <description>A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数</description>
+    </item>
+    
+    <item>
+      <title>浮点数加减法</title>
+      <link>https://dyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</link>
+      <pubDate>Fri, 03 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
+      <description>#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），</description>
+    </item>
     
     <item>
       <title>Codeforces Round #630 (Div. 2) A~E</title>
@@ -170,24 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/hduoj1711kmp/</guid>
       <description>Number Sequence Problem Description Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1], b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</description>
-    </item>
-    
-    <item>
-      <title>Codeforces Round #628 (Div. 2) A~D</title>
-      <link>https://dyhgo.github.io/2020/03/codeforces-round-628-div.-2-a~d/</link>
-      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/codeforces-round-628-div.-2-a~d/</guid>
-      <description>A. EhAb AnD gCd 题意 给一正整数x，求正整数a,b满足gcd(a,b)+lcm(a,b)=x 题解 数论思维题，a=1，b=x-1满足条件 ac代码 #include&amp;lt;iostream&amp;gt; using namespace std;</description>
-    </item>
-    
-    <item>
-      <title>二进制编码</title>
-      <link>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</link>
-      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
-      <description>二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; 10.1875*2=0.375 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.375*2=0.75 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.75*2=1.5 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;10.5*2=1 &amp;mdash;&amp;mda</description>
     </item>
     
   </channel>
