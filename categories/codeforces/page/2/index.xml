@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/codeforces/</link>
     <description>Recent content in codeforces on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sat, 16 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 May 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/codeforces/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc161</title>
+      <link>https://dyhgo.github.io/2020/04/abc161/</link>
+      <pubDate>Sun, 05 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/abc161/</guid>
+      <description>A - ABC Swap 题意 给三个数a,b,c，交换ab的值，交换ac的值，输出 题解 模拟 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main(){ int a,b,c; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c; swap(a,b); swap(a,c); cout&amp;lt;&amp;lt;a&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;b&amp;lt;&amp;lt;&amp;quot; &amp;quot;&amp;lt;&amp;lt;c&amp;lt;&amp;lt;endl; return 0; } B - Popular Vote 题意 有n件商品，每</description>
+    </item>
     
     <item>
       <title>Codeforces Round #631 (Div. 2) A~D</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/</guid>
       <description>Service Service的生命周期 通过启动Service传递数据 在serviceactivity的输入框中输入数据，启动Myservice并传递数据</description>
-    </item>
-    
-    <item>
-      <title>hduoj1711(kmp)</title>
-      <link>https://dyhgo.github.io/2020/03/hduoj1711kmp/</link>
-      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/hduoj1711kmp/</guid>
-      <description>Number Sequence Problem Description Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1], b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</description>
     </item>
     
   </channel>
