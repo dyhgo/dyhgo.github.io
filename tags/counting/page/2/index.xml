@@ -5,10 +5,28 @@
     <link>https://dyhgo.github.io/tags/counting/</link>
     <description>Recent content in counting on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 19 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/counting/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>poj3683</title>
+      <link>https://dyhgo.github.io/2020/04/poj3683/</link>
+      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/poj3683/</guid>
+      <description>Priest John&amp;rsquo;s Busiest Day Time Limit: 2000MS Memory Limit: 65536K Description John is the only priest in his town. September 1st is the John&amp;rsquo;s busiest day in a year because there is an old legend in the town that the couple who get married on that day will be forever blessed by the God of Love. This year N couples plan to get married on the blessed day. The i-th</description>
+    </item>
+    
+    <item>
+      <title>NC13611</title>
+      <link>https://dyhgo.github.io/2020/04/nc13611/</link>
+      <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/nc13611/</guid>
+      <description>题目描述 shy有一颗树，树有n个结点。有k种不同颜色的染料给树染色。一个染色方案是合法的，当且仅当对于所有相同颜色的点对(x,y)，x到y的</description>
+    </item>
     
     <item>
       <title>abc161</title>
@@ -170,24 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bbroadcast-receiver/</guid>
       <description>Broadcast Receiver 通过LoaclBroadcastManager发送广播并接收广播 点击broadactivity的click,跳转到broad2activ</description>
-    </item>
-    
-    <item>
-      <title>Android 四大组件之Content Provider</title>
-      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bcontent-provider/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bcontent-provider/</guid>
-      <description>Content Provider 获取外部应用的信息 以获取通讯录为例 布局文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.contentProviderActivity&amp;quot;&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/cpbtn1&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;get_contacts&amp;quot;/&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/cpbtn2&amp;quot; android:text=&amp;quot;getdata&amp;quot; android:textSize=&amp;quot;25dp&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/cpbtn1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; 点击get_contacts获取联系人信息 手</description>
-    </item>
-    
-    <item>
-      <title>Android 四大组件之Service</title>
-      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/</link>
-      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/</guid>
-      <description>Service Service的生命周期 通过启动Service传递数据 在serviceactivity的输入框中输入数据，启动Myservice并传递数据</description>
     </item>
     
   </channel>
