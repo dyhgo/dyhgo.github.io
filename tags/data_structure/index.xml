@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/tags/data_structure/</link>
     <description>Recent content in data_structure on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 05 Apr 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/data_structure/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>abc170</title>
+      <link>https://dyhgo.github.io/2020/06/abc170/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/06/abc170/</guid>
+      <description>A - Five Variables 题意 找5个数中值为0的下标 题解 a = list(map(int , input().split())) print(a.index(0) + 1) B - Crane and Turtle 题意 鸡兔同笼问题 题解 n , m = map(int , input().split()) print(&#39;Yes&#39;) if (m - 2 * n) % 2 == 0 and (m - 2 * n) &amp;gt;= 0 and 4</description>
+    </item>
     
     <item>
       <title>Educational Codeforces Round 89 (Rated for Div. 2) A~E</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/04/abc162/</guid>
       <description>A - Lucky 7 题意 问一个整数中是否含有数字7！ 题解 ac代码 s = input() if &#39;7&#39; in list(s): print(&#39;Yes&#39;) else: print(&#39;No&#39;) B - FizzBuzz Sum 题意 找出不大于n的自然数中不能被3和5整除的数的和 题解 模拟或</description>
-    </item>
-    
-    <item>
-      <title>hduoj1796</title>
-      <link>https://dyhgo.github.io/2020/04/hduoj1796/</link>
-      <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/04/hduoj1796/</guid>
-      <description>How many integers can you find Problem Description Now you get a number N, and a M-integers set, you should find out how many integers which are small than N, that they can divided exactly by any integers in the set. For example, N=12, and M-integer set is {2,3}, so there is another set {2,3,4,6,8,9,10}, all the integers of the set can be divided exactly by 2 or 3. As</description>
     </item>
     
   </channel>

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        abc152-D - This is DYH
+        abc170 - This is DYH
       </title>
     <head>
   <meta charset="utf-8">
@@ -23,9 +23,9 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <meta name="description" content="abc152-D" />
+  <meta name="description" content="abc170" />
   <meta name="generator" content="Hugo 0.65.3 with theme pure" />
-  <title>abc152-D - This is DYH</title>
+  <title>abc170 - This is DYH</title>
   
   
   <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
@@ -33,23 +33,23 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="abc152-D" />
-<meta property="og:description" content="abc152-D" />
+  <meta property="og:title" content="abc170" />
+<meta property="og:description" content="abc170" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/2020/01/abc152-d/" />
-<meta property="article:published_time" content="2020-01-26T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-26T00:00:00+00:00" />
-<meta itemprop="name" content="abc152-D">
-<meta itemprop="description" content="abc152-D">
-<meta itemprop="datePublished" content="2020-01-26T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-01-26T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="352">
+<meta property="og:url" content="https://dyhgo.github.io/2020/06/abc170/" />
+<meta property="article:published_time" content="2020-06-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-15T00:00:00+00:00" />
+<meta itemprop="name" content="abc170">
+<meta itemprop="description" content="abc170">
+<meta itemprop="datePublished" content="2020-06-15T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-15T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1022">
 
 
 
-<meta itemprop="keywords" content="cpp," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="abc152-D"/>
-<meta name="twitter:description" content="abc152-D"/>
+<meta itemprop="keywords" content="cpp,bfs,greedy,data_structure," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="abc170"/>
+<meta name="twitter:description" content="abc170"/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -395,8 +395,8 @@
       <h1 itemprop="name">
   <a
     class="article-title"
-    href="/2020/01/abc152-d/"
-    >abc152-D</a
+    href="/2020/06/abc170/"
+    >abc170</a
   >
 </h1>
 
@@ -404,8 +404,8 @@
         
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://dyhgo.github.io/2020/01/abc152-d/" class="article-date">
-  <time datetime="2020-01-26 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-01-26</time>
+<a href="https://dyhgo.github.io/2020/06/abc170/" class="article-date">
+  <time datetime="2020-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-15</time>
 </a>
 </span>
 <span class="article-category">
@@ -415,6 +415,9 @@
   <span class="article-tag">
     <i class="icon icon-tags"></i>&nbsp;
     <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
+    <a class="article-tag-link" href="/tags/bfs/"> bfs </a>
+    <a class="article-tag-link" href="/tags/greedy/"> greedy </a>
+    <a class="article-tag-link" href="/tags/data_structure/"> data_structure </a>
   </span>
 
 	<span class="article-read hidden-xs">
@@ -423,51 +426,236 @@
 			<span id="busuanzi_value_page_pv">0</span>
 		</span>
 	</span>
-        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/01/abc152-d/#comments"
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/abc170/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 352words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 1minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1022words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
-      <p><a href="https://atcoder.jp/contests/abc152/tasks/abc152_d">题目链接</a>
-题意：找正整数对（A,B），A、B都不大于N，满足A的第一个数字是B的最后一个数</p>
-<p>字，B的第一个数字是A的最后一个数字，个位数也算，输出满足条件的正整数对的个数</p>
-<hr>
-<p>这种题感觉abc一贯的风格</p>
-<p>当时第一感觉是纯模拟肯定巨麻烦，就想着有没有规律，发现没有规律</p>
-<p>又想着按数位分类。</p>
-<p>按数位分类就要考虑对子里面的数位</p>
-<p>花了一些时间把它整理成元素都是9^n的矩阵（一个对称矩阵）</p>
-<p>然而并没有什么用，还是得求N-10^k这个剩余部分</p>
-<p>问题又回到起点</p>
-<p>试图从9^n求和中找规律，无果</p>
-<p>试图简化模拟或换个角度模拟，无果</p>
-<p>看了别人的解答，大同小异</p>
-<p>遍历一遍N，二维数组存N中第一个数字为 i ，最后一个数字为 j 的个数</p>
-<p>最后遍历ans+=c[i][j]*c[j][i]</p>
+      <h1 id="a---five-variableshttpsatcoderjpcontestsabc170tasksabc170_a"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_a">A - Five Variables</a></h1>
+<h2 id="题意">题意</h2>
+<p>找5个数中值为0的下标</p>
+<h2 id="题解">题解</h2>
+<pre><code class="language-python">a = list(map(int , input().split()))
+print(a.index(0) + 1)
+</code></pre>
+<h1 id="b---crane-and-turtlehttpsatcoderjpcontestsabc170tasksabc170_b"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_b">B - Crane and Turtle</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>鸡兔同笼问题</p>
+<h2 id="题解-1">题解</h2>
+<pre><code class="language-python">n , m = map(int , input().split())
+print('Yes') if (m - 2 * n) % 2 == 0 and (m - 2 * n) &gt;= 0 and 4 * n - m &gt;= 0 and (4 * n - m) % 2 == 0 else print('No')
+</code></pre>
+<h1 id="c---forbidden-listhttpsatcoderjpcontestsabc170tasksabc170_c"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_c">C - Forbidden List</a></h1>
+<h2 id="题意-2">题意</h2>
+<p>给一数x 和一数列，找不在数列中离x最近的数</p>
+<h2 id="题解-2">题解</h2>
+<pre><code class="language-python">x , n = map(int , input().split())
+b = []
+if n!=0:
+    b = list(map(int,input().split()))
+t = 0
+ans = 0
+while 1:
+    if x-t not in b:
+        ans = x - t
+        break
+    if x+t not in b:
+        ans = x + t
+        break
+    t += 1
+print(ans)
+</code></pre>
+<h1 id="d---not-divisiblehttpsatcoderjpcontestsabc170tasksabc170_d"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_d">D - Not Divisible</a></h1>
+<h2 id="题意-3">题意</h2>
+<p>给一数列，对于数列中的每个数，如果都不能被其他数整除，计数器 + 1</p>
+<p>求计数器的值</p>
+<h2 id="题解-3">题解</h2>
+<p>暴力时间复杂度 O(n*√(V)) 好像会超时</p>
+<p>可以排序，从小到大遍历，对于当前数，考虑 2*x 3*x 4*x 的值是否在数列里，如果在数列里（只会比当前数大）则移除</p>
+<p>这样总共要算</p>
+<p>(1/2 + 1/3 + 1/4 + 1/5 + 1/6 + &hellip; + 1/n) * V = (ln(n) + 0.578) * V 次</p>
+<p>时间复杂度为 O(n*ln(n))</p>
+<p>注意当数列中有重复数，则都不能算</p>
+<p>注意特判1个数</p>
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 int n;
-long long ans;
-long long c[10][10];
-int main()
-{
-    //freopen(&quot;input.txt&quot;,&quot;r&quot;,stdin);
-    cin&gt;&gt;n;
-    for(int i=1;i&lt;=n;i++)
-    {
-    	string s=to_string(i);
-    	c[s[0]-'0'][s[s.length()-1]-'0']++;
+//int a[200005];
+set&lt;int&gt; st;
+set&lt;int&gt; stt;
+multiset&lt;int&gt; ms;
+void did(int x){
+	for(int i=2;i*x&lt;=1000005;i++){
+		int tmp = i*x;
+		if(st.find(tmp)!=st.end()){
+			st.erase(tmp);
+		}
 	}
-	for(int i=0;i&lt;10;i++)
-		for(int j=0;j&lt;10;j++)
-			ans+=c[i][j]*c[j][i];
-			cout&lt;&lt;ans;
-	return 0; 
+}
+int main(){
+	cin&gt;&gt;n;
+	//for(int i=0;i&lt;n;i++) cin&gt;&gt;a[i];
+	for(int i=0;i&lt;n;i++){
+		int x;
+		cin&gt;&gt;x;
+		st.insert(x);
+		stt.insert(x);
+		ms.insert(x);
+	}
+	//for(int i:st) cout&lt;&lt;i&lt;&lt;endl;
+	if(st.size()==1 and  n&gt;1) {
+		cout&lt;&lt;0&lt;&lt;endl;
+		return 0;
+	}
+	if(n==1) {    // WA!!!
+		cout&lt;&lt;1&lt;&lt;endl;
+		return 0;
+	}
+	for(int i:st){
+		did(i);
+	}
+	//for(int i:st) cout&lt;&lt;i&lt;&lt;endl;
+	int ans = st.size();    // WA  !!!!
+	for(int i:st){
+		if(ms.count(i)&gt;1) ans--;
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
 }
 </code></pre>
-<p>总结：我好弱啊</p>
+<h1 id="e---smart-infantshttpsatcoderjpcontestsabc170tasksabc170_e"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_e">E - Smart Infants</a></h1>
+<h2 id="题意-4">题意</h2>
+<p>每个小朋友都有一个分数和初始的幼儿园</p>
+<p>每次转学的操作是</p>
+<p>将第 i 个小朋友转到第 j 个幼儿园</p>
+<p>对于q次转学</p>
+<p>每次输出每个幼儿园中分数最高的最小值</p>
+<h2 id="题解-4">题解</h2>
+<p>一开始的思路是最小值的更新肯定在有变动的幼儿园和当前最小值之间选择</p>
+<p>但这是错的，因为当前最小值被覆盖之后，更新后的最小值可能是之前的次小值（而次小值没有记录）</p>
+<p>所以：用集合模拟幼儿园（目的在于log时间内排序）</p>
+<p>对于每次操作都用集合模拟，用多重集维护所有的最大值</p>
+<p>通过查看幼儿园最大值是否被更换来决定是否对多重集进行增删</p>
+<p>一百万个数据错了3个，原因竟然是：</p>
+<p>多重集的erase操作是全删而不是删一个</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,q;
+set&lt;pair&lt;int,int&gt;, greater&lt;pair&lt;int,int&gt; &gt; &gt; st[200005];
+multiset&lt;int&gt; ms;
+int rat[200005];
+int wh[200005];
+//multiset&lt;int , greater&lt;int&gt;&gt; ts[200005];
+int main(){
+	cin&gt;&gt;n&gt;&gt;q;
+	for(int i=0;i&lt;n;i++){
+		int a,b;
+		cin&gt;&gt;a&gt;&gt;b;
+		b--;
+		rat[i] = a;
+		wh[i] = b;
+		st[b].insert({a,i});
+		//ts[b].insert(a);
+	}
+	for(int i=0;i&lt;200005;i++){
+		if(st[i].empty()) continue;
+		//int num = ts[i].count(*ts[i].begin());
+		//for(int j=0;j&lt;num;j++){
+			ms.insert(st[i].begin()-&gt;first);
+		//}
+	}
+	while(q--){
+		int a,b;
+		cin&gt;&gt;a&gt;&gt;b;
+		a--,b--;
+		bool ismax = false;
+		if(st[wh[a]].begin()-&gt;second == a) ismax = true;
+		if(ismax){
+			ms.erase(ms.find(rat[a]));
+			st[wh[a]].erase({rat[a] , a});
+			if(st[wh[a]].empty()) ;
+			else ms.insert(st[wh[a]].begin()-&gt;first);
+			wh[a] = b;
+			if(st[b].empty()) ;
+			else ms.erase(ms.find(st[b].begin()-&gt;first));
+			st[b].insert({rat[a] , a});
+			ms.insert(st[b].begin()-&gt;first);
+		}
+		else{
+			st[wh[a]].erase({rat[a] , a});
+			wh[a] = b;
+			if(st[b].empty()) ;
+			else ms.erase(ms.find(st[b].begin()-&gt;first));
+			st[b].insert({rat[a] , a});
+			ms.insert(st[b].begin()-&gt;first);
+		}
+		cout&lt;&lt;*ms.begin()&lt;&lt;endl;
+	}
+	return 0;
+}
+</code></pre>
+<h1 id="f---pond-skaterhttpsatcoderjpcontestsabc170tasksabc170_f"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_f">F - Pond Skater</a></h1>
+<h2 id="题意-5">题意</h2>
+<p>给一个迷宫、起点、终点</p>
+<p>对于走的方向，只能是上下左右</p>
+<p>对于每一步，最多只能走k格且不能转弯</p>
+<p>求是否能到达终点，如果能，最少走几步</p>
+<h2 id="题解-5">题解</h2>
+<p>bfs 每次沿一个方向，尽可能地走k步</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int h ,w ,k;
+int xs,ys,xt,yt;
+const int inf = 1e9;
+int dirx[] = {0,-1,1,0};
+int diry[] = {1,0,0,-1};
+int main(){
+	cin &gt;&gt; h &gt;&gt; w &gt;&gt; k;
+	cin&gt;&gt;xs&gt;&gt;ys&gt;&gt;xt&gt;&gt;yt;
+	xs--,ys--,xt--,yt--;
+	vector&lt;string&gt; vt(h);
+	for(int i=0;i&lt;h;i++) cin&gt;&gt;vt[i];
+	vector&lt;vector&lt;int&gt;&gt; d(h , vector&lt;int&gt;(w,inf));
+	
+	
+	queue&lt;pair&lt;int,int&gt;&gt; q;
+	q.push({xs,ys});
+	d[xs][ys] = 0;
+	
+	
+	while(q.size()){
+		auto tmp = q.front();
+		q.pop();
+		int tmpx = tmp.first;
+		int tmpy = tmp.second;
+		
+		for(int i=0;i&lt;4;i++){
+//			int tox = tmpx + dirx[i];
+//			int toy = tmpy + diry[i];
+			int ttmpx = tmpx;
+			int ttmpy = tmpy;
+			int j;
+			for(j=0;j&lt;k;j++){
+				ttmpx += dirx[i];
+				ttmpy += diry[i];
+				if(ttmpx&gt;=0 and ttmpy&gt;=0 and ttmpx&lt;h and ttmpy&lt;w and vt[ttmpx][ttmpy]!='@' and d[ttmpx][ttmpy] &gt; d[tmpx][tmpy]){
+					if(d[ttmpx][ttmpy] &gt; d[tmpx][tmpy] + 1){
+						d[ttmpx][ttmpy] = d[tmpx][tmpy] + 1;
+						q.push({ttmpx , ttmpy});
+					}
+				}else break;
+			}
+			
+		}
+	}
+	
+	cout&lt;&lt;(d[xt][yt]==1e9 ?  -1 : d[xt][yt])&lt;&lt;endl;
+	return 0;
+	
+}
+</code></pre>
 
     </div>
     <div class="article-footer">
@@ -475,7 +663,7 @@ int main()
   <ul class="post-copyright list-unstyled">
     <li class="post-copyright-link hidden-xs">
       <strong>Permalink: </strong>
-      <a href="https://dyhgo.github.io/2020/01/abc152-d/" title="abc152-D" target="_blank" rel="external">https://dyhgo.github.io/2020/01/abc152-d/</a>
+      <a href="https://dyhgo.github.io/2020/06/abc170/" title="abc170" target="_blank" rel="external">https://dyhgo.github.io/2020/06/abc170/</a>
     </li>
     <li class="post-copyright-license">
       <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
@@ -507,14 +695,9 @@ int main()
     <div class="bar-inner">
         <ul class="pager pull-left">
             <li class="prev">
-                <a href="https://dyhgo.github.io/2020/01/poj1384/" title="poj1384"><i
+                <a href="https://dyhgo.github.io/2020/06/educational-codeforces-round-89-rated-for-div.-2-a~e/" title="Educational Codeforces Round 89 (Rated for Div. 2) A~E"><i
                         class="icon icon-angle-left"
                         aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
-            </li>
-            <li class="next">
-                <a href="https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/"
-                    title="简易对拍"><span>Newer&nbsp;&nbsp;</span><i
-                        class="icon icon-angle-right" aria-hidden="true"></i></a>
             </li>
             
             <li class="toggle-toc">

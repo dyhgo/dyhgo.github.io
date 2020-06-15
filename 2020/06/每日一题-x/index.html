@@ -43,7 +43,7 @@
 <meta itemprop="description" content="每日一题 (X)">
 <meta itemprop="datePublished" content="2020-06-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3311">
+<meta itemprop="wordCount" content="3681">
 
 
 
@@ -162,7 +162,7 @@
     <h3 class="widget-title"> Categories</h3>
     <div class="widget-body">
         <ul class="category-list">
-            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">14</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">15</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">10</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/android/" class="category-list-link">android</a><span class="category-list-count">8</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/anime/" class="category-list-link">anime</a><span class="category-list-count">2</span></li>
@@ -186,7 +186,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/bfs/" class="tag-list-link">bfs</a><span
-                    class="tag-list-count">5</span></li>
+                    class="tag-list-count">6</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary/" class="tag-list-link">binary</a><span
@@ -214,7 +214,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
-                    class="tag-list-count">63</span></li>
+                    class="tag-list-count">64</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cs/" class="tag-list-link">cs</a><span
@@ -222,7 +222,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/data_structure/" class="tag-list-link">data_structure</a><span
-                    class="tag-list-count">1</span></li>
+                    class="tag-list-count">2</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
@@ -246,7 +246,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/greedy/" class="tag-list-link">greedy</a><span
-                    class="tag-list-count">15</span></li>
+                    class="tag-list-count">16</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
@@ -324,6 +324,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/06/abc170/" class="title">abc170</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-15 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-15</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://dyhgo.github.io/2020/06/educational-codeforces-round-89-rated-for-div.-2-a~e/" class="title">Educational Codeforces Round 89 (Rated for Div. 2) A~E</a>
                     </p>
                     <p class="item-date">
@@ -358,16 +368,6 @@
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://dyhgo.github.io/2020/05/codeforces-round-644-div.-3/" class="title">Codeforces Round #644 (Div. 3)</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-05-25 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-05-25</time>
                     </p>
                 </div>
             </li>
@@ -425,8 +425,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-x/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3311words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 7minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3681words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 8minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -1287,6 +1287,132 @@ int main(){
     }
     cout&lt;&lt;dp[(n+m)&amp;1][n][n]%mod&lt;&lt;endl;
     return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="差分-规律">差分 规律</h2>
+<p><a href="https://atcoder.jp/contests/tokiomarine2020/tasks/tokiomarine2020_c">题目</a></p>
+<p>暴力差分</p>
+<p>最重要的是所有的点在 log(n) 时间内都会变成 n</p>
+<p>此时停机就不会超时</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,k;
+int dat[200005];
+int dif[200005];
+bool check(){
+	for(int i=1;i&lt;=n;i++){
+		if(dat[i]&lt;n){
+			return false;
+		}
+	}
+	return true;
+}
+void did(int x){
+	int L = max(1,x-dat[x]);
+	int R = min(n , x+dat[x]);
+	dif[L]++;
+	dif[R+1]--;
+}
+void update(){
+	for(int i=1;i&lt;=n;i++){
+		dat[i] = dat[i-1] + dif[i];
+	}
+}
+int main(){
+	cin&gt;&gt;n&gt;&gt;k;
+	for(int i=1;i&lt;=n;i++) cin&gt;&gt;dat[i];
+	
+	while(1 and k&gt;0){
+		for(int i=1;i&lt;=n;i++) did(i);
+		k--;
+		if(check()) break;
+		update();
+		memset(dif,0,sizeof(dif));
+	}
+	
+	if(k&gt;0) {
+		for(int i=0;i&lt;n;i++) cout&lt;&lt;n&lt;&lt;&quot; &quot;;
+	}
+	else for(int i=1;i&lt;=n;i++) cout&lt;&lt;dat[i]&lt;&lt;&quot; &quot;;
+	cout&lt;&lt;'\n';
+	return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="分治01背包问题--枚举">分治（01背包问题 + 枚举）</h2>
+<p>第一次做分治，太妙了</p>
+<p>暴力超时</p>
+<p>如果在树上用dp预处理，内存超限</p>
+<p>解决方法就是分治</p>
+<p>完全二叉树有18层，前9层dp预处理所有的点</p>
+<p>后9层枚举，然后将两个结果相加。这样将时间复杂度也分开了</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;int&gt; vt;
+int n,q;
+vector&lt;pair&lt;int,int&gt;&gt; info((1&lt;&lt;18) + 3);
+vector&lt;pair&lt;int,int&gt;&gt; res;
+#define fi first
+#define se second
+const int MAX = 100001;
+int dp[515][MAX];
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cin&gt;&gt;n;
+	
+	for(int i=0;i&lt;n;i++){
+		int v,w;
+		cin&gt;&gt;v&gt;&gt;w;
+		info[i] = make_pair(v,w);
+	}
+	//preprocess
+	const int MAX = 100001;
+	int lim = min(512,n);
+	
+	for(int j=0;j&lt;MAX;j++){
+		dp[0][j] = (j&gt;=info[0].se ? info[0].fi : 0);
+	}
+	for(int i=1;i&lt;lim;i++){
+		int p = (i-1)/2;
+		for(int j=0;j&lt;MAX;j++){
+			if(j&lt;info[i].se){
+				dp[i][j] = dp[p][j];
+			}else{
+				dp[i][j] = max(dp[p][j] , dp[p][j - info[i].se] + info[i].fi);
+			}
+		}
+	}
+	
+	cin&gt;&gt;q;
+	while(q--){
+		int V,L;
+		cin&gt;&gt;V&gt;&gt;L;
+		V--;
+		vector&lt;int&gt; rem;
+		while(V&gt;=lim){
+			rem.push_back(V);
+			V = (V-1)/2;
+		}
+		int ans = 0;
+		int sz = rem.size();
+		for(int i=0;i&lt;(1&lt;&lt;sz);i++){
+			int sv = 0;
+			int sw = 0;
+			for(int j=0;j&lt;sz;j++){
+				if(i&gt;&gt;j&amp;1){
+					sv += info[rem[j]].fi;
+					sw += info[rem[j]].se;
+				}
+			}
+			if(sw &lt;= L){
+				ans = max(ans , dp[V][L-sw] + sv);
+			}
+		}
+		cout&lt;&lt;ans&lt;&lt;endl;
+	}
+	return 0;
 }
 </code></pre>
 

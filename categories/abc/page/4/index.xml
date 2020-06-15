@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/abc/</link>
     <description>Recent content in abc on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 08 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/abc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>用hugo搭建个人博客网站</title>
+      <link>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description>效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -186,15 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/poj3617/</guid>
       <description>Best Cow Line Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description FJ is about to take his N (1 ≤ N ≤ 2,000) cows to the annual&amp;quot;Farmer of the Year&amp;rdquo; competition. In this contest every farmer arranges his cows in a line and herds them past the judges. The contest organizers adopted a new registration scheme this year: simply register the initial letter of every cow in</description>
-    </item>
-    
-    <item>
-      <title>c&#43;&#43;交集、并集、差、对称差函数</title>
-      <link>https://dyhgo.github.io/2020/01/c-%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86%E5%B7%AE%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/c-%E4%BA%A4%E9%9B%86%E5%B9%B6%E9%9B%86%E5%B7%AE%E5%AF%B9%E7%A7%B0%E5%B7%AE%E5%87%BD%E6%95%B0/</guid>
-      <description>#include&amp;lt;iostream&amp;gt; #include&amp;lt;set&amp;gt; //#include&amp;lt;map&amp;gt; //#include&amp;lt;string&amp;gt; #include&amp;lt;algorithm&amp;gt; #include&amp;lt;iterator&amp;gt; using namespace std; int main() { int a[]={3,2,1}; int b[]={3,4,5,6}; set&amp;lt;int&amp;gt; s1(a,a+3); set&amp;lt;int&amp;gt; s2(b,b+4); set&amp;lt;int&amp;gt; s3; set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),inserter(s3,s3.begin())); for(set&amp;lt;int&amp;gt;::iterator it=s3.begin();it!=s3.end();it++) cout&amp;lt;&amp;lt;*it&amp;lt;&amp;lt;&amp;quot; &amp;quot;; cout&amp;lt;&amp;lt;endl; set_union(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot;*&amp;quot;)); cout&amp;lt;&amp;lt;endl; set_intersection(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); cout&amp;lt;&amp;lt;endl; set_difference(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); cout&amp;lt;&amp;lt;endl; set_symmetric_difference(s1.begin(),s1.end(),s2.begin(),s2.end(),ostream_iterator&amp;lt;int&amp;gt;(cout,&amp;quot; &amp;quot;)); return 0; }</description>
     </item>
     
   </channel>
