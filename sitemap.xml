@@ -3,6 +3,55 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://dyhgo.github.io/categories/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/cpp/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/2020/06/install-ubuntu-in-vmware/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/linux/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/categories/linux/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/posts/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyhgo.github.io/tags/</loc>
+    <lastmod>2020-06-19T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://dyhgo.github.io/categories/abc/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -24,20 +73,6 @@
   </url>
   
   <url>
-    <loc>https://dyhgo.github.io/categories/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/cpp/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://dyhgo.github.io/tags/data_structure/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -46,20 +81,6 @@
   
   <url>
     <loc>https://dyhgo.github.io/tags/greedy/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/posts/</loc>
-    <lastmod>2020-06-15T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://dyhgo.github.io/tags/</loc>
     <lastmod>2020-06-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>

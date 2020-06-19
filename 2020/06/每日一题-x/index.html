@@ -43,7 +43,7 @@
 <meta itemprop="description" content="每日一题 (X)">
 <meta itemprop="datePublished" content="2020-06-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-06-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3681">
+<meta itemprop="wordCount" content="3921">
 
 
 
@@ -170,6 +170,7 @@
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/cources/" class="category-list-link">cources</a><span class="category-list-count">2</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/game/" class="category-list-link">game</a><span class="category-list-count">6</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/hduoj/" class="category-list-link">hduoj</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">1</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/note/" class="category-list-link">note</a><span class="category-list-count">15</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/nowcoder/" class="category-list-link">nowcoder</a><span class="category-list-count">7</span></li>
             <li class="category-list-item"><a href="https://dyhgo.github.io/categories/poj/" class="category-list-link">poj</a><span class="category-list-count">14</span></li>
@@ -214,7 +215,7 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
-                    class="tag-list-count">64</span></li>
+                    class="tag-list-count">65</span></li>
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cs/" class="tag-list-link">cs</a><span
@@ -258,6 +259,10 @@
             
             
             <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/lca/" class="tag-list-link">lca</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/linux/" class="tag-list-link">linux</a><span
                     class="tag-list-count">1</span></li>
             
             
@@ -324,6 +329,16 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/06/install-ubuntu-in-vmware/" class="title">install ubuntu in vmware</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-19 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-19</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
                         <a href="https://dyhgo.github.io/2020/06/abc170/" class="title">abc170</a>
                     </p>
                     <p class="item-date">
@@ -355,16 +370,6 @@
                 <div class="item-inner">
                     <p class="item-title">
                         <a href="https://dyhgo.github.io/2020/06/abc169/" class="title">abc169</a>
-                    </p>
-                    <p class="item-date">
-                        <time datetime="2020-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-08</time>
-                    </p>
-                </div>
-            </li>
-            <li>
-                <div class="item-inner">
-                    <p class="item-title">
-                        <a href="https://dyhgo.github.io/2020/06/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-x/" class="title">每日一题 (X)</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-06-08 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-08</time>
@@ -425,7 +430,7 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/06/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-x/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3681words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3921words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 8minutes </span>
       </div>
     </div>
@@ -1412,6 +1417,73 @@ int main(){
 		}
 		cout&lt;&lt;ans&lt;&lt;endl;
 	}
+	return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="博弈">博弈</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5891/F">题目</a></p>
+<p>如果只有一个串，1的个数是奇数，alice必赢</p>
+<p>所以只要有1个串1的个数是奇数，alice就对此操作，占据先机</p>
+<p>接下来bob怎么操作，alice只要跟着操作就行</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+    int t;
+    cin&gt;&gt;t;
+    while(t--){
+        int n;
+        cin&gt;&gt;n;
+        bool ok=false;
+        for(int i=0;i&lt;n;i++){
+            string s;
+            cin&gt;&gt;s;
+            bitset&lt;1005&gt; bs(s);
+            if(bs.count()&amp;1) ok=true;
+        }
+        if(ok) puts(&quot;sdzNB&quot;);else puts(&quot;kgNB&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="递推-构造">递推 构造</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/20241">题目</a></p>
+<p>第一个数有两种情况0,1，根据第二例的信息不断往后递推，中途判断格子是否是0或1</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n;
+int a[10005];
+int b[10005];
+int sol(int x){
+	memset(b,0,sizeof(b));
+	b[0] = 0;
+	b[1] = x;
+	for(int i=2;i&lt;=n;i++){
+		int tmp = a[i-1] - (b[i-1] + b[i-2]);
+		if(tmp == 0 or tmp==1) {
+			b[i] = tmp;
+		}
+		else{
+			return 0;
+		}
+		if(i==n){
+			if(a[n] == b[n-1] + b[n]){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+	}
+}
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
+	int ans = sol(0) + sol(1);
+	cout&lt;&lt;ans&lt;&lt;endl;
 	return 0;
 }
 </code></pre>

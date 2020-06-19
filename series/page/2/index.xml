@@ -10,6 +10,15 @@
     
     
     <item>
+      <title>abc162</title>
+      <link>https://dyhgo.github.io/2020/04/abc162/</link>
+      <pubDate>Mon, 13 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/abc162/</guid>
+      <description>A - Lucky 7 题意 问一个整数中是否含有数字7！ 题解 ac代码 s = input() if &#39;7&#39; in list(s): print(&#39;Yes&#39;) else: print(&#39;No&#39;) B - FizzBuzz Sum 题意 找出不大于n的自然数中不能被3和5整除的数的和 题解 模拟或</description>
+    </item>
+    
+    <item>
       <title>hduoj1796</title>
       <link>https://dyhgo.github.io/2020/04/hduoj1796/</link>
       <pubDate>Sat, 11 Apr 2020 00:00:00 +0000</pubDate>
@@ -178,15 +187,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</guid>
       <description>SharedPreferences sharedpreferences的布局 布局文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.datastorage.sharedPreferencesActivity&amp;quot;&amp;gt; &amp;lt;EditText android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/spet1&amp;quot; android:hint=&amp;quot;input&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toTopOf=&amp;quot;parent&amp;quot; app:layout_constraintBottom_toBottomOf=&amp;quot;parent&amp;quot; app:layout_constraintVertical_bias=&amp;quot;0.1&amp;quot; /&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;sava&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spet1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn1&amp;quot;/&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;show&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn2&amp;quot;/&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/sptv1&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn2&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; /&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt;</description>
-    </item>
-    
-    <item>
-      <title>牛客小白月赛23(部分题解)</title>
-      <link>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
-      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
-      <description>A 膜法记录 题目链接 题解 贪心 枚举 集合的整数表示 由于n的数据较小，直接枚举n的所有情况，有2^n种 对于每种情况判断剩下的点列blast能否用完 其</description>
     </item>
     
   </channel>

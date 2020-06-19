@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on This is DYH</title>
+    <link>https://dyhgo.github.io/categories/linux/</link>
+    <description>Recent content in linux on This is DYH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://dyhgo.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>test</title>
+      <link>https://dyhgo.github.io/2020/02/test/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>用hugo搭建个人博客网站</title>
+      <link>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+      <description>效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://dyhgo.github.io/about/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/about/</guid>
+      <description>this is dyh from hhu
+major in cs
+love swimming,coding,poppin
+it&amp;rsquo;s the first time to set up a site(fyi:just for fun as the domain)(based on hugo and github server)
+thanks to &amp;ldquo;xiaoheiah&amp;rdquo; offering me theme template
+i set up this site as a self blog and paste some study experience but maybe i&amp;rsquo;m not gonna manage it
+if u wanna leave a message
+you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>二进制表示集合</title>
+      <link>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</link>
+      <pubDate>Mon, 24 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/</guid>
+      <description>以二进制的原理表示集合，以整数呈现 1表示在集合内，0表示不在集合内 一位运算优先于按位逻辑运算 空集 0 只含有第i个元素的集合{i} 1&amp;laquo;i 含有全部n个</description>
+    </item>
+    
+    <item>
+      <title>Number Theory</title>
+      <link>https://dyhgo.github.io/2020/02/number-theory/</link>
+      <pubDate>Sat, 22 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/number-theory/</guid>
+      <description>求最大公约数和最小公倍数 辗转相除法 时间复杂度O(log(max(a,b))) int gcd(int a,int b) { if(b==0) return a; else return gcd(b,a%b); } int lcm(int a,int b) { return a*b/gcd(a,b); } 或直接调用algorit</description>
+    </item>
+    
+    <item>
+      <title>hduoj2089(数位dp &#43; 记忆化搜索)</title>
+      <link>https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/hduoj2089%E6%95%B0%E4%BD%8Ddp-%E8%AE%B0%E5%BF%86%E5%8C%96%E6%90%9C%E7%B4%A2/</guid>
+      <description>Problem Description 杭州人称那些傻乎乎粘嗒嗒的人为62（音：laoer）。 杭州交通管理局经常会扩充一些的士车牌照，新近出来一个好消息，以后上牌照，不再含有不</description>
+    </item>
+    
+    <item>
+      <title>Segment Tree</title>
+      <link>https://dyhgo.github.io/2020/02/segment-tree/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/segment-tree/</guid>
+      <description>线段树是把区间分割，然后把数据按树存储的数据结构。线段树是一颗完美二叉树 用一个例子来介绍线段树 RMQ（range minimum query） 实现功能 对于一</description>
+    </item>
+    
+    <item>
+      <title>牛客基础训练营5B</title>
+      <link>https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/</link>
+      <pubDate>Fri, 14 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/%E7%89%9B%E5%AE%A2%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55b/</guid>
+      <description>题目在这 这道题可以用二分法，三分法更好一点（反正当时完全没想到），0.618法应该最快 三分是中间的两个点 mid = l + (r - l) / 2 midmid = mid + (r - mid) / 2</description>
+    </item>
+    
+    <item>
+      <title>Graph Theory</title>
+      <link>https://dyhgo.github.io/2020/02/graph-theory/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/graph-theory/</guid>
+      <description>图的存储：邻接表、邻接矩阵、前向星、链式前向星等 二分图判定 通过着色来判定，整个图只染两种颜色，如果相邻点颜色不同就是二分图 用dfs判断每个点</description>
+    </item>
+    
+    <item>
+      <title>poj1182</title>
+      <link>https://dyhgo.github.io/2020/02/poj1182/</link>
+      <pubDate>Sun, 02 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/02/poj1182/</guid>
+      <description>食物链 Time Limit: 1000MS Memory Limit: 10000K Description 动物王国中有三类动物A,B,C，这三类动物的食物链构成了有趣的环形。A吃B， B吃C，C吃A。 现有N个动物，以1－N编号。</description>
+    </item>
+    
+    <item>
+      <title>poj2187</title>
+      <link>https://dyhgo.github.io/2020/01/poj2187/</link>
+      <pubDate>Fri, 31 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2187/</guid>
+      <description>Beauty Contest Time Limit: 3000MS Memory Limit: 65536K Description Bessie, Farmer John&amp;rsquo;s prize cow, has just won first place in a bovine beauty contest, earning the title &amp;lsquo;Miss Cow World&amp;rsquo;. As a result, Bessie will make a tour of N (2 &amp;lt;= N &amp;lt;= 50,000) farms around the world in order to spread goodwill between farmers and their cows. For simplicity, the world will be represented as a two-dimensional plane,</description>
+    </item>
+    
+    <item>
+      <title>poj2932</title>
+      <link>https://dyhgo.github.io/2020/01/poj2932/</link>
+      <pubDate>Thu, 30 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj2932/</guid>
+      <description>Coneology 题目链接 Time Limit: 5000MS Memory Limit: 65536K Description A student named Round Square loved to play with cones. He would arrange cones with different base radii arbitrarily on the floor and would admire the intrinsic beauty of the arrangement. The student even began theorizing about how some cones dominate other cones: a cone A dominates another cone B when cone B is completely within the cone</description>
+    </item>
+    
+    <item>
+      <title>poj1127</title>
+      <link>https://dyhgo.github.io/2020/01/poj1127/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1127/</guid>
+      <description>Jack Straws Time Limit: 1000MS Memory Limit: 10000K Description In the game of Jack Straws, a number of plastic or wooden &amp;ldquo;straws&amp;rdquo; are dumped on the table and players try to remove them one-by-one without disturbing the other straws. Here, we are only concerned with if various pairs of straws are connected by a path of touching straws. You will be given a list of the endpoints for some straws</description>
+    </item>
+    
+    <item>
+      <title>简易对拍</title>
+      <link>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/</guid>
+      <description>以这道题为例 准备一个对拍的文件夹，里面装这些东西 duipai_random_input_src.cpp是产生随机测试数据的代码 #include&amp;lt;cstdlib&amp;gt; #include&amp;lt;iostream&amp;gt; #include&amp;lt;ctime&amp;gt; using namespace std; int</description>
+    </item>
+    
+    <item>
+      <title>abc152-D</title>
+      <link>https://dyhgo.github.io/2020/01/abc152-d/</link>
+      <pubDate>Sun, 26 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/abc152-d/</guid>
+      <description>题目链接 题意：找正整数对（A,B），A、B都不大于N，满足A的第一个数字是B的最后一个数 字，B的第一个数字是A的最后一个数字，个位数也算，输</description>
+    </item>
+    
+    <item>
+      <title>poj1384</title>
+      <link>https://dyhgo.github.io/2020/01/poj1384/</link>
+      <pubDate>Sat, 25 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj1384/</guid>
+      <description>Piggy-Bank Time Limit: 1000MS Memory Limit: 10000K 题目链接 Description Before ACM can do anything, a budget must be prepared and the necessary financial support obtained. The main income for this action comes from Irreversibly Bound Money (IBM). The idea behind is simple. Whenever some ACM member has any small money, he takes all the coins and throws them into a piggy-bank. You know that this process is</description>
+    </item>
+    
+    <item>
+      <title>poj3624</title>
+      <link>https://dyhgo.github.io/2020/01/poj3624/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj3624/</guid>
+      <description>Charm Bracelet Time Limit: 1000MS Memory Limit: 65536K Description Bessie has gone to the mall&amp;rsquo;s jewelry store and spies a charm bracelet. Of course, she&amp;rsquo;d like to fill it with the best charms possible from the N (1 ≤ N ≤ 3,402) available charms. Each charm i in the supplied list has a weight Wi (1 ≤ Wi ≤ 400), a &amp;lsquo;desirability&amp;rsquo; factor Di (1 ≤ Di ≤ 100), and</description>
+    </item>
+    
+    <item>
+      <title>排序算法的时间复杂度</title>
+      <link>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>时间复杂度与计算时间的关系</title>
+      <link>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>poj3069</title>
+      <link>https://dyhgo.github.io/2020/01/poj3069/</link>
+      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/01/poj3069/</guid>
+      <description>Saruman&amp;rsquo;s Army Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army</description>
+    </item>
+    
+  </channel>
+</rss>
