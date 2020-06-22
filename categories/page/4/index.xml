@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/categories/</link>
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>test for music and video</title>
+      <link>https://dyhgo.github.io/2020/03/test-for-music-and-video/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/test-for-music-and-video/</guid>
+      <description>paste a music below [video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://pl</description>
+    </item>
     
     <item>
       <title>test</title>
@@ -186,15 +195,6 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       
       <guid>https://dyhgo.github.io/2020/01/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%97%B6%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>poj3069</title>
-      <link>https://dyhgo.github.io/2020/01/poj3069/</link>
-      <pubDate>Sat, 18 Jan 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/01/poj3069/</guid>
-      <description>Saruman&amp;rsquo;s Army Time Limit: 1000MS Memory Limit: 65536K 题目链接 Description Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army</description>
     </item>
     
   </channel>
