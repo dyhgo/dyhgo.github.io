@@ -10,6 +10,24 @@
     
     
     <item>
+      <title>Codeforces Round #636 (Div. 3) A~E</title>
+      <link>https://dyhgo.github.io/2020/04/codeforces-round-636-div.-3-a~e/</link>
+      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/codeforces-round-636-div.-3-a~e/</guid>
+      <description>A. Candies 题意 给一个数n，找一个数x，满足 x+2x+4x+8x+&amp;hellip; = n 题解 等比数列求和，变成2^m 然后枚举，看哪个能整除 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; long long n,t; int main(){ cin&amp;gt;&amp;gt;t; long long a[32]; for(long long i=1;i&amp;lt;=30;i++){ a[i] = (1&amp;lt;&amp;lt;i) -</description>
+    </item>
+    
+    <item>
+      <title>abc163</title>
+      <link>https://dyhgo.github.io/2020/04/abc163/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/04/abc163/</guid>
+      <description>A - Circle Pond 题意 求圆周长 题解 ac代码 print(int(input())*2*3.14159265) B - Homework 题意 给定假期的时间和每一项作业完成的时间，求这个假期能玩几天 题解 ac代码 n,m = map(int , input().split()) a = list(map(int , input().split())) s = sum(a) if</description>
+    </item>
+    
+    <item>
       <title>Codeforces Round #634 (Div. 3) A~E</title>
       <link>https://dyhgo.github.io/2020/04/codeforces-round-634-div.-3-a~e/</link>
       <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
@@ -55,15 +73,6 @@
     </item>
     
     <item>
-      <title>poj3683</title>
-      <link>https://dyhgo.github.io/2020/04/poj3683/</link>
-      <pubDate>Wed, 08 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/04/poj3683/</guid>
-      <description>Priest John&amp;rsquo;s Busiest Day Time Limit: 2000MS Memory Limit: 65536K Description John is the only priest in his town. September 1st is the John&amp;rsquo;s busiest day in a year because there is an old legend in the town that the couple who get married on that day will be forever blessed by the God of Love. This year N couples plan to get married on the blessed day. The i-th</description>
-    </item>
-    
-    <item>
       <title>NC13611</title>
       <link>https://dyhgo.github.io/2020/04/nc13611/</link>
       <pubDate>Mon, 06 Apr 2020 00:00:00 +0000</pubDate>
@@ -106,15 +115,6 @@
       
       <guid>https://dyhgo.github.io/2020/04/codeforces-round-630-div.-2-a~e/</guid>
       <description>A. Exercising Walk 题意 给一坐标范围，初始位置，和左右上下移动的步数，问是否会出界 题解 加各种条件判断即可 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int t; int a,b,c,d,x,y,x1,y1,x2,y2; bool ok; int main(){ //freopen(&amp;quot;input.txt&amp;quot;,&amp;quot;r&amp;quot;,stdin); cin&amp;gt;&amp;gt;t; while(t--){ ok=true; cin&amp;gt;&amp;gt;a&amp;gt;&amp;gt;b&amp;gt;&amp;gt;c&amp;gt;&amp;gt;d&amp;gt;&amp;gt;x&amp;gt;&amp;gt;y&amp;gt;&amp;gt;x1&amp;gt;&amp;gt;y1&amp;gt;&amp;gt;x2&amp;gt;&amp;gt;y2; if( (a-b&amp;gt;=0 and x-x1&amp;lt;a-b)</description>
-    </item>
-    
-    <item>
-      <title>poj2816</title>
-      <link>https://dyhgo.github.io/2020/03/poj2816/</link>
-      <pubDate>Tue, 31 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/poj2816/</guid>
-      <description>Popular Cows Description Every cow&amp;rsquo;s dream is to become the most popular cow in the herd. In a herd of N (1 &amp;lt;= N &amp;lt;= 10,000) cows, you are given up to M (1 &amp;lt;= M &amp;lt;= 50,000) ordered pairs of the form (A, B) that tell you that cow A thinks that cow B is popular. Since popularity is transitive, if A thinks B is popular and B thinks</description>
     </item>
     
     <item>
