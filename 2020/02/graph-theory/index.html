@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Graph Theory">
 <meta itemprop="datePublished" content="2020-02-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4706">
+<meta itemprop="wordCount" content="4946">
 
 
 
@@ -431,7 +431,7 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/graph-theory/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4706words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4946words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
       </div>
     </div>
@@ -924,6 +924,72 @@ void in_out_d(){
 	}
 }
 </code></pre>
+<h2 id="tarjan算法-割点桥部分">Tarjan算法 （割点、桥部分）</h2>
+<p>利用dfn和low判定割点和桥，注意更新</p>
+<pre><code class="language-cpp">int V;
+vector&lt;int&gt; G[maxv];
+int dfn[maxv],low[maxv],cmp[maxv];
+bool in_stack[maxv];
+stack&lt;int&gt; s;
+int tim;
+int num=0;  //最后的num是连通块数量 
+set&lt;int&gt; cut;
+int Rchild;
+int cnt_root;
+set&lt;pair&lt;int,int&gt;&gt; bridge; 
+
+void tarjan_dfs(int x,int p){
+    dfn[x] = low[x] = ++tim; 
+    s.push(x);
+    in_stack[x] = true;
+    
+    for(int i=0;i&lt;G[x].size();i++){
+        int to = G[x][i];
+        if(to != p){
+        	
+        	if(dfn[to] == 0){
+        		if(x == cnt_root) Rchild++;
+            	tarjan_dfs(to , x);
+            	low[x] = min(low[x] , low[to]);
+            	
+            	if(x != cnt_root and low[to] &gt;= dfn[x]) cut.insert(x);         //不是根，求割点 
+            	if(low[to] &gt; dfn[x]) bridge.insert({min(x,to),max(x,to)});     //求桥 
+            	
+         	}
+        	else if(in_stack[to]){
+            	low[x] = min(low[x] , dfn[to]);  //注意这里是dfn，而不是求scc的low 
+        	}
+        	
+		}
+    }
+    
+    int tmp;
+    if(dfn[x] == low[x]){
+        do{
+            tmp = s.top();
+            cmp[tmp] = num;
+            s.pop();
+            in_stack[tmp] = false;
+        }while(tmp != x);
+        num++;
+    }
+}
+
+
+void tarjan_scc(){
+    for(int i=0;i&lt;V;i++){
+        if(!dfn[i]){
+        	cnt_root = i;
+        	Rchild = 0;
+            tarjan_dfs(i,-1);
+            
+            if(Rchild &gt; 1) cut.insert(cnt_root);       //是根，求割点 
+        }
+    }
+}
+</code></pre>
+<p><a href="https://www.luogu.com.cn/problem/P3388">割点的模板测试</a> 这个题的数据好像有森林</p>
+<p><a href="https://www.luogu.com.cn/problem/P1656">桥的模板测试</a></p>
 <h2 id="lca">LCA</h2>
 <p>大致的做法就是直接法，直接向上追溯</p>
 <p>对于多次查询通过跳级预处理，利用二分的思想</p>
