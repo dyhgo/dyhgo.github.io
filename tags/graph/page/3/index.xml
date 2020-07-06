@@ -5,10 +5,28 @@
     <link>https://dyhgo.github.io/tags/graph/</link>
     <description>Recent content in graph on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 28 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/tags/graph/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>看门狗2</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
+      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是</description>
+    </item>
+    
+    <item>
+      <title>abc159</title>
+      <link>https://dyhgo.github.io/2020/03/abc159/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc159/</guid>
+      <description>A - The Number of Even Pairs 题解 ac代码 (awk语言) $0=$1*--$1/2+$2*--$2/2_ B - String Palindrome 题解 ac代码 (perl语言) print&amp;lt;&amp;gt;=~/^(.+).\1$/?Yes:No C - Maximum Volume 题解 ac代码 (perl语言) print&amp;lt;&amp;gt;**3/27 D - Banned K 题解 ac代码 (</description>
+    </item>
     
     <item>
       <title>Android 数据存储</title>
@@ -170,24 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/abc157/</guid>
       <description>A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a; cin&amp;gt;&amp;gt;a; if(a&amp;amp;1) cout&amp;lt;&amp;lt;a/2+1&amp;lt;&amp;lt;endl; else cout&amp;lt;&amp;lt;a/2; return 0; } B -</description>
-    </item>
-    
-    <item>
-      <title>test for music and video</title>
-      <link>https://dyhgo.github.io/2020/03/test-for-music-and-video/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/test-for-music-and-video/</guid>
-      <description>paste a music below [video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://pl</description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://dyhgo.github.io/2020/02/test/</link>
-      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/02/test/</guid>
-      <description></description>
     </item>
     
   </channel>
