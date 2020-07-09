@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Graph Theory">
 <meta itemprop="datePublished" content="2020-02-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4946">
+<meta itemprop="wordCount" content="4952">
 
 
 
@@ -431,7 +431,7 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/graph-theory/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4946words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4952words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
       </div>
     </div>
@@ -446,7 +446,7 @@ int tot,head[maxn];
 void add_edge(int u,int v,int w){
 	e[tot].to = v;
 	e[tot].w = w;
-	w[tot].next = head[u];
+	e[tot].next = head[u];
 	head[u] = tot++;
 }
 
@@ -454,6 +454,10 @@ for(int i=head[u];~i;i=e[i].next){
 	int v = e[i].to;
 	int w = e[i].w;
 }
+
+//init
+memset(head , -1 , sizeof(head));
+
 </code></pre>
 <h2 id="二分图判定">二分图判定</h2>
 <p>通过着色来判定，整个图只染两种颜色，如果相邻点颜色不同就是二分图</p>

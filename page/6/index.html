@@ -701,7 +701,7 @@
 </h1>
 
       </div>
-      <div class="article-entry text-muted" itemprop="description">图的存储：邻接表、邻接矩阵、前向星、链式前向星等 链式前向星存图 struct edge{ int to , w , next; }e[maxn]; int tot,head[maxn]; void add_edge(int u,int v,int w){ e[tot].to = v; e[tot].w = w; w[tot].next = head[u]; head[u] = tot++; } for(int i=head[u];~i;i=e[i].next){ int v = e[i].to; int w = e[i].w;</div>
+      <div class="article-entry text-muted" itemprop="description">图的存储：邻接表、邻接矩阵、前向星、链式前向星等 链式前向星存图 struct edge{ int to , w , next; }e[maxn]; int tot,head[maxn]; void add_edge(int u,int v,int w){ e[tot].to = v; e[tot].w = w; e[tot].next = head[u]; head[u] = tot++; } for(int i=head[u];~i;i=e[i].next){ int v = e[i].to; int w = e[i].w;</div>
       <p class="article-meta">
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
@@ -720,7 +720,7 @@
   </span>
 
         <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/02/graph-theory/#comments" class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4946words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4952words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
       </p>
     </article>

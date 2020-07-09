@@ -103,7 +103,7 @@ you can reach me by qq &amp;ldquo;244882973&amp;rdquo;</description>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://dyhgo.github.io/2020/02/graph-theory/</guid>
-      <description>图的存储：邻接表、邻接矩阵、前向星、链式前向星等 链式前向星存图 struct edge{ int to , w , next; }e[maxn]; int tot,head[maxn]; void add_edge(int u,int v,int w){ e[tot].to = v; e[tot].w = w; w[tot].next = head[u]; head[u] = tot++; } for(int i=head[u];~i;i=e[i].next){ int v = e[i].to; int w = e[i].w;</description>
+      <description>图的存储：邻接表、邻接矩阵、前向星、链式前向星等 链式前向星存图 struct edge{ int to , w , next; }e[maxn]; int tot,head[maxn]; void add_edge(int u,int v,int w){ e[tot].to = v; e[tot].w = w; e[tot].next = head[u]; head[u] = tot++; } for(int i=head[u];~i;i=e[i].next){ int v = e[i].to; int w = e[i].w;</description>
     </item>
     
     <item>
