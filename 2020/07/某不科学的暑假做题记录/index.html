@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1234">
+<meta itemprop="wordCount" content="1605">
 
 
 
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1234words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1605words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 4minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -738,6 +738,77 @@ int main(){
 	return 0;
 }
 
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="贪心-思维">贪心 思维</h2>
+<p><a href="https://atcoder.jp/contests/aising2020/tasks/aising2020_e">题目</a></p>
+<h3 id="题解-4">题解</h3>
+<p>把L大的放左边，把R大的放右边</p>
+<p>假设L大的有a个，R大的有b个</p>
+<p>可以把他们分开放置</p>
+<p>先处理前a个位置（这些都放置L大的数）</p>
+<p>再处理后b个位置（这些都放置R大的数）</p>
+<p>对于前a个位置</p>
+<p>遍历L大的集合（L大的排前面）</p>
+<p>对于当前数，贪心地把它放在不超过k的最右边</p>
+<p>如果不满足条件，就放在区间的最右边（此时放哪里，贡献都一样，为了给别的数腾出位置，贪心地放在最右边）</p>
+<p>对于后b个位置</p>
+<p>遍历R大的集合（R大的排前面）</p>
+<p>对于当前数，贪心地把它放在超过k的最左边</p>
+<p>如果不满足条件，就放在区间的最左边（此时放哪里，贡献都一样，为了给别的数腾出位置，贪心地放在最左边）</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+using ll = long long;
+vector&lt;pair&lt;int,int&gt;&gt; vL;
+vector&lt;pair&lt;int,int&gt;&gt; vR;
+int t;
+int n;
+set&lt;int&gt; sL;
+set&lt;int&gt; sR;
+#define fi first
+#define se second
+int main(){
+	cin&gt;&gt;t;
+	while(t--){
+		ll ans = 0;
+		cin&gt;&gt;n;
+		vL.clear();
+		vR.clear();
+		for(int i=0;i&lt;n;i++){
+			int k,l,r;
+			cin&gt;&gt;k&gt;&gt;l&gt;&gt;r;
+			if(l&lt;r) vR.push_back({l-r,k});
+			else vL.push_back({l-r,k});
+			ans += r;
+		}
+		for(int i=1;i&lt;=vL.size();i++) sL.insert(i);
+		for(int i=vL.size()+1;i&lt;=n;i++) sR.insert(i);
+		sort(vL.begin(),vL.end(),greater&lt;pair&lt;int,int&gt;&gt;());
+		sort(vR.begin(),vR.end());
+		for(auto i:vL){
+			auto tmp = sL.upper_bound(i.se);
+			if(tmp == sL.begin()){
+				sL.erase(--sL.end());
+			}else{
+				ans += i.fi;
+				sL.erase(--tmp);
+			}
+		}
+		for(auto i:vR){
+			auto tmp = sR.upper_bound(i.se);
+			if(tmp == sR.end())	{
+				sR.erase(sR.begin());
+				ans += i.fi;
+			}
+			else{
+				sR.erase(tmp);
+			}		
+		}
+		cout&lt;&lt;ans&lt;&lt;endl;
+	}
+	
+	return 0;
+}
 </code></pre>
 
     </div>
