@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Segment Tree">
 <meta itemprop="datePublished" content="2020-02-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-20T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="706">
+<meta itemprop="wordCount" content="1306">
 
 
 
@@ -432,8 +432,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/segment-tree/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 706words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1306words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -538,6 +538,145 @@ int main()
 边界条件是线段树容易出错的地方<!-- raw HTML omitted -->，以上代码的区间是左闭右开，在判断条件里面用等号<!-- raw HTML omitted -->注意n_和n的使用</p>
 <p>线段树的lazy思想</p>
 <p><a href="https://www.cnblogs.com/ECJTUACM-873284962/p/6791203.html">参考这里</a></p>
+<p>===========================================================================================================</p>
+<p>在这里补一个线段树板子</p>
+<p>支持区间加、区间乘、区间求和、区间求平方和</p>
+<p>如果求最值可以用上面那个模板</p>
+<p>这个模板还没有融合进去</p>
+<p>其实线段树的基本操作就是区间查询和区间更新，其他的操作都可以通过两个基本的区间加（区间求最值）、区间求和操作转化</p>
+<p>平方和就是通过等式转化、类似地还可以求立方和、不过四次方应该会很麻烦</p>
+<p><a href="https://ac.nowcoder.com/acm/contest/200/B">测板子题</a></p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+using ll = long long;
+const int maxn = 10005;
+
+struct tnode{    
+	ll w,l,r,siz,alazy;
+	ll sq,mlazy=1;
+}tn[maxn&lt;&lt;2];    
+
+ll n,m;
+const ll mod = 0x3f3f3f3f3f3f3f3f;
+ll wt[maxn];
+
+
+void pushup(ll u){   
+	tn[u].w = (tn[u&lt;&lt;1].w + tn[u&lt;&lt;1|1].w) % mod;
+	tn[u].sq = (tn[u&lt;&lt;1].sq + tn[u&lt;&lt;1|1].sq) % mod;
+}
+
+void build(ll u,ll l,ll r){  
+	tn[u].l = l;
+	tn[u].r = r;
+	tn[u].siz = r - l + 1;
+	if(l == r){
+		tn[u].w = wt[l];   
+		tn[u].sq = wt[l] * wt[l];
+		return ;
+	}
+	ll mid = (l+r) &gt;&gt; 1;
+	build(u&lt;&lt;1 , l , mid);       
+	build(u&lt;&lt;1|1 , mid+1 , r);
+	pushup(u);                  
+}
+
+void pushdown(ll u){   
+	if(tn[u].alazy != 0 or tn[u].mlazy != 1){
+		tn[u&lt;&lt;1].sq = ((tn[u&lt;&lt;1].sq + 2LL * tn[u&lt;&lt;1].w * tn[u].alazy % mod) % mod + tn[u].alazy * tn[u].alazy % mod * tn[u&lt;&lt;1].siz % mod) % mod; 
+		tn[u&lt;&lt;1|1].sq = ((tn[u&lt;&lt;1|1].sq + 2LL * tn[u&lt;&lt;1|1].w * tn[u].alazy % mod) % mod + tn[u].alazy * tn[u].alazy % mod * tn[u&lt;&lt;1|1].siz % mod) % mod;
+		
+		tn[u&lt;&lt;1].w =  (tn[u&lt;&lt;1].w * tn[u].mlazy  % mod + tn[u&lt;&lt;1].siz * tn[u].alazy % mod) % mod;
+		tn[u&lt;&lt;1|1].w = (tn[u&lt;&lt;1|1].w * tn[u].mlazy  % mod + tn[u&lt;&lt;1|1].siz * tn[u].alazy % mod) % mod;
+		
+
+		tn[u&lt;&lt;1].alazy = (tn[u&lt;&lt;1].alazy * tn[u].mlazy % mod + tn[u].alazy) % mod;           
+		tn[u&lt;&lt;1|1].alazy = (tn[u&lt;&lt;1|1].alazy * tn[u].mlazy % mod + tn[u].alazy) % mod;
+		
+		tn[u&lt;&lt;1].mlazy = (tn[u&lt;&lt;1].mlazy * tn[u].mlazy) % mod;
+		tn[u&lt;&lt;1|1].mlazy = (tn[u&lt;&lt;1|1].mlazy * tn[u].mlazy) % mod;
+		
+		
+		tn[u].alazy = 0;                                               
+		tn[u].mlazy = 1;
+	}
+}
+
+ll query(ll u,ll l,ll r,ll t){     
+	if(l&lt;=tn[u].l and r&gt;=tn[u].r) {
+		if(t == 1) return tn[u].w;
+		if(t == 2) return tn[u].sq;
+	}    
+	
+	ll ans = 0;
+	pushdown(u);                 
+	ll mid = (tn[u].l + tn[u].r) &gt;&gt; 1;
+	if(l&lt;=mid) ans = (ans + query(u&lt;&lt;1 , l , r , t)) % mod;
+	if(r&gt;mid) ans = (ans + query(u&lt;&lt;1|1 , l , r , t)) % mod;
+	return ans;
+}
+
+void update(ll u,ll l,ll r,ll wa,ll wm){   
+	if(l&lt;=tn[u].l and r&gt;=tn[u].r){      
+		tn[u].sq = ((tn[u].sq + 2LL * tn[u].w * wa % mod) % mod + wa * wa % mod * tn[u].siz % mod) % mod;
+		tn[u].w = (tn[u].w * wm % mod + tn[u].siz * wa % mod) % mod;
+		
+		tn[u].alazy = (tn[u].alazy * wm % mod + wa) % mod;
+		tn[u].mlazy = (tn[u].mlazy * wm) % mod;
+
+		return ;
+	}
+	pushdown(u);                        
+	ll mid = (tn[u].l + tn[u].r) &gt;&gt; 1; 
+	if(l&lt;=mid) update(u&lt;&lt;1, l , r , wa , wm);
+	if(r&gt;mid) update(u&lt;&lt;1|1, l , r , wa , wm);
+	pushup(u);                          
+}
+
+int main(){
+	//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
+	cin&gt;&gt;n&gt;&gt;m;
+	for(ll i=1;i&lt;=n;i++){
+		cin&gt;&gt;wt[i];
+	}
+	
+	build(1,1,n);
+	while(m--){
+		ll t;
+		cin&gt;&gt;t;
+		switch(t){
+			case 1:{
+				ll x,y;
+				cin&gt;&gt;x&gt;&gt;y;
+				cout&lt;&lt;query(1,x,y,1)&lt;&lt;endl;
+				break;
+			}
+			case 2:{
+				ll x,y;
+				cin&gt;&gt;x&gt;&gt;y;
+				cout&lt;&lt;query(1,x,y,2)&lt;&lt;endl;
+				break;
+			} 
+			case 3:{
+				ll x,y,z;
+				cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+				update(1,x,y,0,z%mod);
+				break;
+			}
+			case 4:{
+				ll x,y,z;
+				cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+				update(1,x,y,z%mod,1);
+				break;
+			}
+		
+		}	
+
+	
+	}	
+	return 0;
+}
+</code></pre>
 
     </div>
     <div class="article-footer">
