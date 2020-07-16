@@ -43,7 +43,7 @@
 <meta itemprop="description" content="Graph Theory">
 <meta itemprop="datePublished" content="2020-02-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-02-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4952">
+<meta itemprop="wordCount" content="6110">
 
 
 
@@ -152,7 +152,7 @@
     <h3 class="widget-title">Board</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=571338636&auto=1&height=66"></iframe> 每日一题<br>31252<br>31333<br>31368<br>31573<br>31665<br>31875<br>31989<br>32093<br>32579<br>32711<br>33436<br>33440<br>33480<br>34204<br>34456<br>38361<br> 38471<br>38543<br>38752</p>
+            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461347446&auto=0&height=66"></iframe></p>
             </div>
         </div>
     </div>
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/02/graph-theory/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4952words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6110words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 13minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -1363,6 +1363,127 @@ int main(){
 		cin&gt;&gt;foo;
 		cout&lt;&lt;ans[foo]&lt;&lt;endl;
 	}
+	return 0;
+}
+</code></pre>
+<h2 id="dinic算法">Dinic算法</h2>
+<p>用来解决最大流问题</p>
+<p>有两类算法</p>
+<p>增广路算法（dinic ek isap ff）</p>
+<p>预流推进算法 （hlpp）</p>
+<p>dinic算法是经典算法，hlpp可能更快一点</p>
+<p>dinic算法的本质还是贪心+暴力</p>
+<p>通过不断地对残余网络(residual networks)求增广路(augmenting paths)，对每一条增广路求流量，然后把流量加起来就是最大流</p>
+<p>有一个问题：在对增广路下放流量时，可能错过最优解</p>
+<p>解决的方法是，对每条边加一条反向边，流量在原来的边减多少，就在反向边加多少，这样可以通过流入反向边来达到撤销的操作</p>
+<p>dinic的操作过程分两步</p>
+<p>bfs建立分层图，通过最短路的原则分层，每次在最短路的前提下找增广路，这是贪心的思想，这样会使找增广路高效且达到可行解</p>
+<p>dfs找增广路，不断对边进行流量增减操作，暴力枚举思想</p>
+<p>不断迭代每次产生的残余网络</p>
+<p>三种优化（主要是后两者）<a href="https://www.cnblogs.com/Absofuckinglutely/p/11520363.html">参考文章</a></p>
+<p>当前弧优化 ：  增广路搜索中不再考虑之前搜索过的边</p>
+<p>多路增广优化： 对于某一条边减去的流量，因增广路覆盖的次数会进行多次操作，现在只需要一次操作就行（操作总的流量），从一次bfs，多次dfs到多次bfs，一次dfs</p>
+<p>炸点优化 ： 当某一条增广路中流量为0时，这个点在当前dfs搜索增广路中将不可达，所以直接炸点</p>
+<p>时间复杂度 O(n*n*m)</p>
+<p>实际合理运用优化之后，很难达到这样的时间复杂度，dinic算法还是很高效的，甚至可以跑十万个点</p>
+<p>根据最大流最小割定理(maximum flow minimum cut theorem) 最大流就是有源汇最小割</p>
+<p>对于无源汇最小割和全局最小割可以用Stoer Wagner算法</p>
+<p>对于有源汇无源汇上下界最大流，<a href="https://www.luogu.com.cn/problem/solution/P5192">参考此处</a></p>
+<p>对于时间要求苛刻的最大流可以用HLPP算法</p>
+<p>对于费用流，可以用spfa</p>
+<p>对于最大流的各种变体，参考其他资料</p>
+<p><a href="https://www.luogu.com.cn/problem/P3376">测模板题</a></p>
+<p><a href="https://pasteme.cn/43342">无注释代码</a></p>
+<pre><code class="language-cpp">//有时需改成long long 
+
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+const int maxn = 205;
+const int maxm = 5005;
+int n,m,s,t;
+
+
+const int inf = 0x3f3f3f3f; 
+
+struct edge{
+    int to , w , nex;
+}e[maxm&lt;&lt;1];          //maxm 
+int tot=2,head[maxn]; // tot = 2 !!
+
+int dep[maxn],cur[maxn];   //dep : dfs得到的最短距离   cur : 当前弧优化需要拷贝的数组 
+
+
+void add_edge(int u,int v,int w){
+    e[tot].to = v;
+    e[tot].w = w;
+    e[tot].nex = head[u];
+    head[u] = tot++;
+}
+
+bool bfs(){
+	memset(dep , 0 , sizeof(dep));  
+	//memset(dep , 0 , (tot+2)&lt;&lt;2);  
+	queue&lt;int&gt; q;
+	q.push(s);
+	dep[s] = 1;    
+	
+	int u , v;
+	while(q.size()){
+		u = q.front();
+		q.pop();
+		for(int i = head[u] ; i ; i = e[i].nex){
+			v = e[i].to;
+			if(dep[v] or e[i].w &lt;= 0) continue;  //v 已达到不能作为dfs的增广路 ， 断流的点不能作为dfs的增广路 
+			dep[v] = dep[u] + 1;
+			q.push(v);
+		}
+	} 
+	for(int i=0;i&lt;=n;i++) cur[i] = head[i];      //拷贝作为当前弧优化 
+	return dep[t];                               //是否到达汇点 
+}
+
+
+int dfs(int u , int flow){
+	if(u == t) return flow;
+	int nowflow = 0;                            //当前流量 
+	for(int&amp; i = cur[u] , v ; i ; i = e[i].nex){      //当前弧优化 
+		v = e[i].to;
+		if(dep[v] != dep[u] + 1 or e[i].w &lt;= 0) continue;      //不满足深度递增或断流就不能作为增广路 
+		
+		if(int delta = dfs(v , min(flow - nowflow , e[i].w))){    
+			e[i].w -= delta;
+			e[i^1].w += delta;
+			nowflow += delta;                   //多路增广优化，for循环一直进行，nowflow一直增加 
+			if(nowflow == flow) break;         //已达到最大流量 
+		}
+	}
+	if(!nowflow) dep[u] = -2;                  //炸点优化 
+	return nowflow;
+}
+
+
+ll dinic(){
+	ll ans = 0 ;
+	while(bfs()){                              //对残余网络不断分层，以备之后dfs求增广路，当汇点不可达时，残余网络将永远不可达 
+		ans += dfs(s , inf);
+	}
+	return ans;
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
+	cin&gt;&gt;n&gt;&gt;m&gt;&gt;s&gt;&gt;t;
+	for(int i=0;i&lt;m;i++){
+		int x,y,z;
+		cin&gt;&gt;x&gt;&gt;y&gt;&gt;z;
+		add_edge(x,y,z);
+		add_edge(y,x,0);
+	}
+	ll ans = dinic();
+	cout&lt;&lt;ans&lt;&lt;endl;
 	return 0;
 }
 </code></pre>
