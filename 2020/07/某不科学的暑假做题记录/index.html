@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2522">
+<meta itemprop="wordCount" content="3978">
 
 
 
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 2522words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 6minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 3978words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 8minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -1064,6 +1064,362 @@ int main(){
         ans = max(ans ,  tmp);
     }
     cout&lt;&lt;ans+1&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="并查集">并查集</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5668/G">题目</a></p>
+<p>并查集模改</p>
+<h3 id="题解-8">题解</h3>
+<p>细节参考官方题解</p>
+<p>并查集模拟操作，链表维护相同颜色的节点</p>
+<p>注意要记录初始的状态（debug好久）</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int maxn = 8e5 + 10;
+vector&lt;int&gt; G[maxn];
+list&lt;int&gt; ls[maxn];
+int par[maxn];    
+  
+void init(int n)      
+{
+    for(int i=0;i&lt;n;i++)
+    {
+        par[i]=i;
+        ls[i].push_back(i);
+    }
+} 
+
+int find(int x)
+{
+    if(par[x]==x) return x;
+    else return par[x]=find(par[x]);    
+}
+
+int main(){
+	int t;
+	cin&gt;&gt;t;
+	while(t--){
+		int n,m;
+		cin&gt;&gt;n&gt;&gt;m;
+		//reset
+		for(int i = 0;i&lt;=n;i++) {
+			G[i].clear(); ls[i].clear();
+		}
+			
+		for(int i = 0;i&lt;m;i++){
+			int x,y;
+			cin&gt;&gt;x&gt;&gt;y;
+			G[x].push_back(y);
+			G[y].push_back(x);
+		}
+		
+		init(n);
+		int q;
+		cin&gt;&gt;q;
+		while(q--){
+            
+			int x;
+			cin&gt;&gt;x;
+			
+			if(x != par[x]) continue;
+			int sz = ls[x].size();  //记录初始的链表大小
+			int px = find(x);   //记录初始的根节点
+			while(sz--){
+				int cnt = ls[x].front();
+				ls[x].pop_front();
+				for(int i:G[cnt]){
+					int pi = find(i);  //记录初始的根节点
+					if(px == pi) continue;
+					par[pi] = px; //这样合并
+					ls[x].splice(ls[x].end() , ls[pi]);		
+				}
+			}
+		
+		}
+		for(int i=0;i&lt;n;i++) cout&lt;&lt;find(i)&lt;&lt;&quot; &quot;;
+		puts(&quot;&quot;);
+	}
+	return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="数论-思维">数论 思维</h2>
+<p>1和大于n/2的质数都不能匹配</p>
+<p>先处理质因子稀有的数，就是从大到小遍历质数</p>
+<p>然后把含有这个质因子的数两两匹配</p>
+<p>如果含有这个质因子的数的个数是奇数个</p>
+<p>就不匹配 2*p 这个数，留给下一个质因子，因为2是最多的质因子</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+const int maxnn = 2e5+10;
+bool isprime[maxnn];
+void e_sieve(int n = maxnn){
+    for(int  i = 1;i&lt;n;i++){
+        isprime[i] = true;
+    }
+    isprime[0] = isprime[1] = false;
+    for(int i = 2;i &lt; n;i++){
+        if(isprime[i]){
+            for(int j = 2 * i ; j &lt; n ; j += i){
+                isprime[j] = false;
+            }
+        }
+    }
+}
+int use[maxnn] ;
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    e_sieve();
+    int t;
+    cin&gt;&gt;t;
+    while (t--){
+        int n;
+        cin&gt;&gt;n;
+
+        for(int i = 1; i &lt;= n ; i++) use[i] = 0;
+        vector&lt;pair&lt;int,int&gt;&gt; ans;
+        for(int i = n/2 ; i &gt;= 2 ; --i){
+            if(isprime[i]){
+                vector&lt;int&gt; tmp;
+                for(int j = i; j &lt;= n ; j += i){
+                    if(use[j] == 0){
+                        tmp.push_back(j);
+                    }
+                }
+                if(tmp.size() &amp; 1){
+                    for(int x = 0 ; x &lt; tmp.size() ; ++x){
+                        if(tmp[x] == i * 2) tmp.erase(tmp.begin() + x);
+                    }
+                }
+
+                for(int i = 0 ; i &lt; tmp.size() - 1 ; i += 2){
+                    ans.push_back({tmp[i] , tmp[i+1]});
+                    use[tmp[i]] = 1;
+                    use[tmp[i+1]] = 1;
+                }
+            }
+        }
+        //for(int i = 2; i &lt; 20 ; i++) cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;isprime[i]&lt;&lt;&quot;\n&quot;;
+        cout&lt;&lt;ans.size()&lt;&lt;endl;
+        for(auto i : ans){
+            cout&lt;&lt;i.first&lt;&lt;&quot; &quot;&lt;&lt;i.second&lt;&lt;endl;
+        }
+    }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="数论">数论</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5668/F">题目</a></p>
+<h3 id="题解-9">题解</h3>
+<p>如果没有 d&lt;b f&lt;b 的条件直接让 d = f = b</p>
+<p>如果 a/b 能约分成 a&rsquo; / b&rsquo;</p>
+<p>则 d = f = b&rsquo;</p>
+<p>e = 1 , c = a‘+1（随便赋值）</p>
+<p>如果 a/b不能约分</p>
+<p>就把b分解质因数（预处理每个数最小的质因子）</p>
+<p>设b分解成 p1 p2</p>
+<p>如果p1 p2 有1 无解</p>
+<p>否则根据通分公式  d = p1 , f = p2</p>
+<p>cf - de = a</p>
+<p>因为d f是b的因子 ，b 和 a  互质 ，所以gcd(f/a , d/a) = 1</p>
+<p>-(d/a)e + c(f/a) = 1</p>
+<p>用扩展欧几里得公式求出 c e</p>
+<p>e = -e  如果 e c有负数 ，正数化</p>
+<p>然后 e c 都乘上 a</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+
+using namespace std;
+using ll = long long;
+
+const ll maxn = 2e6+10;
+
+ll gcd(ll a , ll b){
+    return b == 0 ? a : gcd(b , a % b);
+}
+
+
+bool isprime[maxn+1]; //is i a prime number
+ll minp[maxn+1];
+
+void e_sieve(int n = maxn)
+{
+
+    for(int i=0;i&lt;=n;i++) isprime[i]=true;  //initialize
+    isprime[0]=isprime[1]=false;
+    for(int i=2;i&lt;=n;i++)
+    {
+        if(isprime[i])
+        {
+            for(int j=2*i;j&lt;=n;j+=i) isprime[j]=false;
+        }
+    }
+
+
+    for(ll i = 2 ; i &lt;= n; i++){
+        if(isprime[i]){
+            for(ll j = i; j &lt;= n; j += i){
+                if(minp[j] == 0) minp[j] = i;
+            }
+        }
+    }
+}
+
+ll ex_gcd(ll a,ll b,ll&amp; x,ll&amp; y)
+{
+    ll t,res;
+    if(!b)
+    {
+        x=1;y=0;return a;
+    }
+    else
+    {
+        res=ex_gcd(b,a%b,x,y);
+        t=x;
+        x=y;y=t-a/b*y;
+        return res;
+    }
+}
+
+
+
+int main() {
+#ifdef LOCAL
+    freopen(&quot;in1.txt&quot;, &quot;r&quot;, stdin);
+    freopen(&quot;out1.txt&quot;, &quot;w&quot;, stdout);
+#endif
+
+    e_sieve();
+    //for(int i = 2; i&lt; 100;i++) cout&lt;&lt;i&lt;&lt;&quot; &quot;&lt;&lt;minp[i]&lt;&lt;endl;
+    int _;
+    cin &gt;&gt; _;
+    while (_--) {
+        ll a, b;
+        cin &gt;&gt; a &gt;&gt; b;
+        ll c , d , e , f;
+        ll t = gcd(a , b);
+        if(t != 1){
+            a /= t;
+            b /= t;
+            d = f = b;
+            e = 1;
+            c = a + 1;
+            cout&lt;&lt;c&lt;&lt;&quot; &quot;&lt;&lt;d&lt;&lt;&quot; &quot;&lt;&lt;e&lt;&lt;&quot; &quot;&lt;&lt;f&lt;&lt;endl;
+            continue;
+        }
+        ll p1 = 1,p2 = b,p = minp[b];
+        if(p == 0) {
+            cout&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;endl;
+            continue;
+        }
+        while(p2 % p == 0){
+            p2 /= p;
+            p1 *= p;
+        }
+        if(p2 == 1){
+            cout&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;&quot; &quot;&lt;&lt;-1&lt;&lt;endl;
+            continue;
+        }
+        d = p1;
+        f = p2;
+        ex_gcd(d, f, e, c);
+        e = -e;
+
+        if(e &lt;= 0 or c &lt;= 0){
+            ll et = (e % f + f) % f;
+            ll ct = (c % d + d) % d;
+            ll mm = max(0ll , max((et - e) / f , (ct - c) / d));
+            e += f * mm;
+            c += d * mm;
+        }
+        e *= a;
+        c *= a;
+        cout&lt;&lt;c&lt;&lt;&quot; &quot;&lt;&lt;d&lt;&lt;&quot; &quot;&lt;&lt;e&lt;&lt;&quot; &quot;&lt;&lt;f&lt;&lt;endl;
+    }
+
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="计算几何-区间dp">计算几何 区间dp</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/74/C">题目</a></p>
+<h3 id="题解-10">题解</h3>
+<p>很难的一道题</p>
+<p>由于切割的方案数太多，所以考虑dp</p>
+<p><code>dp[i][j]</code> 表示点 <code>i</code> 到点 <code>j</code> 的答案</p>
+<p>转移方程</p>
+<p><code>dp[i][j] = min(dp[i][j] , max( max (dp[i][k] , dp[k][j]) , area(ps[i] , ps[j] , ps[k]) ) )</code></p>
+<p>计算面积直接用外积 <code>1/2 * (A-&gt;B) X (A-&gt;C)</code></p>
+<p>由于题目存在凹多边形的情况</p>
+<p>所以当有点在三角形 <code>i j k</code>中，这个区间不可分割（根据面积判断，这个技巧可以用于求一个点是否在凸多边形内）</p>
+<p>dp的初始化</p>
+<p><code>dp[i][i+2] = area(ps[i] , ps[i+1] , ps[i+2])</code></p>
+<p><code>dp[i][i] = dp[i][i+1] = 0</code></p>
+<p><code>dp[i][i+m] = inf [m&gt;2]</code></p>
+<p>几个注意点</p>
+<p>用eps ， 初始化只有一类为inf ， 用外积求面积要加绝对值 ， dp的遍历先遍历区间长度（因为从小的先更新，大的区间依赖于小的，这也是很多区间dp要求的）</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+
+using namespace std;
+using ll = long long;
+const int inf = 0x3f3f3f3f;
+const int maxn = 105;
+double eps = 1e-10;
+struct point{
+    double x,y;
+}ps[maxn];
+double dp[maxn][maxn];
+int n;
+//a-&gt;c X b-&gt;c
+double area(point a,point b,point c) {
+    return fabs((c.x - a.x) * (c.y - b.y) - (c.y - a.y) * (c.x - b.x)) / 2;
+}
+
+bool judge(int a,int b,int c){
+    double s = area(ps[a], ps[b], ps[c]);
+    for(int i =1;i&lt;=n;i++){
+        if(i == a or i == b or i == c) continue;
+        double t = area(ps[i],ps[a],ps[b]) + area(ps[i],ps[a],ps[c]) + area(ps[i],ps[b],ps[c]);
+        if(fabs(t - s) &lt; eps) return false;
+     }
+    return true;
+}
+
+int main() {
+#ifdef LOCAL
+    freopen(&quot;in1.txt&quot;, &quot;r&quot;, stdin);
+    freopen(&quot;out1.txt&quot;, &quot;w&quot;, stdout);
+#endif
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+
+    while(cin&gt;&gt;n){
+
+        for(int i=1;i&lt;=n;i++){
+            cin&gt;&gt;ps[i].x&gt;&gt;ps[i].y;
+            if(i&gt;=3){
+                dp[i-2][i] = area(ps[i] , ps[i-1] , ps[i-2]);
+            }
+        }
+
+        for(int len = 3 ; len &lt;= n ; len++){
+            for(int i = 1,j = i+len;j&lt;=n;i++,j++){
+                dp[i][j] = inf;
+                    for(int k = i + 1 ; k &lt; j ; k++){
+                        if(judge(i,j,k)){
+                            dp[i][j] = min(dp[i][j] , max(max(dp[i][k] , dp[k][j]) , area(ps[i] , ps[j] , ps[k])));
+                        }
+                    }
+
+            }
+        }
+        printf(&quot;%.1lf\n&quot;, dp[1][n]);
+    }
     return 0;
 }
 </code></pre>
