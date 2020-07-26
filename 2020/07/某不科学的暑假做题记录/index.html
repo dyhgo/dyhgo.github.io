@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4578">
+<meta itemprop="wordCount" content="4999">
 
 
 
@@ -431,7 +431,7 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4578words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4999words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
       </div>
     </div>
@@ -1594,6 +1594,78 @@ int main() {
         }
 
     }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="置换群">置换群</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/209989">题目</a></p>
+<h3 id="题解-14">题解</h3>
+<p>求排列中每个循环的长度，对它们求lcm</p>
+<p>注意大数（可不必取模）</p>
+<p>贴一份队友的代码</p>
+<pre><code class="language-python">def gcd(a, b):
+    return a if b == 0 else gcd(b, a % b)
+ 
+def dfs(i):
+    global vis
+    u = i
+    ans = 1
+    while p[i] != u:
+        ans += 1
+        vis[i] = 1
+        i = p[i]
+    return ans
+ 
+n = int(input())
+MOD = pow(10, n)
+vis = [0] * 100007
+p = [0] * 100007
+pp = list(map(int, input().split()))
+for i in range(1, n + 1):
+    p[i] = pp[i-1]
+ans = 1
+for i in range(1, n + 1):
+    if vis[i] == 1:
+        continue
+    k = dfs(i)
+    ans = ((ans * k) // gcd(ans, k)) % MOD
+print(ans)
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="思维-lis">思维 LIS</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/209988">题目</a></p>
+<h3 id="题解-15">题解</h3>
+<p>invert操作不会改变数的相对位置，drop2操作会改变数的相对位置</p>
+<p>drop2操作是把最后一个数之前的数往数列头部移动</p>
+<p>由于这两种操作的性质，把数列看成一个环</p>
+<p>那么invert操作就是旋转环，drop2操作就是把最后一个数（在环里就是任意一个数）插到任意位置上</p>
+<p>所以问题转化成对于一个数列（排列），最少有多少次“将任意数插入到任意位置上”的操作，使得数列递增</p>
+<p>操作数 = n - len(LIS)  , 对于环的不同起始位置求LIS，取最大值</p>
+<p>时间复杂度 O(n*n*logn)</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+using ll = long long;
+int dp[505];
+const int inf = 0x3f3f3f3f;
+int a[1010];
+int main() {
+    int n;
+    int ma = -1 ;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i=0;i&lt;n;++i){
+        cin&gt;&gt;a[i];
+    }
+    int i,j;
+    for(i=0;i&lt;n;i++){
+        fill(dp,dp+n,inf);
+        for(j=i;j&lt;i+n;j++){
+            *lower_bound(dp,dp+n,a[j]) = a[j];
+        }
+        ma = max(ma , (int)(lower_bound(dp,dp+n,inf) - dp));
+        a[j] = a[i];
+    }
+    cout&lt;&lt;n-ma&lt;&lt;&quot;\n&quot;;
     return 0;
 }
 </code></pre>
