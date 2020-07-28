@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4999">
+<meta itemprop="wordCount" content="5333">
 
 
 
@@ -152,7 +152,7 @@
     <h3 class="widget-title">Board</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=461347446&auto=0&height=66"></iframe></p>
+            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=37202149&auto=1&height=66"></iframe></p>
             </div>
         </div>
     </div>
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 4999words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 10minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5333words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 11minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -1666,6 +1666,84 @@ int main() {
         a[j] = a[i];
     }
     cout&lt;&lt;n-ma&lt;&lt;&quot;\n&quot;;
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="数据结构-实现">数据结构 实现</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5671/K">题目</a></p>
+<h3 id="题解-16">题解</h3>
+<p>对于每个数，判断能否把前min(i,k)个数作为一个排列，即在它的后面放置切割</p>
+<p>判断是否是排列，即判断这些数中每个数是否只出现一次，出现次数可以用unordered_map记录(map超时)</p>
+<p>想了一个非常复杂的方法，不知道怎么实现，以下是参考了别人的代码，实现效率非常高</p>
+<pre><code class="language-cpp">#include &quot;iostream&quot;
+#include &quot;unordered_map&quot;
+#include &quot;cstring&quot;
+#pragma GCC optimize(2)
+using namespace std;
+typedef long long ll;
+int a[500005],cut[500005];
+unordered_map&lt;int,int&gt; mp;
+inline int read()
+{
+    int x=0;int f=1;char s=getchar();
+    while(s&lt;'0' or  s&gt;'9')
+    {
+        if(s=='-')
+            f-=1;
+        s=getchar();
+    }
+    while(s&gt;='0' and s&lt;='9')
+    {
+        x=x*10+s-'0';
+        s=getchar();
+    }
+    return x*f;
+}
+
+int main() {
+    int _;
+    _ = read();
+    while (_--) {
+        mp.clear();
+        int flag = 0;
+        int n,k;
+        n = read() , k = read();
+        for (register int i = 1; i &lt;= n; ++i) {
+            a[i] = read();
+            if(a[i] &gt; k) {
+                flag = 1;
+                break;
+            }
+        }
+        if(flag) {
+            puts(&quot;NO&quot;);
+            continue;
+        }
+
+        int dif_num = 0; memset(cut , 0 , sizeof(cut));
+        cut[0] = 1;
+        for(register int i=1;i&lt;=n;++i){
+            if(i &gt; k) {
+                if (mp[a[i - k]] == 1) dif_num-- ; mp[a[i - k]]--;
+            }
+            if(mp[a[i]] == 0) dif_num++; mp[a[i]]++;
+            if(dif_num == k or dif_num == i){
+                cut[i] = (i&gt;=k ? cut[i-k] : 1);
+            }
+        }
+        dif_num = 0 ; mp.clear();
+        flag = 0;
+        for(register int i=n;i&gt;=max(n-k,0);--i){
+            if(dif_num == n-i and cut[i] == 1){
+                flag = 1;
+                break;
+            }
+            if(mp[a[i]] == 0) dif_num++;
+            mp[a[i]]++;
+        }
+        flag ? puts(&quot;YES&quot;) : puts(&quot;NO&quot;);
+    }
     return 0;
 }
 </code></pre>
