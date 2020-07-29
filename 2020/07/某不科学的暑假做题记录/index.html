@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="5333">
+<meta itemprop="wordCount" content="5712">
 
 
 
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5333words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 11minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 5712words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 12minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -1744,6 +1744,64 @@ int main() {
         }
         flag ? puts(&quot;YES&quot;) : puts(&quot;NO&quot;);
     }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="状态压缩dp">状态压缩dp</h2>
+<p><a href="https://atcoder.jp/contests/m-solutions2020/tasks/m_solutions2020_e">题目</a></p>
+<h3 id="题解-17">题解</h3>
+<p>对于铁路线，肯定是过某个点最划算，而且是过不同的点，即一个点一条线穿过</p>
+<p>所以枚举即将被穿线的点集，每个点有被特定的一条线穿过，穿过的方式有横线、竖线（对于特定的点集，枚举横线竖线的所有情况）</p>
+<p>对于每种情况，更新答案 （两条铁路重合的情况不会影响答案，因为这始终不是最优解）</p>
+<p>玄学时间复杂度  O(sum(2^i * C(n,i)  * n  * n) 应该有千亿计算量</p>
+<p>一直以为会超时，想把n*n优化成O(1) 无果，看了别人的做法，居然不会超时？？？</p>
+<p>最后跑了2700+ms ，时限是3000ms</p>
+<p>注意long long的强制类型转化</p>
+<p>实际上还有更快的暴力方法和dfs，但我不会</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+using ll = long long;
+int n,x[16],y[16],d[16],D[16],p[16];
+ll ans[16];
+int main() {
+    memset(ans , 0x3f , sizeof(ans));
+    cin &gt;&gt; n;
+    for(int i=0;i&lt;n;i++){
+        cin&gt;&gt;x[i]&gt;&gt;y[i]&gt;&gt;p[i];
+    }
+    for(int i=0;i&lt;n;i++){
+        D[i] = min(abs(x[i]) , abs(y[i]));
+    }
+    ans[0] = 0;
+    for(int i=0;i&lt;n;i++){
+        ans[0] += (ll)D[i]*p[i];
+    }
+    for(int i=1;i&lt;(1&lt;&lt;n);i++){
+        int j = i;
+        do{
+            memcpy(d,D,sizeof(D));
+            for(int k=0;k&lt;n;k++){
+                if(i&gt;&gt;k&amp;1){
+                    if(j&gt;&gt;k&amp;1){
+                        for(int q=0;q&lt;n;q++){
+                            d[q] = min(d[q] , abs(x[q] - x[k]));
+                        }
+                    }
+                    else{
+                        for(int q=0;q&lt;n;q++){
+                            d[q] = min(d[q] , abs(y[q] - y[k]));
+                        }
+                    }
+                }
+            }
+            ll tmp = 0;
+            for(int i=0;i&lt;n;i++) tmp += (ll)d[i] * p[i];
+            ans[__builtin_popcount(i)] = min(ans[__builtin_popcount(i)] , tmp);
+            j = (j-1) &amp; i;
+        }while(j != i);
+    }
+    for(int i=0;i&lt;=n;i++) cout&lt;&lt;ans[i]&lt;&lt;endl;
     return 0;
 }
 </code></pre>
