@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="6924">
+<meta itemprop="wordCount" content="7282">
 
 
 
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 6924words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 14minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 7282words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 15minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -2008,6 +2008,67 @@ int main() {
         ans = min(ans , sum);
     }
     cout&lt;&lt;(ans == inf ? -1 : ans)&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="dfs-图论">dfs 图论</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/20857">题目</a></p>
+<h3 id="题解-21">题解</h3>
+<p>把问题转化成求在所有简单路径中，每个点被遍历了几次，如果是偶数次，异或和为0，奇数次异或和为本身</p>
+<p>这样就是图论中求所有简单路径XX被遍历几次的经典模型，基础的有边和点</p>
+<p>如果是边</p>
+<p>$$
+f(edge) = size[x] * ( n - size[x])
+$$</p>
+<p>如果是点，考虑三种情况，以这个点为端点，有n-1条，这个点的子树连到子树外面有 (size[x] - 1) * ( n - size[x]) ， 这个点的子节点的子树连到另外一个子节点的子树有 (sum(size[ch] * (size[x] - 1 - size[ch]))) / 2
+除以2因为每个点都作为起点和终点一次，但这样只有一条</p>
+<p>$$
+f(node) = n-1 + (size[x]  - 1) * (n-size[x])  + \frac{\sum\limits_{}  ^ {} {size[ch] * (size[x] - 1 -  size[ch])} }{2}
+$$</p>
+<p>还有另一种算法</p>
+<p>$$
+f(node) = \frac{\sum{f(edge) [connected \ to  \ node]+ n-1} }{2}
+$$</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+using ll = long long;
+vector&lt;ll&gt; G[500005];
+ll sz[500005];
+ll a[500005];
+ll ans ;
+ll n;
+
+ll dfs(ll u,ll p){
+    sz[u] = 1;
+    for(ll i:G[u]){
+        if(i == p) continue;
+        sz[u] += dfs(i,u);
+    }
+    ll sum = 0;
+    for(ll i:G[u]){
+        if(i == p) continue;
+        sum += sz[i] * (sz[u] - 1 - sz[i]) ;
+    }
+    sum /= 2;
+    sum += (sz[u] - 1) * (n - sz[u]);
+    sum += n - 1;
+    if(sum&amp;1) ans ^= a[u];
+    return sz[u];
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    cin&gt;&gt;n;
+    for(ll i=0;i&lt;n-1;i++){
+        ll x,y; cin&gt;&gt;x&gt;&gt;y;
+        G[x].push_back(y); G[y].push_back(x);
+    }
+    for(ll i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
+    dfs(1,0);
+    cout&lt;&lt;ans&lt;&lt;endl;
     return 0;
 }
 </code></pre>
