@@ -43,7 +43,7 @@
 <meta itemprop="description" content="某不科学的暑假做题记录">
 <meta itemprop="datePublished" content="2020-07-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="7282">
+<meta itemprop="wordCount" content="8037">
 
 
 
@@ -431,8 +431,8 @@
 	</span>
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 7282words</span>
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 15minutes </span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 8037words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 17minutes </span>
       </div>
     </div>
     <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
@@ -2069,6 +2069,246 @@ int main() {
     for(ll i=1;i&lt;=n;i++) cin&gt;&gt;a[i];
     dfs(1,0);
     cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="思维-高精度">思维 高精度</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5673/K">题目</a></p>
+<h3 id="题解-22">题解</h3>
+<p>这道题主要是发现高精度，理论上ans会达到 1e9*1e5*1e5</p>
+<p>以下是__int128的输入输出模板（支持负数）</p>
+<pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+typedef __int128 INT ;
+const INT N=1e5+5;
+INT a[N],b[N],s[N],m[N];
+inline INT read(){
+    INT x=0,f=1;
+    char ch=getchar();
+    while(ch&lt;'0'||ch&gt;'9'){
+        if(ch=='-')
+            f=-1;
+        ch=getchar();
+    }
+    while(ch&gt;='0'&amp;&amp;ch&lt;='9'){
+        x=x*10+ch-'0';
+        ch=getchar();
+    }
+    return x*f;
+}
+  
+inline void write(INT x){
+    if(x&lt;0){
+        putchar('-');
+        x=-x;
+    }
+    if(x&gt;9)
+        write(x/10);
+    putchar(x%10+'0');
+}
+int main(){
+    INT t,n;
+    t = read();
+    for(int u=1;u&lt;=t;u++){
+        n = read();
+        for(int i=1;i&lt;=n;i++) a[i] = read();
+        for(int i=1;i&lt;=n;i++) b[i] = read();
+        s[1] = a[1];
+        for(int i=2;i&lt;=n;i++){
+            s[i] = s[i-1] + a[i];
+        }
+        m[1] = b[1];
+        for(int i=2;i&lt;=n;i++){
+            m[i] = min(b[i],m[i-1]);
+        }
+        INT ans = 0;
+        INT cnt = a[1];
+        for(int i=2;i&lt;=n;i++){
+            if(b[i-1]&gt;b[i]){
+                ans += cnt * (m[i-1] - m[i]);
+            }
+            cnt = max(cnt,s[i]);
+        }
+        ans += cnt * m[n];
+        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;u&lt;&lt;&quot;: &quot;;
+        write(b[1]);
+        cout&lt;&lt;&quot; &quot;;
+        write(ans);
+        puts(&quot;&quot;);
+    }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="思维-并查集-离散化">思维 并查集 离散化</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5673/I">题目</a></p>
+<h3 id="题解-23">题解</h3>
+<p>对于当前的一对数，给它们连一条边，对所有的对数都进行这样的操作，最后会形成很多连通块，如果连通块有环，则这些数都能被选择，否则其中有一个数不能被选择，因为数据大小，用unordered_map离散化</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+using ll = long long;
+unordered_map&lt;int,int&gt; used;
+set&lt;int&gt; rt;
+unordered_map&lt;int,int&gt; rel;
+unordered_map&lt;int,int&gt; num;
+unordered_map&lt;int,int&gt; id;
+const int maxn = 2e5+10;
+int a[maxn],b[maxn];
+//union find
+int par[maxn];
+int rankk[maxn];
+int sz[maxn];
+void init(int n){
+    for(int i=0;i&lt;n;i++)
+    {
+        par[i]=i;
+        rankk[i]=0;
+    }
+}
+int find(int x){
+    if(par[x]==x) return x;
+    else return par[x]=find(par[x]);
+} 
+void unite(int x,int y){
+    x=find(x);
+    y=find(y);
+    if(x==y) return ;
+    if(rankk[x]&lt;rankk[y]) par[x]=y;
+    else{
+        par[y]=x;
+        if(rankk[x]==rankk[y]) rankk[x]++;
+    }
+} 
+bool  same(int x,int y){
+    return find(x)==find(y);
+}
+int getid(int u){
+    return id[u];
+}
+int main() {
+    int _;
+    cin &gt;&gt; _;
+    for(int q=1;q&lt;=_;q++) {
+        used.clear();
+        rt.clear();
+        rel.clear();
+        num.clear();
+        id.clear();
+        int n;
+        scanf(&quot;%d&quot;,&amp;n);
+        for(int i=0;i&lt;n;i++){
+            scanf(&quot;%d%d&quot;,&amp;a[i],&amp;b[i]);
+        }
+        init(2*n+2);
+        int cnt = 0;
+        for(int i=0;i&lt;n;i++){
+            if(id[a[i]] == 0) id[a[i]] = ++cnt;
+            if(id[b[i]] == 0) id[b[i]] = ++cnt;
+        }
+        for(int i=1;i&lt;=cnt;i++){
+            rt.insert(i);
+        }
+        for(int i=1;i&lt;=cnt;i++){
+            num[i] = 1;
+        }
+//        for(int i=1;i&lt;=cnt;i++){
+//            cout&lt;&lt;id[i]&lt;&lt;&quot; &quot;;
+//        }puts(&quot;&quot;);
+        for(int i=0;i&lt;n;i++){
+            int u = a[i],v = b[i];
+            //if(used[u] == 1 and used[v] == 1) continue;
+            //used[u] = used[v] = 1;
+            if(!same(getid(u) , getid(v))){
+                int urt = find(getid(u));
+                int vrt = find(getid(v));
+                int t1 = rel[urt],t2 = rel[vrt];
+                int t3 = num[urt],t4 = num[vrt];
+                rt.erase(urt);
+                rt.erase(vrt);
+                int t5 = t1 + t2 + 1;
+                int t6 = t3 + t4;
+                unite(getid(u),getid(v));
+                int uvrt = find(getid(u));
+                rel[uvrt] = t5;
+                num[uvrt] = t6;
+                rt.insert(uvrt);
+            }else{
+                rel[find(getid(u))]++;
+            }
+        }
+        ll ans = 0;
+        for(int i:rt){
+            ans += (rel[i] &gt;= num[i] ? num[i] : num[i] - 1);
+            //cout&lt;&lt;rel[i]&lt;&lt;&quot; &quot;&lt;&lt;num[i]&lt;&lt;&quot; &quot;&lt;&lt;i;
+            //cout&lt;&lt;find(getid(44));
+        }
+        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;q&lt;&lt;&quot;: &quot;&lt;&lt;ans&lt;&lt;endl；
+    }
+    return 0;
+}
+</code></pre>
+<p>===========================================================================================================</p>
+<h2 id="模拟-枚举">模拟 枚举</h2>
+<p><a href="https://ac.nowcoder.com/acm/contest/5673/G">题目</a></p>
+<h3 id="题解-24">题解</h3>
+<p>三重循环枚举</p>
+<pre><code class="language-cpp">#include &quot;bits/stdc++.h&quot;
+using namespace std;
+using ll = long long;
+const int maxn = 260;
+string cards[maxn][4];
+bool check(int i,int j,int k){
+    bool flags[4] = {false};
+    for(int q=0;q&lt;4;q++){
+        string s1 = cards[i][q];
+        string s2 = cards[j][q];
+        string s3 = cards[k][q];
+        if((s1==&quot;[*]&quot; or s2==&quot;[*]&quot; or s3==&quot;[*]&quot;) or (s1 == s2 and s2  == s3) or (s1 != s2 and s2 != s3 and s1 != s3)) flags[q] = true;
+    }
+    if(flags[0] and flags[1] and flags[2] and flags[3]) return true;
+    return false;
+}
+int main() {
+    int _;
+    cin &gt;&gt; _;
+    for(int u=1;u&lt;=_;u++) {
+        int n;
+        cin&gt;&gt;n;
+        //reset
+        for(int i=0;i&lt;=n;i++){
+            for(int j=0;j&lt;4;j++){
+                cards[i][j].clear();
+            }
+        }
+        string s;
+        for(int i=0;i&lt;n;i++) {
+            cin&gt;&gt;s;
+            for(int j=0,k=0;j&lt;s.length();j++){
+                cards[i][k].push_back(s[j]);
+                if(s[j]==']') k++;
+            }
+        }
+//        for(int i=0;i&lt;4;i++){
+//            cout&lt;&lt;cards[0][i]&lt;&lt;&quot; &quot;;
+//        }
+        bool ok = false;
+        for(int i=0;i&lt;n;i++){
+            if(ok) break;
+            for(int j=i+1;j&lt;n;j++){
+                if(ok) break;
+                for(int k=j+1;k&lt;n;k++){
+                    if(ok) break;
+                    if(check(i,j,k)){
+                        cout&lt;&lt;&quot;Case #&quot;&lt;&lt;u&lt;&lt;&quot;: &quot;&lt;&lt;i+1&lt;&lt;&quot; &quot;&lt;&lt;j+1&lt;&lt;&quot; &quot;&lt;&lt;k+1&lt;&lt;endl;
+                        ok = true;
+                    }
+                }
+            }
+        }
+        if(!ok) cout&lt;&lt;&quot;Case #&quot;&lt;&lt;u&lt;&lt;&quot;: -1\n&quot;;
+    }
     return 0;
 }
 </code></pre>
