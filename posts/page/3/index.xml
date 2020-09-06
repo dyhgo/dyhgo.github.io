@@ -5,10 +5,19 @@
     <link>https://dyhgo.github.io/posts/</link>
     <description>Recent content in Posts on This is DYH</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 06 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 06 Sep 2020 00:00:00 +0000</lastBuildDate>
     
         <atom:link href="https://dyhgo.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Android 属性动画</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</guid>
+      <description>简单演示 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.anim2Activity&amp;quot;&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;70dp&amp;quot; android:id=&amp;quot;@+id/a2tv1&amp;quot; android:textSize=&amp;quot;30sp&amp;quot; android:text=&amp;quot;animation_test&amp;quot; android:gravity=&amp;quot;center&amp;quot; android:textColor=&amp;quot;#FFFFFF&amp;quot; android:background=&amp;quot;#AAAAAA&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.widget.TextView; public class anim2Activity extends AppCompatActivity { private TextView a2tv1; @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_anim2); a2tv1 = findViewById(R.id.a2tv1); a2tv1.animate().translationYBy(500).setDuration(2000).start(); } } package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.animation.ObjectAnimator; import android.animation.ValueAnimator; import android.os.Bundle; import android.util.Log; import android.widget.TextView; public</description>
+    </item>
     
     <item>
       <title>看门狗2</title>
@@ -179,15 +188,6 @@
       
       <guid>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
       <description>波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏 波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生 这是我201</description>
-    </item>
-    
-    <item>
-      <title>abc157</title>
-      <link>https://dyhgo.github.io/2020/03/abc157/</link>
-      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyhgo.github.io/2020/03/abc157/</guid>
-      <description>A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { int a; cin&amp;gt;&amp;gt;a; if(a&amp;amp;1) cout&amp;lt;&amp;lt;a/2+1&amp;lt;&amp;lt;endl; else cout&amp;lt;&amp;lt;a/2; return 0; } B -</description>
     </item>
     
   </channel>
