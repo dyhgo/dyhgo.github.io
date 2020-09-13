@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/linux/</link>
+    <description>Recent content in linux on This is DYH</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://dyhgo.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Android 属性动画</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%B1%9E%E6%80%A7%E5%8A%A8%E7%94%BB/</guid>
+      <description>简单演示 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.anim2Activity&amp;quot;&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;70dp&amp;quot; android:id=&amp;quot;@+id/a2tv1&amp;quot; android:textSize=&amp;quot;30sp&amp;quot; android:text=&amp;quot;animation_test&amp;quot; android:gravity=&amp;quot;center&amp;quot; android:textColor=&amp;quot;#FFFFFF&amp;quot; android:background=&amp;quot;#AAAAAA&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.widget.TextView; public class anim2Activity extends AppCompatActivity { private TextView a2tv1; @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_anim2); a2tv1 = findViewById(R.id.a2tv1); a2tv1.animate().translationYBy(500).setDuration(2000).start(); } } package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.animation.ObjectAnimator; import android.animation.ValueAnimator; import android.os.Bundle; import android.util.Log; import android.widget.TextView; public</description>
+    </item>
+    
+    <item>
+      <title>看门狗2</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
+      <description>Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是</description>
+    </item>
+    
+    <item>
+      <title>abc159</title>
+      <link>https://dyhgo.github.io/2020/03/abc159/</link>
+      <pubDate>Mon, 23 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc159/</guid>
+      <description>A - The Number of Even Pairs 题解 ac代码 (awk语言) $0=$1*--$1/2+$2*--$2/2_ B - String Palindrome 题解 ac代码 (perl语言) print&amp;lt;&amp;gt;=~/^(.+).\1$/?Yes:No C - Maximum Volume 题解 ac代码 (perl语言) print&amp;lt;&amp;gt;**3/27 D - Banned K 题解 ac代码 (</description>
+    </item>
+    
+    <item>
+      <title>Android 数据存储</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/</guid>
+      <description>SharedPreferences sharedpreferences的布局 布局文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.datastorage.sharedPreferencesActivity&amp;quot;&amp;gt; &amp;lt;EditText android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/spet1&amp;quot; android:hint=&amp;quot;input&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toTopOf=&amp;quot;parent&amp;quot; app:layout_constraintBottom_toBottomOf=&amp;quot;parent&amp;quot; app:layout_constraintVertical_bias=&amp;quot;0.1&amp;quot; /&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;sava&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spet1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn1&amp;quot;/&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;show&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; android:id=&amp;quot;@+id/spbtn2&amp;quot;/&amp;gt; &amp;lt;TextView android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/sptv1&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/spbtn2&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot; /&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>牛客小白月赛23(部分题解)</title>
+      <link>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
+      <description>A 膜法记录 题目链接 题解 贪心 枚举 集合的整数表示 由于n的数据较小，直接枚举n的所有情况，有2^n种 对于每种情况判断剩下的点列blast能否用完 其</description>
+    </item>
+    
+    <item>
+      <title>Android 事件处理机制</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+      <description>事件处理 基于监听的事件处理机制 匿名内部类 mbt1.setOnTouchListener(new View.OnTouchListener() { @Override public boolean onTouch(View v, MotionEvent event) { switch (event.getAction()){ case MotionEvent.ACTION_DOWN: Log.d(&amp;quot;listener&amp;quot;,&amp;quot;touch&amp;quot;); break; } return false; } }); 事件源所在类（activity类） public class eventActivity extends AppCompatActivity implements View.OnClickListener ebt1 = findViewById(R.id.ebt1); ebt1.setOnClickListener(eventActivity.this);</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Activity</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/</guid>
+      <description>Activity activity的生命周期 运行以下代码可以看到activity经历的生命周期 package com.example.test; import androidx.appcompat.app.AppCompatActivity; import android.os.Bundle; import android.util.Log; public class lifeCircleActivity extends AppCompatActivity { @Override protected void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); setContentView(R.layout.activity_life_circle); Log.d(&amp;quot;lifecircle&amp;quot;,&amp;quot;-----onCreate----&amp;quot;); } @Override protected void onStart() { super.onStart(); Log.d(&amp;quot;lifecircle&amp;quot;,&amp;quot;-----onStart----&amp;quot;);</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Broadcast Receiver</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bbroadcast-receiver/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bbroadcast-receiver/</guid>
+      <description>Broadcast Receiver 通过LoaclBroadcastManager发送广播并接收广播 点击broadactivity的click,跳转到broad2activ</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Content Provider</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bcontent-provider/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bcontent-provider/</guid>
+      <description>Content Provider 获取外部应用的信息 以获取通讯录为例 布局文件 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;utf-8&amp;quot;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;quot;http://schemas.android.com/apk/res/android&amp;quot; xmlns:app=&amp;quot;http://schemas.android.com/apk/res-auto&amp;quot; xmlns:tools=&amp;quot;http://schemas.android.com/tools&amp;quot; android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;match_parent&amp;quot; tools:context=&amp;quot;.contentProviderActivity&amp;quot;&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/cpbtn1&amp;quot; android:textSize=&amp;quot;25sp&amp;quot; android:text=&amp;quot;get_contacts&amp;quot;/&amp;gt; &amp;lt;Button android:layout_width=&amp;quot;match_parent&amp;quot; android:layout_height=&amp;quot;wrap_content&amp;quot; android:id=&amp;quot;@+id/cpbtn2&amp;quot; android:text=&amp;quot;getdata&amp;quot; android:textSize=&amp;quot;25dp&amp;quot; app:layout_constraintTop_toBottomOf=&amp;quot;@+id/cpbtn1&amp;quot; android:layout_marginTop=&amp;quot;20dp&amp;quot;/&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; 点击get_contacts获取联系人信息 手</description>
+    </item>
+    
+    <item>
+      <title>Android 四大组件之Service</title>
+      <link>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/</link>
+      <pubDate>Thu, 19 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/</guid>
+      <description>Service Service的生命周期 通过启动Service传递数据 在serviceactivity的输入框中输入数据，启动Myservice并传递数据</description>
+    </item>
+    
+    <item>
+      <title>hduoj1711(kmp)</title>
+      <link>https://dyhgo.github.io/2020/03/hduoj1711kmp/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/hduoj1711kmp/</guid>
+      <description>Number Sequence Problem Description Given two sequences of numbers : a[1], a[2], &amp;hellip;&amp;hellip; , a[N], and b[1], b[2], &amp;hellip;&amp;hellip; , b[M] (1 &amp;lt;= M &amp;lt;= 10000, 1 &amp;lt;= N &amp;lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &amp;hellip;&amp;hellip; , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</description>
+    </item>
+    
+    <item>
+      <title>Codeforces Round #628 (Div. 2) A~D</title>
+      <link>https://dyhgo.github.io/2020/03/codeforces-round-628-div.-2-a~d/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/codeforces-round-628-div.-2-a~d/</guid>
+      <description>A. EhAb AnD gCd 题意 给一正整数x，求正整数a,b满足gcd(a,b)+lcm(a,b)=x 题解 数论思维题，a=1，b=x-1满足条件 ac代码 #include&amp;lt;iostream&amp;gt; using namespace std;</description>
+    </item>
+    
+    <item>
+      <title>二进制编码</title>
+      <link>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
+      <description>二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; 10.1875*2=0.375 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.375*2=0.75 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;00.75*2=1.5 &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;10.5*2=1 &amp;mdash;&amp;mda</description>
+    </item>
+    
+    <item>
+      <title>Codeforces Round #627 (Div. 3)</title>
+      <link>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/codeforces-round-627-div.-3/</guid>
+      <description>A. Yet Another Tetris Problem link B. Yet Another Palindrome Problem link C. Frog Jumps link D. Pair of Topics link E. Sleeping Schedule link 题意 假设一天有h个小时，DIO一共要睡n次，每次睡ai个小时（按顺序睡觉），每次刚睡醒，就</description>
+    </item>
+    
+    <item>
+      <title>ef - a tale of melodies</title>
+      <link>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/ef-a-tale-of-melodies/</guid>
+      <description>《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故</description>
+    </item>
+    
+    <item>
+      <title>abc158</title>
+      <link>https://dyhgo.github.io/2020/03/abc158/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/abc158/</guid>
+      <description>A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 #include&amp;lt;bits/stdc++.h&amp;gt; using namespace std; int main() { string s; cin&amp;gt;&amp;gt;s; if((s[0]==&#39;A&#39; and s[1]==&#39;A&#39; and s[2]==&#39;A&#39;) or(s[0]==&#39;B&#39; and</description>
+    </item>
+    
+    <item>
+      <title>光环1</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%85%89%E7%8E%AF1/</guid>
+      <description>halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这</description>
+    </item>
+    
+    <item>
+      <title>刺客信条2</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
+      <description>ac2由育碧蒙特利尔工作室开发 十年前玩的游戏，环境渲染和剧情真的超棒 背景音乐选的十分用心 后来主角ezio也成为了刺客信条系列的标志 刺客信条系</description>
+    </item>
+    
+    <item>
+      <title>刻痕</title>
+      <link>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E5%88%BB%E7%97%95/</guid>
+      <description>《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第</description>
+    </item>
+    
+    <item>
+      <title>波斯王子</title>
+      <link>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyhgo.github.io/2020/03/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
+      <description>波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏 波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生 这是我201</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>
+        abc161 - This is DYH
+      </title>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  
+  <meta name="theme-color" content="#000000" />
+  
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <meta name="description" content="abc161" />
+  <meta name="generator" content="Hugo 0.65.3 with theme pure" />
+  <title>abc161 - This is DYH</title>
+  
+  
+  <link rel="stylesheet" href="https://dyhgo.github.io/css/style.min.c4bc7071f132c964c2116bca53b392933f377e5ca7b7051ed245187c621a2d3e.css">
+  
+  <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" async>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+  <meta property="og:title" content="abc161" />
+<meta property="og:description" content="abc161" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/2020/04/abc161/" />
+<meta property="article:published_time" content="2020-04-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-05T00:00:00+00:00" />
+<meta itemprop="name" content="abc161">
+<meta itemprop="description" content="abc161">
+<meta itemprop="datePublished" content="2020-04-05T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-04-05T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1291">
+
+
+
+<meta itemprop="keywords" content="cpp,bfs,number_theory," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="abc161"/>
+<meta name="twitter:description" content="abc161"/>
+
+  <!--[if lte IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+  </head>
+
+  
+  
+
+  <body class="main-center theme-purple" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/dyhgo" target="_blank">
+            <img class="img-circle img-rotate" src="https://dyhgo.github.io/avatar.png" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">DYH</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md">244882973@qq</h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>HHU , Nanjing</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-tags">
+                <a href="/tags/">
+                    <i class="icon icon-tags"></i>
+                  <span class="menu-title">Tags</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=37202149&auto=0&height=66"></iframe><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1373906980&auto=0&height=66"></iframe></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <div class="widget">
+    <h3 class="widget-title"> Categories</h3>
+    <div class="widget-body">
+        <ul class="category-list">
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/abc/" class="category-list-link">abc</a><span class="category-list-count">18</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/algorithm/" class="category-list-link">algorithm</a><span class="category-list-count">10</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/android/" class="category-list-link">android</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/anime/" class="category-list-link">anime</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/codeforces/" class="category-list-link">codeforces</a><span class="category-list-count">12</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/cources/" class="category-list-link">cources</a><span class="category-list-count">2</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/game/" class="category-list-link">game</a><span class="category-list-count">6</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/hduoj/" class="category-list-link">hduoj</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/linux/" class="category-list-link">linux</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/note/" class="category-list-link">note</a><span class="category-list-count">15</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/nowcoder/" class="category-list-link">nowcoder</a><span class="category-list-count">8</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/poj/" class="category-list-link">poj</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/problemlist/" class="category-list-link">problemlist</a><span class="category-list-count">3</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/python-web/" class="category-list-link">python-web</a><span class="category-list-count">1</span></li>
+            <li class="category-list-item"><a href="https://dyhgo.github.io/categories/test/" class="category-list-link">test</a><span class="category-list-count">2</span></li>
+        </ul>
+    </div>
+</div>
+      <div class="widget">
+    <h3 class="widget-title"> Tags</h3>
+    <div class="widget-body">
+        <ul class="tag-list">
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/bfs/" class="tag-list-link">bfs</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary/" class="tag-list-link">binary</a><span
+                    class="tag-list-count">5</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/binary_search/" class="tag-list-link">binary_search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/bit/" class="tag-list-link">bit</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/computational_geometry/" class="tag-list-link">computational_geometry</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/construct/" class="tag-list-link">construct</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/counting/" class="tag-list-link">counting</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cpp/" class="tag-list-link">cpp</a><span
+                    class="tag-list-count">58</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/cs/" class="tag-list-link">cs</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/data_structure/" class="tag-list-link">data_structure</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dfs/" class="tag-list-link">dfs</a><span
+                    class="tag-list-count">7</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/dp/" class="tag-list-link">dp</a><span
+                    class="tag-list-count">13</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/git/" class="tag-list-link">git</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/graph/" class="tag-list-link">graph</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/graph_theory/" class="tag-list-link">graph_theory</a><span
+                    class="tag-list-count">11</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/greedy/" class="tag-list-link">greedy</a><span
+                    class="tag-list-count">14</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/hugo/" class="tag-list-link">hugo</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/java/" class="tag-list-link">java</a><span
+                    class="tag-list-count">8</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/lca/" class="tag-list-link">lca</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/linux/" class="tag-list-link">linux</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/number_theory/" class="tag-list-link">number_theory</a><span
+                    class="tag-list-count">13</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/poj/" class="tag-list-link">poj</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/prefix/" class="tag-list-link">prefix</a><span
+                    class="tag-list-count">4</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/problemlist/" class="tag-list-link">problemlist</a><span
+                    class="tag-list-count">3</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/python/" class="tag-list-link">python</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/search/" class="tag-list-link">search</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/segment_tree/" class="tag-list-link">segment_tree</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/sort/" class="tag-list-link">sort</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/string/" class="tag-list-link">string</a><span
+                    class="tag-list-count">6</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/suffix/" class="tag-list-link">suffix</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/test/" class="tag-list-link">test</a><span
+                    class="tag-list-count">2</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/union_find/" class="tag-list-link">union_find</a><span
+                    class="tag-list-count">1</span></li>
+            
+            
+            <li class="tag-list-item"><a href="https://dyhgo.github.io/tags/xml/" class="tag-list-link">xml</a><span
+                    class="tag-list-count">8</span></li>
+            
+        </ul>
+
+    </div>
+</div>
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/09/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="title">无聊的做题记录</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-09-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-09-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/07/abc173/" class="title">abc173</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-06 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-06</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/07/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" class="title">某不科学的暑假做题记录</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-07-04 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-07-04</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/06/abc172/" class="title">abc172</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-28</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://dyhgo.github.io/2020/06/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/" class="title">西南科技大学第十六届ACM程序设计竞赛暨绵阳市邀请赛</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-06-28 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-06-28</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
+
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/2020/04/abc161/"
+    >abc161</a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+<span class="article-date">
+  <i class="icon icon-calendar-check"></i>&nbsp;
+<a href="https://dyhgo.github.io/2020/04/abc161/" class="article-date">
+  <time datetime="2020-04-05 00:00:00 &#43;0000 UTC" itemprop="datePublished">2020-04-05</time>
+</a>
+</span>
+<span class="article-category">
+  <i class="icon icon-folder"></i>&nbsp;
+  <a class="article-category-link" href="/categories/abc/"> abc </a>
+</span>  
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>&nbsp;
+    <a class="article-tag-link" href="/tags/cpp/"> cpp </a>
+    <a class="article-tag-link" href="/tags/bfs/"> bfs </a>
+    <a class="article-tag-link" href="/tags/number_theory/"> number_theory </a>
+  </span>
+
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/abc161/#comments"
+            class="article-comment-link">Comments</a></span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 1291words</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 3minutes </span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="a---abc-swaphttpsatcoderjpcontestsabc161tasksabc161_a"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_a">A - ABC Swap</a></h1>
+<h2 id="题意">题意</h2>
+<p>给三个数a,b,c，交换ab的值，交换ac的值，输出</p>
+<h2 id="题解">题解</h2>
+<p>模拟</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+	int a,b,c;
+	cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;
+	swap(a,b);
+	swap(a,c);
+	cout&lt;&lt;a&lt;&lt;&quot; &quot;&lt;&lt;b&lt;&lt;&quot; &quot;&lt;&lt;c&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+<h1 id="b---popular-votehttpsatcoderjpcontestsabc161tasksabc161_b"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_b">B - Popular Vote</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>有n件商品，每种商品有一价格，给一数m</p>
+<p>求能否从中选出m件商品使得它们的价格都不小于商品总价格（n件）/(4*m)</p>
+<h2 id="题解-1">题解</h2>
+<p>对价格求和，求出界限，对商品价格排序，检查前m件商品价格是否都满足这个限</p>
+<p>制</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+//using ll = long long;
+int n,m;
+int a[1005];
+bool cmp(int a,int b){
+	return a&gt;b;
+}
+int main(){
+	//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
+	cin&gt;&gt;n&gt;&gt;m;
+	for(int i=0;i&lt;n;i++)cin&gt;&gt;a[i];
+	int sum=0;
+	for(int i=0;i&lt;n;i++) sum+=a[i]; 
+	int b=ceil((double)sum/(4*m));
+	//cout&lt;&lt;sum;
+	//cout&lt;&lt;b;
+	
+	bool ok=true;
+	sort(a,a+n,cmp);
+	//int ans=0;
+	for(int i=0;i&lt;m;i++){
+		//ans+=a[i];
+		if(a[i]&lt;b){
+			ok=false;
+			break;
+		}
+	}
+	    puts(ok? &quot;Yes&quot;:&quot;No&quot;);
+	 	return 0;
+}
+
+</code></pre>
+<h1 id="c---replacing-integer-httpsatcoderjpcontestsabc161tasksabc161_c"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_c">C - Replacing Integer </a></h1>
+<h2 id="题意-2">题意</h2>
+<p>给俩数n,k</p>
+<p>一直做如右操作，将n替换成|n-k|</p>
+<p>求这个过程中n能达到的最小值</p>
+<h2 id="题解-2">题解</h2>
+<p>找规律，不断地去迎合所有的情况，就会莫名其妙ac</p>
+<p>或者用数学方法做</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+using ll = long long;
+ll n,k;
+int main(){
+	//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
+	cin&gt;&gt;n&gt;&gt;k;
+	if(n==k){
+		cout&lt;&lt;0&lt;&lt;endl;
+	}
+	else{
+		if(n&lt;k) n=k+(k-n);
+	
+	cout&lt;&lt;min((k-n%k)%k,n-k)&lt;&lt;endl;
+	}
+	return 0;
+}
+
+</code></pre>
+<h1 id="d---lunlun-numberhttpsatcoderjpcontestsabc161tasksabc161_d"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_d">D - Lunlun Number</a></h1>
+<h2 id="题意-3">题意</h2>
+<p>定义“lunlun数”：对于一个数，相邻两个位数的数字差不大于1</p>
+<p>给一数n，求第n个“lunlun数”</p>
+<h2 id="题解-3">题解</h2>
+<p>预处理最大的情况</p>
+<p>dfs，dp都行</p>
+<p>数字，字符串都行</p>
+<p>此处用bfs做</p>
+<p>对于一个数，在它的末尾增加新的数字，9和0有两种情况，其他有三种情况</p>
+<p>先处理一位数，再处理两位数。。。</p>
+<p>用bfs经典方法队列实现</p>
+<p>用maxn进行循环退出判断</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;string&gt; vt;
+int num=0;
+queue&lt;string&gt; q;
+bool cmp(string s1,string s2){
+	if(s1.length()==s2.length()){
+		return s1&lt;s2;
+	}
+	else return s1.length()&lt;s2.length();
+}
+
+int main(){
+	q.push(&quot;1&quot;);
+	q.push(&quot;2&quot;);
+	q.push(&quot;3&quot;);
+	q.push(&quot;4&quot;);
+	q.push(&quot;5&quot;);
+	q.push(&quot;6&quot;);
+	q.push(&quot;7&quot;);
+	q.push(&quot;8&quot;);
+	q.push(&quot;9&quot;);
+	
+	while(!q.empty() and num&lt;100005){
+		string s=q.front();
+		q.pop();
+		vt.push_back(s);
+		num++;
+		
+		int len=s.length();
+		char ch=s[len-1];
+		if(ch=='9'){
+			q.push(s+'8');
+			q.push(s+'9');
+		}
+		else if(ch=='0'){
+			q.push(s+'0');
+			q.push(s+'1');
+		}
+		else{
+			char ch1= ch-1,ch2=ch,ch3=ch+1;
+			string s1=s,s2=s,s3=s;
+			s1.insert(s1.end(),ch1);
+			s2.insert(s2.end(),ch2);
+			s3.insert(s3.end(),ch3);
+			
+			q.push(s1);
+			q.push(s2);
+			q.push(s3);
+		}
+	}
+
+	sort(vt.begin(),vt.end(),cmp);
+	
+	int n;cin&gt;&gt;n;
+	n--;
+	cout&lt;&lt;vt[n]&lt;&lt;endl;
+
+	return 0;
+}
+
+</code></pre>
+<p>cmp可以用lambda表达式写</p>
+<h1 id="e---yutorihttpsatcoderjpcontestsabc161tasksabc161_e"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_e">E - Yutori</a></h1>
+<h2 id="题意-4">题意</h2>
+<p>给两个数k,c和一串由ox组成的字符串，表示每一天</p>
+<p>从中选k天上班</p>
+<p>限制条件：x不能上班，上完一天班后要连续休息c天</p>
+<p>求所有可能的上班方案中，哪一天是必须上班的</p>
+<h2 id="题解-4">题解</h2>
+<p>枚举必超时</p>
+<p>其实只要贪心地从第一个开始选k个，从最后开始贪心地往前选k个</p>
+<p>查看是否有交集就可</p>
+<p>小证明</p>
+<p>如果交集为空集，则不存在，因为这两种情况是所有情况的子集</p>
+<p>如果存在（数量不大于k，下证），则对于所有中间取的情况一定会和左右两种情</p>
+<p>况重叠，左右取产生的交集是最苛刻的满足条件</p>
+<p>有几个细节</p>
+<p>1.可以特判n==2</p>
+<p>2.当从最左边开始选可以选到k+1个，则不存在必须上班的那一天</p>
+<p>小证明</p>
+<p>如果有k+1天，则随便从中选一天不上班，其余的天数都上班</p>
+<p>对于所有的情况，它们的交集为空集，与右边的交集为空集（空集与任何集合</p>
+<p>的交集都为空集）</p>
+<p>3.同理右边也不能选到k+1个</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,k,c;
+char s[200005];
+set&lt;int&gt; st;
+set&lt;int&gt; st2;
+set&lt;int&gt; st3;
+int main(){
+	//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
+	scanf(&quot;%d%d%d%s&quot;,&amp;n,&amp;k,&amp;c,s);
+	
+	int cnt=0;
+	for(int i=0;i&lt;n;i++){
+		if(s[i]=='o') {
+			st.insert(i+1);
+			cnt++;
+			i+=c;
+		}
+		if(cnt&gt;k) return 0;  //一定不存在必须工作的一天 
+	}
+	
+	cnt=0;
+	for(int i=n-1;i&gt;=0;i--){
+		if(s[i]=='o'){
+			st2.insert(i+1);
+			cnt++;
+			i-=c;
+		}
+		if(cnt&gt;k) return 0;  //一定不存在必须工作的一天 
+	}
+	set_intersection(st.begin(),st.end(),st2.begin(),st2.end(),ostream_iterator&lt;int&gt;(cout,&quot;\n&quot;));
+	
+	return 0;
+}
+
+</code></pre>
+<h1 id="f---division-or-substractionhttpsatcoderjpcontestsabc161tasksabc161_f"><a href="https://atcoder.jp/contests/abc161/tasks/abc161_f">F - Division or Substraction</a></h1>
+<h2 id="题意-5">题意</h2>
+<p>给俩数n,k（2&lt;=k&lt;=n）</p>
+<p>不断进行如下操作</p>
+<p>如果k能整除n，则n/=k</p>
+<p>否则n-=k</p>
+<p>当n&lt;k时停机</p>
+<p>问满足最后n==1的k的个数</p>
+<h2 id="题解-5">题解</h2>
+<p>设置一个计数器，遍历所有的k进行判断</p>
+<p>这样会T，所以进行优化</p>
+<p>首先只需遍历到√n（下证）</p>
+<p>对于每个k</p>
+<p>分两种情况</p>
+<p>如果n%k==1，则满足条件</p>
+<p>且(n-1)/k也满足条件</p>
+<p>如果n%k==0则不断进行n/=k</p>
+<p>最后判断是否n%k==1</p>
+<p>这种情况下只有k满足条件，计数器计数</p>
+<p>注意k*k=n-1只能计一个数</p>
+<p>ac代码</p>
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+typedef long long ll;
+int main(){
+	//freopen(&quot;in.txt&quot;,&quot;r&quot;,stdin);
+	ll n;
+	cin&gt;&gt;n;
+	
+	if(n==2) {
+		cout&lt;&lt;1&lt;&lt;endl;return 0;
+	}
+	ll ans=2; //n和n-1 
+	for(ll i=2;i*i&lt;=n;i++){
+		if(n%i==1){
+			if(i*i==n-1) ans++; else ans+=2;
+		}
+		else if (n%i==0){
+			ll t=n;
+			while(t%i==0) t/=i;
+			if(t%i==1) ans++;
+		}
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}
+
+</code></pre>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://dyhgo.github.io/2020/04/abc161/" title="abc161" target="_blank" rel="external">https://dyhgo.github.io/2020/04/abc161/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/dyhgo" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://dyhgo.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/dyhgo" target="_blank"><span class="text-dark">DYH</span><small class="ml-1x">244882973@qq</small></a></h3>
+        <div>Be happy and independent</div>
+      </div>
+    </figure>
+  </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://dyhgo.github.io/2020/04/codeforces-round-631-div.-2-a~d/" title="Codeforces Round #631 (Div. 2) A~D"><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://dyhgo.github.io/2020/04/nc13611/"
+                    title="NC13611"><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+            <li class="toggle-toc">
+                <a class="toggle-btn collapsed" data-toggle="collapse" href="#collapseToc" aria-expanded="false"
+                    title="Catalogue" role="button">
+                    <span>[&nbsp;</span><span>Catalogue</span>
+                    <i class="text-collapsed icon icon-anchor"></i>
+                    <i class="text-in icon icon-close"></i>
+                    <span>]</span>
+                </a>
+            </li>
+        </ul>
+        
+        <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal"
+            data-target="#donateModal"><span>$</span></button>
+        
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter"
+                data-mobile-sites="weibo,qq,wechat"></div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content donate">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true">&times;</span></button>
+            <div class="modal-body">
+                <div class="donate-box">
+                    <div class="donate-head">
+                        <p>Maybe you could buy me a cup of coffee.</p>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/alipayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open alipay app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+                            <div class="donate-payimg">
+                                <img src="https://dyhgo.github.io/donate/wechatpayimg.png"
+                                    alt="Scan Qrcode" title="Scan" />
+                            </div>
+                            <p class="text-muted mv">Scan this qrcode</p>
+                            <p class="text-grey">Open wechat app scan this qrcode, buy me a coffee!</p>
+                        </div>
+                    </div>
+                    <div class="donate-footer">
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay"
+                                    aria-expanded="true"><i class="icon icon-alipay"></i> alipay</a>
+                            </li>
+                            <li role="presentation" class="">
+                                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab"
+                                    aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i>
+                                    wechat payment</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/dyhgo" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+    <li><a href="https://dyhgo.github.io/index.xml" target="_blank" title="rss" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-rss"></i></a></li>
+</ul>
+  <div class="copyright">
+    © dyh 2020
+    <div class="publishby">
+        base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
+    });
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/cpp.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/java.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/xml.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://dyhgo.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://dyhgo.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/dyhgo.github.io',
+            CONTENT_URL: 'https:\/\/dyhgo.github.io\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://dyhgo.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.10.0/js/md5.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '2f311539c5a5aef2912a',
+        clientSecret: '8511ba39ff7db2afe2e983ed0c953f9dcd75fc22',
+        repo: 'dyhgo.github.io',
+        owner: 'dyhgo',
+        admin: ['dyhgo'],
+        id: md5(location.pathname),
+        distractionFreeMode: true
+    });
+    gitalk.render('comments');
+</script>
+
+  </body>
+</html>
