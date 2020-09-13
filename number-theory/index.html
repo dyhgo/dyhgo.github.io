@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/number-theory\/"
-        },"genre": "posts","keywords": "cpp, number_theory","wordcount":  1814 ,
+        },"genre": "posts","keywords": "cpp, number_theory","wordcount":  1808 ,
         "url": "https:\/\/dyhgo.github.io\/number-theory\/","datePublished": "2020-02-22T00:00:00+00:00","dateModified": "2020-02-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -110,7 +110,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Number Theory</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/algorithm/"><i class="far fa-folder fa-fw"></i>algorithm</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-22">2020-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1814 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-22">2020-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1808 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -361,10 +361,8 @@ $$</p>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="欧拉函数">欧拉函数</h4>
-<p>$$
-设\quad n =\prod\limits_{i=1}  ^ {n} {{p_i} ^ {e_i}} ~\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
-$$
-欧拉函数的数值等于不超过n且与n互质的数的个数</p>
+<p>设\quad n =\prod\limits_{i=1}  ^ {n} {pi ^ ei} ~\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}</p>
+<p>欧拉函数的数值等于不超过n且与n互质的数的个数</p>
 <p>当n时质数时，φ(n)=n-1</p>
 <p>如果n=p^k , φ(n)=p^k - p^(k-1) = (p-1)p^(k-1)</p>
 <p>如果m,n互质，则φ(mn)=φ(m)φ(n)</p>
@@ -500,11 +498,9 @@ $$
 <p>crt是线性同余方程组ai=0，mi互质的特殊形式</p>
 <p>这时，x≡b(mod Πmi)</p>
 <p>crt的思想是余数的加性和模数的乘性，当模数为合数时，可以拆成质因数的积</p>
-<p>crt定理如下
-$$
-对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\ ~\令M=\prod{m_i} ~\M_i=\frac{M}{m_i} ~\M_i ^ {-1} 为M_i模m_i的逆元 ~\<br>
-则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)
-$$</p>
+<p>crt定理如下</p>
+<p>对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\ ~\令M=\prod{m_i} ~\M_i=\frac{M}{m_i} ~\M_i ^ {-1} 为M_i模m_i的逆元 ~\<br>
+则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -539,9 +535,7 @@ $$</p>
 </div>
 </div><p> </p>
 <h4 id="lucas定理">Lucas定理</h4>
-<p>$$
-求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\ 当k,n较小时，利用杨辉三角形的性质 ~\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\ ~\当n,k较大时 ~\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)
-$$</p>
+<p>求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\ 当k,n较小时，利用杨辉三角形的性质 ~\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\ ~\当n,k较大时 ~\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1

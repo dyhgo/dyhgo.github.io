@@ -144,9 +144,9 @@ inv[0]=1;inv[1]=1;      //inv[0]=1 !!!
 
 
 #### 欧拉函数
-$$
-设\quad n =\prod\limits_{i=1}  ^ {n} {{p_i} ^ {e_i}} ~\\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
-$$
+
+设\quad n =\prod\limits_{i=1}  ^ {n} {pi ^ ei} ~\\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
+
 欧拉函数的数值等于不超过n且与n互质的数的个数
 
 当n时质数时，φ(n)=n-1
@@ -248,10 +248,10 @@ crt是线性同余方程组ai=0，mi互质的特殊形式
 crt的思想是余数的加性和模数的乘性，当模数为合数时，可以拆成质因数的积
 
 crt定理如下
-$$
+
 对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\\ ~\\令M=\prod{m_i} ~\\M_i=\frac{M}{m_i} ~\\M_i ^ {-1} 为M_i模m_i的逆元 ~\\
 则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)
-$$
+
 
 ```cpp
 // x=x+(Πmi)*t
@@ -270,9 +270,9 @@ int crt(const vector<int>& b,const vector<int> &m)
 ```
 &emsp;
 #### Lucas定理
-$$
+
 求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\\ 当k,n较小时，利用杨辉三角形的性质 ~\\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\\ ~\\当n,k较大时 ~\\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)
- $$
+ 
 
 ```cpp
 ll pow_mod(ll a, ll n)
