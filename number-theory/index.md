@@ -83,7 +83,7 @@ gcd(an,bn) = n\*gcd(a,b)
  &emsp;
 任意一个合数都可以分解成唯一的质数幂积的形式，即
 $$
-a=\prod\limits_{i=1}  ^ {n} {{p_i} ^ {e_i}}
+a=\prod\limits_{i=1}  ^ {n} {pi ^ ei}
 $$
 因子个数为
 $$
