@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>cs - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/cs/</link>
+        <description>cs - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cs/" rel="self" type="application/rss+xml" /><item>
+    <title>浮点数加减法</title>
+    <link>https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</link>
+    <pubDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
+    <description><![CDATA[#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），]]></description>
+</item><item>
+    <title>二进制编码</title>
+    <link>https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</link>
+    <pubDate>Sun, 15 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
+    <description><![CDATA[二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 1 0.1875*2=0.375 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0 0.375*2=0.75 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0 0.75*2=1.5 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1 0.5*2=1 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1 二进制位0.]]></description>
+</item></channel>
+</rss>

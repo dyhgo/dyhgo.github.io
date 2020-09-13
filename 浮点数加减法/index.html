@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>浮点数加减法 - This is DYH</title><meta name="Description" content="浮点数加减法"><meta property="og:title" content="浮点数加减法" />
+<meta property="og:description" content="浮点数加减法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" />
+<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-04-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-03T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="浮点数加减法"/>
+<meta name="twitter:description" content="浮点数加减法"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" /><link rel="prev" href="https://dyhgo.github.io/codeforces-round-630-div.-2-a~e/" /><link rel="next" href="https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "浮点数加减法",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95\/"
+        },"genre": "posts","keywords": "cs","wordcount":  817 ,
+        "url": "https:\/\/dyhgo.github.io\/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95\/","datePublished": "2020-04-03T00:00:00+00:00","dateModified": "2020-04-03T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "浮点数加减法"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">浮点数加减法</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a>&nbsp;<a href="/categories/cources/"><i class="far fa-folder fa-fw"></i>cources</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-04-03">2020-04-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;817 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><h1 id="0-0操作数检查">#0 0操作数检查</h1>
+<p>如果有一个数为0，则可以直接得出结果</p>
+<h1 id="1-用补码表示阶码尾数">#1 用补码表示阶码，尾数</h1>
+<p>阶码的符号位为两位</p>
+<p>尾数的个位为符号位</p>
+<h1 id="2-对阶">#2 对阶</h1>
+<p>小阶向大阶对齐（看原码），被对阶的数尾数右移阶差个</p>
+<h1 id="3-尾数加">#3 尾数加</h1>
+<p>将两个尾数相加得到新的尾数</p>
+<h1 id="s4-溢出处理s"><s>#4 溢出处理<s></h1>
+<p>太复杂，不作考虑</p>
+<h1 id="4-规格化处理">#4 规格化处理</h1>
+<p>先检查是否规格化，如果尾数符号位与最高位相同则非规格化</p>
+<p>尾数左移直到规格化为止，阶码减少左移的位数（不含符号位）</p>
+<h1 id="5-舍入处理">#5 舍入处理</h1>
+<p>最低有效位为0舍去，为1则尾数+1</p>
+<h1 id="6-还原">#6 还原</h1>
+<p>将补码还原成原码</p>
+<h1 id="eg">E.G.</h1>
+<p>1.设阶码3位，尾数6位，按浮点数运算方法计算[x+y] [x-y]</p>
+<p><code>x= 2^(-011) * (0.100101)</code></p>
+<p><code>y = 2^(-010) * (-0.011110)</code></p>
+<p>解：</p>
+<p>第一步，补码表示</p>
+<p><code>x :11 101 ,  0.100101</code></p>
+<p><code> y : 11 110 , 1.100010</code></p>
+<p>第二步</p>
+<p>对阶，x阶小，y阶大，x向y对阶，阶差为1，所以x尾数右移一个</p>
+<p>x阶码变成与y相同，阶码为 <code>11 110</code></p>
+<p>尾数<code>0.010010(1)</code></p>
+<p>第三步</p>
+<p>尾数加</p>
+<pre><code>     0. 0 1 0 0 1 0 (1)
+     1. 1 0 0 0 1 0
+   -------------------------
+     1. 1 1 0 1 0 0 (1)   
+</code></pre>
+<p>结果为</p>
+<p><code>1.110110(1)</code>  符号位与最高位都是1，非规格化</p>
+<p>第四步</p>
+<p>规格化</p>
+<p>尾数左移两位变成 <code>1.010010</code></p>
+<p>阶码减2（符号位不变），变成 <code>11 100 </code></p>
+<p>第五步</p>
+<p>舍入处理</p>
+<p>没得舍入</p>
+<p>第六步</p>
+<p>还原</p>
+<p><code>x+y = 2^(-4) * (-0.101110)</code></p>
+<p>对于[x-y]</p>
+<p>根据[x-y]补码 = [x]补码 + [-y]补码</p>
+<p>在第三步尾数加时</p>
+<pre><code>     0. 0 1 0 0 1 0 (1)
+     0. 0 1 1 1 1 0
+   -------------------------
+     0. 1 1 0 0 0 0 (1)   
+</code></pre>
+<p>结果为 <code>0.110000(1)</code></p>
+<p>最高有效位和符号位不同，是规格化</p>
+<p>最低有效位为1</p>
+<p>尾数+1变成 <code>0.110001</code></p>
+<p>还原</p>
+<p><code>x-y = 2^(-2) * (0.110001)</code></p>
+<p>=========================================================</p>
+<ol start="2">
+<li>设阶码3位，尾数6位，按浮点数运算方法计算[x+y] [x-y]</li>
+</ol>
+<p><code>x=2^(-101) × （-0.010110）</code></p>
+<p><code> y=2^(-100) × （0.010110）</code></p>
+<p>解：</p>
+<p>第一步</p>
+<p>补码表示</p>
+<p>x : 11 011 , 1.101010</p>
+<p>y : 11 100 , 0.010110</p>
+<p>第二步</p>
+<p>对阶，x阶小，y阶大</p>
+<p>x阶码变成y，阶差1，x尾数右移1位</p>
+<p><code>x : 11100 , 1.110101(0)</code></p>
+<p>第三步</p>
+<p>尾数加</p>
+<pre><code>     1. 1 1 0 1 0 1 (0)
+     0. 0 1 0 1 1 0
+   -------------------------
+     0. 0 0 1 0 1 1 (0)   
+</code></pre>
+<p>结果为 <code>0.001011(0)</code></p>
+<p>符号位与最高有效位相同，非规格化</p>
+<p>第四步</p>
+<p>规格化</p>
+<p>尾数左移两位，阶码减2</p>
+<p>尾数 <code>0.101100</code></p>
+<p>阶码 <code>11 010</code></p>
+<p>第五步</p>
+<p>舍入处理</p>
+<p>无需舍入</p>
+<p>第六步</p>
+<p>还原</p>
+<p><code>x+y = 2^(-6) * (0.101100)</code></p>
+<p>同理x-y的尾数加为</p>
+<pre><code>     1. 1 1 0 1 0 1 (0)
+     1. 1 0 1 0 1 0
+   -------------------------
+     1. 0 1 1 1 1 1 (0)   
+</code></pre>
+<p>结果为 <code>1.011111(0)</code></p>
+<p>符号位和最高有效位不同，为规格化</p>
+<p>最低有效位为0，全舍弃</p>
+<p>还原</p>
+<p><code>x-y = 2^(-4) * (-0.100001)</code></p>
+<p>（有缺漏，待改正）</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-04-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法" data-hashtags="cs"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-hashtag="cs"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法" data-description="浮点数加减法"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法" data-description="浮点数加减法"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/" data-title="浮点数加减法"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cs/">cs</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/codeforces-round-630-div.-2-a~e/" class="prev" rel="prev" title="Codeforces Round #630 (Div. 2) A~E"><i class="fas fa-angle-left fa-fw"></i>Codeforces Round #630 (Div. 2) A~E</a>
+            <a href="/codeforces-round-631-div.-2-a~d/" class="next" rel="next" title="Codeforces Round #631 (Div. 2) A~D">Codeforces Round #631 (Div. 2) A~D<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

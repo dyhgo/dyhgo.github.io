@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Codeforces Round #627 (Div. 3) - This is DYH</title><meta name="Description" content="Codeforces Round #627 (Div. 3)"><meta property="og:title" content="Codeforces Round #627 (Div. 3)" />
+<meta property="og:description" content="Codeforces Round #627 (Div. 3)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/codeforces-round-627-div.-3/" />
+<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-03-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-13T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Codeforces Round #627 (Div. 3)"/>
+<meta name="twitter:description" content="Codeforces Round #627 (Div. 3)"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/codeforces-round-627-div.-3/" /><link rel="prev" href="https://dyhgo.github.io/ef-a-tale-of-melodies/" /><link rel="next" href="https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Codeforces Round #627 (Div. 3)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/codeforces-round-627-div.-3\/"
+        },"genre": "posts","keywords": "cpp, dfs, dp","wordcount":  968 ,
+        "url": "https:\/\/dyhgo.github.io\/codeforces-round-627-div.-3\/","datePublished": "2020-03-13T00:00:00+00:00","dateModified": "2020-03-13T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "Codeforces Round #627 (Div. 3)"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/codeforces-round-627-div.-3/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/codeforces-round-627-div.-3/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Codeforces Round #627 (Div. 3)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>codeforces</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-13">2020-03-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;968 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题意">题意</a></li>
+        <li><a href="#题解">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题意-1">题意</a></li>
+        <li><a href="#题解-1">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="a-yet-another-tetris-problem-linkhttpscodeforcescomcontest1324problema">A. Yet Another Tetris Problem <a href="https://codeforces.com/contest/1324/problem/A" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="b-yet-another-palindrome-problem-linkhttpscodeforcescomcontest1324problemb">B. Yet Another Palindrome Problem <a href="https://codeforces.com/contest/1324/problem/B" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="c-frog-jumps-linkhttpscodeforcescomcontest1324problemc">C. Frog Jumps <a href="https://codeforces.com/contest/1324/problem/C" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="d-pair-of-topics-linkhttpscodeforcescomcontest1324problemd">D. Pair of Topics <a href="https://codeforces.com/contest/1324/problem/D" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="e-sleeping-schedule-linkhttpscodeforcescomcontest1324probleme">E. Sleeping Schedule <a href="https://codeforces.com/contest/1324/problem/E" target="_blank" rel="noopener noreffer">link</a></h1>
+<h3 id="题意">题意</h3>
+<p>假设一天有h个小时，DIO一共要睡n次，每次睡ai个小时（按顺序睡觉），每次刚睡醒，就要继续睡觉，一直睡下去，直至睡眠次数耗光。</p>
+<p>给定一个一天中的区间[l,r]，如果有一次睡醒时刻在区间内，则这次睡眠为“好睡眠”</p>
+<p>对于每次睡眠时间ai,可以选择睡ai小时或ai-1小时</p>
+<p>问一开始就进行睡眠的情况下，“好睡眠”的次数最多有几次</p>
+<h3 id="题解">题解</h3>
+<p>动态规划</p>
+<p>dp[i][j]</p>
+<p>i表示已经进行了i次睡眠</p>
+<p>j表示现在在时刻j</p>
+<p>dp表示最大“好睡眠”次数</p>
+<p>初始化 ：dp[i][j]=-inf , dp[0][0]=0</p>
+<p>分别讨论下面两种情况</p>
+<p>to=(j+a[i])%h</p>
+<p>to=(j+a[i]-1)%h</p>
+<p>状态转移方程 ：dp[i+1][to] = max(dp[i+1][to] , dp[i][j] + flag)</p>
+<p>flag当to在区间内为1，否则为0</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">r</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">2005</span><span class="p">][</span><span class="mi">2005</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">data</span><span class="p">[</span><span class="mi">2005</span><span class="p">];</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span><span class="c1"></span>	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">h</span><span class="o">&gt;&gt;</span><span class="n">l</span><span class="o">&gt;&gt;</span><span class="n">r</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="c1">//preprocess
+</span><span class="c1"></span>	<span class="n">memset</span><span class="p">(</span><span class="n">dp</span><span class="p">,</span><span class="mh">0xc0</span><span class="p">,</span><span class="k">sizeof</span><span class="p">(</span><span class="n">dp</span><span class="p">));</span>   <span class="c1">//0xc0c0c0c0  0x3f3f3f3f
+</span><span class="c1"></span>	<span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">h</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="c1">// &lt;即可
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="kt">int</span> <span class="n">to</span><span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">%</span><span class="n">h</span><span class="p">;</span>
+			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">to</span><span class="p">]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">to</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;=</span><span class="n">to</span> <span class="n">and</span> <span class="n">to</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">));</span>
+			<span class="n">to</span> <span class="o">=</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">%</span><span class="n">h</span><span class="p">;</span>
+			<span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">to</span><span class="p">]</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">to</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="p">(</span><span class="n">l</span><span class="o">&lt;=</span><span class="n">to</span> <span class="n">and</span> <span class="n">to</span><span class="o">&lt;=</span><span class="n">r</span><span class="p">));</span>
+		<span class="p">}</span>
+	<span class="kt">int</span> <span class="n">ans</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span> 
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">h</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span><span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">i</span><span class="p">]);</span>
+	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>小技巧</p>
+<p>inf = 0x3f3f3f3f memset可以用0x3f</p>
+<p>ninf=0xc0c0c0c0 memset可以用0xc0</p>
+<h1 id="f-maximum-white-subtree-linkhttpscodeforcescomcontest1324problemf">F. Maximum White Subtree <a href="https://codeforces.com/contest/1324/problem/F" target="_blank" rel="noopener noreffer">link</a></h1>
+<h3 id="题意-1">题意</h3>
+<p>给一棵树（比赛当天是植树节！！）</p>
+<p>节点有黑的，白的</p>
+<p>对于这棵树的某一子图</p>
+<p>定义这个子图所有节点的dif=白色节点数-黑色节点数</p>
+<p>求每一个节点的最大dif值</p>
+<h3 id="题解-1">题解</h3>
+<p>深度优先搜索+动态规划</p>
+<p>首先考虑以每个节点为父节点的子图的最大dif</p>
+<p>然后每个节点的的最大dif=作为父节点的最大dif+作为子节点的最大dif</p>
+<p>如何求以每个节点为父节点的子图的最大dif？</p>
+<p>遍历子节点</p>
+<p>判断每个子节点以下（作为父节点）是否白色比黑色多，多则累加对应的数值，否则不累加</p>
+<p>这样就形成和了dfs</p>
+<p>如何求最终的dif？</p>
+<p>作为子节点的部分的dif，可以用该节点的父节点的dif（最终）- 作为父节点的dif</p>
+<p>需要判断是否有必要增加“额外部分”</p>
+<p>要让该节点的父节点的dif为最终值，需要从根开始，一层层遍历子节点</p>
+<p>这样又形成了dfs</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">dif_orig</span><span class="p">[</span><span class="mi">200005</span><span class="p">];</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">adj</span><span class="p">[</span><span class="mi">200005</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">dif_par</span><span class="p">[</span><span class="mi">200005</span><span class="p">];</span>
+<span class="kt">int</span> <span class="n">ans</span><span class="p">[</span><span class="mi">200005</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">dfs_par</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span><span class="kt">int</span> <span class="n">par</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">dif_par</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">dif_orig</span><span class="p">[</span><span class="n">u</span><span class="p">];</span>
+	<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span><span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+	<span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="o">!=</span><span class="n">par</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">dfs_par</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">);</span>
+			<span class="n">dif_par</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+=</span><span class="n">max</span><span class="p">(</span><span class="n">dif_par</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="mi">0</span><span class="p">);</span> <span class="c1">//如果黑色比白色多，则丢弃 
+</span><span class="c1"></span>		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">void</span> <span class="nf">dfs_final</span><span class="p">(</span><span class="kt">int</span> <span class="n">u</span><span class="p">,</span><span class="kt">int</span> <span class="n">par</span><span class="p">,</span><span class="kt">int</span> <span class="n">el</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">ans</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">=</span><span class="n">dif_par</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">el</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">v</span><span class="p">:</span><span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">])</span>
+	<span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span><span class="n">v</span><span class="o">!=</span><span class="n">par</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="n">dfs_final</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">ans</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">-</span><span class="n">max</span><span class="p">(</span><span class="n">dif_par</span><span class="p">[</span><span class="n">v</span><span class="p">],</span><span class="mi">0</span><span class="p">)));</span>  <span class="c1">//里面的max和上面一样，外面的max判断是否有必要增加其他部分（作为子节点的部分） 
+</span><span class="c1"></span>		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span><span class="c1"></span>	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+	<span class="p">{</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">dif_orig</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">dif_orig</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">dif_orig</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=-</span><span class="mi">1</span><span class="p">;</span>   <span class="c1">//如果是黑色，则白色-黑色=-1 
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">u</span><span class="o">&gt;&gt;</span><span class="n">v</span><span class="p">;</span>
+		<span class="n">u</span><span class="o">--</span><span class="p">,</span><span class="n">v</span><span class="o">--</span><span class="p">;</span>
+		<span class="n">adj</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+		<span class="n">adj</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">u</span><span class="p">);</span>
+	<span class="p">}</span>
+	
+	<span class="n">dfs_par</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+	<span class="n">dfs_final</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="p">;</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-03-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/codeforces-round-627-div.-3/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)" data-hashtags="cpp,dfs,dp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-hashtag="cpp"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)" data-description="Codeforces Round #627 (Div. 3)"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)" data-description="Codeforces Round #627 (Div. 3)"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/codeforces-round-627-div.-3/" data-title="Codeforces Round #627 (Div. 3)"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">cpp</a>,&nbsp;<a href="/tags/dfs/">dfs</a>,&nbsp;<a href="/tags/dp/">dp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/ef-a-tale-of-melodies/" class="prev" rel="prev" title="ef - a tale of melodies"><i class="fas fa-angle-left fa-fw"></i>ef - a tale of melodies</a>
+            <a href="/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/" class="next" rel="next" title="二进制编码">二进制编码<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

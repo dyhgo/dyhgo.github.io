@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>data_structure - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/data_structure/</link>
+        <description>data_structure - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/data_structure/" rel="self" type="application/rss+xml" /><item>
+    <title>abc170</title>
+    <link>https://dyhgo.github.io/abc170/</link>
+    <pubDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/abc170/</guid>
+    <description><![CDATA[A - Five Variables 题意 找5个数中值为0的下标 题解 1 2 a = list(map(int , input().split())) print(a.index(0) + 1) B - Crane and Turtle 题意 鸡兔同笼问题 题解 1 2 n , m = map(int , input().split()) print(&#39;Yes&#39;) if (m - 2 * n) % 2 == 0 and (m - 2 * n)]]></description>
+</item><item>
+    <title>Codeforces Round #631 (Div. 2) A~D</title>
+    <link>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</link>
+    <pubDate>Sun, 05 Apr 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</guid>
+    <description><![CDATA[A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数]]></description>
+</item></channel>
+</rss>

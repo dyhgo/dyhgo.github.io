@@ -1,0 +1,21 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>computational_geometry - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/computational_geometry/</link>
+        <description>computational_geometry - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 19 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/computational_geometry/" rel="self" type="application/rss+xml" /><item>
+    <title>abc168</title>
+    <link>https://dyhgo.github.io/abc168/</link>
+    <pubDate>Tue, 19 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/abc168/</guid>
+    <description><![CDATA[A - ∴ (Therefore) 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; char c=s[s.length()-1]; switch(c){ case &#39;2&#39; :case &#39;4&#39;: case &#39;5&#39;: case &#39;7&#39;: case &#39;9&#39;: cout&lt;&lt;&#34;hon\n&#34;; break; case &#39;3&#39;: cout&lt;&lt;&#34;bon\n&#34;; break; default :cout&lt;&lt;&#34;pon\n&#34;; } return 0; } B - &hellip; (Triple Dots) 题意 看]]></description>
+</item><item>
+    <title>abc157</title>
+    <link>https://dyhgo.github.io/abc157/</link>
+    <pubDate>Mon, 02 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/abc157/</guid>
+    <description><![CDATA[A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; int main()]]></description>
+</item></channel>
+</rss>

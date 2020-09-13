@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>segment_tree - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/segment_tree/</link>
+        <description>segment_tree - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 20 Feb 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/segment_tree/" rel="self" type="application/rss+xml" /><item>
+    <title>Segment Tree</title>
+    <link>https://dyhgo.github.io/segment-tree/</link>
+    <pubDate>Thu, 20 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/segment-tree/</guid>
+    <description><![CDATA[线段树是把区间分割，然后把数据按树存储的数据结构。线段树是一颗完美二叉树 用一个例子来介绍线段树 RMQ（range minimum query） 实现功能 对于一]]></description>
+</item></channel>
+</rss>

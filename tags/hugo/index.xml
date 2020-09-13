@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>hugo - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/hugo/</link>
+        <description>hugo - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 27 Feb 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
+    <title>用hugo搭建个人博客网站</title>
+    <link>https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
+    <pubDate>Thu, 27 Feb 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
+    <description><![CDATA[效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安]]></description>
+</item></channel>
+</rss>

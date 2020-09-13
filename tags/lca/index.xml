@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>lca - Tag - This is DYH</title>
+        <link>https://dyhgo.github.io/tags/lca/</link>
+        <description>lca - Tag - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/lca/" rel="self" type="application/rss+xml" /><item>
+    <title>Codeforces Round #629 (Div. 3)</title>
+    <link>https://dyhgo.github.io/codeforces-round-629-div.-3/</link>
+    <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/codeforces-round-629-div.-3/</guid>
+    <description><![CDATA[A. Divisibility Problem 题意 求一个数加上多少能被另一个数整除 题解 如果b|(a+k) 则k=b-a%b注意k=0特判 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 #include&lt;bits/stdc++.h&gt; using namespace std; int t,a,b; int]]></description>
+</item></channel>
+</rss>

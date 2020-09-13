@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>用hugo搭建个人博客网站 - This is DYH</title><meta name="Description" content="用hugo搭建个人博客网站"><meta property="og:title" content="用hugo搭建个人博客网站" />
+<meta property="og:description" content="用hugo搭建个人博客网站" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" />
+<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-02-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-27T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="用hugo搭建个人博客网站"/>
+<meta name="twitter:description" content="用hugo搭建个人博客网站"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" /><link rel="prev" href="https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/" /><link rel="next" href="https://dyhgo.github.io/test/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "用hugo搭建个人博客网站",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99\/"
+        },"genre": "posts","keywords": "hugo","wordcount":  1811 ,
+        "url": "https:\/\/dyhgo.github.io\/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99\/","datePublished": "2020-02-27T00:00:00+00:00","dateModified": "2020-02-27T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "用hugo搭建个人博客网站"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">用hugo搭建个人博客网站</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-27">2020-02-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1811 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#注册github账号">注册github账号</a></li>
+        <li><a href="#创建github仓库">创建github仓库</a></li>
+        <li><a href="#安装git-bash非必须但建议">安装git bash（非必须，但建议）</a></li>
+        <li><a href="#安装hugo">安装hugo</a></li>
+        <li><a href="#创建博客">创建博客</a></li>
+        <li><a href="#下载主题">下载主题</a></li>
+        <li><a href="#部署到服务器上github-pages">部署到服务器上（github pages）</a></li>
+        <li><a href="#配置主题和增加内容">配置主题和增加内容</a></li>
+        <li><a href="#更新网站内容">更新网站内容</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p><a href="https://dyhgo.fun" target="_blank" rel="noopener noreffer">效果展示</a></p>
+<p>在hugo官网也有说明如何搭建个人网站</p>
+<h3 id="注册github账号">注册github账号</h3>
+<h3 id="创建github仓库">创建github仓库</h3>
+<p>仓库的名字必须是   用户名.github.io</p>
+<p>建议全小写</p>
+<h3 id="安装git-bash非必须但建议">安装git bash（非必须，但建议）</h3>
+<p><a href="https://git-scm.com/download" target="_blank" rel="noopener noreffer">点击此处</a></p>
+<p>选择计算机对应的规格</p>
+<p>一步一步安装</p>
+<p>在使用前要进行初始化用户名和邮箱</p>
+<p>打开终端（以powershell为例）</p>
+<p>输入git命令，没有异常就可以</p>
+<h3 id="安装hugo">安装hugo</h3>
+<p><a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">点击此处</a></p>
+<p>选择计算机对应的规格</p>
+<p>下载zip压缩包</p>
+<p>解压后会得到 hugo.exe（这个是主要的）</p>
+<h3 id="创建博客">创建博客</h3>
+<p>打开powershell</p>
+<p>转到存放hugo.exe的文件夹下（hugo指令只能在这个目录下执行）</p>
+<p>如果hugo指令识别不出来，可以配置环境变量</p>
+<p>如果还是不行，那就用绝对路径，一直到hugo.exe</p>
+<p>要启动hugo.exe就要用 .\hugo</p>
+<p>在存放hugo.exe的文件夹下，执行以下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="p">&gt;</span><span class="n">hugo</span> <span class="n">new</span> <span class="n">site</span> <span class="n">myblog</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>myblog是自己起的名字，是一个identifier</p>
+<p>之后会生成myblog文件夹</p>
+<p>里面已经有一些东西了（大部分都是建立网站必须的）</p>
+<h3 id="下载主题">下载主题</h3>
+<p><a href="https://themes.gohugo.io/" target="_blank" rel="noopener noreffer">点击此处</a></p>
+<p>选一个主题下载</p>
+<p>下载有两种方式</p>
+<p>1.点击download，转到作者github，下载zip</p>
+<p>把zip转到myblog/theme下，需要改文件夹一些名字</p>
+<p>2.在主题下面有git clone(推荐使用这种)</p>
+<p>直接在powershell下面输入（一定要 cd 到myblog）</p>
+<p>个别主题下载的慢，可以在不同时间不同地点多试试</p>
+<p>下载完，myblog/theme 就会多出一个主题对应的文件夹（很重要）</p>
+<p>以下是无论哪一种都要进行的操作</p>
+<p>根据作者在hugo网页中写的文档进行初始化配置（就是把主题文件夹中的东西搬出来，替换什么的）（很重要，没有这一步，可能本地都打不开，疯狂报错）（但有些主题没有此过程）</p>
+<p>尝试在本地打开</p>
+<p>输入以下代码(以pure主题为例）(这个主题名字是theme下对应文件夹的名字)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">myblog</span><span class="p">&gt;</span><span class="n">hugo</span> <span class="n">server</span> <span class="n">-t</span> <span class="n">pure</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>会得到一个本地网址</p>
+<p>用浏览器打开这个网址</p>
+<p>就可以在本地看到自己的网页</p>
+<p>局域网内的用户也可以看到你的网页</p>
+<h3 id="部署到服务器上github-pages">部署到服务器上（github pages）</h3>
+<p>建议先在本地查看，确认无误之后再推到服务器</p>
+<p>输入以下代码</p>
+<p>注意不要写错</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">myblog</span><span class="p">&gt;</span><span class="n">hugo</span> <span class="p">-</span><span class="n">-theme</span><span class="p">=</span><span class="n">pure</span> <span class="p">-</span><span class="n">-baseUrl</span><span class="p">=</span><span class="s2">&#34;https://你的用户名.github.io&#34;</span> <span class="p">-</span><span class="n">-buildDrafts</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>myblog下会生成public文件夹</p>
+<p>输入以下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">myblog</span><span class="p">&gt;</span><span class="nb">cd </span><span class="n">public</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">init</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&#34;输入你自己的提交信息&#34;</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">用户名</span><span class="p">/</span><span class="n">用户名</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span>
+<span class="n">public</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此过程中有可能需要输入github的账号和密码</p>
+<p>访问 用户名.github.io就可以看到你的网页</p>
+<p>会有延迟，需要等一会</p>
+<h3 id="配置主题和增加内容">配置主题和增加内容</h3>
+<p>配置因主题而异</p>
+<p>通法就是认真仔细地阅读作者的文档</p>
+<p>hugo/theme上的或者README.md（可见文档有多重要）</p>
+<p>增加的内容一般都放在content文件夹下，当然也可以删掉内容</p>
+<p>一般是markdown格式</p>
+<p>写markdown可以用markdownpad / visual studio code / csdn自带的等等</p>
+<p>但是发现一个问题，不同的编辑器预览的效果不一样</p>
+<p>比如markdownpad不能很好的识别latex公式</p>
+<p>有可能主题自带的markdown也不能很好的呈现出效果</p>
+<h3 id="更新网站内容">更新网站内容</h3>
+<p>！！！文件名字不能有  #</p>
+<p>建议首先在本地预览，确认无误再上传</p>
+<p>然后执行以下代码（含本地预览）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">myblog</span><span class="p">&gt;</span><span class="n">hugo</span> <span class="n">server</span> <span class="n">-t</span> <span class="n">pure</span>
+<span class="n">myblog</span><span class="p">&gt;</span><span class="n">hugo</span> <span class="p">-</span><span class="n">-theme</span><span class="p">=</span><span class="n">pure</span> <span class="p">-</span><span class="n">-baseUrl</span><span class="p">=</span><span class="s2">&#34;https://你的用户名.github.io&#34;</span> <span class="p">-</span><span class="n">-buildDrafts</span>
+<span class="n">myblog</span><span class="p">&gt;</span><span class="nb">cd </span><span class="n">public</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">init</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">add</span> <span class="p">.</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">commit</span> <span class="n">-m</span> <span class="s2">&#34;输入你自己的提交信息&#34;</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">origin</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">用户名</span><span class="p">/</span><span class="n">用户名</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">pull</span> <span class="n">origin</span> <span class="n">master</span>
+<span class="n">public</span><span class="p">&gt;</span><span class="n">git</span> <span class="n">push</span> <span class="n">-u</span> <span class="n">origin</span> <span class="n">master</span>
+<span class="n">public</span><span class="p">&gt;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>一定要写git pull origin master</p>
+<p>有延迟</p>
+<p>打开 用户名.github.io 可以看到内容已经更新</p>
+<p>之后更新网站内容就一直重复上述操作</p>
+<p>=================== <strong>以下是自定义域名（附加内容</strong>）=====================
+在阿里云上面注册账号</p>
+<p>实名制</p>
+<p>购买域名</p>
+<p>域名实名制</p>
+<p>购买SSL证书（有免费的）</p>
+<p>确定SSL证书有效</p>
+<p>配置DNS服务器</p>
+<p>在域名解析中添加记录</p>
+<p>记录类型为CNAME</p>
+<p>记录值填写 用户名.github.io（或者记录类型为A，记录值填写IP地址）</p>
+<p>打开github对应的仓库</p>
+<p>在settings中找到custom domain</p>
+<p>输入新域名</p>
+<p>在github pages下显示绿色的√就可以</p>
+<p>访问新域名就可以看到网页了</p>
+<p>之后更新的内容，都可以通过访问新域名实现</p>
+<p>以上操作都需要时间，需耐心等待</p>
+<p>个人博客网站基本搭建完毕</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-02-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站" data-hashtags="hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-hashtag="hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站" data-description="用hugo搭建个人博客网站"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站" data-description="用hugo搭建个人博客网站"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/" data-title="用hugo搭建个人博客网站"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E4%BA%8C%E8%BF%9B%E5%88%B6%E8%A1%A8%E7%A4%BA%E9%9B%86%E5%90%88/" class="prev" rel="prev" title="二进制表示集合"><i class="fas fa-angle-left fa-fw"></i>二进制表示集合</a>
+            <a href="/test/" class="next" rel="next" title="test">test<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Flask-RESTful简单实例 - This is DYH</title><meta name="Description" content="Flask-RESTful简单实例"><meta property="og:title" content="Flask-RESTful简单实例" />
+<meta property="og:description" content="Flask-RESTful简单实例" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" />
+<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-06-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-13T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Flask-RESTful简单实例"/>
+<meta name="twitter:description" content="Flask-RESTful简单实例"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" /><link rel="prev" href="https://dyhgo.github.io/abc169/" /><link rel="next" href="https://dyhgo.github.io/educational-codeforces-round-89-rated-for-div.-2-a~e/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Flask-RESTful简单实例",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B\/"
+        },"genre": "posts","keywords": "python","wordcount":  887 ,
+        "url": "https:\/\/dyhgo.github.io\/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B\/","datePublished": "2020-06-13T00:00:00+00:00","dateModified": "2020-06-13T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "Flask-RESTful简单实例"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" selected>English</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">English<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" selected>English</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Flask-RESTful简单实例</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python-web/"><i class="far fa-folder fa-fw"></i>Python web</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-13">2020-06-13</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;887 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#功能说明">功能说明</a></li>
+        <li><a href="#实现原理">实现原理</a></li>
+        <li><a href="#测试">测试</a>
+          <ul>
+            <li><a href="#查询所有信息">查询所有信息</a></li>
+            <li><a href="#根据ps_id查询单个人的信息">根据ps_id查询单个人的信息</a>
+              <ul>
+                <li><a href="#根据ps_id删除某个人的信息">根据ps_id删除某个人的信息</a></li>
+              </ul>
+            </li>
+            <li><a href="#增加某个人的信息">增加某个人的信息</a></li>
+            <li><a href="#改变某个人的信息">改变某个人的信息</a></li>
+          </ul>
+        </li>
+        <li><a href="#参考资料部分">参考资料（部分）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Python web的框架有Django Flask Tornado</p>
+<p>Flask 是一个使用 Python 编写的轻量级 Web 应用程序框架，由werkzeug服务器和jinja2模板引擎组成</p>
+<p>RESTful是一个与资源（resource）有关的架构理念</p>
+<p>REST全称Representational State Transfer，详细信息参考下面的资料</p>
+<h3 id="功能说明">功能说明</h3>
+<p>接下来用Flask-RESTful扩展实现一个非常简单的实例，没有用到数据库，没有用到前端页面（模板），没有表单验证，没有复杂的业务逻辑</p>
+<p>只用字典存储数据，实现crud（后期将增加数据库）</p>
+<h3 id="实现原理">实现原理</h3>
+<p>安装 <code>pip install flask-restful</code></p>
+<p>Flask-RESTful最基本的套路</p>
+<p>实例化app api</p>
+<p>实例化解析器，将待验证的参数加进解析器中</p>
+<p>根据路由编写对应的类，在类下面编写需要的函数</p>
+<p>将类和对应的路由集成到api中</p>
+<p>代码如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">flask_restful</span> <span class="kn">import</span> <span class="n">reqparse</span> <span class="p">,</span> <span class="n">abort</span> <span class="p">,</span> <span class="n">Api</span> <span class="p">,</span> <span class="n">Resource</span>
+
+<span class="c1">#实例化</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1">#创造初始数据</span>
+<span class="n">PERSONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;p1&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;qaz&#39;</span> <span class="p">,</span> <span class="s1">&#39;num&#39;</span> <span class="p">:</span> <span class="s1">&#39;15&#39;</span><span class="p">}</span> <span class="p">,</span>
+    <span class="s1">&#39;p2&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;wsx&#39;</span> <span class="p">,</span> <span class="s1">&#39;num&#39;</span> <span class="p">:</span> <span class="s1">&#39;16&#39;</span><span class="p">}</span> <span class="p">,</span>
+    <span class="s1">&#39;p3&#39;</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;edc&#39;</span> <span class="p">,</span> <span class="s1">&#39;num&#39;</span> <span class="p">:</span> <span class="s1">&#39;17&#39;</span><span class="p">}</span> <span class="p">,</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">not_exist</span><span class="p">(</span><span class="n">ps_id</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">ps_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">PERSONS</span><span class="p">:</span>
+        <span class="n">abort</span><span class="p">(</span><span class="mi">404</span> <span class="p">,</span> <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;person {} not exist&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ps_id</span><span class="p">))</span>
+
+<span class="c1">#实例化解析器</span>
+<span class="c1">#增加验证参数</span>
+<span class="n">parser</span> <span class="o">=</span> <span class="n">reqparse</span><span class="o">.</span><span class="n">RequestParser</span><span class="p">()</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;name&#39;</span> <span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span> <span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span> <span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;it is a string&#39;</span><span class="p">)</span> <span class="c1">#把它设为必填项</span>
+<span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;num&#39;</span> <span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span> <span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="bp">True</span> <span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;it is a number&#39;</span><span class="p">)</span> <span class="c1">#把它设为必填项</span>
+
+<span class="c1">#对单个人的操作</span>
+<span class="k">class</span> <span class="nc">Person</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">ps_id</span><span class="p">):</span>
+        <span class="n">not_exist</span><span class="p">(</span><span class="n">ps_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">PERSONS</span><span class="p">[</span><span class="n">ps_id</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">ps_id</span><span class="p">):</span>
+        <span class="n">not_exist</span><span class="p">(</span><span class="n">ps_id</span><span class="p">)</span>
+        <span class="k">del</span> <span class="n">PERSONS</span><span class="p">[</span><span class="n">ps_id</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="mi">204</span>
+
+    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span> <span class="p">,</span> <span class="n">ps_id</span><span class="p">):</span>
+        <span class="n">not_exist</span><span class="p">(</span><span class="n">ps_id</span><span class="p">)</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span> <span class="c1">#开始数据验证</span>
+        <span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;num&#39;</span> <span class="p">:</span> <span class="n">args</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]}</span>
+        <span class="n">PERSONS</span><span class="p">[</span><span class="n">ps_id</span><span class="p">]</span> <span class="o">=</span> <span class="n">info</span> <span class="c1">#更新</span>
+        <span class="k">return</span> <span class="n">info</span> <span class="p">,</span> <span class="mi">201</span>
+
+<span class="c1">#对所有人的操作</span>
+<span class="k">class</span> <span class="nc">PersonList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">PERSONS</span>
+
+    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">ps_id</span>
+        <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+        <span class="c1">#暴力求缺失id</span>
+        <span class="n">lis</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1">#求每个键，然后过滤出数字，加进列表中，遍历获得空位置</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">PERSONS</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+            <span class="n">tmp_filter</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">isdigit</span> <span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+            <span class="n">tmp_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">tmp_filter</span><span class="p">)</span>
+            <span class="n">tmp_str</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">)</span>
+            <span class="n">tmp_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">tmp_str</span><span class="p">)</span>
+            <span class="n">lis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp_int</span><span class="p">)</span>
+
+        <span class="n">lis</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+        <span class="n">flag</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lis</span><span class="p">)),</span><span class="n">lis</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span> <span class="o">!=</span> <span class="n">j</span><span class="p">:</span>
+                <span class="n">ps_id</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+                <span class="n">flag</span> <span class="o">=</span> <span class="bp">True</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">flag</span><span class="p">):</span>  <span class="n">ps_id</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lis</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="n">ps_id</span> <span class="o">=</span> <span class="s1">&#39;p</span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">ps_id</span><span class="p">)</span>
+        <span class="n">PERSONS</span><span class="p">[</span><span class="n">ps_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span> <span class="p">,</span> <span class="s1">&#39;num&#39;</span><span class="p">:</span><span class="n">args</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]}</span>
+        <span class="k">return</span> <span class="n">PERSONS</span><span class="p">[</span><span class="n">ps_id</span><span class="p">]</span> <span class="p">,</span> <span class="mi">201</span>
+
+<span class="c1">#增加对应的路由</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Person</span> <span class="p">,</span> <span class="s1">&#39;/persons/&lt;string:ps_id&gt;&#39;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">PersonList</span> <span class="p">,</span> <span class="s1">&#39;/persons&#39;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="测试">测试</h3>
+<h4 id="查询所有信息">查询所有信息</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160100923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160100923.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160100923.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160100923.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160100923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160319708.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160319708.png, https://img-blog.csdnimg.cn/20200613160319708.png 1.5x, https://img-blog.csdnimg.cn/20200613160319708.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160319708.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="根据ps_id查询单个人的信息">根据ps_id查询单个人的信息</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160150740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160150740.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160150740.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160150740.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160150740.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160338687.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160338687.png, https://img-blog.csdnimg.cn/20200613160338687.png 1.5x, https://img-blog.csdnimg.cn/20200613160338687.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160338687.png"
+        title="在这里插入图片描述" /></p>
+<h5 id="根据ps_id删除某个人的信息">根据ps_id删除某个人的信息</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160255170.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160255170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160255170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160255170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160255170.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160356394.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160356394.png, https://img-blog.csdnimg.cn/20200613160356394.png 1.5x, https://img-blog.csdnimg.cn/20200613160356394.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160356394.png"
+        title="在这里插入图片描述" /></p>
+<p>再查看所有人的信息</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2020061316043170.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/2020061316043170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020061316043170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020061316043170.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2020061316043170.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160441402.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160441402.png, https://img-blog.csdnimg.cn/20200613160441402.png 1.5x, https://img-blog.csdnimg.cn/20200613160441402.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160441402.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="增加某个人的信息">增加某个人的信息</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160601911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160601911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160601911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160601911.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160601911.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160615543.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160615543.png, https://img-blog.csdnimg.cn/20200613160615543.png 1.5x, https://img-blog.csdnimg.cn/20200613160615543.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160615543.png"
+        title="在这里插入图片描述" /></p>
+<p>查看所有人的信息</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160645652.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160645652.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160645652.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160645652.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160645652.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160658786.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160658786.png, https://img-blog.csdnimg.cn/20200613160658786.png 1.5x, https://img-blog.csdnimg.cn/20200613160658786.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160658786.png"
+        title="在这里插入图片描述" /></p>
+<p>由于之前删除了2号，所以它占据了2号的位置</p>
+<h4 id="改变某个人的信息">改变某个人的信息</h4>
+<p>现在p3 的name是edc num是17</p>
+<p>改成name是uuu，num是27</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160928474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160928474.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613160928474.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613160928474.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160928474.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613160942914.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613160942914.png, https://img-blog.csdnimg.cn/20200613160942914.png 1.5x, https://img-blog.csdnimg.cn/20200613160942914.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613160942914.png"
+        title="在这里插入图片描述" /></p>
+<p>查看所有人的信息以验证</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2020061316101916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/2020061316101916.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/2020061316101916.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/2020061316101916.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2020061316101916.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" />
+<img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613161029698.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200613161029698.png, https://img-blog.csdnimg.cn/20200613161029698.png 1.5x, https://img-blog.csdnimg.cn/20200613161029698.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613161029698.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="参考资料部分">参考资料（部分）</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200613161234684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        data-srcset="https://img-blog.csdnimg.cn/20200613161234684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200613161234684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200613161234684.png?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200613161234684.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70"
+        title="在这里插入图片描述" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-13</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例" data-hashtags="python"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-hashtag="python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例" data-description="Flask-RESTful简单实例"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例" data-description="Flask-RESTful简单实例"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/" data-title="Flask-RESTful简单实例"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">python</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/abc169/" class="prev" rel="prev" title="abc169"><i class="fas fa-angle-left fa-fw"></i>abc169</a>
+            <a href="/educational-codeforces-round-89-rated-for-div.-2-a~e/" class="next" rel="next" title="Educational Codeforces Round 89 (Rated for Div. 2) A~E">Educational Codeforces Round 89 (Rated for Div. 2) A~E<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
