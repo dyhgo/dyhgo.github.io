@@ -1,48 +1,49 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>GAME - Category - This is DYH</title>
+        <title>GAME - 分类 - This is DYH</title>
         <link>https://dyhgo.github.io/categories/game/</link>
-        <description>GAME - Category - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/game/" rel="self" type="application/rss+xml" /><item>
+        <description>GAME - 分类 - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/game/" rel="self" type="application/rss+xml" /><item>
     <title>杀手2</title>
     <link>https://dyhgo.github.io/%E6%9D%80%E6%89%8B2/</link>
     <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%9D%80%E6%89%8B2/</guid>
     <description><![CDATA[杀手2由IO Interactive开发，2018年发行的潜行刺杀游戏，与羞辱不同的是这是第三人称 杀手2最大的特点是刺杀方法的丰富性 游玩过程中]]></description>
 </item><item>
     <title>看门狗2</title>
     <link>https://dyhgo.github.io/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
     <pubDate>Tue, 24 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
     <description><![CDATA[Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是]]></description>
 </item><item>
     <title>光环1</title>
     <link>https://dyhgo.github.io/%E5%85%89%E7%8E%AF1/</link>
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%85%89%E7%8E%AF1/</guid>
     <description><![CDATA[halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这]]></description>
 </item><item>
     <title>刺客信条2</title>
     <link>https://dyhgo.github.io/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
     <description><![CDATA[ac2由育碧蒙特利尔工作室开发 十年前玩的游戏，环境渲染和剧情真的超棒 背景音乐选的十分用心 后来主角ezio也成为了刺客信条系列的标志 刺客信条系]]></description>
 </item><item>
     <title>刻痕</title>
     <link>https://dyhgo.github.io/%E5%88%BB%E7%97%95/</link>
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%88%BB%E7%97%95/</guid>
     <description><![CDATA[《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第]]></description>
 </item><item>
     <title>波斯王子</title>
     <link>https://dyhgo.github.io/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
     <description><![CDATA[波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏 波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生 这是我201]]></description>
 </item></channel>

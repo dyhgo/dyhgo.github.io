@@ -1,41 +1,42 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>bfs - Tag - This is DYH</title>
+        <title>bfs - 标签 - This is DYH</title>
         <link>https://dyhgo.github.io/tags/bfs/</link>
-        <description>bfs - Tag - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/bfs/" rel="self" type="application/rss+xml" /><item>
+        <description>bfs - 标签 - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/bfs/" rel="self" type="application/rss+xml" /><item>
     <title>abc170</title>
     <link>https://dyhgo.github.io/abc170/</link>
     <pubDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/abc170/</guid>
     <description><![CDATA[A - Five Variables 题意 找5个数中值为0的下标 题解 1 2 a = list(map(int , input().split())) print(a.index(0) + 1) B - Crane and Turtle 题意 鸡兔同笼问题 题解 1 2 n , m = map(int , input().split()) print(&#39;Yes&#39;) if (m - 2 * n) % 2 == 0 and (m - 2 * n)]]></description>
 </item><item>
     <title>Educational Codeforces Round 89 (Rated for Div. 2) A~E</title>
     <link>https://dyhgo.github.io/educational-codeforces-round-89-rated-for-div.-2-a~e/</link>
     <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/educational-codeforces-round-89-rated-for-div.-2-a~e/</guid>
     <description><![CDATA[A. Shovels and Swords 题意 两个钻石和一个棍子可以造出A，两个棍子和一个钻石可以造出B 每个A或B都可以卖出一块钱，求 x个棍子和y个钻石最多可以卖多少钱 题解 钻]]></description>
 </item><item>
     <title>abc168</title>
     <link>https://dyhgo.github.io/abc168/</link>
     <pubDate>Tue, 19 May 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/abc168/</guid>
     <description><![CDATA[A - ∴ (Therefore) 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; char c=s[s.length()-1]; switch(c){ case &#39;2&#39; :case &#39;4&#39;: case &#39;5&#39;: case &#39;7&#39;: case &#39;9&#39;: cout&lt;&lt;&#34;hon\n&#34;; break; case &#39;3&#39;: cout&lt;&lt;&#34;bon\n&#34;; break; default :cout&lt;&lt;&#34;pon\n&#34;; } return 0; } B - &hellip; (Triple Dots) 题意 看]]></description>
 </item><item>
     <title>Codeforces Round #636 (Div. 3) A~E</title>
     <link>https://dyhgo.github.io/codeforces-round-636-div.-3-a~e/</link>
     <pubDate>Thu, 23 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/codeforces-round-636-div.-3-a~e/</guid>
     <description><![CDATA[A. Candies 题意 给一个数n，找一个数x，满足 x+2x+4x+8x+&hellip; = n 题解 等比数列求和，变成2^m 然后枚举，看哪个能整除 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]]></description>
 </item><item>
     <title>abc161</title>
     <link>https://dyhgo.github.io/abc161/</link>
     <pubDate>Sun, 05 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/abc161/</guid>
     <description><![CDATA[A - ABC Swap 题意 给三个数a,b,c，交换ab的值，交换ac的值，输出 题解 模拟 ac代码 1 2 3 4 5 6 7 8 9 10 11 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ int a,b,c; cin&gt;&gt;a&gt;&gt;b&gt;&gt;c; swap(a,b); swap(a,c); cout&lt;&lt;a&lt;&lt;&#34; &#34;&lt;&lt;b&lt;&lt;&#34; &#34;&lt;&lt;c&lt;&lt;endl; return 0; } B -]]></description>
 </item></channel>

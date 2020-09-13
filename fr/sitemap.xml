@@ -5,11 +5,11 @@
             <loc>https://dyhgo.github.io/fr/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://dyhgo.github.io/categories/"
+                        href="https://dyhgo.github.io/en/categories/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://dyhgo.github.io/zh-cn/categories/"
+                        href="https://dyhgo.github.io/categories/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="fr"
@@ -18,11 +18,11 @@
             <loc>https://dyhgo.github.io/fr/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://dyhgo.github.io/tags/"
+                        href="https://dyhgo.github.io/en/tags/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://dyhgo.github.io/zh-cn/tags/"
+                        href="https://dyhgo.github.io/tags/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="fr"
@@ -31,11 +31,11 @@
             <loc>https://dyhgo.github.io/fr/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
-                        href="https://dyhgo.github.io/"
+                        href="https://dyhgo.github.io/en/"
                         /><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="https://dyhgo.github.io/zh-cn/"
+                        href="https://dyhgo.github.io/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="fr"

@@ -1,13 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>poj - Tag - This is DYH</title>
+        <title>poj - 标签 - This is DYH</title>
         <link>https://dyhgo.github.io/tags/poj/</link>
-        <description>poj - Tag - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 27 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/poj/" rel="self" type="application/rss+xml" /><item>
+        <description>poj - 标签 - This is DYH</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 27 Jan 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/poj/" rel="self" type="application/rss+xml" /><item>
     <title>poj</title>
     <link>https://dyhgo.github.io/poj/</link>
     <pubDate>Mon, 27 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>作者</author>
     <guid>https://dyhgo.github.io/poj/</guid>
     <description><![CDATA[线段相交 1127 题意 判断两条线段是否相交，对于N条线段，间接相交也算相交。对于每次询问，判 断给定的两条线段是否相交 题解 这个题目分成两部分，一部分是]]></description>
 </item></channel>

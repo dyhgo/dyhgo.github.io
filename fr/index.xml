@@ -3,7 +3,8 @@
         <title>This is DYH</title>
         <link>https://dyhgo.github.io/fr/</link>
         <description>这是一个网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>fr</language>
+        <generator>Hugo -- gohugo.io</generator><language>fr</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
+            <webMaster>244882973@qq.com (DYH)</webMaster>
             <atom:link href="https://dyhgo.github.io/fr/index.xml" rel="self" type="application/rss+xml" />
         </channel>
 </rss>
