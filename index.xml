@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>This is DYH</title>
+        <link>https://dyhgo.github.io/</link>
+        <description>这是一个网站</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Sep 2020 09:36:00 &#43;0800</lastBuildDate>
+            <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>First_post</title>
+    <link>https://dyhgo.github.io/first_post/</link>
+    <pubDate>Sun, 13 Sep 2020 09:36:00 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://dyhgo.github.io/first_post/</guid>
+    <description><![CDATA[A ]]></description>
+</item></channel>
+</rss>
