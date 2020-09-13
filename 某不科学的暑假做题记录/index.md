@@ -1835,7 +1835,7 @@ int n,m;
 char maze[1005][1005];
 int dist[1003][1003][4];
 using pii = pair<int,int>;
-int dir[4][2] = {{0,1} , {1,0} , {-1,0} , {0,-1}};
+int dir[4][2] = { {0,1} , {1,0} , {-1,0} , {0,-1} };
 const ll inf = 0x3f3f3f3f;
 void bfs(int x){
     queue<pii> q;
