@@ -1,5 +1,10 @@
 html{font-family:system-ui,-apple-system,BlinkMacSystemFont,PingFang SC,Microsoft YaHei UI,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;font-weight:400;font-display:swap;font-size:16px;line-height:1.5rem;width:100%}::-webkit-scrollbar{width:.5rem;height:.5rem}::-webkit-scrollbar-thumb{background-color:#87878d}::-webkit-scrollbar-thumb:hover{background-color:#a9a9b3}::selection{background-color:rgba(53,166,247,0.25)}[theme=dark] ::selection{background-color:rgba(50,112,194,0.4)}
-body{/*background-color:#fff;color:#161209;*/word-wrap:break-word;overflow-wrap:break-word;scrollbar-color:auto}
+body{/*background-color:#fff;color:#161209;*/word-wrap:break-word;overflow-wrap:break-word;scrollbar-color:auto;
+    background-image:url("https://dyhgo.fun/ti1.jpg");
+
+    　　background-repeat:no-repeat;
+
+    　　background-attachment:fixed;}
 body[theme=dark]{/*color:#a9a9b3;background-color:#292a2d*/background-image:url("https://dyhgo.fun/ti1.jpg");
 
     　　background-repeat:no-repeat;
