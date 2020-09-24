@@ -1516,6 +1516,79 @@ int main(){
 }
 ```
 
+===========================================================================================================
+
+## 平面点分治
+
+[3714](http://poj.org/problem?id=3714)
+
+### 题解
+
+懒得写
+
+```cpp
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <cmath>
+using namespace std;
+typedef double db ;
+struct node{
+    db x, y;
+    int flag;
+}vt[200005], tmp[200005];
+bool compy(node n1, node n2){
+    return n1.y < n2.y;
+}
+bool compx(node n1, node n2){
+    return n1.x < n2.x;
+}
+db dist(node n1, node n2){
+    db dx = fabs(n1.x - n2.x);
+    db dy = fabs(n1.y - n2.y);
+    return sqrt(dx * dx + dy * dy);
+}
+db solve(int l, int r){
+    if(l == r) return 1e50;
+    int m = (l + r) / 2;
+    db d = min(solve(l, m), solve(m + 1, r));
+    int cnt = 0;
+    for(int i = l; i <= r; ++i){
+        if(abs(vt[i].x - vt[m].x) < d){
+            tmp[++cnt] = vt[i];
+        }
+    }
+    sort(tmp + 1, tmp + cnt + 1, compy);
+    for(int i = 1; i <= cnt; ++i){
+        for(int j = i + 1; j <= cnt; ++j){
+            if(tmp[j].y - tmp[i].y >= d) break;
+            if(tmp[j].flag == tmp[i].flag) continue;
+            d = min(d, dist(tmp[i], tmp[j]));
+        }
+    }
+    return d;
+}
+
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        int n;
+        cin >> n;
+        for(int i = 1; i <= n; ++i){
+            cin >> vt[i].x >> vt[i].y;
+            vt[i].flag = 0;
+        }
+        for(int i = n + 1; i <= 2 * n; ++i){
+            cin >> vt[i].x >> vt[i].y;
+            vt[i].flag = 1;
+        }
+        sort(vt + 1, vt + 2 * n + 1, compx);
+        cout << fixed << setprecision(3) << solve(1, 2 * n) << endl;
+    }
+    return 0;
+}
+```
 
 
 

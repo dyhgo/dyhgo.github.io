@@ -7,6 +7,13 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 26 Feb 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>FFT &amp; NTT</title>
+    <link>https://dyhgo.github.io/fft-ntt/</link>
+    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/fft-ntt/</guid>
+    <description><![CDATA[前言 一篇没什么用的文章，记录一下FFT和NTT的板子 fft和ntt的原理参考FFT &amp; NTT 概述 fft和ntt差不多，基础用法就是加速多项式乘法，]]></description>
+</item><item>
     <title>无聊的做题记录</title>
     <link>https://dyhgo.github.io/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Sun, 06 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/educational-codeforces-round-89-rated-for-div.-2-a~e/</guid>
     <description><![CDATA[A. Shovels and Swords 题意 两个钻石和一个棍子可以造出A，两个棍子和一个钻石可以造出B 每个A或B都可以卖出一块钱，求 x个棍子和y个钻石最多可以卖多少钱 题解 钻]]></description>
-</item><item>
-    <title>Flask-RESTful简单实例</title>
-    <link>https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/</link>
-    <pubDate>Sat, 13 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/flask-restful%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/</guid>
-    <description><![CDATA[Python web的框架有Django Flask Tornado Flask 是一个使用 Python 编写的轻量级 Web 应用程序框架，由werkzeug服务器和jinja2模板引擎组成 RESTful是]]></description>
 </item></channel>
 </rss>

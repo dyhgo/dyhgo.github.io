@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/cpp/</link>
         <description>cpp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 06 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+    <title>FFT &amp; NTT</title>
+    <link>https://dyhgo.github.io/fft-ntt/</link>
+    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/fft-ntt/</guid>
+    <description><![CDATA[前言 一篇没什么用的文章，记录一下FFT和NTT的板子 fft和ntt的原理参考FFT &amp; NTT 概述 fft和ntt差不多，基础用法就是加速多项式乘法，]]></description>
+</item><item>
     <title>无聊的做题记录</title>
     <link>https://dyhgo.github.io/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</link>
     <pubDate>Sun, 06 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/educational-codeforces-round-89-rated-for-div.-2-a~e/</guid>
     <description><![CDATA[A. Shovels and Swords 题意 两个钻石和一个棍子可以造出A，两个棍子和一个钻石可以造出B 每个A或B都可以卖出一块钱，求 x个棍子和y个钻石最多可以卖多少钱 题解 钻]]></description>
-</item><item>
-    <title>abc169</title>
-    <link>https://dyhgo.github.io/abc169/</link>
-    <pubDate>Mon, 08 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/abc169/</guid>
-    <description><![CDATA[由于事情太多，拖了这么久 A - Multiplication 1 题意 输入两个数，求积 题解 1 2 n,m = map(int,input().split()) print(n*m) B - Multiplication 2 题意 输入很多大数，求积是否超过1e18 题解 用 __int128 ， 样例有个情况是前]]></description>
 </item></channel>
 </rss>

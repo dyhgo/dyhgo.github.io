@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/algorithm/</link>
         <description>algorithm - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 11 Apr 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/algorithm/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/algorithm/" rel="self" type="application/rss+xml" /><item>
+    <title>FFT &amp; NTT</title>
+    <link>https://dyhgo.github.io/fft-ntt/</link>
+    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/fft-ntt/</guid>
+    <description><![CDATA[前言 一篇没什么用的文章，记录一下FFT和NTT的板子 fft和ntt的原理参考FFT &amp; NTT 概述 fft和ntt差不多，基础用法就是加速多项式乘法，]]></description>
+</item><item>
     <title>hduoj1796</title>
     <link>https://dyhgo.github.io/hduoj1796/</link>
     <pubDate>Sat, 11 Apr 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</guid>
     <description><![CDATA[从学习方法和代码实现debug花了挺长时间。。。 这个算法是从字符串s中找子串p出现的第一个位置 以下是两个常见的字符串匹配算法（还有其他更高效]]></description>
-</item><item>
-    <title>筛法求区间内质数个数？</title>
-    <link>https://dyhgo.github.io/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</link>
-    <pubDate>Fri, 17 Jan 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</guid>
-    <description><![CDATA[很早以前写的懒得去审查。。。 不知道对不对。。。 Eprime 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 #include&lt;bits/stdc++.h&gt; using namespace]]></description>
 </item></channel>
 </rss>
