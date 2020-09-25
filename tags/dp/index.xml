@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/dp/</link>
         <description>dp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+    <title>Codeforces Round #672 (Div. 2) A~D</title>
+    <link>https://dyhgo.github.io/codeforces-round-672-div.-2-a-~-d/</link>
+    <pubDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/codeforces-round-672-div.-2-a-~-d/</guid>
+    <description><![CDATA[A. Cubes Sorting 题意 对于一个数列，每次操作交换相邻的两个数，问是否需要达到n(n-1)/2次操作才可以让数列递增 题解 判断数列是否严格单调递减 1 2 3 4 5]]></description>
+</item><item>
     <title>西南科技大学第十六届ACM程序设计竞赛暨绵阳市邀请赛</title>
     <link>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</guid>
     <description><![CDATA[A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数]]></description>
-</item><item>
-    <title>abc159</title>
-    <link>https://dyhgo.github.io/abc159/</link>
-    <pubDate>Mon, 23 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/abc159/</guid>
-    <description><![CDATA[A - The Number of Even Pairs 题解 ac代码 (awk语言) 1 $0=$1*--$1/2+$2*--$2/2_ B - String Palindrome 题解 ac代码 (perl语言) 1 print&lt;&gt;=~/^(.+).\1$/?Yes:No C - Maximum Volume 题解 ac代码 (perl语言) 1 print&lt;&gt;**3/27 D - Banned K 题解 ac]]></description>
 </item></channel>
 </rss>
