@@ -40,9 +40,9 @@
             <loc>https://dyhgo.github.io/categories/algorithm/</loc><lastmod>2020-09-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://dyhgo.github.io/fft-ntt/</loc><lastmod>2020-09-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://dyhgo.github.io/tags/number_theory/</loc><lastmod>2020-09-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://dyhgo.github.io/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://dyhgo.github.io/categories/abc/</loc><lastmod>2020-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/abc173/</loc><lastmod>2020-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/graph/</loc><lastmod>2020-07-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -138,6 +138,9 @@
             <loc>https://dyhgo.github.io/test/</loc><lastmod>2020-02-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</loc><lastmod>2020-02-27T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/about/</loc><lastmod>2020-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/cloud/</loc><lastmod>2020-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/music/</loc><lastmod>2020-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/poppin/</loc><lastmod>2020-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/</loc><lastmod>2020-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
