@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/cpp/</link>
         <description>cpp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+    <title>今天你也要来点cmake吗</title>
+    <link>https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</link>
+    <pubDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</guid>
+    <description><![CDATA[前言 很早就想写cmake，但是一直懒得写 今天也随便写点cmake 官方对cmake的解释 CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform]]></description>
+</item><item>
     <title>Codeforces Round #672 (Div. 2) A~D</title>
     <link>https://dyhgo.github.io/codeforces-round-672-div.-2-a-~-d/</link>
     <pubDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/install-ubuntu-in-vmware/</guid>
     <description><![CDATA[安装vmware 点击这里 需要注册账号 vmware的安装基本选择默认选项，一直next 准备一个ubuntu镜像文件 点击这里 选择对应版本的ubu]]></description>
-</item><item>
-    <title>abc170</title>
-    <link>https://dyhgo.github.io/abc170/</link>
-    <pubDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/abc170/</guid>
-    <description><![CDATA[A - Five Variables 题意 找5个数中值为0的下标 题解 1 2 a = list(map(int , input().split())) print(a.index(0) + 1) B - Crane and Turtle 题意 鸡兔同笼问题 题解 1 2 n , m = map(int , input().split()) print(&#39;Yes&#39;) if (m - 2 * n) % 2 == 0 and (m - 2 * n)]]></description>
 </item></channel>
 </rss>
