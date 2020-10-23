@@ -279,18 +279,18 @@ const int maxn = 100005;
 //string s;
 char s[maxn];
 unordered_map<char, int> mp;
-//运行时取消注释
-// char ch[11][7][4] =
-//         {{"QQQ", "QQQ", "QQQ", "QQQ", "QQQ", "QQQ"},
-//          {"QQW", "QWQ", "QQW", "QWQ", "WQQ", "WQQ"},
-//          {"QQE", "QEQ", "QQE", "QEQ", "EQQ", "EQQ"},
-//          {"WWW", "WWW", "WWW", "WWW", "WWW", "WWW"},
-//          {"QWW", "QWW", "WQW", "WWQ", "WQW", "WWQ"},
-//          {"WWE", "WEW", "WWE", "WEW", "EWW", "EWW"},
-//          {"EEE", "EEE", "EEE", "EEE", "EEE", "EEE"},
-//          {"QEE", "QEE", "EQE", "EEQ", "EQE", "EEQ"},
-//          {"WEE", "WEE", "EWE", "EEW", "EWE", "EEW"},
-//          {"QWE", "QEW", "WQE", "WEQ", "EQW", "EWQ"}};
+//括号不匹配
+char ch[11][7][4] =
+        {{"QQQ", "QQQ", "QQQ", "QQQ", "QQQ", "QQQ"}},
+        {"QQW", "QWQ", "QQW", "QWQ", "WQQ", "WQQ"},
+         {"QQE", "QEQ", "QQE", "QEQ", "EQQ", "EQQ"},
+         {"WWW", "WWW", "WWW", "WWW", "WWW", "WWW"},
+         {"QWW", "QWW", "WQW", "WWQ", "WQW", "WWQ"},
+         {"WWE", "WEW", "WWE", "WEW", "EWW", "EWW"},
+         {"EEE", "EEE", "EEE", "EEE", "EEE", "EEE"},
+         {"QEE", "QEE", "EQE", "EEQ", "EQE", "EEQ"},
+         {"WEE", "WEE", "EWE", "EEW", "EWE", "EEW"},
+         {{"QWE", "QEW", "WQE", "WEQ", "EQW", "EWQ"}};
 
 int dp[maxn][6];
 int did(string s1, string s2){
