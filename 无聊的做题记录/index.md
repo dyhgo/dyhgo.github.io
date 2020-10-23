@@ -246,4 +246,233 @@ int main(){
 }
 ```
 
+===============================================================
+
+## dp bf 预处理
+
+[题目](https://vjudge.net/contest/398486#problem/I)
+
+### 题意
+
+给定一个大写的字符串，每个大写的字母都代表三个字母的组合（qwe），每次释放一个qwe中的技能就会获得这个字母，至多只能获得三个，如果在已有三个字母的情况下获得释放技能，第一个字母将会被挤掉（类似于队列）当集齐该大写字母的三个字母组合时，释放r技能就能成功点亮这个大写字母，这时候字母队列中不会有任何变化，问最少需要释放几个技能把所有的大写字母按顺序点亮
+
+### 题解
+
+按顺序暴力，由于大写字母对应的是技能的组合，总共有6种，所以求出前6种组合对后6种组合的影响，然后对每个都取最小值，这样就形成dp 
+
+dp[i][j] 表示扫描完第 i 个大写字母时，对应的第 j 种组合（至多6种）的答案
+
+初始化 `dp[0][i] = 3 [0 <= i < 6]`
+
+状态转移方程  `dp[i][j] = min(dp[i][j], dp[i - 1][k] + cot(string s[i - 1][k], string s[i][j])`
+
+最后的答案就是 `min(dp[s.len - 1][i]) [0 <= i < 6]`
+
+如果不做优化会超时，优化的方法就是两处预处理（在代码中标注）
+
+```cpp
+//358ms/1000ms 2772kb/1024mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+const int maxn = 100005;
+//string s;
+char s[maxn];
+unordered_map<char, int> mp;
+char ch[11][7][4] =
+        {{"QQQ", "QQQ", "QQQ", "QQQ", "QQQ", "QQQ"},
+         {"QQW", "QWQ", "QQW", "QWQ", "WQQ", "WQQ"},
+         {"QQE", "QEQ", "QQE", "QEQ", "EQQ", "EQQ"},
+         {"WWW", "WWW", "WWW", "WWW", "WWW", "WWW"},
+         {"QWW", "QWW", "WQW", "WWQ", "WQW", "WWQ"},
+         {"WWE", "WEW", "WWE", "WEW", "EWW", "EWW"},
+         {"EEE", "EEE", "EEE", "EEE", "EEE", "EEE"},
+         {"QEE", "QEE", "EQE", "EEQ", "EQE", "EEQ"},
+         {"WEE", "WEE", "EWE", "EEW", "EWE", "EEW"},
+         {"QWE", "QEW", "WQE", "WEQ", "EQW", "EWQ"}};
+
+int dp[maxn][6];
+int did(string s1, string s2){
+    if(s1 == s2) return 0;
+    if(s1[1] == s2[0] and s1[2] == s2[1]) return 1;
+    if(s1[2] == s2[0]) return 2;
+    return 3;
+}
+const int inf = 0x3f3f3f3f;
+//int get_id(char x){
+//    if(x == 'Y') return 0;
+//    if(x == 'V') return 1;
+//    if(x == 'G') return 2;
+//    if(x == 'C') return 3;
+//    if(x == 'X') return 4;
+//    if(x == 'Z') return 5;
+//    if(x == 'T') return 6;
+//    if(x == 'F') return 7;
+//    if(x == 'D') return 8;
+//    return 9;
+//}
+int cot[11][7][11][7];
+int main() {
+    mp['Y'] = 0;
+    mp['V'] = 1;
+    mp['G'] = 2;
+    mp['C'] = 3;
+    mp['X'] = 4;
+    mp['Z'] = 5;
+    mp['T'] = 6;
+    mp['F'] = 7;
+    mp['D'] = 8;
+    mp['B'] = 9;
+    for(int i = 0; i < 10; ++i){
+        for(int j = 0; j < 6; ++j){
+            for(int k = 0; k < 10; ++k){
+                for(int m = 0; m < 6; ++m){
+                    string s1 = ch[i][j];
+                    string s2 = ch[k][m];
+                    cot[i][j][k][m] = did(s1, s2);
+                }
+            }
+        }
+    }
+    //cin >> s;
+    scanf("%s", s);
+    int len = strlen(s);
+    for(int i = 0; i <= len; ++i)
+        for(int j = 0; j < 6; ++j)
+            dp[i][j] = inf;
+    //cout << len << endl;
+    for(int i = 0; i < 6; ++i){
+        dp[0][i] = 3;
+    }
+    for(int i = 1; i < len; ++i){
+        int id1 = mp[s[i - 1]];   //在外层循环得到
+        int id2 = mp[s[i]];
+        for(int j = 0; j < 6; ++j){
+            for(int k = 0; k < 6; ++k){
+                dp[i][j] = min(dp[i][j], dp[i - 1][k] + cot[id1][k][id2][j]);  //!!!此处预处理
+                //dp[i][j] = min(dp[i][j], dp[i - 1][k] + did(ch[id1][k], ch[id2][j]));
+            }
+        }
+    }
+    int ans = 0x3f3f3f3f;
+    for(int i = 0; i < 6; ++i){
+        ans = min(ans, dp[len - 1][i]);
+    }
+    cout << ans + len << endl;
+    return 0;
+}
+```
+
+===============================================================
+
+## dfs 图论 乘法原理
+
+[题目](https://vjudge.net/contest/398486#problem/F)
+
+### 题意
+
+给一个森林，每个连通块都是[仙人掌图](https://www.cnblogs.com/aininot260/p/9623954.html)，每次删除一些边，使得它变成一个森林且每个连通块都是一棵树，问有多少种删边方法
+
+### 题解
+
+根据仙人掌图的定义，对于每个环，至少删除一条边就能满足条件，所以计算每个环的边数
+
+对于不在环上的边，可以任意删除或保留，假设每个环的边数为ci，不在环上的边数是r
+
+$$
+ans = 2^r*\prod (2^{c_i} - 1)
+$$
+
+对于找环的边数，可以用tarjan算法的思想，用dfs序来判断是否遍历过这个点，如果遍历过就说明形成环，dfs序相减就是环的长度
+
+```cpp
+//358ms/1000ms 138640kb/1048576kb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+const int maxv = 300005;
+const ll mod = 998244353;
+const int maxn = 2000005;
+struct edge{
+    int to,  nxt;
+}e[maxn];
+int tot,head[maxn];
+void add_edge(int u,int v){
+    e[tot].to = v;
+    e[tot].nxt = head[u];
+    head[u] = tot++;
+}
+vector<ll> res;
+int dfn[maxv],low[maxv];
+bool in_stack[maxv];
+stack<int> s;
+int tim;
+ll qpow(ll x,ll n){
+    ll res =1;
+    while(n>0){
+        if(n&1) res=res*x%mod;
+        x=x*x%mod;
+        n>>=1;
+    }
+    return res;
+}
+void tarjan_dfs(int x, int p){
+    for(int i = head[x]; ~i; i = e[i].nxt){
+        int v = e[i].to;
+        if(v == p) continue;
+        if(dfn[v] != 0){
+            res.push_back(dfn[x] + 1 - dfn[v]);
+        }else{
+            dfn[v] = dfn[x] + 1;
+            tarjan_dfs(v, x);
+        }
+    }
+}
+int main() {
+    int n, m;
+    while(scanf("%d%d", &n, &m) != EOF){
+        //reset
+        res.clear();
+        tim = 0;
+        memset(dfn, 0, sizeof(dfn));
+        memset(low, 0, sizeof(low));
+        memset(in_stack, 0, sizeof(in_stack));
+        while(!s.empty()) s.pop();
+        tot = 0;
+        memset(head , -1 , sizeof(head));
+        for(int i = 0; i < m; ++i){
+            int u, v;
+            scanf("%d%d", &u, &v);
+            add_edge(u, v);
+            add_edge(v, u);
+        }
+
+        for(int i = 1; i <= n; ++i){
+            if(!dfn[i]){
+                dfn[i] = 1;
+                tarjan_dfs(i, 0);
+            }
+        }
+        ll rem = 0;
+        for(ll i : res) {
+            if(i > 0) rem += i;
+        }
+        rem = m - rem;
+        ll ans = 1;
+        for(ll i : res){
+            if(i <= 0) continue;
+            ans *= qpow(2, i) - 1;
+            ans += mod;
+            ans %= mod;
+        }
+        ans *= qpow(2, rem);
+        ans += mod;
+        ans %= mod;
+        printf("%lld\n", ans);
+        //for(ll i : res) cout << i << " ";
+        //for(int i = 1; i < 6; ++i) cout << dfn[i] << " ";
+    }
+    return 0;
+}
+```
 
