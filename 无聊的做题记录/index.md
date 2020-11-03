@@ -477,3 +477,142 @@ int main() {
 }
 ```
 
+===============================================================
+
+## dp lis
+
+[题目](https://codeforces.com/contest/1427/problem/C)
+
+### 题意
+
+在一个网格上有n个明星，他们出现的时间是0~ti，从(1,1)出发，每走一格消耗一个时间单位，问最多能碰见几个明星
+
+### 题解
+
+注意一个重要条件：时间是按**严格**升序排的，r<=500
+
+类似于lis的dp，dp[i]表示最后碰见第i个人时的答案
+
+ans = max(ans, dp[i]) [1 <= i <= n]
+
+dp[i] = max(dp[i], dp[j] + 1)
+
+在lis中更新的条件是后面的数比前面的大，在这里条件是曼哈顿距离不大于时间差（已排好序）
+
+这样时间复杂度就是O(n^2)
+
+对于当前明星，它存活到ti，由于网格大小的限制，所以ti - 2r之前消失的明星一定可达，而(ti-2r, ti)这段时间的明星就需要一个一个判断
+
+接下来有一个很巧妙的将时间复杂度降到O(nr)的优化
+
+由于[0, ti-4r]已经用来更新过（更新到ti-2r）所以这段区间将不再使用（因为它的影响已经叠加在了[ti-4r,ti-2r]这段区间上了），所以只需要看[ti-4r,ti-2r]这段区间，加上需要一个一个判断的[ti-2r,ti)这段区间。最后只需要遍历[ti-4r,ti)
+
+时间之所以能转化成明星的个数，就是因为时间是**严格**有序的
+
+
+```cpp
+//702ms/2000ms 1572kb/256mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+int r, n;
+const int maxn = 100005;
+int dp[maxn];
+tuple<int, int, int> cel[maxn];
+int dist(int i, int j){
+    return abs(get<1>(cel[i]) - get<1>(cel[j])) + abs(get<2>(cel[i]) - get<2>(cel[j]));
+}
+int main() {
+    memset(dp, -1, sizeof(dp));
+    scanf("%d%d", &r, &n);
+    get<0>(cel[0]) = 0;
+    get<1>(cel[0]) = 1;
+    get<2>(cel[0]) = 1;
+    for(int i = 1; i <= n; ++i){
+        int t, x, y;
+        scanf("%d%d%d", &t, &x, &y);
+        get<0>(cel[i]) = t;
+        get<1>(cel[i]) = x;
+        get<2>(cel[i]) = y;
+    }
+    dp[0] = 0;
+    for(int i = 1; i <= n; ++i){
+        for(int j = max(0, i - 4 * r); j < i; ++j){
+            if(dp[j] == -1) continue;
+            if(dist(i, j) <= get<0>(cel[i]) - get<0>(cel[j])) dp[i] = max(dp[i], dp[j] + 1);
+        }
+    }
+    int ans = 0;
+    for(int i = 1; i <= n; ++i){
+        ans = max(ans, dp[i]);
+    }
+    printf("%d\n", ans);
+    return 0;
+}
+```
+
+
+===============================================================
+
+
+## 数论
+
+[题目](https://codeforces.com/contest/1445/problem/C)
+
+### 题意
+
+给俩数p,q，求最大的x满足p%x=0，x%q!=0
+
+### 题解
+
+如果p%q!=0，x=p
+
+否则对于pq相同的因子m，假设q中有n个m，那么就让p中m的个数减到n-1，得到一个tmp，这样就能保证p%tmp=0,tmp%q!=0，对于所有的因子产生的tmp取最大值
+
+```cpp
+//46ms/1000ms 12kb/512mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+vector<pair<ll, ll>> vt;
+ll p, q;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        ll ans = -1;
+
+        cin >> p >> q;
+        if(p % q != 0) ans = p;
+        else{
+            vt.clear();
+            for(ll i = 2; i * i <= q; ++i){
+                if(q % i == 0){
+                    ll cot = 0;
+                    while(q % i == 0) {
+                        q /= i;
+                        cot++;
+                    }
+                    vt.emplace_back(i, cot);
+                }
+            }
+            if(q > 1) vt.emplace_back(q, 1);
+            for(auto i : vt){
+                ll x = i.first;
+                ll y = i.second;
+                ll tmp = p;
+                while(tmp % x == 0){
+                    tmp /= x;
+                }
+                for(ll j = 0; j < y - 1; ++j) tmp *= x;
+                ans = max(ans, tmp);
+            }
+        }
+        cout << ans << endl;
+    }
+//for(auto i : vt){
+//    cout << i.first << " " << i.second << endl;
+//}
+    return 0;
+}
+```
