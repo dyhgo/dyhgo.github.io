@@ -149,7 +149,7 @@ int dist[2010][2010];
 char maze[2010][2010];
 int h, w;
 vector<pair<int, int>> a[26];
-int dir[4][2] = {{-1, 0}, {0, -1}, {0, 1}, {1, 0}};
+int dir[4][2] ;
 
 int main(){
 	memset(dist, 0x3f, sizeof(dist));
