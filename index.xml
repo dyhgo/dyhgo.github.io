@@ -7,6 +7,13 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 26 Feb 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>abc184</title>
+    <link>https://dyhgo.github.io/abc184/</link>
+    <pubDate>Wed, 02 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/abc184/</guid>
+    <description><![CDATA[A - Determinant 题意 求二阶行列式 题解 1 2 3 4 5 6 7 8 9 #include &#34;bits/stdc++.h&#34; using namespace std; using ll = long long; int main() { int a, b, c, d; cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d; cout &lt;&lt; a * d - c * b &lt;&lt; endl; return 0; } B - Quizzes 题意 给n]]></description>
+</item><item>
     <title>8086指令系统</title>
     <link>https://dyhgo.github.io/8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</link>
     <pubDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
     <description><![CDATA[简单思维 题目 题解 直接法，注意数组大小爆long long 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include&lt;bits/stdc++.h&gt; using ll = long long; const ll mod = 1e6+3; ll fac[mod+2]; int main(){ fac[0] = 1LL; fac[1] = 1LL; for(ll i=2;i&lt;mod+2;i++){ fac[i] = i*fac[i-1]; fac[i]]]></description>
-</item><item>
-    <title>abc172</title>
-    <link>https://dyhgo.github.io/abc172/</link>
-    <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/abc172/</guid>
-    <description><![CDATA[A - Calc 题意 看题目 题解 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long; int main(){ int a; cin&gt;&gt;a; cout&lt;&lt;a+a*a+a*a*a&lt;&lt;endl; return 0; } B - Minor Change 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long;]]></description>
 </item></channel>
 </rss>
