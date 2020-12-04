@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2020/12/04 16:30" placement="top" color="blue">
+        <h4>好久没打牌了，不得不感叹六武众没连得起来还是别打了，剑斗兽也太离谱了，高攻防又能连锁，不能再玩了，要写汇编了</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2020/12/02 17:25" placement="top" color="yellow">
         <h4>记录一下网站的bug<br>
         1.footer不能正常显示。<br> 2.顶部导航栏的走马灯会吞并右边的字。<br> 3.代码块有一些合法的括号序列无法正常显示。<br> 4.latex的转义字符通常不能很好地识别（写了个转换程序，目前没问题）。<br> 5.移动端不能很好地适配。<br> 6.云盘还没开发。<br> 7.简体中文那边懒得写副本。<br> 8.live2d模型没有渲染成功。<br> 其实还有很多的bug，由于技术太弱以及没时间，这些bug和想法不知道要鸽到什么时候</h4>

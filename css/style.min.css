@@ -2,6 +2,7 @@ html{font-family:system-ui,-apple-system,BlinkMacSystemFont,PingFang SC,Microsof
 
 /*# sourceMappingURL=style.min.css.map */
 
+
 body {
     background: url(https://dyhgo.fun/tt.jpg) no-repeat fixed;
     -webkit-background-size: cover;
@@ -12,5 +13,7 @@ body {
 [theme=dark] main{
     background-color: #0000006e;
 }
+
+
 
 main{background:#ffffffa8;}
