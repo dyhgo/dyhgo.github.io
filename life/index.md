@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2020/12/05 11:07" placement="top" color="green">
+        <h4>更新了cf 688 div2 a~d</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2020/12/04 16:30" placement="top" color="blue">
         <h4>好久没打牌了，不得不感叹六武众没连得起来还是别打了，剑斗兽也太离谱了，高攻防又能连锁，不能再玩了，要写汇编了</h4>
     </el-timeline-item>
