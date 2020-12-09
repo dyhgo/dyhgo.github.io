@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/number_theory/</link>
         <description>number_theory - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/number_theory/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/number_theory/" rel="self" type="application/rss+xml" /><item>
+    <title>9th hhucpc (Senior)</title>
+    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
+    <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
+    <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
+</item><item>
     <title>FFT &amp; NTT</title>
     <link>https://dyhgo.github.io/fft-ntt/</link>
     <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/codeforces-round-630-div.-2-a~e/</guid>
     <description><![CDATA[A. Exercising Walk 题意 给一坐标范围，初始位置，和左右上下移动的步数，问是否会出界 题解 加各种条件判断即可 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include&lt;bits/stdc++.h&gt; using namespace]]></description>
-</item><item>
-    <title>牛客小白月赛23(部分题解)</title>
-    <link>https://dyhgo.github.io/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</link>
-    <pubDate>Sun, 22 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B23%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/</guid>
-    <description><![CDATA[A 膜法记录 题目链接 题解 贪心 枚举 集合的整数表示 由于n的数据较小，直接枚举n的所有情况，有2^n种 对于每种情况判断剩下的点列blast能否用完 其]]></description>
 </item></channel>
 </rss>

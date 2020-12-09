@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/dp/</link>
         <description>dp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 02 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+    <title>9th hhucpc (Senior)</title>
+    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
+    <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
+    <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
+</item><item>
     <title>abc184</title>
     <link>https://dyhgo.github.io/abc184/</link>
     <pubDate>Wed, 02 Dec 2020 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc162/</guid>
     <description><![CDATA[A - Lucky 7 题意 问一个整数中是否含有数字7！ 题解 ac代码 1 2 3 4 5 s = input() if &#39;7&#39; in list(s): print(&#39;Yes&#39;) else: print(&#39;No&#39;) B - FizzBuzz Sum 题意 找出不大于n的自然数中不能被3和5整除的数的和]]></description>
-</item><item>
-    <title>NC13611</title>
-    <link>https://dyhgo.github.io/nc13611/</link>
-    <pubDate>Mon, 06 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/nc13611/</guid>
-    <description><![CDATA[题目描述 shy有一颗树，树有n个结点。有k种不同颜色的染料给树染色。一个染色方案是合法的，当且仅当对于所有相同颜色的点对(x,y)，x到y的]]></description>
 </item></channel>
 </rss>

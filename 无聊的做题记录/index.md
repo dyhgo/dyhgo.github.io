@@ -616,3 +616,140 @@ int main() {
     return 0;
 }
 ```
+
+
+===============================================================
+
+## dfs 剪枝 回溯
+
+[题目](https://leetcode-cn.com/problems/minimum-incompatibility/)
+
+## 题意
+
+## 题解
+
+重点在于剪枝，还有如何把dfs写得好看点和回溯
+
+此处做的两个剪枝是：如果当前最小不兼容性的和大于等于ans，剪枝。如果当前要处理的集合为空，则不进行下一个集合的处理（因为下一个集合也为空（按顺序放的），这时候放哪个空集无所谓）
+
+```cpp
+//308ms 32.6Mb
+class Solution {
+public:
+    int m ;
+    int ans;
+    int n;
+    int K;
+    void dfs(vector<int>& nums, int index, vector<set<int>>& sts, int cnt){
+        if(index >= n) {
+            ans = min(ans, cnt);
+            return ;
+        }
+        for(int i = 0; i < K; ++i){
+            if(sts[i].empty()){
+                sts[i].insert(nums[index]);
+                dfs(nums, index + 1, sts, cnt);
+                sts[i].erase(nums[index]);
+                return ;
+            }
+            if(sts[i].size() < m and sts[i].find(nums[index]) == sts[i].end()){
+                int tmp_cnt = cnt + nums[index] - *sts[i].rbegin();
+                if(tmp_cnt >= ans) continue;
+                sts[i].insert(nums[index]);
+                dfs(nums, index + 1, sts, tmp_cnt);
+                sts[i].erase(nums[index]);
+            }
+        }
+    }
+    
+    
+    int minimumIncompatibility(vector<int>& nums, int k) {
+        vector<set<int>> vt(k);
+        sort(nums.begin(), nums.end());
+        K = k;
+        ans = 0x3f3f3f3f;
+        n = nums.size();
+        m = n / k;
+        dfs(nums, 0, vt, 0);
+        if(ans == 0x3f3f3f3f) ans = -1;
+        return ans;
+    }
+};
+```
+
+ 
+## 状态压缩dp 预处理
+
+[题目](https://leetcode-cn.com/problems/minimum-incompatibility/)
+
+## 题意
+和上面那题一样
+
+## 题解
+
+第二种方法是状态压缩dp，（完全不会(╥╯^╰╥) ）
+
+假设n是nums的长度，m是每个集合中的元素个数
+
+foo[i]表示集合为i时的不兼容性，只需对集合中有m个元素时处理，其他情况都是inf，注意foo[0] = 0
+
+dp[i]表示前i个数的最小不兼容性，ans = dp[(1<<n) - 1]
+
+对于每个集合i，枚举子集，对于子集大小为m的
+
+dp[i] = min(dp[i], foo[sub] + dp[i ^ sub])
+
+注意初始化为dp = inf foo = inf
+
+dp[0] = 0 foo[0] = 0
+
+
+```cpp
+//1128ms 13.4Mb
+class Solution {
+public:
+    int minimumIncompatibility(vector<int>& nums, int k) {
+        int n = nums.size();
+        int m = n / k;
+        vector<int> cnt;
+        vector<int> dp((1 << n) + 5, 0x3f3f3f3f);
+        vector<int> foo((1 << n) + 5, 0x3f3f3f3f);
+        dp[0] = 0;
+        foo[0] = 0;
+        for(int i = 0; i < (1 << n); ++i){
+            cnt.clear();
+            if(__builtin_popcount(i) == m){
+                for(int j = 0; j < n; ++j){
+                    if(i >> j & 1){
+                        cnt.push_back(nums[j]);
+                    }
+                }
+                sort(cnt.begin(), cnt.end());
+                bool ok = true;
+                for(int j = 1; j < m; ++j){
+                    if(cnt[j] == cnt[j - 1]){
+                        ok = false;
+                        break;
+                    }
+                }
+                if(ok) foo[i] = cnt[m - 1] - cnt[0];
+            }
+        }
+        
+        for(int i = 0; i < (1 << n); ++i){
+            int sub = i;
+            do{
+                if(__builtin_popcount(sub) == m){
+                    dp[i] = min(dp[i], foo[sub] + dp[sub ^ i]);
+                }
+                sub = (sub - 1) & i;
+            }while(sub != i);
+        }
+        
+        int ans = dp[(1 << n) - 1];
+        if(ans == 0x3f3f3f3f) ans = -1;
+        return ans;
+    }
+};
+```
+

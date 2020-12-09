@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2020/12/09 22:55" placement="top" color="green">
+        <h4>更新了一个可以用状态压缩dp或dfs暴搜的题目，更新了hhucpc的部分代码，明天开始<s>玩cyberpunk2077</s> 复习编译原理</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2020/12/05 11:07" placement="top" color="green">
         <h4>更新了cf 688 div2 a~d</h4>
     </el-timeline-item>
