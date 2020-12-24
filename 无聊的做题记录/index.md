@@ -624,9 +624,9 @@ int main() {
 
 [题目](https://leetcode-cn.com/problems/minimum-incompatibility/)
 
-## 题意
+### 题意
 
-## 题解
+### 题解
 
 重点在于剪枝，还有如何把dfs写得好看点和回溯
 
@@ -678,14 +678,17 @@ public:
 ```
 
  
+===============================================================
+
 ## 状态压缩dp 预处理
 
 [题目](https://leetcode-cn.com/problems/minimum-incompatibility/)
 
-## 题意
+### 题意
+
 和上面那题一样
 
-## 题解
+### 题解
 
 第二种方法是状态压缩dp，（完全不会(╥╯^╰╥) ）
 
@@ -753,3 +756,123 @@ public:
 };
 ```
 
+
+===============================================================
+
+## 博弈
+
+[题目](https://codeforces.com/contest/1451/problem/D)
+
+### 题意
+
+在平面坐标系里，有一个token，初始在原点，两人轮流操作，直到不能操作判胜负，操作是将token向上或向右移k个单位，每次移动后token离原点的距离都不能超出d
+
+### 题解
+
+记录一下看错题目，浪费一小时的惨痛经历
+
+移动k个单位是沿一个方向
+
+```cpp
+//46ms/2000ms 0kb/256mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+int main() {
+    ll _;
+    cin >> _;
+    while (_--) {
+        ll d, k;
+        cin >> d >> k;
+        ll n = 0;
+        while((n + k) * (n + k) * 2 <= d * d){
+            n += k;
+        }
+        ll tmp = n + k;
+        if(tmp * tmp + n * n <= d * d) {
+            n /= k ;
+            n *= 2;
+            n++;
+        }else{
+            n /= k;
+            n *= 2;
+        }
+        if(n & 1) puts("Ashish"); else puts("Utkarsh");
+
+    }
+    return 0;
+}
+```
+
+
+===============================================================
+
+
+## 树形dp dfs
+
+[题目](https://codeforces.com/contest/1436/problem/D)
+
+### 题意
+
+给一棵树，每个节点有若干个人，从根节点开始，每个人可以选择去往一个子节点，直到这个节点没人，最后所有人都来到了叶子节点。将叶子节点的最大人数最小化
+
+
+### 题解
+
+画了几下图，第一感觉是贪心+搜索，如果一直这样做的话，就有可能变成一个结论题，但是细节还是很难具体化，又有点像dp，树形dp应该是逻辑最清晰的
+
+dp[i]表示以i为根的答案，最后输出dp[1]
+
+初始化全为0
+
+考虑转移方程，这个节点的答案一定不小于子节点的答案
+
+dp[i] = max{dp[ch]}
+
+考虑把该节点的人数转移到子树上（子树的叶子节点上），贪心地选择叶子人数少的，这样不会改变最大值，答案还是max{dp[ch]}
+
+如果叶子人数少的被填满了，也就是现在每个叶子都均匀分配了，那就对剩下的人数继续均分
+
+这样答案就大于max{dp[ch]}，答案更新为floor(sum[i] / leaf[i])，其中sum[i]表示i为根的树的总人数，leaf[i]表示i为根的树的叶子数
+
+所以转移方程 dp[i] = max(max{dp[ch]}, floor(sum[i] / leaf[i])）
+
+```cpp
+//623ms/1000ms 30668kb/256mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+vector<ll> G[200005];
+ll a[200005];
+ll sum[200005];
+ll leaf[200005];
+ll dp[200005];
+
+void dfs(ll x){
+    if(G[x].size() == 0) leaf[x] = 1;
+    sum[x] = a[x];
+    for(ll i : G[x]){
+        dfs(i);
+        sum[x] += sum[i];
+        leaf[x] += leaf[i];
+        dp[x] = max(dp[x], dp[i]);
+    }
+    dp[x] = max(dp[x], ll(ceil((double)sum[x] / leaf[x])));
+}
+
+int main() {
+    ll n;
+    cin >> n;
+    for(ll i = 2; i <= n; ++i){
+        ll x;
+        cin >> x;
+        G[x].push_back(i);
+    }
+    for(ll i = 1; i <= n; ++i){
+        cin >> a[i];
+    }
+    dfs(1);
+    cout << dp[1] << '\n';
+    return 0;
+}
+```
