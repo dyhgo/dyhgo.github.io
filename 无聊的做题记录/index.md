@@ -876,3 +876,91 @@ int main() {
     return 0;
 }
 ```
+
+
+===============================================================
+
+## 数论
+
+[题目](https://codeforces.com/problemset/problem/1260/C)
+
+### 题意
+
+有一排木板，无限多个，给r的倍数涂红色，b的倍数涂蓝色，r和b的倍数随便选一种颜色涂，将涂色的木板取出来，按原来的顺序排，问是否存在不少于k个连续的颜色相同的木板
+
+### 题解
+
+假设r > b，r和b共同的倍数一定染红色（因为红色间隔比较大），问题转化成两个红色木板间最多有几个蓝色木板，在这个区间里，第一个蓝色木板一定是所有长度为r的区间内离该区间左边红色木板最近的，由扩展欧几里得可知ax+by=c，x，y有整数解当c | gcd(a,b)，所以这个最近距离是gcd(r,b)，然后就可以求出最多的蓝色木板
+
+```cpp
+31ms/2000ms 0kb/256mb
+#include "bits/stdc++.h"
+using namespace std;
+using ll = long long;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        int r, b, k;
+        cin >> r >> b >> k;
+        if(r < b) swap(r, b);
+        if(floor((r - 1 - __gcd(r, b)) / (double) b) + 1 < k) puts("OBEY"); else puts("REBEL");
+    }
+    return 0;
+}
+```
+
+
+===============================================================
+
+## 思维 前缀
+
+[题目](https://ac.nowcoder.com/acm/problem/216209)
+
+
+### 题意
+
+在环上有n个数字，可以对每个数字进行+1或-1的操作，问最少需要几次操作使得环中存在一个长度为n的步长为1的顺时针的递增序列
+
+
+### 题解
+
+最关键的思路是其中一个数肯定不变
+
+对于每个从环中任一位置开始的数列，假设其中一个数不变，求出操作数，再对所有操作数取min，这样时间复杂度为O(n\*n\*n)，考虑到对其他位置开始的序列，假设不变的数有可能是相同的，这样求别的数需要的操作数时就重复计算了
+
+所以直接假设每个数为不变的数，然后遍历一遍2n个数，用前缀数组求出到这个数的操作数，对于长度为n的序列，操作数为pre[j] - pre[j - n]
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int a[4005];
+int pre[4005];
+int ans;
+int main(){
+    int _;
+    cin >> _;
+    while(_--){
+        int n;
+        cin >> n;
+        ans = 0x3f3f3f3f;
+        for(int i = 1; i <= n; ++i){
+            cin >> a[i];
+            a[i + n] = a[i];
+        }
+        for(int i = 1; i < 2 * n; ++i){
+            int tmp = a[i] - i;
+            for(int j = 1; j < 2 * n; ++j){
+                pre[j] = pre[j - 1] + abs(a[j] - j - tmp);
+                if(j >= n){
+                    ans = min(ans, pre[j] - pre[j - n]);
+                }
+            }
+        }
+        cout << ans << '\n';
+    }
+    return 0；
+}
+```
+
+
