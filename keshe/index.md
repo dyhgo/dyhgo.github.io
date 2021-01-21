@@ -14,49 +14,50 @@
 <body>
 <div id="app">
 
-  <el-input
-          type="textarea"
-          :rows="6"
-          placeholder="请输入内容"
-          v-model="textarea1"
-          id="qwe">
-  </el-input>
+<el-input
+        type="textarea"
+        :rows="6"
+        placeholder="请输入内容"
+        v-model="textarea1"
+        id="qwe"
+        background-color="#ffffff73">
+</el-input>
 
-  <br>
+<br>
 
-  <div align="center">
-      <el-tooltip class="item" effect="light" content="词法分析程序设计" placement="top">
-          <el-button onclick="func()" >实验一</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="基于语法制导翻译的表达式转换编译器，以#结尾" placement="top">
-          <el-button onclick="func2()" >实验二</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="说明语句的词法分析器" placement="top">
-          <el-button onclick="func3()" >实验三</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="基于预测分析方法的表达式语法分析器" placement="top">
-          <el-button onclick="func4()" >实验四</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="基于算符优先分析方法的表达式语法分析器" placement="top">
-          <el-button onclick="func5()" >实验五</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="清空两个输入框" placement="top">
-          <el-button onclick="func6()" >清空</el-button>
-      </el-tooltip>
-      <el-tooltip class="item" effect="light" content="点击显示每个实验的输入例子" placement="top">
-          <el-button onclick="func7()" >例子</el-button>
-      </el-tooltip>
-  </div>
+<div align="center">
+    <el-tooltip class="item" effect="light" content="词法分析程序设计" placement="top">
+        <el-button onclick="func()" >实验一</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="基于语法制导翻译的表达式转换编译器，以#结尾" placement="top">
+        <el-button onclick="func2()" >实验二</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="说明语句的词法分析器" placement="top">
+        <el-button onclick="func3()" >实验三</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="基于预测分析方法的表达式语法分析器" placement="top">
+        <el-button onclick="func4()" >实验四</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="基于算符优先分析方法的表达式语法分析器" placement="top">
+        <el-button onclick="func5()" >实验五</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="清空两个输入框" placement="top">
+        <el-button onclick="func6()" >清空</el-button>
+    </el-tooltip>
+    <el-tooltip class="item" effect="light" content="点击显示每个实验的输入例子" placement="top">
+        <el-button onclick="func7()" >例子</el-button>
+    </el-tooltip>
+</div>
 
-  <br>
+<br>
 
-  <el-input
-          type="textarea"
-          :rows="18"
-          placeholder="结果将在这里显示"
-          v-model="textarea2"
-          id="zxc">
-  </el-input>
+<el-input
+        type="textarea"
+        :rows="18"
+        placeholder="结果将在这里显示"
+        v-model="textarea2"
+        id="zxc">
+</el-input>
 
 </div>
 </body>
@@ -607,7 +608,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t\t\t' + tchar + '->' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t\t\t\t' + tchar + '->' + pd + '\n');
             }else{
                 while(stk.length < 20){
                     stk += ' ';
@@ -616,7 +617,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t\t\t' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t\t\t\t' + pd + '\n');
             }
         }
 
@@ -628,7 +629,12 @@
         while (stack.length != 1){
             if(stack.slice(stack.length - 1, stack.length) == str[ind]){
                 PRINT(num, stack, str, '\'' + str[ind] + '\' match');
-                str[ind] = ' ';
+                tt_str = str;
+                str = '';
+                for(var j = 0; j < ind + 1; ++j){
+                    str += ' ';
+                }
+                str += tt_str.slice(ind + 1, tt_str.length);
                 ind++;
                 num++;
                 stack = stack.slice(0, stack.length - 1);

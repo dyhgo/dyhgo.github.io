@@ -16,7 +16,8 @@
             :rows="6"
             placeholder="请输入内容"
             v-model="textarea1"
-            id="qwe">
+            id="qwe"
+            background-color="#ffffff73">
     </el-input>
 
     <br>
@@ -604,7 +605,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t' + tchar + '->' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t' + tchar + '->' + pd + '\n');
             }else{
                 while(stk.length < 20){
                     stk += ' ';
@@ -613,7 +614,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t' + pd + '\n');
             }
         }
 
@@ -625,7 +626,12 @@
         while (stack.length != 1){
             if(stack.slice(stack.length - 1, stack.length) == str[ind]){
                 PRINT(num, stack, str, '\'' + str[ind] + '\' match');
-                str[ind] = ' ';
+                tt_str = str;
+                str = '';
+                for(var j = 0; j < ind + 1; ++j){
+                    str += ' ';
+                }
+                str += tt_str.slice(ind + 1, tt_str.length);
                 ind++;
                 num++;
                 stack = stack.slice(0, stack.length - 1);
