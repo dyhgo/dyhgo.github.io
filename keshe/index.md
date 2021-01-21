@@ -608,7 +608,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t\t\t\t\t\t' + tchar + '->' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t' + tchar + '->' + pd + '\n');
             }else{
                 while(stk.length < 20){
                     stk += ' ';
@@ -617,7 +617,7 @@
                     s = ' ' + s;
                 }
                 fstr += no;
-                fstr += ('\t' + stk + s + '\t\t\t\t\t\t' + pd + '\n');
+                fstr += ('\t' + stk + s + '\t\t\t' + pd + '\n');
             }
         }
 
@@ -640,9 +640,13 @@
                 stack = stack.slice(0, stack.length - 1);
             }else if(no_tm.indexOf(stack.slice(stack.length - 1, stack.length)) != -1){
                 PRINT(num, stack, str, '[ERROR] not match');
+                tmp = document.getElementById('zxc');
+                tmp.value = fstr;
                 throw new Error('error');
             }else if(!(str[ind] in dict[stack.slice(stack.length - 1, stack.length)])){
                 PRINT(num, stack, str, '[ERROR] not match');
+                tmp = document.getElementById('zxc');
+                tmp.value = fstr;
                 throw new Error('error');
             }else{
                 var prod = dict[stack.slice(stack.length - 1, stack.length)][str[ind]];

@@ -8,9 +8,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
-
 [theme=dark] main{
     background-color: #0000006e;
 }
 
 main{background:#ffffffa8;}
+
