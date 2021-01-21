@@ -54,7 +54,7 @@
 <el-input
         type="textarea"
         :rows="18"
-        placeholder="结果将在这里显示"
+        placeholder="结果将在这里显示..."
         v-model="textarea2"
         id="zxc">
 </el-input>
