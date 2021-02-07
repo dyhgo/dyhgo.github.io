@@ -16,6 +16,7 @@ REST全称Representational State Transfer，详细信息参考下面的资料
 只用字典存储数据，实现crud（后期将增加数据库）
 
 ### 实现原理
+
 安装 `pip install flask-restful`
 
 Flask-RESTful最基本的套路
