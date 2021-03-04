@@ -4,9 +4,11 @@
 
 
 #### 求最大公约数和最小公倍数
+
 辗转相除法
 
 时间复杂度O(log(max(a,b)))
+
 ```cpp
 int gcd(int a,int b)
 {
@@ -21,7 +23,9 @@ int lcm(int a,int b)
 ```
 或直接调用algorithm库中的__gcd(int a,int b)
 &emsp;
+
 #### 扩展欧几里得算法
+
 求满足 ax+by=gcd(a,b) 的整数解 x ，y
 
 时间复杂度O(log(max(a,b)))
@@ -44,8 +48,10 @@ int ex_gcd(int a,int b,int& x,int& y)
 }
 ```
 &emsp;
-#### 求n以内质数个数
-很多种方法，以下是埃氏筛 
+
+#### 埃氏筛质数
+
+
 
 时间复杂度O(nloglogn)
 
@@ -68,19 +74,50 @@ int e_sieve(int n)
 	return p;
 }
 ```
+
+#### 欧拉筛质数
+
+时间复杂度O(n)
+
+```cpp
+int prime[maxn];
+bool isprime[maxm];
+void get_prime(int n){
+    memset(isprime, 1, sizeof(isprime));
+    isprime[0] = false;
+    isprime[1] = false;
+    int cnt = 0;
+    for(int i = 2; i < n; ++i){
+        if(isprime[i]){
+            prime[++cnt] = i;
+        }
+        for(int j = 1; j <= cnt and i * prime[j] < n; ++j){
+            isprime[i * prime[j]] = false;
+            if(i % prime[j] == 0) break;    //最关键的一句
+        }
+    }
+}
+```
+
 &emsp;
+
 #### 数论的一些性质
+
+
 Premise: a≡c (mod m)   and  b≡d (mod m)
-Conclusion:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a±b≡c±d (mod m)   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a\*b≡c\*d (mod m)
-&emsp;
+
+Conclusion:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a±b≡c±d (mod m)   
+
+a\*b≡c\*d (mod m)
+
 d|a && d|b ⇒ d|gcd(a,b)
-&emsp;
+
 gcd(an,bn) = n\*gcd(a,b)
-&emsp;
+
  任意正整数n，n|ab && a,n互质 ⇒ n|b
- &emsp;
+ 
  a,p 互质  ， b,p互质 ⇒ ab,p互质
- &emsp;
+ 
 任意一个合数都可以分解成唯一的质数幂积的形式，即
 $$
 a=\prod\limits_{i=1}  ^ {n} {pi ^ ei}
@@ -112,13 +149,17 @@ ll qpow(ll x,ll n,ll mod)
 ```
 &emsp;
 #### 逆元
+
 $$
- 逆元\quad y=a^{-1}\quad满足\quad ay≡1(mod\ m) ~\\ y为a在模m下的逆元
+逆元\quad y=a^{-1}\quad满足\quad ay≡1(mod\ m) ~\\ y为a在模m下的逆元
 $$
+
 $$
 对于\quad ax≡b(mod\ m) ~\\ x=a^{-1}*b
 $$
+
 求逆元
+
 $$
 ax≡1(mod\ m) ~\\ ax-mk=1 ~\\ ax+my=1 ~\\ ax+my=gcd(a,m) ~\\当a,m不互质的时候，逆元不存在
 $$
@@ -145,7 +186,15 @@ inv[0]=1;inv[1]=1;      //inv[0]=1 !!!
 
 #### 欧拉函数
 
-设\quad n =\prod\limits_{i=1}  ^ {n} {pi ^ ei} ~\\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
+设
+$$
+\quad n =\prod\limits_{i=1}  ^ {n} {{p_i} ^ {e_i}} ~\\ 
+$$
+则欧拉函数
+$$
+\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
+$$
+欧拉函数的数值等于不超过n且与n互质的数的个数
 
 欧拉函数的数值等于不超过n且与n互质的数的个数
 
@@ -249,8 +298,10 @@ crt的思想是余数的加性和模数的乘性，当模数为合数时，可�
 
 crt定理如下
 
+$$
 对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\\ ~\\令M=\prod{m_i} ~\\M_i=\frac{M}{m_i} ~\\M_i ^ {-1} 为M_i模m_i的逆元 ~\\
 则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)
+$$
 
 
 ```cpp
@@ -271,7 +322,9 @@ int crt(const vector<int>& b,const vector<int> &m)
 &emsp;
 #### Lucas定理
 
+$$
 求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\\ 当k,n较小时，利用杨辉三角形的性质 ~\\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\\ ~\\当n,k较大时 ~\\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)
+$$
  
 
 ```cpp

@@ -4,7 +4,21 @@
         <link>https://dyhgo.github.io/categories/note/</link>
         <description>note - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>相机模型</title>
+    <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
+    <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
+</item><item>
+    <title>非线性优化</title>
+    <link>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
+    <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
+</item><item>
     <title>8086指令系统</title>
     <link>https://dyhgo.github.io/8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/</link>
     <pubDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
     <description><![CDATA[#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），]]></description>
-</item><item>
-    <title>二进制编码</title>
-    <link>https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</link>
-    <pubDate>Sun, 15 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/</guid>
-    <description><![CDATA[二进制转十进制 除2取余 十进制转二进制 乘2次幂 小数进制转换 e.g. 3.59375 整数部分3的二进制位11 小数部分0.59375 0.59375*2=1.1875 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 1 0.1875*2=0.375 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0 0.375*2=0.75 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0 0.75*2=1.5 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1 0.5*2=1 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1 二进制位0.]]></description>
-</item><item>
-    <title>用hugo搭建个人博客网站</title>
-    <link>https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</link>
-    <pubDate>Thu, 27 Feb 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/</guid>
-    <description><![CDATA[效果展示 在hugo官网也有说明如何搭建个人网站 注册github账号 创建github仓库 仓库的名字必须是 用户名.github.io 建议全小写 安]]></description>
 </item></channel>
 </rss>

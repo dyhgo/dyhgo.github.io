@@ -4,7 +4,21 @@
         <link>https://dyhgo.github.io/categories/slam/</link>
         <description>slam - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+    <title>相机模型</title>
+    <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
+    <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
+</item><item>
+    <title>非线性优化</title>
+    <link>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</link>
+    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
+    <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
+</item><item>
     <title>李群与李代数</title>
     <link>https://dyhgo.github.io/%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
     <pubDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</pubDate>

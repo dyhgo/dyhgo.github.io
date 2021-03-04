@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/number-theory\/"
-        },"genre": "posts","keywords": "cpp, number_theory","wordcount":  1808 ,
+        },"genre": "posts","keywords": "cpp, number_theory","wordcount":  1916 ,
         "url": "https:\/\/dyhgo.github.io\/number-theory\/","datePublished": "2020-02-22T00:00:00+00:00","dateModified": "2020-02-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Number Theory</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/algorithm/"><i class="far fa-folder fa-fw"></i>algorithm</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-22">2020-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1808 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-02-22">2020-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1916 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/number-theory/" class="leancloud_visitors" data-flag-title="Number Theory">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -125,7 +125,8 @@
           <ul>
             <li><a href="#求最大公约数和最小公倍数">求最大公约数和最小公倍数</a></li>
             <li><a href="#扩展欧几里得算法">扩展欧几里得算法</a></li>
-            <li><a href="#求n以内质数个数">求n以内质数个数</a></li>
+            <li><a href="#埃氏筛质数">埃氏筛质数</a></li>
+            <li><a href="#欧拉筛质数">欧拉筛质数</a></li>
             <li><a href="#数论的一些性质">数论的一些性质</a></li>
             <li><a href="#快速幂">快速幂</a></li>
             <li><a href="#逆元">逆元</a></li>
@@ -214,8 +215,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p> </p>
-<h4 id="求n以内质数个数">求n以内质数个数</h4>
-<p>很多种方法，以下是埃氏筛</p>
+<h4 id="埃氏筛质数">埃氏筛质数</h4>
 <p>时间复杂度O(nloglogn)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -257,20 +257,58 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
+</div><h4 id="欧拉筛质数">欧拉筛质数</h4>
+<p>时间复杂度O(n)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">prime</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="kt">bool</span> <span class="n">isprime</span><span class="p">[</span><span class="n">maxm</span><span class="p">];</span>
+<span class="kt">void</span> <span class="nf">get_prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">){</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">isprime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">isprime</span><span class="p">));</span>
+    <span class="n">isprime</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">isprime</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">isprime</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+            <span class="n">prime</span><span class="p">[</span><span class="o">++</span><span class="n">cnt</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">cnt</span> <span class="n">and</span> <span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">){</span>
+            <span class="n">isprime</span><span class="p">[</span><span class="n">i</span> <span class="o">*</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>    <span class="c1">//最关键的一句
+</span><span class="c1"></span>        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
 </div><p> </p>
 <h4 id="数论的一些性质">数论的一些性质</h4>
-<p>Premise: a≡c (mod m)   and  b≡d (mod m)
-Conclusion:       a±b≡c±d (mod m)                a*b≡c*d (mod m)
- 
-d|a &amp;&amp; d|b ⇒ d|gcd(a,b)
- 
-gcd(an,bn) = n*gcd(a,b)
- 
-任意正整数n，n|ab &amp;&amp; a,n互质 ⇒ n|b
- 
-a,p 互质  ， b,p互质 ⇒ ab,p互质
- 
-任意一个合数都可以分解成唯一的质数幂积的形式，即
+<p>Premise: a≡c (mod m)   and  b≡d (mod m)</p>
+<p>Conclusion:       a±b≡c±d (mod m)</p>
+<p>a*b≡c*d (mod m)</p>
+<p>d|a &amp;&amp; d|b ⇒ d|gcd(a,b)</p>
+<p>gcd(an,bn) = n*gcd(a,b)</p>
+<p>任意正整数n，n|ab &amp;&amp; a,n互质 ⇒ n|b</p>
+<p>a,p 互质  ， b,p互质 ⇒ ab,p互质</p>
+<p>任意一个合数都可以分解成唯一的质数幂积的形式，即
 $$
 a=\prod\limits_{i=1}  ^ {n} {pi ^ ei}
 $$
@@ -318,12 +356,12 @@ f(ab) = f(a)f(b)
 <h4 id="逆元">逆元</h4>
 <p>$$
 逆元\quad y=a^{-1}\quad满足\quad ay≡1(mod\ m) ~\ y为a在模m下的逆元
-$$
-$$
+$$</p>
+<p>$$
 对于\quad ax≡b(mod\ m) ~\ x=a^{-1}*b
-$$
-求逆元
-$$
+$$</p>
+<p>求逆元</p>
+<p>$$
 ax≡1(mod\ m) ~\ ax-mk=1 ~\ ax+my=1 ~\ ax+my=gcd(a,m) ~\当a,m不互质的时候，逆元不存在
 $$</p>
 <div class="highlight"><div class="chroma">
@@ -361,7 +399,15 @@ $$</p>
 </code></pre></td></tr></table>
 </div>
 </div><h4 id="欧拉函数">欧拉函数</h4>
-<p>设\quad n =\prod\limits_{i=1}  ^ {n} {pi ^ ei} ~\ 则欧拉函数\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}</p>
+<p>设
+$$
+\quad n =\prod\limits_{i=1}  ^ {n} {{p_i} ^ {e_i}} ~\ 
+$$
+则欧拉函数
+$$
+\quad  φ(n)=n*\prod\limits_{i=1}  ^ {n} {\frac{p_i-1}{p_i}}
+$$
+欧拉函数的数值等于不超过n且与n互质的数的个数</p>
 <p>欧拉函数的数值等于不超过n且与n互质的数的个数</p>
 <p>当n时质数时，φ(n)=n-1</p>
 <p>如果n=p^k , φ(n)=p^k - p^(k-1) = (p-1)p^(k-1)</p>
@@ -499,8 +545,10 @@ $$
 <p>这时，x≡b(mod Πmi)</p>
 <p>crt的思想是余数的加性和模数的乘性，当模数为合数时，可以拆成质因数的积</p>
 <p>crt定理如下</p>
-<p>对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\ ~\令M=\prod{m_i} ~\M_i=\frac{M}{m_i} ~\M_i ^ {-1} 为M_i模m_i的逆元 ~\<br>
-则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)</p>
+<p>$$
+对于x≡b_i(mod \ m_i) \ \ \ \ \ \ m_i互质 ~\ ~\令M=\prod{m_i} ~\M_i=\frac{M}{m_i} ~\M_i ^ {-1} 为M_i模m_i的逆元 ~\<br>
+则 \ x≡(\sum\limits_{i=1}  ^ {n} {b_iM_iM_i ^{-1}}) \ (mod \ M)
+$$</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -535,7 +583,9 @@ $$
 </div>
 </div><p> </p>
 <h4 id="lucas定理">Lucas定理</h4>
-<p>求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\ 当k,n较小时，利用杨辉三角形的性质 ~\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\ ~\当n,k较大时 ~\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)</p>
+<p>$$
+求 \ C_{n}^{k} \ (mod \ p)   , p是质数 ~\ 当k,n较小时，利用杨辉三角形的性质 ~\ C_{n}^{k}=C_{n-1}^k+C_{n-1}^{k-1} ~\ ~\当n,k较大时 ~\ n=\sum{n_ip^i} \quad \quad k=\sum{k_ip^i}   \quad\quad表示成p进制~\ C_n^k≡\prod{C_{n_i}^{k_i}} \ (mod \ p)
+$$</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
