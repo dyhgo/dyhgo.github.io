@@ -252,6 +252,45 @@ vmware的安装基本选择默认选项，一直next
 [参考此处](https://www.bilibili.com/video/BV1fA411v7ap?t=172)
 
 
+### 安装pycharm
+
+官网下载 tar.gz压缩包
+
+然后 `tar -zxvf XXX.tar.gz` 解压缩
+
+然后在bin目录下`./pycharm.sh`
+
+
+### 安装anaconda
+
+去官网下载
+
+`bash Anaconda3-2020.11-Linux-x86_64.sh`
+
+配置环境变量
+
+`vim ~/.bashrc`
+
+在最后一行输入
+
+`export PATH="~/anaconda3/bin:$PATH"`
+
+然后在终端输入
+
+`source ~/.bashrc`
+
+查看anaconda版本
+
+`anaconda --version`
+
+
+
+
+
+
+## 初步使用体验
+
+
 初步使用ubuntu的感想
 
 虽然ubuntu有图形界面，但它不像windows那样丰富，大多数的操作都可以通过点击可视化界面完成

@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/03/17 22:13" placement="top" color="green">
+        <h4>更新了linux相关</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/03/02 06:17" placement="top" color="green">
         <h4>更新了一些好玩的游戏</h4>
     </el-timeline-item>

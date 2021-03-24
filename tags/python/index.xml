@@ -10,7 +10,7 @@
     <pubDate>Tue, 11 Aug 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/hhu_spider/</guid>
-    <description><![CDATA[hhu健康打卡脚本（假期版） 环境 必装环境 python， requests 推荐环境 anaconda, pycharm 使用方法 在#**xxx** 中按xxx提示填入自己的相关信息 运行 代码 1 2 3]]></description>
+    <description><![CDATA[hhu健康打卡脚本（返校版） 环境 必装环境 python， requests 推荐环境 anaconda, pycharm 功能说明 定时打卡、同时多人打卡、发邮件反馈打卡信息、失败重新打卡 （为什么]]></description>
 </item><item>
     <title>Python爬虫</title>
     <link>https://dyhgo.github.io/python%E7%88%AC%E8%99%AB/</link>

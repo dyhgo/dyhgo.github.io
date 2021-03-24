@@ -8,7 +8,7 @@ major in cs
 
 love swimming,coding,poppin
 
-it's the first time to set up a site(fyi:just for fun as the domain)(based on hugo and github server)
+it's the first time to set up a site(fyi:just for fun)(based on hugo and github server)
 
 thanks to "dillonzq" offering me theme template
 

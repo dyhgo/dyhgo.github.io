@@ -1,12 +1,18 @@
 # hhu_spider
 
 
-## hhu健康打卡脚本（假期版）
+## hhu健康打卡脚本（返校版）
 
 ### 环境
 必装环境 python， requests
 
 推荐环境 anaconda,  pycharm
+
+### 功能说明
+
+定时打卡、同时多人打卡、发邮件反馈打卡信息、失败重新打卡
+
+（为什么不用发信息，国内手机号在twilio上不能用了）
 
 
 ### 使用方法
@@ -15,6 +21,9 @@
 
 运行
 
+#### 关于定时打卡
+
+将脚本传到服务器上，用cronb（linux系统）实现定时，可以选择发邮件反馈打卡情况
 
 ### 代码
 
@@ -22,18 +31,51 @@
 import requests
 import sys
 import datetime
-def daka():
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
 
-    user = 'xxxxxxxx'       # **hhu信息门户用户名（一般为学号）**
-    password = 'xxxxxxx'     # **hhu信息门户密码**
+
+def send_email(status, email, abbr, now_time):
+    mail_host = "smtp.qq.com"       #现在是qq邮箱
+    mail_user = "xxxxxxx"           #**发送打卡信息的邮箱**
+    mail_pass = "xxxxxxx"           #**邮箱授权码**
+
+    sender = 'xxxxxxx'              #**邮件发送方的邮箱**
+    receivers = []                  # 接收邮件方
+    receivers.append(email)
 
 
+    if status:  text = '打卡成功！！！'
+    else :  text = '打卡失败 T_T，请手动打卡'
+
+    message = MIMEText(text + '今天是' + now_time + '\n如有信息变动，请即时反馈\n如果有一天没收到邮件请手动打卡', 'plain', 'utf-8')
+    message['From'] = Header("xxxxxxx", 'utf-8')        #**邮件发送方的名字（自定义）**
+    message['To'] = Header(abbr, 'utf-8')
+
+    subject = text
+    message['Subject'] = Header(subject, 'utf-8')
+
+    try:
+        smtpObj = smtplib.SMTP_SSL()
+        smtpObj.connect(mail_host, 465)         #在阿里云上要用465端口和ssl
+        smtpObj.login(mail_user, mail_pass)
+        smtpObj.sendmail(sender, receivers, message.as_string())
+        print("邮件发送成功")
+    except smtplib.SMTPException:
+        print("Error: 无法发送邮件")
+
+
+
+
+def daka(user_data):
     session = requests.Session()
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36'
     }
     login_url = 'http://ids.hhu.edu.cn/amserver/UI/Login'
-
+    user = user_data['user_name']
+    password = user_data['password']
 
     data = {
         'Login.Token1': user,
@@ -65,31 +107,32 @@ def daka():
 
     data = {
         'DATETIME_CYCLE': now_time,
-        'XGH_336526': 'xxxxxxx',         #**学号**
-        'XM_1474': 'xxxxxxx',               #**姓名**
-        'SFZJH_859173': 'xxxxxxx',       #**身份证号**
-        'SELECT_941320': 'xxxxxxx',         #**学院（只能是选择列表中的值，比如：计信院）**
-        'SELECT_459666': 'xxxxxxx',         #**年级（只能是选择列表中的值，比如：2019级）**
-        'SELECT_814855': 'xxxxxxx',         #**专业（只能是选择列表中的值，比如：计算机）**
-        'SELECT_525884': 'xxxxxxx',         #**班级（只能是选择列表中的值，比如：计算机19_2）**
-        'SELECT_125597': 'xxxxxxx',      #**宿舍楼（只能是选择列表中的值，比如：江宁校区教学区25舍）**
-        'TEXT_950231': 'xxxxxxx',           #**宿舍号，比如205**
-        'TEXT_937296': 'xxxxxxx',       #**手机号码**
-        'RADIO_853789': '否',            #以下都按健康填写
+        'XGH_336526': user_data['XGH_336526'],
+        'XM_1474': user_data['XM_1474'],
+        'SFZJH_859173': user_data['SFZJH_859173'],
+        'SELECT_941320': user_data['SELECT_941320'],
+        'SELECT_459666': user_data['SELECT_459666'],
+        'SELECT_814855': user_data['SELECT_814855'],
+        'SELECT_525884': user_data['SELECT_525884'],
+        'SELECT_125597': user_data['SELECT_125597'],
+        'TEXT_950231': user_data['TEXT_950231'],
+        'TEXT_937296': user_data['TEXT_937296'],
+        'RADIO_853789': '否',
         'RADIO_43840': '否',
         'RADIO_579935': '健康',
-        'RADIO_138407': '否',
-        'RADIO_546905': '否',
-        'RADIO_314799': '否',
-        'RADIO_209256': '否',
-        'RADIO_836972': '否',
-        'RADIO_302717': '否',
-        'RADIO_701131': '否',
-        'RADIO_438985': '否',
-        'RADIO_467360': '是',
-        'PICKER_956186': 'xxx,xxx,xxx',     #**住址（只能是选择列表中的值）**
-        'TEXT_434598': '',
-        'TEXT_515297': ''
+        'RADIO_138407': '是',
+        'RADIO_546905':'',
+        'RADIO_314799':'',
+        'RADIO_209256':'',
+        'RADIO_836972':'',
+        'RADIO_302717':'',
+        'RADIO_701131':'',
+        'RADIO_438985':'',
+        'RADIO_467360':'',
+        'PICKER_956186':'',
+        'TEXT_434598':'',
+        'TEXT_515297':'',
+        'TEXT_752063':''
 
     }
 
@@ -100,19 +143,78 @@ def daka():
     if 'true' in final_text:
         print('今天是: ', now_time)
         print('打卡成功!!!')
-        sys.exit()
+        send_email(True, user_data['email'], user_data['abbr'], now_time)
+        return True
     else:
         print('打卡失败')
+        return False
+
+
 
 
 if __name__ == '__main__':
-    T = 10                      # T 是打卡失败尝试次数
-    while T > 0:
-        T -= 1
-        daka()
-        print('-------------尝试重新打卡--------------')
-    if T == 0:
-        print('最终打卡失败，请尝试手动打卡')
+
+
+    users = []
+
+    user2 = {
+        'name' : 'xxxxxxx',     #**打卡者姓名（为了区分不同打卡者）**
+
+        'user_name' : 'xxxxxxx',   #**用户名（一般是学号）**
+        'password' : 'xxxxxxx',      #**密码**
+
+        'XGH_336526': 'xxxxxxx',         #**学号**
+        'XM_1474': 'xxxxxxx',               #**姓名**
+        'SFZJH_859173': 'xxxxxxx',       #**身份证号**
+        'SELECT_941320': 'xxxxxxx',         #**学院（只能是选择列表中的值，比如：计信院）**
+        'SELECT_459666': 'xxxxxxx',         #**年级（只能是选择列表中的值，比如：2019级）**
+        'SELECT_814855': 'xxxxxxx',         #**专业（只能是选择列表中的值，比如：计算机）**
+        'SELECT_525884': 'xxxxxxx',         #**班级（只能是选择列表中的值，比如：计算机19_2）**
+        'SELECT_125597': 'xxxxxxx',      #**宿舍楼（只能是选择列表中的值，比如：江宁校区教学区25舍）**
+        'TEXT_950231': 'xxxxxxx',           #**宿舍号，比如205**
+        'TEXT_937296': 'xxxxxxx',       #**手机号码**
+
+        'email' : 'xxxxxxx',            #**将打卡信息发送至这个邮箱**
+        'abbr' : 'xxxxxxx'              #**名字缩写（用作邮件接受者的名字）**
+    }
+
+    user1 = {
+        'name' : 'xxxxxxx',     #**打卡者姓名（为了区分不同打卡者）**
+
+        'user_name' : 'xxxxxxx',   #**用户名（一般是学号）**
+        'password' : 'xxxxxxx',      #**密码**
+
+        'XGH_336526': 'xxxxxxx',         #**学号**
+        'XM_1474': 'xxxxxxx',               #**姓名**
+        'SFZJH_859173': 'xxxxxxx',       #**身份证号**
+        'SELECT_941320': 'xxxxxxx',         #**学院（只能是选择列表中的值，比如：计信院）**
+        'SELECT_459666': 'xxxxxxx',         #**年级（只能是选择列表中的值，比如：2019级）**
+        'SELECT_814855': 'xxxxxxx',         #**专业（只能是选择列表中的值，比如：计算机）**
+        'SELECT_525884': 'xxxxxxx',         #**班级（只能是选择列表中的值，比如：计算机19_2）**
+        'SELECT_125597': 'xxxxxxx',      #**宿舍楼（只能是选择列表中的值，比如：江宁校区教学区25舍）**
+        'TEXT_950231': 'xxxxxxx',           #**宿舍号，比如205**
+        'TEXT_937296': 'xxxxxxx',       #**手机号码**
+
+        'email' : 'xxxxxxx',            #**将打卡信息发送至这个邮箱**
+        'abbr' : 'xxxxxxx'              #**名字缩写（用作邮件接受者的名字）**
+    }
+
+
+    #如果还有用户，则继续添加
+
+    users.append(user1)
+    users.append(user2)
+
+    for user in users:
+        T = 10                          #打卡失败的尝试次数
+        while T > 0:
+            T -= 1
+            if daka(user_data=user) :
+                break
+            print('-------------尝试重新打卡--------------')
+        if T == 0:
+            print('最终打卡失败，请尝试手动打卡')
+            send_email(False, user['email'], user['abbr'], '')
 ```
 
 ## hhu查成绩脚本（新版教务系统）
@@ -122,6 +224,11 @@ if __name__ == '__main__':
 必装环境 python , chaojiying_api , selenium , chromedriver , requests
 
 推荐环境 anaconda , pycharm
+
+
+### 功能说明
+
+查本学期成绩（可以通过修改源码变成查所有成绩）、查绩点排名
 
 ### 使用方法
 
