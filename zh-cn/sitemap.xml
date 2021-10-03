@@ -2,9 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2021-09-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/%E7%BD%91%E7%AB%99%E9%87%8D%E5%90%AF/</loc><lastmod>2021-09-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/categories/"
@@ -17,11 +15,10 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/categories/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/tags/linux/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/linux/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/shell/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/simplest-colorful-bash-promt/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/tags/"
@@ -34,6 +31,13 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
                     /></url><url>
+            <loc>https://dyhgo.github.io/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-cf/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/%E7%BD%91%E7%AB%99%E9%87%8D%E5%90%AF/</loc><lastmod>2021-09-30T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/linux/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/linux/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/shell/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/simplest-colorful-bash-promt/</loc><lastmod>2021-03-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/game/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/steep/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -54,7 +58,6 @@
             <loc>https://dyhgo.github.io/tags/greedy/</loc><lastmod>2020-12-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/number_theory/</loc><lastmod>2020-12-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/prefix/</loc><lastmod>2020-12-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2020-12-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/segment_tree/</loc><lastmod>2020-12-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/codeforces/</loc><lastmod>2020-12-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/codeforces-round-688-div.-2-a~d/</loc><lastmod>2020-12-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -76,7 +79,6 @@
             <loc>https://dyhgo.github.io/tags/data_structure/</loc><lastmod>2020-09-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/algorithm/</loc><lastmod>2020-09-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/fft-ntt/</loc><lastmod>2020-09-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-09-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/hhu_spider/</loc><lastmod>2020-08-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/python/</loc><lastmod>2020-08-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

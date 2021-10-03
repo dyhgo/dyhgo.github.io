@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/10/02 19:01" placement="top" color="green">
+        <h4>暂时不知道要更新什么，就每天做一道题吧</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/09/30 21:16" placement="top" color="green">
         <h4>更新了网站重启的公告</h4>
     </el-timeline-item>
