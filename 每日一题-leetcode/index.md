@@ -1,10 +1,9 @@
 # 每日一题 (LeetCode)
 
 
-
 > 在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
-## 10.2 进制转化
+##  进制转化 Easy
 
 ### 题意
 
@@ -33,8 +32,7 @@ class Solution {
 }
 ```
 
-
-## 10.3 模拟，哈希表 Medium
+## 模拟，哈希表 Medium
 
 ### 题意
 
@@ -94,6 +92,429 @@ class Solution {
         }
         if (circle) sb.append(')');
         return sb.toString();
+    }
+}
+```
+
+
+## 模拟 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/license-key-formatting/)
+
+
+
+### 题解
+
+```java
+class Solution {
+    public String licenseKeyFormatting(String s, int k) {
+        int sum = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) != '-') sum++;
+        }
+        if (sum == 0) {
+            return "";
+        }
+        int rem = sum % k;
+        if (rem == 0) rem = k;
+        StringBuilder sb = new StringBuilder();
+        int cnt = 0;
+        while (cnt < s.length()) {
+            while (rem > 0) {
+                if (s.charAt(cnt) == '-') {
+                    cnt++;
+                    continue;
+                }
+                sb.append(s.charAt(cnt));
+                rem--;
+                cnt++;
+            }
+            if (cnt >= s.length()) break;
+            sb.append('-');
+            int kk = k;
+            while (kk > 0) {
+                if (s.charAt(cnt) == '-') {
+                    cnt++;
+                    if (cnt >= s.length()) break;
+                    continue;
+                }
+                sb.append(s.charAt(cnt));
+                cnt++;
+                kk--;
+            }
+        }
+        for (int i = 0; i < sb.length(); ++i) {
+            if (Character.isAlphabetic(sb.charAt(i))) {
+                sb.setCharAt(i, Character.toUpperCase(sb.charAt(i)));
+            }
+        }
+        if (sb.charAt(sb.length() - 1) == '-') sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+}
+```
+
+
+## dp Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/decode-ways-ii/)
+
+### 题解
+
+```java
+class Solution {
+    private static final int mod = 1000000007;
+    public int numDecodings(String s) {
+        int sz = s.length();
+        StringBuilder sb = new StringBuilder(s);
+        sb.insert(0, '#');
+        long dp[] = new long[sz + 1];
+        dp[0] = 1;
+        char cnt = sb.charAt(1);
+        if (cnt == '*') {
+            dp[1] = 9;
+        }else {
+            if (cnt == '0') dp[1] = 0;
+            else dp[1] = 1;
+        }
+        for (int i = 2; i <= sz; ++i) {
+            cnt = sb.charAt(i);
+            if (cnt == '*') {
+                dp[i] += 9 * dp[i - 1];
+                dp[i] %= mod;
+                char pre = sb.charAt(i - 1);
+                if (pre == '*') {
+                    dp[i] += 15 * dp[i - 2];
+                    dp[i] %= mod;
+                }else { // num
+                    if (pre == '1') {
+                        dp[i] += 9 * dp[i - 2];
+                        dp[i] %= mod;
+                    }else if (pre == '2') {
+                        dp[i] += 6 * dp[i - 2];
+                        dp[i] %= mod;
+                    }
+                }
+            }else { // num
+                if (cnt == '0') {
+                    char pre = sb.charAt(i - 1);
+                    if (pre == '*') {
+                        dp[i] += 2 * dp[i - 2];
+                        dp[i] %= mod;
+                    }else {
+                        if (pre == '1' || pre == '2') {
+                            dp[i] += dp[i - 2];
+                            dp[i] %= mod;
+                        }else return 0;
+                    }
+                    continue;
+                }
+
+                dp[i] += dp[i - 1];
+                dp[i] %= mod;
+                char pre = sb.charAt(i - 1);
+                if (pre == '*') {
+                    if (cnt > '6') {
+                        dp[i] += dp[i - 2];
+                        dp[i] %= mod;
+                    }else {
+                        dp[i] += 2 * dp[i - 2];
+                        dp[i] %= mod;
+                    }
+                }else {
+                    StringBuilder str = new StringBuilder();
+                    str.append(pre);
+                    str.append(cnt);
+                    if (str.compareTo(new StringBuilder("10")) >= 0 && str.compareTo(new StringBuilder("26")) <= 0) {
+                        dp[i] += dp[i - 2];
+                        dp[i] %= mod;
+                    }
+                }
+            }
+        }
+        
+        return (int) dp[sz];
+    }
+}
+```
+
+ 
+## 贪心 Hard
+
+###  题意
+
+[题链](https://leetcode-cn.com/problems/super-washing-machines/)
+
+### 题解
+
+```java
+class Solution {
+    public int findMinMoves(int[] machines) {
+        int ans = 0;
+        int sum = 0;
+        for (int i : machines) sum += i;
+        int sz = machines.length;
+        if (sum % sz != 0) return -1;
+        int avg = sum / sz;
+        for (int i = 0; i < machines.length; ++i) {
+            machines[i] = machines[i] - avg;
+        }
+        sum = 0;
+        for (int i : machines) {
+            sum += i;
+            ans = Math.max(ans, Math.max(i, Math.abs(sum)));
+        }
+        return ans;
+    }
+}
+```
+
+
+## 迭代器的了解 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/peeking-iterator/)
+
+分析样例感觉题目说的有点不清楚，具体方法的功能写在注释里
+
+### 题解
+
+泛型就直接用E代替Integer
+
+```java
+// Java Iterator interface reference:
+// https://docs.oracle.com/javase/8/docs/api/java/util/Iterator.html
+
+class PeekingIterator implements Iterator<Integer> {
+    private Iterator<Integer> ite;
+    private Integer currentElement;
+
+    public PeekingIterator(Iterator<Integer> iterator) {
+        // initialize any member here.
+        ite = iterator;
+        currentElement = ite.next();
+    }
+
+    // Returns the next element in the iteration without advancing the iterator.
+    // Coder's note: return the current element, starting from the first one
+    public Integer peek() {
+        return currentElement;
+    }
+
+    // hasNext() and next() should behave the same as in the Iterator interface.
+    // Override them if needed.
+    // CN: return the current element and advance the iterator
+    @Override
+    public Integer next() {
+        Integer tmp = currentElement;
+        currentElement = ite.hasNext() ? ite.next() : null;
+        return tmp;
+    }
+
+    //CN: return if the current element exist
+    @Override
+    public boolean hasNext() {
+        return currentElement != null;
+    }
+}
+```
+
+
+
+## 小模拟 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/third-maximum-number/)
+
+求数组第三大的数
+
+### 题解
+
+```java
+class Solution {
+    public int thirdMax(int[] nums) {
+        TreeSet<Integer> ts = new TreeSet<>();
+        for (int i : nums) {
+            ts.add(i);
+            if (ts.size() > 3) {
+                ts.remove(ts.first());
+            }
+        }
+        return (ts.size() == 3) ? ts.first() : ts.last();
+    }
+}
+```
+
+
+
+## 小模拟 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/number-of-segments-in-a-string/)
+
+求字符串有多少个单词，单词是由没有空格的连续字符组成的字符串
+
+### 题解
+
+```java
+class Solution {
+    public int countSegments(String s) {
+        int ans = 0;
+        boolean word = false;
+        for (int i = 0; i < s.length(); ++i) {
+            if (s.charAt(i) != ' ') {
+                word = true;
+            }else {
+                if (word == true) {
+                    word = false;
+                    ans++;
+                }
+            }
+        }
+        if (word) ++ans;
+        return ans;
+    }
+}
+```
+
+## 哈希表 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/repeated-dna-sequences/)
+
+查找字符串中长度为10且不止出现过一次的子串
+
+### 题解
+
+```java
+class Solution {
+    public List<String> findRepeatedDnaSequences(String s) {
+        HashMap<String, Integer> mp = new HashMap<>();
+        StringBuilder sb = new StringBuilder();
+        List<String> ans = new ArrayList<>();
+        if (s.length() < 10) return ans;
+        for (int i = 0; i < 10; i++) {
+            sb.append(s.charAt(i));
+        }
+        mp.put(sb.toString(), 1);
+        for (int i = 10; i < s.length(); ++i) {
+            sb.append(s.charAt(i));
+            sb.deleteCharAt(0);
+            if (mp.containsKey(sb.toString()) && mp.get(sb.toString()) == 1) {
+                ans.add(sb.toString());
+                mp.put(sb.toString(), mp.get(sb.toString()) + 1);
+            }else if (!mp.containsKey(sb.toString())) {
+                mp.put(sb.toString(), 1);
+            }
+        }
+        return ans;
+    }
+}
+```
+
+## 分类讨论 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/data-stream-as-disjoint-intervals/)
+
+编写一个类的三个函数，初始化、添加一个元素、查找当前所有元素由几个区间组成（输出区间）
+
+### 题解
+
+考虑合并，插入一个元素后能否和左边的数合并成一个区间、 能否和右边的数合并，分成4种情况
+
+```java
+class SummaryRanges {
+
+    private TreeMap<Integer, Integer> mp;
+    int[] left;
+    boolean[] used;
+
+    public SummaryRanges() {
+        mp = new TreeMap<>();
+        used = new boolean[10005];
+        left = new int[10005];
+    }
+
+    public void addNum(int val) {
+        if (used[val]) return;
+        used[val] = true;
+        if (val - 1 >= 0 && used[val - 1]) { // exist left number
+            if (used[val + 1]) {    // exist left number and right number
+                int tmp_left = left[val - 1];
+                int tmpsz = mp.get(tmp_left);
+                tmpsz = tmpsz + 1 + mp.get(val + 1);
+                left[val + mp.get(val + 1)] = tmp_left;
+                mp.remove(val + 1);
+                mp.put(tmp_left, tmpsz);
+            }else { // exist left number but not right number
+                int tmp_left = left[val - 1];
+                left[val] = tmp_left;
+                mp.put(tmp_left, mp.get(tmp_left) + 1);
+            }
+        }else { // val == 0 or not exitst left number
+            if (used[val + 1]) {    // not exist left number but exist right number
+                left[val + mp.get(val + 1)] = val;
+                mp.put(val, mp.get(val + 1) + 1);
+                mp.remove(val + 1);
+            }else {     // both left and right number are not exist
+                left[val] = val;
+                mp.put(val, 1);
+            }
+        }
+    }
+
+    public int[][] getIntervals() {
+        int[][] ans = new int[mp.size()][2];
+        int id = 0;
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
+            ans[id][0] = entry.getKey();
+            ans[id][1] = entry.getValue() + ans[id][0] - 1;
+            id++;
+        }
+        return ans;
+    }
+}
+
+/**
+ * Your SummaryRanges object will be instantiated and called as such:
+ * SummaryRanges obj = new SummaryRanges();
+ * obj.addNum(val);
+ * int[][] param_2 = obj.getIntervals();
+ */
+```
+
+
+##  二分 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/arranging-coins/)
+
+n个硬币按阶梯式排列，求最后一层被排满的阶梯
+
+### 题解
+
+```java
+class Solution {
+    public int arrangeCoins(int n) {
+        long l = 1, r = n;
+        while (l <= r) {
+            long mid = (l + r) >> 1;
+            if ((1 + mid) * mid / 2 <= n) {
+                l = mid + 1;
+            }else r = mid - 1;
+        }
+        return (int)(l - 1);
     }
 }
 ```

@@ -12,6 +12,12 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/10/10 08:15" placement="top" color="blue">
+        <h4>后天能顺利回校吗😟</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2021/10/05 09:15" placement="top" color="green">
+        <h4>更新了tf-idf，属于是不知道要更新什么</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/10/02 19:01" placement="top" color="green">
         <h4>暂时不知道要更新什么，就每天做一道题吧</h4>
     </el-timeline-item>

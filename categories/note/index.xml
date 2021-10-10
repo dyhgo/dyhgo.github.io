@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/note/</link>
         <description>note - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>tf-idf</title>
+    <link>https://dyhgo.github.io/tf-idf/</link>
+    <pubDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/tf-idf/</guid>
+    <description><![CDATA[记录一下tf-idf TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术]]></description>
+</item><item>
     <title>相机模型</title>
     <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
     <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/git/</guid>
     <description><![CDATA[git安装 用户名和邮箱 初始化或切换用户名和邮箱 git config --global user.name &quot;XXX&quot; git config --global user.email &quot;XXX&quot; 查看当前用户名和邮箱 git config --global user.name git config --global user.email 查看用户名和邮箱列表 git config --list 删除用户名和]]></description>
-</item><item>
-    <title>浮点数加减法</title>
-    <link>https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</link>
-    <pubDate>Fri, 03 Apr 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E6%B5%AE%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F%E6%B3%95/</guid>
-    <description><![CDATA[#0 0操作数检查 如果有一个数为0，则可以直接得出结果 #1 用补码表示阶码，尾数 阶码的符号位为两位 尾数的个位为符号位 #2 对阶 小阶向大阶对齐（看原码），]]></description>
 </item></channel>
 </rss>
