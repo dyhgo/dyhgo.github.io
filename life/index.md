@@ -12,6 +12,18 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/10/13 17:22" placement="top" color="blue">
+        <h4>“城镇手指”玩得是越来越烂了</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2021/10/13 13:12" placement="top" color="blue">
+        <h4>新出游戏：极限国度、地平线5。拿到奖学金就买，拿不到就算了</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2021/10/13 13:09" placement="top" color="blue">
+        <h4>接下来我该做什么</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2021/10/12 17:28" placement="top" color="blue">
+        <h4>行，我顺利回校了</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/10/10 08:15" placement="top" color="blue">
         <h4>后天能顺利回校吗😟</h4>
     </el-timeline-item>

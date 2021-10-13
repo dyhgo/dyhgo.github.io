@@ -1,6 +1,7 @@
 # 每日一题 (LeetCode)
 
 
+
 > 在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
 ##  进制转化 Easy
@@ -515,6 +516,147 @@ class Solution {
             }else r = mid - 1;
         }
         return (int)(l - 1);
+    }
+}
+```
+
+## 模拟 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/integer-to-english-words/)
+
+把数字转化成英文
+
+### 题解
+
+注意特判0，注意20
+
+```java
+class Solution {
+    String[] thousand = {"Billion", "Million", "Thousand", ""};
+    String[] number = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};
+    String[] ty = {"", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"};
+    String[] teen = {"Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
+    public String numberToWords(int num) {
+        if (num == 0) return "Zero";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1000000000, j = 0; num != 0; i /= 1000, j++) {
+            if (i == 1) { // 3-digital number
+                if (num >= 100) {
+                    sb.append(number[num / 100]);
+                    sb.append(' ');
+                    sb.append("Hundred");
+                    sb.append(' ');
+                    num %= 100;
+                }
+                if (num >= 20) {
+                    sb.append(ty[num / 10]);
+                    sb.append(' ');
+                    num %= 10;
+                }
+                if (num == 0) break;
+                if (num < 10) {
+                    sb.append(number[num]);
+                    sb.append(' ');
+                }else {
+                    sb.append(teen[num - 10]);
+                    sb.append(' ');
+                }
+                break;
+            }
+            if (num >= i) {
+                sb.append(numberToWords(num / i));
+                sb.append(' ');
+                sb.append(thousand[j]);
+                sb.append(' ');
+                num %= i;
+            }
+        }
+        sb.deleteCharAt(sb.length() - 1);
+        return sb.toString();
+    }
+}
+```
+
+
+##  二分、快速乘 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/divide-two-integers/)
+
+
+求一个数除以另一个数的结果（保留整数部分），不能使用乘法、除法、模运算
+
+
+### 题解
+
+用快速乘的加法代替乘法，注意特判溢出
+
+```java
+class Solution {
+    public int divide(int dividend, int divisor) {
+        boolean neg = (dividend > 0) ^ (divisor > 0);
+        long tmp_dividend = dividend;
+        long tmp_divisor = divisor;
+        tmp_dividend = Math.abs(tmp_dividend);
+        tmp_divisor = Math.abs(tmp_divisor);
+        long l = 0, r = tmp_dividend;
+        while (l <= r) {
+            long mid = (l + r) >> 1;
+            if (qmul(mid, tmp_divisor) <= tmp_dividend && qmul(mid + 1, tmp_divisor) > tmp_dividend) {
+                if (neg) mid = -mid;
+                if (mid > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+                return (int) mid;
+            }
+            if (qmul(mid, tmp_divisor) < tmp_dividend) {
+                l = mid + 1;
+            }else {
+                r = mid - 1;
+            }
+        }
+        return Integer.MAX_VALUE;   //!!
+    }
+
+    private long qmul(long x, long y) {
+        long ans = 0;
+        while (y > 0) {
+            if (y % 2 == 1) ans += x;
+            x += x;
+            y >>= 1;
+        }
+        return ans;
+    }
+}
+
+```
+
+
+##  模拟 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/fizz-buzz/)
+
+### 题解
+
+```java
+class Solution {
+    public List<String> fizzBuzz(int n) {
+        List<String> ls = new ArrayList<>();
+        for (int i = 1; i <= n; ++i) {
+            if (i % 3 == 0 && i % 5 == 0) {
+                ls.add("FizzBuzz");
+            }else if (i % 3 == 0) {
+                ls.add("Fizz");
+            }else if (i % 5 == 0) {
+                ls.add("Buzz");
+            }else {
+                ls.add(String.valueOf(i));
+            }
+        }
+        return ls;
     }
 }
 ```

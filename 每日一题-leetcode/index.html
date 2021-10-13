@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/"
-        },"genre": "posts","keywords": "problemlist","wordcount":  2191 ,
+        },"genre": "posts","keywords": "problemlist","wordcount":  2763 ,
         "url": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/","datePublished": "2021-10-02T00:00:00+00:00","dateModified": "2021-10-02T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">每日一题 (LeetCode)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>problemlist</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2191 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2763 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -183,6 +183,24 @@
       <ul>
         <li><a href="#题意-10">题意</a></li>
         <li><a href="#题解-10">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#模拟-hard">模拟 Hard</a>
+      <ul>
+        <li><a href="#题意-11">题意</a></li>
+        <li><a href="#题解-11">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#二分快速乘-medium">二分、快速乘 Medium</a>
+      <ul>
+        <li><a href="#题意-12">题意</a></li>
+        <li><a href="#题解-12">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#模拟-easy-1">模拟 Easy</a>
+      <ul>
+        <li><a href="#题意-13">题意</a></li>
+        <li><a href="#题解-13">题解</a></li>
       </ul>
     </li>
   </ul>
@@ -1028,6 +1046,232 @@
             <span class="o">}</span><span class="k">else</span> <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
         <span class="o">}</span>
         <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)(</span><span class="n">l</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="模拟-hard">模拟 Hard</h2>
+<h3 id="题意-11">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/integer-to-english-words/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>把数字转化成英文</p>
+<h3 id="题解-11">题解</h3>
+<p>注意特判0，注意20</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">thousand</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;Billion&#34;</span><span class="o">,</span> <span class="s">&#34;Million&#34;</span><span class="o">,</span> <span class="s">&#34;Thousand&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">};</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">number</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;One&#34;</span><span class="o">,</span> <span class="s">&#34;Two&#34;</span><span class="o">,</span> <span class="s">&#34;Three&#34;</span><span class="o">,</span> <span class="s">&#34;Four&#34;</span><span class="o">,</span> <span class="s">&#34;Five&#34;</span><span class="o">,</span> <span class="s">&#34;Six&#34;</span><span class="o">,</span> <span class="s">&#34;Seven&#34;</span><span class="o">,</span> <span class="s">&#34;Eight&#34;</span><span class="o">,</span> <span class="s">&#34;Nine&#34;</span><span class="o">};</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">ty</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;&#34;</span><span class="o">,</span> <span class="s">&#34;Twenty&#34;</span><span class="o">,</span> <span class="s">&#34;Thirty&#34;</span><span class="o">,</span> <span class="s">&#34;Forty&#34;</span><span class="o">,</span> <span class="s">&#34;Fifty&#34;</span><span class="o">,</span> <span class="s">&#34;Sixty&#34;</span><span class="o">,</span> <span class="s">&#34;Seventy&#34;</span><span class="o">,</span> <span class="s">&#34;Eighty&#34;</span><span class="o">,</span> <span class="s">&#34;Ninety&#34;</span><span class="o">};</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">teen</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;Ten&#34;</span><span class="o">,</span> <span class="s">&#34;Eleven&#34;</span><span class="o">,</span> <span class="s">&#34;Twelve&#34;</span><span class="o">,</span> <span class="s">&#34;Thirteen&#34;</span><span class="o">,</span> <span class="s">&#34;Fourteen&#34;</span><span class="o">,</span> <span class="s">&#34;Fifteen&#34;</span><span class="o">,</span> <span class="s">&#34;Sixteen&#34;</span><span class="o">,</span> <span class="s">&#34;Seventeen&#34;</span><span class="o">,</span> <span class="s">&#34;Eighteen&#34;</span><span class="o">,</span> <span class="s">&#34;Nineteen&#34;</span><span class="o">};</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">numberToWords</span><span class="o">(</span><span class="kt">int</span> <span class="n">num</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="k">return</span> <span class="s">&#34;Zero&#34;</span><span class="o">;</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1000000000</span><span class="o">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">num</span> <span class="o">!=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">/=</span> <span class="n">1000</span><span class="o">,</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// 3-digital number
+</span><span class="c1"></span>                <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">100</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">number</span><span class="o">[</span><span class="n">num</span> <span class="o">/</span> <span class="n">100</span><span class="o">]);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">&#34;Hundred&#34;</span><span class="o">);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                    <span class="n">num</span> <span class="o">%=</span> <span class="n">100</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">20</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">ty</span><span class="o">[</span><span class="n">num</span> <span class="o">/</span> <span class="n">10</span><span class="o">]);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                    <span class="n">num</span> <span class="o">%=</span> <span class="n">10</span><span class="o">;</span>
+                <span class="o">}</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="k">break</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&lt;</span> <span class="n">10</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">number</span><span class="o">[</span><span class="n">num</span><span class="o">]);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">teen</span><span class="o">[</span><span class="n">num</span> <span class="o">-</span> <span class="n">10</span><span class="o">]);</span>
+                    <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="k">break</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">num</span> <span class="o">&gt;=</span> <span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">numberToWords</span><span class="o">(</span><span class="n">num</span> <span class="o">/</span> <span class="n">i</span><span class="o">));</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">thousand</span><span class="o">[</span><span class="n">j</span><span class="o">]);</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="sc">&#39; &#39;</span><span class="o">);</span>
+                <span class="n">num</span> <span class="o">%=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">deleteCharAt</span><span class="o">(</span><span class="n">sb</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="二分快速乘-medium">二分、快速乘 Medium</h2>
+<h3 id="题意-12">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/divide-two-integers/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>求一个数除以另一个数的结果（保留整数部分），不能使用乘法、除法、模运算</p>
+<h3 id="题解-12">题解</h3>
+<p>用快速乘的加法代替乘法，注意特判溢出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">divide</span><span class="o">(</span><span class="kt">int</span> <span class="n">dividend</span><span class="o">,</span> <span class="kt">int</span> <span class="n">divisor</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">boolean</span> <span class="n">neg</span> <span class="o">=</span> <span class="o">(</span><span class="n">dividend</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">^</span> <span class="o">(</span><span class="n">divisor</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">);</span>
+        <span class="kt">long</span> <span class="n">tmp_dividend</span> <span class="o">=</span> <span class="n">dividend</span><span class="o">;</span>
+        <span class="kt">long</span> <span class="n">tmp_divisor</span> <span class="o">=</span> <span class="n">divisor</span><span class="o">;</span>
+        <span class="n">tmp_dividend</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">tmp_dividend</span><span class="o">);</span>
+        <span class="n">tmp_divisor</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">abs</span><span class="o">(</span><span class="n">tmp_divisor</span><span class="o">);</span>
+        <span class="kt">long</span> <span class="n">l</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">tmp_dividend</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">long</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">(</span><span class="n">l</span> <span class="o">+</span> <span class="n">r</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="n">1</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">qmul</span><span class="o">(</span><span class="n">mid</span><span class="o">,</span> <span class="n">tmp_divisor</span><span class="o">)</span> <span class="o">&lt;=</span> <span class="n">tmp_dividend</span> <span class="o">&amp;&amp;</span> <span class="n">qmul</span><span class="o">(</span><span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">,</span> <span class="n">tmp_divisor</span><span class="o">)</span> <span class="o">&gt;</span> <span class="n">tmp_dividend</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">neg</span><span class="o">)</span> <span class="n">mid</span> <span class="o">=</span> <span class="o">-</span><span class="n">mid</span><span class="o">;</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">mid</span> <span class="o">&gt;</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">)</span> <span class="k">return</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+                <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">mid</span><span class="o">;</span>
+            <span class="o">}</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">qmul</span><span class="o">(</span><span class="n">mid</span><span class="o">,</span> <span class="n">tmp_divisor</span><span class="o">)</span> <span class="o">&lt;</span> <span class="n">tmp_dividend</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>   <span class="c1">//!!
+</span><span class="c1"></span>    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">long</span> <span class="nf">qmul</span><span class="o">(</span><span class="kt">long</span> <span class="n">x</span><span class="o">,</span> <span class="kt">long</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">x</span><span class="o">;</span>
+            <span class="n">x</span> <span class="o">+=</span> <span class="n">x</span><span class="o">;</span>
+            <span class="n">y</span> <span class="o">&gt;&gt;=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">ans</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="模拟-easy-1">模拟 Easy</h2>
+<h3 id="题意-13">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/fizz-buzz/" target="_blank" rel="noopener noreffer">题链</a></p>
+<h3 id="题解-13">题解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">fizzBuzz</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">ls</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">3</span> <span class="o">==</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">%</span> <span class="n">5</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ls</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;FizzBuzz&#34;</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">3</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ls</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;Fizz&#34;</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">%</span> <span class="n">5</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">ls</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;Buzz&#34;</span><span class="o">);</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">ls</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">i</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">ls</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
