@@ -1,7 +1,6 @@
 # 每日一题 (CF)
 
 
-
 > 在这篇文章下更新CodeForces的每日一题，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
 ## 扫描线
@@ -291,5 +290,198 @@ int main() {
 }
 ```
 
+
+## 图 模拟
+
+### 题意
+
+[题链](https://codeforces.com/contest/1593/problem/E)
+
+给一棵树，每次操作删除当前树的所有叶子，求k次操作后剩下几个节点
+
+### 题解
+
+存度数模拟
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        int n, k;
+        cin >> n >> k;
+        if (n == 1) {
+            puts("0");
+            continue;
+        }
+        vector<int> G[n + 1];
+        int degree[n + 1];
+        memset(degree, 0, sizeof(degree));
+        bool used[n + 1];
+        memset(used, 0, sizeof(used));
+        for (int i = 0; i < n - 1; ++i) {
+            int u, v;
+            cin >> u >> v;
+            G[u].push_back(v);
+            G[v].push_back(u);
+            degree[u]++;
+            degree[v]++;
+        }
+        queue<int> q;
+        for (int i = 1; i <= n; ++i) {
+            if (degree[i] == 1) q.push(i), used[i] = true;
+        }
+        int cut_num = 0;
+        while (k--) {
+            if (cut_num == n) break;
+            int sz = (int) q.size();
+            cut_num += sz;
+            while (sz--) {
+                auto tmp = q.front();
+                q.pop();
+                for (int i : G[tmp]) {
+                    if (used[i]) continue;
+                    if (--degree[i] <= 1) {
+                        q.push(i);
+                        used[i] = true;
+                    }
+                }
+            }
+        }
+        cout << n - cut_num << '\n';
+    }
+    return 0;
+}
+```
+
+
+## 二分 交互
+
+### 题意
+
+[题链](https://codeforces.com/contest/1520/problem/F1)
+
+有一个数组由0和1组成，每次可以查询一个区间的和，使用不超过20次查询求出从左往右的第k个0的位置
+
+
+### 题解
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int n, t, k;
+int ask(int l, int r) {
+    int ret ;
+    cout << "? " << l << ' ' << r << endl;
+    cout.flush();
+    cin >> ret;
+    return ret;
+}
+int query(int l, int r, int th) {
+    if (l == r and ask(l, r) == 0) {
+        return l;
+    }
+    int one = ask(l, l + (r - l) / 2);
+    if ((r - l) / 2 + 1 - one >= th) {
+        return query(l, l + (r - l) / 2, th);
+    } else {
+        return query(l + (r - l) / 2 + 1, r, th - (r - l) / 2 - 1 + one);
+    }
+}
+int main() {
+    cin >> n >> t;
+    cin >> k;
+    int ans = query(1, n, k);
+    cout << "! " << ans << endl;
+    cout.flush();
+    return 0;
+}
+```
+
+
+## 记忆化搜索
+
+### 题意
+
+[题链](https://codeforces.com/contest/1498/problem/C)
+
+有n个平面从左往右放置，一个粒子会以衰竭时间k打到平面上。粒子打到平面上会产生两种效果，以相同衰竭时间穿过平面到达下一个平面，产生一个反方向，衰竭时间-1的粒子到达之前的平面。衰竭时间为1的粒子不会产生反射粒子。求一个衰竭时间为k的粒子从左往右打到第一个平面总共会产生几个粒子
+
+
+### 题解
+
+模拟粒子的穿过和反射操作，递归搜索，记忆化搜索，用dp[i][j][k]表示一个衰竭时间为j的粒子以k方向打到第i个平面产生的粒子数，搜索时分情况讨论
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll mod = 1e9 + 7;
+const int maxn = 1005;
+ll dp[maxn][maxn][2];   //0 is -> , 1 is <-
+int n, k;
+ll dfs(int id, int da, int dir) {
+    if (dp[id][da][dir] != -1) {
+        return dp[id][da][dir];
+    }
+    ll ans = 0;
+    if (dir == 0) {
+        if (id == 1) {
+            if (da != 1) {
+                ans += (1 + dfs(id + 1, da, 0));
+                ans %= mod;
+            }
+        }else if (id == n) {
+            if (da != 1) {
+                ans += (1 + dfs(id - 1, da - 1, 1));
+                ans %= mod;
+            }
+        }else {
+            if (da != 1) {
+                ans += (1 + dfs(id + 1, da, 0));
+                ans %= mod;
+                ans += dfs(id - 1, da - 1, 1);
+                ans %= mod;
+            }
+        }
+    }else {     // dir == 1
+        if (id == 1) {
+            if (da != 1) {
+                ans += (1 + dfs(id + 1, da - 1, 0));
+                ans %= mod;
+            }
+        }else if (id != n) {
+            if (da != 1) {
+                ans += (1 + dfs(id - 1, da, 1));
+                ans %= mod;
+                ans += dfs(id + 1, da - 1, 0);
+                ans %= mod;
+            }
+        }
+    }
+    dp[id][da][dir] = ans;
+    return ans;
+}
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        memset(dp, -1, sizeof(dp));
+        cin >> n >> k;
+        if (n == 1) {
+            if (k == 1) {
+                puts("1");
+            }else puts("2");
+            continue;
+        }
+        cout << 1 + dfs(1, k, 0) << '\n';
+    }
+    return 0;
+}
+```
 
 

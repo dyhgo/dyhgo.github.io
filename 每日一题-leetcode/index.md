@@ -1,7 +1,6 @@
 # 每日一题 (LeetCode)
 
 
-
 > 在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
 ##  进制转化 Easy
@@ -660,4 +659,274 @@ class Solution {
     }
 }
 ```
+
+
+## 三分 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/B1IidL/)
+
+
+logn内求单峰数组的最大值
+
+
+### 题解
+
+三分，最高效的应该是黄金分割，其实还可以模拟退火（X）
+
+```java
+class Solution {
+    public int peakIndexInMountainArray(int[] arr) {
+        int l = 0, r = arr.length - 1;
+        while (l <= r) {
+            int midl = l + (r - l) / 3;
+            int midr = r - (r - l) / 3;
+            if (arr[midl] < arr[midr]) {
+                l = midl + 1;
+            }else {
+                r = midr - 1;
+            }
+        }
+        return l;
+    }
+}
+```
+
+
+## 模拟 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/count-and-say/)
+
+不想描述
+
+### 题解
+
+```java
+class Solution {
+    public String countAndSay(int n) {
+        if (n == 1) return "1";
+        else return describe(countAndSay(n - 1));
+    }
+
+    private String describe(String str) {
+        char cnt = str.charAt(0);
+        int num = 1;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < str.length(); ++i) {
+            if (str.charAt(i) == cnt) {
+                num++;
+            }else {
+                sb.append(String.valueOf(num));
+                sb.append(cnt);
+                cnt = str.charAt(i);
+                num = 1;
+            }
+        }
+        sb.append(String.valueOf(num));
+        sb.append(cnt);
+        return sb.toString();
+    }
+}
+```
+
+## dfs Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/expression-add-operators/)
+
+对一个由数字组成的字符串中加运算符（+-*），求表达式能得到target值的所有方案，sb中文翻译居然没说数字不能有前导0
+
+### 题解
+
+为了图方便，直接用python的eval，但是eval不能有前导0，但是允许000的存在，这个要后处理特判，注意list不能边遍历边删除
+
+注意在ide中用python3.5以上的类型检查时要导入typing包
+
+```python
+class Solution:
+    def addOperators(self, num: str, target: int) -> List[str]:  # 0-based index
+        le = len(num)
+        ans = []
+
+        def dfs(now: str, pos: int, added: int):
+            if pos == le - 1:
+                try:
+                    if eval(now) == target:
+                        ans.append(now)
+                except SyntaxError:
+                    pass
+                return
+
+            tmp_now = now[: pos + added + 1] + '+' + now[pos + added + 1:]
+            dfs(tmp_now, pos + 1, added + 1)
+            tmp_now = now[: pos + added + 1] + '-' + now[pos + added + 1:]
+            dfs(tmp_now, pos + 1, added + 1)
+            tmp_now = now[: pos + added + 1] + '*' + now[pos + added + 1:]
+            dfs(tmp_now, pos + 1, added + 1)
+            tmp_now = now
+            dfs(tmp_now, pos + 1, added)
+
+        def all_zero(s: str) -> bool:
+            if len(s) == 1: return False
+            for i in s:
+                if i != '0':
+                    return False
+            return True
+
+        dfs(num, 0, 0)
+
+        fans = []
+        # postprocess
+        for i in ans:
+            removed = False
+            s = ''
+            for j in i:
+                if j != '+' and j != '-' and j != '*':
+                    s += j
+                else:
+                    if all_zero(s):
+                        removed = True
+                        break
+                    else:
+                        s = ''
+            if not removed and all_zero(s):
+                removed = True
+            if not removed:
+                fans.append(i)
+
+        return fans
+```
+
+
+
+
+## 二分 中序遍历 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
+
+求bst的第k小元素，允许多次求
+
+
+### 题解
+
+bst的中序是有序的，插入、删除、搜索均可二分
+
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    List<Integer> li = new ArrayList<>();
+    public int kthSmallest(TreeNode root, int k) {
+        dfs(root);
+        //Collections.sort(li);
+        return li.get(k - 1);
+    }
+    private void dfs(TreeNode node) {
+        if (node.left != null) dfs(node.left);
+        li.add(node.val);
+        if (node.right != null) dfs(node.right);
+    }
+}
+```
+
+
+## 次短路 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/)
+
+给一个无向图，经过每条边的时间为t，任何时候可以到达任何点，但是只能在该点绿灯时离开且必须离开，一开始每个点都是绿灯，红绿灯以m时间交替，求从1到n的严格第二短时间
+                                                                                                                                                                                                                                                                                                                                              
+
+### 题解
+
+dijkstra求次短路是最直接的想法，求次短路需要同时存储到每个点的次短路和最短路
+
+```cpp
+class Solution {
+public:
+    typedef pair<int,int> pii;       //first 是距离 ，second是点编号
+    static const int maxv = 1e4 + 10;
+    struct edge
+    {
+        int to,cost;
+    };
+    int V;
+    vector<edge> G[maxv];
+    int d[maxv];
+    int dd[maxv];
+    int cg ;
+    int secondMinimum(int n, vector<vector<int>>& edges, int time, int change) {
+        cg = change;
+        for (auto i : edges) {
+            G[i[0]].push_back({i[1], time});
+            G[i[1]].push_back({i[0], time});
+        }
+
+        dijkstra(1);
+        return dd[n];
+    }
+
+    void dijkstra(int s)
+    {
+        priority_queue<pii,vector<pii>,greater<> > q;           //使小的在上面
+        memset(d, 0x3f, sizeof(d));
+        memset(dd, 0x3f, sizeof(dd));
+        d[s]=0;
+        q.push(pii(0,s));
+        while(!q.empty())
+        {
+            pii p=q.top();
+            q.pop();
+            int v=p.second;
+            if(dd[v]<p.first) continue;
+            for(int i=0;i<(int)G[v].size();i++)
+            {
+                edge e=G[v][i];
+//                if(d[e.to]>d[v]+e.cost)
+//                {
+//                    d[e.to]=d[v]+e.cost;
+//                    q.push(pii(d[e.to],e.to));
+//                }
+                int tmpdist;
+                if (p.first % (cg * 2) < cg) {
+                    tmpdist = p.first + e.cost;
+                }else {
+                    tmpdist = p.first + e.cost + 2 * cg - p.first % (2 * cg);
+                }
+                if (tmpdist < d[e.to]) {
+                    swap(d[e.to], tmpdist);
+                    q.emplace(d[e.to], e.to);
+                }
+                if (d[e.to] < tmpdist and dd[e.to] > tmpdist) {
+                    dd[e.to] = tmpdist;
+                    q.emplace(dd[e.to], e.to);
+                }
+            }
+        }
+    }
+};
+```
+
 

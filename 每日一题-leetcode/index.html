@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/"
-        },"genre": "posts","keywords": "problemlist","wordcount":  2763 ,
+        },"genre": "posts","keywords": "problemlist","wordcount":  3991 ,
         "url": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/","datePublished": "2021-10-02T00:00:00+00:00","dateModified": "2021-10-02T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">每日一题 (LeetCode)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>problemlist</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2763 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3991 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -201,6 +201,36 @@
       <ul>
         <li><a href="#题意-13">题意</a></li>
         <li><a href="#题解-13">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#三分-easy">三分 Easy</a>
+      <ul>
+        <li><a href="#题意-14">题意</a></li>
+        <li><a href="#题解-14">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#模拟-medium">模拟 Medium</a>
+      <ul>
+        <li><a href="#题意-15">题意</a></li>
+        <li><a href="#题解-15">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#dfs-hard">dfs Hard</a>
+      <ul>
+        <li><a href="#题意-16">题意</a></li>
+        <li><a href="#题解-16">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#二分-中序遍历-medium">二分 中序遍历 Medium</a>
+      <ul>
+        <li><a href="#题意-17">题意</a></li>
+        <li><a href="#题解-17">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#次短路-hard">次短路 Hard</a>
+      <ul>
+        <li><a href="#题意-18">题意</a></li>
+        <li><a href="#题解-18">题解</a></li>
       </ul>
     </li>
   </ul>
@@ -1274,6 +1304,432 @@
         <span class="k">return</span> <span class="n">ls</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="三分-easy">三分 Easy</h2>
+<h3 id="题意-14">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/B1IidL/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>logn内求单峰数组的最大值</p>
+<h3 id="题解-14">题解</h3>
+<p>三分，最高效的应该是黄金分割，其实还可以模拟退火（X）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">peakIndexInMountainArray</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">r</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">midl</span> <span class="o">=</span> <span class="n">l</span> <span class="o">+</span> <span class="o">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">)</span> <span class="o">/</span> <span class="n">3</span><span class="o">;</span>
+            <span class="kt">int</span> <span class="n">midr</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-</span> <span class="o">(</span><span class="n">r</span> <span class="o">-</span> <span class="n">l</span><span class="o">)</span> <span class="o">/</span> <span class="n">3</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">midl</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">midr</span><span class="o">])</span> <span class="o">{</span>
+                <span class="n">l</span> <span class="o">=</span> <span class="n">midl</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">r</span> <span class="o">=</span> <span class="n">midr</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">l</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="模拟-medium">模拟 Medium</h2>
+<h3 id="题意-15">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/count-and-say/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>不想描述</p>
+<h3 id="题解-15">题解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">countAndSay</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="s">&#34;1&#34;</span><span class="o">;</span>
+        <span class="k">else</span> <span class="k">return</span> <span class="n">describe</span><span class="o">(</span><span class="n">countAndSay</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="nf">describe</span><span class="o">(</span><span class="n">String</span> <span class="n">str</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">0</span><span class="o">);</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">)</span> <span class="o">==</span> <span class="n">cnt</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">num</span><span class="o">++;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">num</span><span class="o">));</span>
+                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">cnt</span><span class="o">);</span>
+                <span class="n">cnt</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+                <span class="n">num</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">String</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">num</span><span class="o">));</span>
+        <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">cnt</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="dfs-hard">dfs Hard</h2>
+<h3 id="题意-16">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/expression-add-operators/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>对一个由数字组成的字符串中加运算符（+-*），求表达式能得到target值的所有方案，sb中文翻译居然没说数字不能有前导0</p>
+<h3 id="题解-16">题解</h3>
+<p>为了图方便，直接用python的eval，但是eval不能有前导0，但是允许000的存在，这个要后处理特判，注意list不能边遍历边删除</p>
+<p>注意在ide中用python3.5以上的类型检查时要导入typing包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">addOperators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>  <span class="c1"># 0-based index</span>
+        <span class="n">le</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+        <span class="n">ans</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">def</span> <span class="nf">dfs</span><span class="p">(</span><span class="n">now</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">pos</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">added</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">pos</span> <span class="o">==</span> <span class="n">le</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">eval</span><span class="p">(</span><span class="n">now</span><span class="p">)</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+                        <span class="n">ans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">now</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">SyntaxError</span><span class="p">:</span>
+                    <span class="k">pass</span>
+                <span class="k">return</span>
+
+            <span class="n">tmp_now</span> <span class="o">=</span> <span class="n">now</span><span class="p">[:</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="n">now</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">tmp_now</span><span class="p">,</span> <span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">tmp_now</span> <span class="o">=</span> <span class="n">now</span><span class="p">[:</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">now</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">tmp_now</span><span class="p">,</span> <span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">tmp_now</span> <span class="o">=</span> <span class="n">now</span><span class="p">[:</span> <span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span> <span class="o">+</span> <span class="n">now</span><span class="p">[</span><span class="n">pos</span> <span class="o">+</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">tmp_now</span><span class="p">,</span> <span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">added</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+            <span class="n">tmp_now</span> <span class="o">=</span> <span class="n">now</span>
+            <span class="n">dfs</span><span class="p">(</span><span class="n">tmp_now</span><span class="p">,</span> <span class="n">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">added</span><span class="p">)</span>
+
+        <span class="k">def</span> <span class="nf">all_zero</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">i</span> <span class="o">!=</span> <span class="s1">&#39;0&#39;</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="bp">False</span>
+            <span class="k">return</span> <span class="bp">True</span>
+
+        <span class="n">dfs</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+        <span class="n">fans</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># postprocess</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ans</span><span class="p">:</span>
+            <span class="n">removed</span> <span class="o">=</span> <span class="bp">False</span>
+            <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">j</span> <span class="o">!=</span> <span class="s1">&#39;+&#39;</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">!=</span> <span class="s1">&#39;-&#39;</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">!=</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">j</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">all_zero</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+                        <span class="n">removed</span> <span class="o">=</span> <span class="bp">True</span>
+                        <span class="k">break</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">removed</span> <span class="ow">and</span> <span class="n">all_zero</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+                <span class="n">removed</span> <span class="o">=</span> <span class="bp">True</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">removed</span><span class="p">:</span>
+                <span class="n">fans</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">fans</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="二分-中序遍历-medium">二分 中序遍历 Medium</h2>
+<h3 id="题意-17">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>求bst的第k小元素，允许多次求</p>
+<h3 id="题解-17">题解</h3>
+<p>bst的中序是有序的，插入、删除、搜索均可二分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="cm">/**
+</span><span class="cm"> * Definition for a binary tree node.
+</span><span class="cm"> * public class TreeNode {
+</span><span class="cm"> *     int val;
+</span><span class="cm"> *     TreeNode left;
+</span><span class="cm"> *     TreeNode right;
+</span><span class="cm"> *     TreeNode() {}
+</span><span class="cm"> *     TreeNode(int val) { this.val = val; }
+</span><span class="cm"> *     TreeNode(int val, TreeNode left, TreeNode right) {
+</span><span class="cm"> *         this.val = val;
+</span><span class="cm"> *         this.left = left;
+</span><span class="cm"> *         this.right = right;
+</span><span class="cm"> *     }
+</span><span class="cm"> * }
+</span><span class="cm"> */</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">li</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">kthSmallest</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">root</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">dfs</span><span class="o">(</span><span class="n">root</span><span class="o">);</span>
+        <span class="c1">//Collections.sort(li);
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">li</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">TreeNode</span> <span class="n">node</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">dfs</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">left</span><span class="o">);</span>
+        <span class="n">li</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">val</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="n">dfs</span><span class="o">(</span><span class="n">node</span><span class="o">.</span><span class="na">right</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="次短路-hard">次短路 Hard</h2>
+<h3 id="题意-18">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/second-minimum-time-to-reach-destination/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>给一个无向图，经过每条边的时间为t，任何时候可以到达任何点，但是只能在该点绿灯时离开且必须离开，一开始每个点都是绿灯，红绿灯以m时间交替，求从1到n的严格第二短时间</p>
+<h3 id="题解-18">题解</h3>
+<p>dijkstra求次短路是最直接的想法，求次短路需要同时存储到每个点的次短路和最短路</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">pii</span><span class="p">;</span>       <span class="c1">//first 是距离 ，second是点编号
+</span><span class="c1"></span>    <span class="k">static</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">maxv</span> <span class="o">=</span> <span class="mf">1e4</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">struct</span> <span class="nc">edge</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">to</span><span class="p">,</span><span class="n">cost</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="kt">int</span> <span class="n">V</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">edge</span><span class="o">&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">maxv</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">d</span><span class="p">[</span><span class="n">maxv</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">dd</span><span class="p">[</span><span class="n">maxv</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">cg</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="nf">secondMinimum</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">edges</span><span class="p">,</span> <span class="kt">int</span> <span class="n">time</span><span class="p">,</span> <span class="kt">int</span> <span class="n">change</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cg</span> <span class="o">=</span> <span class="n">change</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">edges</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]].</span><span class="n">push_back</span><span class="p">({</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">time</span><span class="p">});</span>
+            <span class="n">G</span><span class="p">[</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]].</span><span class="n">push_back</span><span class="p">({</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">time</span><span class="p">});</span>
+        <span class="p">}</span>
+
+        <span class="n">dijkstra</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">dd</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">priority_queue</span><span class="o">&lt;</span><span class="n">pii</span><span class="p">,</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">pii</span><span class="o">&gt;</span><span class="p">,</span><span class="n">greater</span><span class="o">&lt;&gt;</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>           <span class="c1">//使小的在上面
+</span><span class="c1"></span>        <span class="n">memset</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">d</span><span class="p">));</span>
+        <span class="n">memset</span><span class="p">(</span><span class="n">dd</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">dd</span><span class="p">));</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+        <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">pii</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">s</span><span class="p">));</span>
+        <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+        <span class="p">{</span>
+            <span class="n">pii</span> <span class="n">p</span><span class="o">=</span><span class="n">q</span><span class="p">.</span><span class="n">top</span><span class="p">();</span>
+            <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+            <span class="kt">int</span> <span class="n">v</span><span class="o">=</span><span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="n">v</span><span class="p">]</span><span class="o">&lt;</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">].</span><span class="n">size</span><span class="p">();</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">edge</span> <span class="n">e</span><span class="o">=</span><span class="n">G</span><span class="p">[</span><span class="n">v</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+<span class="c1">//                if(d[e.to]&gt;d[v]+e.cost)
+</span><span class="c1">//                {
+</span><span class="c1">//                    d[e.to]=d[v]+e.cost;
+</span><span class="c1">//                    q.push(pii(d[e.to],e.to));
+</span><span class="c1">//                }
+</span><span class="c1"></span>                <span class="kt">int</span> <span class="n">tmpdist</span><span class="p">;</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">first</span> <span class="o">%</span> <span class="p">(</span><span class="n">cg</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">cg</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">tmpdist</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">cost</span><span class="p">;</span>
+                <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                    <span class="n">tmpdist</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span> <span class="o">+</span> <span class="n">e</span><span class="p">.</span><span class="n">cost</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">cg</span> <span class="o">-</span> <span class="n">p</span><span class="p">.</span><span class="n">first</span> <span class="o">%</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">cg</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">tmpdist</span> <span class="o">&lt;</span> <span class="n">d</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">])</span> <span class="p">{</span>
+                    <span class="n">swap</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">],</span> <span class="n">tmpdist</span><span class="p">);</span>
+                    <span class="n">q</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">],</span> <span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">);</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tmpdist</span> <span class="n">and</span> <span class="n">dd</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">tmpdist</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">dd</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmpdist</span><span class="p">;</span>
+                    <span class="n">q</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">dd</span><span class="p">[</span><span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">],</span> <span class="n">e</span><span class="p">.</span><span class="n">to</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">};</span>
 </code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
