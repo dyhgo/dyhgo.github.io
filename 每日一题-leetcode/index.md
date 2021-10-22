@@ -1,6 +1,8 @@
 # 每日一题 (LeetCode)
 
 
+
+
 > 在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
 ##  进制转化 Easy
@@ -929,4 +931,131 @@ public:
 };
 ```
 
+
+## 位运算 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/number-complement/)
+
+求一个数耳朵二进制中0变成1,1变成0后的数字
+
+### 题解
+
+将它和全1异或
+
+```java
+class Solution {
+    public int findComplement(int num) {
+        int bitnum = 0;
+        int tmp = num;
+        while (tmp != 0) {
+            tmp >>= 1;
+            bitnum++;
+        }
+        int now = 0;
+        for (int i = 0; i < bitnum; ++i) {
+            now |= (1 << i);
+        }
+        return num ^ now;
+    }
+}
+```
+
+
+## 模拟 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/plus-one/)
+
+求一个100位数+1的结果
+
+
+### 题解
+
+分享一篇Array\<Integer> 、Integer[] 、int[]相互转换的方法，[点它](https://blog.csdn.net/mbh12333/article/details/108573954)，不过应该尽量避免转化
+
+```java
+class Solution {
+    public int[] plusOne(int[] digits) {
+        boolean carry = false;
+        int sz = digits.length;
+        List<Integer> ls = new ArrayList<>();
+        if (digits[sz - 1] + 1 > 9) {
+            carry = true;
+            ls.add(0);
+        }else {
+            ls.add(digits[sz - 1] + 1);
+        }
+        for (int i = sz - 2; i >= 0; --i) {
+            if (carry) {
+                if (digits[i] + 1 > 9) {
+                    ls.add(0);
+                }else {
+                    carry = false;
+                    ls.add(digits[i] + 1);
+                }
+            }else {
+                ls.add(digits[i]);
+            }
+        }
+        if (carry) ls.add(1);
+        Collections.reverse(ls);
+        return ls.stream().mapToInt(Integer::valueOf).toArray();
+    }
+}
+```
+
+
+
+## 摩尔投票 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/majority-element-ii/)
+
+求一个数组中出现次数超过n/3的元素，要求时间复杂度O(n)，空间复杂度O(1)
+
+
+### 题解
+
+摩尔投票法一般用来求出现次数超过n/k的元素，这样的元素至多有k-1个，本质是相互抵消，注意判断条件的顺序
+
+[相似的题](https://leetcode-cn.com/problems/majority-element/)
+
+```java
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+        int candidate1 = 0xc0c0c0c0, candidate2 = 0xc0c0c0c0;
+        int count1 = 0, count2 = 0;
+        for (int i : nums) {
+            if (count1 > 0 && i == candidate1) {
+                count1++;
+            }else if (count2 > 0 && i == candidate2) {
+                count2++;
+            }else if (count1 == 0) {
+                candidate1 = i;
+                count1 = 1;
+            }else if (count2 == 0) {
+                candidate2 = i;
+                count2 = 1;
+            }else {
+                count1--;
+                count2--;
+            }
+        }
+        int cnt1 = 0, cnt2 = 0;
+        for (int i : nums) {
+            if (count1 > 0 && i == candidate1) cnt1++;
+            if (count2 > 0 && i == candidate2) cnt2++;
+        }
+        List<Integer> ls = new ArrayList<>();
+        int n = nums.length;
+        if (cnt1 > n / 3) ls.add(candidate1);
+        if (cnt2 > n / 3) ls.add(candidate2);
+        return ls;
+    }
+}
+```
 

@@ -485,3 +485,322 @@ int main() {
 ```
 
 
+## dfs lca
+
+### 题意
+
+[题链](https://codeforces.com/contest/1592/problem/C)
+
+给一棵树，每个节点有权值，给一个数k，求是否满足删掉1~k-1条边，让连通块的异或和相等
+
+### 题解
+
+这题是我近期来做得最久的一道题，基本都在debug，就各种思维漏洞🤡
+
+由异或的性质想到如果连通块是偶数就是0，奇数假设是x
+
+所以如果每个值异或和为0就存在，如果为x就要判断是否能划成奇数个，每个是x，容易发现只要考虑能否被划分成3个就行
+
+在一开始我想到删掉一条边就相当于把这条边所连节点的子树划出去，所以只需要求每个子树的异或和，然后看是否有两个同值就行（首先你要假设一个根）
+
+这是我犯的第一个错，因为如果删除的两条边在一条链上就不满足上面的条件
+
+所以我想那就把这种情况也考虑进去，如果删除的两条边在一条链上，那么我只需要找一棵子树异或和为0，然后看这棵子树的子树有没有异或和为x的，这是正确的
+
+然后是我犯的第二个错误，如果要分成三个连通块就要特判k>2
+
+接下来是我犯的第三个错误，之前说到看两个子树的异或和是否有同值，这是错的。如果子树是另一个子树的子树就不行，所以这种情况需要满足两个子树不相交
+
+我想那就把这部分补上，我便考虑求一棵树上是否存在两个节点，值相同且没有祖先后代关系
+
+我想这可以用dfs解决，首先求每个值出现几次，然后dfs过程求每个值最多出现几次（因为dfs序，所以遍历过程一定满足祖先后代关系），如果有最多出现次数小于总次数就存在
+
+但是这个方法单独运行应该不会超时（X），反正最后超时了
+
+然后我想其实这个更特殊要求子树异或和为x，所以把异或和为x的节点抽出来，暴力lca判断（直觉上时间应该短）
+
+最后居然跑得比最开始交的代码还快，属于是用空间换时间了
+
+不过真正优美的做法肯定不是这样的━┳━　━┳━ hh
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/680c2fe657b94efcb2bc28b331966aac.png?x-oss-process=image,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_9,color_FFFFFF,t_70,g_se,x_16)
+
+保留debug痕迹，时刻提醒自己思维要严谨
+
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+
+template <typename A, typename B>
+string to_string(pair<A, B> p) {
+    return "(" + to_string(p.first) + ", " + to_string(p.second) + ")";
+}
+
+template <typename A, typename B, typename C>
+string to_string(tuple<A, B, C> p) {
+    return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ")";
+}
+
+template <typename A, typename B, typename C, typename D>
+string to_string(tuple<A, B, C, D> p) {
+    return "(" + to_string(get<0>(p)) + ", " + to_string(get<1>(p)) + ", " + to_string(get<2>(p)) + ", " + to_string(get<3>(p)) + ")";
+}
+
+void debug_val() {cerr << '\n';}
+template <typename Head, typename... Tail>
+void debug_val(Head H, Tail... T) {
+    cerr << " " << to_string(H);
+    debug_val(T...);
+}
+
+#ifdef LOCAL
+#define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_val(__VA_ARGS__)
+#define split()  cerr << "===============================================" << '\n'
+#define timeused() cerr << "time_used: " << t_clock - s_clock << '\n'
+#endif
+
+const int maxn = 100005;
+vector<int> G[maxn];
+int xor_sum[maxn];
+int n, k;
+int val[maxn];
+int a;
+int par[maxn];
+unordered_map<int, int> mp[maxn];
+void dfs(int x, int p) {
+    par[x] = p;
+    if ((int) G[x].size() == 1 and G[x][0] == p) {
+        xor_sum[x] = val[x];
+        return;
+    }
+    for (int i : G[x]) {
+        if (i == p) continue;
+        dfs(i, x);
+        xor_sum[x] ^= xor_sum[i];
+    }
+    xor_sum[x] ^= val[x];
+}
+
+bool dfs2(int x, int p) {
+    if ((int) G[x].size() == 1 and G[x][0] == p) {
+        return val[x] == a;
+    }
+    for (int i : G[x]) {
+        if (i == p) continue;
+        if (xor_sum[i] == a) return true;
+        //else return dfs2(i, x);  wrong
+        else {
+            if (dfs2(i, x)) return true;
+        }
+    }
+    return false;
+}
+
+//unordered_map<int, int> col_num;
+//unordered_map<int, int> mx_col_num;
+//unordered_map<int, int> cur_col_num;
+
+
+//void dfs3(int x, int p) {
+//    if (xor_sum[x] == a) {
+//        cur_col_num[xor_sum[x]]++;
+//        mx_col_num[xor_sum[x]] = max(mx_col_num[xor_sum[x]], cur_col_num[xor_sum[x]]);
+//    }
+//    for (int i : G[x]) {
+//        if (i == p) continue;
+//        dfs3(i, x);
+//    }
+//    if (xor_sum[x] == a) {
+//        cur_col_num[xor_sum[x]]--;
+//    }
+//}
+//
+//bool sol() {
+//    for (int i = 1; i <= n; ++i) {
+//        col_num[xor_sum[i]]++;
+//    }
+//    dfs3(1, 0);
+//    for (int i = 1; i <= n; ++i) {
+//        if (xor_sum[i] != a) continue;
+//        if (mx_col_num[xor_sum[i]] < col_num[xor_sum[i]]) return true;
+//    }
+//    return false;
+//}
+
+
+
+int root;
+
+int parent[20][maxn];
+int depth[maxn];
+
+void dfs(int v,int p,int d){
+    parent[0][v]=p;
+    depth[v]=d;
+    for(int i=0;i<G[v].size();i++){
+        if(G[v][i]!=p) dfs(G[v][i],v,d+1);
+    }
+}
+
+void init(int V){
+    dfs(root,-1,0);
+    for(int k=0;k+1<20;k++){
+        for(int v=0;v<V;v++){
+            if(parent[k][v]<0) parent[k+1][v]=-1;
+            else parent[k+1][v]=parent[k][parent[k][v]];
+        }
+    }
+}
+
+int lca(int u,int v){
+    if(depth[u]>depth[v]) swap(u,v);
+    for(int k=0;k<20;k++){
+        if((depth[v]-depth[u])>>k&1) v=parent[k][v];
+    }
+    if(u==v) return u;
+    for(int k=20-1;k>=0;k--){
+        if(parent[k][u]!=parent[k][v]){
+            u=parent[k][u];
+            v=parent[k][v];
+        }
+    }
+    return parent[0][u];
+}
+
+bool sol() {
+    root = 1;
+    init(n + 1);
+    vector<int> tmp;
+    for (int i = 2; i <= n; ++i) {
+        if (xor_sum[i] == a)
+            tmp.push_back(i);
+    }
+    for (int i = 0; i < (int) tmp.size(); ++i) {
+        for (int j = i + 1; j < (int) tmp.size(); ++j) {
+            int cp = lca(tmp[i], tmp[j]);
+            if (cp != tmp[i] and cp != tmp[j]) return true;
+        }
+    }
+    return false;
+}
+
+int main() {
+#ifdef LOCAL
+    freopen("in1.txt", "r", stdin);
+    freopen("out1.txt", "w", stdout);
+#endif
+
+
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    int _;
+    cin >> _;
+    while (_--) {
+        cin >> n >> k;
+        for (int i = 0; i < n + 1;  ++i) {
+            G[i].clear();
+            xor_sum[i] = 0;
+            mp[i].clear();
+//            col_num.clear();
+//            cur_col_num.clear();
+//            mx_col_num.clear();
+        }
+        for (int i = 1; i <= n; ++i) {
+            cin >> val[i];
+        }
+        for (int i = 0; i < n - 1; ++i) {
+            int u, v;
+            cin >> u >> v;
+            G[u].push_back(v);
+            G[v].push_back(u);
+        }
+        dfs(1, 0);
+        a = xor_sum[1];
+//        debug(xor_sum[3]);
+//        int test = 94888708 ^ 423961455 ^ 527440158;
+//        debug(test);
+        if (a == 0) {
+            puts("yes");
+            continue;
+        }
+//        int num = 0;
+//        for (int i = 2; i <= n; ++i) {
+//            if (xor_sum[i] == a) num++;
+//         }
+//        if (num >= 2 and k != 2) {
+//            puts("yes");
+//            continue;
+//        }
+        if (sol() and k != 2) {
+            puts("yes");
+            continue;
+        }
+
+        bool ok = false;
+        for (int i = 2; i <= n; ++i) {
+            if (xor_sum[i] == 0 and k != 2 and dfs2(i, par[i])) {
+                puts("yes");
+                ok = true;
+                break;
+            }
+        }
+        if (!ok) puts("no");
+    }
+
+    return 0;
+}
+```
+
+
+## 组合 推理
+
+### 题意
+
+[题链](https://codeforces.com/contest/1598/problem/D)
+
+有n对数，每对数有两个属性a、b，选出三对数使得a属性完全不同或b属性完全不同，求方案数（题目保证没有完全相同的数对）
+
+### 题解
+
+全部方案数-不满足的方案数，由于题目保证没有完全相同的数对，所以a属性只有两个相同，不可能有三个相同。不满足的方案数为a属性有两个相同且b属性有两个相同，即(x,y) (x,z) (q,y)/(q,z)，然后就容易推导出公式。注意long long
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main() {
+    ll _;
+    cin >> _;
+    while (_--) {
+        ll n;
+        cin >> n;
+        vector<ll> a(n + 1), b(n + 1);
+        unordered_map<ll, vector<ll>> mp1;
+        unordered_map<ll, vector<ll>> mp2;
+        for (ll i = 1; i <= n; ++i) {
+            cin >> a[i] >> b[i];
+            mp1[a[i]].push_back(b[i]);
+            mp2[b[i]].push_back(a[i]);
+        }
+        ll ans;
+        ans = n * (n - 1) * (n - 2) / 6;
+        ll tmp = 0;
+        for (auto i : mp1) {
+            ll sz = (ll) i.second.size();
+            for (auto j : i.second) {
+                if (mp2.find(j) != mp2.end())
+                    tmp += ((ll) mp2[j].size() - 1) * (sz - 1);
+            }
+        }
+        //cout << tmp << '\n';
+        ans -= tmp;
+        cout << ans << '\n';
+    }
+    return 0;
+}
+```
+
