@@ -28,13 +28,6 @@
     <guid>https://dyhgo.github.io/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/</guid>
     <description><![CDATA[在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是]]></description>
 </item><item>
-    <title>网站重启</title>
-    <link>https://dyhgo.github.io/%E7%BD%91%E7%AB%99%E9%87%8D%E5%90%AF/</link>
-    <pubDate>Thu, 30 Sep 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%BD%91%E7%AB%99%E9%87%8D%E5%90%AF/</guid>
-    <description><![CDATA[很久没有更新网站了，之前因为保研、懒惰、考试、学习等原因鸽了很长一段时间。现在保研结束了，新学期开始了，自己也要支棱起来，开启新的学习阶段，]]></description>
-</item><item>
     <title>simplest colorful bash promt</title>
     <link>https://dyhgo.github.io/simplest-colorful-bash-promt/</link>
     <pubDate>Wed, 17 Mar 2021 00:00:00 &#43;0000</pubDate>
@@ -76,5 +69,12 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
     <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
+</item><item>
+    <title>9th hhucpc (Senior)</title>
+    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
+    <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
+    <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
 </item></channel>
 </rss>
