@@ -1,7 +1,8 @@
 # 每日一题 (CF)
 
 
-> 在这篇文章下更新CodeForces的每日一题，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
+
+
 
 ## 扫描线
 
@@ -803,4 +804,237 @@ int main() {
     return 0;
 }
 ```
+
+
+## dp
+
+### 题意
+
+[题链](https://codeforces.com/contest/1525/problem/D)
+
+有n把椅子n=5000，从左往右排，有m个人坐在椅子上，每个人只能坐一把椅子，m<n/2，你需要一个接一个让每个人移动到空座位上，移动的代价是椅子距离，最后使得每个刚开始有人占据的椅子都是空的，求最小代价
+
+### 题解
+
+如果n小的话可以直接用二分图匹配。因为移动后每个人的相对顺序不变，考虑O(n^2)做法，考虑用dp来调度。
+
+dp[i][j]表示前i个人坐前j个空座位的最小代价
+
+dp[i][j] = min(dp[i][j-1], dp[i-1][j-1] + 第i个人和第j个空座位的距离)
+
+最后输出dp[人数][空椅子数]
+
+注意初始化dp[0][i] = 0，其他全为inf
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> one(n + 1), zero(n + 1);
+    int ct0 = 0, ct1 = 0;
+    for (int i = 1; i <= n; ++i) {
+        int u;
+        cin >> u;
+        if (u == 0) {
+            zero[++ct0] = i;
+        }else {
+            one[++ct1]= i;
+        }
+    }
+    vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0x3f3f3f3f));
+    for (int i = 0; i <= n; ++i) dp[0][i] = 0;  // !!! notice initialize dp[0][i] means no person need moving, dp[i][0]
+    // means there're some persons need moving but they can't, so the cost is inf, also dp[0][0] = 0
+    if (ct1 == 0) {
+        puts("0");
+        exit(0);
+    }
+    for (int i = 1; i <= ct1; ++i) {
+        for (int j = 1; j <= ct0; ++j) {
+            dp[i][j] = min(dp[i][j - 1], dp[i - 1][j - 1] + abs(one[i] - zero[j]));
+        }
+    }
+    cout << dp[ct1][ct0] << '\n';
+    return 0;
+}
+```
+
+
+## 思维
+
+### 题意
+
+[题链](https://codeforces.com/contest/1604/problem/C)
+
+3e5长度的数组，每次选择一个数删除，删除的数需满足条件：假设这个数是第i个数，则num[i]不能被i+1整除，问是否能删空
+
+### 题解
+
+对于1-n的每个位置i，枚举2-i+1看是否满足num[i] % j != 0，如果存在就在那个位置删除，如果不存在这个位置就不能删空
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        int n;
+        cin >> n;
+        vector<int> a(n + 1);
+        for (int i = 1; i <= n; ++i) {
+            cin >> a[i];
+        }
+        bool output = false;
+        for (int i = 1; i <= n; ++i) {
+            bool ok = false;
+            for (int j = 2; j <= i + 1; ++j) {
+                if (a[i] % j != 0) {
+                    ok = true;
+                    break;
+                }
+            }
+            if (!ok) {
+                puts("NO");
+                output = true;
+                break;
+            }
+        }
+        if (!output) puts("YES");
+    }
+    return 0;
+}
+```
+
+
+## 数论 规律
+
+### 题意
+
+[题链](https://codeforces.com/contest/1604/problem/D)
+
+给两个偶数x、y，在1-2e18中找一数n，满足n % x = y % n
+
+x、y范围为1e9
+
+### 题解
+
+设 c1x+k=n, c2n+k=y,  n=(y+c1x) / (1+c2)
+
+打表找规律，找c1和c2的规律
+
+枚举多组x，y，枚举c1和c2，发现当x>y时c1=1， c2=0
+
+当x<=y时，猜测是否与y/x或y%x有关，所以一并打y/x和y%x，发现c1=y/x，c2=1
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        ll x, y;
+        cin >> x >> y;
+        ll ans = (x > y ? (x + y) : ((y / x) * x + y) / 2);
+        cout << ans << '\n';
+    }
+//    int x = 378, y = 99364;
+//    //int x = 118502, y = 778;
+//    cout << y / x << ' ' << y % x << '\n';
+//    for (int c1 = 0; c1 <= 1000; ++c1) {
+//        for (int c2 = 0; c2 <= 100000; ++c2) {
+//            if ((y + c1 * x) % (1 + c2) == 0) {
+//                int n = (y + c1 * x) / (1 + c2);
+//                if (n % x == y % n) {
+//                    cout << c1 << ' ' << c2 << ' ' << n << '\n';
+//                }
+//            }
+//        }
+//    }
+    return 0;
+}
+```
+
+
+## 树状数组
+
+### 题意
+
+[题链](https://codeforces.com/contest/61/problem/E)
+
+经典的求逆序三元组的个数，求逆序对可以用归并排序和树状数组，求逆序三元组就是在逆序对的基础上求，遍历数组，只是需要把逆序对的+1变成+该位置与前面产生的逆序对数量。这样就可以求逆序k元组
+
+注意读入long
+
+### 题解
+
+```java
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        long[] nums = new long[n];
+        for (int i = 0; i < n; ++i) {
+            nums[i] = in.nextLong();
+        }
+        long[] tmp = new long[n];
+        System.arraycopy(nums, 0, tmp, 0, n);
+        Arrays.sort(tmp);
+        for (int i = 0; i < n; ++i) {
+            nums[i] = Arrays.binarySearch(tmp, nums[i]) + 1;
+        }
+        FenwickTree fenwickTree = new FenwickTree(n);
+        for (int i = 0; i < n; ++i) {
+            tmp[i] = i - fenwickTree.sum((int) nums[i]);
+            fenwickTree.add((int) nums[i], 1);
+        }
+        long ans = 0;
+        long sum = 0;
+        fenwickTree = new FenwickTree(n);
+        for (int i = 0; i < n; ++i) {
+            ans += sum - fenwickTree.sum((int) nums[i]);
+            fenwickTree.add((int) nums[i], tmp[i]);
+            sum += tmp[i];
+        }
+        System.out.println(ans);
+    }
+}
+
+class FenwickTree {
+    //[1, n]
+    private long[] bit;
+    private long n;
+
+    public FenwickTree(int n) {
+        this.bit = new long[n + 2];
+        this.n = n;
+    }
+
+    public long sum(int i) {
+        long s = 0;
+        while (i > 0) {
+            s += bit[i];
+            i -= i & -i;
+        }
+        return s;
+    }
+
+    public void add(int i, long x) {
+        while (i <= n) {
+            bit[i] += x;
+            i += i & -i;
+        }
+    }
+}
+```
+
+
 
