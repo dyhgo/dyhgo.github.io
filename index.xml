@@ -70,11 +70,11 @@
     <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
     <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
 </item><item>
-    <title>9th hhucpc (Senior)</title>
-    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
-    <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <title>编译原理小练习</title>
+    <link>https://dyhgo.github.io/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%B0%8F%E7%BB%83%E4%B9%A0/</link>
+    <pubDate>Thu, 21 Jan 2021 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
-    <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
+    <guid>https://dyhgo.github.io/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%B0%8F%E7%BB%83%E4%B9%A0/</guid>
+    <description><![CDATA[随便记录一下 图源 词法分析程序设计 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54]]></description>
 </item></channel>
 </rss>
