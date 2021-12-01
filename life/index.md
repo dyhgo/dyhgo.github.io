@@ -12,6 +12,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/12/01 15:49" placement="top" color="green">
+        <h4>更新了网址，旧网址的重定向以后再搞</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/10/13 17:22" placement="top" color="blue">
         <h4>“城镇手指”玩得是越来越烂了</h4>
     </el-timeline-item>

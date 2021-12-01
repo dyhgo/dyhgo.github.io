@@ -2995,4 +2995,244 @@ class Solution {
 ```
 
 
+## k进制 思维 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/poor-pigs/)
+
+
+### 题解
+
+经典面试题，用k进制做
+
+```java
+class Solution {
+    public int poorPigs(int buckets, int minutesToDie, int minutesToTest) {
+        return (int) Math.ceil(Math.log(buckets) / Math.log(minutesToTest / minutesToDie + 1));
+    }
+}
+```
+
+
+
+## 哈希表 Medium
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/random-flip-matrix/)
+
+实现随机取1-1e8中的数字，取过的数字不再取的方法
+
+
+### 题解
+
+用哈希表，将取过的数据交换到后面，没取的数交换到前面。假设还能取x个，这样每次都随机取1-x，这里面包含了之前被交换过来没取过的数
+
+```java
+class Solution {
+    Map<Integer, Integer> mp;
+    int m, n;
+    int curNum;
+    Random random;
+    public Solution(int m, int n) {
+        this.m = m;
+        this.n = n;
+        mp = new HashMap<>();
+        random = new Random();
+        curNum = m * n;
+    }
+
+    public int[] flip() {
+        int tmp = random.nextInt(curNum);
+        curNum--;
+        int id = mp.getOrDefault(tmp, tmp);
+        mp.put(tmp, mp.getOrDefault(curNum, curNum));
+        return new int[]{id / n, id % n};
+    }
+
+    public void reset() {
+        mp.clear();
+        curNum = m * n;
+    }
+}
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * Solution obj = new Solution(m, n);
+ * int[] param_1 = obj.flip();
+ * obj.reset();
+ */
+```
+
+
+## 可重置节点并查集 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/find-all-people-with-secret/)
+
+### 题解
+
+按时间顺序用并查集模拟，但是需要撤销操作。做法是把这个时刻的点都加完，遍历这一轮的点，如果和0不在一个集合里，就重置par[x] = x
+
+主要是和 “重置节点” 结合
+
+```cpp
+class Solution {
+public:
+    vector<int> findAllPeople(int n, vector<vector<int>>& meetings, int firstPerson) {
+        queue<int> q;
+        int par[n];
+        int rankk[n];
+        for (int i = 0; i < n; ++i) {
+            par[i] = i;
+            rankk[i] = 0;
+        }
+        function<int(int)> find = [&](int x) {
+            if (par[x] == x) return x;
+            return par[x] = find(par[x]);
+        }; 
+        auto unite = [&](int x, int y) {
+            x = find(x);
+            y = find(y);
+            if (x == y) return ;
+            if (rankk[x] < rankk[y]) par[x] = y;
+            else {
+                par[y] = x;
+                if (rankk[x] == rankk[y]) rankk[x]++;
+            }
+        };
+        auto same = [&](int x, int y) {
+            return find(x) == find(y);
+        };
+        auto reset = [&](int x) {
+            par[x] = x;
+            rankk[x] = 0;
+        };
+        map<int, vector<pair<int, int>>> mp;
+        for (auto& i : meetings) {
+            mp[i[2]].emplace_back(i[0], i[1]);
+        }
+        mp[0].emplace_back(0, firstPerson);
+        for (auto& [x, y] : mp) {
+            for (auto& [i, j] : y) {
+                unite(i, j);
+                q.push(i);
+                q.push(j);
+            }
+            while (!q.empty()) {
+                int tmp = q.front();
+                q.pop();
+                if (!same(tmp, 0)) reset(tmp);
+            }
+        }
+        vector<int> ans;
+        for (int i = 0; i < n; ++i) if (same(0, i)) ans.push_back(i);
+        return ans;
+    }
+};
+```
+
+## 二分 双指针 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/k-th-smallest-prime-fraction/)
+
+
+### 题解
+
+bf或者
+
+二分第k大的数的值x（在0-1）
+
+检测小于等于x的数有几个，如果小于k，l=mid，否则r=mid
+
+用双指针i,j表示arr[i]/arr[j]是否小于等于x，如果是则i++，否则counter+=i
+
+遍历每个j，i跟随着移动（类似于用归并排序算逆序对时，算跨过左右两个区间的逆序对个数）
+
+时间复杂度O(n*logC)，C为(3e4)^2
+
+```java
+class Solution {
+    public int[] kthSmallestPrimeFraction(int[] arr, int k) {
+        double l = 0, r = 1;
+        final double eps = 1e-9;
+        int n = arr.length;
+        while (r - l >= eps) {
+            double mid = (l + r) / 2;
+            int count = 0;
+            int cnti = 0;
+            int ansi = 0, ansj = n - 1;
+            for (int j = 1; j < n; ++j) {
+                while (true) {
+                    if ((double) arr[cnti] / arr[j] <= mid) {
+                        if (arr[cnti] * arr[ansj] > arr[j] * arr[ansi]) {
+                            ansi = cnti;
+                            ansj = j;
+                        }
+                        cnti++;
+                    }
+                    else {
+                        count += cnti;
+                        break;
+                    }
+                }
+            }
+            if (count == k) return new int[]{arr[ansi], arr[ansj]};
+            if (count > k) r = mid;
+            else l = mid;
+        }
+        return null;
+    }
+}
+```
+
+
+
+## 二分 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/nth-digit/)
+
+### 题解
+
+二分
+
+```java
+class Solution {
+    public int findNthDigit(int n) {
+        long l = 1, r = n;
+        while (l <= r) {
+            long mid = l + (r - l) / 2;
+            long cnt = count(mid);
+            if (cnt < n) l = mid + 1;
+            else r = mid - 1;
+        }
+        long ct = count(l);
+        ct -= n;
+        String s = String.valueOf(l);
+        return (int) (s.charAt((int) (s.length() - ct - 1)) - '0');
+    }
+    public long count(long x) {
+        int digitNum = 0;
+        long tmp = x;
+        while (tmp > 0) {
+            tmp /= 10;
+            digitNum++;
+        }
+        long res = 0;
+        for (int i = 1; i < digitNum; ++i) {
+            res += 9 * Math.pow(10, i - 1) * i;
+        }
+        res += (x - Math.pow(10, digitNum - 1) + 1) * digitNum;
+        return res;
+    }
+}
+```
+
 

@@ -1037,4 +1037,376 @@ class FenwickTree {
 ```
 
 
+## 欧拉降幂
+
+### 题意
+
+[题链](https://atcoder.jp/contests/abc228/tasks/abc228_e)
+
+求M\^(K^N)，每个数1e18
+
+
+### 题解
+
+欧拉降幂，注意底数取模防long long溢出
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+ll qpow(ll x,ll n,ll mod) {
+    ll res =1;
+    while(n>0)
+    {
+        if(n&1) res=res*x%mod;
+        x=x*x%mod;
+        n>>=1;
+    }
+    return res;
+}
+const ll mod = 998244353;
+const ll phimod = 998244352;
+ll gcd(ll a , ll b){
+    return b == 0 ? a : gcd(b , a % b);
+}
+
+int main() {
+    ll n, k, m;
+    cin >> n >> k >> m;
+    if (m % mod == 0) {
+        puts("0");
+        exit(0);
+    }
+    ll ans;
+    ans = qpow(m % mod, qpow(k % phimod, n, phimod), mod);
+    cout << ans << '\n';
+
+    return 0;
+}
+```
+
+
+## 数论 辗转相除法 规律
+
+### 题意
+
+[题链](https://codeforces.com/contest/1612/problem/D)
+
+
+给俩数a,b和x，范围是1e18，求是否可以如下操作使得a=x或b=x，用a、b差替换a或替换b
+
+
+### 题解
+
+如果x > 最大的数无解
+
+一开始想的是贪心，就是什么情况替换a，什么情况替换b，然后WA爆（其实这么做本身就没有道理）
+
+列出每种情况找规律，举个例子
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/26ce9ee69e8f4eaa952c166cc22eda53.png?x-oss-process=image,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_19,color_FFFFFF,t_70,g_se,x_16)
+
+发现有些路产生的数别的路也会产生，最上面那条路始终是最快产生新数字的，所以只要考虑那条路就行，即 始终替换最大的数
+
+这样只要模拟这个过程就行，但是会T
+
+把这条路单独拎出来，观察发现这和求最大公约数的辗转相除法很像 
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/877bb793239b4d5ba20460433a2eda69.png?x-oss-process=image,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_19,color_FFFFFF,t_70,g_se,x_16)
+
+但是少了11，这是因为11是余数4加7的结果，实际上只要满足%7=4都可以，这样就可以依赖欧几里得算法使时间复杂度变成logn
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+
+#define YES cout << "YES" << '\n'
+#define NO cout << "NO" << '\n'
+#define Yes cout << "Yes" << '\n'
+#define No cout << "No" << '\n'
+#define yes cout << "yes" << '\n'
+#define no cout << "no" << '\n'
+
+bool sol(ll a, ll b, ll k) {
+    if (b == 0 or k > a) return false;
+    if (k % b == a % b) return true;
+    return sol(b, a % b, k);
+}
+
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        ll a, b, k;
+        cin >> a >> b >> k;
+        if (a < b) swap(a, b);
+        if (sol(a, b, k)) YES; else NO;
+    }
+    return 0;
+}
+```
+
+
+
+## 计数dp 排列组合
+
+### 题意
+
+[题链](https://codeforces.com/contest/1606/problem/E)
+
+有n个人，每个人初始有生命值ai，每一轮每个人生命值同时减k-1，k为该轮存活人数，生命值为<=0时死亡，问如何安排每个人的初始生命值，使得所有生命值不超过x，且最后无人生还，求方案数。
+
+### 题解
+
+计数，有递推关系的考虑dp
+
+dp[i][j]表示前i个，血量不超过j的方案数，如果如果i-1 >= j，血量可以随便安排即dp[i][j] = j ^ i
+
+否则考虑一轮后剩下k个（可能也可以假设一轮后消灭k个）
+
+$$
+dp[i][j] = \sum_{k=0}^{i}{C_i^kdp[k][j-i+1](i-1)^{i-k}}
+$$
+
+之前以为k从1开始加，然后样例过不了，发现需要加dp[0][j]=1
+
+所以初始化为dp=0，dp[0][j]=1 （表示前0个是可行的）
+
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll mod = 998244353;
+ll dp[505][505];
+ll qpow(ll x,ll n,ll mod){
+    ll res =1;
+    while(n>0)
+    {
+        if(n&1) res=res*x%mod;
+        x=x*x%mod;
+        n>>=1;
+    }
+    return res;
+}
+ll inv[505];
+ll fac[505];
+inline ll C(ll m,ll n){
+    return fac[n]*inv[m]%mod*inv[n-m]%mod;
+}
+inline ll A(ll m,ll n){
+    return fac[n]*inv[n-m]%mod;
+}
+int main() {
+    for(ll i=0;i<=502;i++){
+        fac[i]=1;
+    }
+    for(ll i=2;i<=502;i++){
+        fac[i]=(fac[i-1]*i)%mod;
+    }
+
+    inv[0]=1;inv[1]=1;      //inv[0]=1 !!!
+    for(ll i=2;i<=502;i++){
+        inv[i]=(mod-mod/i)*inv[mod%i]%mod;
+    }
+    for(ll i=2;i<=502;i++){
+        inv[i]=(inv[i]*inv[i-1])%mod;
+    }
+    ll n, x;
+    cin >> n >> x;
+    for (int i = 1; i <= x; ++i) {
+        dp[0][i] = 1;
+    }
+    for (int i = 1; i <= n; ++i) {
+        for (int j = 1; j <= x; ++j) {
+            if (i - 1 >= j) dp[i][j] = qpow(j, i, mod);
+            else {
+                for (int k = 0; k <= i; ++k) {
+                    dp[i][j] += (C(k, i) * dp[k][j - i + 1] % mod * qpow(i - 1, i - k, mod) % mod);
+                    dp[i][j] %= mod;
+                }
+            }
+        }
+    }
+
+    cout << dp[n][x];
+
+    return 0;
+}
+```
+
+
+
+## 二分 ST
+
+### 题意
+
+[题链](https://codeforces.com/contest/1611/problem/F)
+
+有一个数组和一个初始数，选择最长的子区间，使得数字遍历区间时不断加上该区间的数且该数字一直不小于0，输出该区间
+
+### 题解
+
+二分区间长度，暴力判断，维护前缀和，用st表求区间最小值，时间复杂度O(nlognlogn)
+
+注意二分的初始L和R，我把L设为0，wa了，要设为1
+
+注意long long
+
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+//O(nlogn) preprocess, O(1) query
+// llerval minimum, maxmum, bit-or, bit-xor, gcd(less efficient than segment tree)
+const ll maxlogn = 21;
+const ll maxn = 2e5 + 10;
+ll f[maxn][maxlogn], logn[maxn];
+
+void pre() {
+    logn[1] = 0;
+    logn[2] = 1;
+    for (ll i = 3; i < maxn; ++i) {
+        logn[i] = logn[i / 2] + 1;
+    }
+}
+
+
+ll dat[maxn], ini;
+ll ansl, ansr;
+ll n;
+
+bool ok(ll x) {
+    for (ll i = 1; i <= n - x + 1; ++i) {
+        ll l = i, r = i + x - 1;
+        ll s = logn[r - l + 1];
+        ll tmp = min(f[l][s], f[r - (1 << s) + 1][s]);
+        if (tmp - dat[i - 1] + ini >= 0) {
+            ansl = l, ansr = r;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+    pre();
+    ll _;
+    cin >> _;
+    while (_--) {
+        cin >> n >> dat[0];
+        ini = dat[0];
+        for (ll i = 1; i <= n; ++i) cin >> dat[i];
+        for (ll i = 1; i <= n; ++i) dat[i] += dat[i - 1];
+        for (ll i = 1; i <= n; ++i) f[i][0] = dat[i];
+        for (ll j = 1; j < maxlogn; ++j) for (ll i = 1; i + (1 << j) - 1 <= n; ++i) f[i][j] = min(f[i][j - 1], f[i + (1 << (j - 1))][j - 1]);
+        ll l = 1, r = n;
+        //dat[0] = 0;
+        while (l <= r) {
+            ll mid = (l + r) >> 1;
+            if (ok(mid)) l = mid + 1;
+            else r = mid - 1;
+        }
+        if (l == 1) cout << -1 << '\n';
+        else cout << ansl << ' ' << ansr << '\n';
+    }
+    return 0;
+}
+```
+
+
+## 并查集 图论
+
+### 题意
+
+[题链](https://atcoder.jp/contests/abc229/tasks/abc229_e)
+
+对于一个森林，按顺序删除点和所连的边，求每次删除后剩几个连通块
+
+### 题解
+
+反向加点，并查集，每次加点判断该点和所连的点是否在同一个连通块中，如果不在，则连通块-1（说明有一条边把两个连通块连在一起）
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+const int maxn = 2e5 + 10;
+//union find
+int par[maxn];
+int rankk[maxn];
+int sz[maxn];
+
+void init(int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        par[i]=i;
+        rankk[i]=0;
+    }
+}
+
+int find(int x)
+{
+    if(par[x]==x) return x;
+    else return par[x]=find(par[x]);
+}
+
+void unite(int x,int y)
+{
+    x=find(x);
+    y=find(y);
+    if(x==y) return ;
+
+    if(rankk[x]<rankk[y]) par[x]=y;
+    else
+    {
+        par[y]=x;
+        if(rankk[x]==rankk[y]) rankk[x]++;
+    }
+}
+
+bool  same(int x,int y)
+{
+    return find(x)==find(y);
+}
+
+int main() {
+    int n, m;
+    cin >> n >> m;
+    init(n + 1);
+    vector<int> G[n + 1];
+    for (int i = 0; i < m; ++i) {
+        int u, v;
+        cin >> u >> v;
+        if (u > v) swap(u, v);
+        G[u].push_back(v);
+    }
+    vector<int> ans;
+    int cnt = 0;
+    for (int i = n; i >= 1; --i) {
+        cnt++;
+        for (int j : G[i]) {
+            if (!same(j, i)) {
+                cnt--;
+                unite(j, i);
+            }
+        }
+        ans.push_back(cnt);
+    }
+    reverse(ans.begin(), ans.end());
+    for (int i = 1; i < (int) ans.size(); ++i) cout << ans[i] << '\n';
+    cout << 0 << '\n';
+    return 0;
+}
+```
+
 
