@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/"
-        },"genre": "posts","keywords": "problemlist","wordcount":  16107 ,
+        },"genre": "posts","keywords": "problemlist","wordcount":  18055 ,
         "url": "https:\/\/dyhgo.github.io\/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode\/","datePublished": "2021-10-02T00:00:00+00:00","dateModified": "2021-10-02T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">每日一题 (LeetCode)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>problemlist</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 16107 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 33 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-10-02">2021-10-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 18055 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 37 分钟&nbsp;<span id="/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/" class="leancloud_visitors" data-flag-title="每日一题 (LeetCode)">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -483,6 +483,42 @@
       <ul>
         <li><a href="#题意-60">题意</a></li>
         <li><a href="#题解-60">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#欧拉降幂--medium">欧拉降幂  Medium</a>
+      <ul>
+        <li><a href="#题意-61">题意</a></li>
+        <li><a href="#题解-61">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#完全背包-四平方和定理--medium">完全背包 四平方和定理  Medium</a>
+      <ul>
+        <li><a href="#题意-62">题意</a></li>
+        <li><a href="#题解-62">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#dfs-medium">dfs Medium</a>
+      <ul>
+        <li><a href="#题意-63">题意</a></li>
+        <li><a href="#题解-63">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#欧拉路径-hard">欧拉路径 Hard</a>
+      <ul>
+        <li><a href="#题意-64">题意</a></li>
+        <li><a href="#题解-64">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#前缀和-hard">前缀和 Hard</a>
+      <ul>
+        <li><a href="#题意-65">题意</a></li>
+        <li><a href="#题解-65">题解</a></li>
+      </ul>
+    </li>
+    <li><a href="#分类讨论-medium">分类讨论 Medium</a>
+      <ul>
+        <li><a href="#题意-66">题意</a></li>
+        <li><a href="#题解-66">题解</a></li>
       </ul>
     </li>
   </ul>
@@ -5631,6 +5667,628 @@ n 变为 1 所需的最小替换次数是多少？</p>
     <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
+</div>
+</div><h2 id="欧拉降幂--medium">欧拉降幂  Medium</h2>
+<h3 id="题意-61">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/super-pow/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>求a ^ b % 1337 ， b是大数</p>
+<h3 id="题解-61">题解</h3>
+<p>除了欧拉降幂就不会做了捏😭</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">quickPow</span><span class="o">(</span><span class="kt">long</span> <span class="n">x</span><span class="o">,</span> <span class="kt">long</span> <span class="n">n</span><span class="o">,</span> <span class="kt">long</span> <span class="n">mod</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">2</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">mod</span><span class="o">;</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">%</span> <span class="n">mod</span><span class="o">;</span>
+            <span class="n">n</span> <span class="o">&gt;&gt;=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="n">0</span> <span class="o">?</span> <span class="n">a</span> <span class="o">:</span> <span class="n">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">superPow</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">1140</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="kt">long</span> <span class="n">now</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="kt">long</span> <span class="n">multiple</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">0</span><span class="o">;</span> <span class="o">--</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">now</span> <span class="o">+=</span> <span class="n">b</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">*</span> <span class="n">multiple</span> <span class="o">%</span> <span class="n">phi</span><span class="o">;</span>
+            <span class="n">now</span> <span class="o">%=</span> <span class="n">phi</span><span class="o">;</span>
+            <span class="n">multiple</span> <span class="o">*=</span> <span class="n">10</span><span class="o">;</span>
+            <span class="n">multiple</span> <span class="o">%=</span> <span class="n">phi</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">gcd</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">1337</span><span class="o">)</span> <span class="o">==</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">quickPow</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">now</span><span class="o">,</span> <span class="n">1337</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">quickPow</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">now</span> <span class="o">+</span> <span class="n">phi</span><span class="o">,</span> <span class="n">1337</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="完全背包-四平方和定理--medium">完全背包 四平方和定理  Medium</h2>
+<h3 id="题意-62">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/perfect-squares/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>求1个正整数最少可以表示成几个完全平方数之和</p>
+<h3 id="题解-62">题解</h3>
+<p>完全背包或</p>
+<p>四平方数之和（Lagrange&rsquo;s four-square theorem），任何一个正整数都可以表示成最多四个完全平方数之和，特殊地，如果一个数不能表示成4^k*(8m+7)，(k&gt;=0, m&gt;=0)的形式，那它最多只需要三个数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">numSquares</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">dp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100000</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10005</span><span class="p">)]</span>
+        <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">k</span> <span class="o">*</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">5</span><span class="p">:</span>
+            <span class="n">a</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">k</span><span class="p">)</span>
+            <span class="n">k</span> <span class="o">+=</span> <span class="mi">1</span>
+
+
+        <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sz</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> 
+        
+        <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">numSquares</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//Lagrange&#39;s four-square theorem
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">isPerfectSquare</span><span class="o">(</span><span class="n">n</span><span class="o">))</span> <span class="k">return</span> <span class="n">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">isPerfectSquare</span><span class="o">(</span><span class="n">n</span> <span class="o">-</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span><span class="o">))</span> <span class="k">return</span> <span class="n">2</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="c1">// 4 ^ k * (8 * m + 7)
+</span><span class="c1"></span>        <span class="k">while</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">4</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">n</span> <span class="o">/=</span> <span class="n">4</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="n">8</span> <span class="o">==</span> <span class="n">7</span><span class="o">)</span> <span class="k">return</span> <span class="n">4</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">3</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isPerfectSquare</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+         <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">Math</span><span class="o">.</span><span class="na">sqrt</span><span class="o">(</span><span class="n">n</span><span class="o">);</span>
+         <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span> <span class="o">==</span> <span class="n">n</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="dfs-medium">dfs Medium</h2>
+<h3 id="题意-63">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/coloring-a-border/" target="_blank" rel="noopener noreffer">题链</a></p>
+<p>求网格某个连通块的边界</p>
+<h3 id="题解-63">题解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">grid</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">cl</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">dir</span> <span class="o">=</span> <span class="o">{{-</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">},</span> <span class="o">{</span><span class="n">1</span><span class="o">,</span> <span class="n">0</span><span class="o">},</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span> <span class="n">1</span><span class="o">},</span> <span class="o">{</span><span class="n">0</span><span class="o">,</span> <span class="o">-</span><span class="n">1</span><span class="o">}};</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="n">m</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">colorBorder</span><span class="o">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">grid</span><span class="o">,</span> <span class="kt">int</span> <span class="n">row</span><span class="o">,</span> <span class="kt">int</span> <span class="n">col</span><span class="o">,</span> <span class="kt">int</span> <span class="n">color</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayDeque</span><span class="o">&lt;&gt;();</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">grid</span> <span class="o">=</span> <span class="n">grid</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">cl</span> <span class="o">=</span> <span class="n">grid</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">];</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">n</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">m</span> <span class="o">=</span> <span class="n">grid</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">length</span><span class="o">;</span>
+        <span class="n">dfs</span><span class="o">(</span><span class="n">row</span><span class="o">,</span> <span class="n">col</span><span class="o">);</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="kt">boolean</span> <span class="n">ok</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">4</span><span class="o">;</span> <span class="o">++</span><span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+                        <span class="kt">int</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">dir</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">0</span><span class="o">];</span>
+                        <span class="kt">int</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">dir</span><span class="o">[</span><span class="n">k</span><span class="o">][</span><span class="n">1</span><span class="o">];</span>
+                        <span class="k">if</span> <span class="o">(!(</span><span class="n">tx</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">tx</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">ty</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">ty</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="o">.</span><span class="na">grid</span><span class="o">[</span><span class="n">tx</span><span class="o">][</span><span class="n">ty</span><span class="o">]</span> <span class="o">==</span> <span class="o">-</span><span class="n">1</span><span class="o">))</span> <span class="o">{</span>
+                            <span class="n">ok</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                            <span class="k">break</span><span class="o">;</span>
+                        <span class="o">}</span>
+                    <span class="o">}</span>
+                    <span class="k">if</span> <span class="o">(!</span><span class="n">ok</span><span class="o">)</span> <span class="n">q</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">});</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">i</span> <span class="o">:</span> <span class="n">q</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">[</span><span class="n">0</span><span class="o">]][</span><span class="n">i</span><span class="o">[</span><span class="n">1</span><span class="o">]]</span> <span class="o">=</span> <span class="n">color</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="o">-</span><span class="n">1</span><span class="o">)</span> <span class="n">grid</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">cl</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">grid</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">grid</span><span class="o">[</span><span class="n">x</span><span class="o">][</span><span class="n">y</span><span class="o">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">4</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">tx</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dir</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">0</span><span class="o">];</span>
+            <span class="kt">int</span> <span class="n">ty</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">dir</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">1</span><span class="o">];</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tx</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">tx</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">ty</span> <span class="o">&gt;=</span> <span class="n">0</span> <span class="o">&amp;&amp;</span> <span class="n">ty</span> <span class="o">&lt;</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">grid</span><span class="o">[</span><span class="n">tx</span><span class="o">][</span><span class="n">ty</span><span class="o">]</span> <span class="o">==</span> <span class="n">cl</span><span class="o">)</span> <span class="n">dfs</span><span class="o">(</span><span class="n">tx</span><span class="o">,</span> <span class="n">ty</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="c1">// [[1,2,1,2,1,2],[2,2,2,2,1,2],[1,2,2,2,1,2]]
+</span><span class="c1">// 1
+</span><span class="c1">// 3
+</span><span class="c1">// 1
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="欧拉路径-hard">欧拉路径 Hard</h2>
+<h3 id="题意-64">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/valid-arrangement-of-pairs/" target="_blank" rel="noopener noreffer">题链</a></p>
+<h3 id="题解-64">题解</h3>
+<p>hierholzer算法，注意删边，不要判断边是否被遍历过</p>
+<p><a href="https://www.luogu.com.cn/problem/solution/P7771" target="_blank" rel="noopener noreffer">参考</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">validArrangement</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;&amp;</span> <span class="n">pairs</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">id</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">pairs</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">id</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="n">id</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">id</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="n">id</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">unique</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">id</span><span class="p">.</span><span class="n">end</span><span class="p">()),</span> <span class="n">id</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">id</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">G</span><span class="p">[</span><span class="n">n</span><span class="p">];</span>
+        <span class="k">auto</span> <span class="n">get_id</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">lower_bound</span><span class="p">(</span><span class="n">id</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">id</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="n">id</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+        <span class="p">};</span>
+        <span class="k">auto</span> <span class="n">get_val</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">id</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+        <span class="p">};</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">indegree</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">outdegree</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">pairs</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">G</span><span class="p">[</span><span class="n">get_id</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])].</span><span class="n">push_back</span><span class="p">(</span><span class="n">get_id</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]));</span>
+            <span class="n">outdegree</span><span class="p">[</span><span class="n">get_id</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">])]</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">indegree</span><span class="p">[</span><span class="n">get_id</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">outdegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">indegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">s</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">indegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">outdegree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="n">t</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">s</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="n">t</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+        <span class="c1">//unordered_map&lt;pair&lt;int, int&gt;, bool, pair_hash&gt; used;
+</span><span class="c1"></span>        <span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="o">&gt;</span> <span class="n">dfs</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+                <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">back</span><span class="p">();</span>
+                <span class="n">G</span><span class="p">[</span><span class="n">x</span><span class="p">].</span><span class="n">pop_back</span><span class="p">();</span>
+                <span class="n">dfs</span><span class="p">(</span><span class="n">tmp</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">st</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+        <span class="p">};</span>
+        <span class="n">dfs</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">st</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">tmp</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">st</span><span class="p">.</span><span class="n">top</span><span class="p">());</span>
+            <span class="n">st</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="n">tmp</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">get_val</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">get_val</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])});</span>
+        <span class="p">}</span> 
+        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="前缀和-hard">前缀和 Hard</h2>
+<h3 id="题意-65">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/maximum-sum-of-3-non-overlapping-subarrays/" target="_blank" rel="noopener noreffer">题链</a></p>
+<h3 id="题解-65">题解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">maxSumOfThreeSubarrays</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">long</span> <span class="n">mx</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="kt">long</span><span class="o">[]</span> <span class="n">data</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">2</span><span class="o">];</span>
+        <span class="kt">long</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">k</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">tmp</span> <span class="o">+=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">tmp</span> <span class="o">-=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">1</span><span class="o">];</span>
+                <span class="n">tmp</span> <span class="o">+=</span> <span class="n">nums</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span> <span class="o">-</span> <span class="n">1</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">premaxId</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">2</span><span class="o">];</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">sufmaxId</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">2</span><span class="o">];</span>
+        <span class="kt">long</span><span class="o">[]</span> <span class="n">premax</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">2</span><span class="o">];</span>
+        <span class="kt">long</span><span class="o">[]</span> <span class="n">sufmax</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">long</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">3</span><span class="o">];</span>
+        <span class="kt">long</span> <span class="n">cntMx</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">cntMx</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cntMx</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">premaxId</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="n">premaxId</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">premaxId</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">1</span><span class="o">];</span>
+            <span class="n">premax</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">premax</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">1</span><span class="o">],</span> <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="n">cntMx</span> <span class="o">=</span> <span class="o">-</span><span class="n">1</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">1</span><span class="o">;</span> <span class="o">--</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&gt;=</span> <span class="n">cntMx</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">cntMx</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                <span class="n">sufmaxId</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="n">sufmaxId</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">sufmaxId</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">];</span>
+            <span class="n">sufmax</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">sufmax</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">],</span> <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">]);</span>
+        <span class="o">}</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">2</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">long</span> <span class="n">tmpval</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">&gt;=</span> <span class="n">1</span><span class="o">)</span> <span class="n">tmpval</span> <span class="o">+=</span> <span class="n">premax</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="o">];</span> <span class="k">else</span> <span class="k">continue</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="n">tmpval</span> <span class="o">+=</span> <span class="n">sufmax</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="o">];</span> <span class="k">else</span> <span class="k">continue</span><span class="o">;</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">tmpval</span> <span class="o">&gt;</span> <span class="n">mx</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">mx</span> <span class="o">=</span> <span class="n">tmpval</span><span class="o">;</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">premaxId</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span><span class="o">];</span>
+                <span class="n">mid</span> <span class="o">=</span> <span class="n">i</span><span class="o">;</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">sufmaxId</span><span class="o">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">k</span><span class="o">];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[]{</span><span class="n">left</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">mid</span> <span class="o">-</span> <span class="n">1</span><span class="o">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">1</span><span class="o">};</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="分类讨论-medium">分类讨论 Medium</h2>
+<h3 id="题意-66">题意</h3>
+<p><a href="https://leetcode-cn.com/problems/valid-tic-tac-toe-state/" target="_blank" rel="noopener noreffer">题链</a></p>
+<h3 id="题解-66">题解</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">validTicTacToe</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">board</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">char</span><span class="o">[][]</span> <span class="n">Board</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="o">[</span><span class="n">3</span><span class="o">][</span><span class="n">3</span><span class="o">];</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">Board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">board</span><span class="o">[</span><span class="n">i</span><span class="o">].</span><span class="na">charAt</span><span class="o">(</span><span class="n">j</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="kt">int</span> <span class="n">xnum</span> <span class="o">=</span> <span class="n">0</span><span class="o">,</span> <span class="n">onum</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+        <span class="kt">boolean</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">false</span><span class="o">,</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="o">++</span><span class="n">i</span><span class="o">)</span> <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">3</span><span class="o">;</span> <span class="o">++</span><span class="n">j</span><span class="o">)</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xnum</span><span class="o">++;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">onum</span><span class="o">++;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="n">Board</span><span class="o">[</span><span class="n">2</span><span class="o">][</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;X&#39;</span><span class="o">)</span> <span class="n">xwin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(</span><span class="n">Board</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">2</span><span class="o">]</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span><span class="o">)</span> <span class="n">owin</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">xwin</span> <span class="o">&amp;&amp;</span> <span class="n">owin</span><span class="o">)</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="n">xwin</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">owin</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">xnum</span> <span class="o">==</span> <span class="n">onum</span> <span class="o">||</span> <span class="n">xnum</span> <span class="o">==</span> <span class="n">onum</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">xwin</span><span class="o">)</span> <span class="o">{</span> 
+                <span class="k">if</span> <span class="o">(</span><span class="n">xnum</span> <span class="o">==</span> <span class="n">onum</span> <span class="o">+</span> <span class="n">1</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>  <span class="c1">// xnum != onum
+</span><span class="c1"></span>            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">xnum</span> <span class="o">==</span> <span class="n">onum</span><span class="o">)</span> <span class="k">return</span> <span class="kc">true</span><span class="o">;</span> <span class="k">else</span> <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">// [&#34;XXX&#34;,&#34;XOO&#34;,&#34;OO &#34;]
+</span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

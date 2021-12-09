@@ -1410,3 +1410,96 @@ int main() {
 ```
 
 
+## 规律 dp
+
+### 题意
+
+[题链](https://codeforces.com/contest/1613/problem/D)
+
+
+### 题解
+
+像我这种不能一眼看出规律的就要多写几组数据。从前往后填数
+
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c1ae322b2e814e19ad25c2cbb4c0e779.png?x-oss-process=image,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_19,color_FFFFFF,t_70,g_se,x_16)
+
+如果找不到规律就多写几层，可以看出每次都有3个分支，但是有些有两个分支
+
+少掉的那个分支一定当前要填的数是前面数的mex，如果当前填的数是前面数的mex，使得现在的mex+1就可以填，否则使mex+2就不能填
+
+三个分支填的数是前面数的mex，mex-1，mex+1，其中填mex如果造成mex+2就不能填（即前面的数有mex+1）
+
+所以设dp[i]表示以 i 结尾的个数，num[i]表示前面mex为 i 的个数，numex[i]表示前面mex为 i 且前面没有mex+1的个数
+
+每次dp[i] = num[a[i]-1] + num[a[i]+1] + numex[a[i]] 注意判断a[i]-1>=0
+
+更新num，numex，如果选了前面mex为a[i]-1则mex不变，个数翻倍，num[a[i]-1]\*=2，但是出现了mex+1，所以不更新numex
+
+如果选了前面mex为a[i]+1，mex不变，个数翻倍，num[a[i]+1]\*=2，numex[a[i]+1]\*=2
+
+如果选了前面mex为a[i]，mex变成mex+1，num[a[i]+1] += numex[a[i]]，考虑是否更新numex即前面是否有mex+2，一定不会有，所以numex[a[i]+1] += numex[a[i]]
+
+最后特判，如果当前数是0，dp[i]++ num[1]++ numex[1]++
+
+当前数是1，dp[i]++ num[0]++;
+
+初始化全为0
+
+答案为dp求和
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+using ll = long long;
+const ll mod = 998244353;
+int main() {
+    int _;
+    cin >> _;
+    while (_--) {
+        int n;
+        cin >> n;
+        vector<int> a(n + 5);
+        for (int i = 1; i <= n; ++i) cin >> a[i];
+        vector<ll> dp(n + 5);
+        vector<ll> num(n + 5), numex(n + 5);
+        for (int i = 1; i <= n; ++i) {
+            if (a[i] - 1 >= 0)
+                dp[i] = num[a[i] - 1] + num[a[i] + 1] % mod + numex[a[i]] % mod;
+            else
+                dp[i] = num[a[i] + 1] % mod + numex[a[i]] % mod;
+            if (a[i] - 1 >= 0) num[a[i] - 1] = (num[a[i] - 1] * 2) % mod;
+            num[a[i] + 1] *= 2;
+            num[a[i] + 1] %= mod;
+            numex[a[i] + 1] *= 2;
+            numex[a[i] + 1] %= mod;
+            num[a[i] + 1] += numex[a[i]];
+            num[a[i] + 1] %= mod;
+            numex[a[i] + 1] += numex[a[i]];
+            numex[a[i] + 1] %= mod;
+            if (a[i] == 0) {
+                dp[i]++;
+                dp[i] %= mod;
+                num[1]++;
+                num[1] %= mod;
+                numex[1]++;
+                numex[1] %= mod;
+            }
+            if (a[i] == 1) {
+                dp[i]++;
+                dp[i] %= mod;
+                num[0]++;
+                num[0] %= mod;
+            }
+        }
+        ll ans = 0;
+        for (int i = 1; i <= n; ++i) {
+            ans += dp[i];
+            ans %= mod;
+        }
+        cout << ans << '\n';
+    }
+    return 0;
+}
+```
+

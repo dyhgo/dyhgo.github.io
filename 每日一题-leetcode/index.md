@@ -2,7 +2,6 @@
 
 
 
-
 > 在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次
 
 ##  进制转化 Easy
@@ -3235,4 +3234,381 @@ class Solution {
 }
 ```
 
+
+## 欧拉降幂  Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/super-pow/)
+
+
+求a ^ b % 1337 ， b是大数
+
+### 题解
+
+
+除了欧拉降幂就不会做了捏😭
+
+
+```java
+class Solution {
+    public long quickPow(long x, long n, long mod) {
+        long res = 1;
+        while (n > 0) {
+            if (n % 2 == 1) res = res * x % mod;
+            x = x * x % mod;
+            n >>= 1;
+        }
+        return res;
+    }
+    public int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
+    }
+    public int superPow(int a, int[] b) {
+        long phi = 1140;
+        int n = b.length;
+        long now = 0;
+        long multiple = 1;
+        for (int i = n - 1; i >= 0; --i) {
+            now += b[i] * multiple % phi;
+            now %= phi;
+            multiple *= 10;
+            multiple %= phi;
+        }
+        if (gcd(a, 1337) == 1) {
+            return (int) quickPow(a, now, 1337);
+        } else {
+            return (int) quickPow(a, now + phi, 1337);
+        }
+    }
+}
+```
+
+
+##  完全背包 四平方和定理  Medium
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/perfect-squares/)
+
+求1个正整数最少可以表示成几个完全平方数之和
+
+
+### 题解
+
+完全背包或
+
+四平方数之和（Lagrange's four-square theorem），任何一个正整数都可以表示成最多四个完全平方数之和，特殊地，如果一个数不能表示成4^k*(8m+7)，(k>=0, m>=0)的形式，那它最多只需要三个数
+
+```python
+class Solution:
+    def numSquares(self, n: int) -> int:
+        dp = [100000 for i in range(10005)]
+        dp[0] = 0
+        a = []
+        k = 1
+        while k * k <= n + 5:
+            a.append(k * k)
+            k += 1
+
+
+        sz = len(a)
+        for i in range(1, sz + 1):
+            for j in range(a[i - 1], n + 1):
+                dp[j] = min(dp[j], dp[j - a[i - 1]] + 1) 
+        
+        return dp[n]
+```
+
+
+
+```java
+class Solution {
+    public int numSquares(int n) {
+        //Lagrange's four-square theorem
+        if (isPerfectSquare(n)) return 1;
+        for (int i = 1; i * i < n; ++i) {
+            if (isPerfectSquare(n - i * i)) return 2;
+        }
+        // 4 ^ k * (8 * m + 7)
+        while (n % 4 == 0) {
+            n /= 4;
+        }
+        if (n % 8 == 7) return 4;
+        return 3;
+    }
+    private boolean isPerfectSquare(int n) {
+         int x = (int) Math.sqrt(n);
+         return x * x == n;
+    }
+}
+```
+
+
+
+##  dfs Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/coloring-a-border/)
+
+
+求网格某个连通块的边界
+
+### 题解
+
+```java
+class Solution {
+    private int[][] grid;
+    private int cl;
+    private int[][] dir = {{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
+    private int n, m;
+
+    public int[][] colorBorder(int[][] grid, int row, int col, int color) {
+        Queue<int[]> q = new ArrayDeque<>();
+        this.grid = grid;
+        this.cl = grid[row][col];
+        this.n = grid.length;
+        this.m = grid[0].length;
+        dfs(row, col);
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (this.grid[i][j] == -1) {
+                    boolean ok = true;
+                    for (int k = 0; k < 4; ++k) {
+                        int tx = i + dir[k][0];
+                        int ty = j + dir[k][1];
+                        if (!(tx >= 0 && tx < n && ty >= 0 && ty < m && this.grid[tx][ty] == -1)) {
+                            ok = false;
+                            break;
+                        }
+                    }
+                    if (!ok) q.add(new int[]{i, j});
+                }
+            }
+        }
+        for (int[] i : q) {
+            grid[i[0]][i[1]] = color;
+        }
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (grid[i][j] == -1) grid[i][j] = cl;
+            }
+        }
+        return grid;
+    }
+
+    private void dfs(int x, int y) {
+        grid[x][y] = -1;
+        for (int i = 0; i < 4; ++i) {
+            int tx = x + dir[i][0];
+            int ty = y + dir[i][1];
+            if (tx >= 0 && tx < n && ty >= 0 && ty < m && grid[tx][ty] == cl) dfs(tx, ty);
+        }
+    }
+}
+
+// [[1,2,1,2,1,2],[2,2,2,2,1,2],[1,2,2,2,1,2]]
+// 1
+// 3
+// 1
+```
+
+
+## 欧拉路径 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/valid-arrangement-of-pairs/)
+
+### 题解
+
+hierholzer算法，注意删边，不要判断边是否被遍历过
+
+[参考](https://www.luogu.com.cn/problem/solution/P7771)
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> validArrangement(vector<vector<int>>& pairs) {
+        vector<int> id;
+        for (auto i : pairs) {
+            id.push_back(i[0]);
+            id.push_back(i[1]);
+        }
+        sort(id.begin(), id.end());
+        id.erase(unique(id.begin(), id.end()), id.end());
+        int n = (int) id.size();
+        vector<int> G[n];
+        auto get_id = [&](int x) {
+            return lower_bound(id.begin(), id.end(), x) - id.begin();
+        };
+        auto get_val = [&](int x) {
+            return id[x];
+        };
+        vector<int> indegree(n), outdegree(n);
+        for (auto i : pairs) {
+            G[get_id(i[0])].push_back(get_id(i[1]));
+            outdegree[get_id(i[0])]++;
+            indegree[get_id(i[1])]++;
+        }
+        int s = -1, t = -1;
+        for (int i = 0; i < n; ++i) {
+            if (outdegree[i] - indegree[i] == 1) s = i;
+            if (indegree[i] - outdegree[i] == 1) t = i;
+        }
+        if (s == -1) s = 0;
+        if (t == -1) t = 1;
+        stack<int> st;
+        //unordered_map<pair<int, int>, bool, pair_hash> used;
+        function<void(int)> dfs = [&](int x) {
+            while (!G[x].empty()) {
+                int tmp = G[x].back();
+                G[x].pop_back();
+                dfs(tmp);
+            }
+            st.push(x);
+        };
+        dfs(s);
+        vector<int> tmp;
+        while (!st.empty()) {
+            tmp.push_back(st.top());
+            st.pop();
+        }
+        vector<vector<int>> ans;
+        for (int i = 0; i < (int) tmp.size() - 1; ++i) {
+            ans.push_back({get_val(tmp[i]), get_val(tmp[i + 1])});
+        } 
+        return ans;
+    }
+};
+```
+
+
+## 前缀和 Hard
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/maximum-sum-of-3-non-overlapping-subarrays/)
+
+
+### 题解
+
+```java
+class Solution {
+    public int[] maxSumOfThreeSubarrays(int[] nums, int k) {
+        long mx = -1;
+        int left = 0, mid = 0, right = 0;
+        int n = nums.length;
+        long[] data = new long[n - k + 2];
+        long tmp = 0;
+        for (int i = 0; i < k; ++i) {
+            tmp += nums[i];
+        }
+        for (int i = 1; i <= n - k + 1; ++i) {
+            data[i] = tmp;
+            if (i != n - k + 1) {
+                tmp -= nums[i - 1];
+                tmp += nums[i + k - 1];
+            }
+        }
+        int[] premaxId = new int[n - k + 2];
+        int[] sufmaxId = new int[n - k + 2];
+        long[] premax = new long[n - k + 2];
+        long[] sufmax = new long[n - k + 3];
+        long cntMx = -1;
+        for (int i = 1; i <= n - k + 1; ++i) {
+            if (data[i] > cntMx) {
+                cntMx = data[i];
+                premaxId[i] = i;
+            } else premaxId[i] = premaxId[i - 1];
+            premax[i] = Math.max(premax[i - 1], data[i]);
+        }
+        cntMx = -1;
+        for (int i = n - k + 1; i >= 1; --i) {
+            if (data[i] >= cntMx) {
+                cntMx = data[i];
+                sufmaxId[i] = i;
+            } else sufmaxId[i] = sufmaxId[i + 1];
+            sufmax[i] = Math.max(sufmax[i + 1], data[i]);
+        }
+        for (int i = 2; i < n - k + 1; ++i) {
+            long tmpval = data[i];
+            if (i - k >= 1) tmpval += premax[i - k]; else continue;
+            if (i + k <= n - k + 1) tmpval += sufmax[i + k]; else continue;
+            if (tmpval > mx) {
+                mx = tmpval;
+                left = premaxId[i - k];
+                mid = i;
+                right = sufmaxId[i + k];
+            }
+        }
+        return new int[]{left - 1, mid - 1, right - 1};
+    }
+}
+```
+
+
+## 分类讨论 Medium
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/valid-tic-tac-toe-state/)
+
+
+### 题解
+
+```java
+class Solution {
+    public boolean validTicTacToe(String[] board) {
+        char[][] Board = new char[3][3];
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                Board[i][j] = board[i].charAt(j);
+            }
+        }
+        int xnum = 0, onum = 0;
+        boolean xwin = false, owin = false;
+        for (int i = 0; i < 3; ++i) for (int j = 0; j < 3; ++j) if (Board[i][j] == 'X') xnum++; else if (Board[i][j] == 'O') onum++;
+        if (Board[0][0] == Board[0][1] && Board[0][1] == Board[0][2] && Board[0][2] == Board[0][0]) {
+            if (Board[0][0] == 'X') xwin = true; else if (Board[0][0] == 'O') owin = true;
+        }
+        if (Board[1][0] == Board[1][1] && Board[1][1] == Board[1][2] && Board[1][2] == Board[1][0]) {
+            if (Board[1][0] == 'X') xwin = true; else if (Board[1][0] == 'O') owin = true;
+        }
+        if (Board[2][0] == Board[2][1] && Board[2][1] == Board[2][2] && Board[2][2] == Board[2][0]) {
+            if (Board[2][0] == 'X') xwin = true; else if (Board[2][0] == 'O') owin = true;
+        }
+        if (Board[0][0] == Board[1][0] && Board[1][0] == Board[2][0] && Board[2][0] == Board[0][0]) {
+            if (Board[0][0] == 'X') xwin = true; else if (Board[0][0] == 'O') owin = true;
+        }
+        if (Board[0][1] == Board[1][1] && Board[1][1] == Board[2][1] && Board[2][1] == Board[0][1]) {
+            if (Board[0][1] == 'X') xwin = true; else if (Board[0][1] == 'O') owin = true;
+        }
+        if (Board[0][2] == Board[1][2] && Board[1][2] == Board[2][2] && Board[2][2] == Board[0][2]) {
+            if (Board[0][2] == 'X') xwin = true; else if (Board[0][2] == 'O') owin = true;
+        }
+        if (Board[0][0] == Board[1][1] && Board[1][1] == Board[2][2] && Board[2][2] == Board[0][0]) {
+            if (Board[0][0] == 'X') xwin = true; else if (Board[0][0] == 'O') owin = true;
+        }
+        if (Board[0][2] == Board[1][1] && Board[1][1] == Board[2][0] && Board[2][0] == Board[0][2]) {
+            if (Board[0][2] == 'X') xwin = true; else if (Board[0][2] == 'O') owin = true;
+        }
+        if (xwin && owin) return false;
+        if (!xwin && !owin) {
+            if (xnum == onum || xnum == onum + 1) return true; else return false;
+        } else {
+            if (xwin) { 
+                if (xnum == onum + 1) return true; else return false;  // xnum != onum
+            } else {
+                if (xnum == onum) return true; else return false;
+            }
+        }
+    }
+}
+// ["XXX","XOO","OO "]
+```
 
