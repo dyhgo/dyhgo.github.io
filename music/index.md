@@ -2,6 +2,11 @@
 
 
 
+{{< script >}}
+var body = document.getElementsByTagName("body")[0];
+body.getAttributeNode("style").value="background: url("https://da1yh.xyz/music.jpg") no-repeat fixed;";
+{{< /script >}}
+
 ## Funky
 
 {{< music auto="https://music.163.com/#/playlist?id=4974062012" >}}

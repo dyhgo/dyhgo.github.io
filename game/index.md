@@ -2,6 +2,12 @@
 
 
 
+{{< script >}}
+var body = document.getElementsByTagName("body")[0];
+body.getAttributeNode("style").value="background: url("https://da1yh.xyz/game.jpg") no-repeat fixed;";
+{{< /script >}}
+
+
 <!DOCTYPE html>
 <html>
 <head>

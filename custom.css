@@ -1,0 +1,28 @@
+body {
+    background: url("https://da1yh.xyz/base.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+[theme=dark] main{
+    background-color: #0000006e;
+}
+
+
+main{background:#ffffffa8;}
+
+
+/*override*/
+
+[theme=dark] .single .content .highlight>.chroma .code-header{background:#1a1d2342}
+
+[theme=dark] .single .content code,[theme=dark] .single .content pre,[theme=dark] .single .content .highlight table,[theme=dark] .single .content .highlight tr,[theme=dark] .single .content .highlight td{background:#272C3400}
+
+[theme=dark] header{background-color:#2526276b}
+
+.single .content code,.single .content pre,.single .content .highlight table,.single .content .highlight tr,.single .content .highlight td{background:#f5f5f500}
+
+.single .content .highlight>.chroma .code-header{background:#e1e1e18c}
+
+header{background-color:#f8f8f81f;}

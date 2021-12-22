@@ -18,11 +18,23 @@ window.onload = function () {
 
 
 
-
+    // 让简体中文选项消失
+    var selectors = document.getElementsByClassName('menu-item language');
+    if (selectors != null) {
+        selectors[0].style.display = 'None';
+    }
 
     var el = document.getElementById('search-desktop');
     if(el != null){
-        el.insertAdjacentHTML("beforebegin", '<a href="javascript:void(0);" class="menu-item language" title="选择语言">搜索<i class="fas fa-chevron-right fa-fw"></i>\n' +
+        el.insertAdjacentHTML("beforebegin", '<a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>\n' +
+            '    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = \'_blank\'">\n' +
+            '        <option> 清单 </option>\n' +
+            '        <option value="https://da1yh.xyz/music/">音乐</option>\n' +
+            '        <option value="https://da1yh.xyz/anime/">番剧</option>\n' +
+            '        <option value="https://da1yh.xyz/game/">游戏</option>\n' +
+            '        <option value="https://da1yh.xyz/poppin/">poppin</option>\n' +
+            '    </select>\n' +
+            '    </a>\n' + '<a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>\n' +
             '    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = \'_blank\'">\n' +
             '        <option > 搜索 </option>\n' +
             '        <option value="https://www.baidu.com">百度</a></option>\n' +
@@ -32,7 +44,7 @@ window.onload = function () {
             '    </select>\n' +
             '    </a>\n' +
             '\n' +
-            '    <a href="javascript:void(0);" class="menu-item language" title="选择语言">oj<i class="fas fa-chevron-right fa-fw"></i>\n' +
+            '    <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>\n' +
             '    <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = \'_blank\'">\n' +
             '    <option > oj </option>\n' +
             '    <option value="https://codeforces.com/">codeforces</option>\n' +
@@ -49,7 +61,7 @@ window.onload = function () {
             '    </select>\n' +
             '    </a>\n' +
             '\n' +
-            '    <a href="javascript:void(0);" class="menu-item language" title="选择语言">oi<i class="fas fa-chevron-right fa-fw"></i>\n' +
+            '    <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>\n' +
             '    <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = \'_blank\'">\n' +
             '    <option > oi </option>\n' +
             '    <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>\n' +
