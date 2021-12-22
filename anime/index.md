@@ -3,10 +3,6 @@
 
 
 
-{{< script >}}
-var body = document.getElementsByTagName("body")[0];
-body.getAttributeNode("style").value="background: url("https://da1yh.xyz/anime.jpg") no-repeat fixed;";
-{{< /script >}}
 
 
 

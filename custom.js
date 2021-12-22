@@ -16,7 +16,18 @@ function IsPC() {
 
 window.onload = function () {
 
+    var url = window.location.href;
+    var body = document.getElementsByTagName("body");
 
+    if (url == "https://da1yh.xyz/music/") {
+        body.getAttributeNode("style").value("background: url(https://da1yh.xyz/music.jpg) no-repeat fixed;");
+    } else if (url == "https://da1yh.xyz/anime/") {
+        body.getAttributeNode("style").value("background: url(https://da1yh.xyz/anime.jpg) no-repeat fixed;");
+    } else if (url == "https://da1yh.xyz/game/") {
+        body.getAttributeNode("style").value("background: url(https://da1yh.xyz/game.jpg) no-repeat fixed;");
+    } else if (url == "https://da1yh.xyz/poppin/") {
+        body.getAttributeNode("style").value("background: url(https://da1yh.xyz/poppin.jpg) no-repeat fixed;");
+    }
 
     // 让简体中文选项消失
     var selectors = document.getElementsByClassName('menu-item language');

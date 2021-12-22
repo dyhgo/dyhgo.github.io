@@ -2,10 +2,6 @@
 
 
 
-{{< script >}}
-var body = document.getElementsByTagName("body")[0];
-body.getAttributeNode("style").value="background: url("https://da1yh.xyz/music.jpg") no-repeat fixed;";
-{{< /script >}}
 
 ## Funky
 

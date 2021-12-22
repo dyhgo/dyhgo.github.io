@@ -2,12 +2,10 @@
 
 
 
-{{< script >}}
-var body = document.getElementsByTagName("body")[0];
-body.getAttributeNode("style").value="background: url("https://da1yh.xyz/game.jpg") no-repeat fixed;";
-{{< /script >}}
 
 
+
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +22,6 @@ body.getAttributeNode("style").value="background: url("https://da1yh.xyz/game.jp
 
 
 <div  align="center">
-
 <div>
 <a href="https://store.steampowered.com/app/447040/Watch_Dogs_2/" target="_blank">
 <img src="https://media.st.dl.pinyuncloud.com/steam/apps/447040/header.jpg?" height="115"   align="left"/>  
