@@ -12,6 +12,18 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2021/12/23 01:16" placement="top" color="blue">
+        <h4>考研加油！！</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2021/12/23 01:09" placement="top" color="green">
+        <h4>更新了较多内容，暂且称它为V2.2</h4>
+        <h4>增加了雪花效果</h4>
+        <h4>找了好久的live2d模型，单击换装，双击换人</h4>
+        <h4>修改了音乐分区，增加了番剧分区和游戏分区，并且合并，搞了特定的背景图</h4>
+        <h4>删除之前的“语言选择”</h4>
+        <h4>更改了导航栏选项的tooltip</h4>
+        <h4>利用接口修改css和js，更高效地部署网站，感谢github上的老哥完美解决我的问题</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/12/01 15:49" placement="top" color="green">
         <h4>更新了网址，旧网址的重定向以后再搞</h4>
     </el-timeline-item>
