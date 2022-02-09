@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/note/</link>
         <description>note - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>Learning CPP</title>
+    <link>https://dyhgo.github.io/learning-cpp/</link>
+    <pubDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/learning-cpp/</guid>
+    <description><![CDATA[Introduction 学习一下c++ 教程视频地址，搬运自youtube 个人认为是一个非常不错的c++教程 空着的待补 How C++ works pre-process compile link Variables Functions Header Files 当我们需要在cpp文件中用]]></description>
+</item><item>
     <title>tf-idf</title>
     <link>https://dyhgo.github.io/tf-idf/</link>
     <pubDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
     <description><![CDATA[正则表达式的基础用法 在线测试网站 限定符 ？ used? 表示？前面的字符可有可无 限定符 * *之前的字符出现0或多次 限定符 + +之前的字符出现至少一次 出现指定次]]></description>
-</item><item>
-    <title>Python学习</title>
-    <link>https://dyhgo.github.io/python%E5%AD%A6%E4%B9%A0/</link>
-    <pubDate>Thu, 11 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/python%E5%AD%A6%E4%B9%A0/</guid>
-    <description><![CDATA[记录一下第n次学python。。。 打印 转义字符的打印 1 2 3 4 5 6 str = r&#34;D:\now&#34; print(str) ------------------------------ D:\now 数据类型 获得数据类型 1 2 3 4 5 6 7 print(type(3.14)) print(isinstance(15, int)) ----------------------------------- &lt;class &#39;float&#39;&gt; True 运算符 整数除法 幂]]></description>
 </item></channel>
 </rss>

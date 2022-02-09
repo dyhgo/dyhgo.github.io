@@ -3612,3 +3612,1810 @@ class Solution {
 // ["XXX","XOO","OO "]
 ```
 
+
+## 前缀和 贪心 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/contest/weekly-contest-271/problems/maximum-fruits-harvested-after-at-most-k-steps/)
+
+
+### 题解
+
+
+至多拐弯一次，注意细节
+
+
+```cpp
+class Solution {
+public:
+    int maxTotalFruits(vector<vector<int>>& f, int st, int k) {
+        int n = (int) f.size();
+        vector<int> presum(2e5 + 10);
+        unordered_map<int, int> mp;
+        for (int i = 0; i < n; ++i) {
+            mp[f[i][0] + 1] = f[i][1];
+        }
+        for (int i = 1; i < 2e5 + 10; ++i) {
+            if (mp.find(i) != mp.end()) {
+                presum[i] = presum[i - 1] + mp[i];
+            } else {
+                presum[i] = presum[i - 1];
+            }
+        }
+        int mx = -1;
+        st++;
+        if (k == 0) return mp[st];
+        for (int i = 1; i <= 2e5 + 3; ++i) {
+            int now = 0;
+            if (abs(st - i) > k) continue;
+            if (i <= st) {
+                now += presum[st] - presum[i - 1];
+                int rem = k - 2 * (st - i);
+                if (rem <= 0 ) {
+                    mx = max(mx, now);
+                    continue;
+                } else if (st + rem > 2e5 + 3) {
+                    now += presum[2e5 + 3] - presum[st];
+                    mx = max(mx, now);
+                    continue;
+                }
+                now += presum[st + rem] - presum[st];
+            } else {
+                now += presum[i] - presum[st - 1];
+                int rem = k - 2 * (i - st);
+                if (rem <= 0) {
+                    mx = max(now, mx);
+                    continue;
+                } else if (st - rem <= 0) {
+                    now += presum[st - 1] - presum[0];
+                    mx = max(mx, now);
+                    continue;
+                }
+                now += presum[st - 1] - presum[st - rem - 1];
+            }
+            mx = max(mx, now);
+        }
+        return mx;
+    }
+};
+```
+
+
+## 贪心 Medium
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/max-increase-to-keep-city-skyline/)
+
+### 题解
+
+
+```java
+class Solution {
+    public int maxIncreaseKeepingSkyline(int[][] grid) {
+        int n = grid.length;
+        int m = grid[0].length;
+        int[] maxrow = new int[n];
+        int[] maxcol = new int[n];
+        for (int i = 0; i < n; ++i) {
+            int mx = -1;
+            for (int j = 0; j < m; ++j) {
+                mx = Math.max(mx, grid[i][j]);
+            }
+            maxrow[i] = mx;
+        }
+        for (int i = 0; i < m; ++i) {
+            int mx = -1;
+            for (int j = 0; j < n; ++j) {
+                mx = Math.max(mx, grid[j][i]);
+            }
+            maxcol[i] = mx;
+        }
+        int ans = 0;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                ans += Math.min(maxcol[j], maxrow[i]) - grid[i][j];      
+                //System.out.print(Math.min(maxcol[j], maxrow[i]) + " ");           
+            }
+            //System.out.println();
+        }
+        return ans;
+    }
+}
+```
+
+
+## 思维 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/sequentially-ordinal-rank-tracker/)
+
+
+### 题解
+
+奇妙利用查询的特殊性，参考[这位大佬](https://leetcode-cn.com/problems/sequentially-ordinal-rank-tracker/solution/qiao-miao-li-yong-cha-xun-de-te-shu-xing-7eyg/)，思路真的十分神奇巧妙
+
+```cpp
+class SORTracker {
+public:
+    set<pair<int, string>> st;
+    set<pair<int, string>>::iterator ite;
+    SORTracker() {
+        st.insert({0, ""});
+        ite = st.begin();
+    }
+    
+    void add(string name, int score) {
+        pair<int, string> p = make_pair(-score, name);
+        st.insert(p);
+        if (p < *ite) ite--;
+    }
+    
+    string get() {
+        return ite++->second;
+    }
+};
+
+/**
+ 1. Your SORTracker object will be instantiated and called as such:
+ 2. SORTracker* obj = new SORTracker();
+ 3. obj->add(name,score);
+ 4. string param_2 = obj->get();
+ */
+```
+ 
+ 
+## dfs 图论 技巧 Hard
+
+### 题意
+
+有n个人，每个人都有一个喜欢的人，让他们中的几个围着一个圆桌，满足所有人喜欢的人都坐在ta的旁边，求最多可以安排几个人
+
+[题链](https://leetcode-cn.com/problems/maximum-employees-to-be-invited-to-a-meeting/)
+
+
+### 题解
+
+假设a喜欢b，则他们之间建立一条a指向b的有向边，组成有向图（可能不连通）
+
+经分析可以发现有两种方式满足条件
+
+
+把基环内向树最大的环放上去（只能放一个环）
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/b6c6204ef1e84ccc843f31ac49fc11ad.png?x-oss-process=image,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_15,color_FFFFFF,t_70,g_se,x_16)
+把类似于a->b->c->d<->e<-f<-g结构放上去（全都放）
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/d9a2ef807fd34678995635cf2b3e92c6.png?x-oss-process=image,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAV1JZWVlZWVlZWVlZWVlZWVlZ,size_14,color_FFFFFF,t_70,g_se,x_16)
+
+分别求这两种情况
+
+
+对于第一种，dfs，用着色判断这个点是没遍历过，还是当前遍历的序列，还是以前遍历的
+
+对于第二种，把环长度为2的单独存（假设u<->v），把边反向，求u往非v方向的最长链+v往非u方向的方向的最长链，注意基环内向树变成基环外向树，一个点能延伸的最长链等于所连接点的最长链的最大值+1
+
+
+
+
+```java
+class Solution {
+    List<Integer>[] G;
+    int[] sta, d;
+    int max_circle = 0;
+    int max_chain = 0;
+    List<int[]> mu_pair;
+    public int maximumInvitations(int[] fav) {
+        int n = fav.length;
+        G = new ArrayList[n + 3];
+        mu_pair = new ArrayList<>();
+        for (int i = 0; i < n; ++i) {
+            G[i] = new ArrayList<>();
+        }
+        for (int i = 0; i < n; ++i) {
+            G[fav[i]].add(i);
+        }
+        sta = new int[n + 3];
+        d = new int[n + 3];
+        for (int i = 0; i < n; ++i) {
+            if (sta[i] == 0) dfs1(i);
+        }
+        for (int[] i : mu_pair) {
+            max_chain += dfs2(i[0], i[1]);
+            max_chain += dfs2(i[1], i[0]);
+        }
+        return Math.max(max_circle, max_chain);
+    }
+    public void dfs1(int x) {
+        sta[x] = 1;
+        for (int i : G[x]) {
+            if (sta[i] == 0) {
+                d[i] = d[x] + 1;
+                dfs1(i);
+            } else if (sta[i] == 1) {
+                int now_circle = d[x] - d[i] + 1;
+                if (now_circle == 2) {
+                    mu_pair.add(new int[]{x, i});
+                } else {
+                    max_circle = Math.max(max_circle, now_circle);
+                }
+            }
+        }
+        sta[x] = 2;
+    }
+    public int dfs2(int x, int p) {
+        if (G[x].isEmpty() || (G[x].size() == 1 && G[x].get(0) == p)) {
+            return 1;
+        }
+        int ret = 0;
+        for (int i : G[x]) {
+            if (i != p) {
+                ret = Math.max(ret, dfs2(i, x));
+            }
+        }
+        return ret + 1;
+    }
+}
+```
+
+
+## dp 记忆化搜索 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/cat-and-mouse/)
+
+### 题解
+
+注意判断平局的条件
+
+```java
+class Solution {
+    static final int WIN = 3;
+    static final int LOSE = 4;
+    static final int DRAW = 0;
+    static final int MOUSE_WIN = 1;
+    static final int CAT_WIN = 2;
+    int n;
+    int[][] G;
+    int[][][] dp;   // mouse cat round,  val is WIN / LOSE
+    public int catMouseGame(int[][] graph) {
+        this.n = graph.length;
+        this.G = graph;
+        dp = new int[n + 2][n + 2][n * 2 + 2];
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                Arrays.fill(dp[i][j], -1);
+            }
+        }
+        int result = getResult(1, 2, 0);
+        if (result == WIN) return MOUSE_WIN;
+        else if (result == LOSE) return CAT_WIN;
+        else return DRAW;
+    }
+    public int getResult(int mouse, int cat, int round) {
+        if (dp[mouse][cat][round] != -1) return dp[mouse][cat][round];
+        if (round >= 2 * n) {
+            dp[mouse][cat][round] = DRAW;
+            return DRAW;
+        }
+        if (mouse == 0) {
+            if (round % 2 == 0) {
+                dp[mouse][cat][round] = WIN;
+                return WIN;
+            } else {
+                dp[mouse][cat][round] = LOSE;
+                return LOSE;
+            }
+        }
+        if (mouse == cat) {
+            if (round % 2 == 0) {
+                dp[mouse][cat][round] = LOSE;
+                return LOSE;
+            } else {
+                dp[mouse][cat][round] = WIN;
+                return WIN;
+            }
+        }
+        boolean draw = false;
+        boolean mouseRound = round % 2 == 0;
+        int curMove = round % 2 == 0 ? mouse : cat;
+        int curResult;
+        for (int i : G[curMove]) {
+            if (!mouseRound && i == 0) continue;
+            if (mouseRound) {
+                curResult = getResult(i, cat, round + 1);
+            } else {
+                curResult = getResult(mouse, i, round + 1);
+            }
+            if (curResult == LOSE) {
+                dp[mouse][cat][round] = WIN;
+                return WIN;
+            } else if (curResult == DRAW) {
+                draw = true;
+            }
+        }
+        if (draw) {
+            dp[mouse][cat][round] = DRAW;
+            return DRAW;
+        } else {
+            dp[mouse][cat][round] = LOSE;
+            return LOSE;
+        }
+    }
+}
+```
+
+
+
+## bfs Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/jump-game-iv/)
+
+
+有一个数组，初始时在0位置，每次可以选择向前一个位置或向后一个位置，或者跳到和当前值相同的位置，不能跳出界，求最少几次到最后一个位置
+
+
+### 题解
+
+转化成图，bfs求最短路，注意标记走过的点和值
+
+
+```java
+class Solution {
+    public int minJumps(int[] arr) {
+        Map<Integer, List<Integer>> mp = new HashMap<>();
+        int n = arr.length;
+        boolean[] vis = new boolean[n];
+        Set<Integer> hoge = new HashSet<>();
+        for (int i = 0; i < n; ++i) {
+            mp.putIfAbsent(arr[i], new ArrayList<Integer>());
+            mp.get(arr[i]).add(i);
+        }
+        int ans = 0;
+        Queue<Integer> q = new ArrayDeque<>();
+        q.offer(0);
+        vis[0] = true;
+        int num = 0;
+        while (!q.isEmpty()) {
+            if (num == 0) {
+                num = q.size();
+                ans++;
+            }
+            num--;
+            int cnt = q.poll();
+            if (cnt == n - 1) return ans - 1;
+            int val = arr[cnt];
+            if (cnt - 1 >= 0 && !vis[cnt - 1]) {
+                q.offer(cnt - 1);
+            }
+            if (cnt + 1 < n && !vis[cnt + 1]) {
+                q.offer(cnt + 1);
+            }
+            if (hoge.contains(val)) continue;
+            List<Integer> tmp = mp.get(val);
+            for (int i = 0; i < tmp.size(); ++i) {
+                if (!vis[tmp.get(i)]) {
+                    q.offer(tmp.get(i));
+                    vis[tmp.get(i)] = true;
+                }
+            }
+            hoge.add(val);
+        }
+        return 0;
+    }
+}
+```
+
+
+
+
+
+
+## 穷举 模拟 Medium
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/additive-number/)
+
+
+### 题解
+
+
+注意细节，减少dirt
+
+
+
+```java
+class Solution {
+    public boolean isAdditiveNumber(String num) {
+        int n = num.length();
+        if (n < 3) return false;
+        // split after index
+        for (int i = 0; i < n - 2; ++i) {
+            for (int j = i + 1; j < n - 1; ++j) {
+                // checkPtr is the beginning of the number need checking
+                int checkPtr = j + 1;
+                String first = num.substring(0, i + 1);
+                String second = num.substring(i + 1, j + 1);
+                while (checkPtr < n) {
+                    if (haveLeadingZero(first) || haveLeadingZero(second)) break;
+                    String tmp = addForBigInteger(first, second);
+                    if (haveLeadingZero(tmp)) break;
+                    if (num.length() >= checkPtr + tmp.length() && tmp.equals(num.substring(checkPtr, checkPtr + tmp.length()))) {
+                        checkPtr += tmp.length();
+                        first = second;
+                        second = tmp;
+                    } else
+                        break;
+                }
+                if (checkPtr == n) return true;
+            }
+        }
+        return false;
+    }
+    private String addForBigInteger(String x, String y) {
+        int len = Math.max(x.length(), y.length());
+        StringBuffer sb1 = new StringBuffer(x);
+        StringBuffer sb2 = new StringBuffer(y);
+        sb1.reverse();
+        sb2.reverse();
+        while (sb1.length() < len) {
+            sb1.append('0');
+        }
+        while (sb2.length() < len) {
+            sb2.append('0');
+        }
+        StringBuffer sb = new StringBuffer();
+        boolean carry = false;
+        for (int i = 0; i < len; ++i) {
+            int foo = sb1.charAt(i) - '0';
+            int bar = sb2.charAt(i) - '0';
+            int tmp = foo + bar + (carry ? 1 : 0);
+            sb.append((char) (tmp % 10 + '0'));
+            if (tmp > 9) carry = true; else carry = false;
+        }
+        if (carry) sb.append('1');
+        sb.reverse();
+        return sb.toString();
+    }
+    private boolean haveLeadingZero(String x) {
+        if (x.isEmpty()) return true;
+        if (x.length() == 1) return false;
+        return x.charAt(0) == '0';
+    }
+}
+```
+
+
+
+## 归纳 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/remove-palindromic-subsequences/)
+
+
+### 题解
+
+```java
+class Solution {
+    public int removePalindromeSub(String s) {
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            if (s.charAt(i) != s.charAt(n - 1 - i)) return 2;
+        }
+        return 1;
+    }
+}
+```
+
+
+
+## 贪心 技巧 Medium
+
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/increasing-triplet-subsequence/)
+
+
+
+### 题解
+
+
+如果没有空间限制直接用前后缀
+
+在遍历的过程中维护三元组的第一个数和第二个数，贪心地选择最小的数作为第一个数和第二个数
+
+注意注释的部分，我本来是这样写的，[2,3,1,4]这个用例错误，当遍历到1时，第一个数变成1，第二个数变成无穷，导致找不到三元组，实际上只应该更新第一个数即第一个数是1，第二个数是3，这个意思是已经有正序的二元组（还差第三个数），且第二个数最小为3
+
+应该在提交前用一些容易想到的corner case来测试，比如说一个数、两个数、[2,3,1,4]等等
+
+```java
+class Solution {
+    public boolean increasingTriplet(int[] nums) {
+        int n = nums.length;
+        int first = nums[0];
+        int second = Integer.MAX_VALUE;
+        for (int i = 1; i < n; ++i) {
+            if (nums[i] > second) return true;
+            if (nums[i] < first) {
+                // second = Integer.MAX_VALUE;
+                first = nums[i];
+            } else if (nums[i] > first) {
+                second = nums[i];
+            }
+        }
+        return false;
+    }
+}
+```
+
+
+
+
+## 堆 Hard
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/merge-k-sorted-lists/)
+
+合并k个有序链表
+
+
+### 题解
+
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        if (lists == null) return null;
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((x, y) -> x.val - y.val);
+        int n = lists.length;
+        ListNode ptrListNode = new ListNode();
+        ListNode ans = ptrListNode;
+        for (int i = 0; i < n; ++i) {
+            if (lists[i] == null) continue;
+            pq.offer(lists[i]);
+        }
+        while (!pq.isEmpty()) {
+            ListNode cntListNode = pq.poll();
+            ptrListNode.next = cntListNode;
+            ptrListNode = ptrListNode.next;
+            if (cntListNode.next != null) pq.offer(cntListNode.next);
+        }
+        return ans.next;
+    }
+}
+```
+
+
+
+
+
+## 模拟 Medium
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/stock-price-fluctuation/)
+
+
+### 题解
+
+
+模拟
+
+
+```java
+class StockPrice {
+    Map<Integer, Integer> prices;
+    TreeSet<Integer> treeSet;
+    Map<Integer, Integer> num;
+    int lastestTimestamp;
+    public StockPrice() {
+        prices = new HashMap<>();
+        treeSet = new TreeSet<>();
+        num = new HashMap<>();
+        lastestTimestamp = -1;
+    }
+
+    public void update(int timestamp, int price) {
+        lastestTimestamp = Math.max(timestamp, lastestTimestamp);
+        int prevPrice = prices.getOrDefault(timestamp, -1);
+        prices.put(timestamp, price);
+        if (prevPrice == -1) {
+            num.put(price, num.getOrDefault(price, 0) + 1);
+        } else {
+            num.put(prevPrice, num.get(prevPrice) - 1);
+            num.put(price, num.getOrDefault(price, 0) + 1);
+        }
+        treeSet.add(price);
+    }
+
+    public int current() {
+        return prices.get(lastestTimestamp);
+    }
+
+    public int maximum() {
+        while (num.getOrDefault(treeSet.last(), 0) == 0) {
+            treeSet.remove(treeSet.last());
+        }
+        return treeSet.last();
+    }
+
+    public int minimum() {
+        while (num.getOrDefault(treeSet.first(), 0) == 0) {
+            treeSet.remove(treeSet.first());
+        }
+        return treeSet.first();
+    }
+}
+
+/**
+ * Your StockPrice object will be instantiated and called as such:
+ * StockPrice obj = new StockPrice();
+ * obj.update(timestamp,price);
+ * int param_2 = obj.current();
+ * int param_3 = obj.maximum();
+ * int param_4 = obj.minimum();
+ */
+```
+
+
+## 贪心 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/stone-game-ix/)
+
+
+### 题解
+
+石子数对3取模
+
+枚举alice选择1和选择2的情况，对于每个人，假设当前和为1，则优先选择1，如果没有1再选择0，如果当前和为2，则优先选择2，如果没有2则选择0，如果都没得选就输了
+
+
+为什么这样贪心是对的，可以看做选择1而不是选择0，是对自己有好处，对别人有坏处（损人又利己），而选择0是对自己有好处，对别人没坏处
+
+
+```java
+class Solution {
+    public boolean stoneGameIX(int[] stones) {
+        int n = stones.length;
+        boolean aliceTurn = true;
+        boolean aliceWin1 = false, aliceWin2 = false;   
+        int zeroNum = 0, oneNum = 0, twoNum = 0;
+        for (int i : stones) {
+            if (i % 3 == 0) zeroNum++;
+            else if (i % 3 == 1) oneNum++;
+            else twoNum++;
+        }
+        int cnt;
+        int cntOneNum = oneNum, cntTwoNum = twoNum;
+        int cntZeroNum = zeroNum;
+        aliceTurn = true;
+        if (cntOneNum > 0) {
+            cnt = 1;
+            cntOneNum--;
+            aliceTurn = !aliceTurn;
+            while (true) {
+                if (cntZeroNum == 0 && cntOneNum == 0 && cntTwoNum == 0) {
+                    aliceWin1 = false;
+                    break;
+                }
+                if (cnt == 1 && cntOneNum > 0) {
+                    cntOneNum--;
+                    cnt = 2;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 2 && cntTwoNum > 0) {
+                    cntTwoNum--;
+                    cnt = 1;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 1 && cntOneNum == 0 && cntZeroNum > 0) {
+                    cntZeroNum--;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 2 && cntTwoNum == 0 && cntZeroNum > 0) {
+                    cntZeroNum--;
+                    aliceTurn = !aliceTurn;
+                } else {
+                    if (aliceTurn) {
+                        aliceWin1 = false;
+                        break;
+                    } else {
+                        aliceWin1 = true;
+                         break;
+                    }
+                }
+            }
+        }
+        cntOneNum = oneNum;
+        cntTwoNum = twoNum;
+        cntZeroNum = zeroNum;
+        aliceTurn = true;
+        if (cntTwoNum > 0) {
+            cnt = 2;
+            cntTwoNum--;
+            aliceTurn = !aliceTurn;
+            while (true) {
+                if (cntZeroNum == 0 && cntOneNum == 0 && cntTwoNum == 0) {
+                    aliceWin2 = false;
+                    break;
+                }
+                if (cnt == 1 && cntOneNum > 0) {
+                    cntOneNum--;
+                    cnt = 2;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 2 && cntTwoNum > 0) {
+                    cntTwoNum--;
+                    cnt = 1;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 1 && cntOneNum == 0 && cntZeroNum > 0) {
+                    cntZeroNum--;
+                    aliceTurn = !aliceTurn;
+                } else if (cnt == 2 && cntTwoNum == 0 && cntZeroNum > 0) {
+                    cntZeroNum--;
+                    aliceTurn = !aliceTurn;
+                } else {
+                    if (aliceTurn) {
+                        aliceWin2 = false;
+                        break;
+                    } else {
+                        aliceWin2 = true;
+                        break;
+                    }
+                }
+            }
+        }
+        return aliceWin1 || aliceWin2;
+    }
+}
+```
+
+
+## 模拟 Easy
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/count-of-matches-in-tournament/)
+
+### 题解
+
+```java
+class Solution {
+    public int numberOfMatches(int n) {
+        int ans = 0;
+        while (n > 1) {
+            ans += n / 2;
+            if (n % 2 == 1) {
+                n++;
+            }
+            n /= 2;
+        }
+        return ans;
+    }
+}
+```
+
+
+## 排序 后缀 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/the-number-of-weak-characters-in-the-game/)
+
+
+### 题解
+
+排序，维护后缀最大值
+
+注意特判边界
+
+```java
+class Solution {
+    public int numberOfWeakCharacters(int[][] properties) {
+        Arrays.sort(properties, (x, y) -> {
+            return x[0] == y[0] ? (x[1] - y[1]) : (x[0] - y[0]);
+        });
+        int n = properties.length;
+        int ans = 0;
+        int[] sufmax = new int[n];
+        sufmax[n - 1] = properties[n - 1][1];
+        for (int i = n - 2; i >= 0; --i) {
+            sufmax[i] = Math.max(sufmax[i + 1], properties[i][1]);
+        }
+        int ptr = 1;
+        for (int i = 0; i < n - 1; ++i) {
+            while (ptr < n && properties[ptr][0] <= properties[i][0]) ptr++;
+            if (ptr >= n) break;
+            if (sufmax[ptr] > properties[i][1]) ans++;
+        }
+        return ans;
+    }
+}
+```
+
+
+## bfs Medium
+
+### 题意
+
+
+[题链](https://leetcode-cn.com/problems/map-of-highest-peak/)
+
+
+### 题解
+
+bfs
+
+```java
+class Solution {
+    public int[][] highestPeak(int[][] isWater) {
+        int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        int n = isWater.length;
+        int m = isWater[0].length;
+        int[][] ans = new int[n][m];
+        for (int i = 0; i < n; ++i) {
+            Arrays.fill(ans[i], -1);
+        }
+        Queue<int[]> queue = new ArrayDeque<>();
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (isWater[i][j] == 1) {
+                    ans[i][j] = 0;
+                    queue.offer(new int[]{i, j});
+                }
+            }
+        }
+        while (!queue.isEmpty()) {
+            int[] tmp = queue.poll();
+            int x = tmp[0], y = tmp[1];
+            for (int i = 0; i < 4; ++i) {
+                int dx = x + dir[i][0];
+                int dy = y + dir[i][1];
+                if (dx >= 0 && dx < n && dy >= 0 && dy < m && ans[dx][dy] == -1) {
+                    ans[dx][dy] = ans[x][y] + 1;
+                    queue.offer(new int[]{dx, dy});
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
+## 哈希表 Medium
+
+### 题意
+
+### 题解
+
+
+{{< admonition  title="Java语法注意点" open=false >}}
+注意int[]不能作为HashMap的Key，理论上可以但这样得不到想要的结果，比如插入[1, 2]数组，调用containsKey(new int[]{1, 2})找不到，原因是containsKey只会识别相同的对象，而这两个对象虽然值相同，但地址不同，java在比较两个对象是否是同一个时，会先比较hashcode，如果hashcode不同就不是同一个，如果hashcode相同就会调用equals()方法，所以可以通过重写hashcode()和equals()方法达到目的，但这样比较麻烦，这就像c++中unordered_map<pair<int, int>, int> mp;或者unordered_map<vector\<int\>, int> mp;一样需要一个hash_pair。如果数组作为TreeMap的Key，会报错，因为数组没有实现Comparable，无法比较（排序）
+
+用List\<Integer>作为HashMap的Key是可以的（Map<List\<Integer>, Integer> mp; mp.put(Arrays.asList(1, 2), 3;）， 因为 java.util.Collection自己有hashcode()和equals()且是比较值是否相同的
+
+不过用List\<Integer>作为Key很慢，慎用
+{{< /admonition >}}
+
+
+
+用List作为Key的TLE版本
+
+```java
+class DetectSquares {
+    Map<List<Integer>, Integer> mp;
+
+    public DetectSquares() {
+        mp = new HashMap<>();
+    }
+
+    public void add(int[] point) {
+        mp.put(Arrays.asList(point[0], point[1]), mp.getOrDefault(Arrays.asList(point[0], point[1]), 0) + 1);
+    }
+
+    public int count(int[] point) {
+        int ans = 0;
+        int x = point[0], y = point[1];
+        for (int i = 1; i <= 1000; ++i) {
+            ans += mp.getOrDefault(Arrays.asList(x - i, y), 0) * mp.getOrDefault(Arrays.asList(x, y - i), 0) * mp.getOrDefault(Arrays.asList(x - i, y - i), 0);
+            ans += mp.getOrDefault(Arrays.asList(x - i, y), 0) * mp.getOrDefault(Arrays.asList(x, y + i), 0) * mp.getOrDefault(Arrays.asList(x - i, y + i), 0);
+            ans += mp.getOrDefault(Arrays.asList(x, y - i), 0) * mp.getOrDefault(Arrays.asList(x + i, y), 0) * mp.getOrDefault(Arrays.asList(x + i, y - i), 0);
+            ans += mp.getOrDefault(Arrays.asList(x + i, y), 0) * mp.getOrDefault(Arrays.asList(x, y + i), 0) * mp.getOrDefault(Arrays.asList(x + i, y + i), 0);
+        }
+        return ans;
+    }
+}
+
+/**
+ * Your DetectSquares object will be instantiated and called as such:
+ * DetectSquares obj = new DetectSquares();
+ * obj.add(point);
+ * int param_2 = obj.count(point);
+ */
+```
+
+c++ 用pair作为Key的TLE版本
+
+
+```cpp
+class DetectSquares {
+public:
+    struct pair_hash {
+        template<class T1, class T2>
+        std::size_t operator()(const std::pair<T1, T2> &p) const {
+            auto h1 = std::hash<T1>{}(p.first);
+            auto h2 = std::hash<T2>{}(p.second);
+            return h1 ^ h2;
+        }
+    };
+
+    unordered_map<pair<int, int>, int, pair_hash> mp;
+
+    DetectSquares() {
+
+    }
+
+    void add(vector<int> point) {
+        mp[{point[0], point[1]}]++;
+    }
+
+    int count(vector<int> point) {
+        int ans = 0;
+        int x = point[0], y = point[1];
+        for (int i = 1; i <= 1000; ++i) {
+            ans += mp[{x - i, y}] * mp[{x, y - i}] * mp[{x - i, y - i}];
+            ans += mp[{x - i, y}] * mp[{x, y + i}] * mp[{x - i, y + i}];
+            ans += mp[{x, y - i}] * mp[{x + i, y}] * mp[{x + i, y - i}];
+            ans += mp[{x + i, y}] * mp[{x, y + i}] * mp[{x + i, y + i}];
+        }
+        return ans;
+    }
+};
+```
+
+
+
+用哈希表嵌套哈希表，TLE，没有用判断优化的版本（单样例没超时，总时间超时）
+
+
+```java
+class DetectSquares {
+    Map<Integer, Map<Integer, Integer>> mp;
+
+    public DetectSquares() {
+        mp = new HashMap<>();
+    }
+
+    public void add(int[] point) {
+        int x = point[0], y = point[1];
+        mp.putIfAbsent(x, new HashMap<>());
+        Map<Integer, Integer> tmp = mp.get(x);
+        tmp.put(y, tmp.getOrDefault(y, 0) + 1);
+        mp.put(x, tmp);
+    }
+
+    public int count(int[] point) {
+        int ans = 0;
+        int x = point[0], y = point[1];
+        for (int i = 1; i <= 1000; ++i) {
+            ans += mp.getOrDefault(x - i, new HashMap<>()).getOrDefault(y, 0) * mp.getOrDefault(x, new HashMap<>()).getOrDefault(y - i, 0) * mp.getOrDefault(x - i, new HashMap<>()).getOrDefault(y - i, 0);
+            ans += mp.getOrDefault(x - i, new HashMap<>()).getOrDefault(y, 0) * mp.getOrDefault(x, new HashMap<>()).getOrDefault(y + i, 0) * mp.getOrDefault(x - i, new HashMap<>()).getOrDefault(y + i, 0);
+            ans += mp.getOrDefault(x, new HashMap<>()).getOrDefault(y - i, 0) * mp.getOrDefault(x + i, new HashMap<>()).getOrDefault(y, 0) * mp.getOrDefault(x + i, new HashMap<>()).getOrDefault(y - i, 0);
+            ans += mp.getOrDefault(x + i, new HashMap<>()).getOrDefault(y, 0) * mp.getOrDefault(x, new HashMap<>()).getOrDefault(y + i, 0) * mp.getOrDefault(x + i, new HashMap<>()).getOrDefault(y + i, 0);
+        }
+        return ans;
+    }
+}
+
+/**
+ * Your DetectSquares object will be instantiated and called as such:
+ * DetectSquares obj = new DetectSquares();
+ * obj.add(point);
+ * int param_2 = obj.count(point);
+ */
+```
+
+
+优化后的AC代码（还可以再优化）
+
+
+```java
+class DetectSquares {
+    Map<Integer, Map<Integer, Integer>> mp;
+
+    public DetectSquares() {
+        mp = new HashMap<>();
+    }
+
+    public void add(int[] point) {
+        int x = point[0], y = point[1];
+        mp.putIfAbsent(x, new HashMap<>());
+        Map<Integer, Integer> tmp = mp.get(x);
+        tmp.put(y, tmp.getOrDefault(y, 0) + 1);
+        mp.put(x, tmp);
+    }
+
+    public int count(int[] point) {
+        int ans = 0;
+        int x = point[0], y = point[1];
+        for (int i = 1; i <= 1000; ++i) {
+            if (mp.containsKey(x - i) && mp.containsKey(x)) {
+                ans += mp.get(x - i).getOrDefault(y, 0) * mp.get(x).getOrDefault(y - i, 0) * mp.get(x - i).getOrDefault(y - i, 0);
+                ans += mp.get(x - i).getOrDefault(y, 0) * mp.get(x).getOrDefault(y + i, 0) * mp.get(x - i).getOrDefault(y + i, 0);
+            }
+            if (mp.containsKey(x + i) && mp.containsKey(x)) {
+                ans += mp.get(x).getOrDefault(y - i, 0) * mp.get(x + i).getOrDefault(y, 0) * mp.get(x + i).getOrDefault(y - i, 0);
+                ans += mp.get(x + i).getOrDefault(y, 0) * mp.get(x).getOrDefault(y + i, 0) * mp.get(x + i).getOrDefault(y + i, 0);
+                
+            }
+        }
+        return ans;
+    }
+}
+
+/**
+ * Your DetectSquares object will be instantiated and called as such:
+ * DetectSquares obj = new DetectSquares();
+ * obj.add(point);
+ * int param_2 = obj.count(point);
+ */
+```
+
+
+## 哈希表 Easy
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/uncommon-words-from-two-sentences/)
+
+
+### 题解
+
+
+```java
+class Solution {
+    public String[] uncommonFromSentences(String s1, String s2) {
+        Map<String, Integer> mp = new HashMap<>();
+        String[] word1 = s1.split(" ");
+        String[] word2 = s2.split(" ");
+        for (String i : word1) {
+            mp.put(i, mp.getOrDefault(i, 0) + 1);
+        }
+        for (String i : word2) {
+            mp.put(i, mp.getOrDefault(i, 0) + 1);
+        }
+        List<String> ans = new ArrayList<>();
+        for (Map.Entry<String, Integer> entry : mp.entrySet()) {
+            if (entry.getValue() == 1) ans.add(entry.getKey());
+        }
+        return ans.toArray(new String[0]);
+    }
+}
+```
+
+
+注意通过toArray(new String[0])这种方法来转变成String数组，如果在前面加(String[]) 强制类型转化会转化失败，因为toArray不知道转化成什么类型，返回一个object，虽然前者也是返回obj，但指定了类型
+
+
+## 并查集 状态压缩 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/groups-of-strings/)
+
+### 题解
+
+周赛的一道题，思路很简单，当时一直TLE，然后一直想着优化代码。赛后发现是时间复杂度算错了，原来以为时间复杂度是O(n\*26\*26)，后来发现如果数组中存在大量重复字符串时，比如说在计算not change部分时，“abc”会遍历一遍所有“abc”的下标，这样时间复杂度就是O(n*n)，其实只要遍历第一个“abc”的下标就行，预处理时把所有相同字符串加到一个集合中
+
+
+为什么会犯这种错误或找不出错？可能是因为在做题时很少有时间复杂度算错的情况，大多数都是代码冗余或数据结构或者STL低效的问题，所以条件反射地往这方面想
+
+我如何找出这个错误？先是花大量的时间在优化代码上，后来我企图测试是哪部分代码直接造成超时，最后发现当预处理二进制和not change部分共存时，超时，我仔细地看了一遍预处理二进制的代码，发现没有任何问题（甚至还怀疑是不是用for each更快），然后将not change的遍历mp[cnt]数组注释掉，发现这两部分代码可以共存，很大概率是这条代码超时，后来就想到如果存在很多一样的字符串，那么每次都需要完整遍历一遍，时间复杂度是O(n*n)
+
+不知道怎样快速查找出错误，一直都在摸索，只能说下次要再检查一遍时间复杂度是否算对
+
+最开始还忘记算相同的情况（not change）
+
+```cpp
+class Solution {
+public:
+    vector<int> par;
+    vector<int> rankk;
+
+    void init(int n) {
+        for (int i = 0; i < n; i++) {
+            par[i] = i;
+            rankk[i] = 0;
+        }
+    }
+
+    int find(int x) {
+        if (par[x] == x) return x;
+        else return par[x] = find(par[x]);
+    }
+
+    void unite(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if (x == y) return;
+
+        if (rankk[x] < rankk[y]) par[x] = y;
+        else {
+            par[y] = x;
+            if (rankk[x] == rankk[y]) rankk[x]++;
+        }
+    }
+
+    bool same(int x, int y) {
+        return find(x) == find(y);
+    }
+
+    vector<int> groupStrings(vector<string> &words) {
+        unordered_map<int, vector<int>> mp;
+        int n = (int) words.size();
+        par.resize(n + 10);
+        rankk.resize(n + 10);
+        init(n + 5);
+        vector<int> bin(n + 10);
+        for (int i = 0; i < n; ++i) {
+            int tmp = 0;
+            for (int j = 0; j < words[i].length(); ++j) {
+                tmp |= (1 << (words[i][j] - 'a'));
+            }
+            mp[tmp].push_back(i);
+            bin[i] = tmp;
+        }
+        // !!!
+        for (auto [i, j] : mp) {
+            for (int k = 0; k < (int) j.size() - 1; ++k) {
+                unite(j[k], j[k + 1]);
+            } 
+        }
+        for (int i = 0; i < n; ++i) {
+            int cnt = bin[i];
+            vector<int> exist, notexist;
+            for (int j = 0; j < 26; ++j) {
+                if (cnt >> j & 1) {
+                    exist.push_back(j);
+                } else {
+                    notexist.push_back(j);
+                }
+            }
+            // delete
+            for (int j : exist) {
+                int tmp = cnt ^ (1 << j);
+                if (mp.find(tmp) != mp.end()) {
+                    unite(i, mp[tmp][0]);
+                }
+            }
+            // add
+            for (int j : notexist) {
+                int tmp = cnt | (1 << j);
+                if (mp.find(tmp) != mp.end()) {
+                    unite(i, mp[tmp][0]);
+                }
+            }
+            // replace
+            for (int j : exist) {
+                for (int k : notexist) {
+                    int tmp = cnt ^ (1 << j);
+                    tmp |= (1 << k);
+                    if (mp.find(tmp) != mp.end()) {
+                        unite(i, mp[tmp][0]);
+                    }
+                }
+            }
+            // not change
+            if (mp.find(cnt) != mp.end()) {
+                unite(i, mp[cnt][0]);
+            }
+        }
+        unordered_map<int, int> sz;
+        int ans1, ans2;
+        ans2 = -1;
+        for (int i = 0; i < n; ++i) {
+            sz[find(i)]++;
+        }
+        ans1 = (int) sz.size();
+        for (auto [i, j] : sz) {
+            ans2 = max(ans2, j);
+        }
+        return vector<int>{ans1, ans2};
+    }
+};
+```
+
+
+## 分治 状压 二分 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/partition-array-into-two-arrays-to-minimize-sum-difference/)
+
+
+### 题解
+
+meet in the middle
+
+分治把前一半2\^15的情况枚举出来，把后一半2\^15的情况枚举出来，然后枚举前一半，在后一半中二分查找，时间复杂度O(nlogn) n最大2\^15
+
+
+```cpp
+class Solution {
+public:
+    int minimumDifference(vector<int>& nums) {
+        int n = (int) nums.size();
+        n /= 2;
+        unordered_map<int, vector<int>> mpL, mpR;
+        vector<int> L(nums.begin(), nums.begin() + n);
+        vector<int> R(nums.begin() + n, nums.end());
+        for (int i = 1; i <= n; ++i) {
+            int ss = (1 << i) - 1;
+            while (ss < (1 << n)) {
+                int tmp = 0;
+                for (int j = 0; j < n; ++j) {
+                    if (ss >> j & 1) {
+                        tmp += L[j];
+                    } else {
+                        tmp -= L[j];
+                    }
+                }
+                mpL[i].push_back(tmp);
+                int x = ss & -ss, y = ss + x;
+                ss = ((ss & ~y) / x >> 1) | y;
+            }
+        }
+        // i = 0
+        mpL[0].push_back(-accumulate(L.begin(), L.end(), 0));
+        for (int i = 1; i <= n; ++i) {
+            int ss = (1 << i) - 1;
+            while (ss < (1 << n)) {
+                int tmp = 0;
+                for (int j = 0; j < n; ++j) {
+                    if (ss >> j & 1) {
+                        tmp += R[j];
+                    } else {
+                        tmp -= R[j];
+                    }
+                }
+                mpR[i].push_back(tmp);
+                int x = ss & -ss, y = ss + x;
+                ss = ((ss & ~y) / x >> 1) | y;
+            }
+        }
+        // i = 0
+        mpR[0].push_back(-accumulate(R.begin(), R.end(), 0));
+        int ans = 0x3f3f3f3f;
+        for (int i = 0; i <= n; ++i) {
+            sort(mpL[i].begin(), mpL[i].end());
+            mpL[i].erase(unique(mpL[i].begin(), mpL[i].end()), mpL[i].end());
+            sort(mpR[i].begin(), mpR[i].end());
+            mpR[i].erase(unique(mpR[i].begin(), mpR[i].end()), mpR[i].end());
+        }
+        for (int i = 0; i <= n; ++i) {
+            for (int j : mpL[i]) {
+                auto ite = lower_bound(mpR[n - i].begin(), mpR[n - i].end(), -j);
+                if (ite != mpR[n - i].end()) {
+                    ans = min(ans, abs(j + *ite));
+                }
+                if (ite != mpR[n - i].begin()) {
+                    ite--;
+                    ans = min(ans, abs(j + *ite));
+                }
+            }
+        }
+        return ans;
+    }
+};
+```
+
+
+## 字典树 异或 Hard
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/count-pairs-with-xor-in-a-range/)
+
+给一长度为2e4的数组，每个值最大为2e4，求有多少个数对，异或值在low和high之间
+
+### 题解
+
+遍历数组建字典树，对于当前数，查询字典树中有多少个数满足条件，再把这个数插入到字典树中
+
+查询字典树有多少个数满足条件，可以查询字典树中有多少个数异或<=high，有多少个<=low-1，相减
+
+查询字典树中有多少个数和y异或值<=x，就是从根节点往下遍历，如果x的当前位为0，则只能找和y相同的位，如果x的当前位为1，那和y当前位相同的位之后的所有节点都满足条件，和y当前位不同的继续往下搜，所以维护每个节点下面存了几个数
+
+维护每个节点下面存了几个数，用sz[i]表示i节点存了几个数，只要在每次插入的时候，给沿途的每个节点sz[i]++就行
+
+时间复杂度O(2e4 * 15)
+
+```java
+class Solution {
+    int[][] next;
+    int cnt;
+    int[] sz;
+    int low, high;
+    public void insert(int num) {
+        int p = 0;
+        for (int i = 14; i >= 0; --i) {
+            int c = (num >> i & 1) == 1 ? 1 : 0;
+            if (next[p][c] == 0) {
+                ++cnt;
+                next[p][c] = cnt;
+            }
+            p = next[p][c];
+            sz[p]++;
+        }
+    }
+    public int count(int x) {
+        return countLessThanOrEquals(high, x) - countLessThanOrEquals(low - 1, x);
+    }
+    public int countLessThanOrEquals(int bd, int x) {
+        int p = 0;
+        int ret = 0;
+        for (int i = 14; i >= 0; --i) {
+            int cx = (x >> i & 1) == 1 ? 1 : 0;
+            int cbd = (bd >> i & 1) == 1 ? 1 : 0;
+            if (cbd == 0) {
+                if (next[p][cx] == 0) {
+                    return ret;
+                }
+                p = next[p][cx];
+                if (i == 0) {
+                    ret += sz[p];
+                    return ret;
+                }
+            } else {
+                if (next[p][cx] != 0) {
+                    ret += sz[next[p][cx]];
+                }
+                if (next[p][cx ^ 1] != 0) {
+                    p = next[p][cx ^ 1];
+                } else {
+                    return ret;
+                }
+                if (i == 0) {
+                    ret += sz[p];
+                    return ret;
+                }
+            }
+        }
+        return 0;
+    }
+    public int countPairs(int[] nums, int low, int high) {
+        this.low = low;
+        this.high = high;
+        int n = nums.length;
+        next = new int[16 * (n + 2)][2];
+        sz = new int[16 * (n + 2)];
+        int ans = 0;
+        for (int i : nums) {
+            ans += count(i);
+            insert(i);
+        }
+        return ans;
+    }
+}
+```
+
+
+## 二分 贪心 结论 Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/maximum-running-time-of-n-computers/)
+
+### 题解
+
+二分找答案，假设最长时间是k，有一个结论是，>=k的电池只会给一个电脑供电，不会出现给一个电脑供一会儿电，再转移给另一个电脑的情况，因为这样不会更优
+
+所以每个电池能提供的电是min(pi, k)，累加就是总的能提供的电，check就是判断总的电和n*k的大小，如果大于n*k，一定存在一种调度满足每个电脑同时充k时间（可以把电池看做电量为1的若干电池去填充）
+
+```java
+class Solution {
+    public long maxRunTime(int n, int[] batteries) {
+        long l = 1, r = (long)1e14 + 10;
+        while (l <= r) {
+            long mid = l + (r - l) / 2;
+            long tmp = 0;
+            for (int i : batteries) {
+                tmp += Math.min(i, mid);
+            }
+            if (tmp >= n * mid) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+        return l - 1;
+    }
+}
+```
+
+
+## bfs Hard
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/escape-a-large-maze/)
+
+有一个1e6\*1e6的格子，有200个障碍，求能否从s点到t点，只能4方向走
+
+### 题解 
+
+ 因为只有200个障碍，所以看s点有没有被障碍围起来，看t点有没有被障碍围起来即可
+
+
+由于障碍45°斜着排，把点困在某个角落里，能困住的格子最多，或者用的障碍最少，即最优。这样点最多只能到达400步以内的格子，所以只要bfs判断点能否到达400步以外的格子就行，两个一起搜，如果搜的过程中，能碰到对方也行
+
+然后我超时了。。。单样例200+ms，我懵逼了，时间复杂度O(6.4e5)，leetcode的超时到底是怎么算的，单样例能过，总的就超时？难道还要算样例总时间？这合理吗
+
+所以我被迫用另一个方法，最优的障碍设置使得点最多访问200\*(200-1)/2个格子，所以bfs判断访问了多少个格子，而不是能否到达400步以外的格子，这样时间复杂度从O(6.4e5)降到O(4e4)，单样例10+ms
+
+谢谢你，leetcode，让我去想更高效的方法🙏
+
+最初TLE代码
+
+```java
+class Solution {
+    public boolean isEscapePossible(int[][] blocked, int[] source, int[] target) {
+        final long STEP = 410;
+        final int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        Map<Long, Integer> used = new HashMap<>();
+        long sx = source[0], sy = source[1];
+        long tx = target[0], ty = target[1];
+        Set<Long> b = new HashSet<>();
+        for (int[] i : blocked) {
+            b.add((long) (i[0] * 1e6 + i[1]));
+        }
+
+        Queue<Long> q = new ArrayDeque<>();
+        q.offer((long) (sx * 1e6 + sy));
+        used.put((long) (sx * 1e6 + sy), 0);
+        boolean sok = false, tok = false;
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == tx && dy == ty) return true;
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains((long) (dx * 1e6 + dy)) && !used.containsKey((long) (dx * 1e6 + dy))) {
+                    used.put((long) (dx * 1e6 + dy), used.get(val) + 1);
+                    q.offer((long) (dx * 1e6 + dy));
+                    if (used.get((long) (dx * 1e6 + dy)) >= STEP) {
+                        sok = true;
+                        q.clear();
+                        used.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        q.offer((long) (tx * 1e6 + ty));
+        used.put((long) (tx * 1e6 + ty), 0);
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == sx && dy == sy) return true;
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains((long) (dx * 1e6 + dy)) && !used.containsKey((long) (dx * 1e6 + dy))) {
+                    used.put((long) (dx * 1e6 + dy), used.get(val) + 1);
+                    q.offer((long) (dx * 1e6 + dy));
+                    if (used.get((long) (dx * 1e6 + dy)) >= STEP) {
+                        tok = true;
+                        q.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (sok && tok) return true;
+        return false;
+    }
+}
+```
+
+
+
+以为不是时间复杂度的问题，想去优化代码，提取重复的代码，改版的TLE代码
+
+
+```java
+class Solution {
+    public boolean isEscapePossible(int[][] blocked, int[] source, int[] target) {
+        final long STEP = 410;
+        final int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        Map<Long, Integer> used = new HashMap<>();
+        long sx = source[0], sy = source[1];
+        long tx = target[0], ty = target[1];
+        Set<Long> b = new HashSet<>();
+        for (int[] i : blocked) {
+            b.add((long) (i[0] * 1e6 + i[1]));
+        }
+
+        Queue<Long> q = new ArrayDeque<>();
+        q.offer((long) (sx * 1e6 + sy));
+        used.put((long) (sx * 1e6 + sy), 0);
+        boolean sok = false, tok = false;
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == tx && dy == ty) return true;
+                long tmp = (long) (dx * 1e6 + dy);
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains(tmp) && !used.containsKey(tmp)) {
+                    used.put(tmp, used.get(val) + 1);
+                    q.offer(tmp);
+                    if (used.get(tmp) >= STEP) {
+                        sok = true;
+                        q.clear();
+                        //used.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!sok) return false;
+
+        q.offer((long) (tx * 1e6 + ty));
+        used.put((long) (tx * 1e6 + ty), 0);
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == sx && dy == sy) return true;
+                long tmp = (long) (dx * 1e6 + dy);
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains(tmp) && !used.containsKey(tmp)) {
+                    used.put(tmp, used.get(val) + 1);
+                    q.offer(tmp);
+                    if (used.get(tmp) >= STEP) {
+                        tok = true;
+                        q.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (sok && tok) return true;
+        return false;
+    }
+}
+```
+
+
+
+优化时间复杂度的AC代码
+
+```java
+class Solution {
+    public boolean isEscapePossible(int[][] blocked, int[] source, int[] target) {
+        final long COUNT = 20010;
+        final int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+        Map<Long, Integer> used = new HashMap<>();
+        long sx = source[0], sy = source[1];
+        long tx = target[0], ty = target[1];
+        Set<Long> b = new HashSet<>();
+        for (int[] i : blocked) {
+            b.add((long) (i[0] * 1e6 + i[1]));
+        }
+
+        Queue<Long> q = new ArrayDeque<>();
+        q.offer((long) (sx * 1e6 + sy));
+        used.put((long) (sx * 1e6 + sy), 0);
+        boolean sok = false, tok = false;
+        int ct = 0;
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == tx && dy == ty) return true;
+                long tmp = (long) (dx * 1e6 + dy);
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains(tmp) && !used.containsKey(tmp)) {
+                    ct++;
+                    used.put(tmp, used.get(val) + 1);
+                    q.offer(tmp);
+                    if (ct >= COUNT) {
+                        sok = true;
+                        q.clear();
+                        used.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (!sok) return false;
+
+        q.offer((long) (tx * 1e6 + ty));
+        used.put((long) (tx * 1e6 + ty), 0);
+        while (!q.isEmpty()) {
+            long val = q.poll();
+            long cntx = (long) (val / 1e6);
+            long cnty = (long) (val % 1e6);
+            for (int i = 0; i < 4; ++i) {
+                long dx = cntx + dir[i][0];
+                long dy = cnty + dir[i][1];
+                if (dx == sx && dy == sy) return true;
+                long tmp = (long) (dx * 1e6 + dy);
+                if (dx >= 0 && dx < 1e6 && dy >= 0 && dy < 1e6 && !b.contains(tmp) && !used.containsKey(tmp)) {
+                    ct++;
+                    used.put(tmp, used.get(val) + 1);
+                    q.offer(tmp);
+                    if (ct >= COUNT) {
+                        tok = true;
+                        q.clear();
+                        used.clear();
+                        break;
+                    }
+                }
+            }
+        }
+
+        if (sok && tok) return true;
+        return false;
+    }
+}
+```
+
+
+这个题的测试用例不是很强，有个corner case是200个障碍在左下角45°靠墙围住s点，比如障碍是(0,199),(1,198),(2,197),... (199,0)，s点在(1,198)，t在(500,500)
+
+我的初版TLE代码将搜索步数改成200也能过，因为oj没有这个用例
+
+## dfs Hard
+
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/maximum-path-quality-of-a-graph/)
+
+
+### 题解
+
+注意到边权>=10，最大时间<=100和最多4条出边这种反常数据范围，直接搜索时间复杂度O(4^10)，注意回溯时不要记录是否访问过，应该记录访问次数，因为可以重复访问，如果回溯撤销了就相当于没访问过，这不是我们想要的
+
+注意特判只有一个点
+
+
+```java
+class Solution {
+    int ans;
+    int[] used;
+    int[] values;
+    Map<Integer, List<int[]>> mp;
+    int maxTime;
+    public void dfs(int vertex, int cost, int value) {
+        if (vertex == 0 && used[vertex] > 0) {
+            if (cost <= maxTime) {
+                ans = Math.max(ans, value);
+                //return;
+            }
+        }
+        used[vertex]++;
+        List<int[]> list = mp.getOrDefault(vertex, null);
+        if (list == null) return;
+        for (int[] i : list) {
+            if (i[1] + cost > maxTime) continue;
+            if (used[i[0]] > 0) dfs(i[0], i[1] + cost, value);
+            else dfs(i[0], i[1] + cost, value + values[i[0]]);
+        }
+        used[vertex]--;
+    }
+    public int maximalPathQuality(int[] values, int[][] edges, int maxTime) {
+        ans = values[0];
+        int n = values.length;
+        used = new int[n + 5];
+        this.values = values;
+        this.maxTime = maxTime;
+        mp = new HashMap<>();
+        for (int[] i : edges) {
+            mp.putIfAbsent(i[0], new LinkedList<>());
+            int[] tmp = new int[]{i[1], i[2]};
+            List<int[]> list = mp.get(i[0]);
+            list.add(tmp);
+            mp.put(i[0], list);
+            mp.putIfAbsent(i[1], new LinkedList<>());
+            tmp = new int[]{i[0], i[2]};
+            list = mp.get(i[1]);
+            list.add(tmp);
+            mp.put(i[1], list);
+        }
+        dfs(0, 0, values[0]);
+        return ans;
+    }
+}
+```
+
+
+## dfs 回溯 Medium
+
+### 题意
+
+[题链](https://leetcode-cn.com/problems/path-with-maximum-gold/)
+
+### 题解
+
+暴搜
+
+```java
+class Solution {
+    int ans;
+    int[][] grid;
+    static int[][] dir = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
+    int n, m;
+    public void dfs(int x, int y, int gold) {
+        ans = Math.max(ans, gold);
+        int tmp = grid[x][y];
+        grid[x][y] = 0;
+        for (int i = 0; i < 4; ++i) {
+            int nx = x + dir[i][0];
+            int ny = y + dir[i][1];
+            if (nx >= 0 && nx < n && ny >= 0 && ny < m && grid[nx][ny] != 0) {
+                dfs(nx, ny, gold + grid[nx][ny]);
+            }
+        }
+        grid[x][y] = tmp;
+
+        
+    }
+    public int getMaximumGold(int[][] grid) {
+        this.n = grid.length;
+        this.m = grid[0].length;
+        this.grid = grid;
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < m; ++j) {
+                if (grid[i][j] != 0) {
+                    dfs(i, j, grid[i][j]);
+                }
+            }
+        }
+        return ans;
+    }
+}
+```
+
+
