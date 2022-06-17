@@ -5,13 +5,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <!-- import Vue before Element -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <!-- import JavaScript -->
+  <script src="https://unpkg.com/element-ui@2.15.7/lib/index.js"></script>
   <!-- import CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <link rel="stylesheet" href="https://unpkg.com/element-ui@2.15.7/lib/theme-chalk/index.css">
 </head>
 <body>
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2022/06/17 12:45" placement="top" color="blue">
+        <h4>要毕业🌶️</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2022/06/17 12:43" placement="top" color="green">
+        <h4>新版的vue和目前的elementui不匹配，替换了新的vue的cdn（vue2），重新渲染出时间线</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2021/12/23 01:16" placement="top" color="blue">
         <h4>考研加油！！</h4>
     </el-timeline-item>
@@ -101,10 +111,7 @@
 </div>
   </div>
 </body>
-  <!-- import Vue before Element -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- import JavaScript -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
   <script>
     new Vue({
       el: '#app',
