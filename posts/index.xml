@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>CS:GO参数设置</title>
+    <link>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
+    <pubDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
+    <description><![CDATA[N卡设置 Config文件 默认 命名为conf.cfg 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rate &#34;786432&#34; alias +cjump &#34;+jump; +duck&#34; alias -cjump &#34;-jump; -duck&#34; bind &#34;space&#34; &#34;+cjump&#34; cl_interp &#34;0&#34; cl_interp_ratio &#34;1&#34; viewmodel_recoil &#34;0&#34; bind &#34;Capslock&#34;&#34;+jump;-attack;-attack2;-jump&#34; sv_grenade_trajectory &#34;1&#34; bind &#34;MWHEELDOWN&#34; &#34;toggle]]></description>
+</item><item>
     <title>Learning CPP</title>
     <link>https://dyhgo.github.io/learning-cpp/</link>
     <pubDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
     <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
-</item><item>
-    <title>非线性优化</title>
-    <link>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</link>
-    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
-    <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
 </item></channel>
 </rss>
