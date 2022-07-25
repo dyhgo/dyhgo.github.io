@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>剑指offer</title>
+    <link>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</link>
+    <pubDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</guid>
+    <description><![CDATA[在leetcode平台上做一下剑指offer的题，不定时更新 03 数组中重复的数字 考点 easy 模拟 题意 题链 找出数组中任一重复的数 题解 1 2 3 4 5 6 7 8 9]]></description>
+</item><item>
     <title>CS:GO参数设置</title>
     <link>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
     <pubDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</guid>
     <description><![CDATA[cyberpunk2077是CD Projekt RED开发的rpg游戏 经历了一次次跳票，终于在年底玩到这款游戏 小黑盒的评分 小黑盒社区的玩家评分并不高，很多]]></description>
-</item><item>
-    <title>相机模型</title>
-    <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
-    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
-    <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
 </item></channel>
 </rss>
