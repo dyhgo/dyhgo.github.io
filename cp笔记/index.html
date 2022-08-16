@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/cp%E7%AC%94%E8%AE%B0\/"
-        },"genre": "posts","keywords": "cpp","wordcount":  1656 ,
+        },"genre": "posts","keywords": "cpp","wordcount":  3798 ,
         "url": "https:\/\/dyhgo.github.io\/cp%E7%AC%94%E8%AE%B0\/","datePublished": "2020-01-19T00:00:00+00:00","dateModified": "2020-01-19T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CP笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-19">2020-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1656 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/cp%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="CP笔记">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-19">2020-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3798 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/cp%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="CP笔记">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -120,20 +120,38 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#快速排序">快速排序</a></li>
-    <li><a href="#产生随机数">产生随机数</a></li>
+    <li><a href="#产生随机数">产生随机数</a>
+      <ul>
+        <li><a href="#洗牌">洗牌</a></li>
+      </ul>
+    </li>
     <li><a href="#stl">STL</a>
       <ul>
+        <li><a href="#list">list</a></li>
         <li><a href="#set">set</a></li>
         <li><a href="#map">map</a></li>
+        <li><a href="#deque">deque</a></li>
+        <li><a href="#stack">stack</a></li>
+        <li><a href="#queue">queue</a></li>
         <li><a href="#其他">其他</a></li>
       </ul>
     </li>
     <li><a href="#约瑟夫环">约瑟夫环</a></li>
     <li><a href="#流操作符boolalpha">流操作符boolalpha</a></li>
     <li><a href="#自定义排序">自定义排序</a></li>
-    <li><a href="#字符串和字符">字符串和字符</a></li>
+    <li><a href="#字符串和字符">字符串和字符</a>
+      <ul>
+        <li><a href="#c语言有关函数-strxxx">c语言有关函数 strXXX</a></li>
+        <li><a href="#子串相关">子串相关</a></li>
+        <li><a href="#字符串和字符数组的转化-string-to-char">字符串和字符数组的转化 string to char[]</a></li>
+        <li><a href="#按字符分割字符串-strtok">按字符分割字符串 strtok</a></li>
+        <li><a href="#char从下标为1开始读入">char[]从下标为1开始读入</a></li>
+        <li><a href="#其他-1">其他</a></li>
+      </ul>
+    </li>
     <li><a href="#背包问题">背包问题</a></li>
     <li><a href="#memset">memset</a></li>
+    <li><a href="#memmove">memmove</a></li>
     <li><a href="#binary_search">binary_search</a></li>
     <li><a href="#next_permutation">next_permutation</a></li>
     <li><a href="#unique">unique</a></li>
@@ -141,6 +159,34 @@
     <li><a href="#while-读取">While 读取</a></li>
     <li><a href="#sizeof退化">sizeof退化</a></li>
     <li><a href="#find">find</a></li>
+    <li><a href="#incline">incline</a></li>
+    <li><a href="#浮点数的向下取整">浮点数的向下取整</a></li>
+    <li><a href="#merge">merge</a>
+      <ul>
+        <li><a href="#inplace_merge">inplace_merge()</a></li>
+      </ul>
+    </li>
+    <li><a href="#字符串和数字转化">字符串和数字转化</a></li>
+    <li><a href="#进制转化">进制转化</a></li>
+    <li><a href="#__int128">__int128</a></li>
+    <li><a href="#数据类型范围">数据类型范围</a></li>
+    <li><a href="#fill">fill</a></li>
+    <li><a href="#最大最小值">最大最小值</a></li>
+    <li><a href="#__builtin_xxx">__builtin_XXX</a></li>
+    <li><a href="#lambda表达式">lambda表达式</a></li>
+    <li><a href="#modf返回小数的小数部分">modf()返回小数的小数部分</a></li>
+    <li><a href="#bitset">bitset</a></li>
+    <li><a href="#算法">算法</a></li>
+    <li><a href="#switch">switch</a></li>
+    <li><a href="#accumulate">accumulate</a></li>
+    <li><a href="#pb_ds库">pb_ds库</a></li>
+    <li><a href="#double输入输出">double输入输出</a></li>
+    <li><a href="#程序运行加速">程序运行加速</a></li>
+    <li><a href="#size和int类型转换">size和int类型转换</a></li>
+    <li><a href="#迭代器移动">迭代器移动</a></li>
+    <li><a href="#pair_hash">pair_hash</a></li>
+    <li><a href="#auto-">auto &amp;</a></li>
+    <li><a href="#hypot">hypot()</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>记录的东西十分零散，适用于速查，不适合系统学习</p>
@@ -227,6 +273,26 @@
 </span></code></pre></td></tr></table>
 </div>
 </div><h2 id="产生随机数">产生随机数</h2>
+<p>古老的生成随机数的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="k">nullptr</span><span class="p">));</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+
+<span class="c1">//大随机数
+</span><span class="c1"></span>    <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">123456789</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rand</span><span class="p">()</span> <span class="o">*</span> <span class="n">r</span> <span class="o">/</span> <span class="n">RAND_MAX</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>c++11生成随机数的方法</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -246,6 +312,8 @@
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
@@ -259,15 +327,76 @@
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
 
-    <span class="n">mt19937</span> <span class="n">rd</span><span class="p">(</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">().</span><span class="n">time_since_epoch</span><span class="p">().</span><span class="n">count</span><span class="p">());</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rd</span><span class="p">()</span> <span class="o">%</span> <span class="mi">101</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">mt19937</span> <span class="n">rng</span><span class="p">(</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">().</span><span class="n">time_since_epoch</span><span class="p">().</span><span class="n">count</span><span class="p">());</span>
+    <span class="c1">//cout &lt;&lt; rd() % 101 + 1;
+</span><span class="c1"></span>    <span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dis</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>  <span class="c1">//闭区间
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dis</span><span class="p">(</span><span class="n">rng</span><span class="p">);</span>
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
 </code></pre></td></tr></table>
 </div>
+</div><p>以下这种方法更好，但只在Linux下有效，在win下无效，在win下会生成固定顺序的随机数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">mt19937</span> <span class="n">gen</span><span class="p">{</span><span class="n">random_device</span><span class="p">{}()};</span>
+    <span class="n">uniform_int_distribution</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">dis</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">70</span><span class="p">);</span>   <span class="c1">//闭区间
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dis</span><span class="p">(</span><span class="n">gen</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="c1">//    41
+</span><span class="c1">//    52
+</span><span class="c1">//    27
+</span><span class="c1">//    65
+</span><span class="c1">//    4
+</span><span class="c1">//    43
+</span><span class="c1">//    62
+</span><span class="c1">//    38
+</span><span class="c1">//    68
+</span><span class="c1">//    69
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="洗牌">洗牌</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">};</span>
+    <span class="n">mt19937</span> <span class="nf">rng</span><span class="p">(</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">().</span><span class="n">time_since_epoch</span><span class="p">().</span><span class="n">count</span><span class="p">());</span>
+    <span class="n">shuffle</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">rng</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//3 4 5 1 2 6
+</span></code></pre></td></tr></table>
+</div>
 </div><h2 id="stl">STL</h2>
+<h3 id="list">list</h3>
 <h3 id="set">set</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -330,9 +459,60 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>map想按value排，就要提取出来变成vector&lt;pair&lt;int, int&raquo;</p>
-<h3 id="其他">其他</h3>
+<p>想要询问map是否存在一个key，不应该用map[key]==0来判断，应该用map.find(key) == mp.end()来判断</p>
+<h3 id="deque">deque</h3>
+<p>双端队列</p>
+<p>front() back() clear() erase() insert(pos, v) insert(pos, n, v) push_back() pop_back() push_front() pop_front()</p>
+<h3 id="stack">stack</h3>
+<p>push() pop() top() empty() size()</p>
+<p>find() unique() sort() count()</p>
+<h3 id="queue">queue</h3>
+<p>push() pop() front() empty() size() back()</p>
+<p>find() unique() sort() count()</p>
+<p>queue和stack没有clear()，要清空应该这样</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//2
+</span><span class="c1"></span>    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">tmp</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="n">a</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//0
+</span><span class="c1"></span>
+    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+    <span class="n">s</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//2
+</span><span class="c1"></span>    <span class="n">stack</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">s</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//0
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="其他">其他</h3>
 <p>multiset允许值重复</p>
+<p>multiset的erase(x)会把所有x都删掉，而不是删一个</p>
 <p>multimap允许key重复</p>
+<p>求数组中k出现几次的一种方法，排序+二分查找，upper_bound - lower_bound</p>
+<p>set&lt;int&gt; s; map&lt;int&gt; m</p>
+<p>s.lower_bound()比lower_bound(s.begin(),s.end())要快很多，内置的lower_bound()是专为红黑树写的</p>
 <h2 id="约瑟夫环">约瑟夫环</h2>
 <p>总共有people个人，喊到num的倍数退出，求最后一个人</p>
 <div class="highlight"><div class="chroma">
@@ -458,8 +638,8 @@
     <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
 
     <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Student</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>
-    <span class="p">}</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">.</span><span class="n">a</span><span class="p">;</span>	<span class="c1">//始终把this放s前，不能是s.a &lt; this-&gt;a
+</span><span class="c1"></span>    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
@@ -470,7 +650,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="字符串和字符">字符串和字符</h2>
-<p>c语言有关函数</p>
+<h3 id="c语言有关函数-strxxx">c语言有关函数 strXXX</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -553,7 +733,88 @@
 <span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>string有时要用c_str()</p>
+</div><h3 id="子串相关">子串相关</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">string</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&#34;qwer&#34;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#34;we&#34;</span><span class="p">);</span>   <span class="c1">// 1
+</span><span class="c1"></span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// we
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="字符串和字符数组的转化-string-to-char">字符串和字符数组的转化 string to char[]</h3>
+<p>字符串转字符数组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp">    <span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="s">&#34;qwer&#34;</span><span class="p">;</span>
+    <span class="n">strcpy</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">s</span><span class="p">.</span><span class="n">c_str</span><span class="p">());</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">// qwer
+</span></code></pre></td></tr></table>
+</div>
+</div><p>字符数组转字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">x</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;wertt&#34;</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="c1">//wertt
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="按字符分割字符串-strtok">按字符分割字符串 strtok</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">s</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;s1mple is the best sniper of the world&#34;</span><span class="p">;</span>
+    <span class="kt">char</span><span class="o">*</span> <span class="n">token</span><span class="p">;</span>
+    <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="s">&#34; &#34;</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">token</span> <span class="o">!=</span> <span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//vector&lt;string&gt; v;
+</span><span class="c1"></span>        <span class="c1">//v.push_back(token);
+</span><span class="c1"></span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">token</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+        <span class="n">token</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="s">&#34; &#34;</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="char从下标为1开始读入">char[]从下标为1开始读入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%s&#34;</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">strlen</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="其他-1">其他</h3>
+<p>string有时要用c_str()</p>
 <h2 id="背包问题">背包问题</h2>
 <p>01背包2维</p>
 <div class="highlight"><div class="chroma">
@@ -670,7 +931,28 @@
 </div>
 </div><h2 id="memset">memset</h2>
 <p>memset只能初始化0, 1, 0x3f, 0xc0这种的，不能写2,3这种的</p>
-<h2 id="binary_search">binary_search</h2>
+<h2 id="memmove">memmove</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span>
+    <span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">memmove</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="c1">//1 3
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="binary_search">binary_search</h2>
 <p>binary_search 用在有序数组里</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -822,7 +1104,423 @@
 </div><p>此处int[]变为指针，sizeof算的是地址长度，不是数组长度</p>
 <h2 id="find">find</h2>
 <p>string的find没找到返回string::npos，stl返回end()，找到则返回下标的迭代器或偏移地址</p>
-</div><div class="post-footer" id="post-footer">
+<h2 id="incline">incline</h2>
+<p>内联函数，如果一个自定义函数内容较少且调用次数较多，可以在函数前加incline，这样调用时，直接将代码复制，避免大开销</p>
+<h2 id="浮点数的向下取整">浮点数的向下取整</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">2.4567</span><span class="p">;</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%.2f&#34;</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>  <span class="c1">// 四舍五入
+</span><span class="c1"></span><span class="n">printf</span><span class="p">(</span><span class="s">&#34;%.2f&#34;</span><span class="p">,</span> <span class="n">floor</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span> <span class="o">/</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// 向下取整，保留几位就乘pow(10,n)
+</span><span class="c1"></span>    
+    <span class="c1">// 2.46
+</span><span class="c1"></span>    <span class="c1">// 2.45
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="merge">merge</h2>
+<p>使用merge之前要对数组分配空间，vector可以用resize，merge(first1, last1, first2, last2, dest, cmp)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">b</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">c</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+    <span class="n">merge</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">b</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">c</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="nl">i</span> <span class="p">:</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="c1">//1 3 4 1 9 7 7 0 0 0 
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="inplace_merge">inplace_merge()</h3>
+<h2 id="字符串和数字转化">字符串和数字转化</h2>
+<p>stringstream只能用一次，用ss.clear()重置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp">
+</span><span class="cp"></span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">s</span> <span class="o">=</span> <span class="n">to_string</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">//123
+</span><span class="c1"></span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">0.123</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">to_string</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//0.123000
+</span><span class="c1"></span>
+    <span class="n">stringstream</span> <span class="n">ss</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">ss</span> <span class="o">&lt;&lt;</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">ss</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">//0.123
+</span><span class="c1"></span>
+    <span class="n">string</span> <span class="n">c</span> <span class="o">=</span> <span class="s">&#34;7355608&#34;</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">stoi</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">// 7355608
+</span><span class="c1"></span>
+    <span class="n">string</span> <span class="n">d</span> <span class="o">=</span> <span class="s">&#34;6653.9418&#34;</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dq</span> <span class="o">=</span> <span class="n">stod</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dq</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//6653.94
+</span><span class="c1"></span>
+    <span class="kt">double</span> <span class="n">db</span><span class="p">;</span>
+    <span class="n">stringstream</span> <span class="n">sss</span><span class="p">;</span>
+    <span class="n">sss</span> <span class="o">&lt;&lt;</span> <span class="n">d</span><span class="p">;</span>
+    <span class="n">sss</span> <span class="o">&gt;&gt;</span> <span class="n">db</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">db</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">//6653.94
+</span></code></pre></td></tr></table>
+</div>
+</div><p>总结，整数最好用to_string()和stoi()，小数最好用stringstream</p>
+<h2 id="进制转化">进制转化</h2>
+<p>python可以用ord</p>
+<p>十进制转任意进制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">176</span><span class="p">;</span>
+    <span class="n">itoa</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>	<span class="c1">//第三个参数不能太大，不能超过30
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+    <span class="c1">//bb
+</span></code></pre></td></tr></table>
+</div>
+</div><p>任意进制转十进制</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">char</span> <span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;e4cxxx&#34;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">b</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;e4c&#34;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">ed</span><span class="p">;</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">strtol</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ed</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>	<span class="c1">//第三个参数不能太大，不能超过30
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">strtol</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ed</span><span class="p">,</span> <span class="mi">15</span><span class="p">);</span>
+    <span class="c1">// 3222
+</span><span class="c1"></span>    <span class="c1">// 3222
+</span></code></pre></td></tr></table>
+</div>
+</div><p>任意进制的互相转化可以通过十进制过渡</p>
+<h2 id="__int128">__int128</h2>
+<p>__int128是128位的整数类型，long long只有64位</p>
+<h2 id="数据类型范围">数据类型范围</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>     <span class="c1">//-2147483648
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>     <span class="c1">//2147483647
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//-9223372036854775808
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//9223372036854775807
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//1.17549e-38
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">float</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>   <span class="c1">//3.40282e+38
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">//2.22507e-308
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>  <span class="c1">//1.79769e+308
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">double</span><span class="o">&gt;::</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">//3.3621e-4932
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">numeric_limits</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">double</span><span class="o">&gt;::</span><span class="n">max</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span> <span class="c1">//1.18973e+4932
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="fill">fill</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">fill</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">(</span><span class="mi">30</span><span class="p">);</span>
+    <span class="n">fill</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">fill_n</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+
+    <span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">20</span><span class="p">][</span><span class="mi">20</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+    <span class="n">fill</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>    <span class="c1">// 前5行，每一列都为3
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="最大最小值">最大最小值</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="kt">int</span> <span class="n">inf</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">inf</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f3f3f3f3f</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">int</span> <span class="n">ninf</span>  <span class="o">=</span> <span class="mh">0xc0c0c0c0</span><span class="p">;</span>
+    <span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ninf</span> <span class="o">=</span> <span class="mh">0xc0c0c0c0c0c0c0c0</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>用memset时</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">memset</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="mh">0x3f</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="__builtin_xxx">__builtin_XXX</h2>
+<p>__builtin_popcount(x)求数的二进制中1的个数</p>
+<h2 id="lambda表达式">lambda表达式</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">){</span><span class="k">return</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">;});</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">greater</span><span class="o">&lt;&gt;</span><span class="p">());</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="modf返回小数的小数部分">modf()返回小数的小数部分</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mf">1.234</span><span class="p">;</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">modf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">y</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">z</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+    <span class="c1">//1.234 1 0.234
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="bitset">bitset</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">bitset</span><span class="o">&lt;</span><span class="mi">4</span><span class="o">&gt;</span> <span class="n">bs1</span><span class="p">;</span>  <span class="c1">// 0000
+</span><span class="c1"></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">8</span><span class="o">&gt;</span> <span class="n">bs2</span><span class="p">(</span><span class="mi">12</span><span class="p">);</span> <span class="c1">// 00001100
+</span><span class="c1"></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">5</span><span class="o">&gt;</span> <span class="n">bs3</span><span class="p">(</span><span class="s">&#34;1101&#34;</span><span class="p">);</span> <span class="c1">// 01101
+</span><span class="c1"></span>    
+    <span class="c1">//有些可带参数也可不带参数
+</span><span class="c1"></span>    <span class="n">bitset</span><span class="o">&lt;</span><span class="mi">10</span><span class="o">&gt;</span> <span class="n">bs</span><span class="p">;</span>
+    <span class="n">bs</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>  <span class="c1">// 表示第6位，从右往左数，从小往大
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">count</span><span class="p">();</span> <span class="c1">// 求1的个数
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// 大小
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">test</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">//下标为4的数是否为1
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">any</span><span class="p">();</span>   <span class="c1">//是否有1
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">none</span><span class="p">();</span>  <span class="c1">//是否没有1
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">all</span><span class="p">();</span>   <span class="c1">//是否全是1
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">flip</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span> <span class="c1">// 将下标为4的位取反
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">set</span><span class="p">();</span>   <span class="c1">// 置1
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span> <span class="c1">//下标为4的置零
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">reset</span><span class="p">();</span> <span class="c1">//置0
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">to_string</span><span class="p">();</span>     <span class="c1">//转string
+</span><span class="c1"></span>    <span class="n">bs</span><span class="p">.</span><span class="n">to_ulong</span><span class="p">();</span>
+    <span class="n">bs</span><span class="p">.</span><span class="n">to_ullong</span><span class="p">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="算法">算法</h2>
+<p>树上两点的距离</p>
+<p>dist(x, y) = dep(x) + dep(y) - 2 * dep(lca(x,y))</p>
+<h2 id="switch">switch</h2>
+<p>switch只能在int和char中选</p>
+<h2 id="accumulate">accumulate</h2>
+<p>求和</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">20</span><span class="p">];</span>
+    <span class="n">accumulate</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="pb_ds库">pb_ds库</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;bits/extc++.h&gt;</span><span class="cp">
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="double输入输出">double输入输出</h2>
+<p>float 用%f %f
+double 用%lf %f</p>
+<h2 id="程序运行加速">程序运行加速</h2>
+<p>long long换int</p>
+<p>把main外的函数放main里</p>
+<h2 id="size和int类型转换">size和int类型转换</h2>
+<p>size和int计算时要强制类型转换</p>
+<p>(int) s.size() - 1</p>
+<h2 id="迭代器移动">迭代器移动</h2>
+<p>advance(it, 5)把it迭代器向后移动5</p>
+<h2 id="pair_hash">pair_hash</h2>
+<p>当map等排序数组的key是pair时，需要pair_hash</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">struct</span> <span class="nc">pair_hash</span><span class="p">{</span>
+    <span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T1</span><span class="p">,</span> <span class="k">class</span> <span class="nc">T2</span><span class="o">&gt;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">size_t</span> <span class="k">operator</span><span class="p">()</span> <span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">T1</span><span class="p">,</span> <span class="n">T2</span><span class="o">&gt;&amp;</span> <span class="n">p</span><span class="p">)</span> <span class="k">const</span>
+    <span class="p">{</span>
+        <span class="k">auto</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">T1</span><span class="o">&gt;</span><span class="p">{}(</span><span class="n">p</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+        <span class="k">auto</span> <span class="n">h2</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">T2</span><span class="o">&gt;</span><span class="p">{}(</span><span class="n">p</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">h1</span> <span class="o">^</span> <span class="n">h2</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+    <span class="n">map</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="n">pair_hash</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="auto-">auto &amp;</h2>
+<p>不带&amp;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">;</span>
+    <span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="p">[</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">]</span> <span class="o">:</span> <span class="n">mp</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">y</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mp</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+    <span class="c1">// 2
+</span></code></pre></td></tr></table>
+</div>
+</div><p>对于引用，参数如果是string类型，应该尽量用引用来减少复制的开销</p>
+<h2 id="hypot">hypot()</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;cmath&gt;</span><span class="cp">
+</span><span class="cp"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hypot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>    <span class="c1">//5
+</span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hypotf</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hypotl</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
