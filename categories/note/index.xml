@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/note/</link>
         <description>note - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>Kalman Filter in One Dimension</title>
+    <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
+    <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
+    <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
+</item><item>
     <title>Learning CPP</title>
     <link>https://dyhgo.github.io/learning-cpp/</link>
     <pubDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</guid>
     <description><![CDATA[前言 很早就想写cmake，但是一直懒得写 今天也随便写点cmake 官方对cmake的解释 CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform]]></description>
-</item><item>
-    <title>正则表达式</title>
-    <link>https://dyhgo.github.io/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</link>
-    <pubDate>Thu, 25 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</guid>
-    <description><![CDATA[正则表达式的基础用法 在线测试网站 限定符 ？ used? 表示？前面的字符可有可无 限定符 * *之前的字符出现0或多次 限定符 + +之前的字符出现至少一次 出现指定次]]></description>
 </item></channel>
 </rss>

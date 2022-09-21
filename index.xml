@@ -7,6 +7,13 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 26 Feb 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Kalman Filter in One Dimension</title>
+    <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
+    <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
+    <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
+</item><item>
     <title>剑指offer</title>
     <link>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</link>
     <pubDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</guid>
     <description><![CDATA[Forza Horizon 4是微软在2018年10月2日发行的开车游戏 用xbox玩就很爽 风景做得很不错 有关汽车的专业知识做得很丰富 嘉年华的各种活动安排得很合理 整个]]></description>
-</item><item>
-    <title>赛博朋克2077</title>
-    <link>https://dyhgo.github.io/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</guid>
-    <description><![CDATA[cyberpunk2077是CD Projekt RED开发的rpg游戏 经历了一次次跳票，终于在年底玩到这款游戏 小黑盒的评分 小黑盒社区的玩家评分并不高，很多]]></description>
 </item></channel>
 </rss>

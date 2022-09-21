@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/slam/</link>
         <description>slam - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+    <title>Kalman Filter in One Dimension</title>
+    <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
+    <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
+    <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
+</item><item>
     <title>相机模型</title>
     <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
     <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>

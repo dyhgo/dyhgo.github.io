@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/categories/"
@@ -15,10 +15,12 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/categories/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://dyhgo.github.io/kalman-filter-in-one-dimension/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/slam/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/slam/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/tags/"
@@ -31,12 +33,13 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/game/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/problemlist/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/problemlist/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/game/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/cpp/</loc><lastmod>2022-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/learning-cpp/</loc><lastmod>2022-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2022-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/courses/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/cs/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tf-idf/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -49,8 +52,6 @@
             <loc>https://dyhgo.github.io/steep/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</loc><lastmod>2021-03-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/slam/</loc><lastmod>2021-03-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/slam/</loc><lastmod>2021-03-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</loc><lastmod>2021-03-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</loc><lastmod>2021-03-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%B0%8F%E7%BB%83%E4%B9%A0/</loc><lastmod>2021-01-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
