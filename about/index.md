@@ -2,28 +2,25 @@
 
 
 
-this is dyh from hhu 
+this is da1yh
 
-major in cs
+a graduate student major in software engineering at Zhejiang University
 
-love swimming,coding,poppin
+currently learning sensor fusion
+ 
+use c++, golang
 
-it's the first time to set up a site(fyi:just for fun)(based on hugo and github server)
+love swimming, coding, poppin
 
 thanks to "dillonzq" offering me theme template
 
-i set up this site as a self blog and paste some study experience but maybe i'm not gonna manage it
+i set up this site as a self blog and paste some study experience
 
-
-
-
-
-
-if u wanna leave a message 
+if u wanna leave a message, feel free to contact me
 
 you can reach me by qq "244882973"
 
-or number "+86 15850656951"
+or email "daiyh.xyz@outlook.com"
 
 or github account etc
 
