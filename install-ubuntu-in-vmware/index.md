@@ -283,7 +283,14 @@ vmware的安装基本选择默认选项，一直next
 
 `anaconda --version`
 
+### 安装ROS
 
+[https://blog.csdn.net/u011832219/article/details/116799424](https://blog.csdn.net/u011832219/article/details/116799424)
+
+[https://blog.csdn.net/qq_43626331/article/details/125855680](https://blog.csdn.net/qq_43626331/article/details/125855680)
+
+
+[https://blog.csdn.net/czsnooker/article/details/120058151](https://blog.csdn.net/czsnooker/article/details/120058151)
 
 
 
