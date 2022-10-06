@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/git\/"
-        },"genre": "posts","keywords": "git","wordcount":  942 ,
+        },"genre": "posts","keywords": "git","wordcount":  1117 ,
         "url": "https:\/\/dyhgo.github.io\/git\/","datePublished": "2020-05-05T00:00:00+00:00","dateModified": "2020-05-05T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +108,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">git</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-05">2020-05-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 942 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/git/" class="leancloud_visitors" data-flag-title="git">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-05-05">2020-05-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1117 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/git/" class="leancloud_visitors" data-flag-title="git">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -196,6 +196,7 @@
         <li><a href="#remote">remote</a></li>
       </ul>
     </li>
+    <li><a href="#问题">问题</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p><a href="https://git-scm.com/download" target="_blank" rel="noopener noreffer">git安装</a></p>
@@ -335,6 +336,12 @@
 <p><code>git remote</code></p>
 <p>查看有关联的远程仓库</p>
 <p><code>git remote -v</code></p>
+<h2 id="问题">问题</h2>
+<p><code>git remote set-url origin xxx.git</code> 来设置你要提交的仓库，不是使用<code>git remote add origin</code></p>
+<hr>
+<p>在ubuntu16.04 git push时出现 <code>fatal: unable to access &quot;xxx.git&quot;: gnutls_handshake() failed: Handshake failed</code></p>
+<p>解决方法：</p>
+<p><a href="https://stackoverflow.com/questions/60262230/fatal-unable-to-access-gnutls-handshake-failed-handshake-failed" target="_blank" rel="noopener noreffer">https://stackoverflow.com/questions/60262230/fatal-unable-to-access-gnutls-handshake-failed-handshake-failed</a>第一个回答</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"

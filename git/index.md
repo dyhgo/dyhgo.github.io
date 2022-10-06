@@ -273,6 +273,22 @@ push需要创建upstream连接本地分支和远程分支
 
 `git remote -v`
 
+
+## 问题
+
+
+`git remote set-url origin xxx.git` 来设置你要提交的仓库，不是使用`git remote add origin`
+
+-----------------------------------------
+
+在ubuntu16.04 git push时出现 `fatal: unable to access "xxx.git": gnutls_handshake() failed: Handshake failed`
+
+解决方法：
+
+[https://stackoverflow.com/questions/60262230/fatal-unable-to-access-gnutls-handshake-failed-handshake-failed](https://stackoverflow.com/questions/60262230/fatal-unable-to-access-gnutls-handshake-failed-handshake-failed)第一个回答
+
+
+
 ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200505170215710.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70)
 
 
