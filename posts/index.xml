@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 09 Oct 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Pandas</title>
+    <link>https://dyhgo.github.io/pandas/</link>
+    <pubDate>Sun, 09 Oct 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/pandas/</guid>
+    <description><![CDATA[pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. 参考 1 2 import numpy as np import pandas as pd Object creation Series是一维数据 1 2 s = pd.Series([1, 3, 5, np.nan, 6, 8]) s 0 1.0 1 3.0 2 5.0 3 NaN 4]]></description>
+</item><item>
     <title>Kalman Filter in One Dimension</title>
     <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
     <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/steep/</guid>
     <description><![CDATA[steep是育碧在2016年12月2日发行的滑雪游戏 在steam上要一百多，在育碧商城上免费 在很早以前就看过有人玩育碧的肖恩怀特滑雪 但是一直]]></description>
-</item><item>
-    <title>极限竞速地平线4</title>
-    <link>https://dyhgo.github.io/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</guid>
-    <description><![CDATA[Forza Horizon 4是微软在2018年10月2日发行的开车游戏 用xbox玩就很爽 风景做得很不错 有关汽车的专业知识做得很丰富 嘉年华的各种活动安排得很合理 整个]]></description>
 </item></channel>
 </rss>
