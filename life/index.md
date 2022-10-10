@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2022/10/10 15:21" placement="top" color="blue">
+        <h4>鼠鼠我是真的要开始学习了🥶</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2022/10/09 09:41" placement="top" color="blue">
         <h4>🥶</h4>
     </el-timeline-item>
