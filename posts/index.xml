@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 09 Oct 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 14 Oct 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Matrix Decomposition</title>
+    <link>https://dyhgo.github.io/matrix-decomposition/</link>
+    <pubDate>Fri, 14 Oct 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/matrix-decomposition/</guid>
+    <description><![CDATA[本文试图用最简洁清晰的语言解释各种矩阵分解，只记录矩阵分解的基础知识和过程，对性质和应用的讨论先挖个坑，下次再填 有关矩阵分解的知识可以参考这]]></description>
+</item><item>
     <title>Pandas</title>
     <link>https://dyhgo.github.io/pandas/</link>
     <pubDate>Sun, 09 Oct 2022 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/simplest-colorful-bash-promt/</guid>
     <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61  ######################### begin ###############################bash_prompt() {local NO_FORMAT=&#34;\[\033[0m\]&#34;local ORANGE_BOLD=&#34;\[\033[1;38;5;208m\]&#34;local TOXIC_GREEN_BOLD=&#34;\[\033[1;38;5;118m\]&#34;local RED_BOLD=&#34;\[\033[1;38;5;1m\]&#34;local CYAN_BOLD=&#34;\[\033[1;38;5;87m\]&#34;local BLACK_BOLD=&#34;\[\033[1;38;5;0m\]&#34;local WHITE_BOLD=&#34;\[\033[1;38;5;15m\]&#34;local GRAY_BOLD=&#34;\[\033[1;90m\]&#34;local BLUE_BOLD=&#34;\[\033[1;38;5;74m\]&#34;local PROMT_USER_COLOR=$CYAN_BOLDlocal PROMT_AT_COLOR=$WHITE_BOLDlocal PROMT_HOST_COLOR=$CYAN_BOLDlocal PROMT_COLON_COLOR=$WHITE_BOLDlocal PROMT_PATH_COLOR=$ORANGE_BOLDlocal PROMT_DOLLAR_COLOR=$WHITE_BOLDlocal PROMT_INPUT_COLOR=$TOXIC_GREEN_BOLDlocal PROMT_USER=$&#34;$PROMT_USER_COLOR\u&#34;local PROMT_AT=$&#34;$PROMT_AT_COLOR@&#34;local PROMT_HOST=$&#34;$PROMT_HOST_COLOR\h&#34;local PROMT_COLON=$&#34;$PROMT_COLON_COLOR:&#34;local PROMT_PATH=$&#34;$PROMT_PATH_COLOR\w&#34;local PROMT_DOLLAR=$&#34;$PROMT_DOLLAR_COLOR$&#34;local PROMT_INPUT=$&#34;$PROMT_INPUT_COLOR&#34;PS1=&#34;${PROMT_USER}${PROMT_AT}${PROMT_HOST}${PROMT_COLON}${PROMT_PATH}${PROMT_DOLLAR}${PROMT_INPUT}&#34;none=&#34;$(tput sgr0)&#34;trap &#39;echo -ne &#34;${none}&#34;&#39; DEBUG}bash_promptunset bash_prompt################################# end ###############################  inspired by https://github.]]></description>
-</item><item>
-    <title>steep</title>
-    <link>https://dyhgo.github.io/steep/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/steep/</guid>
-    <description><![CDATA[steep是育碧在2016年12月2日发行的滑雪游戏 在steam上要一百多，在育碧商城上免费 在很早以前就看过有人玩育碧的肖恩怀特滑雪 但是一直]]></description>
 </item></channel>
 </rss>
