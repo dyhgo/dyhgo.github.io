@@ -48,9 +48,11 @@
 {{< music auto="https://music.163.com/#/discover/toplist?id=60198" >}}
 
 
+===================================================================
+
+## 其他
 
 
 
-
-
+{{< music auto="https://music.163.com/#/playlist?id=7689911803" >}}
 

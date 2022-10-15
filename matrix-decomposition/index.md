@@ -105,7 +105,7 @@ $$
 假设$y=x^TAx$，那么y>0，且y有最小值
 
 
-{{< image src_s="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" caption="Illustration" >}}
+{{< image src="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" caption="Illustration" >}}
 
 当我们求一个二次型的极值时，假设它是正定矩阵，那么一定有最小值（如上图），而根据泰勒公式，Hessian矩阵就是二次型的矩阵A，所以判断Hessian矩阵是不是正定矩阵就行
 

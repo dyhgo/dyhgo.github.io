@@ -16,6 +16,15 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2022/10/15 19:33" placement="top" color="green">
+        <h4>更新歌单和播放器，更新文章内嵌的视频，增加网站运行时间，更改跑马灯信息，之后打算嵌一个和风天气<br>赶紧搞正事吧😨</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2022/10/15 00:39" placement="top" color="green">
+        <h4>等有时间的时候，要对网站内容重新归档和整理。可是，什么时候能有时间呢</h4>
+    </el-timeline-item>
+    <el-timeline-item timestamp="2022/10/15 00:09" placement="top" color="yellow">
+        <h4>文章markdown用katex有关转义的语法问题<br>1.在'\'前加一个'\'<br>2.在'_'前加'\'<br>3.换行"\\"，上下两行在markdown里要写在同一行<br>4.在表格里用'|'，有时候直接用"\|"，不需要用"\\\|"<br>以上不是真正写katex要遵循的规则，只是在网站的解析器里要遵循</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2022/10/10 15:21" placement="top" color="blue">
         <h4>鼠鼠我是真的要开始学习了🥶</h4>
     </el-timeline-item>
