@@ -805,6 +805,6 @@ $$
  - 矩阵左乘一个行向量的几何意义
  
 
-## Conference
+## Reference
 
 无水印的图来自wikipedia

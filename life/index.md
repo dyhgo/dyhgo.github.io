@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2023/01/01 22:51" placement="top" color="blue">
+        <h4>网站复活🌶️，网站已经运行了1038天，域名到期了，再过一天就进入高价赎回期了<br>祝大家新年快乐，身体健康，皆得所愿🎉🎉<br>研一由于学业繁忙没怎么更新，寒假如果有时间会进行更新，这学期主要就是在学多传感器融合，搞项目，然而搞不出来很头疼😕<br>近期🐑了很难受，大家照顾好身体，注意休息<br>网站之后随缘更新</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2022/10/15 19:33" placement="top" color="green">
         <h4>更新歌单和播放器，更新文章内嵌的视频，增加网站运行时间，更改跑马灯信息，之后打算嵌一个和风天气<br>赶紧搞正事吧😨</h4>
     </el-timeline-item>
