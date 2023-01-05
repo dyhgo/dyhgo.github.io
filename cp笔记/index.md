@@ -910,7 +910,14 @@ map<int, int> mp;
     cout << hypotl(3, 4);
 ```
 
+## a / b向下取整、四舍五入、向上取整
 
+```cpp
+int a, b;
+c = a / b;  //floor
+c = round((float)a / b);
+c = (a + b - 1) / b;    //ceil
+```
 
 
 

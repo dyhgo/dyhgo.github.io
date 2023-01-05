@@ -27,7 +27,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/cp%E7%AC%94%E8%AE%B0\/"
-        },"genre": "posts","keywords": "cpp","wordcount":  3798 ,
+        },"genre": "posts","keywords": "cpp","wordcount":  3843 ,
         "url": "https:\/\/dyhgo.github.io\/cp%E7%AC%94%E8%AE%B0\/","datePublished": "2020-01-19T00:00:00+00:00","dateModified": "2020-01-19T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +108,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">CP笔记</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-19">2020-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3798 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-01-19">2020-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3843 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 8 分钟&nbsp;<span id="/cp%E7%AC%94%E8%AE%B0/" class="leancloud_visitors" data-flag-title="CP笔记">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -187,6 +187,7 @@
     <li><a href="#pair_hash">pair_hash</a></li>
     <li><a href="#auto-">auto &amp;</a></li>
     <li><a href="#hypot">hypot()</a></li>
+    <li><a href="#a--b向下取整四舍五入向上取整">a / b向下取整、四舍五入、向上取整</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>记录的东西十分零散，适用于速查，不适合系统学习</p>
@@ -1519,6 +1520,21 @@ double 用%lf %f</p>
 </span><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hypotf</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
     <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">hypotl</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
 </code></pre></td></tr></table>
+</div>
+</div><h2 id="a--b向下取整四舍五入向上取整">a / b向下取整、四舍五入、向上取整</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>  <span class="c1">//floor
+</span><span class="c1"></span><span class="n">c</span> <span class="o">=</span> <span class="n">round</span><span class="p">((</span><span class="kt">float</span><span class="p">)</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">);</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>    <span class="c1">//ceil
+</span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

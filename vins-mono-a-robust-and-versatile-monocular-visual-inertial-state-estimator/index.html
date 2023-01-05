@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator - This is DYH</title><meta name="Description" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><meta property="og:title" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" />
+<meta property="og:description" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" />
+<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="article:published_time" content="2022-11-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-03T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"/>
+<meta name="twitter:description" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" /><link rel="prev" href="https://dyhgo.github.io/matrix-decomposition/" /><link rel="next" href="https://dyhgo.github.io/vins_estimator/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator\/"
+        },"genre": "posts","keywords": "slam","wordcount":  4297 ,
+        "url": "https:\/\/dyhgo.github.io\/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator\/","datePublished": "2022-11-03T00:00:00+00:00","dateModified": "2022-11-03T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a>&nbsp;<a href="/categories/slam/"><i class="far fa-folder fa-fw"></i>slam</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-03">2022-11-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4297 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" class="leancloud_visitors" data-flag-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#related-work">Related Work</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#measurement-preprocessing">Measurement Preprocessing</a>
+      <ul>
+        <li><a href="#vision-processing-front-end">Vision Processing Front-end</a></li>
+        <li><a href="#imu-pre-integration">IMU Pre-integration</a></li>
+      </ul>
+    </li>
+    <li><a href="#estimator-initialization">Estimator Initialization</a>
+      <ul>
+        <li><a href="#sliding-window-vision-only-sfm">Sliding Window Vision-Only SfM</a></li>
+        <li><a href="#visual-inertial-alignment">Visual-Inertial Alignment</a>
+          <ul>
+            <li><a href="#gyroscope-bias-calibration">Gyroscope Bias Calibration</a></li>
+            <li><a href="#velocity-gravity-vector-and-metric-scale-initialization">Velocity, Gravity Vector and Metric Scale Initialization</a></li>
+            <li><a href="#gravity-refinement">Gravity Refinement</a></li>
+            <li><a href="#completing-initialization">Completing Initialization</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#tightly-coupled-monocular-vio">Tightly-Coupled Monocular VIO</a>
+      <ul>
+        <li><a href="#formulation">Formulation</a></li>
+        <li><a href="#imu-measurement-residual">IMU Measurement Residual</a></li>
+        <li><a href="#visual-measurement-residual">Visual Measurement Residual</a></li>
+        <li><a href="#marginalization">Marginalization</a></li>
+        <li><a href="#motion-only-visual-inertial-bundle-adjustment-for-camera-rate-state-estimation">Motion-only Visual-Inertial Bundle Adjustment for Camera-Rate State Estimation</a></li>
+        <li><a href="#imu-forward-propagation-for-imu-rate-state-estimation">IMU Forward Propagation for IMU-Rate State Estimation</a></li>
+        <li><a href="#failure-detection-and-recovery">Failure Detection and Recovery</a></li>
+      </ul>
+    </li>
+    <li><a href="#relocalization">Relocalization</a>
+      <ul>
+        <li><a href="#loop-detection">Loop Detection</a></li>
+        <li><a href="#feature-retrieval">Feature Retrieval</a></li>
+        <li><a href="#tightly-coupled-relocalization">Tightly-Coupled Relocalization</a></li>
+      </ul>
+    </li>
+    <li><a href="#global-pose-graph-optimization">Global Pose Graph Optimization</a>
+      <ul>
+        <li><a href="#adding-keyframes-into-the-pose-graph">Adding Keyframes into the Pose Graph</a></li>
+        <li><a href="#4-dof-pose-graph-optimization">4-DOF Pose Graph Optimization</a></li>
+        <li><a href="#pose-graph-management">Pose Graph Management</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>简要记录一下论文的内容，防止遗忘，有些地方自己也没弄明白，记录不涉及公式的推导（公式推导参考崔华坤vins公式推导）</p>
+<h2 id="abstract">Abstract</h2>
+<p>VINS-Mono是一个由港科大秦通、栗培梁、沈劭劼完成的单目VI状态估计器，输入相机的图片和IMU参数，经过非线性优化，实时输出位姿和地图。</p>
+<p>代码在<a href="https://github.com/HKUST-Aerial-Robotics/VINS-Mono" target="_blank" rel="noopener noreffer">此链接</a></p>
+<h2 id="introduction">Introduction</h2>
+<p>由于单目相机对尺度不可测，所以使用IMU辅助。单目VIO系统存在一些问题，比如为了成功初始化需要有足够的加速度激励。由于系统高度非线性，初始化也比较麻烦。外参标定和误差漂移也是问题。所以作者提出了VINS-Mono。</p>
+<p>作者提出本文的主要贡献为</p>
+<ul>
+<li>鲁棒的初始化</li>
+<li>紧耦合和基于优化的VIO可以进行外参标定和IMU偏置估计</li>
+<li>在线回环检测和紧耦合的重定位</li>
+<li>四自由度全局位姿图优化</li>
+<li>实际应用良好</li>
+<li>开源</li>
+</ul>
+<h2 id="related-work">Related Work</h2>
+<p>有关视觉里程计的算法有很多，PTAM、SVO、LSD-SLAM、DSO、ORB-SLAM。最简单的VIO是IMU和视觉松耦合的EKF，紧耦合的VIO既可以使用滤波（常用MSCKF），也可以使用优化（批图优化和BA配合滑窗）。</p>
+<p>对于视觉测量的处理，一般有直接法和特征点法。直接法依赖于光度误差，计算量小，对初始位姿估计要求严格。特征点法依赖于平面的几何位移，计算量大，主要体现在提取和匹配特征点上。实际中，由于特征点法更成熟和鲁棒，也更常用，在稠密建图上直接法更好用。</p>
+<p>IMU通常有很高的频率，对于优化方法，通常使用IMU预积分。</p>
+<h2 id="overview">Overview</h2>
+<p>VINS的结构图如下</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/fe65e0cdd8404eceb72ed06d868d878d.png"
+        data-srcset="https://img-blog.csdnimg.cn/fe65e0cdd8404eceb72ed06d868d878d.png, https://img-blog.csdnimg.cn/fe65e0cdd8404eceb72ed06d868d878d.png 1.5x, https://img-blog.csdnimg.cn/fe65e0cdd8404eceb72ed06d868d878d.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/fe65e0cdd8404eceb72ed06d868d878d.png"
+        title="在这里插入图片描述" /></p>
+<p>在一开始时，图像会进行特征点追踪和提取，IMU数据进行预积分。在V部分会进行纯视觉SfM和视觉惯性对齐，这部分叫初始化，初始化之后就可以得到必要的信息（每一帧的位姿，速度，重力，陀螺仪偏置，3D点坐标）为后续非线性优化使用。在VI和VII部分，非线性优化将使用紧耦合的视觉和IMU数据，并且使用回环检测进行重定位。最后在VIII部分，使用重定位的结果进行全局位姿图优化，重定位和位姿图优化并行进行。</p>
+<h2 id="measurement-preprocessing">Measurement Preprocessing</h2>
+<p>测量预处理包括图像的特征点追踪和提取，IMU的预积分。</p>
+<h3 id="vision-processing-front-end">Vision Processing Front-end</h3>
+<p>图像首先进行特征点追踪，然后提取新的角点，使用RANSAC进行外点剔除。</p>
+<p>关键帧的判断有两个条件：如果当前帧和上一个关键帧的特征点平均视差过大，当前帧就是关键帧。如果跟踪到的点很少，当前帧就是关键帧。</p>
+<h3 id="imu-pre-integration">IMU Pre-integration</h3>
+<p>一些前置定义</p>
+<p>区分两个概念，测量值和真实值，测量值可以直接通过传感器得到，真实值是测量值尽可能消去误差（bias和noise）得到的</p>
+<p>下标k是图像帧，下标i是IMU帧</p>
+<p>原始的陀螺仪和加速度计的测量值</p>
+<p>$$
+\begin{aligned} 
+\hat{\mathbf{a}}_{t} &amp; =\mathbf{a}_{t}+\mathbf{b}_{a_{t}}+\mathbf{R}_{w}^{t} \mathbf{g}^{w}+\mathbf{n}_{a} 
+\end{aligned}
+$$</p>
+<p>$$
+\begin{aligned} 
+\hat{\boldsymbol{\omega}}_{t} &amp; =\boldsymbol{\omega}_{t}+\mathbf{b}_{w_{t}}+\mathbf{n}_{w} 
+\end{aligned}
+$$</p>
+<p>假设噪声满足正态分布，偏置的导数满足正态分布</p>
+<p>第k+1图像帧的位移、速度和旋转（在世界坐标系下）可以通过上一帧得到</p>
+<p>$$
+\begin{array}{l}
+\mathbf{p}_{b_{k+1}}^{w}=\mathbf{p}_{b_{k}}^{w}+\mathbf{v}_{b_{k}}^{w} \Delta t_{k} 
++\iint_{t \in\left[t_{k}, t_{k+1}\right]}\left(\mathbf{R}_{t}^{w}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right)-\mathbf{g}^{w}\right) d t^{2} 
+\end{array}
+$$</p>
+<p>$$
+\begin{array}{l}
+\mathbf{v}_{b_{k+1}}^{w}=\mathbf{v}_{b_{k}}^{w}+\int_{t \in\left[t_{k}, t_{k+1}\right]}\left(\mathbf{R}_{t}^{w}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right)-\mathbf{g}^{w}\right) d t
+\end{array}
+$$</p>
+<p>$$
+\begin{array}{l}
+\mathbf{q}_{b_{k+1}}^{w}=\mathbf{q}_{b_{k}}^{w} \otimes \int_{t \in\left[t_{k}, t_{k+1}\right]} \frac{1}{2} \boldsymbol{\Omega}\left(\hat{\boldsymbol{\omega}}_{t}-\mathbf{b}_{w_{t}}-\mathbf{n}_{w}\right) \mathbf{q}_{t}^{b_{k}} d t
+\end{array}
+$$</p>
+<p>$$
+\boldsymbol{\Omega}(\boldsymbol{\omega})=\left[\begin{array}{cc}
+-\lfloor\boldsymbol{\omega}\rfloor_{\times} &amp; \boldsymbol{\omega} \<br>
+-\boldsymbol{\omega}^{T} &amp; 0
+\end{array}\right],\lfloor\boldsymbol{\omega}\rfloor_{\times}=\left[\begin{array}{ccc}
+0 &amp; -\omega_{z} &amp; \omega_{y} \<br>
+\omega_{z} &amp; 0 &amp; -\omega_{x} \<br>
+-\omega_{y} &amp; \omega_{x} &amp; 0
+\end{array}\right]
+$$</p>
+<p>由上面的公式可以看出，Rwt是待优化变量，每次优化调整时，就需要重新传递才能使其他量更准确，很浪费时间，所以采用预积分的策略</p>
+<p>不在世界坐标系下求pvq，而是在bk系下求，这样公式转变成</p>
+<p>$$
+\begin{aligned}
+\mathbf{R}<em>{w}^{b</em>{k}} \mathbf{p}<em>{b</em>{k+1}}^{w} &amp; =\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{p}<em>{b</em>{k}}^{w}+\mathbf{v}<em>{b</em>{k}}^{w} \Delta t_{k}-\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}\right)+\boldsymbol{\alpha}_{b_{k+1}}^{b_{k}} \<br>
+\mathbf{R}_{w}^{b_{k}} \mathbf{v}_{b_{k+1}}^{w} &amp; =\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k}}^{w}-\mathbf{g}^{w} \Delta t_{k}\right)+\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} \<br>
+\mathbf{q}_{w}^{b_{k}} \otimes \mathbf{q}_{b_{k+1}}^{w} &amp; =\gamma_{b_{k+1}}^{b_{k}}
+\end{aligned}
+$$</p>
+<p>$$
+\begin{aligned}
+\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; =\iint_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}_{t}^{b_{k}}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right) d t^{2} \<br>
+\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}_{t}^{b_{k}}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right) d t \<br>
+\boldsymbol{\gamma}_{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \frac{1}{2} \boldsymbol{\Omega}\left(\hat{\boldsymbol{\omega}}_{t}-\mathbf{b}_{w_{t}}-\mathbf{n}_{w}\right) \boldsymbol{\gamma}_{t}^{b_{k}} d t
+\end{aligned}
+$$</p>
+<p>三个预积分项可以近似看成是相邻图像帧之间的pvq的变化量，可以看出三个预积分项没有待优化变量。三个预积分项和bias有关，当bias变化时，变化不大，则用预积分项的一阶近似代替，变化很大则重传递</p>
+<p>上面的预积分项是连续的，实际是用离散形式代替，离散形式有欧拉法、中点法等，论文写的是欧拉法，代码中用的是中点法。欧拉法的预积分项传递公式如下（不考虑噪声）</p>
+<p>$$
+\begin{array}{l}
+\hat{\boldsymbol{\alpha}}<em>{i+1}^{b</em>{k}}=\hat{\boldsymbol{\alpha}}<em>{i}^{b</em>{k}}+\hat{\boldsymbol{\beta}}<em>{i}^{b</em>{k}} \delta t+\frac{1}{2} \mathbf{R}\left(\hat{\gamma}<em>{i}^{b</em>{k}}\right)\left(\hat{\mathbf{a}}<em>{i}-\mathbf{b}</em>{a_{i}}\right) \delta t^{2} \<br>
+\hat{\boldsymbol{\beta}}_{i+1}^{b_{k}}=\hat{\boldsymbol{\beta}}_{i}^{b_{k}}+\mathbf{R}\left(\hat{\gamma}_{i}^{b_{k}}\right)\left(\hat{\mathbf{a}}_{i}-\mathbf{b}_{a_{i}}\right) \delta t \<br>
+\hat{\boldsymbol{\gamma}}_{i+1}^{b_{k}}=\hat{\boldsymbol{\gamma}}_{i}^{b_{k}} \otimes\left[\begin{array}{c}
+1 \<br>
+\frac{1}{2}\left(\hat{\boldsymbol{\omega}}_{i}-\mathbf{b}_{w_{i}}\right) \delta t
+\end{array}\right]
+\end{array}
+$$</p>
+<p>预积分和bias的误差传递公式如下</p>
+<p>$$
+\begin{array}{l}
+{\left[\begin{array}{c}
+\delta \dot{\boldsymbol{\alpha}}<em>{t}^{b</em>{k}} \<br>
+\delta \dot{\boldsymbol{\beta}}<em>{t}^{b</em>{k}} \<br>
+\delta \dot{\boldsymbol{\theta}}<em>{t}^{b</em>{k}} \<br>
+\delta \dot{\mathbf{b}}<em>{a</em>{t}} \<br>
+\delta \dot{\mathbf{b}}<em>{w</em>{t}}
+\end{array}\right]=\left[\begin{array}{ccccc}
+0 &amp; \mathbf{I} &amp; 0 &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; -\mathbf{R}<em>{t}^{b</em>{k}}\left\lfloor\hat{\mathbf{a}}<em>{t}-\mathbf{b}</em>{a_{t}}\right\rfloor_{\times} &amp; -\mathbf{R}_{t}^{b_{k}} &amp; 0 \<br>
+0 &amp; 0 &amp; -\left\lfloor\hat{\boldsymbol{\omega}}_{t}-\mathbf{b}_{w_{t}}\right\rfloor_{\times} &amp; 0 &amp; -\mathbf{I} \<br>
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]\left[\begin{array}{c}
+\delta \boldsymbol{\alpha}_{t}^{b_{t}} \<br>
+\delta \boldsymbol{\beta}_{t}^{b_{k}} \<br>
+\delta \boldsymbol{\theta}_{t}^{b_{k}} \<br>
+\delta \mathbf{b}_{a_{t}} \<br>
+\delta \mathbf{b}_{w_{t}}
+\end{array}\right]} \<br>
++\left[\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \<br>
+-\mathbf{R}_{t}^{b_{k}} &amp; 0 &amp; 0 &amp; 0 \<br>
+0 &amp; -\mathbf{I} &amp; 0 &amp; 0 \<br>
+0 &amp; 0 &amp; \mathbf{I} &amp; 0 \<br>
+0 &amp; 0 &amp; 0 &amp; \mathbf{I}
+\end{array}\right]\left[\begin{array}{c}
+\mathbf{n}_{a} \<br>
+\mathbf{n}_{w} \<br>
+\mathbf{n}_{b_{a}} \<br>
+\mathbf{n}_{b_{w}}
+\end{array}\right]=\mathbf{F}_{t} \delta \mathbf{z}_{t}^{b_{k}}+\mathbf{G}_{t} \mathbf{n}_{t} \<br>
+\end{array}
+$$</p>
+<p>根据误差传递公式可以获得误差的协方差矩阵和误差（残差）对于待优化变量的雅克比矩阵</p>
+<p>协方差矩阵P用于后端非线性优化，雅克比矩阵J用来修正测量值，得到理论上的真实值</p>
+<p>$$
+\begin{array}{c}
+\mathbf{P}<em>{t+\delta t}^{b</em>{k}}=\left(\mathbf{I}+\mathbf{F}<em>{t} \delta t\right) \mathbf{P}</em>{t}^{b_{k}}\left(\mathbf{I}+\mathbf{F}_{t} \delta t\right)^{T}+\left(\mathbf{G}_{t} \delta t\right) \mathbf{Q}\left(\mathbf{G}_{t} \delta t\right)^{T}, \<br>
+t \in[k, k+1]
+\end{array}
+$$</p>
+<p>初始值$P_{b_k}^{b_k}=0$，Q是正态分布的方差$\left(\boldsymbol{\sigma}_{a}^{2}, \boldsymbol{\sigma}_{w}^{2}, \boldsymbol{\sigma}_{b_{a}}^{2}, \boldsymbol{\sigma}_{b_{w}}^{2}\right)$</p>
+<p>雅克比矩阵也同样可以迭代地计算</p>
+<p>$$
+\mathbf{J}<em>{t+\delta t}=\left(\mathbf{I}+\mathbf{F}</em>{t} \delta t\right) \mathbf{J}_{t}, \quad t \in[k, k+1]
+$$</p>
+<p>初始值$J_{b_k}=I$</p>
+<p>这样预积分项就可以用一阶泰勒展示来修正</p>
+<p>$$
+\begin{aligned}
+\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}+\mathbf{J}_{b_{a}}^{\alpha} \delta \mathbf{b}_{a_{k}}+\mathbf{J}_{b_{w}}^{\alpha} \delta \mathbf{b}_{w_{k}} \<br>
+\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}+\mathbf{J}_{b_{a}}^{\beta} \delta \mathbf{b}_{a_{k}}+\mathbf{J}_{b_{w}}^{\beta} \delta \mathbf{b}_{w_{k}} \<br>
+\boldsymbol{\gamma}_{b_{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\gamma}}_{b_{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
+1 \<br>
+\frac{1}{2} \mathbf{J}_{b_{w}}^{\gamma} \delta \mathbf{b}_{w_{k}}
+\end{array}\right]
+\end{aligned}
+$$</p>
+<p>如果bias有微小的变动也可以用上述公式来修正</p>
+<p>最后总结一下预积分的公式如下</p>
+<p>$$
+\left[\begin{array}{c}
+\hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}} \<br>
+\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}} \<br>
+\hat{\boldsymbol{\gamma}}_{b_{k+1}}^{b_{k}} \<br>
+\mathbf{0} \<br>
+\mathbf{0}
+\end{array}\right]=\left[\begin{array}{c}
+\mathbf{R}_{w}^{b_{k}}\left(\mathbf{p}_{b_{k+1}}^{w}-\mathbf{p}_{b_{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}_{b_{k}}^{w} \Delta t_{k}\right) \<br>
+\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}_{b_{k}}^{w}\right) \<br>
+\mathbf{q}_{b_{k}}^{b^{-1}} \otimes \mathbf{q}_{b_{k+1}}^{w} \<br>
+\mathbf{b}_{a b_{k+1}}-\mathbf{b}_{a b_{k}} \<br>
+\mathbf{b}_{w b_{k+1}}-\mathbf{b}_{w b_{k}}
+\end{array}\right]
+$$</p>
+<h2 id="estimator-initialization">Estimator Initialization</h2>
+<p>先纯视觉SfM，然后视觉和IMU对齐恢复尺度、重力、速度、bias。在初始化时，忽略加速度计的bias</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/cb7e2a49ad5441139d680afd18e4f1a0.png"
+        data-srcset="https://img-blog.csdnimg.cn/cb7e2a49ad5441139d680afd18e4f1a0.png, https://img-blog.csdnimg.cn/cb7e2a49ad5441139d680afd18e4f1a0.png 1.5x, https://img-blog.csdnimg.cn/cb7e2a49ad5441139d680afd18e4f1a0.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/cb7e2a49ad5441139d680afd18e4f1a0.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="sliding-window-vision-only-sfm">Sliding Window Vision-Only SfM</h3>
+<p>当滑窗满了开始初始化，求最新帧和前面帧的共视点，如果前面存在一个帧有足够的共视点和视差，则那一帧当做参考帧，通过五点法求出不含尺度的相对旋转和位移。如果找不到参考帧，则移出最老帧，等待新帧。</p>
+<p>如果五点法成功，则三角化参考帧和最新帧的共视点。有了3D点，通过PnP求滑窗中其他帧的位姿。最后全局BA</p>
+<h3 id="visual-inertial-alignment">Visual-Inertial Alignment</h3>
+<h4 id="gyroscope-bias-calibration">Gyroscope Bias Calibration</h4>
+<p>陀螺仪偏置的标定通过最小化如下函数来求，其中q由SfM得到，γ由IMU得到</p>
+<p>$$
+\begin{array}{r}
+\min <em>{\delta b</em>{w}} \sum_{k \in \mathcal{B}}\left|\mathbf{q}_{b_{k+1}}^{c_{0}}{ }^{-1} \otimes \mathbf{q}_{b_{k}}^{c_{0}} \otimes \boldsymbol{\gamma}_{b_{k+1}}^{b_{k}}\right|^{2} \<br>
+\gamma_{b_{k+1}}^{b_{k}} \approx \hat{\gamma}_{b_{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
+1 \<br>
+\frac{1}{2} \mathbf{J}_{b_{w}}^{\gamma} \delta \mathbf{b}_{w}
+\end{array}\right]
+\end{array}
+$$</p>
+<p>B表示滑窗所有帧</p>
+<p>求出陀螺仪偏置后重传递更新所有的IMU预积分</p>
+<h4 id="velocity-gravity-vector-and-metric-scale-initialization">Velocity, Gravity Vector and Metric Scale Initialization</h4>
+<p>待求的变量为</p>
+<p>$$
+\mathcal{X}<em>{I}=\left[\mathbf{v}</em>{b_{0}}^{b_{0}}, \mathbf{v}_{b_{1}}^{b_{1}}, \cdots \mathbf{v}_{b_{n}}^{b_{n}}, \mathbf{g}^{c_{0}}, s\right]
+$$</p>
+<p>论文中给出了结论，求这个向量就是最小化以下函数</p>
+<p>$$
+\min <em>{\mathcal{X}</em>{I}} \sum_{k \in \mathcal{B}}\left|\hat{\mathbf{z}}_{b_{k+1}}^{b_{k}}-\mathbf{H}_{b_{k+1}}^{b_{k}} \mathcal{X}_{I}\right|^{2}
+$$</p>
+<p>$$
+\hat{\mathbf{z}}<em>{b</em>{k+1}}^{b_{k}}=\left[\begin{array}{c}
+\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}-\mathbf{p}_{c}^{b}+\mathbf{R}_{c_{0}}^{b_{k}} \mathbf{R}_{b_{k+1}}^{c_{0}} \mathbf{p}_{c}^{b} \<br>
+\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}
+\end{array}\right]
+$$</p>
+<p>$$
+\mathbf{H}<em>{b</em>{k+1}}^{b_{k}}=\left[\begin{array}{cccc}
+-\mathbf{I} \Delta t_{k} &amp; \mathbf{0} &amp; \frac{1}{2} \mathbf{R}_{c_{0}}^{b_{k}} \Delta t_{k}^{2} &amp; \mathbf{R}_{c_{0}}^{b_{k}}\left(\overline{\mathbf{p}}_{c_{k+1}}^{c_{0}}-\overline{\mathbf{p}}_{c_{k}}^{c_{0}}\right) \<br>
+-\mathbf{I} &amp; \mathbf{R}_{c_{0}}^{b_{k}} \mathbf{R}_{b_{k+1}}^{c_{0}} &amp; \mathbf{R}_{c_{0}}^{b_{0}} \Delta t_{k}
+\end{array}\right]
+$$</p>
+<h4 id="gravity-refinement">Gravity Refinement</h4>
+<p>由于重力的值通常是已知的，所以只有2自由度，但是我们求出的g有3自由度，所以进行优化</p>
+<p>将g写成这种形式$g \cdot \overline{\hat{\mathbf{g}}}+w_{1} \mathbf{b}_{1}+w_{2} \mathbf{b}_{2}$，其中g是已知的重力值，g\hat\bar是原本重力的单位向量，b1b2是原本重力切平面的正交基，w1w2是权重</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/8ff7c745f09b4600a1806b9085dcf28b.png"
+        data-srcset="https://img-blog.csdnimg.cn/8ff7c745f09b4600a1806b9085dcf28b.png, https://img-blog.csdnimg.cn/8ff7c745f09b4600a1806b9085dcf28b.png 1.5x, https://img-blog.csdnimg.cn/8ff7c745f09b4600a1806b9085dcf28b.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/8ff7c745f09b4600a1806b9085dcf28b.png"
+        title="在这里插入图片描述" />
+b是这样求的</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/5994f227f1f146dca5f6e18a17f3cb93.png"
+        data-srcset="https://img-blog.csdnimg.cn/5994f227f1f146dca5f6e18a17f3cb93.png, https://img-blog.csdnimg.cn/5994f227f1f146dca5f6e18a17f3cb93.png 1.5x, https://img-blog.csdnimg.cn/5994f227f1f146dca5f6e18a17f3cb93.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/5994f227f1f146dca5f6e18a17f3cb93.png"
+        title="在这里插入图片描述" />
+w是通过改写上面公式的H和z求的</p>
+<h4 id="completing-initialization">Completing Initialization</h4>
+<p>最后将重力转到z轴，求出一个旋转矩阵，通过旋转矩阵将所有的量从c0系转到世界系</p>
+<p>然后这些量将输入进紧耦合VIO中</p>
+<h2 id="tightly-coupled-monocular-vio">Tightly-Coupled Monocular VIO</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/c5225ab509e54a6a881c78daf3e54cde.png"
+        data-srcset="https://img-blog.csdnimg.cn/c5225ab509e54a6a881c78daf3e54cde.png, https://img-blog.csdnimg.cn/c5225ab509e54a6a881c78daf3e54cde.png 1.5x, https://img-blog.csdnimg.cn/c5225ab509e54a6a881c78daf3e54cde.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/c5225ab509e54a6a881c78daf3e54cde.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="formulation">Formulation</h3>
+<p>待优化变量为滑窗内每个图像pvqb，外参，特征点的逆深度</p>
+<p>$$
+\begin{aligned}
+\mathcal{X} &amp; =\left[\mathbf{x}<em>{0}, \mathbf{x}</em>{1}, \cdots \mathbf{x}<em>{n}, \mathbf{x}</em>{c}^{b}, \lambda_{0}, \lambda_{1}, \cdots \lambda_{m}\right] \<br>
+\mathbf{x}_{k} &amp; =\left[\mathbf{p}_{b_{k}}^{w}, \mathbf{v}_{b_{k}}^{w}, \mathbf{q}_{b_{k}}^{w}, \mathbf{b}_{a}, \mathbf{b}_{g}\right], k \in[0, n] \<br>
+\mathbf{x}_{c}^{b} &amp; =\left[\mathbf{p}_{c}^{b}, \mathbf{q}_{c}^{b}\right]
+\end{aligned}
+$$</p>
+<p>非线性优化的公式如下，这也是VINS最重要的公式，之后会说下公式的含义</p>
+<p>$$
+\begin{aligned}
+\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\right. &amp; \sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|_{\mathbf{P}_{b_{k+1}}^{b_{k}}}^{2}+
+\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{c_{j}}, \mathcal{X}\right)\right|_{\left.\mathbf{P}_{l}^{c_{j}}\right)}^{2}\right}
+\end{aligned}
+$$</p>
+<p>这个公式有三项分别是边缘化的先验约束、IMU约束、视觉约束，约束就是残差，其中后两项带有协方差矩阵，最后一项加上Huber核，B是IMU在滑窗内所有的测量值，C是滑窗内被跟踪至少两次的特征点。用ceres solver求解</p>
+<h3 id="imu-measurement-residual">IMU Measurement Residual</h3>
+<p>IMU约束是相邻两个图像之间的预积分项的残差</p>
+<p>$$
+\begin{array}{l}
+\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)=\left[\begin{array}{c}
+\delta \boldsymbol{\alpha}_{b_{k+1}}^{b_{k}} \<br>
+\delta \boldsymbol{\beta}_{b_{k+1}}^{b_{k}} \<br>
+\delta \boldsymbol{\theta}_{b_{k+1}}^{b_{k}} \<br>
+\delta \mathbf{b}_{a} \<br>
+\delta \mathbf{b}_{g}
+\end{array}\right] \<br>
+=\left[\begin{array}{c}
+\mathbf{R}_{w}^{b_{k}}\left(\mathbf{p}_{b_{k+1}}^{w}-\mathbf{p}_{b_{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}_{b_{k}}^{w} \Delta t_{k}\right)-\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}} \<br>
+\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}_{b_{k}}^{w}\right)-\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}} \<br>
+2\left[\mathbf{q}_{b_{k}}^{w^{-1}} \otimes \mathbf{q}_{b_{k+1}}^{w} \otimes\left(\hat{\gamma}_{b_{k+1}}^{b_{k}}\right)^{-1}\right]_{x y z} \<br>
+\mathbf{b}_{a b_{k+1}}-\mathbf{b}_{a b_{k}} \<br>
+\mathbf{b}_{w b_{k+1}}-\mathbf{b}_{w b_{k}}
+\end{array}\right]
+\end{array}
+$$</p>
+<h3 id="visual-measurement-residual">Visual Measurement Residual</h3>
+<p>视觉的约束就是重投影误差</p>
+<p>误差的距离不是在成像平面上计算，是将特征点像素坐标通过内参投影到单位球上，然后在单位球上求向量的差，因为误差是2维（像素坐标是2维）的，所以误差实际上在单位球的正切平面上算</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/30b189e69abb47d08dd87ddf742ba351.png"
+        data-srcset="https://img-blog.csdnimg.cn/30b189e69abb47d08dd87ddf742ba351.png, https://img-blog.csdnimg.cn/30b189e69abb47d08dd87ddf742ba351.png 1.5x, https://img-blog.csdnimg.cn/30b189e69abb47d08dd87ddf742ba351.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/30b189e69abb47d08dd87ddf742ba351.png"
+        title="在这里插入图片描述" /></p>
+<p>$$
+\begin{array}{l}
+\mathbf{r}<em>{\mathcal{C}}\left(\hat{\mathbf{z}}</em>{l}^{c_{j}}, \mathcal{X}\right)=\left[\begin{array}{ll}
+\mathbf{b}_{1} &amp; \mathbf{b}_{2}
+\end{array}\right]^{T} \cdot\left(\hat{\overline{\mathcal{P}}}_{l}^{c_{j}}-\frac{\mathcal{P}_{l}^{c_{j}}}{\left|\mathcal{P}_{l}^{c_{j}}\right|}\right) \<br>
+\begin{array}{l} 
+\hat{\mathcal{P}}_{l}^{c_{j}}=\pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
+\hat{u}_{l}^{c_{j}} \<br>
+\hat{v}_{l}^{c_{j}}
+\end{array}\right]\right) \<br>
+\mathcal{P}_{l}^{c_{j}}=\mathbf{R}_{b}^{c}\left(\mathbf { R } _ { w } ^ { b _ { j } } \left(\mathbf { R } _ { b _ { i } } ^ { w } \left(\mathbf{R}_{c}^{b} \frac{1}{\lambda_{l}} \pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
+u_{l}^{c_{i}} \<br>
+v_{l}^{c_{i}}
+\end{array}\right]\right)\right.\right.\right. 
+\left.\left.\left.+\mathbf{p}_{c}^{b}\right)+\mathbf{p}_{b_{i}}^{w}-\mathbf{p}_{b_{j}}^{w}\right)-\mathbf{p}_{c}^{b}\right)
+\end{array}
+\end{array}
+$$</p>
+<h3 id="marginalization">Marginalization</h3>
+<p>由于要滑窗容量有限，当新帧来时，就需要把滑窗内的某一帧移出去，而移出去的过程就叫边缘化，移出去的帧和相关的数据不能直接丢弃，会作为先验信息加入到非线性优化中</p>
+<p>边缘化的策略是，如果次新帧是关键帧，则边缘化最老帧，把相关的VI数据作为先验，如果次新帧不是关键帧，则抛弃它，视觉数据直接抛弃，IMU数据和后面的连在一起</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/da55dc8cb8894b55a819441f400fcad5.png"
+        data-srcset="https://img-blog.csdnimg.cn/da55dc8cb8894b55a819441f400fcad5.png, https://img-blog.csdnimg.cn/da55dc8cb8894b55a819441f400fcad5.png 1.5x, https://img-blog.csdnimg.cn/da55dc8cb8894b55a819441f400fcad5.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/da55dc8cb8894b55a819441f400fcad5.png"
+        title="在这里插入图片描述" /></p>
+<p>边缘化采用舒尔补，具体形式论文没有详细叙述，详细公式在A General Optimization-based Framework for Local Odometry Estimation with Multiple Sensors论文中叙述</p>
+<p>边缘化对导致线性化点的过早固定，这样可能会得到次优解，不过作者认为小误差漂移是可以接受的（可能后续可以通过回环检测来消除）</p>
+<h3 id="motion-only-visual-inertial-bundle-adjustment-for-camera-rate-state-estimation">Motion-only Visual-Inertial Bundle Adjustment for Camera-Rate State Estimation</h3>
+<p>对于算力不是很足的设备，在优化时只优化后面几帧的数据，而不是整个滑窗的数据</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/3c63649887614fac9ee6692f7ad81ba2.png"
+        data-srcset="https://img-blog.csdnimg.cn/3c63649887614fac9ee6692f7ad81ba2.png, https://img-blog.csdnimg.cn/3c63649887614fac9ee6692f7ad81ba2.png 1.5x, https://img-blog.csdnimg.cn/3c63649887614fac9ee6692f7ad81ba2.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/3c63649887614fac9ee6692f7ad81ba2.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="imu-forward-propagation-for-imu-rate-state-estimation">IMU Forward Propagation for IMU-Rate State Estimation</h3>
+<h3 id="failure-detection-and-recovery">Failure Detection and Recovery</h3>
+<p>故障检测的标准是：最新帧跟踪的特征点小于某个阈值，估计器输出的最后两帧的位移和旋转差很大，估计器估计的bias和外参在两个时刻差很大</p>
+<p>当检测到故障时，回到初始化阶段</p>
+<h2 id="relocalization">Relocalization</h2>
+<p>由于滑窗和边缘化计算的是局部的信息，会带来误差并累积，所以使用回环检测和重定位来消除</p>
+<h3 id="loop-detection">Loop Detection</h3>
+<p>使用DBoW2词袋模型进行回环检测，除了用于VIO的角点，会额外提取500个角点并计算BRIEF描述子，描述子作为单词进行查找，查找后会返回回环候选帧。我们只保留描述子用于信息检索，原始图像将会被抛弃来减少内存消耗</p>
+<h3 id="feature-retrieval">Feature Retrieval</h3>
+<p>对于回环候选帧，如果直接比较描述子鲁棒性不是很高</p>
+<p>所以先用RANSAC做一次2D-2D的测试，再用RANSAC做一次PnP测试，如果内点大于阈值则为回环帧，然后进行重定位</p>
+<h3 id="tightly-coupled-relocalization">Tightly-Coupled Relocalization</h3>
+<p>重定位就是改变非线性优化的代价函数，再加一项视觉的回环约束，因为我们将VIO中这些特征点和回环中看到的这些特征点认为是相同的。但是把从位姿图中拿出的回环帧的位姿保持恒定</p>
+<p>如果滑窗有多个回环帧时，一起优化以提高精度和平滑度</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/5b6fe46fddbc4c7aa75cac08b230fcdf.png"
+        data-srcset="https://img-blog.csdnimg.cn/5b6fe46fddbc4c7aa75cac08b230fcdf.png, https://img-blog.csdnimg.cn/5b6fe46fddbc4c7aa75cac08b230fcdf.png 1.5x, https://img-blog.csdnimg.cn/5b6fe46fddbc4c7aa75cac08b230fcdf.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/5b6fe46fddbc4c7aa75cac08b230fcdf.png"
+        title="在这里插入图片描述" /></p>
+<p>$$
+\begin{array}{l}
+\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|_{\mathbf{P}_{b_{k+1}}^{b_{k}}}^{2}\right. 
++\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{c_{j}}, \mathcal{X}\right)\right|_{\mathbf{P}_{l}^{c_{j}}}^{2}\right) 
++\sum_{(l, v) \in \mathcal{L}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{v}, \mathcal{X}, \hat{\mathbf{q}}_{v}^{w}, \hat{\mathbf{p}}_{v}^{w}\right)\right|_{\mathbf{P}_{l}^{c_{v}}}^{2}\right} 
+\end{array}
+$$</p>
+<p>其中v表示回环帧</p>
+<h2 id="global-pose-graph-optimization">Global Pose Graph Optimization</h2>
+<p>为了使全局保持同步，所以将重定位的结果加进全局位姿图优化中。因为重力方向已经确定，所以三个方向的平移和对重力方向的旋转是不可观的，只进行4自由度的位姿图优化</p>
+<h3 id="adding-keyframes-into-the-pose-graph">Adding Keyframes into the Pose Graph</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/7e0aef36113d442f82d56a783487293d.png"
+        data-srcset="https://img-blog.csdnimg.cn/7e0aef36113d442f82d56a783487293d.png, https://img-blog.csdnimg.cn/7e0aef36113d442f82d56a783487293d.png 1.5x, https://img-blog.csdnimg.cn/7e0aef36113d442f82d56a783487293d.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/7e0aef36113d442f82d56a783487293d.png"
+        title="在这里插入图片描述" /></p>
+<p>当关键帧从滑窗中边缘化掉后，它将作为顶点加进位姿图中</p>
+<p>这个顶点与别的顶点有两种边</p>
+<p>序列边：这个关键帧与前面的关键帧相连，边表示的是相对平移，假设刚被边缘化的关键帧i和之前某一个关键帧j，考虑4自由度，平移和yaw角</p>
+<p>$$
+\begin{aligned}
+\hat{\mathbf{p}}<em>{i j}^{i} &amp; =\hat{\mathbf{R}}</em>{i}^{w-1}\left(\hat{\mathbf{p}}<em>{j}^{w}-\hat{\mathbf{p}}</em>{i}^{w}\right) \<br>
+\hat{\psi}<em>{i j} &amp; =\hat{\psi}</em>{j}-\hat{\psi}_{i}
+\end{aligned}
+$$</p>
+<p>回环边：如果刚被边缘化的关键帧有回环帧，则加一条4自由度的边，边的值从重定位中获取，形式和上面的公式一样</p>
+<h3 id="4-dof-pose-graph-optimization">4-DOF Pose Graph Optimization</h3>
+<p>定义两帧i和j的残差</p>
+<p>$$
+\mathbf{r}<em>{i, j}\left(\mathbf{p}</em>{i}^{w}, \psi_{i}, \mathbf{p}_{j}^{w}, \psi_{j}\right)=\left[\begin{array}{c}
+\mathbf{R}\left(\hat{\phi}_{i}, \hat{\theta}_{i}, \psi_{i}\right)^{-1}\left(\mathbf{p}_{j}^{w}-\mathbf{p}_{i}^{w}\right)-\hat{\mathbf{p}}_{i j}^{i} \<br>
+\psi_{j}-\psi_{i}-\hat{\psi}_{i j}
+\end{array}\right]
+$$</p>
+<p>全局图的代价函数为</p>
+<p>$$
+\min <em>{\mathbf{p}, \psi}\left{\sum</em>{(i, j) \in \mathcal{S}}\left|\mathbf{r}<em>{i, j}\right|^{2}+\sum</em>{(i, j) \in \mathcal{L}} \rho\left(\left|\mathbf{r}_{i, j}\right|^{2}\right)\right}
+$$</p>
+<p>其中S是序列边，L是回环边，序列边不加鲁棒核是因为它的数据从VIO中获得，已经进行了外点剔除，具有鲁棒性了</p>
+<p>重定位和全局位姿图优化在不同的线程中进行，这样可以保证它们互相使用最新的结果</p>
+<h3 id="pose-graph-management">Pose Graph Management</h3>
+<p>由于全局位姿图会不断膨胀，在计算上会越来越耗时，所以之后有回环的关键帧会被保留，那些很相似的关键帧将被丢弃</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-11-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" data-hashtags="slam"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-hashtag="slam"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" data-description="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" data-description="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" data-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/slam/">slam</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/matrix-decomposition/" class="prev" rel="prev" title="Matrix Decomposition"><i class="fas fa-angle-left fa-fw"></i>Matrix Decomposition</a>
+            <a href="/vins_estimator/" class="next" rel="next" title="vins_estimator">vins_estimator<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><link rel="stylesheet" href="/custom.css"><script type="text/javascript" src="/lib/valine/Valine.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript" src="/custom.js"></script><script type="text/javascript" src="/live2d.js"></script><script type="text/javascript" src="/snowflakes.js"></script><script type="text/javascript" src="/LAppDefine.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

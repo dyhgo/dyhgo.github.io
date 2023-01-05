@@ -4,7 +4,21 @@
         <link>https://dyhgo.github.io/categories/slam/</link>
         <description>slam - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
+    <title>vins_estimator</title>
+    <link>https://dyhgo.github.io/vins_estimator/</link>
+    <pubDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/vins_estimator/</guid>
+    <description><![CDATA[vins_estimator rosNodeTest.cpp 读取配置文件的参数 readParameters(config_file); readParameters()将配置文件的参数读取到parameters.h中 estimator.setParameter() 设置estimator的外参、td]]></description>
+</item><item>
+    <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</title>
+    <link>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</link>
+    <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</guid>
+    <description><![CDATA[简要记录一下论文的内容，防止遗忘，有些地方自己也没弄明白，记录不涉及公式的推导（公式推导参考崔华坤vins公式推导） Abstract VINS-Mono是一]]></description>
+</item><item>
     <title>Kalman Filter in One Dimension</title>
     <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
     <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
