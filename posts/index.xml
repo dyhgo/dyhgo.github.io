@@ -4,7 +4,21 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>GO与socks5代理服务器</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+    <description><![CDATA[参考 Socks5原理 如果不设置代理服务器，网站先和服务器建立tcp连接，然后三次握手，之后网站发送http请求，服务器返回http响应。 当加]]></description>
+</item><item>
+    <title>GO与并发</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
+    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
+    <description><![CDATA[并发与并行 concurrncy和parallellism 并发指多个任务在同一时间段进行，并行指多个任务在同一时刻进行 单核cpu只能并发不能并]]></description>
+</item><item>
     <title>GO与http请求</title>
     <link>https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
     <pubDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</pubDate>
@@ -60,19 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
     <description><![CDATA[N卡设置 Config文件 默认 命名为conf.cfg 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rate &#34;786432&#34; alias +cjump &#34;+jump; +duck&#34; alias -cjump &#34;-jump; -duck&#34; bind &#34;space&#34; &#34;+cjump&#34; cl_interp &#34;0&#34; cl_interp_ratio &#34;1&#34; viewmodel_recoil &#34;0&#34; bind &#34;Capslock&#34;&#34;+jump;-attack;-attack2;-jump&#34; sv_grenade_trajectory &#34;1&#34; bind &#34;MWHEELDOWN&#34; &#34;toggle]]></description>
-</item><item>
-    <title>Learning CPP</title>
-    <link>https://dyhgo.github.io/learning-cpp/</link>
-    <pubDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/learning-cpp/</guid>
-    <description><![CDATA[Introduction 学习一下c++ 教程视频地址，搬运自youtube 个人认为是一个非常不错的c++教程 空着的待补 How C++ works pre-process compile link Variables Functions Header Files 当我们需要在cpp文件中用]]></description>
-</item><item>
-    <title>tf-idf</title>
-    <link>https://dyhgo.github.io/tf-idf/</link>
-    <pubDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tf-idf/</guid>
-    <description><![CDATA[记录一下tf-idf TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术]]></description>
 </item></channel>
 </rss>

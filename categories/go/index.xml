@@ -4,7 +4,21 @@
         <link>https://dyhgo.github.io/categories/go/</link>
         <description>go - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+    <title>GO与socks5代理服务器</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+    <description><![CDATA[参考 Socks5原理 如果不设置代理服务器，网站先和服务器建立tcp连接，然后三次握手，之后网站发送http请求，服务器返回http响应。 当加]]></description>
+</item><item>
+    <title>GO与并发</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
+    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
+    <description><![CDATA[并发与并行 concurrncy和parallellism 并发指多个任务在同一时间段进行，并行指多个任务在同一时刻进行 单核cpu只能并发不能并]]></description>
+</item><item>
     <title>GO与http请求</title>
     <link>https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
     <pubDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</pubDate>
