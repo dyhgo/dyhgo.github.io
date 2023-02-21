@@ -7,6 +7,13 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 26 Feb 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>GO与测试</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+    <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+    <description><![CDATA[参考 单元测试 规则 所有测试文件以_test.go结尾 func TestXxx(*testing.T) 初始化逻辑放到TestMain中 例子 文件名为nihao_test.go 1 2 3 4 5 6 7 8]]></description>
+</item><item>
     <title>GO与socks5代理服务器</title>
     <link>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</guid>
     <description><![CDATA[在leetcode平台上做一下剑指offer的题，不定时更新 03 数组中重复的数字 考点 easy 模拟 题意 题链 找出数组中任一重复的数 题解 1 2 3 4 5 6 7 8 9]]></description>
-</item><item>
-    <title>CS:GO参数设置</title>
-    <link>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
-    <pubDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
-    <description><![CDATA[N卡设置 Config文件 默认 命名为conf.cfg 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rate &#34;786432&#34; alias +cjump &#34;+jump; +duck&#34; alias -cjump &#34;-jump; -duck&#34; bind &#34;space&#34; &#34;+cjump&#34; cl_interp &#34;0&#34; cl_interp_ratio &#34;1&#34; viewmodel_recoil &#34;0&#34; bind &#34;Capslock&#34;&#34;+jump;-attack;-attack2;-jump&#34; sv_grenade_trajectory &#34;1&#34; bind &#34;MWHEELDOWN&#34; &#34;toggle]]></description>
 </item></channel>
 </rss>

@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/go/</link>
         <description>go - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
+    <title>GO与测试</title>
+    <link>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+    <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+    <description><![CDATA[参考 单元测试 规则 所有测试文件以_test.go结尾 func TestXxx(*testing.T) 初始化逻辑放到TestMain中 例子 文件名为nihao_test.go 1 2 3 4 5 6 7 8]]></description>
+</item><item>
     <title>GO与socks5代理服务器</title>
     <link>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
