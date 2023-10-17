@@ -6,9 +6,9 @@ this is da1yh
 
 a graduate student major in software engineering at Zhejiang University
 
-currently learning sensor fusion
+currently learning deep learning
  
-use c++, golang
+use c++, golang, python
 
 love swimming, coding, poppin
 

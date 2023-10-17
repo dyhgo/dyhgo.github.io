@@ -7,6 +7,27 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 26 Feb 2020 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>蛋炒饭</title>
+    <link>https://dyhgo.github.io/%E8%9B%8B%E7%82%92%E9%A5%AD/</link>
+    <pubDate>Thu, 12 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E8%9B%8B%E7%82%92%E9%A5%AD/</guid>
+    <description><![CDATA[蛋炒饭需要使用隔夜饭，所以提前一天把饭拿到冰箱中 拿出隔夜饭，打两个蛋 切两根火腿 鸡蛋液倒四分之一到米饭中 抓一抓米饭，使其松散（颗粒分开） 点火，]]></description>
+</item><item>
+    <title>套肠炒羊肚菌</title>
+    <link>https://dyhgo.github.io/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</link>
+    <pubDate>Wed, 11 Oct 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</guid>
+    <description><![CDATA[此篇文章做简单记录，以防忘记 在市场上买好套肠 羊肚菌浸泡半个小时 点火，向锅中倒油 加入一些蒜 将套肠和羊肚菌倒入锅中翻炒 加入一些酱油和水（像这种比]]></description>
+</item><item>
+    <title>GO利用ftp服务器进行文件上传和下载</title>
+    <link>https://dyhgo.github.io/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+    <pubDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+    <description><![CDATA[购买云服务器，这个云服务器将作为ftp服务器 假设云服务器是centos系统 先安装vsftpd 输入以下命令 1 sudo yum install vsftpd 启动vsftpd服务 1 sudo systemctl]]></description>
+</item><item>
     <title>GO与测试</title>
     <link>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
     <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</pubDate>
@@ -55,26 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/matrix-decomposition/</guid>
     <description><![CDATA[本文试图用最简洁清晰的语言解释各种矩阵分解，只记录矩阵分解的基础知识和过程，对性质和应用的讨论先挖个坑，下次再填 有关矩阵分解的知识可以参考这]]></description>
-</item><item>
-    <title>Pandas</title>
-    <link>https://dyhgo.github.io/pandas/</link>
-    <pubDate>Sun, 09 Oct 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/pandas/</guid>
-    <description><![CDATA[pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language. 参考 1 2 import numpy as np import pandas as pd Object creation Series是一维数据 1 2 s = pd.Series([1, 3, 5, np.nan, 6, 8]) s 0 1.0 1 3.0 2 5.0 3 NaN 4]]></description>
-</item><item>
-    <title>Kalman Filter in One Dimension</title>
-    <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
-    <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
-    <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
-</item><item>
-    <title>剑指offer</title>
-    <link>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</link>
-    <pubDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</guid>
-    <description><![CDATA[在leetcode平台上做一下剑指offer的题，不定时更新 03 数组中重复的数字 考点 easy 模拟 题意 题链 找出数组中任一重复的数 题解 1 2 3 4 5 6 7 8 9]]></description>
 </item></channel>
 </rss>
