@@ -21,6 +21,20 @@
     <guid>https://dyhgo.github.io/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</guid>
     <description><![CDATA[此篇文章做简单记录，以防忘记 在市场上买好套肠 羊肚菌浸泡半个小时 点火，向锅中倒油 加入一些蒜 将套肠和羊肚菌倒入锅中翻炒 加入一些酱油和水（像这种比]]></description>
 </item><item>
+    <title>protobuf</title>
+    <link>https://dyhgo.github.io/protobuf/</link>
+    <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/protobuf/</guid>
+    <description><![CDATA[protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json 它可以被序列化和反序列化，从而用于传输 参考链接 它的格式类似]]></description>
+</item><item>
+    <title>gflag</title>
+    <link>https://dyhgo.github.io/gflag/</link>
+    <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/gflag/</guid>
+    <description><![CDATA[文档链接 gflags相当于代码中的常量 gflags读取命令行的flags，然后修改代码中相应名字的“常量” 主要有三个函数 DEFINE_xxx]]></description>
+</item><item>
     <title>GO利用ftp服务器进行文件上传和下载</title>
     <link>https://dyhgo.github.io/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
     <pubDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</pubDate>
@@ -62,19 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/vins_estimator/</guid>
     <description><![CDATA[vins_estimator rosNodeTest.cpp 读取配置文件的参数 readParameters(config_file); readParameters()将配置文件的参数读取到parameters.h中 estimator.setParameter() 设置estimator的外参、td]]></description>
-</item><item>
-    <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</title>
-    <link>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</link>
-    <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</guid>
-    <description><![CDATA[简要记录一下论文的内容，防止遗忘，有些地方自己也没弄明白，记录不涉及公式的推导（公式推导参考崔华坤vins公式推导） Abstract VINS-Mono是一]]></description>
-</item><item>
-    <title>Matrix Decomposition</title>
-    <link>https://dyhgo.github.io/matrix-decomposition/</link>
-    <pubDate>Fri, 14 Oct 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/matrix-decomposition/</guid>
-    <description><![CDATA[本文试图用最简洁清晰的语言解释各种矩阵分解，只记录矩阵分解的基础知识和过程，对性质和应用的讨论先挖个坑，下次再填 有关矩阵分解的知识可以参考这]]></description>
 </item></channel>
 </rss>
