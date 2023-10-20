@@ -8,10 +8,9 @@
         <title>Android 事件处理机制 - This is DYH</title><meta name="Description" content="Android 事件处理机制"><meta property="og:title" content="Android 事件处理机制" />
 <meta property="og:description" content="Android 事件处理机制" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6\/"
-        },"genre": "posts","keywords": "java, xml","wordcount":  604 ,
+        },"genre": "posts","keywords": "java, xml","wordcount":  602 ,
         "url": "https:\/\/dyhgo.github.io\/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6\/","datePublished": "2020-03-19T00:00:00+00:00","dateModified": "2020-03-19T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android 事件处理机制</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 604 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 602 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/android-%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" class="leancloud_visitors" data-flag-title="Android 事件处理机制">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -158,7 +157,7 @@
 <h3 id="匿名内部类">匿名内部类</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -171,41 +170,41 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">mbt1</span><span class="o">.</span><span class="na">setOnTouchListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
-                    <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;listener&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
-                        <span class="k">break</span><span class="o">;</span>
-                <span class="o">}</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">mbt1</span><span class="o">.</span><span class="na">setOnTouchListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;listener&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="事件源所在类activity类">事件源所在类（activity类）</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">eventActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">eventActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ebt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">);</span>
-        <span class="n">ebt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ebt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ebt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -215,20 +214,20 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">switch</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
-            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">:</span>
-                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="s">&#34;click...&#34;</span><span class="o">,</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-                <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">switch</span> <span class="o">(</span><span class="n">v</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="s">&#34;click...&#34;</span><span class="o">,</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="在布局文件中设置">在布局文件中设置</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -240,21 +239,21 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/ebt1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;click&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;50dp&#34;</span>
-        <span class="na">android:onClick=</span><span class="s">&#34;show&#34;</span>
-        <span class="nt">/&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/ebt1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;click&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;50dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:onClick=</span><span class="s">&#34;show&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -263,14 +262,14 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>             <span class="c1">//一定是public void
-</span><span class="c1"></span>        <span class="k">switch</span> <span class="o">(</span><span class="n">view</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
-            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">:</span>
-                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="s">&#34;click...&#34;</span><span class="o">,</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
-                <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">show</span><span class="o">(</span><span class="n">View</span> <span class="n">view</span><span class="o">){</span>             <span class="c1">//一定是public void
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">switch</span> <span class="o">(</span><span class="n">view</span><span class="o">.</span><span class="na">getId</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">case</span> <span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ebt1</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">eventActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="s">&#34;click...&#34;</span><span class="o">,</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -284,7 +283,7 @@
 <p>布局文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -315,36 +314,36 @@
 </span><span class="lnt">29
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">tools:context=</span><span class="s">&#34;.eventActivity&#34;</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/ebt1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;click&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;50dp&#34;</span>
-        <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;com.example.test.Mybotton</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/mbt1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;Mybotton&#34;</span>
-        <span class="na">android:textAllCaps=</span><span class="s">&#34;false&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/ebt1&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">tools:context=</span><span class="s">&#34;.eventActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/ebt1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;click&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;50dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;com.example.test.Mybotton</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/mbt1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;Mybotton&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textAllCaps=</span><span class="s">&#34;false&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/ebt1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -357,7 +356,7 @@
 <p>Mybotton类</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -393,52 +392,50 @@
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
-</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.AttributeSet</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.MotionEvent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.widget.AppCompatButton</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mybotton</span> <span class="kd">extends</span> <span class="n">AppCompatButton</span> <span class="o">{</span>
-
-    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">,</span> <span class="kt">int</span> <span class="n">defStyleAttr</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">,</span> <span class="n">defStyleAttr</span><span class="o">);</span>
-    <span class="o">}</span>
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
-        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
-            <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
-                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Mybotton&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
-                <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>   <span class="c1">//return true即onTouchEvent到此终止
-</span><span class="c1"></span>    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.AttributeSet</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.MotionEvent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.widget.AppCompatButton</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mybotton</span> <span class="kd">extends</span> <span class="n">AppCompatButton</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">Mybotton</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">AttributeSet</span> <span class="n">attrs</span><span class="o">,</span> <span class="kt">int</span> <span class="n">defStyleAttr</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">(</span><span class="n">context</span><span class="o">,</span> <span class="n">attrs</span><span class="o">,</span> <span class="n">defStyleAttr</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Mybotton&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>   <span class="c1">//return true即onTouchEvent到此终止
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>eventactivity.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -508,81 +505,79 @@
 </span><span class="lnt">68
 </span><span class="lnt">69
 </span><span class="lnt">70
-</span><span class="lnt">71
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.MotionEvent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">eventActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span>  <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">ebt1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Mybotton</span> <span class="n">mbt1</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_event</span><span class="o">);</span>
-        <span class="n">mbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">mbt1</span><span class="o">);</span>
-        <span class="n">mbt1</span><span class="o">.</span><span class="na">setOnTouchListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
-                    <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
-                        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;listener&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
-                        <span class="k">break</span><span class="o">;</span>
-                <span class="o">}</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-<span class="c1">//        ebt1 = findViewById(R.id.ebt1);
-</span><span class="c1">//        ebt1.setOnClickListener(eventActivity.this);
-</span><span class="c1"></span>
-
-    <span class="o">}</span>
-
-<span class="c1">//    @Override
-</span><span class="c1">//    public void onClick(View v) {
-</span><span class="c1">//        switch (v.getId()){
-</span><span class="c1">//            case R.id.ebt1:
-</span><span class="c1">//                Toast.makeText(eventActivity.this , &#34;click...&#34;,Toast.LENGTH_LONG).show();
-</span><span class="c1">//                break;
-</span><span class="c1">//        }
-</span><span class="c1">//    }
-</span><span class="c1"></span>
-<span class="c1">//    public void show(View view){             //一定是public void
-</span><span class="c1">//        switch (view.getId()){
-</span><span class="c1">//            case R.id.ebt1:
-</span><span class="c1">//                Toast.makeText(eventActivity.this , &#34;click...&#34;,Toast.LENGTH_LONG).show();
-</span><span class="c1">//                break;
-</span><span class="c1">//        }
-</span><span class="c1">//    }
-</span><span class="c1"></span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
-        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
-            <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
-                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;activity&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
-                <span class="k">break</span><span class="o">;</span>
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.MotionEvent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">eventActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span>  <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">ebt1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Mybotton</span> <span class="n">mbt1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_event</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">mbt1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mbt1</span><span class="o">.</span><span class="na">setOnTouchListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnTouchListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouch</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">,</span> <span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;listener&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//        ebt1 = findViewById(R.id.ebt1);
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        ebt1.setOnClickListener(eventActivity.this);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//    @Override
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    public void onClick(View v) {
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        switch (v.getId()){
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            case R.id.ebt1:
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                Toast.makeText(eventActivity.this , &#34;click...&#34;,Toast.LENGTH_LONG).show();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                break;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//    public void show(View view){             //一定是public void
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        switch (view.getId()){
+</span></span></span><span class="line"><span class="cl"><span class="c1">//            case R.id.ebt1:
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                Toast.makeText(eventActivity.this , &#34;click...&#34;,Toast.LENGTH_LONG).show();
+</span></span></span><span class="line"><span class="cl"><span class="c1">//                break;
+</span></span></span><span class="line"><span class="cl"><span class="c1">//        }
+</span></span></span><span class="line"><span class="cl"><span class="c1">//    }
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onTouchEvent</span><span class="o">(</span><span class="n">MotionEvent</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onTouchEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">switch</span> <span class="o">(</span><span class="n">event</span><span class="o">.</span><span class="na">getAction</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">case</span> <span class="n">MotionEvent</span><span class="o">.</span><span class="na">ACTION_DOWN</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;activity&#34;</span><span class="o">,</span><span class="s">&#34;touch&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>触摸Mybotton触发事件</p>
 <p><img

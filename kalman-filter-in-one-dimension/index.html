@@ -8,10 +8,9 @@
         <title>Kalman Filter in One Dimension - This is DYH</title><meta name="Description" content="Kalman Filter in One Dimension"><meta property="og:title" content="Kalman Filter in One Dimension" />
 <meta property="og:description" content="Kalman Filter in One Dimension" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/kalman-filter-in-one-dimension/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/kalman-filter-in-one-dimension/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-21T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-09-21T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2022-09-21T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -139,30 +138,30 @@
 <table>
 <thead>
 <tr>
-<th align="center">Equation</th>
-<th align="center">Equation Name</th>
+<th style="text-align:center">Equation</th>
+<th style="text-align:center">Equation Name</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">$$\hat{x}_{n, n}=\hat{x}_{n, n-1}+K_{n}\left(z_{n}-\hat{x}_{n, n-1}\right)$$</td>
-<td align="center">State Update</td>
+<td style="text-align:center">$$\hat{x}_{n, n}=\hat{x}_{n, n-1}+K_{n}\left(z_{n}-\hat{x}_{n, n-1}\right)$$</td>
+<td style="text-align:center">State Update</td>
 </tr>
 <tr>
-<td align="center">$$\begin{array}{l}\hat{x}_{n+1, n}=\hat{x}_{n, n}+\Delta t \hat{v}_{n, n} \\ \hat{v}_{n+1, n}=\hat{v}_{n, n}\end{array}$$ (For constant velocity dynamics)</td>
-<td align="center">State Extrapolation</td>
+<td style="text-align:center">$$\begin{array}{l}\hat{x}_{n+1, n}=\hat{x}_{n, n}+\Delta t \hat{v}_{n, n} \\ \hat{v}_{n+1, n}=\hat{v}_{n, n}\end{array}$$ (For constant velocity dynamics)</td>
+<td style="text-align:center">State Extrapolation</td>
 </tr>
 <tr>
-<td align="center">$$K_{n}=\frac{p_{n, n-1}}{p_{n, n-1}+r_{n}}$$</td>
-<td align="center">Kalman Gain</td>
+<td style="text-align:center">$$K_{n}=\frac{p_{n, n-1}}{p_{n, n-1}+r_{n}}$$</td>
+<td style="text-align:center">Kalman Gain</td>
 </tr>
 <tr>
-<td align="center">$$p_{n, n}=\left(1-K_{n}\right) p_{n, n-1}$$</td>
-<td align="center">Covariance Update</td>
+<td style="text-align:center">$$p_{n, n}=\left(1-K_{n}\right) p_{n, n-1}$$</td>
+<td style="text-align:center">Covariance Update</td>
 </tr>
 <tr>
-<td align="center">$$p_{n+1, n}=p_{n, n}+q_n$$(For constant dynamics)</td>
-<td align="center">Covariance Extrapolation</td>
+<td style="text-align:center">$$p_{n+1, n}=p_{n, n}+q_n$$(For constant dynamics)</td>
+<td style="text-align:center">Covariance Extrapolation</td>
 </tr>
 </tbody>
 </table>
@@ -172,38 +171,38 @@
 <table>
 <thead>
 <tr>
-<th align="center">Parameter</th>
-<th align="center">Meaning</th>
+<th style="text-align:center">Parameter</th>
+<th style="text-align:center">Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">$$\hat{x}$$</td>
-<td align="center">System State Estimate (Position)</td>
+<td style="text-align:center">$$\hat{x}$$</td>
+<td style="text-align:center">System State Estimate (Position)</td>
 </tr>
 <tr>
-<td align="center">$$K$$</td>
-<td align="center">Kalman Gain</td>
+<td style="text-align:center">$$K$$</td>
+<td style="text-align:center">Kalman Gain</td>
 </tr>
 <tr>
-<td align="center">$$z$$</td>
-<td align="center">Measured Value</td>
+<td style="text-align:center">$$z$$</td>
+<td style="text-align:center">Measured Value</td>
 </tr>
 <tr>
-<td align="center">$$\hat{v}$$</td>
-<td align="center">System State Estimate (Velocity)</td>
+<td style="text-align:center">$$\hat{v}$$</td>
+<td style="text-align:center">System State Estimate (Velocity)</td>
 </tr>
 <tr>
-<td align="center">$$p$$</td>
-<td align="center">Estimate Uncertainty</td>
+<td style="text-align:center">$$p$$</td>
+<td style="text-align:center">Estimate Uncertainty</td>
 </tr>
 <tr>
-<td align="center">$$r$$</td>
-<td align="center">Measurement Uncertainty</td>
+<td style="text-align:center">$$r$$</td>
+<td style="text-align:center">Measurement Uncertainty</td>
 </tr>
 <tr>
-<td align="center">$$q$$</td>
-<td align="center">Noise</td>
+<td style="text-align:center">$$q$$</td>
+<td style="text-align:center">Noise</td>
 </tr>
 </tbody>
 </table>
@@ -233,7 +232,7 @@
 <p>例子参见原文</p>
 <p>有时当测量的物体在变化时，卡尔曼滤波不准，可以通过改进模型使它更贴近真实情况或增大噪音</p>
 <blockquote>
-<p>We can eliminate the lag error by setting a high process uncertainty. However, since our model is not well-defined, we get noisy estimates that are almost equal to the measurements, and we miss the goal of the Kalman Filter. 
+<p>We can eliminate the lag error by setting a high process uncertainty. However, since our model is not well-defined, we get noisy estimates that are almost equal to the measurements, and we miss the goal of the Kalman Filter.
 The best Kalman Filter implementation would involve a model that is very close to reality, leaving little room for process noise. However, a precise model is not always available - for example, an airplane pilot may decide to perform a sudden maneuver that changes the predicted airplane trajectory. In this case, the process noise would be increased.</p>
 </blockquote>
 </div><div class="post-footer" id="post-footer">

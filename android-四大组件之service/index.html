@@ -8,10 +8,9 @@
         <title>Android 四大组件之Service - This is DYH</title><meta name="Description" content="Android 四大组件之Service"><meta property="og:title" content="Android 四大组件之Service" />
 <meta property="og:description" content="Android 四大组件之Service" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice\/"
-        },"genre": "posts","keywords": "java, xml","wordcount":  882 ,
+        },"genre": "posts","keywords": "java, xml","wordcount":  880 ,
         "url": "https:\/\/dyhgo.github.io\/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice\/","datePublished": "2020-03-19T00:00:00+00:00","dateModified": "2020-03-19T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android 四大组件之Service</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 882 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 880 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bservice/" class="leancloud_visitors" data-flag-title="Android 四大组件之Service">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -164,7 +163,7 @@
 <p>serviceactivity_xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -226,72 +225,72 @@
 </span><span class="lnt">60
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">tools:context=</span><span class="s">&#34;.serviceActivity&#34;</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;startservice&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn2&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;stopservice&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn1&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn3&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;bindservice&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn2&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
-
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn4&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;unbindservice&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn3&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;EditText</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/set1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn4&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn5&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;syncdata&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/set1&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;30dp&#34;</span><span class="nt">/&gt;</span>
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">tools:context=</span><span class="s">&#34;.serviceActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;startservice&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn2&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;stopservice&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn3&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;bindservice&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn2&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn4&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;unbindservice&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn3&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/set1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/sbtn4&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;20sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sbtn5&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;syncdata&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/set1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;30dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>serviceactivity.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -301,30 +300,30 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">sbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-                <span class="n">startService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">sbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Myservice.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span>   <span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">&#34;cat&#34;</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span>   <span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">&#34;cat&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -333,18 +332,18 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">onStartCommand</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">startId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getStringExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">);</span>
-
-        <span class="c1">//Log.d(&#34;tag&#34;,data);
-</span><span class="c1"></span>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onStartCommand</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">flags</span><span class="o">,</span> <span class="n">startId</span><span class="o">);</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">onStartCommand</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">startId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">data</span> <span class="o">=</span> <span class="n">intent</span><span class="o">.</span><span class="na">getStringExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//Log.d(&#34;tag&#34;,data);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onStartCommand</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">flags</span><span class="o">,</span> <span class="n">startId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -366,27 +365,27 @@
 </span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
-        <span class="c1">//Log.d(&#34;tag&#34;,data);
-</span><span class="c1"></span>        <span class="n">running</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-        <span class="k">new</span> <span class="n">Thread</span><span class="o">(){</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                <span class="kd">super</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
-                <span class="k">while</span> <span class="o">(</span><span class="n">running</span><span class="o">){</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
-                    <span class="k">try</span> <span class="o">{</span>
-                        <span class="n">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
-                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//Log.d(&#34;tag&#34;,data);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">running</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">Thread</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kd">super</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">while</span> <span class="o">(</span><span class="n">running</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="通过绑定来同步数据">通过绑定来同步数据</h2>
 <p>点击bindservice</p>
@@ -426,7 +425,7 @@
 service.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -516,106 +515,104 @@ service.java</p>
 </span><span class="lnt">88
 </span><span class="lnt">89
 </span><span class="lnt">90
-</span><span class="lnt">91
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.ComponentName</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.ServiceConnection</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.IBinder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">serviceActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">ServiceConnection</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">sbtn1</span><span class="o">,</span><span class="n">sbtn2</span><span class="o">,</span><span class="n">sbtn3</span><span class="o">,</span><span class="n">sbtn4</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">set1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">sbtn5</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">MyService</span><span class="o">.</span><span class="na">mybinder</span> <span class="n">binder</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_service</span><span class="o">);</span>
-
-        <span class="n">sbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn1</span><span class="o">);</span>
-        <span class="n">sbtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn2</span><span class="o">);</span>
-        <span class="n">sbtn3</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn3</span><span class="o">);</span>
-        <span class="n">sbtn4</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn4</span><span class="o">);</span>
-        <span class="n">set1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">set1</span><span class="o">);</span>
-        <span class="n">sbtn5</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn5</span><span class="o">);</span>
-
-        <span class="n">sbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-                <span class="n">startService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">sbtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">stopService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">sbtn3</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">bindService</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">Context</span><span class="o">.</span><span class="na">BIND_AUTO_CREATE</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">sbtn4</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//Intent intent = new Intent(serviceActivity.this,MyService.class);
-</span><span class="c1"></span>                <span class="n">unbindService</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">sbtn5</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">binder</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
-                    <span class="n">binder</span><span class="o">.</span><span class="na">setdata</span><span class="o">(</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-                    <span class="c1">//System.out.println(MyService.data);
-</span><span class="c1"></span>                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-    <span class="o">}</span>
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onServiceConnected</span><span class="o">(</span><span class="n">ComponentName</span> <span class="n">name</span><span class="o">,</span> <span class="n">IBinder</span> <span class="n">service</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;service123&#34;</span><span class="o">,</span><span class="s">&#34;connected123&#34;</span><span class="o">);</span>
-        <span class="n">binder</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyService</span><span class="o">.</span><span class="na">mybinder</span><span class="o">)</span> <span class="n">service</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onServiceDisconnected</span><span class="o">(</span><span class="n">ComponentName</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.ComponentName</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.ServiceConnection</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.IBinder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">serviceActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">ServiceConnection</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">sbtn1</span><span class="o">,</span><span class="n">sbtn2</span><span class="o">,</span><span class="n">sbtn3</span><span class="o">,</span><span class="n">sbtn4</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">set1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">sbtn5</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">MyService</span><span class="o">.</span><span class="na">mybinder</span> <span class="n">binder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_service</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn3</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn4</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">set1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">set1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn5</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sbtn5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">putExtra</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">stopService</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn3</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">MyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bindService</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">Context</span><span class="o">.</span><span class="na">BIND_AUTO_CREATE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn4</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//Intent intent = new Intent(serviceActivity.this,MyService.class);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">unbindService</span><span class="o">(</span><span class="n">serviceActivity</span><span class="o">.</span><span class="na">this</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">sbtn5</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">binder</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">binder</span><span class="o">.</span><span class="na">setdata</span><span class="o">(</span><span class="n">set1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1">//System.out.println(MyService.data);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onServiceConnected</span><span class="o">(</span><span class="n">ComponentName</span> <span class="n">name</span><span class="o">,</span> <span class="n">IBinder</span> <span class="n">service</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;service123&#34;</span><span class="o">,</span><span class="s">&#34;connected123&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">binder</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyService</span><span class="o">.</span><span class="na">mybinder</span><span class="o">)</span> <span class="n">service</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onServiceDisconnected</span><span class="o">(</span><span class="n">ComponentName</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Myservive.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -690,91 +687,89 @@ service.java</p>
 </span><span class="lnt">73
 </span><span class="lnt">74
 </span><span class="lnt">75
-</span><span class="lnt">76
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.app.Service</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Binder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.IBinder</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
-    <span class="kd">private</span>   <span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">&#34;cat&#34;</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
-    <span class="kd">public</span> <span class="nf">MyService</span><span class="o">()</span> <span class="o">{</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">IBinder</span> <span class="nf">onBind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">// TODO: Return the communication channel to the service.
-</span><span class="c1"></span>        <span class="c1">//throw new UnsupportedOperationException(&#34;Not yet implemented&#34;);
-</span><span class="c1"></span>        <span class="c1">//return new Binder();
-</span><span class="c1"></span>        <span class="k">return</span> <span class="k">new</span> <span class="n">mybinder</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">mybinder</span> <span class="kd">extends</span> <span class="n">Binder</span><span class="o">{</span>    <span class="c1">//是binder不是 ibinder
-</span><span class="c1"></span>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setdata</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">){</span>
-            <span class="n">MyService</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">onStartCommand</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">startId</span><span class="o">)</span> <span class="o">{</span>
-        <span class="c1">//data = intent.getStringExtra(&#34;data&#34;);
-</span><span class="c1"></span>
-        <span class="c1">//Log.d(&#34;tag&#34;,data);
-</span><span class="c1"></span>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onStartCommand</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">flags</span><span class="o">,</span> <span class="n">startId</span><span class="o">);</span>
-    <span class="o">}</span>
-
-
-
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onUnbind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onUnbind</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
-        <span class="c1">//Log.d(&#34;tag&#34;,data);
-</span><span class="c1"></span>        <span class="n">running</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
-        <span class="k">new</span> <span class="n">Thread</span><span class="o">(){</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
-                <span class="kd">super</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
-                <span class="k">while</span> <span class="o">(</span><span class="n">running</span><span class="o">){</span>
-                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
-                    <span class="k">try</span> <span class="o">{</span>
-                        <span class="n">sleep</span><span class="o">(</span><span class="n">1000</span><span class="o">);</span>
-                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">}.</span><span class="na">start</span><span class="o">();</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;tag&#34;</span><span class="o">,</span><span class="s">&#34;dog&#34;</span><span class="o">);</span>
-        <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.app.Service</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Binder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.IBinder</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyService</span> <span class="kd">extends</span> <span class="n">Service</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span>   <span class="n">String</span> <span class="n">data</span><span class="o">=</span><span class="s">&#34;cat&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="nf">MyService</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">IBinder</span> <span class="nf">onBind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// TODO: Return the communication channel to the service.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//throw new UnsupportedOperationException(&#34;Not yet implemented&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">//return new Binder();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="k">new</span> <span class="n">mybinder</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">mybinder</span> <span class="kd">extends</span> <span class="n">Binder</span><span class="o">{</span>    <span class="c1">//是binder不是 ibinder
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setdata</span><span class="o">(</span><span class="n">String</span> <span class="n">data</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">            <span class="n">MyService</span><span class="o">.</span><span class="na">this</span><span class="o">.</span><span class="na">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">onStartCommand</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">,</span> <span class="kt">int</span> <span class="n">flags</span><span class="o">,</span> <span class="kt">int</span> <span class="n">startId</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//data = intent.getStringExtra(&#34;data&#34;);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//Log.d(&#34;tag&#34;,data);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onStartCommand</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span> <span class="n">flags</span><span class="o">,</span> <span class="n">startId</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">onUnbind</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kd">super</span><span class="o">.</span><span class="na">onUnbind</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//Log.d(&#34;tag&#34;,data);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">running</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">Thread</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kd">super</span><span class="o">.</span><span class="na">run</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">while</span> <span class="o">(</span><span class="n">running</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">data</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}.</span><span class="na">start</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;tag&#34;</span><span class="o">,</span><span class="s">&#34;dog&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">running</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="在manifest里的注册">在manifest里的注册</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -784,15 +779,15 @@ service.java</p>
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span>
-            <span class="na">android:name=</span><span class="s">&#34;.serviceActivity&#34;</span>
-            <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
-
-        <span class="nt">&lt;service</span>
-            <span class="na">android:name=</span><span class="s">&#34;.MyService&#34;</span>
-            <span class="na">android:enabled=</span><span class="s">&#34;true&#34;</span>
-            <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;activity</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:name=</span><span class="s">&#34;.serviceActivity&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;service</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:name=</span><span class="s">&#34;.MyService&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:enabled=</span><span class="s">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl">            <span class="na">android:exported=</span><span class="s">&#34;true&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

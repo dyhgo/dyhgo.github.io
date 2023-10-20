@@ -8,10 +8,9 @@
         <title>Android 数据存储 - This is DYH</title><meta name="Description" content="Android 数据存储"><meta property="og:title" content="Android 数据存储" />
 <meta property="og:description" content="Android 数据存储" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-22T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-03-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8\/"
-        },"genre": "posts","keywords": "java, xml","wordcount":  1168 ,
+        },"genre": "posts","keywords": "java, xml","wordcount":  1165 ,
         "url": "https:\/\/dyhgo.github.io\/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8\/","datePublished": "2020-03-22T00:00:00+00:00","dateModified": "2020-03-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android 数据存储</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-22">2020-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1168 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-22">2020-03-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1165 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/android-%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8/" class="leancloud_visitors" data-flag-title="Android 数据存储">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -147,7 +146,7 @@
 <p>布局文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -197,55 +196,55 @@
 </span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">tools:context=</span><span class="s">&#34;.datastorage.sharedPreferencesActivity&#34;</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;EditText</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/spet1&#34;</span>
-        <span class="na">android:hint=</span><span class="s">&#34;input&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span>
-        <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;sava&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spet1&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/spbtn1&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;show&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spbtn1&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/spbtn2&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;TextView</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/sptv1&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spbtn2&#34;</span>
-        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
-        <span class="nt">/&gt;</span>
-
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">tools:context=</span><span class="s">&#34;.datastorage.sharedPreferencesActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;EditText</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/spet1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:hint=</span><span class="s">&#34;input&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;sava&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spet1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/spbtn1&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;show&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spbtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/spbtn2&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/sptv1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/spbtn2&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_marginTop=</span><span class="s">&#34;20dp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>输入内容，存储到sharedpreferences,并呈现</p>
 <p><img
@@ -258,7 +257,7 @@
         title="在这里插入图片描述" /></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -314,67 +313,65 @@
 </span><span class="lnt">54
 </span><span class="lnt">55
 </span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.SharedPreferences</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">sharedPreferencesActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">spbtn1</span><span class="o">,</span><span class="n">spbtn2</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">spet1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">sptv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">SharedPreferences</span> <span class="n">mysp</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">SharedPreferences</span><span class="o">.</span><span class="na">Editor</span> <span class="n">myspe</span><span class="o">;</span>
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_shared_preferences</span><span class="o">);</span>
-
-        <span class="n">spbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spbtn1</span><span class="o">);</span>
-        <span class="n">spbtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spbtn2</span><span class="o">);</span>
-        <span class="n">spet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spet1</span><span class="o">);</span>
-        <span class="n">sptv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sptv1</span><span class="o">);</span>
-
-        <span class="c1">//实例化
-</span><span class="c1"></span>        <span class="n">mysp</span> <span class="o">=</span> <span class="n">getSharedPreferences</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">MODE_PRIVATE</span><span class="o">);</span>
-        <span class="n">myspe</span> <span class="o">=</span> <span class="n">mysp</span><span class="o">.</span><span class="na">edit</span><span class="o">();</span>
-
-        <span class="n">spbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">myspe</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="n">spet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-                <span class="n">myspe</span><span class="o">.</span><span class="na">apply</span><span class="o">();</span>       <span class="c1">//相当于提交
-</span><span class="c1"></span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">spbtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">sptv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">mysp</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;&#34;</span><span class="o">));</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.SharedPreferences</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">sharedPreferencesActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">spbtn1</span><span class="o">,</span><span class="n">spbtn2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">spet1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">sptv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">SharedPreferences</span> <span class="n">mysp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">SharedPreferences</span><span class="o">.</span><span class="na">Editor</span> <span class="n">myspe</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_shared_preferences</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">spbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spbtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">spbtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spbtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">spet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">spet1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sptv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">sptv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">//实例化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">mysp</span> <span class="o">=</span> <span class="n">getSharedPreferences</span><span class="o">(</span><span class="s">&#34;data&#34;</span><span class="o">,</span><span class="n">MODE_PRIVATE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myspe</span> <span class="o">=</span> <span class="n">mysp</span><span class="o">.</span><span class="na">edit</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">spbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">myspe</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="n">spet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                <span class="n">myspe</span><span class="o">.</span><span class="na">apply</span><span class="o">();</span>       <span class="c1">//相当于提交
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">spbtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">sptv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">mysp</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>sharedpreferences把数据存在xml文件中</p>
 <p>在路径 <code>data\data\&lt;applicationId&gt;\shared_prefs</code>下有一个xml文件</p>
@@ -403,7 +400,7 @@
 <p>java文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -499,113 +496,111 @@
 </span><span class="lnt">94
 </span><span class="lnt">95
 </span><span class="lnt">96
-</span><span class="lnt">97
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fibtn1</span><span class="o">,</span><span class="n">fibtn2</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">fiet1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fitv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&#34;test.txt&#34;</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_file</span><span class="o">);</span>
-
-        <span class="n">fibtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn1</span><span class="o">);</span>
-        <span class="n">fibtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn2</span><span class="o">);</span>
-        <span class="n">fiet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fiet1</span><span class="o">);</span>
-        <span class="n">fitv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fitv1</span><span class="o">);</span>
-
-        <span class="n">fibtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">save</span><span class="o">(</span><span class="n">fiet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fibtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">fitv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">read</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">String</span> <span class="n">content</span><span class="o">){</span>
-        <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="n">filename</span><span class="o">,</span><span class="n">MODE_PRIVATE</span><span class="o">);</span>
-            <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
-        <span class="o">}</span>  <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">fileOutputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="o">(){</span>
-        <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="n">fileInputStream</span> <span class="o">=</span> <span class="n">openFileInput</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
-            <span class="kt">byte</span><span class="o">[]</span> <span class="n">buff</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">];</span>
-            <span class="c1">//fileInputStream.read(buff);
-</span><span class="c1"></span>            <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>  <span class="c1">//字符串拼接
-</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="n">0</span><span class="o">;</span>
-            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fileInputStream</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buff</span><span class="o">))</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
-                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buff</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">len</span><span class="o">));</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">fileInputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fibtn1</span><span class="o">,</span><span class="n">fibtn2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">fiet1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fitv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&#34;test.txt&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_file</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fiet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fiet1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fitv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fitv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">save</span><span class="o">(</span><span class="n">fiet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fitv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">read</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">String</span> <span class="n">content</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="n">openFileOutput</span><span class="o">(</span><span class="n">filename</span><span class="o">,</span><span class="n">MODE_PRIVATE</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>  <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">fileOutputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileInputStream</span> <span class="o">=</span> <span class="n">openFileInput</span><span class="o">(</span><span class="n">filename</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">byte</span><span class="o">[]</span> <span class="n">buff</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//fileInputStream.read(buff);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>  <span class="c1">//字符串拼接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fileInputStream</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buff</span><span class="o">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buff</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="n">len</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fileInputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h1 id="file-外部存储">File 外部存储</h1>
 <p>java文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -723,140 +718,138 @@
 </span><span class="lnt">116
 </span><span class="lnt">117
 </span><span class="lnt">118
-</span><span class="lnt">119
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.core.app.ActivityCompat</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.Manifest</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Environment</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fibtn1</span><span class="o">,</span><span class="n">fibtn2</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">fiet1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fitv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&#34;test.txt&#34;</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_file</span><span class="o">);</span>
-
-        <span class="n">fibtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn1</span><span class="o">);</span>
-        <span class="n">fibtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn2</span><span class="o">);</span>
-        <span class="n">fiet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fiet1</span><span class="o">);</span>
-        <span class="n">fitv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fitv1</span><span class="o">);</span>
-
-        <span class="n">fibtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">save</span><span class="o">(</span><span class="n">fiet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fibtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">fitv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">read</span><span class="o">());</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-
-        <span class="n">ActivityCompat</span><span class="o">.</span><span class="na">requestPermissions</span><span class="o">(</span><span class="k">this</span> <span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">WRITE_EXTERNAL_STORAGE</span><span class="o">},</span><span class="n">1</span><span class="o">);</span> <span class="c1">//1是随便写de
-</span><span class="c1"></span>
-
-    <span class="o">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">String</span> <span class="n">content</span><span class="o">){</span>
-        <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="c1">//fileOutputStream = openFileOutput(filename,MODE_PRIVATE);
-</span><span class="c1"></span>            <span class="c1">//路径
-</span><span class="c1"></span>            <span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">getExternalFilesDir</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">dir</span><span class="o">.</span><span class="na">exists</span><span class="o">()){</span>
-                <span class="n">dir</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">();</span>
-            <span class="o">}</span>
-            <span class="c1">//文件
-</span><span class="c1"></span>            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">dir</span><span class="o">,</span><span class="n">filename</span><span class="o">);</span>
-            <span class="k">if</span><span class="o">(!</span><span class="n">file</span><span class="o">.</span><span class="na">exists</span><span class="o">()){</span>
-                <span class="n">file</span><span class="o">.</span><span class="na">createNewFile</span><span class="o">();</span>
-            <span class="o">}</span>
-            <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-            <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
-        <span class="o">}</span>  <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">fileOutputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-
-    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="o">(){</span>
-        <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-        <span class="k">try</span> <span class="o">{</span>
-            <span class="c1">//fileInputStream = openFileInput(filename);
-</span><span class="c1"></span>            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">getExternalFilesDir</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">getAbsolutePath</span><span class="o">()+</span><span class="n">File</span><span class="o">.</span><span class="na">separator</span><span class="o">+</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">filename</span><span class="o">);</span>
-            <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
-            <span class="kt">byte</span><span class="o">[]</span> <span class="n">buff</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="n">1024</span><span class="o">];</span>
-            <span class="c1">//fileInputStream.read(buff);
-</span><span class="c1"></span>            <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>  <span class="c1">//字符串拼接
-</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="n">0</span><span class="o">;</span>
-            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fileInputStream</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buff</span><span class="o">))</span> <span class="o">&gt;</span> <span class="n">0</span><span class="o">){</span>
-                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buff</span><span class="o">,</span><span class="n">0</span><span class="o">,</span><span class="n">len</span><span class="o">));</span>
-            <span class="o">}</span>
-            <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
-        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
-            <span class="k">if</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
-                <span class="k">try</span> <span class="o">{</span>
-                    <span class="n">fileInputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-
-        <span class="o">}</span>
-        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.datastorage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.core.app.ActivityCompat</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.Manifest</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Environment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.EditText</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.FileOutputStream</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">fileActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fibtn1</span><span class="o">,</span><span class="n">fibtn2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">fiet1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fitv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">filename</span> <span class="o">=</span> <span class="s">&#34;test.txt&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_file</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn2</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fibtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fiet1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fiet1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fitv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fitv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">save</span><span class="o">(</span><span class="n">fiet1</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fibtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fitv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">read</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ActivityCompat</span><span class="o">.</span><span class="na">requestPermissions</span><span class="o">(</span><span class="k">this</span> <span class="o">,</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]{</span><span class="n">Manifest</span><span class="o">.</span><span class="na">permission</span><span class="o">.</span><span class="na">WRITE_EXTERNAL_STORAGE</span><span class="o">},</span><span class="mi">1</span><span class="o">);</span> <span class="c1">//1是随便写de
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">save</span><span class="o">(</span><span class="n">String</span> <span class="n">content</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//fileOutputStream = openFileOutput(filename,MODE_PRIVATE);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">//路径
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">File</span> <span class="n">dir</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">getExternalFilesDir</span><span class="o">(</span><span class="kc">null</span><span class="o">),</span><span class="s">&#34;hello&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(!</span><span class="n">dir</span><span class="o">.</span><span class="na">exists</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dir</span><span class="o">.</span><span class="na">mkdirs</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//文件
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">dir</span><span class="o">,</span><span class="n">filename</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(!</span><span class="n">file</span><span class="o">.</span><span class="na">exists</span><span class="o">()){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">file</span><span class="o">.</span><span class="na">createNewFile</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">content</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>  <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">fileOutputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">read</span><span class="o">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">FileInputStream</span> <span class="n">fileInputStream</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//fileInputStream = openFileInput(filename);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">File</span> <span class="n">file</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="n">getExternalFilesDir</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">getAbsolutePath</span><span class="o">()+</span><span class="n">File</span><span class="o">.</span><span class="na">separator</span><span class="o">+</span><span class="s">&#34;hello&#34;</span><span class="o">,</span><span class="n">filename</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fileInputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">file</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">byte</span><span class="o">[]</span> <span class="n">buff</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">];</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">//fileInputStream.read(buff);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">StringBuilder</span> <span class="n">sb</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>  <span class="c1">//字符串拼接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="kt">int</span> <span class="n">len</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span><span class="o">((</span><span class="n">len</span> <span class="o">=</span> <span class="n">fileInputStream</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">buff</span><span class="o">))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">sb</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="k">new</span> <span class="n">String</span><span class="o">(</span><span class="n">buff</span><span class="o">,</span><span class="mi">0</span><span class="o">,</span><span class="n">len</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">sb</span><span class="o">.</span><span class="na">toString</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span><span class="k">finally</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="o">(</span><span class="n">fileInputStream</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fileInputStream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">IOException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="权限申请">权限申请</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.READ_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.READ_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.WRITE_EXTERNAL_STORAGE&#34;</span><span class="nt">/&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

@@ -31,14 +31,14 @@
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc158/</guid>
-    <description><![CDATA[A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 #include&lt;bits/stdc++.h&gt; using namespace std; int]]></description>
+    <description><![CDATA[A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 1 2 3 4 5 6 7 8 9 10 11 #include&lt;bits/stdc++.h&gt; using namespace std; int main()]]></description>
 </item><item>
     <title>abc157</title>
     <link>https://dyhgo.github.io/abc157/</link>
     <pubDate>Mon, 02 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc157/</guid>
-    <description><![CDATA[A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; int main()]]></description>
+    <description><![CDATA[A - Duplex Printing 题目链接 题意 每一页正反两面可以分别写一个数，问有n个不同的数可以写几页 思路 简单模拟 ac代码如下 1 2 3 4 5 6 7 8 9 10 11 12 #include&lt;bits/stdc++.h&gt; using namespace std; int main() {]]></description>
 </item><item>
     <title>字符串匹配算法(未完成)</title>
     <link>https://dyhgo.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</link>

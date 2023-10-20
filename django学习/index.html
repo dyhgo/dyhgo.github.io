@@ -8,10 +8,9 @@
         <title>Django学习 - This is DYH</title><meta name="Description" content="Django学习"><meta property="og:title" content="Django学习" />
 <meta property="og:description" content="Django学习" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/django%E5%AD%A6%E4%B9%A0/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/django%E5%AD%A6%E4%B9%A0/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-20T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-06-20T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/django%E5%AD%A6%E4%B9%A0\/"
-        },"genre": "posts","keywords": "python","wordcount":  2497 ,
+        },"genre": "posts","keywords": "python","wordcount":  2495 ,
         "url": "https:\/\/dyhgo.github.io\/django%E5%AD%A6%E4%B9%A0\/","datePublished": "2020-06-20T00:00:00+00:00","dateModified": "2020-06-20T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Django学习</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python-web/"><i class="far fa-folder fa-fw"></i>Python web</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-20">2020-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2497 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-06-20">2020-06-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2495 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/django%E5%AD%A6%E4%B9%A0/" class="leancloud_visitors" data-flag-title="Django学习">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -153,16 +152,16 @@
 <h2 id="创建项目">创建项目</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">django-admin</span> <span class="n">startproject</span> <span class="n">mysite</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nb">django-admin</span> <span class="n">startproject</span> <span class="n">mysite</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>生成的文件结构</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -171,37 +170,37 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysite/
-    manage.py
-    mysite/
-        __init__.py
-        settings.py
-        urls.py
-        wsgi.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">mysite/
+</span></span><span class="line"><span class="cl">    manage.py
+</span></span><span class="line"><span class="cl">    mysite/
+</span></span><span class="line"><span class="cl">        __init__.py
+</span></span><span class="line"><span class="cl">        settings.py
+</span></span><span class="line"><span class="cl">        urls.py
+</span></span><span class="line"><span class="cl">        wsgi.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>开启服务器</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">runserver</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">runserver</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="创建应用">创建应用</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">startapp</span> <span class="n">polls</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">startapp</span> <span class="n">polls</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在polls下生成的文件结构</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -211,15 +210,15 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">    __init__.py
-    admin.py
-    apps.py
-    migrations/
-        __init__.py
-    models.py
-    tests.py
-    views.py
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    __init__.py
+</span></span><span class="line"><span class="cl">    admin.py
+</span></span><span class="line"><span class="cl">    apps.py
+</span></span><span class="line"><span class="cl">    migrations/
+</span></span><span class="line"><span class="cl">        __init__.py
+</span></span><span class="line"><span class="cl">    models.py
+</span></span><span class="line"><span class="cl">    tests.py
+</span></span><span class="line"><span class="cl">    views.py
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>创建polls/urls.py作为视图的路由</p>
 <h2 id="数据库配置">数据库配置</h2>
@@ -227,7 +226,7 @@
 <p>比如mysql，在mysite/settings中DATABASES应该这样写</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -241,35 +240,35 @@
 </span><span class="lnt">12
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="c1"># &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,</span>
-        <span class="c1"># &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),</span>
-        <span class="s1">&#39;ENGINE&#39;</span> <span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;NAME&#39;</span> <span class="p">:</span> <span class="s1">&#39;test_django&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;USER&#39;</span> <span class="p">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;PASSWORD&#39;</span> <span class="p">:</span> <span class="s1">&#39;123456&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;HOST&#39;</span> <span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;PORT&#39;</span> <span class="p">:</span> <span class="s1">&#39;3306&#39;</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;ENGINE&#39;</span> <span class="p">:</span> <span class="s1">&#39;django.db.backends.mysql&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;NAME&#39;</span> <span class="p">:</span> <span class="s1">&#39;test_django&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;USER&#39;</span> <span class="p">:</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;PASSWORD&#39;</span> <span class="p">:</span> <span class="s1">&#39;123456&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;HOST&#39;</span> <span class="p">:</span> <span class="s1">&#39;localhost&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;PORT&#39;</span> <span class="p">:</span> <span class="s1">&#39;3306&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在使用mysite/settings中的INSTALLED_APPS之前要在数据库中创建一些表，执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">migrate</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">migrate</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="创建模型">创建模型</h2>
 <p>在polls/models.py中写</p>
 <p>__str__方法在命令行调试时有很好的输出</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -297,52 +296,52 @@
 </span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
-
-<span class="c1"># Create your models here.</span>
-
-<span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">question_text</span>
-    <span class="k">def</span> <span class="nf">was_published_recently</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">now</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="k">return</span> <span class="n">now</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub_date</span> <span class="o">&lt;=</span> <span class="n">now</span>
-
-    <span class="c1">#更改后台的显示方式</span>
-    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">admin_order_field</span> <span class="o">=</span> <span class="s1">&#39;pub_date&#39;</span>
-    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">boolean</span> <span class="o">=</span> <span class="bp">True</span>
-    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s1">&#39;Published recently?&#39;</span>
-
-<span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
-    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">choice_text</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">datetime</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create your models here.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Question</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">question_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pub_date</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="s1">&#39;date published&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">question_text</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">was_published_recently</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">now</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">now</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="n">days</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pub_date</span> <span class="o">&lt;=</span> <span class="n">now</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">#更改后台的显示方式</span>
+</span></span><span class="line"><span class="cl">    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">admin_order_field</span> <span class="o">=</span> <span class="s1">&#39;pub_date&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">boolean</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">    <span class="n">was_published_recently</span><span class="o">.</span><span class="n">short_description</span> <span class="o">=</span> <span class="s1">&#39;Published recently?&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Choice</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">question</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">choice_text</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">votes</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">IntegerField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">choice_text</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="激活模型">激活模型</h2>
 <p>polls/apps.py</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">AppConfig</span>
-<span class="k">class</span> <span class="nc">PollsConfig</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;polls&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.apps</span> <span class="kn">import</span> <span class="n">AppConfig</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PollsConfig</span><span class="p">(</span><span class="n">AppConfig</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;polls&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>把polls应用安装到项目中，在mysite/settings.py中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -353,35 +352,35 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;polls.apps.PollsConfig&#39;</span><span class="p">,</span>  <span class="c1">#可插拔 这么做，项目就会包含应用</span>
-    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;polls.apps.PollsConfig&#39;</span><span class="p">,</span>  <span class="c1">#可插拔 这么做，项目就会包含应用</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行如下命令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">makemigrations</span> <span class="n">polls</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">makemigrations</span> <span class="n">polls</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过运行 makemigrations 命令，Django 会检测对模型文件的修改，并且把修改的部分储存为一次迁移。</p>
 <p>运行如下命令，将会把模型的修改同步到数据库中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">migrate</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">migrate</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在之后改模型要做这三步</p>
 <ul>
@@ -393,15 +392,15 @@
 <p>打开python命令行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">shell</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">shell</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -477,91 +476,91 @@
 </span><span class="lnt">74
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">Python</span> <span class="n">3</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">6</span> <span class="p">|</span><span class="n">Anaconda</span> <span class="n">4</span><span class="p">.</span><span class="n">2</span><span class="p">.</span><span class="n">0</span> <span class="p">(</span><span class="n">64-bit</span><span class="p">)|</span> <span class="p">(</span><span class="k">default</span><span class="p">,</span> <span class="n">Aug</span> <span class="n">26</span> <span class="n">2018</span><span class="p">,</span> <span class="n">16</span><span class="err">:</span><span class="n">05</span><span class="err">:</span><span class="n">27</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="p">.</span><span class="n">1900</span> <span class="n">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span>
-<span class="nb">Type </span><span class="s2">&#34;copyright&#34;</span><span class="p">,</span> <span class="s2">&#34;credits&#34;</span> <span class="n">or</span> <span class="s2">&#34;license&#34;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="p">.</span>
-
-<span class="n">IPython</span> <span class="n">5</span><span class="p">.</span><span class="n">1</span><span class="p">.</span><span class="n">0</span> <span class="p">--</span> <span class="n">An</span> <span class="n">enhanced</span> <span class="n">Interactive</span> <span class="n">Python</span><span class="p">.</span>
-<span class="p">?</span>         <span class="p">-&gt;</span> <span class="n">Introduction</span> <span class="n">and</span> <span class="n">overview</span> <span class="n">of</span> <span class="n">IPython</span><span class="s1">&#39;s features.
-</span><span class="s1">%quickref -&gt; Quick reference.
-</span><span class="s1">help      -&gt; Python&#39;</span><span class="n">s</span> <span class="n">own</span> <span class="n">help</span> <span class="n">system</span><span class="p">.</span>
-<span class="n">object</span><span class="p">?</span>   <span class="p">-&gt;</span> <span class="n">Details</span> <span class="n">about</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">use</span> <span class="s1">&#39;object??&#39;</span> <span class="k">for</span> <span class="n">extra</span> <span class="n">details</span><span class="p">.</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">1</span><span class="p">]</span><span class="err">:</span> <span class="n">from</span> <span class="n">polls</span><span class="p">.</span><span class="n">models</span> <span class="n">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">2</span><span class="p">]</span><span class="err">:</span> <span class="n">Question</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="n">2</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Question</span><span class="err">:</span> <span class="n">what</span><span class="s1">&#39;s up?&gt;]&gt;
-</span><span class="s1">
-</span><span class="s1">In [3]: Question.objects.filter(id=1)
-</span><span class="s1">Out[3]: &lt;QuerySet [&lt;Question: what&#39;</span><span class="n">s</span> <span class="n">up</span><span class="p">?&gt;]&gt;</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">4</span><span class="p">]</span><span class="err">:</span> <span class="n">Question</span><span class="p">.</span><span class="n">objects</span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="n">question_text__startswith</span><span class="p">=</span><span class="s1">&#39;What&#39;</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="n">4</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Question</span><span class="err">:</span> <span class="n">what</span><span class="s1">&#39;s up?&gt;]&gt;
-</span><span class="s1">
-</span><span class="s1">In [5]: Question.objects.get(id=2)
-</span><span class="s1">---------------------------------------------------------------------------
-</span><span class="s1">DoesNotExist                              Traceback (most recent call last)
-</span><span class="s1">&lt;ipython-input-5-e5ad49b3e3e3&gt; in &lt;module&gt;()
-</span><span class="s1">----&gt; 1 Question.objects.get(id=2)
-</span><span class="s1">
-</span><span class="s1">D:\anaconda\lib\site-packages\django\db\models\manager.py in manager_method(self, *args, **kwargs)
-</span><span class="s1">     80         def create_method(name, method):
-</span><span class="s1">     81             def manager_method(self, *args, **kwargs):
-</span><span class="s1">---&gt; 82                 return getattr(self.get_queryset(), name)(*args, **kwargs)
-</span><span class="s1">     83             manager_method.__name__ = method.__name__
-</span><span class="s1">     84             manager_method.__doc__ = method.__doc__
-</span><span class="s1">
-</span><span class="s1">D:\anaconda\lib\site-packages\django\db\models\query.py in get(self, *args, **kwargs)
-</span><span class="s1">    397             raise self.model.DoesNotExist(
-</span><span class="s1">    398                 &#34;%s matching query does not exist.&#34; %
-</span><span class="s1">--&gt; 399                 self.model._meta.object_name
-</span><span class="s1">    400             )
-</span><span class="s1">    401         raise self.model.MultipleObjectsReturned(
-</span><span class="s1">
-</span><span class="s1">DoesNotExist: Question matching query does not exist.
-</span><span class="s1">
-</span><span class="s1">In [6]: q = Question.objects.get(pk=1)
-</span><span class="s1">
-</span><span class="s1">In [7]: q.was_published_recently()
-</span><span class="s1">Out[7]: False
-</span><span class="s1">
-</span><span class="s1">In [8]: q = Question.objects.get(pk=1)
-</span><span class="s1">   ...: 
-</span><span class="s1">
-</span><span class="s1">In [9]: q.choice_set.all()
-</span><span class="s1">Out[9]: &lt;QuerySet [&lt;Choice: not much&gt;, &lt;Choice: the sky&gt;, &lt;Choice: just hacking&gt;]&gt;
-</span><span class="s1">
-</span><span class="s1">In [10]: q.choice_set.create(choice_text=&#39;</span><span class="n">Not</span> <span class="n">much</span><span class="s1">&#39;, votes=0)
-</span><span class="s1">Out[10]: &lt;Choice: Not much&gt;
-</span><span class="s1">
-</span><span class="s1">In [11]: c = q.choice_set.create(choice_text=&#39;</span><span class="n">Just</span> <span class="n">hacking</span> <span class="n">again</span><span class="s1">&#39;, votes=0)
-</span><span class="s1">
-</span><span class="s1">In [12]: c.question
-</span><span class="s1">Out[12]: &lt;Question: what&#39;</span><span class="n">s</span> <span class="n">up</span><span class="p">?&gt;</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">13</span><span class="p">]</span><span class="err">:</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="n">all</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="n">13</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">not</span> <span class="n">much</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">the</span> <span class="n">sky</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">just</span> <span class="n">hacking</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">Not</span> <span class="n">much</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">Just</span> <span class="n">hacking</span> <span class="n">again</span>
-<span class="p">&gt;]&gt;</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">14</span><span class="p">]</span><span class="err">:</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="n">count</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="n">14</span><span class="p">]</span><span class="err">:</span> <span class="n">5</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">15</span><span class="p">]</span><span class="err">:</span> <span class="n">c</span> <span class="p">=</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="n">choice_text__startswith</span><span class="p">=</span><span class="s1">&#39;Just hacking&#39;</span><span class="p">)</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">16</span><span class="p">]</span><span class="err">:</span> <span class="n">c</span><span class="p">.</span><span class="n">delete</span><span class="p">()</span>
-<span class="n">Out</span><span class="p">[</span><span class="n">16</span><span class="p">]</span><span class="err">:</span> <span class="p">(</span><span class="n">2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;polls.Choice&#39;</span><span class="err">:</span> <span class="n">2</span><span class="p">})</span>
-
-<span class="k">In</span> <span class="p">[</span><span class="n">17</span><span class="p">]</span><span class="err">:</span> <span class="n">quit</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">Python</span> <span class="mf">3.5</span><span class="p">.</span><span class="py">6</span> <span class="p">|</span><span class="n">Anaconda</span> <span class="mf">4.2</span><span class="p">.</span><span class="py">0</span> <span class="p">(</span><span class="mf">64</span><span class="n">-bit</span><span class="p">)|</span> <span class="p">(</span><span class="k">default</span><span class="p">,</span> <span class="n">Aug</span> <span class="mf">26</span> <span class="mf">2018</span><span class="p">,</span> <span class="mf">16</span><span class="err">:</span><span class="mf">05</span><span class="err">:</span><span class="mf">27</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="p">.</span><span class="mf">1900</span> <span class="mf">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">Type </span><span class="s2">&#34;copyright&#34;</span><span class="p">,</span> <span class="s2">&#34;credits&#34;</span> <span class="n">or</span> <span class="s2">&#34;license&#34;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">IPython</span> <span class="mf">5.1</span><span class="p">.</span><span class="py">0</span> <span class="p">--</span> <span class="n">An</span> <span class="n">enhanced</span> <span class="n">Interactive</span> <span class="n">Python</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">?</span>         <span class="p">-&gt;</span> <span class="n">Introduction</span> <span class="n">and</span> <span class="n">overview</span> <span class="n">of</span> <span class="n">IPython</span><span class="s1">&#39;s features.
+</span></span></span><span class="line"><span class="cl"><span class="s1">%quickref -&gt; Quick reference.
+</span></span></span><span class="line"><span class="cl"><span class="s1">help      -&gt; Python&#39;</span><span class="n">s</span> <span class="n">own</span> <span class="n">help</span> <span class="n">system</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">object</span><span class="p">?</span>   <span class="p">-&gt;</span> <span class="n">Details</span> <span class="n">about</span> <span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="n">use</span> <span class="s1">&#39;object??&#39;</span> <span class="k">for</span> <span class="n">extra</span> <span class="n">details</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="err">:</span> <span class="n">from</span> <span class="n">polls</span><span class="p">.</span><span class="py">models</span> <span class="n">import</span> <span class="n">Choice</span><span class="p">,</span> <span class="n">Question</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="err">:</span> <span class="n">Question</span><span class="p">.</span><span class="py">objects</span><span class="p">.</span><span class="py">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Out</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Question</span><span class="err">:</span> <span class="n">what</span><span class="s1">&#39;s up?&gt;]&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [3]: Question.objects.filter(id=1)
+</span></span></span><span class="line"><span class="cl"><span class="s1">Out[3]: &lt;QuerySet [&lt;Question: what&#39;</span><span class="n">s</span> <span class="n">up</span><span class="p">?&gt;]&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">4</span><span class="p">]</span><span class="err">:</span> <span class="n">Question</span><span class="p">.</span><span class="py">objects</span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="n">question_text__startswith</span><span class="p">=</span><span class="s1">&#39;What&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">Out</span><span class="p">[</span><span class="mf">4</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Question</span><span class="err">:</span> <span class="n">what</span><span class="s1">&#39;s up?&gt;]&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [5]: Question.objects.get(id=2)
+</span></span></span><span class="line"><span class="cl"><span class="s1">---------------------------------------------------------------------------
+</span></span></span><span class="line"><span class="cl"><span class="s1">DoesNotExist                              Traceback (most recent call last)
+</span></span></span><span class="line"><span class="cl"><span class="s1">&lt;ipython-input-5-e5ad49b3e3e3&gt; in &lt;module&gt;()
+</span></span></span><span class="line"><span class="cl"><span class="s1">----&gt; 1 Question.objects.get(id=2)
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">D:\anaconda\lib\site-packages\django\db\models\manager.py in manager_method(self, *args, **kwargs)
+</span></span></span><span class="line"><span class="cl"><span class="s1">     80         def create_method(name, method):
+</span></span></span><span class="line"><span class="cl"><span class="s1">     81             def manager_method(self, *args, **kwargs):
+</span></span></span><span class="line"><span class="cl"><span class="s1">---&gt; 82                 return getattr(self.get_queryset(), name)(*args, **kwargs)
+</span></span></span><span class="line"><span class="cl"><span class="s1">     83             manager_method.__name__ = method.__name__
+</span></span></span><span class="line"><span class="cl"><span class="s1">     84             manager_method.__doc__ = method.__doc__
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">D:\anaconda\lib\site-packages\django\db\models\query.py in get(self, *args, **kwargs)
+</span></span></span><span class="line"><span class="cl"><span class="s1">    397             raise self.model.DoesNotExist(
+</span></span></span><span class="line"><span class="cl"><span class="s1">    398                 &#34;%s matching query does not exist.&#34; %
+</span></span></span><span class="line"><span class="cl"><span class="s1">--&gt; 399                 self.model._meta.object_name
+</span></span></span><span class="line"><span class="cl"><span class="s1">    400             )
+</span></span></span><span class="line"><span class="cl"><span class="s1">    401         raise self.model.MultipleObjectsReturned(
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">DoesNotExist: Question matching query does not exist.
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [6]: q = Question.objects.get(pk=1)
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [7]: q.was_published_recently()
+</span></span></span><span class="line"><span class="cl"><span class="s1">Out[7]: False
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [8]: q = Question.objects.get(pk=1)
+</span></span></span><span class="line"><span class="cl"><span class="s1">   ...: 
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [9]: q.choice_set.all()
+</span></span></span><span class="line"><span class="cl"><span class="s1">Out[9]: &lt;QuerySet [&lt;Choice: not much&gt;, &lt;Choice: the sky&gt;, &lt;Choice: just hacking&gt;]&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [10]: q.choice_set.create(choice_text=&#39;</span><span class="n">Not</span> <span class="n">much</span><span class="s1">&#39;, votes=0)
+</span></span></span><span class="line"><span class="cl"><span class="s1">Out[10]: &lt;Choice: Not much&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [11]: c = q.choice_set.create(choice_text=&#39;</span><span class="n">Just</span> <span class="n">hacking</span> <span class="n">again</span><span class="s1">&#39;, votes=0)
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">In [12]: c.question
+</span></span></span><span class="line"><span class="cl"><span class="s1">Out[12]: &lt;Question: what&#39;</span><span class="n">s</span> <span class="n">up</span><span class="p">?&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">13</span><span class="p">]</span><span class="err">:</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="py">all</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Out</span><span class="p">[</span><span class="mf">13</span><span class="p">]</span><span class="err">:</span> <span class="p">&lt;</span><span class="n">QuerySet</span> <span class="p">[&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">not</span> <span class="n">much</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">the</span> <span class="n">sky</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">just</span> <span class="n">hacking</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">Not</span> <span class="n">much</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="n">Choice</span><span class="err">:</span> <span class="n">Just</span> <span class="n">hacking</span> <span class="n">again</span>
+</span></span><span class="line"><span class="cl"><span class="p">&gt;]&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">14</span><span class="p">]</span><span class="err">:</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="py">count</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Out</span><span class="p">[</span><span class="mf">14</span><span class="p">]</span><span class="err">:</span> <span class="mf">5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">15</span><span class="p">]</span><span class="err">:</span> <span class="n">c</span> <span class="p">=</span> <span class="n">q</span><span class="p">.</span><span class="n">choice_set</span><span class="p">.</span><span class="k">filter</span><span class="p">(</span><span class="n">choice_text__startswith</span><span class="p">=</span><span class="s1">&#39;Just hacking&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">16</span><span class="p">]</span><span class="err">:</span> <span class="n">c</span><span class="p">.</span><span class="n">delete</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="n">Out</span><span class="p">[</span><span class="mf">16</span><span class="p">]</span><span class="err">:</span> <span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;polls.Choice&#39;</span><span class="err">:</span> <span class="mf">2</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">In</span> <span class="p">[</span><span class="mf">17</span><span class="p">]</span><span class="err">:</span> <span class="n">quit</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="django管理页面">Django管理页面</h2>
 <p>创建管理员账号</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">createsuperuser</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">python</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">createsuperuser</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动服务器，转到/admin/路径，进入管理员界面</p>
 <p><img
@@ -586,7 +585,7 @@
 <p>在polls/views.py下编写视图，使用通用视图，结合request和response</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -663,88 +662,88 @@
 </span><span class="lnt">75
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">get_object_or_404</span>
-
-<span class="c1"># Create your views here.</span>
-<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
-<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
-<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
-<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
-<span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
-<span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">generic</span>
-<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
-
-
-<span class="c1"># def index(request):</span>
-<span class="c1">#     latest_question_list = Question.objects.order_by(&#39;-pub_date&#39;)[:5]</span>
-<span class="c1">#     context = {</span>
-<span class="c1">#         &#39;latest_question_list&#39; : latest_question_list</span>
-<span class="c1">#     }</span>
-<span class="c1">#     return render(request, &#39;polls/index.html&#39;, context)</span>
-
-<span class="k">class</span> <span class="nc">IndexView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
-    <span class="c1">#model = Question</span>
-    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/index.html&#39;</span>
-    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;latest_question_list&#39;</span>
-
-    <span class="s1">&#39;&#39;&#39;
-</span><span class="s1">    Question.objects.filter(pub_date__lte=timezone.now()) 
-</span><span class="s1">    returns a queryset containing Questions whose pub_date is 
-</span><span class="s1">    less than or equal to - that is, earlier than or equal to - timezone.now.
-</span><span class="s1">    &#39;&#39;&#39;</span>
-
-    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
-            <span class="n">pub_date__lte</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-        <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
-
-<span class="k">class</span> <span class="nc">DetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
-    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/detail.html&#39;</span>
-
-    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pub_date__lte</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-
-<span class="k">class</span> <span class="nc">ResultsView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
-    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/results.html&#39;</span>
-
-<span class="c1"># Leave the rest of the views (detail, results, vote) unchanged</span>
-
-
-<span class="c1"># def detail(request, question_id):</span>
-<span class="c1">#     question = get_object_or_404(Question, pk = question_id)</span>
-<span class="c1">#     return render(request, &#39;polls/detail.html&#39;, {&#39;question&#39;: question})</span>
-<span class="c1">#</span>
-<span class="c1"># def results(request, question_id):</span>
-<span class="c1">#     question = get_object_or_404(Question, pk=question_id)</span>
-<span class="c1">#     return render(request, &#39;polls/results.html&#39;, {&#39;question&#39;: question})</span>
-
-<span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
-    <span class="n">question</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">question</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">])</span>
-    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">Choice</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
-        <span class="c1"># Redisplay the question voting form.</span>
-        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span>
-            <span class="s1">&#39;question&#39;</span><span class="p">:</span> <span class="n">question</span><span class="p">,</span>
-            <span class="s1">&#39;error_message&#39;</span><span class="p">:</span> <span class="s2">&#34;You didn&#39;t select a choice.&#34;</span><span class="p">,</span>
-        <span class="p">})</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">selected_choice</span><span class="o">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">selected_choice</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
-        <span class="c1"># Always return an HttpResponseRedirect after successfully dealing</span>
-        <span class="c1"># with POST data. This prevents data from being posted twice if a</span>
-        <span class="c1"># user hits the Back button.</span>
-        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;polls:results&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
-        <span class="c1"># 使用reverse将返回 &#39;/polls/3/results/&#39;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span><span class="p">,</span> <span class="n">get_object_or_404</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create your views here.</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span><span class="p">,</span> <span class="n">HttpResponseRedirect</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loader</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">Http404</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">reverse</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.views</span> <span class="kn">import</span> <span class="n">generic</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># def index(request):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     latest_question_list = Question.objects.order_by(&#39;-pub_date&#39;)[:5]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     context = {</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         &#39;latest_question_list&#39; : latest_question_list</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     }</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     return render(request, &#39;polls/index.html&#39;, context)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">IndexView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">ListView</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">#model = Question</span>
+</span></span><span class="line"><span class="cl">    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/index.html&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">context_object_name</span> <span class="o">=</span> <span class="s1">&#39;latest_question_list&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;&#39;&#39;
+</span></span></span><span class="line"><span class="cl"><span class="s1">    Question.objects.filter(pub_date__lte=timezone.now()) 
+</span></span></span><span class="line"><span class="cl"><span class="s1">    returns a queryset containing Questions whose pub_date is 
+</span></span></span><span class="line"><span class="cl"><span class="s1">    less than or equal to - that is, earlier than or equal to - timezone.now.
+</span></span></span><span class="line"><span class="cl"><span class="s1">    &#39;&#39;&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">pub_date__lte</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span><span class="o">.</span><span class="n">order_by</span><span class="p">(</span><span class="s1">&#39;-pub_date&#39;</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">DetailView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
+</span></span><span class="line"><span class="cl">    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/detail.html&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_queryset</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Question</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pub_date__lte</span> <span class="o">=</span> <span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ResultsView</span><span class="p">(</span><span class="n">generic</span><span class="o">.</span><span class="n">DetailView</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Question</span>
+</span></span><span class="line"><span class="cl">    <span class="n">template_name</span> <span class="o">=</span> <span class="s1">&#39;polls/results.html&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Leave the rest of the views (detail, results, vote) unchanged</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># def detail(request, question_id):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     question = get_object_or_404(Question, pk = question_id)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     return render(request, &#39;polls/detail.html&#39;, {&#39;question&#39;: question})</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># def results(request, question_id):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     question = get_object_or_404(Question, pk=question_id)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     return render(request, &#39;polls/results.html&#39;, {&#39;question&#39;: question})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">vote</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">question_id</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">question</span> <span class="o">=</span> <span class="n">get_object_or_404</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">pk</span><span class="o">=</span><span class="n">question_id</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">selected_choice</span> <span class="o">=</span> <span class="n">question</span><span class="o">.</span><span class="n">choice_set</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">pk</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">[</span><span class="s1">&#39;choice&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="n">Choice</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Redisplay the question voting form.</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="s1">&#39;polls/detail.html&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;question&#39;</span><span class="p">:</span> <span class="n">question</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;error_message&#39;</span><span class="p">:</span> <span class="s2">&#34;You didn&#39;t select a choice.&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">selected_choice</span><span class="o">.</span><span class="n">votes</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">selected_choice</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># Always return an HttpResponseRedirect after successfully dealing</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># with POST data. This prevents data from being posted twice if a</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># user hits the Back button.</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">HttpResponseRedirect</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s1">&#39;polls:results&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">id</span><span class="p">,)))</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 使用reverse将返回 &#39;/polls/3/results/&#39;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>设置路由</p>
 <p>在polls/urls.py中设置路由，并为应用加上命名空间</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -757,25 +756,25 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
-
-<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
-
-<span class="n">app_name</span> <span class="o">=</span> <span class="s1">&#39;polls&#39;</span>  <span class="c1">#命名空间，防止重名</span>
-<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">IndexView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span><span class="p">),</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:pk&gt;/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">DetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;detail&#39;</span><span class="p">),</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:pk&gt;/results/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ResultsView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;results&#39;</span><span class="p">),</span>
-    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:question_id&gt;/vote/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">vote</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;vote&#39;</span><span class="p">),</span>
-<span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.urls</span> <span class="kn">import</span> <span class="n">path</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">app_name</span> <span class="o">=</span> <span class="s1">&#39;polls&#39;</span>  <span class="c1">#命名空间，防止重名</span>
+</span></span><span class="line"><span class="cl"><span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">IndexView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;index&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:pk&gt;/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">DetailView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;detail&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:pk&gt;/results/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">ResultsView</span><span class="o">.</span><span class="n">as_view</span><span class="p">()</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;results&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span><span class="p">(</span><span class="s1">&#39;&lt;int:question_id&gt;/vote/&#39;</span> <span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">vote</span> <span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;vote&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>编写模板</p>
 <p>使用软编码url，在polls/templates/polls中编写</p>
 <p>index.html</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -801,36 +800,36 @@
 </span><span class="lnt">24
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-
-    {% load static %}
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;polls/style.css&#39; %}&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-
-{% if latest_question_list %}
-    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-    {% for question in latest_question_list %}
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:detail&#39; question.id %}&#34;</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-    {% endfor %}
-    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-{% else %}
-    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>No polls are available.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-{% endif %}
-
-
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    {% load static %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/css&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% static &#39;polls/style.css&#39; %}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{% if latest_question_list %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {% for question in latest_question_list %}
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:detail&#39; question.id %}&#34;</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    {% endfor %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% else %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>No polls are available.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% endif %}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>detail.html  表单验证</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -853,33 +852,33 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-
-{% if error_message %}<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{{ error_message }}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>{% endif %}
-
-<span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:vote&#39; question.id %}&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span>
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;choice&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;choice{{ forloop.counter }}&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{{ choice.id }}&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;choice{{ forloop.counter }}&#34;</span><span class="p">&gt;</span>{{ choice.choice_text }}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
-{% endfor %}
-<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Vote&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">{% if error_message %}<span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>{{ error_message }}<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>{% endif %}
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:vote&#39; question.id %}&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% csrf_token %}
+</span></span><span class="line"><span class="cl">{% for choice in question.choice_set.all %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;choice&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;choice{{ forloop.counter }}&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;{{ choice.id }}&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;choice{{ forloop.counter }}&#34;</span><span class="p">&gt;</span>{{ choice.choice_text }}<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% endfor %}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Vote&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>result.html</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -900,26 +899,26 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-{% for choice in question.choice_set.all %}
-    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-    <span class="c">&lt;!-- pluralize 复数 --&gt;</span>
-{% endfor %}
-<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-
-<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:detail&#39; question.id %}&#34;</span><span class="p">&gt;</span>Vote again?<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Title<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>{{ question.question_text }}<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">{% for choice in question.choice_set.all %}
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- pluralize 复数 --&gt;</span>
+</span></span><span class="line"><span class="cl">{% endfor %}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{% url &#39;polls:detail&#39; question.id %}&#34;</span><span class="p">&gt;</span>Vote again?<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>使用静态文件</p>
 <p>比如css文件和图片</p>
@@ -927,7 +926,7 @@
 <p>把图片放在polls/static/polls/images下，css文件放在polls/static/polls下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -936,20 +935,20 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-css" data-lang="css"><span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
-    <span class="k">color</span> <span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nt">body</span> <span class="p">{</span>
-    <span class="k">background</span><span class="p">:</span> <span class="kc">white</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;images/background.jpg&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-css" data-lang="css"><span class="line"><span class="cl"><span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">color</span> <span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">background</span><span class="p">:</span> <span class="kc">white</span> <span class="nb">url</span><span class="p">(</span><span class="s1">&#39;images/background.jpg&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="自定义管理员界面">自定义管理员界面</h2>
 <p>在polls/admin.py中编写</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -982,46 +981,42 @@
 </span><span class="lnt">31
 </span><span class="lnt">32
 </span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
-
-<span class="c1"># Register your models here.</span>
-
-<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
-
-<span class="c1">#admin.site.register(Question)</span>
-
-<span class="c1"># class QuestionAdmin(admin.ModelAdmin):</span>
-<span class="c1">#     #fields = [&#39;pub_date&#39; , &#39;question_text&#39;]</span>
-<span class="c1">#     fieldsets = [</span>
-<span class="c1">#         (None, {&#39;fields&#39;: [&#39;question_text&#39;]}),</span>
-<span class="c1">#         (&#39;Date information&#39;, {&#39;fields&#39;: [&#39;pub_date&#39;]}),</span>
-<span class="c1">#     ]</span>
-
-<span class="c1">#class ChoiceInline(admin.StackedInline):</span>
-<span class="k">class</span> <span class="nc">ChoiceInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
-    <span class="n">model</span> <span class="o">=</span> <span class="n">Choice</span>
-    <span class="n">extra</span> <span class="o">=</span> <span class="mi">3</span>
-
-<span class="k">class</span> <span class="nc">QuestionAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
-    <span class="n">fieldsets</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;fields&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;question_text&#39;</span><span class="p">]}),</span>
-        <span class="p">(</span><span class="s1">&#39;Date information&#39;</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;fields&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">],</span>
-                               <span class="s1">&#39;classes&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;collapse&#39;</span><span class="p">]}),</span>
-    <span class="p">]</span>
-    <span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ChoiceInline</span><span class="p">]</span>
-    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;question_text&#39;</span><span class="p">,</span> <span class="s1">&#39;pub_date&#39;</span><span class="p">,</span> <span class="s1">&#39;was_published_recently&#39;</span><span class="p">)</span>
-    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">]</span>
-    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;question_text&#39;</span><span class="p">]</span>
-
-<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">QuestionAdmin</span><span class="p">)</span>
-<span class="c1">#admin.site.register(Choice)</span>
-
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Register your models here.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">Question</span><span class="p">,</span> <span class="n">Choice</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#admin.site.register(Question)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># class QuestionAdmin(admin.ModelAdmin):</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     #fields = [&#39;pub_date&#39; , &#39;question_text&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     fieldsets = [</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         (None, {&#39;fields&#39;: [&#39;question_text&#39;]}),</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#         (&#39;Date information&#39;, {&#39;fields&#39;: [&#39;pub_date&#39;]}),</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#     ]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#class ChoiceInline(admin.StackedInline):</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ChoiceInline</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">TabularInline</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model</span> <span class="o">=</span> <span class="n">Choice</span>
+</span></span><span class="line"><span class="cl">    <span class="n">extra</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">QuestionAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fieldsets</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;fields&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;question_text&#39;</span><span class="p">]}),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">(</span><span class="s1">&#39;Date information&#39;</span> <span class="p">,</span> <span class="p">{</span><span class="s1">&#39;fields&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">                               <span class="s1">&#39;classes&#39;</span> <span class="p">:</span> <span class="p">[</span><span class="s1">&#39;collapse&#39;</span><span class="p">]}),</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">inlines</span> <span class="o">=</span> <span class="p">[</span><span class="n">ChoiceInline</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_display</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;question_text&#39;</span><span class="p">,</span> <span class="s1">&#39;pub_date&#39;</span><span class="p">,</span> <span class="s1">&#39;was_published_recently&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">list_filter</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;pub_date&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">search_fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;question_text&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">Question</span><span class="p">,</span> <span class="n">QuestionAdmin</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#admin.site.register(Choice)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -1047,11 +1042,11 @@
 <p>安装mysqldb驱动</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">MySQLdb</span> <span class="n">-i</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">pypi</span><span class="p">.</span><span class="n">douban</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">simple</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="p">-</span><span class="n">-pre</span> <span class="n">MySQLdb</span> <span class="n">-i</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">pypi</span><span class="p">.</span><span class="py">douban</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">simple</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>出错</p>
 <p><img
@@ -1069,13 +1064,13 @@
 <p>尝试</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">pip</span> <span class="n">install</span> <span class="n">pymysql</span>
-<span class="n">py</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">makemigrations</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="n">pymysql</span>
+</span></span><span class="line"><span class="cl"><span class="n">py</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">makemigrations</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>报错</p>
 <p><img
@@ -1089,24 +1084,24 @@
 <p>与工程同名的文件夹下的__init__.py中这样写</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pymysql</span>
-<span class="n">pymysql</span><span class="o">.</span><span class="n">version_info</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">pymysql</span><span class="o">.</span><span class="n">install_as_MySQLdb</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pymysql</span>
+</span></span><span class="line"><span class="cl"><span class="n">pymysql</span><span class="o">.</span><span class="n">version_info</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;final&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">pymysql</span><span class="o">.</span><span class="n">install_as_MySQLdb</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>再执行</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">py</span> <span class="n">manage</span><span class="p">.</span><span class="n">py</span> <span class="n">makemigrations</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">py</span> <span class="n">manage</span><span class="p">.</span><span class="py">py</span> <span class="n">makemigrations</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -1128,17 +1123,17 @@
 <p>定位到这样的代码段</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">query</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="s1">&#39;_executed&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">query</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-	<span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
-<span class="k">return</span> <span class="n">query</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">query</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">cursor</span><span class="p">,</span> <span class="s1">&#39;_executed&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">query</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">	<span class="n">query</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">return</span> <span class="n">query</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>把decode改成encode</p>
 </div><div class="post-footer" id="post-footer">

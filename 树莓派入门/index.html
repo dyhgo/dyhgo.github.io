@@ -8,10 +8,9 @@
         <title>树莓派入门 - This is DYH</title><meta name="Description" content="树莓派入门"><meta property="og:title" content="树莓派入门" />
 <meta property="og:description" content="树莓派入门" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E9%97%A8/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-06-28T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-06-28T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-06-28T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -213,7 +212,7 @@
 <p>在里面写入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -228,20 +227,20 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">country=CN
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-network={
-	ssid=&#34;将我替换成第一个WiFi的名字，不删除引号,不能有中文&#34;
-	psk=&#34;将我替换成WiFi密码，不删除引号&#34;
-	priority=将我替换成数字，数字越大代表优先级越高
-}
-network={
-	ssid=&#34;将我替换成第二个WiFi的名字，不删除引号,不能有中文&#34;
-	psk=&#34;将我替换成WiFi密码，不删除引号&#34;
-	priority=将我替换成数字，数字越大代表优先级越高
-}
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">country=CN
+</span></span><span class="line"><span class="cl">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+</span></span><span class="line"><span class="cl">update_config=1
+</span></span><span class="line"><span class="cl">network={
+</span></span><span class="line"><span class="cl">	ssid=&#34;将我替换成第一个WiFi的名字，不删除引号,不能有中文&#34;
+</span></span><span class="line"><span class="cl">	psk=&#34;将我替换成WiFi密码，不删除引号&#34;
+</span></span><span class="line"><span class="cl">	priority=将我替换成数字，数字越大代表优先级越高
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">network={
+</span></span><span class="line"><span class="cl">	ssid=&#34;将我替换成第二个WiFi的名字，不删除引号,不能有中文&#34;
+</span></span><span class="line"><span class="cl">	psk=&#34;将我替换成WiFi密码，不删除引号&#34;
+</span></span><span class="line"><span class="cl">	priority=将我替换成数字，数字越大代表优先级越高
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -271,13 +270,13 @@ network={
 <p>把第一行注释掉，在后面复制</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
-deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">deb http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+</span></span><span class="line"><span class="cl">deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><img
         class="lazyload"
@@ -294,20 +293,20 @@ deb-src http://mirrors.tuna.tsinghua.edu.cn/raspbian/raspbian/ buster main contr
 <h2 id="给pip换源">给pip换源</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">sudo mkdir ~/.pip
-<span class="nb">cd</span> .pip
-sudo nano pip.conf
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo mkdir ~/.pip
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> .pip
+</span></span><span class="line"><span class="cl">sudo nano pip.conf
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>写入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -317,15 +316,15 @@ sudo nano pip.conf
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="o">[</span>global<span class="o">]</span>
-<span class="nv">timeout</span> <span class="o">=</span> 10
-index-url <span class="o">=</span>  http://mirrors.aliyun.com/pypi/simple/
-extra-index-url<span class="o">=</span> http://pypi.douban.com/simple/
-<span class="o">[</span>install<span class="o">]</span>
-trusted-host<span class="o">=</span>
-    mirrors.aliyun.com
-    pypi.douban.com
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span>global<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">timeout</span> <span class="o">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl">index-url <span class="o">=</span>  http://mirrors.aliyun.com/pypi/simple/
+</span></span><span class="line"><span class="cl">extra-index-url<span class="o">=</span> http://pypi.douban.com/simple/
+</span></span><span class="line"><span class="cl"><span class="o">[</span>install<span class="o">]</span>
+</span></span><span class="line"><span class="cl">trusted-host<span class="o">=</span>
+</span></span><span class="line"><span class="cl">    mirrors.aliyun.com
+</span></span><span class="line"><span class="cl">    pypi.douban.com
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="树莓派的一些设置">树莓派的一些设置</h2>
 <p><code>sudo raspi-config</code> 进入到设置界面</p>
@@ -344,17 +343,17 @@ trusted-host<span class="o">=</span>
 <p>选择 armv7_32bits</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">cd</span> /home/pi/Downloads
-sudo dpkg -i 下载的文件名_armhf.deb
-sudo apt-get -f install
-sudo apt-get install gdebi
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">cd</span> /home/pi/Downloads
+</span></span><span class="line"><span class="cl">sudo dpkg -i 下载的文件名_armhf.deb
+</span></span><span class="line"><span class="cl">sudo apt-get -f install
+</span></span><span class="line"><span class="cl">sudo apt-get install gdebi
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>点击右上角的图标即可进入</p>
 <p>需要注册账号</p>

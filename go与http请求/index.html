@@ -8,10 +8,9 @@
         <title>GO与http请求 - This is DYH</title><meta name="Description" content="GO与http请求"><meta property="og:title" content="GO与http请求" />
 <meta property="og:description" content="GO与http请求" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-07T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-07T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2023-02-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82\/"
-        },"genre": "posts","keywords": "go","wordcount":  1464 ,
+        },"genre": "posts","keywords": "go","wordcount":  1460 ,
         "url": "https:\/\/dyhgo.github.io\/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82\/","datePublished": "2023-02-07T00:00:00+00:00","dateModified": "2023-02-07T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">GO与http请求</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>go</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-07">2023-02-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1464 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-07">2023-02-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1460 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/" class="leancloud_visitors" data-flag-title="GO与http请求">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -152,7 +151,7 @@
 <p>代码如下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -198,57 +197,55 @@
 </span><span class="lnt">44
 </span><span class="lnt">45
 </span><span class="lnt">46
-</span><span class="lnt">47
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net/http&#34;</span>
-	<span class="s">&#34;strings&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
-	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="s">`{&#34;trans_type&#34;:&#34;en2zh&#34;,&#34;source&#34;:&#34;good&#34;}`</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;authority&#34;</span><span class="p">,</span> <span class="s">&#34;api.interpreter.caiyunai.com&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;accept-language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9,en;q=0.8&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;content-type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua&#34;</span><span class="p">,</span> <span class="s">`&#34;Not_A Brand&#34;;v=&#34;99&#34;, &#34;Google Chrome&#34;;v=&#34;109&#34;, &#34;Chromium&#34;;v=&#34;109&#34;`</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-platform&#34;</span><span class="p">,</span> <span class="s">`&#34;macOS&#34;`</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;user-agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;x-authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
-	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">bodyText</span><span class="p">)</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;strings&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">strings</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="s">`{&#34;trans_type&#34;:&#34;en2zh&#34;,&#34;source&#34;:&#34;good&#34;}`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;authority&#34;</span><span class="p">,</span> <span class="s">&#34;api.interpreter.caiyunai.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;accept-language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9,en;q=0.8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;content-type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua&#34;</span><span class="p">,</span> <span class="s">`&#34;Not_A Brand&#34;;v=&#34;99&#34;, &#34;Google Chrome&#34;;v=&#34;109&#34;, &#34;Chromium&#34;;v=&#34;109&#34;`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-platform&#34;</span><span class="p">,</span> <span class="s">`&#34;macOS&#34;`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-fetch-site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;user-agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;x-authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">bodyText</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行之后可以输出结果</p>
 <p><img
@@ -262,7 +259,7 @@
 <p>将json数据写成结构体的形式，然后用序列化，代码改成</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -320,69 +317,67 @@
 </span><span class="lnt">56
 </span><span class="lnt">57
 </span><span class="lnt">58
-</span><span class="lnt">59
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bytes&#34;</span>
-	<span class="s">&#34;encoding/json&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net/http&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
-	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
-	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
-	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="s">&#34;good&#34;</span><span class="p">}</span>
-	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="c1">//返回byte[]，所以后面调用bytes.NewReader
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
-	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">bodyText</span><span class="p">)</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bytes&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="s">&#34;good&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span> <span class="c1">//返回byte[]，所以后面调用bytes.NewReader
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%s\n&#34;</span><span class="p">,</span> <span class="nx">bodyText</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>接下来从response中获得翻译结果</p>
 <p>从response中可以看出它的结构还是挺复杂的</p>
@@ -398,7 +393,7 @@
 <p>在代码里使用unmarshal来反序列化，代码为</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -494,112 +489,110 @@
 </span><span class="lnt">94
 </span><span class="lnt">95
 </span><span class="lnt">96
-</span><span class="lnt">97
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bytes&#34;</span>
-	<span class="s">&#34;encoding/json&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io/ioutil&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net/http&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
-	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
-	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
-<span class="p">}</span>
-
-<span class="kd">type</span> <span class="nx">DictResponse</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">Rc</span>   <span class="kt">int</span> <span class="s">`json:&#34;rc&#34;`</span>
-	<span class="nx">Wiki</span> <span class="kd">struct</span> <span class="p">{</span>
-		<span class="nx">KnownInLaguages</span> <span class="kt">int</span> <span class="s">`json:&#34;known_in_laguages&#34;`</span>
-		<span class="nx">Description</span>     <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">Source</span> <span class="kt">string</span>      <span class="s">`json:&#34;source&#34;`</span>
-			<span class="nx">Target</span> <span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;target&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;description&#34;`</span>
-		<span class="nx">ID</span>   <span class="kt">string</span> <span class="s">`json:&#34;id&#34;`</span>
-		<span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">Source</span> <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
-			<span class="nx">Target</span> <span class="kt">string</span> <span class="s">`json:&#34;target&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;item&#34;`</span>
-		<span class="nx">ImageURL</span>  <span class="kt">string</span> <span class="s">`json:&#34;image_url&#34;`</span>
-		<span class="nx">IsSubject</span> <span class="kt">string</span> <span class="s">`json:&#34;is_subject&#34;`</span>
-		<span class="nx">Sitelink</span>  <span class="kt">string</span> <span class="s">`json:&#34;sitelink&#34;`</span>
-	<span class="p">}</span> <span class="s">`json:&#34;wiki&#34;`</span>
-	<span class="nx">Dictionary</span> <span class="kd">struct</span> <span class="p">{</span>
-		<span class="nx">Prons</span> <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">EnUs</span> <span class="kt">string</span> <span class="s">`json:&#34;en-us&#34;`</span>
-			<span class="nx">En</span>   <span class="kt">string</span> <span class="s">`json:&#34;en&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;prons&#34;`</span>
-		<span class="nx">Explanations</span> <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;explanations&#34;`</span>
-		<span class="nx">Synonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;synonym&#34;`</span>
-		<span class="nx">Antonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;antonym&#34;`</span>
-		<span class="nx">WqxExample</span>   <span class="p">[][]</span><span class="kt">string</span>    <span class="s">`json:&#34;wqx_example&#34;`</span>
-		<span class="nx">Entry</span>        <span class="kt">string</span>        <span class="s">`json:&#34;entry&#34;`</span>
-		<span class="nx">Type</span>         <span class="kt">string</span>        <span class="s">`json:&#34;type&#34;`</span>
-		<span class="nx">Related</span>      <span class="p">[]</span><span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;related&#34;`</span>
-		<span class="nx">Source</span>       <span class="kt">string</span>        <span class="s">`json:&#34;source&#34;`</span>
-	<span class="p">}</span> <span class="s">`json:&#34;dictionary&#34;`</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
-	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="s">&#34;good&#34;</span><span class="p">}</span>
-	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
-	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="kd">var</span> <span class="nx">dictResponse</span> <span class="nx">DictResponse</span>
-	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dictResponse</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%#v\n&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">)</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bytes&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io/ioutil&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DictResponse</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Rc</span>   <span class="kt">int</span> <span class="s">`json:&#34;rc&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Wiki</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">KnownInLaguages</span> <span class="kt">int</span> <span class="s">`json:&#34;known_in_laguages&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Description</span>     <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Source</span> <span class="kt">string</span>      <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Target</span> <span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;target&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">ID</span>   <span class="kt">string</span> <span class="s">`json:&#34;id&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Source</span> <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Target</span> <span class="kt">string</span> <span class="s">`json:&#34;target&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;item&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">ImageURL</span>  <span class="kt">string</span> <span class="s">`json:&#34;image_url&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">IsSubject</span> <span class="kt">string</span> <span class="s">`json:&#34;is_subject&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Sitelink</span>  <span class="kt">string</span> <span class="s">`json:&#34;sitelink&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="s">`json:&#34;wiki&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Dictionary</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Prons</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">EnUs</span> <span class="kt">string</span> <span class="s">`json:&#34;en-us&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">En</span>   <span class="kt">string</span> <span class="s">`json:&#34;en&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;prons&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Explanations</span> <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;explanations&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Synonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;synonym&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Antonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;antonym&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">WqxExample</span>   <span class="p">[][]</span><span class="kt">string</span>    <span class="s">`json:&#34;wqx_example&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Entry</span>        <span class="kt">string</span>        <span class="s">`json:&#34;entry&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Type</span>         <span class="kt">string</span>        <span class="s">`json:&#34;type&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Related</span>      <span class="p">[]</span><span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;related&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Source</span>       <span class="kt">string</span>        <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="s">`json:&#34;dictionary&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="s">&#34;good&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">dictResponse</span> <span class="nx">DictResponse</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dictResponse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%#v\n&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>最后修缮代码，把输入变成软编码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -713,125 +706,123 @@
 </span><span class="lnt">112
 </span><span class="lnt">113
 </span><span class="lnt">114
-</span><span class="lnt">115
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bytes&#34;</span>
-	<span class="s">&#34;encoding/json&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io/ioutil&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net/http&#34;</span>
-	<span class="s">&#34;os&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
-	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
-	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
-<span class="p">}</span>
-
-<span class="kd">type</span> <span class="nx">DictResponse</span> <span class="kd">struct</span> <span class="p">{</span>
-	<span class="nx">Rc</span>   <span class="kt">int</span> <span class="s">`json:&#34;rc&#34;`</span>
-	<span class="nx">Wiki</span> <span class="kd">struct</span> <span class="p">{</span>
-		<span class="nx">KnownInLaguages</span> <span class="kt">int</span> <span class="s">`json:&#34;known_in_laguages&#34;`</span>
-		<span class="nx">Description</span>     <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">Source</span> <span class="kt">string</span>      <span class="s">`json:&#34;source&#34;`</span>
-			<span class="nx">Target</span> <span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;target&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;description&#34;`</span>
-		<span class="nx">ID</span>   <span class="kt">string</span> <span class="s">`json:&#34;id&#34;`</span>
-		<span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">Source</span> <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
-			<span class="nx">Target</span> <span class="kt">string</span> <span class="s">`json:&#34;target&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;item&#34;`</span>
-		<span class="nx">ImageURL</span>  <span class="kt">string</span> <span class="s">`json:&#34;image_url&#34;`</span>
-		<span class="nx">IsSubject</span> <span class="kt">string</span> <span class="s">`json:&#34;is_subject&#34;`</span>
-		<span class="nx">Sitelink</span>  <span class="kt">string</span> <span class="s">`json:&#34;sitelink&#34;`</span>
-	<span class="p">}</span> <span class="s">`json:&#34;wiki&#34;`</span>
-	<span class="nx">Dictionary</span> <span class="kd">struct</span> <span class="p">{</span>
-		<span class="nx">Prons</span> <span class="kd">struct</span> <span class="p">{</span>
-			<span class="nx">EnUs</span> <span class="kt">string</span> <span class="s">`json:&#34;en-us&#34;`</span>
-			<span class="nx">En</span>   <span class="kt">string</span> <span class="s">`json:&#34;en&#34;`</span>
-		<span class="p">}</span> <span class="s">`json:&#34;prons&#34;`</span>
-		<span class="nx">Explanations</span> <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;explanations&#34;`</span>
-		<span class="nx">Synonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;synonym&#34;`</span>
-		<span class="nx">Antonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;antonym&#34;`</span>
-		<span class="nx">WqxExample</span>   <span class="p">[][]</span><span class="kt">string</span>    <span class="s">`json:&#34;wqx_example&#34;`</span>
-		<span class="nx">Entry</span>        <span class="kt">string</span>        <span class="s">`json:&#34;entry&#34;`</span>
-		<span class="nx">Type</span>         <span class="kt">string</span>        <span class="s">`json:&#34;type&#34;`</span>
-		<span class="nx">Related</span>      <span class="p">[]</span><span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;related&#34;`</span>
-		<span class="nx">Source</span>       <span class="kt">string</span>        <span class="s">`json:&#34;source&#34;`</span>
-	<span class="p">}</span> <span class="s">`json:&#34;dictionary&#34;`</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">query</span><span class="p">(</span><span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
-	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
-	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="nx">word</span><span class="p">}</span>
-	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
-	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
-	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;bad StatusCode:&#34;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span><span class="p">,</span> <span class="s">&#34;body&#34;</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">))</span>
-	<span class="p">}</span>
-	<span class="kd">var</span> <span class="nx">dictResponse</span> <span class="nx">DictResponse</span>
-	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dictResponse</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="s">&#34;UK:&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Prons</span><span class="p">.</span><span class="nx">En</span><span class="p">,</span> <span class="s">&#34;US:&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Prons</span><span class="p">.</span><span class="nx">EnUs</span><span class="p">)</span>
-	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Explanations</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">{</span>
-		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span><span class="p">,</span> <span class="s">`usage: simpleDict WORD
-</span><span class="s">example: simpleDict hello
-</span><span class="s">		`</span><span class="p">)</span>
-		<span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">word</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-	<span class="nf">query</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bytes&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/json&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io/ioutil&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net/http&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;os&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DictRequest</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">TransType</span> <span class="kt">string</span> <span class="s">`json:&#34;trans_type&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Source</span>    <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">UserID</span>    <span class="kt">string</span> <span class="s">`json:&#34;user_id&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">DictResponse</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Rc</span>   <span class="kt">int</span> <span class="s">`json:&#34;rc&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Wiki</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">KnownInLaguages</span> <span class="kt">int</span> <span class="s">`json:&#34;known_in_laguages&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Description</span>     <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Source</span> <span class="kt">string</span>      <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Target</span> <span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;target&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;description&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">ID</span>   <span class="kt">string</span> <span class="s">`json:&#34;id&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Item</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Source</span> <span class="kt">string</span> <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">Target</span> <span class="kt">string</span> <span class="s">`json:&#34;target&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;item&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">ImageURL</span>  <span class="kt">string</span> <span class="s">`json:&#34;image_url&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">IsSubject</span> <span class="kt">string</span> <span class="s">`json:&#34;is_subject&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Sitelink</span>  <span class="kt">string</span> <span class="s">`json:&#34;sitelink&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="s">`json:&#34;wiki&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Dictionary</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Prons</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">EnUs</span> <span class="kt">string</span> <span class="s">`json:&#34;en-us&#34;`</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">En</span>   <span class="kt">string</span> <span class="s">`json:&#34;en&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span> <span class="s">`json:&#34;prons&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Explanations</span> <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;explanations&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Synonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;synonym&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Antonym</span>      <span class="p">[]</span><span class="kt">string</span>      <span class="s">`json:&#34;antonym&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">WqxExample</span>   <span class="p">[][]</span><span class="kt">string</span>    <span class="s">`json:&#34;wqx_example&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Entry</span>        <span class="kt">string</span>        <span class="s">`json:&#34;entry&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Type</span>         <span class="kt">string</span>        <span class="s">`json:&#34;type&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Related</span>      <span class="p">[]</span><span class="kd">interface</span><span class="p">{}</span> <span class="s">`json:&#34;related&#34;`</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">Source</span>       <span class="kt">string</span>        <span class="s">`json:&#34;source&#34;`</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="s">`json:&#34;dictionary&#34;`</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">query</span><span class="p">(</span><span class="nx">word</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">request</span> <span class="o">:=</span> <span class="nx">DictRequest</span><span class="p">{</span><span class="nx">TransType</span><span class="p">:</span> <span class="s">&#34;en2zh&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="nx">word</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buf</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">request</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">data</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">NewRequest</span><span class="p">(</span><span class="s">&#34;POST&#34;</span><span class="p">,</span> <span class="s">&#34;https://api.interpreter.caiyunai.com/v1/dict&#34;</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Connection&#34;</span><span class="p">,</span> <span class="s">&#34;keep-alive&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;DNT&#34;</span><span class="p">,</span> <span class="s">&#34;1&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-version&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;sec-ch-ua-mobile&#34;</span><span class="p">,</span> <span class="s">&#34;?0&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;User-Agent&#34;</span><span class="p">,</span> <span class="s">&#34;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;app-name&#34;</span><span class="p">,</span> <span class="s">&#34;xy&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Content-Type&#34;</span><span class="p">,</span> <span class="s">&#34;application/json;charset=UTF-8&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept&#34;</span><span class="p">,</span> <span class="s">&#34;application/json, text/plain, */*&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;device-id&#34;</span><span class="p">,</span> <span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;os-type&#34;</span><span class="p">,</span> <span class="s">&#34;web&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;X-Authorization&#34;</span><span class="p">,</span> <span class="s">&#34;token:qgemv4jr1y38jyq6vhvi&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Origin&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Site&#34;</span><span class="p">,</span> <span class="s">&#34;cross-site&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Mode&#34;</span><span class="p">,</span> <span class="s">&#34;cors&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Sec-Fetch-Dest&#34;</span><span class="p">,</span> <span class="s">&#34;empty&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Referer&#34;</span><span class="p">,</span> <span class="s">&#34;https://fanyi.caiyunapp.com/&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Accept-Language&#34;</span><span class="p">,</span> <span class="s">&#34;zh-CN,zh;q=0.9&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;Cookie&#34;</span><span class="p">,</span> <span class="s">&#34;_ym_uid=16456948721020430059; _ym_d=1645694872&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">bodyText</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nf">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span> <span class="o">!=</span> <span class="mi">200</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;bad StatusCode:&#34;</span><span class="p">,</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">StatusCode</span><span class="p">,</span> <span class="s">&#34;body&#34;</span><span class="p">,</span> <span class="nb">string</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">dictResponse</span> <span class="nx">DictResponse</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">(</span><span class="nx">bodyText</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">dictResponse</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">word</span><span class="p">,</span> <span class="s">&#34;UK:&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Prons</span><span class="p">.</span><span class="nx">En</span><span class="p">,</span> <span class="s">&#34;US:&#34;</span><span class="p">,</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Prons</span><span class="p">.</span><span class="nx">EnUs</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">item</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">dictResponse</span><span class="p">.</span><span class="nx">Dictionary</span><span class="p">.</span><span class="nx">Explanations</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">fmt</span><span class="p">.</span><span class="nf">Fprintf</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stderr</span><span class="p">,</span> <span class="s">`usage: simpleDict WORD
+</span></span></span><span class="line"><span class="cl"><span class="s">example: simpleDict hello
+</span></span></span><span class="line"><span class="cl"><span class="s">		`</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">os</span><span class="p">.</span><span class="nf">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">word</span> <span class="o">:=</span> <span class="nx">os</span><span class="p">.</span><span class="nx">Args</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">query</span><span class="p">(</span><span class="nx">word</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

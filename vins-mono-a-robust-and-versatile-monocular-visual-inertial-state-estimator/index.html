@@ -8,10 +8,9 @@
         <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator - This is DYH</title><meta name="Description" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator"><meta property="og:title" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" />
 <meta property="og:description" content="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-03T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-03T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2022-11-03T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator\/"
-        },"genre": "posts","keywords": "slam","wordcount":  4297 ,
+        },"genre": "posts","keywords": "slam","wordcount":  4296 ,
         "url": "https:\/\/dyhgo.github.io\/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator\/","datePublished": "2022-11-03T00:00:00+00:00","dateModified": "2022-11-03T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a>&nbsp;<a href="/categories/slam/"><i class="far fa-folder fa-fw"></i>slam</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-03">2022-11-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4297 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-03">2022-11-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4296 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" class="leancloud_visitors" data-flag-title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -210,21 +209,21 @@
 <p>下标k是图像帧，下标i是IMU帧</p>
 <p>原始的陀螺仪和加速度计的测量值</p>
 <p>$$
-\begin{aligned} 
-\hat{\mathbf{a}}_{t} &amp; =\mathbf{a}_{t}+\mathbf{b}_{a_{t}}+\mathbf{R}_{w}^{t} \mathbf{g}^{w}+\mathbf{n}_{a} 
+\begin{aligned}
+\hat{\mathbf{a}}_{t} &amp; =\mathbf{a}_{t}+\mathbf{b}_{a_{t}}+\mathbf{R}_{w}^{t} \mathbf{g}^{w}+\mathbf{n}_{a}
 \end{aligned}
 $$</p>
 <p>$$
-\begin{aligned} 
-\hat{\boldsymbol{\omega}}_{t} &amp; =\boldsymbol{\omega}_{t}+\mathbf{b}_{w_{t}}+\mathbf{n}_{w} 
+\begin{aligned}
+\hat{\boldsymbol{\omega}}_{t} &amp; =\boldsymbol{\omega}_{t}+\mathbf{b}_{w_{t}}+\mathbf{n}_{w}
 \end{aligned}
 $$</p>
 <p>假设噪声满足正态分布，偏置的导数满足正态分布</p>
 <p>第k+1图像帧的位移、速度和旋转（在世界坐标系下）可以通过上一帧得到</p>
 <p>$$
 \begin{array}{l}
-\mathbf{p}_{b_{k+1}}^{w}=\mathbf{p}_{b_{k}}^{w}+\mathbf{v}_{b_{k}}^{w} \Delta t_{k} 
-+\iint_{t \in\left[t_{k}, t_{k+1}\right]}\left(\mathbf{R}_{t}^{w}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right)-\mathbf{g}^{w}\right) d t^{2} 
+\mathbf{p}_{b_{k+1}}^{w}=\mathbf{p}_{b_{k}}^{w}+\mathbf{v}_{b_{k}}^{w} \Delta t_{k}
++\iint_{t \in\left[t_{k}, t_{k+1}\right]}\left(\mathbf{R}_{t}^{w}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right)-\mathbf{g}^{w}\right) d t^{2}
 \end{array}
 $$</p>
 <p>$$
@@ -239,11 +238,11 @@ $$</p>
 $$</p>
 <p>$$
 \boldsymbol{\Omega}(\boldsymbol{\omega})=\left[\begin{array}{cc}
--\lfloor\boldsymbol{\omega}\rfloor_{\times} &amp; \boldsymbol{\omega} \<br>
+-\lfloor\boldsymbol{\omega}\rfloor_{\times} &amp; \boldsymbol{\omega} \
 -\boldsymbol{\omega}^{T} &amp; 0
 \end{array}\right],\lfloor\boldsymbol{\omega}\rfloor_{\times}=\left[\begin{array}{ccc}
-0 &amp; -\omega_{z} &amp; \omega_{y} \<br>
-\omega_{z} &amp; 0 &amp; -\omega_{x} \<br>
+0 &amp; -\omega_{z} &amp; \omega_{y} \
+\omega_{z} &amp; 0 &amp; -\omega_{x} \
 -\omega_{y} &amp; \omega_{x} &amp; 0
 \end{array}\right]
 $$</p>
@@ -251,27 +250,27 @@ $$</p>
 <p>不在世界坐标系下求pvq，而是在bk系下求，这样公式转变成</p>
 <p>$$
 \begin{aligned}
-\mathbf{R}<em>{w}^{b</em>{k}} \mathbf{p}<em>{b</em>{k+1}}^{w} &amp; =\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{p}<em>{b</em>{k}}^{w}+\mathbf{v}<em>{b</em>{k}}^{w} \Delta t_{k}-\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}\right)+\boldsymbol{\alpha}_{b_{k+1}}^{b_{k}} \<br>
-\mathbf{R}_{w}^{b_{k}} \mathbf{v}_{b_{k+1}}^{w} &amp; =\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k}}^{w}-\mathbf{g}^{w} \Delta t_{k}\right)+\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} \<br>
-\mathbf{q}_{w}^{b_{k}} \otimes \mathbf{q}_{b_{k+1}}^{w} &amp; =\gamma_{b_{k+1}}^{b_{k}}
+\mathbf{R}<em>{w}^{b</em>{k}} \mathbf{p}<em>{b</em>{k+1}}^{w} &amp; =\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{p}<em>{b</em>{k}}^{w}+\mathbf{v}<em>{b</em>{k}}^{w} \Delta t_{k}-\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}\right)+\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} \
+\mathbf{R}<em>{w}^{b</em>{k}} \mathbf{v}<em>{b</em>{k+1}}^{w} &amp; =\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{v}<em>{b</em>{k}}^{w}-\mathbf{g}^{w} \Delta t_{k}\right)+\boldsymbol{\beta}<em>{b</em>{k+1}}^{b_{k}} \
+\mathbf{q}<em>{w}^{b</em>{k}} \otimes \mathbf{q}<em>{b</em>{k+1}}^{w} &amp; =\gamma_{b_{k+1}}^{b_{k}}
 \end{aligned}
 $$</p>
 <p>$$
 \begin{aligned}
-\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; =\iint_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}_{t}^{b_{k}}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right) d t^{2} \<br>
-\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}_{t}^{b_{k}}\left(\hat{\mathbf{a}}_{t}-\mathbf{b}_{a_{t}}-\mathbf{n}_{a}\right) d t \<br>
-\boldsymbol{\gamma}_{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \frac{1}{2} \boldsymbol{\Omega}\left(\hat{\boldsymbol{\omega}}_{t}-\mathbf{b}_{w_{t}}-\mathbf{n}_{w}\right) \boldsymbol{\gamma}_{t}^{b_{k}} d t
+\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; =\iint_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}<em>{t}^{b</em>{k}}\left(\hat{\mathbf{a}}<em>{t}-\mathbf{b}</em>{a_{t}}-\mathbf{n}<em>{a}\right) d t^{2} \
+\boldsymbol{\beta}</em>{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \mathbf{R}<em>{t}^{b</em>{k}}\left(\hat{\mathbf{a}}<em>{t}-\mathbf{b}</em>{a_{t}}-\mathbf{n}<em>{a}\right) d t \
+\boldsymbol{\gamma}</em>{b_{k+1}}^{b_{k}} &amp; =\int_{t \in\left[t_{k}, t_{k+1}\right]} \frac{1}{2} \boldsymbol{\Omega}\left(\hat{\boldsymbol{\omega}}<em>{t}-\mathbf{b}</em>{w_{t}}-\mathbf{n}<em>{w}\right) \boldsymbol{\gamma}</em>{t}^{b_{k}} d t
 \end{aligned}
 $$</p>
 <p>三个预积分项可以近似看成是相邻图像帧之间的pvq的变化量，可以看出三个预积分项没有待优化变量。三个预积分项和bias有关，当bias变化时，变化不大，则用预积分项的一阶近似代替，变化很大则重传递</p>
 <p>上面的预积分项是连续的，实际是用离散形式代替，离散形式有欧拉法、中点法等，论文写的是欧拉法，代码中用的是中点法。欧拉法的预积分项传递公式如下（不考虑噪声）</p>
 <p>$$
 \begin{array}{l}
-\hat{\boldsymbol{\alpha}}<em>{i+1}^{b</em>{k}}=\hat{\boldsymbol{\alpha}}<em>{i}^{b</em>{k}}+\hat{\boldsymbol{\beta}}<em>{i}^{b</em>{k}} \delta t+\frac{1}{2} \mathbf{R}\left(\hat{\gamma}<em>{i}^{b</em>{k}}\right)\left(\hat{\mathbf{a}}<em>{i}-\mathbf{b}</em>{a_{i}}\right) \delta t^{2} \<br>
-\hat{\boldsymbol{\beta}}_{i+1}^{b_{k}}=\hat{\boldsymbol{\beta}}_{i}^{b_{k}}+\mathbf{R}\left(\hat{\gamma}_{i}^{b_{k}}\right)\left(\hat{\mathbf{a}}_{i}-\mathbf{b}_{a_{i}}\right) \delta t \<br>
-\hat{\boldsymbol{\gamma}}_{i+1}^{b_{k}}=\hat{\boldsymbol{\gamma}}_{i}^{b_{k}} \otimes\left[\begin{array}{c}
-1 \<br>
-\frac{1}{2}\left(\hat{\boldsymbol{\omega}}_{i}-\mathbf{b}_{w_{i}}\right) \delta t
+\hat{\boldsymbol{\alpha}}<em>{i+1}^{b</em>{k}}=\hat{\boldsymbol{\alpha}}<em>{i}^{b</em>{k}}+\hat{\boldsymbol{\beta}}<em>{i}^{b</em>{k}} \delta t+\frac{1}{2} \mathbf{R}\left(\hat{\gamma}<em>{i}^{b</em>{k}}\right)\left(\hat{\mathbf{a}}<em>{i}-\mathbf{b}</em>{a_{i}}\right) \delta t^{2} \
+\hat{\boldsymbol{\beta}}<em>{i+1}^{b</em>{k}}=\hat{\boldsymbol{\beta}}<em>{i}^{b</em>{k}}+\mathbf{R}\left(\hat{\gamma}<em>{i}^{b</em>{k}}\right)\left(\hat{\mathbf{a}}<em>{i}-\mathbf{b}</em>{a_{i}}\right) \delta t \
+\hat{\boldsymbol{\gamma}}<em>{i+1}^{b</em>{k}}=\hat{\boldsymbol{\gamma}}<em>{i}^{b</em>{k}} \otimes\left[\begin{array}{c}
+1 \
+\frac{1}{2}\left(\hat{\boldsymbol{\omega}}<em>{i}-\mathbf{b}</em>{w_{i}}\right) \delta t
 \end{array}\right]
 \end{array}
 $$</p>
@@ -279,47 +278,47 @@ $$</p>
 <p>$$
 \begin{array}{l}
 {\left[\begin{array}{c}
-\delta \dot{\boldsymbol{\alpha}}<em>{t}^{b</em>{k}} \<br>
-\delta \dot{\boldsymbol{\beta}}<em>{t}^{b</em>{k}} \<br>
-\delta \dot{\boldsymbol{\theta}}<em>{t}^{b</em>{k}} \<br>
-\delta \dot{\mathbf{b}}<em>{a</em>{t}} \<br>
+\delta \dot{\boldsymbol{\alpha}}<em>{t}^{b</em>{k}} \
+\delta \dot{\boldsymbol{\beta}}<em>{t}^{b</em>{k}} \
+\delta \dot{\boldsymbol{\theta}}<em>{t}^{b</em>{k}} \
+\delta \dot{\mathbf{b}}<em>{a</em>{t}} \
 \delta \dot{\mathbf{b}}<em>{w</em>{t}}
 \end{array}\right]=\left[\begin{array}{ccccc}
-0 &amp; \mathbf{I} &amp; 0 &amp; 0 &amp; 0 \<br>
-0 &amp; 0 &amp; -\mathbf{R}<em>{t}^{b</em>{k}}\left\lfloor\hat{\mathbf{a}}<em>{t}-\mathbf{b}</em>{a_{t}}\right\rfloor_{\times} &amp; -\mathbf{R}_{t}^{b_{k}} &amp; 0 \<br>
-0 &amp; 0 &amp; -\left\lfloor\hat{\boldsymbol{\omega}}_{t}-\mathbf{b}_{w_{t}}\right\rfloor_{\times} &amp; 0 &amp; -\mathbf{I} \<br>
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \<br>
+0 &amp; \mathbf{I} &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; -\mathbf{R}<em>{t}^{b</em>{k}}\left\lfloor\hat{\mathbf{a}}<em>{t}-\mathbf{b}</em>{a_{t}}\right\rfloor_{\times} &amp; -\mathbf{R}<em>{t}^{b</em>{k}} &amp; 0 \
+0 &amp; 0 &amp; -\left\lfloor\hat{\boldsymbol{\omega}}<em>{t}-\mathbf{b}</em>{w_{t}}\right\rfloor_{\times} &amp; 0 &amp; -\mathbf{I} \
+0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \
 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0
 \end{array}\right]\left[\begin{array}{c}
-\delta \boldsymbol{\alpha}_{t}^{b_{t}} \<br>
-\delta \boldsymbol{\beta}_{t}^{b_{k}} \<br>
-\delta \boldsymbol{\theta}_{t}^{b_{k}} \<br>
-\delta \mathbf{b}_{a_{t}} \<br>
-\delta \mathbf{b}_{w_{t}}
-\end{array}\right]} \<br>
+\delta \boldsymbol{\alpha}<em>{t}^{b</em>{t}} \
+\delta \boldsymbol{\beta}<em>{t}^{b</em>{k}} \
+\delta \boldsymbol{\theta}<em>{t}^{b</em>{k}} \
+\delta \mathbf{b}<em>{a</em>{t}} \
+\delta \mathbf{b}<em>{w</em>{t}}
+\end{array}\right]} \
 +\left[\begin{array}{cccc}
-0 &amp; 0 &amp; 0 &amp; 0 \<br>
--\mathbf{R}_{t}^{b_{k}} &amp; 0 &amp; 0 &amp; 0 \<br>
-0 &amp; -\mathbf{I} &amp; 0 &amp; 0 \<br>
-0 &amp; 0 &amp; \mathbf{I} &amp; 0 \<br>
+0 &amp; 0 &amp; 0 &amp; 0 \
+-\mathbf{R}<em>{t}^{b</em>{k}} &amp; 0 &amp; 0 &amp; 0 \
+0 &amp; -\mathbf{I} &amp; 0 &amp; 0 \
+0 &amp; 0 &amp; \mathbf{I} &amp; 0 \
 0 &amp; 0 &amp; 0 &amp; \mathbf{I}
 \end{array}\right]\left[\begin{array}{c}
-\mathbf{n}_{a} \<br>
-\mathbf{n}_{w} \<br>
-\mathbf{n}_{b_{a}} \<br>
-\mathbf{n}_{b_{w}}
-\end{array}\right]=\mathbf{F}_{t} \delta \mathbf{z}_{t}^{b_{k}}+\mathbf{G}_{t} \mathbf{n}_{t} \<br>
+\mathbf{n}<em>{a} \
+\mathbf{n}</em>{w} \
+\mathbf{n}<em>{b</em>{a}} \
+\mathbf{n}<em>{b</em>{w}}
+\end{array}\right]=\mathbf{F}<em>{t} \delta \mathbf{z}</em>{t}^{b_{k}}+\mathbf{G}<em>{t} \mathbf{n}</em>{t} \
 \end{array}
 $$</p>
 <p>根据误差传递公式可以获得误差的协方差矩阵和误差（残差）对于待优化变量的雅克比矩阵</p>
 <p>协方差矩阵P用于后端非线性优化，雅克比矩阵J用来修正测量值，得到理论上的真实值</p>
 <p>$$
 \begin{array}{c}
-\mathbf{P}<em>{t+\delta t}^{b</em>{k}}=\left(\mathbf{I}+\mathbf{F}<em>{t} \delta t\right) \mathbf{P}</em>{t}^{b_{k}}\left(\mathbf{I}+\mathbf{F}_{t} \delta t\right)^{T}+\left(\mathbf{G}_{t} \delta t\right) \mathbf{Q}\left(\mathbf{G}_{t} \delta t\right)^{T}, \<br>
+\mathbf{P}<em>{t+\delta t}^{b</em>{k}}=\left(\mathbf{I}+\mathbf{F}<em>{t} \delta t\right) \mathbf{P}</em>{t}^{b_{k}}\left(\mathbf{I}+\mathbf{F}<em>{t} \delta t\right)^{T}+\left(\mathbf{G}</em>{t} \delta t\right) \mathbf{Q}\left(\mathbf{G}_{t} \delta t\right)^{T}, \
 t \in[k, k+1]
 \end{array}
 $$</p>
-<p>初始值$P_{b_k}^{b_k}=0$，Q是正态分布的方差$\left(\boldsymbol{\sigma}_{a}^{2}, \boldsymbol{\sigma}_{w}^{2}, \boldsymbol{\sigma}_{b_{a}}^{2}, \boldsymbol{\sigma}_{b_{w}}^{2}\right)$</p>
+<p>初始值$P_{b_k}^{b_k}=0$，Q是正态分布的方差$\left(\boldsymbol{\sigma}<em>{a}^{2}, \boldsymbol{\sigma}</em>{w}^{2}, \boldsymbol{\sigma}<em>{b</em>{a}}^{2}, \boldsymbol{\sigma}<em>{b</em>{w}}^{2}\right)$</p>
 <p>雅克比矩阵也同样可以迭代地计算</p>
 <p>$$
 \mathbf{J}<em>{t+\delta t}=\left(\mathbf{I}+\mathbf{F}</em>{t} \delta t\right) \mathbf{J}_{t}, \quad t \in[k, k+1]
@@ -328,11 +327,11 @@ $$</p>
 <p>这样预积分项就可以用一阶泰勒展示来修正</p>
 <p>$$
 \begin{aligned}
-\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}+\mathbf{J}_{b_{a}}^{\alpha} \delta \mathbf{b}_{a_{k}}+\mathbf{J}_{b_{w}}^{\alpha} \delta \mathbf{b}_{w_{k}} \<br>
-\boldsymbol{\beta}_{b_{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}+\mathbf{J}_{b_{a}}^{\beta} \delta \mathbf{b}_{a_{k}}+\mathbf{J}_{b_{w}}^{\beta} \delta \mathbf{b}_{w_{k}} \<br>
-\boldsymbol{\gamma}_{b_{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\gamma}}_{b_{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
-1 \<br>
-\frac{1}{2} \mathbf{J}_{b_{w}}^{\gamma} \delta \mathbf{b}_{w_{k}}
+\boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}}+\mathbf{J}<em>{b</em>{a}}^{\alpha} \delta \mathbf{b}<em>{a</em>{k}}+\mathbf{J}<em>{b</em>{w}}^{\alpha} \delta \mathbf{b}<em>{w</em>{k}} \
+\boldsymbol{\beta}<em>{b</em>{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\beta}}<em>{b</em>{k+1}}^{b_{k}}+\mathbf{J}<em>{b</em>{a}}^{\beta} \delta \mathbf{b}<em>{a</em>{k}}+\mathbf{J}<em>{b</em>{w}}^{\beta} \delta \mathbf{b}<em>{w</em>{k}} \
+\boldsymbol{\gamma}<em>{b</em>{k+1}}^{b_{k}} &amp; \approx \hat{\boldsymbol{\gamma}}<em>{b</em>{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
+1 \
+\frac{1}{2} \mathbf{J}<em>{b</em>{w}}^{\gamma} \delta \mathbf{b}<em>{w</em>{k}}
 \end{array}\right]
 \end{aligned}
 $$</p>
@@ -340,17 +339,17 @@ $$</p>
 <p>最后总结一下预积分的公式如下</p>
 <p>$$
 \left[\begin{array}{c}
-\hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}} \<br>
-\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}} \<br>
-\hat{\boldsymbol{\gamma}}_{b_{k+1}}^{b_{k}} \<br>
-\mathbf{0} \<br>
+\hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}} \
+\hat{\boldsymbol{\beta}}<em>{b</em>{k+1}}^{b_{k}} \
+\hat{\boldsymbol{\gamma}}<em>{b</em>{k+1}}^{b_{k}} \
+\mathbf{0} \
 \mathbf{0}
 \end{array}\right]=\left[\begin{array}{c}
-\mathbf{R}_{w}^{b_{k}}\left(\mathbf{p}_{b_{k+1}}^{w}-\mathbf{p}_{b_{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}_{b_{k}}^{w} \Delta t_{k}\right) \<br>
-\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}_{b_{k}}^{w}\right) \<br>
-\mathbf{q}_{b_{k}}^{b^{-1}} \otimes \mathbf{q}_{b_{k+1}}^{w} \<br>
-\mathbf{b}_{a b_{k+1}}-\mathbf{b}_{a b_{k}} \<br>
-\mathbf{b}_{w b_{k+1}}-\mathbf{b}_{w b_{k}}
+\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{p}<em>{b</em>{k+1}}^{w}-\mathbf{p}<em>{b</em>{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}<em>{b</em>{k}}^{w} \Delta t_{k}\right) \
+\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{v}<em>{b</em>{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}<em>{b</em>{k}}^{w}\right) \
+\mathbf{q}<em>{b</em>{k}}^{b^{-1}} \otimes \mathbf{q}<em>{b</em>{k+1}}^{w} \
+\mathbf{b}<em>{a b</em>{k+1}}-\mathbf{b}<em>{a b</em>{k}} \
+\mathbf{b}<em>{w b</em>{k+1}}-\mathbf{b}<em>{w b</em>{k}}
 \end{array}\right]
 $$</p>
 <h2 id="estimator-initialization">Estimator Initialization</h2>
@@ -371,10 +370,10 @@ $$</p>
 <p>陀螺仪偏置的标定通过最小化如下函数来求，其中q由SfM得到，γ由IMU得到</p>
 <p>$$
 \begin{array}{r}
-\min <em>{\delta b</em>{w}} \sum_{k \in \mathcal{B}}\left|\mathbf{q}_{b_{k+1}}^{c_{0}}{ }^{-1} \otimes \mathbf{q}_{b_{k}}^{c_{0}} \otimes \boldsymbol{\gamma}_{b_{k+1}}^{b_{k}}\right|^{2} \<br>
-\gamma_{b_{k+1}}^{b_{k}} \approx \hat{\gamma}_{b_{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
-1 \<br>
-\frac{1}{2} \mathbf{J}_{b_{w}}^{\gamma} \delta \mathbf{b}_{w}
+\min <em>{\delta b</em>{w}} \sum_{k \in \mathcal{B}}\left|\mathbf{q}<em>{b</em>{k+1}}^{c_{0}}{ }^{-1} \otimes \mathbf{q}<em>{b</em>{k}}^{c_{0}} \otimes \boldsymbol{\gamma}<em>{b</em>{k+1}}^{b_{k}}\right|^{2} \
+\gamma_{b_{k+1}}^{b_{k}} \approx \hat{\gamma}<em>{b</em>{k+1}}^{b_{k}} \otimes\left[\begin{array}{c}
+1 \
+\frac{1}{2} \mathbf{J}<em>{b</em>{w}}^{\gamma} \delta \mathbf{b}_{w}
 \end{array}\right]
 \end{array}
 $$</p>
@@ -383,27 +382,27 @@ $$</p>
 <h4 id="velocity-gravity-vector-and-metric-scale-initialization">Velocity, Gravity Vector and Metric Scale Initialization</h4>
 <p>待求的变量为</p>
 <p>$$
-\mathcal{X}<em>{I}=\left[\mathbf{v}</em>{b_{0}}^{b_{0}}, \mathbf{v}_{b_{1}}^{b_{1}}, \cdots \mathbf{v}_{b_{n}}^{b_{n}}, \mathbf{g}^{c_{0}}, s\right]
+\mathcal{X}<em>{I}=\left[\mathbf{v}</em>{b_{0}}^{b_{0}}, \mathbf{v}<em>{b</em>{1}}^{b_{1}}, \cdots \mathbf{v}<em>{b</em>{n}}^{b_{n}}, \mathbf{g}^{c_{0}}, s\right]
 $$</p>
 <p>论文中给出了结论，求这个向量就是最小化以下函数</p>
 <p>$$
-\min <em>{\mathcal{X}</em>{I}} \sum_{k \in \mathcal{B}}\left|\hat{\mathbf{z}}_{b_{k+1}}^{b_{k}}-\mathbf{H}_{b_{k+1}}^{b_{k}} \mathcal{X}_{I}\right|^{2}
+\min <em>{\mathcal{X}</em>{I}} \sum_{k \in \mathcal{B}}\left|\hat{\mathbf{z}}<em>{b</em>{k+1}}^{b_{k}}-\mathbf{H}<em>{b</em>{k+1}}^{b_{k}} \mathcal{X}_{I}\right|^{2}
 $$</p>
 <p>$$
 \hat{\mathbf{z}}<em>{b</em>{k+1}}^{b_{k}}=\left[\begin{array}{c}
-\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}}-\mathbf{p}_{c}^{b}+\mathbf{R}_{c_{0}}^{b_{k}} \mathbf{R}_{b_{k+1}}^{c_{0}} \mathbf{p}_{c}^{b} \<br>
-\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}}
+\hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}}-\mathbf{p}<em>{c}^{b}+\mathbf{R}</em>{c_{0}}^{b_{k}} \mathbf{R}<em>{b</em>{k+1}}^{c_{0}} \mathbf{p}<em>{c}^{b} \
+\hat{\boldsymbol{\beta}}</em>{b_{k+1}}^{b_{k}}
 \end{array}\right]
 $$</p>
 <p>$$
 \mathbf{H}<em>{b</em>{k+1}}^{b_{k}}=\left[\begin{array}{cccc}
--\mathbf{I} \Delta t_{k} &amp; \mathbf{0} &amp; \frac{1}{2} \mathbf{R}_{c_{0}}^{b_{k}} \Delta t_{k}^{2} &amp; \mathbf{R}_{c_{0}}^{b_{k}}\left(\overline{\mathbf{p}}_{c_{k+1}}^{c_{0}}-\overline{\mathbf{p}}_{c_{k}}^{c_{0}}\right) \<br>
--\mathbf{I} &amp; \mathbf{R}_{c_{0}}^{b_{k}} \mathbf{R}_{b_{k+1}}^{c_{0}} &amp; \mathbf{R}_{c_{0}}^{b_{0}} \Delta t_{k}
+-\mathbf{I} \Delta t_{k} &amp; \mathbf{0} &amp; \frac{1}{2} \mathbf{R}<em>{c</em>{0}}^{b_{k}} \Delta t_{k}^{2} &amp; \mathbf{R}<em>{c</em>{0}}^{b_{k}}\left(\overline{\mathbf{p}}<em>{c</em>{k+1}}^{c_{0}}-\overline{\mathbf{p}}<em>{c</em>{k}}^{c_{0}}\right) \
+-\mathbf{I} &amp; \mathbf{R}<em>{c</em>{0}}^{b_{k}} \mathbf{R}<em>{b</em>{k+1}}^{c_{0}} &amp; \mathbf{R}<em>{c</em>{0}}^{b_{0}} \Delta t_{k}
 \end{array}\right]
 $$</p>
 <h4 id="gravity-refinement">Gravity Refinement</h4>
 <p>由于重力的值通常是已知的，所以只有2自由度，但是我们求出的g有3自由度，所以进行优化</p>
-<p>将g写成这种形式$g \cdot \overline{\hat{\mathbf{g}}}+w_{1} \mathbf{b}_{1}+w_{2} \mathbf{b}_{2}$，其中g是已知的重力值，g\hat\bar是原本重力的单位向量，b1b2是原本重力切平面的正交基，w1w2是权重</p>
+<p>将g写成这种形式$g \cdot \overline{\hat{\mathbf{g}}}+w_{1} \mathbf{b}<em>{1}+w</em>{2} \mathbf{b}_{2}$，其中g是已知的重力值，g\hat\bar是原本重力的单位向量，b1b2是原本重力切平面的正交基，w1w2是权重</p>
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -438,16 +437,16 @@ w是通过改写上面公式的H和z求的</p>
 <p>待优化变量为滑窗内每个图像pvqb，外参，特征点的逆深度</p>
 <p>$$
 \begin{aligned}
-\mathcal{X} &amp; =\left[\mathbf{x}<em>{0}, \mathbf{x}</em>{1}, \cdots \mathbf{x}<em>{n}, \mathbf{x}</em>{c}^{b}, \lambda_{0}, \lambda_{1}, \cdots \lambda_{m}\right] \<br>
-\mathbf{x}_{k} &amp; =\left[\mathbf{p}_{b_{k}}^{w}, \mathbf{v}_{b_{k}}^{w}, \mathbf{q}_{b_{k}}^{w}, \mathbf{b}_{a}, \mathbf{b}_{g}\right], k \in[0, n] \<br>
-\mathbf{x}_{c}^{b} &amp; =\left[\mathbf{p}_{c}^{b}, \mathbf{q}_{c}^{b}\right]
+\mathcal{X} &amp; =\left[\mathbf{x}<em>{0}, \mathbf{x}</em>{1}, \cdots \mathbf{x}<em>{n}, \mathbf{x}</em>{c}^{b}, \lambda_{0}, \lambda_{1}, \cdots \lambda_{m}\right] \
+\mathbf{x}<em>{k} &amp; =\left[\mathbf{p}</em>{b_{k}}^{w}, \mathbf{v}<em>{b</em>{k}}^{w}, \mathbf{q}<em>{b</em>{k}}^{w}, \mathbf{b}<em>{a}, \mathbf{b}</em>{g}\right], k \in[0, n] \
+\mathbf{x}<em>{c}^{b} &amp; =\left[\mathbf{p}</em>{c}^{b}, \mathbf{q}_{c}^{b}\right]
 \end{aligned}
 $$</p>
 <p>非线性优化的公式如下，这也是VINS最重要的公式，之后会说下公式的含义</p>
 <p>$$
 \begin{aligned}
-\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\right. &amp; \sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|_{\mathbf{P}_{b_{k+1}}^{b_{k}}}^{2}+
-\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{c_{j}}, \mathcal{X}\right)\right|_{\left.\mathbf{P}_{l}^{c_{j}}\right)}^{2}\right}
+\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\right. &amp; \sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|<em>{\mathbf{P}</em>{b_{k+1}}^{b_{k}}}^{2}+
+\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}<em>{\mathcal{C}}\left(\hat{\mathbf{z}}</em>{l}^{c_{j}}, \mathcal{X}\right)\right|<em>{\left.\mathbf{P}</em>{l}^{c_{j}}\right)}^{2}\right}
 \end{aligned}
 $$</p>
 <p>这个公式有三项分别是边缘化的先验约束、IMU约束、视觉约束，约束就是残差，其中后两项带有协方差矩阵，最后一项加上Huber核，B是IMU在滑窗内所有的测量值，C是滑窗内被跟踪至少两次的特征点。用ceres solver求解</p>
@@ -456,18 +455,18 @@ $$</p>
 <p>$$
 \begin{array}{l}
 \mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)=\left[\begin{array}{c}
-\delta \boldsymbol{\alpha}_{b_{k+1}}^{b_{k}} \<br>
-\delta \boldsymbol{\beta}_{b_{k+1}}^{b_{k}} \<br>
-\delta \boldsymbol{\theta}_{b_{k+1}}^{b_{k}} \<br>
-\delta \mathbf{b}_{a} \<br>
-\delta \mathbf{b}_{g}
-\end{array}\right] \<br>
+\delta \boldsymbol{\alpha}<em>{b</em>{k+1}}^{b_{k}} \
+\delta \boldsymbol{\beta}<em>{b</em>{k+1}}^{b_{k}} \
+\delta \boldsymbol{\theta}<em>{b</em>{k+1}}^{b_{k}} \
+\delta \mathbf{b}<em>{a} \
+\delta \mathbf{b}</em>{g}
+\end{array}\right] \
 =\left[\begin{array}{c}
-\mathbf{R}_{w}^{b_{k}}\left(\mathbf{p}_{b_{k+1}}^{w}-\mathbf{p}_{b_{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}_{b_{k}}^{w} \Delta t_{k}\right)-\hat{\boldsymbol{\alpha}}_{b_{k+1}}^{b_{k}} \<br>
-\mathbf{R}_{w}^{b_{k}}\left(\mathbf{v}_{b_{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}_{b_{k}}^{w}\right)-\hat{\boldsymbol{\beta}}_{b_{k+1}}^{b_{k}} \<br>
-2\left[\mathbf{q}_{b_{k}}^{w^{-1}} \otimes \mathbf{q}_{b_{k+1}}^{w} \otimes\left(\hat{\gamma}_{b_{k+1}}^{b_{k}}\right)^{-1}\right]_{x y z} \<br>
-\mathbf{b}_{a b_{k+1}}-\mathbf{b}_{a b_{k}} \<br>
-\mathbf{b}_{w b_{k+1}}-\mathbf{b}_{w b_{k}}
+\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{p}<em>{b</em>{k+1}}^{w}-\mathbf{p}<em>{b</em>{k}}^{w}+\frac{1}{2} \mathbf{g}^{w} \Delta t_{k}^{2}-\mathbf{v}<em>{b</em>{k}}^{w} \Delta t_{k}\right)-\hat{\boldsymbol{\alpha}}<em>{b</em>{k+1}}^{b_{k}} \
+\mathbf{R}<em>{w}^{b</em>{k}}\left(\mathbf{v}<em>{b</em>{k+1}}^{w}+\mathbf{g}^{w} \Delta t_{k}-\mathbf{v}<em>{b</em>{k}}^{w}\right)-\hat{\boldsymbol{\beta}}<em>{b</em>{k+1}}^{b_{k}} \
+2\left[\mathbf{q}<em>{b</em>{k}}^{w^{-1}} \otimes \mathbf{q}<em>{b</em>{k+1}}^{w} \otimes\left(\hat{\gamma}<em>{b</em>{k+1}}^{b_{k}}\right)^{-1}\right]<em>{x y z} \
+\mathbf{b}</em>{a b_{k+1}}-\mathbf{b}<em>{a b</em>{k}} \
+\mathbf{b}<em>{w b</em>{k+1}}-\mathbf{b}<em>{w b</em>{k}}
 \end{array}\right]
 \end{array}
 $$</p>
@@ -485,18 +484,18 @@ $$</p>
 <p>$$
 \begin{array}{l}
 \mathbf{r}<em>{\mathcal{C}}\left(\hat{\mathbf{z}}</em>{l}^{c_{j}}, \mathcal{X}\right)=\left[\begin{array}{ll}
-\mathbf{b}_{1} &amp; \mathbf{b}_{2}
-\end{array}\right]^{T} \cdot\left(\hat{\overline{\mathcal{P}}}_{l}^{c_{j}}-\frac{\mathcal{P}_{l}^{c_{j}}}{\left|\mathcal{P}_{l}^{c_{j}}\right|}\right) \<br>
-\begin{array}{l} 
-\hat{\mathcal{P}}_{l}^{c_{j}}=\pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
-\hat{u}_{l}^{c_{j}} \<br>
-\hat{v}_{l}^{c_{j}}
-\end{array}\right]\right) \<br>
-\mathcal{P}_{l}^{c_{j}}=\mathbf{R}_{b}^{c}\left(\mathbf { R } _ { w } ^ { b _ { j } } \left(\mathbf { R } _ { b _ { i } } ^ { w } \left(\mathbf{R}_{c}^{b} \frac{1}{\lambda_{l}} \pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
-u_{l}^{c_{i}} \<br>
+\mathbf{b}<em>{1} &amp; \mathbf{b}</em>{2}
+\end{array}\right]^{T} \cdot\left(\hat{\overline{\mathcal{P}}}<em>{l}^{c</em>{j}}-\frac{\mathcal{P}<em>{l}^{c</em>{j}}}{\left|\mathcal{P}<em>{l}^{c</em>{j}}\right|}\right) \
+\begin{array}{l}
+\hat{\mathcal{P}}<em>{l}^{c</em>{j}}=\pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
+\hat{u}<em>{l}^{c</em>{j}} \
+\hat{v}<em>{l}^{c</em>{j}}
+\end{array}\right]\right) \
+\mathcal{P}<em>{l}^{c</em>{j}}=\mathbf{R}<em>{b}^{c}\left(\mathbf { R } _ { w } ^ { b _ { j } } \left(\mathbf { R } _ { b _ { i } } ^ { w } \left(\mathbf{R}</em>{c}^{b} \frac{1}{\lambda_{l}} \pi_{c}{ }^{-1}\left(\left[\begin{array}{c}
+u_{l}^{c_{i}} \
 v_{l}^{c_{i}}
-\end{array}\right]\right)\right.\right.\right. 
-\left.\left.\left.+\mathbf{p}_{c}^{b}\right)+\mathbf{p}_{b_{i}}^{w}-\mathbf{p}_{b_{j}}^{w}\right)-\mathbf{p}_{c}^{b}\right)
+\end{array}\right]\right)\right.\right.\right.
+\left.\left.\left.+\mathbf{p}<em>{c}^{b}\right)+\mathbf{p}</em>{b_{i}}^{w}-\mathbf{p}<em>{b</em>{j}}^{w}\right)-\mathbf{p}_{c}^{b}\right)
 \end{array}
 \end{array}
 $$</p>
@@ -547,9 +546,9 @@ $$</p>
         title="在这里插入图片描述" /></p>
 <p>$$
 \begin{array}{l}
-\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|_{\mathbf{P}_{b_{k+1}}^{b_{k}}}^{2}\right. 
-+\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{c_{j}}, \mathcal{X}\right)\right|_{\mathbf{P}_{l}^{c_{j}}}^{2}\right) 
-+\sum_{(l, v) \in \mathcal{L}} \rho\left(\left|\mathbf{r}_{\mathcal{C}}\left(\hat{\mathbf{z}}_{l}^{v}, \mathcal{X}, \hat{\mathbf{q}}_{v}^{w}, \hat{\mathbf{p}}_{v}^{w}\right)\right|_{\mathbf{P}_{l}^{c_{v}}}^{2}\right} 
+\min <em>{\mathcal{X}}\left{\left|\mathbf{r}</em>{p}-\mathbf{H}<em>{p} \mathcal{X}\right|^{2}+\sum</em>{k \in \mathcal{B}}\left|\mathbf{r}<em>{\mathcal{B}}\left(\hat{\mathbf{z}}</em>{b_{k+1}}^{b_{k}}, \mathcal{X}\right)\right|<em>{\mathbf{P}</em>{b_{k+1}}^{b_{k}}}^{2}\right.
++\sum_{(l, j) \in \mathcal{C}} \rho\left(\left|\mathbf{r}<em>{\mathcal{C}}\left(\hat{\mathbf{z}}</em>{l}^{c_{j}}, \mathcal{X}\right)\right|<em>{\mathbf{P}</em>{l}^{c_{j}}}^{2}\right)
++\sum_{(l, v) \in \mathcal{L}} \rho\left(\left|\mathbf{r}<em>{\mathcal{C}}\left(\hat{\mathbf{z}}</em>{l}^{v}, \mathcal{X}, \hat{\mathbf{q}}<em>{v}^{w}, \hat{\mathbf{p}}</em>{v}^{w}\right)\right|<em>{\mathbf{P}</em>{l}^{c_{v}}}^{2}\right}
 \end{array}
 $$</p>
 <p>其中v表示回环帧</p>
@@ -569,7 +568,7 @@ $$</p>
 <p>序列边：这个关键帧与前面的关键帧相连，边表示的是相对平移，假设刚被边缘化的关键帧i和之前某一个关键帧j，考虑4自由度，平移和yaw角</p>
 <p>$$
 \begin{aligned}
-\hat{\mathbf{p}}<em>{i j}^{i} &amp; =\hat{\mathbf{R}}</em>{i}^{w-1}\left(\hat{\mathbf{p}}<em>{j}^{w}-\hat{\mathbf{p}}</em>{i}^{w}\right) \<br>
+\hat{\mathbf{p}}<em>{i j}^{i} &amp; =\hat{\mathbf{R}}</em>{i}^{w-1}\left(\hat{\mathbf{p}}<em>{j}^{w}-\hat{\mathbf{p}}</em>{i}^{w}\right) \
 \hat{\psi}<em>{i j} &amp; =\hat{\psi}</em>{j}-\hat{\psi}_{i}
 \end{aligned}
 $$</p>
@@ -577,9 +576,9 @@ $$</p>
 <h3 id="4-dof-pose-graph-optimization">4-DOF Pose Graph Optimization</h3>
 <p>定义两帧i和j的残差</p>
 <p>$$
-\mathbf{r}<em>{i, j}\left(\mathbf{p}</em>{i}^{w}, \psi_{i}, \mathbf{p}_{j}^{w}, \psi_{j}\right)=\left[\begin{array}{c}
-\mathbf{R}\left(\hat{\phi}_{i}, \hat{\theta}_{i}, \psi_{i}\right)^{-1}\left(\mathbf{p}_{j}^{w}-\mathbf{p}_{i}^{w}\right)-\hat{\mathbf{p}}_{i j}^{i} \<br>
-\psi_{j}-\psi_{i}-\hat{\psi}_{i j}
+\mathbf{r}<em>{i, j}\left(\mathbf{p}</em>{i}^{w}, \psi_{i}, \mathbf{p}<em>{j}^{w}, \psi</em>{j}\right)=\left[\begin{array}{c}
+\mathbf{R}\left(\hat{\phi}<em>{i}, \hat{\theta}</em>{i}, \psi_{i}\right)^{-1}\left(\mathbf{p}<em>{j}^{w}-\mathbf{p}</em>{i}^{w}\right)-\hat{\mathbf{p}}<em>{i j}^{i} \
+\psi</em>{j}-\psi_{i}-\hat{\psi}_{i j}
 \end{array}\right]
 $$</p>
 <p>全局图的代价函数为</p>

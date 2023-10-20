@@ -8,10 +8,9 @@
         <title>Android 四大组件之Activity - This is DYH</title><meta name="Description" content="Android 四大组件之Activity"><meta property="og:title" content="Android 四大组件之Activity" />
 <meta property="og:description" content="Android 四大组件之Activity" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-19T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-03-19T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity\/"
-        },"genre": "posts","keywords": "java, xml","wordcount":  861 ,
+        },"genre": "posts","keywords": "java, xml","wordcount":  858 ,
         "url": "https:\/\/dyhgo.github.io\/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity\/","datePublished": "2020-03-19T00:00:00+00:00","dateModified": "2020-03-19T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android 四大组件之Activity</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 861 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-19">2020-03-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 858 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/android-%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6%E4%B9%8Bactivity/" class="leancloud_visitors" data-flag-title="Android 四大组件之Activity">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -172,7 +171,7 @@
 <p>运行以下代码可以看到activity经历的生命周期</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -225,64 +224,62 @@
 </span><span class="lnt">51
 </span><span class="lnt">52
 </span><span class="lnt">53
-</span><span class="lnt">54
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">lifeCircleActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_life_circle</span><span class="o">);</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onCreate----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onStart</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onStart----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onResume----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onPause----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStop</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onStop</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onStop----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onRestart</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onRestart</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onRestart----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onDestroy----&#34;</span><span class="o">);</span>
-    <span class="o">}</span>
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">lifeCircleActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_life_circle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onCreate----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onStart</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onStart----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onResume</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onResume</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onResume----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onPause</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onPause</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onPause----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onStop</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onStop</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onStop----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onRestart</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onRestart</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onRestart----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onDestroy</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onDestroy</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;lifecircle&#34;</span><span class="o">,</span><span class="s">&#34;-----onDestroy----&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>启动这个activity之后</p>
 <p><img
@@ -325,7 +322,7 @@
 <p>以下是设置点击事件来跳转</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -336,22 +333,22 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">private</span> <span class="n">Button</span> <span class="n">bt11</span><span class="o">;</span>
-<span class="n">bt11</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">bt11</span><span class="o">);</span>
-        <span class="n">bt11</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">broadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">Button</span> <span class="n">bt11</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">bt11</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">bt11</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bt11</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">MainActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">broadActivity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="隐式intent">隐式intent</h2>
 <p>目标activity在manifest文件中应这样注册</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -359,18 +356,18 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&#34;.implicitIntentActivity&#34;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;intent-filter&gt;</span>
-                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;com.example.test.124&#34;</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.DEFAULT&#34;</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;/intent-filter&gt;</span>
-        <span class="nt">&lt;/activity&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&#34;.implicitIntentActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;com.example.test.124&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.DEFAULT&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/activity&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>点击事件的设置</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -381,23 +378,23 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">bt14</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">bt14</span><span class="o">);</span>
-        <span class="n">bt14</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="s">&#34;com.example.test.124&#34;</span><span class="o">);</span>
-                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">bt14</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">bt14</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bt14</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">setAction</span><span class="o">(</span><span class="s">&#34;com.example.test.124&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="activity之间的数据传输">activity之间的数据传输</h2>
 <h3 id="将activity的数据传输到目标activity">将activity的数据传输到目标activity</h3>
 <h4 id="发送数据">发送数据</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -418,31 +415,31 @@
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump</span><span class="o">);</span>
-        <span class="n">jumpbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jumpbt1</span><span class="o">);</span>
-        <span class="n">jumpbt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">jump2Activity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;henry&#34;</span><span class="o">);</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">,</span><span class="n">11</span><span class="o">);</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-                <span class="c1">//startActivityForResult(intent,0);  //写在点击事件里
-</span><span class="c1"></span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-    <span class="o">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jumpbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jumpbt1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jumpbt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">jump2Activity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;henry&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bundle</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">,</span><span class="mi">11</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">startActivity</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//startActivityForResult(intent,0);  //写在点击事件里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="接收数据并呈现">接收数据并呈现</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -454,17 +451,17 @@
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump2</span><span class="o">);</span>
-        <span class="n">jump2tv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2tv1</span><span class="o">);</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getExtras</span><span class="o">();</span>
-        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">);</span>
-        <span class="n">jump2tv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">number</span><span class="o">);}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jump2tv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2tv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getExtras</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jump2tv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">number</span><span class="o">);}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="启动一个activity结束后返回结果">启动一个activity,结束后返回结果</h2>
 <p>jump界面</p>
@@ -497,7 +494,7 @@
 <p>jumpactivity</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -539,58 +536,56 @@
 </span><span class="lnt">40
 </span><span class="lnt">41
 </span><span class="lnt">42
-</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">jumpActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">jumpbt1</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump</span><span class="o">);</span>
-        <span class="n">jumpbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jumpbt1</span><span class="o">);</span>
-        <span class="n">jumpbt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">jump2Activity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-                <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;henry&#34;</span><span class="o">);</span>
-                <span class="n">bundle</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">,</span><span class="n">11</span><span class="o">);</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-                <span class="c1">//startActivity(intent);
-</span><span class="c1"></span>                <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span><span class="n">0</span><span class="o">);</span>  <span class="c1">//写在点击事件里
-</span><span class="c1"></span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onActivityResult</span><span class="o">(</span><span class="n">requestCode</span><span class="o">,</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
-        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span><span class="n">data</span><span class="o">.</span><span class="na">getExtras</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">()</span> <span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Toast</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">jumpActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">jumpbt1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jumpbt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jumpbt1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jumpbt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span> <span class="o">,</span> <span class="n">jump2Activity</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">,</span><span class="s">&#34;henry&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bundle</span><span class="o">.</span><span class="na">putInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">,</span><span class="mi">11</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">//startActivity(intent);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">startActivityForResult</span><span class="o">(</span><span class="n">intent</span><span class="o">,</span><span class="mi">0</span><span class="o">);</span>  <span class="c1">//写在点击事件里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onActivityResult</span><span class="o">(</span><span class="kt">int</span> <span class="n">requestCode</span><span class="o">,</span> <span class="kt">int</span> <span class="n">resultCode</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Intent</span> <span class="n">data</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onActivityResult</span><span class="o">(</span><span class="n">requestCode</span><span class="o">,</span> <span class="n">resultCode</span><span class="o">,</span> <span class="n">data</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">jumpActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span><span class="n">data</span><span class="o">.</span><span class="na">getExtras</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">()</span> <span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>jump2activity</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -631,52 +626,50 @@
 </span><span class="lnt">39
 </span><span class="lnt">40
 </span><span class="lnt">41
-</span><span class="lnt">42
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">jump2Activity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">jump2tv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">jump2bt1</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump2</span><span class="o">);</span>
-        <span class="n">jump2tv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2tv1</span><span class="o">);</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getExtras</span><span class="o">();</span>
-        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
-        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">);</span>
-        <span class="n">jump2tv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">number</span><span class="o">);</span>
-
-        <span class="n">jump2bt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2bt1</span><span class="o">);</span>
-        <span class="n">jump2bt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
-                <span class="n">Bundle</span> <span class="n">bundle1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-                <span class="n">bundle1</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">,</span><span class="s">&#34;i&#39;m back&#34;</span><span class="o">);</span>
-                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle1</span><span class="o">);</span>
-                <span class="n">setResult</span><span class="o">(</span><span class="n">Activity</span><span class="o">.</span><span class="na">RESULT_OK</span><span class="o">,</span><span class="n">intent</span><span class="o">);</span>
-                <span class="n">finish</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.app.Activity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Intent</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">jump2Activity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">jump2tv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">jump2bt1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_jump2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jump2tv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2tv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span> <span class="o">=</span> <span class="n">getIntent</span><span class="o">().</span><span class="na">getExtras</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;name&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">bundle</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="s">&#34;number&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jump2tv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;,&#34;</span><span class="o">+</span><span class="n">number</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">jump2bt1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">jump2bt1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">jump2bt1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Intent</span> <span class="n">intent</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Intent</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Bundle</span> <span class="n">bundle1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">bundle1</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">,</span><span class="s">&#34;i&#39;m back&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">intent</span><span class="o">.</span><span class="na">putExtras</span><span class="o">(</span><span class="n">bundle1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">setResult</span><span class="o">(</span><span class="n">Activity</span><span class="o">.</span><span class="na">RESULT_OK</span><span class="o">,</span><span class="n">intent</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">finish</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

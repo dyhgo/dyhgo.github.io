@@ -8,10 +8,9 @@
         <title>hduoj1796 - This is DYH</title><meta name="Description" content="hduoj1796"><meta property="og:title" content="hduoj1796" />
 <meta property="og:description" content="hduoj1796" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/hduoj1796/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/hduoj1796/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-04-11T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-04-11T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-04-11T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -155,7 +154,7 @@
 <p>要开long long(一直没想到)</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -194,44 +193,44 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">dat</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">vt</span><span class="p">;</span>
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">mm</span><span class="p">;</span>
-<span class="n">main</span><span class="p">(){</span>
-    <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mm</span><span class="p">)){</span>
-    <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    
-    <span class="n">vt</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-    <span class="n">n</span><span class="o">--</span><span class="p">;</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">temp</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">mm</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">temp</span><span class="p">;</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">vt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="n">m</span><span class="o">=</span><span class="n">vt</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">i</span><span class="p">:</span><span class="n">vt</span><span class="p">){</span>
-        <span class="n">dat</span><span class="p">[</span><span class="n">x</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">m</span><span class="p">);</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>   <span class="c1">//i从1开始 
-</span><span class="c1"></span>        <span class="kt">long</span> <span class="kt">long</span> <span class="n">lcm</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
-        <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;&gt;</span><span class="n">j</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">){</span>
-                <span class="n">lcm</span><span class="o">=</span><span class="p">(</span><span class="n">lcm</span><span class="o">*</span><span class="n">dat</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="n">__gcd</span><span class="p">(</span><span class="n">lcm</span><span class="p">,</span><span class="n">dat</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
-            <span class="p">}</span>
-            <span class="k">if</span><span class="p">(</span><span class="n">lcm</span><span class="o">&gt;</span><span class="n">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">if</span><span class="p">(</span><span class="n">__builtin_popcount</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="n">ans</span><span class="o">+=</span><span class="n">n</span><span class="o">/</span><span class="n">lcm</span><span class="p">;</span>
-        <span class="k">else</span> <span class="n">ans</span><span class="o">-=</span><span class="n">n</span><span class="o">/</span><span class="n">lcm</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">dat</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">vt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">mm</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">n</span><span class="p">,</span><span class="o">&amp;</span><span class="n">mm</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>    
+</span></span><span class="line"><span class="cl">    <span class="n">vt</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">mm</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">temp</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vt</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span><span class="o">=</span><span class="n">vt</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="k">auto</span> <span class="nl">i</span><span class="p">:</span><span class="n">vt</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dat</span><span class="p">[</span><span class="n">x</span><span class="o">++</span><span class="p">]</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">m</span><span class="p">);</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>   <span class="c1">//i从1开始 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">long</span> <span class="kt">long</span> <span class="n">lcm</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">m</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">i</span><span class="o">&gt;&gt;</span><span class="n">j</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lcm</span><span class="o">=</span><span class="p">(</span><span class="n">lcm</span><span class="o">*</span><span class="n">dat</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">/</span><span class="n">__gcd</span><span class="p">(</span><span class="n">lcm</span><span class="p">,</span><span class="n">dat</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">lcm</span><span class="o">&gt;</span><span class="n">n</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">__builtin_popcount</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="n">ans</span><span class="o">+=</span><span class="n">n</span><span class="o">/</span><span class="n">lcm</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="n">ans</span><span class="o">-=</span><span class="n">n</span><span class="o">/</span><span class="n">lcm</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

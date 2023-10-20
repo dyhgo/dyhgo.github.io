@@ -66,7 +66,7 @@
     <pubDate>Mon, 04 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc166/</guid>
-    <description><![CDATA[A - A?C 题意 abc输出arc反之亦然 题解 1 2 3 4 5 6 7 8 9 10 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; s[1]=s[1]==&#39;B&#39;? &#39;R&#39;: &#39;B&#39;; cout&lt;&lt;s&lt;&lt;endl; return 0; } B - Trick or Treat 题意 snack_i被snuke_1,sn]]></description>
+    <description><![CDATA[A - A?C 题意 abc输出arc反之亦然 题解 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; s[1]=s[1]==&#39;B&#39;? &#39;R&#39;: &#39;B&#39;; cout&lt;&lt;s&lt;&lt;endl; return 0; } B - Trick or Treat 题意 snack_i被snuke_1,snu]]></description>
 </item><item>
     <title>abc165</title>
     <link>https://dyhgo.github.io/abc165/</link>

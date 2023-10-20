@@ -8,10 +8,9 @@
         <title>GO与socks5代理服务器 - This is DYH</title><meta name="Description" content="GO与socks5代理服务器"><meta property="og:title" content="GO与socks5代理服务器" />
 <meta property="og:description" content="GO与socks5代理服务器" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-02-09T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2023-02-09T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8\/"
-        },"genre": "posts","keywords": "go","wordcount":  3349 ,
+        },"genre": "posts","keywords": "go","wordcount":  3346 ,
         "url": "https:\/\/dyhgo.github.io\/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8\/","datePublished": "2023-02-09T00:00:00+00:00","dateModified": "2023-02-09T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">GO与socks5代理服务器</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>go</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3349 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-02-09">2023-02-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 3346 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 7 分钟&nbsp;<span id="/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="leancloud_visitors" data-flag-title="GO与socks5代理服务器">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -150,7 +149,7 @@
 <p>先实现一个tcp echo server</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -189,44 +188,44 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bufio&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">for</span> <span class="p">{</span>
-		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span> <span class="c1">//接受一个请求，返回连接net.Conn
-</span><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-			<span class="k">continue</span>
-		<span class="p">}</span>
-		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="c1">//启动一个go routine
-</span><span class="c1"></span>	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span> <span class="c1">//创建一个带缓冲的只读流
-</span><span class="c1"></span>	<span class="k">for</span> <span class="p">{</span>
-		<span class="nx">b</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span> <span class="c1">//读一个字节
-</span><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">break</span>
-		<span class="p">}</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">b</span><span class="p">})</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">break</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bufio&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span> <span class="c1">//接受一个请求，返回连接net.Conn
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span> <span class="c1">//启动一个go routine
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span> <span class="c1">//创建一个带缓冲的只读流
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">b</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span> <span class="c1">//读一个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">b</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行代码，在命令行输入<code>nc 127.0.0.1 1080</code>，输入hello，就会返回hello</p>
 <p><img
@@ -240,7 +239,7 @@
 <h3 id="认证阶段">认证阶段</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -322,93 +321,91 @@
 </span><span class="lnt">80
 </span><span class="lnt">81
 </span><span class="lnt">82
-</span><span class="lnt">83
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bufio&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
-<span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
-<span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">for</span> <span class="p">{</span>
-		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-			<span class="k">continue</span>
-		<span class="p">}</span>
-		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
-	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;auth success&#34;</span><span class="p">)</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
-</span><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
-</span><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
-</span><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
-</span><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
-</span><span class="c1"></span>
-	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;ver&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">,</span> <span class="s">&#34;method&#34;</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
-	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// |VER | METHOD |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |   1    |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bufio&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;auth success&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;ver&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">,</span> <span class="s">&#34;method&#34;</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | METHOD |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |   1    |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在命令行中输入<code>curl --socks5 127.0.0.1:1080 -v www.baidu.com</code></p>
 <p>在程序中会输出</p>
@@ -425,7 +422,7 @@
 <p>请求阶段由connect函数实现</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -592,178 +589,176 @@
 </span><span class="lnt">165
 </span><span class="lnt">166
 </span><span class="lnt">167
-</span><span class="lnt">168
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bufio&#34;</span>
-	<span class="s">&#34;encoding/binary&#34;</span>
-	<span class="s">&#34;errors&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
-<span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
-<span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">for</span> <span class="p">{</span>
-		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-			<span class="k">continue</span>
-		<span class="p">}</span>
-		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
-	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-	<span class="nx">err</span> <span class="p">=</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
-</span><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
-</span><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
-</span><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
-</span><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
-</span><span class="c1"></span>
-	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// |VER | METHOD |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |   1    |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER 版本号，socks5的值为0x05
-</span><span class="c1"></span>	<span class="c1">// CMD 0x01表示CONNECT请求
-</span><span class="c1"></span>	<span class="c1">// RSV 保留字段，值为0x00
-</span><span class="c1"></span>	<span class="c1">// ATYP 目标地址类型，DST.ADDR的数据对应这个字段的类型。
-</span><span class="c1"></span>	<span class="c1">//   0x01表示IPv4地址，DST.ADDR为4个字节
-</span><span class="c1"></span>	<span class="c1">//   0x03表示域名，DST.ADDR是一个可变长度的域名
-</span><span class="c1"></span>	<span class="c1">// DST.ADDR 一个可变长度的值
-</span><span class="c1"></span>	<span class="c1">// DST.PORT 目标端口，固定2个字节
-</span><span class="c1"></span>
-	<span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read header failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">ver</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">atyp</span> <span class="o">:=</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">cmd</span> <span class="o">!=</span> <span class="nx">cmdBind</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported cmd:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">addr</span> <span class="o">:=</span> <span class="s">&#34;&#34;</span>
-	<span class="k">switch</span> <span class="nx">atyp</span> <span class="p">{</span>
-	<span class="k">case</span> <span class="nx">atypIPV4</span><span class="p">:</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span> <span class="c1">//刚好是4个字节
-</span><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read atyp failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">addr</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%d.%d.%d.%d&#34;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-	<span class="k">case</span> <span class="nx">atypeHOST</span><span class="p">:</span>
-		<span class="nx">hostSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read hostSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">host</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">hostSize</span><span class="p">)</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read host failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">addr</span> <span class="p">=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">host</span><span class="p">)</span>
-	<span class="k">case</span> <span class="nx">atypeIPV6</span><span class="p">:</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;IPv6: no supported yet&#34;</span><span class="p">)</span>
-	<span class="k">default</span><span class="p">:</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;invalid atyp&#34;</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//读端口号
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read port failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">port</span> <span class="o">:=</span> <span class="nx">binary</span><span class="p">.</span><span class="nx">BigEndian</span><span class="p">.</span><span class="nf">Uint16</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//返回uint16
-</span><span class="c1"></span>
-	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;dial&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
-
-	<span class="c1">//写response
-</span><span class="c1"></span>
-	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | REP |  RSV  | ATYP | BND.ADDR | BND.PORT |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER socks版本，这里为0x05
-</span><span class="c1"></span>	<span class="c1">// REP Relay field,内容取值如下 X’00’ succeeded
-</span><span class="c1"></span>	<span class="c1">// RSV 保留字段
-</span><span class="c1"></span>	<span class="c1">// ATYPE 地址类型
-</span><span class="c1"></span>	<span class="c1">// BND.ADDR 服务绑定的地址
-</span><span class="c1"></span>	<span class="c1">// BND.PORT 服务绑定的端口DST.PORT
-</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed: %w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bufio&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/binary&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;errors&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | METHOD |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |   1    |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER 版本号，socks5的值为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// CMD 0x01表示CONNECT请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// RSV 保留字段，值为0x00
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// ATYP 目标地址类型，DST.ADDR的数据对应这个字段的类型。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//   0x01表示IPv4地址，DST.ADDR为4个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//   0x03表示域名，DST.ADDR是一个可变长度的域名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// DST.ADDR 一个可变长度的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// DST.PORT 目标端口，固定2个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read header failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">ver</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">atyp</span> <span class="o">:=</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">cmd</span> <span class="o">!=</span> <span class="nx">cmdBind</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported cmd:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">addr</span> <span class="o">:=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="nx">atyp</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypIPV4</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span> <span class="c1">//刚好是4个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read atyp failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">addr</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%d.%d.%d.%d&#34;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypeHOST</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">hostSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read hostSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">host</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">hostSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read host failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">addr</span> <span class="p">=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">host</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypeIPV6</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;IPv6: no supported yet&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;invalid atyp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//读端口号
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read port failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">port</span> <span class="o">:=</span> <span class="nx">binary</span><span class="p">.</span><span class="nx">BigEndian</span><span class="p">.</span><span class="nf">Uint16</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//返回uint16
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;dial&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//写response
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | REP |  RSV  | ATYP | BND.ADDR | BND.PORT |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER socks版本，这里为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// REP Relay field,内容取值如下 X’00’ succeeded
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// RSV 保留字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// ATYPE 地址类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// BND.ADDR 服务绑定的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// BND.PORT 服务绑定的端口DST.PORT
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed: %w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>运行这个程序，在命令行中输入<code>curl --socks5 127.0.0.1:1080 -v www.baidu.com</code></p>
 <p>程序会输出</p>
@@ -780,7 +775,7 @@
 <p>使用Dail函数建立代理和web服务器的连接，使用Copy函数实现数据的转发</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -967,198 +962,196 @@
 </span><span class="lnt">185
 </span><span class="lnt">186
 </span><span class="lnt">187
-</span><span class="lnt">188
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
-
-<span class="kn">import</span> <span class="p">(</span>
-	<span class="s">&#34;bufio&#34;</span>
-	<span class="s">&#34;context&#34;</span>
-	<span class="s">&#34;encoding/binary&#34;</span>
-	<span class="s">&#34;errors&#34;</span>
-	<span class="s">&#34;fmt&#34;</span>
-	<span class="s">&#34;io&#34;</span>
-	<span class="s">&#34;log&#34;</span>
-	<span class="s">&#34;net&#34;</span>
-<span class="p">)</span>
-
-<span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
-<span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
-<span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
-<span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
-
-<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">for</span> <span class="p">{</span>
-		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-			<span class="k">continue</span>
-		<span class="p">}</span>
-		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
-	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
-	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-	<span class="nx">err</span> <span class="p">=</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="k">return</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
-</span><span class="c1"></span>	<span class="c1">// +----+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
-</span><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
-</span><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
-</span><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
-</span><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
-</span><span class="c1"></span>
-	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// |VER | METHOD |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |   1    |
-</span><span class="c1"></span>	<span class="c1">// +----+--------+
-</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-<span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
-	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER 版本号，socks5的值为0x05
-</span><span class="c1"></span>	<span class="c1">// CMD 0x01表示CONNECT请求
-</span><span class="c1"></span>	<span class="c1">// RSV 保留字段，值为0x00
-</span><span class="c1"></span>	<span class="c1">// ATYP 目标地址类型，DST.ADDR的数据对应这个字段的类型。
-</span><span class="c1"></span>	<span class="c1">//   0x01表示IPv4地址，DST.ADDR为4个字节
-</span><span class="c1"></span>	<span class="c1">//   0x03表示域名，DST.ADDR是一个可变长度的域名
-</span><span class="c1"></span>	<span class="c1">// DST.ADDR 一个可变长度的值
-</span><span class="c1"></span>	<span class="c1">// DST.PORT 目标端口，固定2个字节
-</span><span class="c1"></span>
-	<span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read header failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">ver</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">atyp</span> <span class="o">:=</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
-	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">if</span> <span class="nx">cmd</span> <span class="o">!=</span> <span class="nx">cmdBind</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported cmd:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">addr</span> <span class="o">:=</span> <span class="s">&#34;&#34;</span>
-	<span class="k">switch</span> <span class="nx">atyp</span> <span class="p">{</span>
-	<span class="k">case</span> <span class="nx">atypIPV4</span><span class="p">:</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read atyp failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">addr</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%d.%d.%d.%d&#34;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
-	<span class="k">case</span> <span class="nx">atypeHOST</span><span class="p">:</span>
-		<span class="nx">hostSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read hostSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">host</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">hostSize</span><span class="p">)</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
-		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read host failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-		<span class="p">}</span>
-		<span class="nx">addr</span> <span class="p">=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">host</span><span class="p">)</span>
-	<span class="k">case</span> <span class="nx">atypeIPV6</span><span class="p">:</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;IPv6: no supported yet&#34;</span><span class="p">)</span>
-	<span class="k">default</span><span class="p">:</span>
-		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;invalid atyp&#34;</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read port failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="nx">port</span> <span class="o">:=</span> <span class="nx">binary</span><span class="p">.</span><span class="nx">BigEndian</span><span class="p">.</span><span class="nf">Uint16</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
-
-	<span class="nx">dest</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Dial</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v:%v&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">))</span> <span class="c1">//与目标ip建立连接，返回一个连接
-</span><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;dial dst failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-	<span class="k">defer</span> <span class="nx">dest</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;dial&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
-
-	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// |VER | REP |  RSV  | ATYP | BND.ADDR | BND.PORT |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
-</span><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
-</span><span class="c1"></span>	<span class="c1">// VER socks版本，这里为0x05
-</span><span class="c1"></span>	<span class="c1">// REP Relay field,内容取值如下 X’00’ succeeded
-</span><span class="c1"></span>	<span class="c1">// RSV 保留字段
-</span><span class="c1"></span>	<span class="c1">// ATYPE 地址类型
-</span><span class="c1"></span>	<span class="c1">// BND.ADDR 服务绑定的地址
-</span><span class="c1"></span>	<span class="c1">// BND.PORT 服务绑定的端口DST.PORT
-</span><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
-	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed: %w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
-	<span class="p">}</span>
-
-	<span class="c1">//实现relay
-</span><span class="c1"></span>	<span class="nx">ctx</span><span class="p">,</span> <span class="nx">cancel</span> <span class="o">:=</span> <span class="nx">context</span><span class="p">.</span><span class="nf">WithCancel</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">())</span>
-	<span class="k">defer</span> <span class="nf">cancel</span><span class="p">()</span>
-
-	<span class="c1">//启动两个go routine
-</span><span class="c1"></span>	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
-		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">dest</span><span class="p">,</span> <span class="nx">reader</span><span class="p">)</span> <span class="c1">//把浏览器的请求（浏览器和代理之间的连接）复制到代理和web服务器的连接中
-</span><span class="c1"></span>		<span class="nf">cancel</span><span class="p">()</span>
-	<span class="p">}()</span>
-	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//反过来
-</span><span class="c1"></span>		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">dest</span><span class="p">)</span>
-		<span class="nf">cancel</span><span class="p">()</span>	
-	<span class="p">}()</span>
-
-	<span class="o">&lt;-</span><span class="nx">ctx</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
-	<span class="k">return</span> <span class="kc">nil</span>
-<span class="p">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;bufio&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;context&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;encoding/binary&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;errors&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;io&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;log&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="s">&#34;net&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">socks5Ver</span> <span class="p">=</span> <span class="mh">0x05</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">cmdBind</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypIPV4</span> <span class="p">=</span> <span class="mh">0x01</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeHOST</span> <span class="p">=</span> <span class="mh">0x03</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="nx">atypeIPV6</span> <span class="p">=</span> <span class="mh">0x04</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">server</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Listen</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="s">&#34;127.0.0.1:1080&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">client</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">server</span><span class="p">.</span><span class="nf">Accept</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;Accept failed %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">continue</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">go</span> <span class="nf">process</span><span class="p">(</span><span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">process</span><span class="p">(</span><span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">reader</span> <span class="o">:=</span> <span class="nx">bufio</span><span class="p">.</span><span class="nf">NewReader</span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="o">:=</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">err</span> <span class="p">=</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">conn</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;client %v auth failed:%v&#34;</span><span class="p">,</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">RemoteAddr</span><span class="p">(),</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">auth</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | NMETHODS | METHODS  |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |    1     | 1 to 255 |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER: 协议版本，socks5为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// NMETHODS: 支持认证的方法数量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// METHODS: 对应NMETHODS，NMETHODS的值为多少，METHODS就有多少个字节。RFC预定义了一些值的含义，内容如下:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’00’ NO AUTHENTICATION REQUIRED
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// X’02’ USERNAME/PASSWORD
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">ver</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read ver failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">methodSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read methodSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">method</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">methodSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">method</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read method failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | METHOD |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |   1    |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+--------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nx">socks5Ver</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">connect</span><span class="p">(</span><span class="nx">reader</span> <span class="o">*</span><span class="nx">bufio</span><span class="p">.</span><span class="nx">Reader</span><span class="p">,</span> <span class="nx">conn</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Conn</span><span class="p">)</span> <span class="p">(</span><span class="nx">err</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | CMD |  RSV  | ATYP | DST.ADDR | DST.PORT |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER 版本号，socks5的值为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// CMD 0x01表示CONNECT请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// RSV 保留字段，值为0x00
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// ATYP 目标地址类型，DST.ADDR的数据对应这个字段的类型。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//   0x01表示IPv4地址，DST.ADDR为4个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//   0x03表示域名，DST.ADDR是一个可变长度的域名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// DST.ADDR 一个可变长度的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// DST.PORT 目标端口，固定2个字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="nx">buf</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read header failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">ver</span><span class="p">,</span> <span class="nx">cmd</span><span class="p">,</span> <span class="nx">atyp</span> <span class="o">:=</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">ver</span> <span class="o">!=</span> <span class="nx">socks5Ver</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported ver:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">cmd</span> <span class="o">!=</span> <span class="nx">cmdBind</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;not supported cmd:%v&#34;</span><span class="p">,</span> <span class="nx">ver</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">addr</span> <span class="o">:=</span> <span class="s">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span> <span class="nx">atyp</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypIPV4</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read atyp failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">addr</span> <span class="p">=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%d.%d.%d.%d&#34;</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nx">buf</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypeHOST</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">hostSize</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">reader</span><span class="p">.</span><span class="nf">ReadByte</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read hostSize failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">host</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">hostSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read host failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">addr</span> <span class="p">=</span> <span class="nb">string</span><span class="p">(</span><span class="nx">host</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">case</span> <span class="nx">atypeIPV6</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;IPv6: no supported yet&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">errors</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="s">&#34;invalid atyp&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">ReadFull</span><span class="p">(</span><span class="nx">reader</span><span class="p">,</span> <span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;read port failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">port</span> <span class="o">:=</span> <span class="nx">binary</span><span class="p">.</span><span class="nx">BigEndian</span><span class="p">.</span><span class="nf">Uint16</span><span class="p">(</span><span class="nx">buf</span><span class="p">[:</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nx">dest</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Dial</span><span class="p">(</span><span class="s">&#34;tcp&#34;</span><span class="p">,</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Sprintf</span><span class="p">(</span><span class="s">&#34;%v:%v&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">))</span> <span class="c1">//与目标ip建立连接，返回一个连接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;dial dst failed:%w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nx">dest</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;dial&#34;</span><span class="p">,</span> <span class="nx">addr</span><span class="p">,</span> <span class="nx">port</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// |VER | REP |  RSV  | ATYP | BND.ADDR | BND.PORT |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// | 1  |  1  | X&#39;00&#39; |  1   | Variable |    2     |
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// +----+-----+-------+------+----------+----------+
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// VER socks版本，这里为0x05
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// REP Relay field,内容取值如下 X’00’ succeeded
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// RSV 保留字段
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// ATYPE 地址类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// BND.ADDR 服务绑定的地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">// BND.PORT 服务绑定的端口DST.PORT
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">_</span><span class="p">,</span> <span class="nx">err</span> <span class="p">=</span> <span class="nx">conn</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="mh">0x05</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Errorf</span><span class="p">(</span><span class="s">&#34;write failed: %w&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//实现relay
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">ctx</span><span class="p">,</span> <span class="nx">cancel</span> <span class="o">:=</span> <span class="nx">context</span><span class="p">.</span><span class="nf">WithCancel</span><span class="p">(</span><span class="nx">context</span><span class="p">.</span><span class="nf">Background</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="k">defer</span> <span class="nf">cancel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">//启动两个go routine
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">dest</span><span class="p">,</span> <span class="nx">reader</span><span class="p">)</span> <span class="c1">//把浏览器的请求（浏览器和代理之间的连接）复制到代理和web服务器的连接中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nf">cancel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span> <span class="c1">//反过来
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">_</span><span class="p">,</span> <span class="nx">_</span> <span class="p">=</span> <span class="nx">io</span><span class="p">.</span><span class="nf">Copy</span><span class="p">(</span><span class="nx">conn</span><span class="p">,</span> <span class="nx">dest</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">cancel</span><span class="p">()</span>	
+</span></span><span class="line"><span class="cl">	<span class="p">}()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="o">&lt;-</span><span class="nx">ctx</span><span class="p">.</span><span class="nf">Done</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="kc">nil</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在命令行执行命令后，可以看到一些连接信息</p>
 <p><img

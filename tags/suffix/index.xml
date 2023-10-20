@@ -17,6 +17,6 @@
     <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc158/</guid>
-    <description><![CDATA[A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 #include&lt;bits/stdc++.h&gt; using namespace std; int]]></description>
+    <description><![CDATA[A - Station and Bus 题目链接 题意 给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况 题解 签到题 ac代码 1 2 3 4 5 6 7 8 9 10 11 #include&lt;bits/stdc++.h&gt; using namespace std; int main()]]></description>
 </item></channel>
 </rss>

@@ -8,10 +8,9 @@
         <title>tf-idf - This is DYH</title><meta name="Description" content="tf-idf"><meta property="og:title" content="tf-idf" />
 <meta property="og:description" content="tf-idf" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/tf-idf/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/tf-idf/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-10-05T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2021-10-05T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -136,7 +135,7 @@ $$</p>
 <p>信息检索系统的作业是：试按tf-idf算法在剔除一些常用词后给出文本中术语的统计算法和程序，并按降序进行排序</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -227,96 +226,96 @@ $$</p>
 </span><span class="lnt">89
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># encoding=utf-8</span>
-<span class="kn">import</span> <span class="nn">jieba</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="n">punc_reg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u3002</span><span class="s1">|</span><span class="se">\uff1f</span><span class="s1">|</span><span class="se">\uff01</span><span class="s1">|</span><span class="se">\uff0c</span><span class="s1">|</span><span class="se">\u3001</span><span class="s1">|</span><span class="se">\uff1b</span><span class="s1">|</span><span class="se">\uff1a</span><span class="s1">|</span><span class="se">\u201c</span><span class="s1">|</span><span class="se">\u201d</span><span class="s1">|</span><span class="se">\u2018</span><span class="s1">|</span><span class="se">\u2019</span><span class="s1">|</span><span class="se">\uff08</span><span class="s1">|</span><span class="se">\uff09</span><span class="s1">|</span><span class="se">\u300a</span><span class="s1">|</span><span class="se">\u300b</span><span class="s1">|</span><span class="se">\u3008</span><span class="s1">|</span><span class="se">\u3009</span><span class="s1">|</span><span class="se">\u3010</span><span class="s1">|</span><span class="se">\u3011</span><span class="s1">|</span><span class="se">\u300e</span><span class="s1">|</span><span class="se">\u300f</span><span class="s1">|</span><span class="se">\u300c</span><span class="s1">|</span><span class="se">\u300d</span><span class="s1">|</span><span class="se">\ufe43</span><span class="s1">|</span><span class="se">\ufe44</span><span class="s1">|</span><span class="se">\u3014</span><span class="s1">|</span><span class="se">\u3015</span><span class="s1">|</span><span class="se">\u2026</span><span class="s1">|</span><span class="se">\u2014</span><span class="s1">|</span><span class="se">\uff5e</span><span class="s1">|</span><span class="se">\ufe4f</span><span class="s1">|</span><span class="se">\uffe5</span><span class="s1">&#39;</span>
-
-<span class="k">class</span> <span class="nc">Article</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
-
-    <span class="k">def</span> <span class="nf">cut_word</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">jieba</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
-        <span class="n">tmp_result</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">punc_reg</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">tmp_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span> <span class="o">=</span> <span class="n">tmp_result</span>
-
-    <span class="k">def</span> <span class="nf">cal_tf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tf</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">/</span> <span class="n">sz</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">cal_tf_idf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span> <span class="o">=</span> <span class="p">{}</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">*</span> <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">tmp_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
-        <span class="n">tmp_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;----------------------------&#39;</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">tmp_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;----------------------------&#39;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">cal_idf</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">article</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
-            <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">article</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
-                <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
-        <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
-
-    <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">articles</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
-        <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">sz</span> <span class="o">/</span> <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
-
-
-<span class="k">def</span> <span class="nf">read_content</span><span class="p">():</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;material/Chinese article&#39;</span>
-    <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-    <span class="k">for</span> <span class="nb">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="nb">file</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-            <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-            <span class="n">articles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">work</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-        <span class="n">article</span><span class="o">.</span><span class="n">cut_word</span><span class="p">()</span>
-        <span class="n">article</span><span class="o">.</span><span class="n">cal_tf</span><span class="p">()</span>
-    <span class="n">cal_idf</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
-        <span class="n">article</span><span class="o">.</span><span class="n">cal_tf_idf</span><span class="p">()</span>
-        <span class="n">article</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">idf</span> <span class="o">=</span> <span class="p">{}</span>
-    <span class="n">articles</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">read_content</span><span class="p">()</span>
-
-    <span class="n">work</span><span class="p">()</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># encoding=utf-8</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">jieba</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="cl"><span class="n">punc_reg</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\u3002</span><span class="s1">|</span><span class="se">\uff1f</span><span class="s1">|</span><span class="se">\uff01</span><span class="s1">|</span><span class="se">\uff0c</span><span class="s1">|</span><span class="se">\u3001</span><span class="s1">|</span><span class="se">\uff1b</span><span class="s1">|</span><span class="se">\uff1a</span><span class="s1">|</span><span class="se">\u201c</span><span class="s1">|</span><span class="se">\u201d</span><span class="s1">|</span><span class="se">\u2018</span><span class="s1">|</span><span class="se">\u2019</span><span class="s1">|</span><span class="se">\uff08</span><span class="s1">|</span><span class="se">\uff09</span><span class="s1">|</span><span class="se">\u300a</span><span class="s1">|</span><span class="se">\u300b</span><span class="s1">|</span><span class="se">\u3008</span><span class="s1">|</span><span class="se">\u3009</span><span class="s1">|</span><span class="se">\u3010</span><span class="s1">|</span><span class="se">\u3011</span><span class="s1">|</span><span class="se">\u300e</span><span class="s1">|</span><span class="se">\u300f</span><span class="s1">|</span><span class="se">\u300c</span><span class="s1">|</span><span class="se">\u300d</span><span class="s1">|</span><span class="se">\ufe43</span><span class="s1">|</span><span class="se">\ufe44</span><span class="s1">|</span><span class="se">\u3014</span><span class="s1">|</span><span class="se">\u3015</span><span class="s1">|</span><span class="se">\u2026</span><span class="s1">|</span><span class="se">\u2014</span><span class="s1">|</span><span class="se">\uff5e</span><span class="s1">|</span><span class="se">\ufe4f</span><span class="s1">|</span><span class="se">\uffe5</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Article</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="n">content</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cut_word</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">jieba</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp_result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">punc_reg</span><span class="p">,</span> <span class="n">word</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tmp_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span> <span class="o">=</span> <span class="n">tmp_result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cal_tf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tf</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">word</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">/</span> <span class="n">sz</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">cal_tf_idf</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">*</span> <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">get_result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="o">.</span><span class="n">keys</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">tf_idf</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp_list</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------------------------&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">tmp_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">tmp_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;----------------------------&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">cal_idf</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">article</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">article</span><span class="o">.</span><span class="n">cut_result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">-=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">sz</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">articles</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">idf</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">sz</span> <span class="o">/</span> <span class="n">idf</span><span class="p">[</span><span class="n">word</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">read_content</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">path</span> <span class="o">=</span> <span class="s1">&#39;material/Chinese article&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">file</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">            <span class="n">article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">articles</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">article</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">work</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">article</span><span class="o">.</span><span class="n">cut_word</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">article</span><span class="o">.</span><span class="n">cal_tf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cal_idf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">article</span> <span class="ow">in</span> <span class="n">articles</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">article</span><span class="o">.</span><span class="n">cal_tf_idf</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="n">article</span><span class="o">.</span><span class="n">get_result</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">idf</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">articles</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">read_content</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">work</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中一篇文章的测试效果</p>
 <p><img

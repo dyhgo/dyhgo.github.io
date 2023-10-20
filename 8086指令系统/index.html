@@ -8,10 +8,9 @@
         <title>8086指令系统 - This is DYH</title><meta name="Description" content="8086指令系统"><meta property="og:title" content="8086指令系统" />
 <meta property="og:description" content="8086指令系统" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/8086%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-11-07T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-11-07T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-11-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -272,53 +271,53 @@ DWORD PTR     双字长度标记   （伪指令）</p>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AL</span><span class="p">,</span> <span class="no">BL</span><span class="c">;
-</span><span class="c"></span><span class="no">MOV</span>  <span class="p">[</span><span class="no">DI</span><span class="p">],</span> <span class="no">AX</span><span class="c">;
-</span><span class="c"></span><span class="no">MOV</span>  <span class="no">CX</span><span class="p">,</span> <span class="p">[</span><span class="mi">1000</span><span class="no">H</span><span class="p">]</span><span class="c">; 
-</span><span class="c"></span><span class="no">MOV</span>  <span class="no">BL</span><span class="p">,</span> <span class="mi">40</span>
-<span class="nf">MOV</span> <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">SI</span><span class="p">],</span> <span class="mi">01</span><span class="no">H</span><span class="c">;
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AL</span><span class="p">,</span> <span class="no">BL</span><span class="c1">;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">MOV</span>  <span class="p">[</span><span class="no">DI</span><span class="p">],</span> <span class="no">AX</span><span class="c1">;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">MOV</span>  <span class="no">CX</span><span class="p">,</span> <span class="p">[</span><span class="mi">1000</span><span class="no">H</span><span class="p">]</span><span class="c1">; 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">MOV</span>  <span class="no">BL</span><span class="p">,</span> <span class="mi">40</span>
+</span></span><span class="line"><span class="cl"><span class="nf">MOV</span> <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">SI</span><span class="p">],</span> <span class="mi">01</span><span class="no">H</span><span class="c1">;
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>几种不允许传送的解决办法：					用寄存器如AX作桥梁。</p>
 <p>存储器←存储器：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">MEM1</span>					
-<span class="no">MOV</span>  <span class="no">MEM2</span><span class="err">，</span><span class="no">AX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">MEM1</span>					
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>  <span class="no">MEM2</span><span class="err">，</span><span class="no">AX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>段寄存器←段寄存器：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">DS</span>					
-<span class="no">MOV</span>  <span class="no">ES</span><span class="err">，</span><span class="no">AX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">DS</span>					
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>  <span class="no">ES</span><span class="err">，</span><span class="no">AX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>段寄存器←立即数：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">DATA</span>					
-<span class="no">MOV</span>  <span class="no">DS</span><span class="err">，</span><span class="no">AX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">DATA</span>					
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>  <span class="no">DS</span><span class="err">，</span><span class="no">AX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="pushpop">PUSH/POP</h4>
 <p>由SS指示堆栈段的段基址；
@@ -331,11 +330,11 @@ PUSH   segreg</p>
 <p>例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">PUSH</span>  <span class="no">AX</span><span class="err">；</span>    <span class="no">PUSH</span>  <span class="p">[</span><span class="no">BX</span><span class="p">]</span><span class="err">；</span>    <span class="no">PUSH</span>  <span class="no">DS</span> <span class="err">；</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">PUSH</span>  <span class="no">AX</span><span class="err">；</span>    <span class="no">PUSH</span>  <span class="p">[</span><span class="no">BX</span><span class="p">]</span><span class="err">；</span>    <span class="no">PUSH</span>  <span class="no">DS</span> <span class="err">；</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>PUSH	   AX	；将AX内容压栈
 执行操作： [(SP)-1]←高字节(AH)
@@ -345,11 +344,11 @@ PUSH   segreg</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">POP</span>	<span class="no">BX</span>	<span class="err">；</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">POP</span>	<span class="no">BX</span>	<span class="err">；</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将栈顶内容弹至BX
 执行操作：	(BL)  ←[SP]
@@ -365,13 +364,13 @@ PUSH   segreg</p>
 <p>举例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">XCHG</span>	 <span class="no">AX</span><span class="err">，</span><span class="no">BX</span>
-<span class="nf">XCHG</span>  <span class="p">[</span><span class="mi">2000</span><span class="p">]</span><span class="err">，</span><span class="no">CL</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">XCHG</span>	 <span class="no">AX</span><span class="err">，</span><span class="no">BX</span>
+</span></span><span class="line"><span class="cl"><span class="nf">XCHG</span>  <span class="p">[</span><span class="mi">2000</span><span class="p">]</span><span class="err">，</span><span class="no">CL</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="xlat">XLAT</h4>
 <p><strong>translate</strong></p>
@@ -391,24 +390,24 @@ PUSH   segreg</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">LEA</span>	<span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="no">SI</span><span class="err">+</span><span class="mi">10</span><span class="no">H</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">LEA</span>	<span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="no">SI</span><span class="err">+</span><span class="mi">10</span><span class="no">H</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>设：（SI）=1000H
 则执行该指令后，（BX）=1010H</p>
 <p>注意以下指令差别：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">LEA</span>    <span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="mi">2000</span><span class="no">H</span><span class="p">]</span> <span class="c">;将存储单元的偏移地址取到 BX
-</span><span class="c"></span><span class="no">MOV</span> <span class="no">BX</span><span class="err">，</span> <span class="p">[</span><span class="mi">2000</span><span class="no">H</span><span class="p">]</span> <span class="c">;将存储单元中的内容取到 BX
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">LEA</span>    <span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="mi">2000</span><span class="no">H</span><span class="p">]</span> <span class="c1">;将存储单元的偏移地址取到 BX
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">MOV</span> <span class="no">BX</span><span class="err">，</span> <span class="p">[</span><span class="mi">2000</span><span class="no">H</span><span class="p">]</span> <span class="c1">;将存储单元中的内容取到 BX
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="lds">LDS</h4>
 <h4 id="les">LES</h4>
@@ -421,15 +420,15 @@ IN acc, DX；DX表示的端口范围达64K</p>
 <p>例:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">IN</span> <span class="no">AL</span><span class="err">，</span><span class="mi">80</span><span class="no">H</span>  <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">(</span><span class="mi">80</span><span class="no">H端口</span><span class="p">)</span>
-<span class="nf">IN</span> <span class="no">AL</span><span class="err">，</span><span class="no">DX</span>    <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span>
-<span class="nf">IN</span> <span class="no">AX</span><span class="err">，</span><span class="no">DX</span>  <span class="err">；</span> <span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span><span class="err">，</span><span class="p">(</span><span class="no">AH</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="err">+</span><span class="mi">1</span><span class="p">))</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">IN</span> <span class="no">AL</span><span class="err">，</span><span class="mi">80</span><span class="no">H</span>  <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">(</span><span class="mi">80</span><span class="no">H端口</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nf">IN</span> <span class="no">AL</span><span class="err">，</span><span class="no">DX</span>    <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="nf">IN</span> <span class="no">AX</span><span class="err">，</span><span class="no">DX</span>  <span class="err">；</span> <span class="p">(</span><span class="no">AL</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span><span class="err">，</span><span class="p">(</span><span class="no">AH</span><span class="err">）←</span><span class="p">((</span><span class="no">DX</span><span class="err">+</span><span class="mi">1</span><span class="p">))</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="out">OUT</h4>
 <p>格式：OUT  port, acc
@@ -437,43 +436,43 @@ OUT  DX, acc</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">OUT</span> <span class="mi">68</span><span class="no">H</span><span class="err">，</span><span class="no">AX</span>  <span class="err">；</span><span class="p">(</span><span class="mi">68</span><span class="no">H</span><span class="err">）←（</span><span class="no">AL</span><span class="err">）</span>
-             <span class="err">；(69</span><span class="nf">H</span><span class="err">）←（</span><span class="no">AH</span><span class="err">）</span>
-<span class="nf">OUT</span> <span class="no">DX</span><span class="err">，</span><span class="no">AL</span>   <span class="err">；</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span><span class="err">←</span><span class="p">(</span><span class="no">AL</span><span class="p">)</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">OUT</span> <span class="mi">68</span><span class="no">H</span><span class="err">，</span><span class="no">AX</span>  <span class="err">；</span><span class="p">(</span><span class="mi">68</span><span class="no">H</span><span class="err">）←（</span><span class="no">AL</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl">             <span class="err">；(69</span><span class="nf">H</span><span class="err">）←（</span><span class="no">AH</span><span class="err">）</span>
+</span></span><span class="line"><span class="cl"><span class="nf">OUT</span> <span class="no">DX</span><span class="err">，</span><span class="no">AL</span>   <span class="err">；</span><span class="p">((</span><span class="no">DX</span><span class="p">))</span><span class="err">←</span><span class="p">(</span><span class="no">AL</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在使用间接寻址的IN/OUT指令时，要事先用传送指令把I/O端口号设置到DX寄存器，如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">DX</span><span class="err">，</span><span class="mi">220</span><span class="no">H</span>
-<span class="nf">IN</span>   <span class="no">AL</span><span class="err">，</span><span class="no">DX</span>  <span class="c">;将220H端口内容读入AL
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">DX</span><span class="err">，</span><span class="mi">220</span><span class="no">H</span>
+</span></span><span class="line"><span class="cl"><span class="nf">IN</span>   <span class="no">AL</span><span class="err">，</span><span class="no">DX</span>  <span class="c1">;将220H端口内容读入AL
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="例子">例子</h3>
 <p>例2.5 内存中自TABLE开始的16个单元连续存放着自然数0到15的平方值(构成一个平方表)，任给一整数M在XX单元中(该数为0≤M≤15)，查表求M的平方值，并将结果存入YY单元中。</p>
 <p>解:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">LEA</span>  <span class="no">BX</span><span class="err">，</span><span class="no">TABLE</span>
-<span class="nf">MOV</span>  <span class="no">AL</span><span class="err">，</span><span class="no">XX</span>	      
-<span class="no">XLAT</span>			 
-<span class="no">MOV</span>  <span class="no">YY</span><span class="err">，</span><span class="no">AL</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">LEA</span>  <span class="no">BX</span><span class="err">，</span><span class="no">TABLE</span>
+</span></span><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AL</span><span class="err">，</span><span class="no">XX</span>	      
+</span></span><span class="line"><span class="cl"><span class="no">XLAT</span>			 
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>  <span class="no">YY</span><span class="err">，</span><span class="no">AL</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="算术运算">算术运算</h2>
 <h3 id="加法">加法</h3>
@@ -486,23 +485,23 @@ ADD  mem/reg1, mem/reg2</p>
 <p>实例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">ADD</span>	 <span class="no">AL</span><span class="err">，</span><span class="mi">30</span><span class="no">H</span>     
-<span class="no">ADD</span>	 <span class="no">SI</span><span class="err">，</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">20</span><span class="no">H</span><span class="p">]</span>
-<span class="nf">ADD</span>	 <span class="no">CX</span><span class="err">，</span><span class="no">SI</span>
-<span class="nf">ADD</span>	 <span class="p">[</span><span class="no">DI</span><span class="p">]</span><span class="err">，</span><span class="mi">200</span><span class="no">H</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">ADD</span>	 <span class="no">AL</span><span class="err">，</span><span class="mi">30</span><span class="no">H</span>     
+</span></span><span class="line"><span class="cl"><span class="no">ADD</span>	 <span class="no">SI</span><span class="err">，</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">20</span><span class="no">H</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ADD</span>	 <span class="no">CX</span><span class="err">，</span><span class="no">SI</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ADD</span>	 <span class="p">[</span><span class="no">DI</span><span class="p">]</span><span class="err">，</span><span class="mi">200</span><span class="no">H</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>ADD指令对6个状态标志均产生影响。</p>
 <p>例：已知(BX)=E75FH，指令 ADD  BX, 8046H 执行后，状态标志各是多少？	 <br>
 E75FH = 1 1 1 0  0 1 1 1  0 1 0 1  1 1 1 1
-8046H =  1 0 0 0  0 0 0 0  0 1 0 0  0 1 1 0 
-1                           1       1  1 1 
+8046H =  1 0 0 0  0 0 0 0  0 1 0 0  0 1 1 0
+1                           1       1  1 1
 1 0 1 1 0  0 1 1 1  1 0 1 0  0 1 0 1</p>
 <p>结果：CF=1, ZF=0, PF=1, 	   AF=1, OF=1, SF=0</p>
 <p>PF：低8位中1的个数是否为偶数！</p>
@@ -512,15 +511,15 @@ E75FH = 1 1 1 0  0 1 1 1  0 1 0 1  1 1 1 1
 <p>ADC指令在形式上和功能上与ADD类似，只是相加时还要包括进位标志CF的内容，例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">  <span class="nf">ADC</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">68</span><span class="no">H</span>   <span class="c">;AL←(AL)+68H+(CF)	
-</span><span class="c"></span>  <span class="no">ADC</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>    <span class="c">;AX←(AX)+(CX)+(CF)
-</span><span class="c"></span>  <span class="no">ADC</span>  <span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span>  <span class="c">; BX←(BX)+[DI+1][DI]+(CF)
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">  <span class="nf">ADC</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">68</span><span class="no">H</span>   <span class="c1">;AL←(AL)+68H+(CF)	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nf">ADC</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>    <span class="c1">;AX←(AX)+(CX)+(CF)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nf">ADC</span>  <span class="no">BX</span><span class="err">，</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span>  <span class="c1">; BX←(BX)+[DI+1][DI]+(CF)
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>ADC指令用于多字节加法运算中</p>
 <p>ADD/ADC对条件标志位的影响：</p>
@@ -538,15 +537,15 @@ OF位表示带符号数相加的溢出。</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">INC</span>  <span class="no">AL</span>
-<span class="nf">INC</span>  <span class="no">SI</span> 
-<span class="no">INC</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">4</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">INC</span>  <span class="no">AL</span>
+</span></span><span class="line"><span class="cl"><span class="nf">INC</span>  <span class="no">SI</span> 
+</span></span><span class="line"><span class="cl"><span class="no">INC</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">4</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>注：本指令不影响CF标志。</p>
 <h3 id="减法">减法</h3>
@@ -560,15 +559,15 @@ OF位表示带符号数相加的溢出。</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">SUB</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">60</span><span class="no">H</span>
-<span class="nf">SUB</span>  <span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">20</span><span class="no">H</span><span class="p">]</span><span class="err">，</span><span class="no">DX</span>
-<span class="nf">SUB</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">SUB</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">60</span><span class="no">H</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SUB</span>  <span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">20</span><span class="no">H</span><span class="p">]</span><span class="err">，</span><span class="no">DX</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SUB</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="sbb">SBB</h4>
 <p><strong>substract with borrow</strong></p>
@@ -579,15 +578,15 @@ OF位表示带符号数相加的溢出。</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">      <span class="nf">SBB</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>
-      <span class="nf">SBB</span>  <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">SI</span><span class="p">]</span><span class="err">，</span><span class="mi">2080</span><span class="no">H</span>
-      <span class="nf">SBB</span>  <span class="p">[</span><span class="no">SI</span><span class="p">],</span><span class="no">DX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">      <span class="nf">SBB</span>  <span class="no">AX</span><span class="err">，</span><span class="no">CX</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">SBB</span>  <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">SI</span><span class="p">]</span><span class="err">，</span><span class="mi">2080</span><span class="no">H</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">SBB</span>  <span class="p">[</span><span class="no">SI</span><span class="p">],</span><span class="no">DX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="dec">DEC</h4>
 <p><strong>decrease 1</strong></p>
@@ -597,15 +596,15 @@ OF位表示带符号数相加的溢出。</p>
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">      <span class="nf">DEC</span>  <span class="no">CL</span>
-      <span class="nf">DEC</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="err">+</span><span class="mi">2</span><span class="p">]</span>
-      <span class="nf">DEC</span>  <span class="no">SI</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">      <span class="nf">DEC</span>  <span class="no">CL</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">DEC</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="err">+</span><span class="mi">2</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="nf">DEC</span>  <span class="no">SI</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="neg">NEG</h4>
 <p><strong>negative</strong></p>
@@ -626,15 +625,15 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">     <span class="nf">CMP</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">0</span><span class="no">AH</span>
-     <span class="nf">CMP</span>  <span class="no">CX</span><span class="err">，</span><span class="no">SI</span>
-     <span class="nf">CMP</span>  <span class="no">DI</span><span class="err">，</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">03</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">     <span class="nf">CMP</span>  <span class="no">AL</span><span class="err">，</span><span class="mi">0</span><span class="no">AH</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">CMP</span>  <span class="no">CX</span><span class="err">，</span><span class="no">SI</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">CMP</span>  <span class="no">DI</span><span class="err">，</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="mi">03</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>根据标志位来判断比较的结果</p>
 <ol>
@@ -653,7 +652,7 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>程序：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -663,24 +662,24 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">       	<span class="nf">CMP</span>   <span class="no">AL</span><span class="p">,</span><span class="no">BL</span>   <span class="err">；</span><span class="no">AL和BL比较</span>
-       	<span class="nf">JNG</span>   <span class="no">BBB</span>     <span class="err">；若</span><span class="no">AL</span><span class="err">≤</span><span class="no">BL</span><span class="p">,</span><span class="err">则转</span>
-       	<span class="nf">XCHG</span>  <span class="no">AL</span><span class="p">,</span><span class="no">BL</span>   <span class="err">；若</span><span class="no">AL</span><span class="err">＞</span><span class="no">BL</span><span class="p">,</span><span class="err">则交换</span>
-       	
- <span class="nl">BBB:</span>  <span class="nf">CMP</span>   <span class="no">AL</span><span class="p">,</span><span class="no">CL</span>   <span class="err">；</span><span class="no">AL和CL比较</span>
-       	<span class="nf">JNG</span>   <span class="no">CCC</span>     <span class="err">；若</span><span class="no">AL</span><span class="err">≤</span><span class="no">CL</span><span class="p">,</span><span class="err">则转</span>
-       	<span class="nf">XCHG</span>  <span class="no">AL</span><span class="p">,</span><span class="no">CL</span>   <span class="err">；若</span><span class="no">AL</span><span class="err">＞</span><span class="no">CL</span><span class="p">,</span><span class="err">则交换</span>
- <span class="nl">CCC:</span>  <span class="nf">HLT</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">       	<span class="nf">CMP</span>   <span class="no">AL</span><span class="p">,</span><span class="no">BL</span>   <span class="err">；</span><span class="no">AL和BL比较</span>
+</span></span><span class="line"><span class="cl">       	<span class="nf">JNG</span>   <span class="no">BBB</span>     <span class="err">；若</span><span class="no">AL</span><span class="err">≤</span><span class="no">BL</span><span class="p">,</span><span class="err">则转</span>
+</span></span><span class="line"><span class="cl">       	<span class="nf">XCHG</span>  <span class="no">AL</span><span class="p">,</span><span class="no">BL</span>   <span class="err">；若</span><span class="no">AL</span><span class="err">＞</span><span class="no">BL</span><span class="p">,</span><span class="err">则交换</span>
+</span></span><span class="line"><span class="cl">       	
+</span></span><span class="line"><span class="cl"> <span class="nl">BBB:</span>  <span class="nf">CMP</span>   <span class="no">AL</span><span class="p">,</span><span class="no">CL</span>   <span class="err">；</span><span class="no">AL和CL比较</span>
+</span></span><span class="line"><span class="cl">       	<span class="nf">JNG</span>   <span class="no">CCC</span>     <span class="err">；若</span><span class="no">AL</span><span class="err">≤</span><span class="no">CL</span><span class="p">,</span><span class="err">则转</span>
+</span></span><span class="line"><span class="cl">       	<span class="nf">XCHG</span>  <span class="no">AL</span><span class="p">,</span><span class="no">CL</span>   <span class="err">；若</span><span class="no">AL</span><span class="err">＞</span><span class="no">CL</span><span class="p">,</span><span class="err">则交换</span>
+</span></span><span class="line"><span class="cl"> <span class="nl">CCC:</span>  <span class="nf">HLT</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="乘除法">乘除法</h3>
 <p>进行乘法时：
-8位× 8位→16位乘积	
+8位× 8位→16位乘积
 16位× 16位→32位乘积</p>
 <p>进行除法时：
-16位/8位→8位商	
+16位/8位→8位商
 32位/16位→16位商</p>
-<p>对被除数、商及余数存放有如下规定：	
+<p>对被除数、商及余数存放有如下规定：
 被除数	    商	余数
 字节除法         AX               AL	 AH
 字除法	   DX:AX	    AX	 DX</p>
@@ -693,19 +692,19 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>指令例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">       <span class="nf">MUL</span>  <span class="no">BL</span>   <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="p">)</span><span class="err">×</span><span class="p">(</span><span class="no">BL</span><span class="p">),</span><span class="err">乘积在</span><span class="no">AX中</span>
-       <span class="nf">MUL</span>  <span class="no">CX</span>   <span class="err">；</span><span class="p">(</span><span class="no">AX</span><span class="p">)</span><span class="err">×</span><span class="p">(</span><span class="no">CX</span><span class="p">),</span><span class="err">乘积在</span><span class="no">DX</span><span class="p">,</span><span class="no">AX中</span>
-       <span class="nf">MUL</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">       <span class="nf">MUL</span>  <span class="no">BL</span>   <span class="err">；</span><span class="p">(</span><span class="no">AL</span><span class="p">)</span><span class="err">×</span><span class="p">(</span><span class="no">BL</span><span class="p">),</span><span class="err">乘积在</span><span class="no">AX中</span>
+</span></span><span class="line"><span class="cl">       <span class="nf">MUL</span>  <span class="no">CX</span>   <span class="err">；</span><span class="p">(</span><span class="no">AX</span><span class="p">)</span><span class="err">×</span><span class="p">(</span><span class="no">CX</span><span class="p">),</span><span class="err">乘积在</span><span class="no">DX</span><span class="p">,</span><span class="no">AX中</span>
+</span></span><span class="line"><span class="cl">       <span class="nf">MUL</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>乘法指令对CF/OF的影响：</p>
 <p>CF/OF = 0/0 乘积的高一半为零，否则1/1 高一半为有效数字</p>
-<p>例：(AL) = A5H，(BL) = 11H	
+<p>例：(AL) = A5H，(BL) = 11H
 (1)     MUL  BL   ;  (AX)  ←  (AL)×(BL)		        			;  A5×11= 0AF5				                                    			;  (AX) = 0AF5H   CF=OF=1</p>
 <h4 id="imul">IMUL</h4>
 <p><strong>integer multiplication</strong></p>
@@ -719,13 +718,13 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>指令例子：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">      	<span class="nf">DIV</span>  <span class="no">CL</span>
-      	<span class="nf">DIV</span>  <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">      	<span class="nf">DIV</span>  <span class="no">CL</span>
+</span></span><span class="line"><span class="cl">      	<span class="nf">DIV</span>  <span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>注：若除数为零或AL中商大于FFH,(或AX中商大于FFFFH)，则CPU产生一个类型0的内部中断。</p>
 <h4 id="idiv">IDIV</h4>
@@ -733,7 +732,7 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>例 下列程序段完成S=(a×b+c)/a的运算，其中变量a、b、c和S均为带符号的字数据,结果的商存入S，余数则不计，填空完成下列程序。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -745,21 +744,21 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">a</span>           <span class="c">;取得被乘数a
-</span><span class="c"></span>     <span class="no">IMUL</span> <span class="no">b</span>             <span class="c">;a×b在DX:AX中
-</span><span class="c"></span>     <span class="no">MOV</span>  <span class="no">CX</span><span class="err">，</span><span class="no">DX</span>
-     <span class="nf">MOV</span>  <span class="no">BX</span><span class="err">，</span><span class="no">AX</span>
-<span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">c</span>
-     <span class="nf">CWD</span>        <span class="c">;c扩展为双字节，在DX:AX中
-</span><span class="c"></span>     <span class="no">ADD</span>  <span class="no">AX</span><span class="err">，</span><span class="no">BX</span>             <span class="c">;a×b+c在DX:AX中
-</span><span class="c"></span>     <span class="no">ADC</span>  <span class="no">DX</span><span class="err">，</span><span class="no">CX</span>   <span class="err">；高位相加</span>
-     <span class="nf">IDIV</span> <span class="no">a</span>            <span class="c">;(a×b+c)/a,商存入S
-</span><span class="c"></span>     <span class="no">MOV</span>  <span class="no">S</span><span class="err">，</span><span class="no">AX</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">a</span>           <span class="c1">;取得被乘数a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">IMUL</span> <span class="no">b</span>             <span class="c1">;a×b在DX:AX中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">MOV</span>  <span class="no">CX</span><span class="err">，</span><span class="no">DX</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">MOV</span>  <span class="no">BX</span><span class="err">，</span><span class="no">AX</span>
+</span></span><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="err">，</span><span class="no">c</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">CWD</span>        <span class="c1">;c扩展为双字节，在DX:AX中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">ADD</span>  <span class="no">AX</span><span class="err">，</span><span class="no">BX</span>             <span class="c1">;a×b+c在DX:AX中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">ADC</span>  <span class="no">DX</span><span class="err">，</span><span class="no">CX</span>   <span class="err">；高位相加</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">IDIV</span> <span class="no">a</span>            <span class="c1">;(a×b+c)/a,商存入S
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">MOV</span>  <span class="no">S</span><span class="err">，</span><span class="no">AX</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="逻辑">逻辑</h2>
 <p>逻辑运算指令
-运算规则：按位操作，无进/借位 
+运算规则：按位操作，无进/借位
 对标志位的影响(除NOT指令外)：</p>
 <p>CF  OF SF ZF PF  AF
 0     0    *    *    *   无定义</p>
@@ -773,28 +772,28 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 保留AL中低4位，高4位清0。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">AND</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">0</span><span class="no">FH</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">AND</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">0</span><span class="no">FH</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>例2：测试AL的bit7, bit5, bit2是否都是1。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">	<span class="nf">AND</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">10100100</span><span class="no">B</span>
-	<span class="nf">CMP</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">10100100</span><span class="no">B</span>
-          <span class="nf">JZ</span>      <span class="no">YES</span>
-           <span class="err">…</span> <span class="err">…</span> <span class="err">；不全为1时的处理</span>
-<span class="nl">YES:</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">	<span class="nf">AND</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">10100100</span><span class="no">B</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">CMP</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">10100100</span><span class="no">B</span>
+</span></span><span class="line"><span class="cl">          <span class="nf">JZ</span>      <span class="no">YES</span>
+</span></span><span class="line"><span class="cl">           <span class="err">…</span> <span class="err">…</span> <span class="err">；不全为1时的处理</span>
+</span></span><span class="line"><span class="cl"><span class="nl">YES:</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="or">OR</h4>
 <p>逻辑”或” OR</p>
@@ -804,11 +803,11 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>例：把AL的第5位置为1</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">OR</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">00100000</span><span class="no">B</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">OR</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">00100000</span><span class="no">B</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="not">NOT</h4>
 <p>逻辑“非”(取反)  NOT</p>
@@ -817,13 +816,13 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">NOT</span>  <span class="no">CX</span>
-<span class="nf">NOT</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">NOT</span>  <span class="no">CX</span>
+</span></span><span class="line"><span class="cl"><span class="nf">NOT</span>  <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="xor">XOR</h4>
 <p>逻辑”异或”  XOR</p>
@@ -834,26 +833,26 @@ CMP也是执行两个操作数相减，但结果不送目标操作数，其结�
 <p>例1：把AX寄存器清零。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">XOR</span>  <span class="no">AX</span><span class="p">,</span> <span class="no">AX</span> 		  
-<span class="no">MOV</span>  <span class="no">AX</span><span class="p">,</span> <span class="mi">0</span>
-<span class="nf">AND</span>  <span class="no">AX</span><span class="p">,</span> <span class="mi">0</span>
-<span class="nf">SUB</span>  <span class="no">AX</span><span class="p">,</span> <span class="no">AX</span>  
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">XOR</span>  <span class="no">AX</span><span class="p">,</span> <span class="no">AX</span> 		  
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>  <span class="no">AX</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">AND</span>  <span class="no">AX</span><span class="p">,</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="nf">SUB</span>  <span class="no">AX</span><span class="p">,</span> <span class="no">AX</span>  
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>例2：把DH的bit4,3变反</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"> <span class="nf">XOR</span>  <span class="no">DH</span><span class="p">,</span><span class="mi">18</span><span class="no">H</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"> <span class="nf">XOR</span>  <span class="no">DH</span><span class="p">,</span><span class="mi">18</span><span class="no">H</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="test">TEST</h4>
 <p>测试指令TEST</p>
@@ -862,24 +861,24 @@ TEST指令常用于位测试,与条件转移指令一起用。</p>
 <p>例：测试AL的内容是否为负数。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">     	 <span class="nf">TEST</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">80</span><span class="no">H</span>  <span class="err">；检查</span><span class="no">AL中D7</span><span class="err">=</span><span class="mi">1</span><span class="err">？</span>	       
-     	 <span class="no">JNZ</span>    <span class="no">MINUS</span>   <span class="err">；是</span><span class="mi">1</span><span class="p">(</span><span class="err">负数</span><span class="p">)</span><span class="err">，转</span><span class="no">MINUS</span>               
-     	 <span class="err">…</span> <span class="err">…</span>         <span class="err">；否则为正数</span>
-<span class="nl">MINUS:</span> <span class="err">…</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">     	 <span class="nf">TEST</span>  <span class="no">AL</span><span class="p">,</span> <span class="mi">80</span><span class="no">H</span>  <span class="err">；检查</span><span class="no">AL中D7</span><span class="err">=</span><span class="mi">1</span><span class="err">？</span>	       
+</span></span><span class="line"><span class="cl">     	 <span class="no">JNZ</span>    <span class="no">MINUS</span>   <span class="err">；是</span><span class="mi">1</span><span class="p">(</span><span class="err">负数</span><span class="p">)</span><span class="err">，转</span><span class="no">MINUS</span>               
+</span></span><span class="line"><span class="cl">     	 <span class="err">…</span> <span class="err">…</span>         <span class="err">；否则为正数</span>
+</span></span><span class="line"><span class="cl"><span class="nl">MINUS:</span> <span class="err">…</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="例子-2">例子</h4>
 <p>例 已知寄存器DX：AX的内容为32位带符号数，编写一段程序使DX：AX的内容成为原来数据的绝对值。</p>
 <p>解:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -887,13 +886,13 @@ TEST指令常用于位测试,与条件转移指令一起用。</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"> <span class="nf">TEST</span>  <span class="no">DX</span><span class="err">，</span><span class="mi">8000</span><span class="no">H</span>  <span class="c">;测试符号位，产生状态
-</span><span class="c"></span>     <span class="no">JZ</span>    <span class="no">EXIT</span>       <span class="c">;符号位=0，结束
-</span><span class="c"></span>     <span class="no">NEG</span>   <span class="no">DX</span>         <span class="c">;求绝对值
-</span><span class="c"></span>     <span class="no">NEG</span>   <span class="no">AX</span>
-     <span class="nf">SBB</span>   <span class="no">DX</span><span class="err">，</span><span class="mi">0</span>
-<span class="nl">EXIT:</span><span class="nf">HLT</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"> <span class="nf">TEST</span>  <span class="no">DX</span><span class="err">，</span><span class="mi">8000</span><span class="no">H</span>  <span class="c1">;测试符号位，产生状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">JZ</span>    <span class="no">EXIT</span>       <span class="c1">;符号位=0，结束
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">NEG</span>   <span class="no">DX</span>         <span class="c1">;求绝对值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>     <span class="nf">NEG</span>   <span class="no">AX</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">SBB</span>   <span class="no">DX</span><span class="err">，</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="nl">EXIT:</span><span class="nf">HLT</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="移位">移位</h2>
 <h4 id="shlshrsar">SHL/SHR/SAR</h4>
@@ -918,9 +917,9 @@ SHR  AL, CL  ；AL中的内容右移4位
 <p><strong>rotate left</strong></p>
 <p><strong>rotate left with carry</strong></p>
 <p>循环移位指令</p>
-<p>不含进位位的循环左移指令 ROL	
+<p>不含进位位的循环左移指令 ROL
 不含进位位的循环右移指令 ROR
-含进位位的循环左移指令 RCL	
+含进位位的循环左移指令 RCL
 含进位位的循环右移指令 RCR</p>
 <p>格式同非循环移位指令。
 移位位数放在CL寄存器中，如果只移1位,
@@ -929,13 +928,13 @@ SHR  AL, CL  ；AL中的内容右移4位
 <p>例1：将AL的高4位与低4位互换。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">CL</span><span class="p">,</span> <span class="mi">4</span>
-<span class="nf">ROL</span>   <span class="no">AL</span><span class="p">,</span> <span class="no">CL</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">CL</span><span class="p">,</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="nf">ROL</span>   <span class="no">AL</span><span class="p">,</span> <span class="no">CL</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="串操作">串操作</h2>
 <p>串：顺序放在内存中的一组相同类型的数据。
@@ -958,8 +957,8 @@ REPNE/REPNZ       ；当不相等/不为零时重复</p>
 <p>串传送指令MOVSB / MOVSW</p>
 <p>指令执行的操作为：
 MOVSB    ； ((ES):(DI))←((DS):(SI))
-SI±1, DI±1 
-MOVSW   ； ((ES):(DI+1)(DI))←((DS):(SI+1)(SI))	
+SI±1, DI±1
+MOVSW   ； ((ES):(DI+1)(DI))←((DS):(SI+1)(SI))
 SI±2, DI±2</p>
 <p>注意：
 src用DS:SI寻址, dest用ES:DI寻址</p>
@@ -968,7 +967,7 @@ src用DS:SI寻址, dest用ES:DI寻址</p>
 ① 用基本串传送指令</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -976,32 +975,32 @@ src用DS:SI寻址, dest用ES:DI寻址</p>
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">		<span class="nf">LEA</span>    <span class="no">SI</span><span class="err">，</span><span class="no">AREA1</span>
-		<span class="nf">LEA</span>    <span class="no">DI</span><span class="err">，</span><span class="no">AREA2</span>
-		<span class="nf">MOV</span>   <span class="no">CX</span><span class="err">，</span><span class="mi">100</span>
-		<span class="nf">CLD</span>
-<span class="nl">DONE:</span> <span class="nf">MOVSW</span>
-		<span class="nf">LOOP</span>  <span class="no">DONE</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">		<span class="nf">LEA</span>    <span class="no">SI</span><span class="err">，</span><span class="no">AREA1</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">LEA</span>    <span class="no">DI</span><span class="err">，</span><span class="no">AREA2</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">MOV</span>   <span class="no">CX</span><span class="err">，</span><span class="mi">100</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">CLD</span>
+</span></span><span class="line"><span class="cl"><span class="nl">DONE:</span> <span class="nf">MOVSW</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">LOOP</span>  <span class="no">DONE</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><ol start="2">
 <li>用重复串传送指令</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">	<span class="nf">LEA</span>   <span class="no">SI</span><span class="err">，</span> <span class="no">AREA1</span>
-	<span class="nf">LEA</span>   <span class="no">DI</span><span class="err">，</span> <span class="no">AREA2</span>
-	<span class="nf">MOV</span>  <span class="no">CX</span><span class="err">，</span> <span class="mi">100</span>
-	<span class="nf">CLD</span>
-	<span class="nf">REP</span>  <span class="no">MOVSW</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">	<span class="nf">LEA</span>   <span class="no">SI</span><span class="err">，</span> <span class="no">AREA1</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">LEA</span>   <span class="no">DI</span><span class="err">，</span> <span class="no">AREA2</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">MOV</span>  <span class="no">CX</span><span class="err">，</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">CLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">REP</span>  <span class="no">MOVSW</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="stos">STOS</h4>
 <p><strong>store string</strong></p>
@@ -1009,7 +1008,7 @@ src用DS:SI寻址, dest用ES:DI寻址</p>
 <p>写指令的操作为：
 对字节：((ES):(DI))←(AL)
 DI±1
-对字：((ES):(DI+1)(DI))←(AX)	
+对字：((ES):(DI+1)(DI))←(AX)
 DI±2</p>
 <p>本指令用于把一块存储区域填充成某一
 初始值(即对存储区进行初始化)。</p>
@@ -1019,39 +1018,39 @@ DI±2</p>
 <p>执行的操作为：
 对字节：(AL)←((DS):(SI))
 SI±1
-对字：(AX)←((DS):(SI+1)(SI))	
+对字：(AX)←((DS):(SI+1)(SI))
 SI±2</p>
 <p>串读取指令通常不加重复前缀。
 LODSB等价于:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AL</span><span class="p">,[</span><span class="no">SI</span><span class="err">］</span>        
-<span class="no">INC</span>  <span class="no">SI</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AL</span><span class="p">,[</span><span class="no">SI</span><span class="err">］</span>        
+</span></span><span class="line"><span class="cl"><span class="no">INC</span>  <span class="no">SI</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>LODSW等价于:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">MOV</span>  <span class="no">AX</span><span class="p">,[</span><span class="no">SI</span><span class="p">]</span> 
-<span class="no">INC</span>  <span class="no">SI</span>
-<span class="nf">INC</span>  <span class="no">SI</span>         
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">MOV</span>  <span class="no">AX</span><span class="p">,[</span><span class="no">SI</span><span class="p">]</span> 
+</span></span><span class="line"><span class="cl"><span class="no">INC</span>  <span class="no">SI</span>
+</span></span><span class="line"><span class="cl"><span class="nf">INC</span>  <span class="no">SI</span>         
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="cmps">CMPS</h4>
 <p><strong>compare string</strong></p>
 <p>串比较指令CMPSB / CMPSW</p>
 <p>指令执行的操作为：
 CMPSB  ；((DS):(SI))-((ES):(DI))
-SI±1, DI±1 
+SI±1, DI±1
 CMPSW ；((DS):(SI+1)(SI))-((ES):(DI+1)(DI))
 SI±2, DI±2</p>
 <p>比较的结果只反映在标志位上，串本身无变化。
@@ -1101,21 +1100,21 @@ REPNE/REPNZ       ；当不相等/不为零时重复</p>
 本指令无条件转移到指定的目标地址,以执行从该地址开始的程序段。</p>
 <p>① 段内直接转移（相对转移）</p>
 <p>转移的目标地址由指令直接给出。指令中直接给出的目标地址实际上是一个相对于IP的位移量。
-位移量    转移范围             汇编语言中格式                        	
-8位     -128～+127         JMP SHORT OPRD 	       	
+位移量    转移范围             汇编语言中格式                        
+8位     -128～+127         JMP SHORT OPRD 	       
 16位  -32768～+32767  JMP NEAR PTR OPRD
 例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>	<span class="mi">0120</span><span class="no">H</span>	         <span class="err">；直接转向</span><span class="mi">0120</span><span class="no">H</span>	     	
-<span class="no">JMP</span>	<span class="no">SHORT</span> <span class="no">LPI</span>	     <span class="err">；转向</span><span class="no">LPI</span>		
-<span class="no">JMP</span>	<span class="no">NEAR</span> <span class="no">PTR</span> <span class="no">BBB</span>	<span class="err">；转向</span><span class="no">BBB</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>	<span class="mi">0120</span><span class="no">H</span>	         <span class="err">；直接转向</span><span class="mi">0120</span><span class="no">H</span>	     	
+</span></span><span class="line"><span class="cl"><span class="no">JMP</span>	<span class="no">SHORT</span> <span class="no">LPI</span>	     <span class="err">；转向</span><span class="no">LPI</span>		
+</span></span><span class="line"><span class="cl"><span class="no">JMP</span>	<span class="no">NEAR</span> <span class="no">PTR</span> <span class="no">BBB</span>	<span class="err">；转向</span><span class="no">BBB</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>由于是段内转移,故转移后CS内容保持不变。</p>
 <p>②段内间接转移
@@ -1123,35 +1122,35 @@ REPNE/REPNZ       ；当不相等/不为零时重复</p>
 例1：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>    <span class="no">SI</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>    <span class="no">SI</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>若指令执行前(SI)=1200H，则指令执行后，(IP)=1200H,于是转向代码段的偏移地址1200H处执行。</p>
 <p>注意：目标地址以段内偏移的形式给出，而不是相对于IP的位移量，所以它是一个16位的操作数。</p>
 <p>例2：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>  <span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="no">DI</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>  <span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="no">DI</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>设指令执行前:
-(DS)=3000H, (BX)=1300H, (DI)=1200H, 
+(DS)=3000H, (BX)=1300H, (DI)=1200H,
 (32500H)=2350H；<br>
 则指令执行后:(IP)=2350H</p>
 <p>在汇编语言中,段内间接寻址通常写成：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>	<span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="no">DI</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>	<span class="no">WORD</span> <span class="no">PTR</span><span class="p">[</span><span class="no">BX</span><span class="err">+</span><span class="no">DI</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>表示所取得的目标地址是一个字。</p>
 <p>③段间直接转移
@@ -1159,22 +1158,22 @@ REPNE/REPNZ       ；当不相等/不为零时重复</p>
 例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>	<span class="mi">2000</span><span class="p">:</span><span class="mi">1000</span><span class="no">H</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>	<span class="mi">2000</span><span class="p">:</span><span class="mi">1000</span><span class="no">H</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>执行时,(IP)←1000H,(CS)←2000H</p>
 <p>注：直接地址为符号地址时，段间直接转移指令中的符号地址前应加操作符FAR PTR。
 例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>	<span class="no">FAR</span> <span class="no">PTR</span>  <span class="no">far_label</span>				
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>	<span class="no">FAR</span> <span class="no">PTR</span>  <span class="no">far_label</span>				
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中的far_label为远类型的标号。</p>
 <p>④段间间接转移</p>
@@ -1182,11 +1181,11 @@ REPNE/REPNZ       ；当不相等/不为零时重复</p>
 例如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">JMP</span>	<span class="no">DWORD</span> <span class="no">PTR</span> <span class="p">[</span><span class="no">SI</span><span class="p">]</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">JMP</span>	<span class="no">DWORD</span> <span class="no">PTR</span> <span class="p">[</span><span class="no">SI</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>设指令执行前:(DS)=4000H，(SI)=1212H,
 (41212H)=1000H，(41214H)=4A00H
@@ -1228,7 +1227,7 @@ JNO		   ；OF=0,则转移</p>
 <p>例：在8000H开始的长度为1000字节的字符串中查找’S’，若找到，把其偏移地址记录在ADDR中，否则ADDR单元置为0FFFFH。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1240,17 +1239,17 @@ JNO		   ；OF=0,则转移</p>
 </span><span class="lnt">10
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">	<span class="nf">MOV</span>    <span class="no">DI</span><span class="p">,</span> <span class="mi">8000</span><span class="no">H</span>
-                  <span class="nf">MOV</span>    <span class="no">CX</span><span class="p">,</span> <span class="mi">1000</span>
-                  <span class="nf">MOV</span>    <span class="no">AL</span><span class="p">,</span> <span class="err">’</span><span class="no">S</span><span class="err">’</span>
-                  <span class="nf">MOV</span>    <span class="no">ADDR</span><span class="p">,</span> <span class="mi">0</span><span class="no">FFFFH</span>    
-   <span class="no">GOON</span><span class="p">:</span>   <span class="no">SCASB</span>
-                  <span class="nf">LOOPNZ</span>   <span class="no">GOON</span>	<span class="c">; (CX)≠0∧ZF=0时，循环。
-</span><span class="c"></span>                  <span class="no">JNZ</span>      <span class="no">DONE</span> 	          <span class="err">；</span><span class="no">ZF</span><span class="err">=</span><span class="mi">0</span><span class="err">，转移。</span>
-                  <span class="nf">DEC</span>     <span class="no">DI</span>		          <span class="err">；找到</span>
-                  <span class="nf">MOV</span>    <span class="no">ADDR</span><span class="p">,</span> <span class="no">DI</span>
-   <span class="nl">DONE:</span>    <span class="nf">HLT</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">	<span class="nf">MOV</span>    <span class="no">DI</span><span class="p">,</span> <span class="mi">8000</span><span class="no">H</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">CX</span><span class="p">,</span> <span class="mi">1000</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">AL</span><span class="p">,</span> <span class="err">’</span><span class="no">S</span><span class="err">’</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">ADDR</span><span class="p">,</span> <span class="mi">0</span><span class="no">FFFFH</span>    
+</span></span><span class="line"><span class="cl">   <span class="no">GOON</span><span class="p">:</span>   <span class="no">SCASB</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">LOOPNZ</span>   <span class="no">GOON</span>	<span class="c1">; (CX)≠0∧ZF=0时，循环。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                  <span class="nf">JNZ</span>      <span class="no">DONE</span> 	          <span class="err">；</span><span class="no">ZF</span><span class="err">=</span><span class="mi">0</span><span class="err">，转移。</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">DEC</span>     <span class="no">DI</span>		          <span class="err">；找到</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">ADDR</span><span class="p">,</span> <span class="no">DI</span>
+</span></span><span class="line"><span class="cl">   <span class="nl">DONE:</span>    <span class="nf">HLT</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="循环控制指令">循环控制指令</h3>
 <p>用在循环程序中以确定是否要继续循环。
@@ -1266,13 +1265,13 @@ JNO		   ；OF=0,则转移</p>
 LOOP指令与下面的指令段等价：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">   <span class="nf">DEC</span>  <span class="no">CX</span>
-   <span class="nf">JNZ</span>  <span class="no">label</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">   <span class="nf">DEC</span>  <span class="no">CX</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">JNZ</span>  <span class="no">label</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>(2) LOOPZ (LOOPE)</p>
 <p>格式：LOOPZ   label
@@ -1288,7 +1287,7 @@ LOOP指令与下面的指令段等价：</p>
 <p>例1：给1A000H开始的256个内存单元均减去1，若发现某个单元减为0则立即退出循环，其后的单元不再减1。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
@@ -1299,16 +1298,16 @@ LOOP指令与下面的指令段等价：</p>
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">                  <span class="nf">MOV</span>    <span class="no">AX</span><span class="p">,</span> <span class="mi">1</span><span class="no">A00H</span>
-                  <span class="nf">MOV</span>    <span class="no">DS</span><span class="p">,</span> <span class="no">AX</span>	<span class="err">；段基址</span>
-                  <span class="nf">MOV</span>    <span class="no">DI</span><span class="p">,</span> <span class="mi">0</span>		<span class="err">；偏移量</span>
-                  <span class="nf">MOV</span>    <span class="no">CX</span><span class="p">,</span> <span class="mi">256</span>  	<span class="err">；循环次数</span>
-   <span class="nl">GOON:</span> <span class="nf">DEC</span>     <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span> <span class="err">；减</span><span class="mi">1</span>
-                  <span class="nf">INC</span>      <span class="no">DI</span>		        <span class="err">；移动指针</span>
-                  <span class="nf">CMP</span>    <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI-1</span><span class="p">],</span><span class="mi">0</span>
-                  <span class="nf">LOOPNZ</span>   <span class="no">GOON</span>
-                  <span class="nf">HLT</span>       
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">AX</span><span class="p">,</span> <span class="mi">1</span><span class="no">A00H</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">DS</span><span class="p">,</span> <span class="no">AX</span>	<span class="err">；段基址</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">DI</span><span class="p">,</span> <span class="mi">0</span>		<span class="err">；偏移量</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">MOV</span>    <span class="no">CX</span><span class="p">,</span> <span class="mi">256</span>  	<span class="err">；循环次数</span>
+</span></span><span class="line"><span class="cl">   <span class="nl">GOON:</span> <span class="nf">DEC</span>     <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI</span><span class="p">]</span> <span class="err">；减</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">INC</span>      <span class="no">DI</span>		        <span class="err">；移动指针</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">CMP</span>    <span class="no">BYTE</span> <span class="no">PTR</span><span class="p">[</span><span class="no">DI-1</span><span class="p">],</span><span class="mi">0</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">LOOPNZ</span>   <span class="no">GOON</span>
+</span></span><span class="line"><span class="cl">                  <span class="nf">HLT</span>       
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="过程调用和返回指令">过程调用和返回指令</h3>
 <p>过程(子程序)							  一段具有特定功能的，供其它程序调用的公用程序。
@@ -1317,7 +1316,7 @@ LOOP指令与下面的指令段等价：</p>
 子程序执行结束后一般均要返回调用程序。
 一次定义，可多次调用；
 可带参数调用，以完成不同的功能。</p>
-<p>优点					
+<p>优点				
 程序代码短, 结构清晰, 便于编程、调试、修改和阅读。<br>
 两条相关指令：
 子程序调用指令 CALL
@@ -1326,17 +1325,17 @@ LOOP指令与下面的指令段等价：</p>
 <p>调用指令CALL</p>
 <p>一般格式：CALL  sub   ;sub为子程序的入口。
 根据子程序入口的寻址方式，子程序调用有四类。
-① 段内直接调用							子程序的偏移地址直接由CALL指令给出。 
+① 段内直接调用							子程序的偏移地址直接由CALL指令给出。
 格式：CALL near_proc 						CALL执行时，它首先将IP内容压栈，然后把指令中给出的位移量加到IP上。
 注：经汇编后的调用地址是相对于CALL的下一条指令的位移量。
 例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm">	<span class="nf">CALL</span>  <span class="mi">0120</span><span class="no">H</span>  <span class="c">;子程序偏移地址由指令给出
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl">	<span class="nf">CALL</span>  <span class="mi">0120</span><span class="no">H</span>  <span class="c1">;子程序偏移地址由指令给出
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>程序可能浮动，所以只记相对位移量。</p>
 <h4 id="ret">RET</h4>
@@ -1347,11 +1346,11 @@ LOOP指令与下面的指令段等价：</p>
 另有一种带立即数返回指令：RET  n				其中n为偶数，表示从栈顶弹出地址后另外丢弃的字节数。								例：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">RET</span> <span class="mi">4</span>   <span class="c">;返回后再丢弃栈顶的4个字节
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">RET</span> <span class="mi">4</span>   <span class="c1">;返回后再丢弃栈顶的4个字节
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h3 id="中断指令">中断指令</h3>
 <p>8086/8088 CPU在程序中允许安排一条中断指令来引起一个中断过程,这种中断叫内部中断,或叫软中断。</p>
@@ -1376,19 +1375,19 @@ INTO检查溢出标志OF, 如果OF=1, 则启动一个类型4的中断过程；�
 通常INTO指令安排在有符号数算术运算指令后面。如：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-asm" data-lang="asm"><span class="nf">IMUL</span>	<span class="no">DX</span>						
-<span class="no">INTO</span>		     <span class="c">;若溢出，则启动INT 4,否则继续	
-</span><span class="c"></span><span class="no">MOV</span>	<span class="no">RESULT</span><span class="p">,</span> <span class="no">AX</span>					
-<span class="no">MOV</span>	<span class="no">RESULT</span><span class="err">+</span><span class="mi">2</span><span class="p">,</span> <span class="no">DX</span>				
-		<span class="err">……</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-asm" data-lang="asm"><span class="line"><span class="cl"><span class="nf">IMUL</span>	<span class="no">DX</span>						
+</span></span><span class="line"><span class="cl"><span class="no">INTO</span>		     <span class="c1">;若溢出，则启动INT 4,否则继续	
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nf">MOV</span>	<span class="no">RESULT</span><span class="p">,</span> <span class="no">AX</span>					
+</span></span><span class="line"><span class="cl"><span class="no">MOV</span>	<span class="no">RESULT</span><span class="err">+</span><span class="mi">2</span><span class="p">,</span> <span class="no">DX</span>				
+</span></span><span class="line"><span class="cl">		<span class="err">……</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h4 id="iret">IRET</h4>
 <p><strong>interrupt return</strong></p>

@@ -8,10 +8,9 @@
         <title>simplest colorful bash promt - This is DYH</title><meta name="Description" content="simplest colorful bash promt"><meta property="og:title" content="simplest colorful bash promt" />
 <meta property="og:description" content="simplest colorful bash promt" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/simplest-colorful-bash-promt/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/simplest-colorful-bash-promt/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-03-17T00:00:00+00:00" />
-<meta property="article:modified_time" content="2021-03-17T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2021-03-17T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/simplest-colorful-bash-promt\/"
-        },"genre": "posts","keywords": "shell, linux","wordcount":  152 ,
+        },"genre": "posts","keywords": "shell, linux","wordcount":  153 ,
         "url": "https:\/\/dyhgo.github.io\/simplest-colorful-bash-promt\/","datePublished": "2021-03-17T00:00:00+00:00","dateModified": "2021-03-17T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">simplest colorful bash promt</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-17">2021-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 152 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-03-17">2021-03-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 153 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/simplest-colorful-bash-promt/" class="leancloud_visitors" data-flag-title="simplest colorful bash promt">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -120,7 +119,7 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
             </div><div class="content" id="content"><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -183,68 +182,68 @@
 </span><span class="lnt">61
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1">######################### begin ###############################</span>
-
-
-bash_prompt<span class="o">()</span> <span class="o">{</span>
-
-	
-	
-	
-	
-	
-	<span class="nb">local</span> <span class="nv">NO_FORMAT</span><span class="o">=</span><span class="s2">&#34;\[\033[0m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">ORANGE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;208m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">TOXIC_GREEN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;118m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">RED_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;1m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">CYAN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;87m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">BLACK_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;0m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">WHITE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;15m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">GRAY_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;90m\]&#34;</span>
-	<span class="nb">local</span> <span class="nv">BLUE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;74m\]&#34;</span>
-	
-	
-	
-	
-	
-	
-	<span class="nb">local</span> <span class="nv">PROMT_USER_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_AT_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_HOST_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_COLON_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_PATH_COLOR</span><span class="o">=</span><span class="nv">$ORANGE_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-	<span class="nb">local</span> <span class="nv">PROMT_INPUT_COLOR</span><span class="o">=</span><span class="nv">$TOXIC_GREEN_BOLD</span>
-	
-
-	
-	<span class="nb">local</span> <span class="nv">PROMT_USER</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_USER_COLOR</span><span class="s2">\u&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_AT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_AT_COLOR</span><span class="s2">@&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_HOST</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_HOST_COLOR</span><span class="s2">\h&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_COLON</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_COLON_COLOR</span><span class="s2">:&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_PATH</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_PATH_COLOR</span><span class="s2">\w&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_DOLLAR_COLOR</span>$<span class="s2">&#34;</span>
-	<span class="nb">local</span> <span class="nv">PROMT_INPUT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_INPUT_COLOR</span><span class="s2">&#34;</span>
-
-	
-	
-
-	
-	<span class="nv">PS1</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">PROMT_USER</span><span class="si">}${</span><span class="nv">PROMT_AT</span><span class="si">}${</span><span class="nv">PROMT_HOST</span><span class="si">}${</span><span class="nv">PROMT_COLON</span><span class="si">}${</span><span class="nv">PROMT_PATH</span><span class="si">}${</span><span class="nv">PROMT_DOLLAR</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">PROMT_INPUT</span><span class="si">}</span><span class="s2">&#34;</span>
-
-	<span class="nv">none</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>tput sgr0<span class="k">)</span><span class="s2">&#34;</span>
-	<span class="nb">trap</span> <span class="s1">&#39;echo -ne &#34;${none}&#34;&#39;</span> DEBUG
-
-	
-<span class="o">}</span>
-
-
-
-bash_prompt
-<span class="nb">unset</span> bash_prompt
-
-<span class="c1">################################# end ###############################</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">######################### begin ###############################</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bash_prompt<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">NO_FORMAT</span><span class="o">=</span><span class="s2">&#34;\[\033[0m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">ORANGE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;208m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">TOXIC_GREEN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;118m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">RED_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;1m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">CYAN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;87m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">BLACK_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;0m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">WHITE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;15m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">GRAY_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;90m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">BLUE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;74m\]&#34;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_USER_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_AT_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_HOST_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_COLON_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_PATH_COLOR</span><span class="o">=</span><span class="nv">$ORANGE_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_INPUT_COLOR</span><span class="o">=</span><span class="nv">$TOXIC_GREEN_BOLD</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_USER</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_USER_COLOR</span><span class="s2">\u&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_AT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_AT_COLOR</span><span class="s2">@&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_HOST</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_HOST_COLOR</span><span class="s2">\h&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_COLON</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_COLON_COLOR</span><span class="s2">:&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_PATH</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_PATH_COLOR</span><span class="s2">\w&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_DOLLAR_COLOR</span>$<span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_INPUT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_INPUT_COLOR</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="nv">PS1</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">PROMT_USER</span><span class="si">}${</span><span class="nv">PROMT_AT</span><span class="si">}${</span><span class="nv">PROMT_HOST</span><span class="si">}${</span><span class="nv">PROMT_COLON</span><span class="si">}${</span><span class="nv">PROMT_PATH</span><span class="si">}${</span><span class="nv">PROMT_DOLLAR</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">PROMT_INPUT</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="nv">none</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>tput sgr0<span class="k">)</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nb">trap</span> <span class="s1">&#39;echo -ne &#34;${none}&#34;&#39;</span> DEBUG
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">bash_prompt
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> bash_prompt
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">################################# end ###############################</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>inspired by <a href="https://github.com/ChrisTitusTech/scripts" target="_blank" rel="noopener noreffer">https://github.com/ChrisTitusTech/scripts</a></p>
 <p>add the code to <code>~/.bashrc</code> and run <code>source ~/.bashrc</code></p>

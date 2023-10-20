@@ -8,10 +8,9 @@
         <title>Android Fragment - This is DYH</title><meta name="Description" content="Android Fragment"><meta property="og:title" content="Android Fragment" />
 <meta property="og:description" content="Android Fragment" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/android-fragment/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/android-fragment/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-03-24T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-03-24T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-03-24T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/android-fragment\/"
-        },"genre": "posts","keywords": "java, xml","wordcount":  1912 ,
+        },"genre": "posts","keywords": "java, xml","wordcount":  1902 ,
         "url": "https:\/\/dyhgo.github.io\/android-fragment\/","datePublished": "2020-03-24T00:00:00+00:00","dateModified": "2020-03-24T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Android Fragment</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/android/"><i class="far fa-folder fa-fw"></i>android</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-24">2020-03-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1912 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-24">2020-03-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1902 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/android-fragment/" class="leancloud_visitors" data-flag-title="Android Fragment">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -146,7 +145,7 @@
 <p>containerActivity的布局文件</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -175,39 +174,39 @@
 </span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">tools:context=</span><span class="s">&#34;.fragment.containerActivity&#34;</span><span class="nt">&gt;</span>
-
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/ctnbtn1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;change_fragment&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;FrameLayout</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/ctn1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-
-        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/ctnbtn1&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;0dp&#34;</span><span class="nt">/&gt;</span>
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">tools:context=</span><span class="s">&#34;.fragment.containerActivity&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/ctnbtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;change_fragment&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;FrameLayout</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/ctn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">&#34;@+id/ctnbtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;0dp&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>containerActivity.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -242,51 +241,49 @@
 </span><span class="lnt">33
 </span><span class="lnt">34
 </span><span class="lnt">35
-</span><span class="lnt">36
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">ctnbtn1</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
-
-
-        <span class="n">ctnbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctnbtn1</span><span class="o">);</span>
-        <span class="n">ctnbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
-                <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
-        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">ctnbtn1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ctnbtn1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctnbtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctnbtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Afragment.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -318,48 +315,46 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>fragment_a.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -382,35 +377,35 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
-
-
-    <span class="nt">&lt;TextView</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/fatv1&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;fragment_a&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
-
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/fatv1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;fragment_a&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Bfragment.java和fragment_b.xml与A类似</p>
 <h2 id="传数据给fragment">传数据给fragment</h2>
 <p>Afragment.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -466,76 +461,74 @@
 </span><span class="lnt">54
 </span><span class="lnt">55
 </span><span class="lnt">56
-</span><span class="lnt">57
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
-        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
-        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="o">}</span>
-
-
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
-        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAttach</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onAttach</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDetach</span><span class="o">()</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onDetach</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAttach</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onAttach</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDetach</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onDetach</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>通过这种方法实例化</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="fragment的回退栈">fragment的回退栈</h2>
 <p><img
@@ -549,7 +542,7 @@
 <p>fragment_a.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -591,52 +584,52 @@
 </span><span class="lnt">40
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
-
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/fabtn1&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;change_to_Bfragment&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;Button</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/fabtn2&#34;</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;updata_text&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.2&#34;</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;TextView</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/fatv1&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;fragment_a&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/fabtn1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;change_to_Bfragment&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.1&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Button</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/fabtn2&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;updata_text&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.2&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/fatv1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;fragment_a&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Afragment.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -708,88 +701,86 @@
 </span><span class="lnt">70
 </span><span class="lnt">71
 </span><span class="lnt">72
-</span><span class="lnt">73
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
-        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
-        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="o">}</span>
-
-
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
-        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
-        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
-        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>fragment_b.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -812,33 +803,33 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
-<span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
-    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
-    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
-
-
-    <span class="nt">&lt;TextView</span>
-        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
-        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
-        <span class="na">android:id=</span><span class="s">&#34;@+id/fbtv1&#34;</span>
-        <span class="na">android:text=</span><span class="s">&#34;fragment_b&#34;</span>
-        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
-        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
-        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
-        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
-
-
-<span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;androidx.constraintlayout.widget.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:app=</span><span class="s">&#34;http://schemas.android.com/apk/res-auto&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">xmlns:tools=</span><span class="s">&#34;http://schemas.android.com/tools&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:layout_height=</span><span class="s">&#34;match_parent&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;TextView</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_width=</span><span class="s">&#34;match_parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:layout_height=</span><span class="s">&#34;wrap_content&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:id=</span><span class="s">&#34;@+id/fbtv1&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:text=</span><span class="s">&#34;fragment_b&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:textSize=</span><span class="s">&#34;25sp&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">android:gravity=</span><span class="s">&#34;center&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">&#34;parent&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="na">app:layout_constraintVertical_bias=</span><span class="s">&#34;0.4&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>Bfragment.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -870,48 +861,46 @@
 </span><span class="lnt">30
 </span><span class="lnt">31
 </span><span class="lnt">32
-</span><span class="lnt">33
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bfragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fbtv1</span><span class="o">;</span>
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_b</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fbtv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fbtv1</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Bfragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fbtv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_b</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fbtv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fbtv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>containerActivity.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -937,37 +926,35 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
-
-
-        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
-        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>让Afragment不再重新加载</p>
 <p><img
@@ -981,7 +968,7 @@
 <p>改动containerActivity.java和Afragment.java即可</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1007,41 +994,39 @@
 </span><span class="lnt">24
 </span><span class="lnt">25
 </span><span class="lnt">26
-</span><span class="lnt">27
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-        <span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-        <span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
-
-
-        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
-        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">,</span><span class="s">&#34;a&#34;</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">,</span><span class="s">&#34;a&#34;</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1122,92 +1107,90 @@
 </span><span class="lnt">79
 </span><span class="lnt">80
 </span><span class="lnt">81
-</span><span class="lnt">82
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
-        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
-        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="o">}</span>
-
-
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
-        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
-        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
-        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
-                <span class="n">Fragment</span> <span class="n">fragment</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">fragment</span> <span class="o">=</span> <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">findFragmentByTag</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">fragment</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">hide</span><span class="o">(</span><span class="n">fragment</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-                <span class="o">}</span>
-                <span class="k">else</span><span class="o">{</span>
-                    <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Fragment</span> <span class="n">fragment</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fragment</span> <span class="o">=</span> <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">findFragmentByTag</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">fragment</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">hide</span><span class="o">(</span><span class="n">fragment</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="传递数据给activity">传递数据给activity</h2>
 <p>通过接口回调</p>
@@ -1222,7 +1205,7 @@
 <p>Afragment.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">  1
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
 </span><span class="lnt">  2
 </span><span class="lnt">  3
 </span><span class="lnt">  4
@@ -1323,117 +1306,115 @@
 </span><span class="lnt"> 99
 </span><span class="lnt">100
 </span><span class="lnt">101
-</span><span class="lnt">102
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">msgclick</span> <span class="n">listener</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">msgclick</span><span class="o">{</span>
-        <span class="kt">void</span> <span class="nf">onclick</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">);</span>
-    <span class="o">}</span>
-
-    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">,</span><span class="n">fabtn3</span><span class="o">;</span>
-    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
-        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
-        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
-        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
-        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
-        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAttach</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onAttach</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-        <span class="n">listener</span> <span class="o">=</span> <span class="o">(</span><span class="n">msgclick</span><span class="o">)</span> <span class="n">context</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Nullable</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-
-        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
-        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
-
-        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
-    <span class="o">}</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
-        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
-        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
-        <span class="n">fabtn3</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn3</span><span class="o">);</span>
-
-        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
-                <span class="n">Fragment</span> <span class="n">fragment</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
-                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">fragment</span> <span class="o">=</span> <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">findFragmentByTag</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">);</span>
-                <span class="o">}</span>
-                <span class="k">if</span><span class="o">(</span><span class="n">fragment</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">hide</span><span class="o">(</span><span class="n">fragment</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-                <span class="o">}</span>
-                <span class="k">else</span><span class="o">{</span>
-                    <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-                        <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-                    <span class="o">}</span>
-                <span class="o">}</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="n">fabtn3</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
-            <span class="nd">@Override</span>
-            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
-                <span class="n">listener</span><span class="o">.</span><span class="na">onclick</span><span class="o">(</span><span class="s">&#34;dedsec&#34;</span><span class="o">);</span>
-            <span class="o">}</span>
-        <span class="o">});</span>
-
-        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
-            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-
-
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.content.Context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.util.Log</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.LayoutInflater</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.view.ViewGroup</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.NonNull</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.annotation.Nullable</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">androidx.fragment.app.Fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Afragment</span> <span class="kd">extends</span> <span class="n">Fragment</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">msgclick</span> <span class="n">listener</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">msgclick</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">void</span> <span class="nf">onclick</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">fatv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Button</span> <span class="n">fabtn1</span><span class="o">,</span><span class="n">fabtn2</span><span class="o">,</span><span class="n">fabtn3</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Bfragment</span> <span class="n">bfragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Afragment</span> <span class="nf">newInstance</span><span class="o">(</span><span class="n">String</span> <span class="n">title</span><span class="o">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Afragment</span> <span class="n">afragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Afragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bundle</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">bundle</span><span class="o">.</span><span class="na">putString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">,</span><span class="n">title</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span><span class="n">bundle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAttach</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onAttach</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">listener</span> <span class="o">=</span> <span class="o">(</span><span class="n">msgclick</span><span class="o">)</span> <span class="n">context</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Nullable</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">View</span> <span class="nf">onCreateView</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">LayoutInflater</span> <span class="n">inflater</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">ViewGroup</span> <span class="n">container</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">View</span> <span class="n">view</span> <span class="o">=</span> <span class="n">inflater</span><span class="o">.</span><span class="na">inflate</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">fragment_a</span><span class="o">,</span><span class="n">container</span><span class="o">,</span><span class="kc">false</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Log</span><span class="o">.</span><span class="na">d</span><span class="o">(</span><span class="s">&#34;Afragment&#34;</span><span class="o">,</span><span class="s">&#34;----------onCreateView--------&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">view</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onViewCreated</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">View</span> <span class="n">view</span><span class="o">,</span> <span class="nd">@Nullable</span> <span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onViewCreated</span><span class="o">(</span><span class="n">view</span><span class="o">,</span> <span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fatv1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fatv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn2</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn3</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="na">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">fabtn3</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn1</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">bfragment</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span> <span class="n">bfragment</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Bfragment</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Fragment</span> <span class="n">fragment</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">fragment</span> <span class="o">=</span> <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">findFragmentByTag</span><span class="o">(</span><span class="s">&#34;a&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span><span class="o">(</span><span class="n">fragment</span><span class="o">!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">hide</span><span class="o">(</span><span class="n">fragment</span><span class="o">).</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="n">getFragmentManager</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">getFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">replace</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">bfragment</span><span class="o">).</span><span class="na">addToBackStack</span><span class="o">(</span><span class="kc">null</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn2</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="s">&#34;updated&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">fabtn3</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">listener</span><span class="o">.</span><span class="na">onclick</span><span class="o">(</span><span class="s">&#34;dedsec&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="o">(</span><span class="n">getArguments</span><span class="o">()!=</span><span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fatv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">getArguments</span><span class="o">().</span><span class="na">getString</span><span class="o">(</span><span class="s">&#34;tk&#34;</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>containerActivity.java</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -1469,47 +1450,45 @@
 </span><span class="lnt">34
 </span><span class="lnt">35
 </span><span class="lnt">36
-</span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-        <span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
-        <span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
-        <span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
-
-        <span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">msgclick</span> <span class="o">{</span>
-
-    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
-    <span class="c1">//private Bfragment bfragment;
-</span><span class="c1"></span>    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">ctntv1</span><span class="o">;</span>
-
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
-
-
-        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
-        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">,</span><span class="s">&#34;a&#34;</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
-
-        <span class="n">ctntv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctntv1</span><span class="o">);</span>
-    <span class="o">}</span>
-
-
-
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onclick</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ctntv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.example.test.fragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">androidx.appcompat.app.AppCompatActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.view.View</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.widget.Button</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">android.widget.TextView</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kn">import</span> <span class="nn">com.example.test.R</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">containerActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="kd">implements</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">msgclick</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Afragment</span> <span class="n">afragment</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//private Bfragment bfragment;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">private</span> <span class="n">TextView</span> <span class="n">ctntv1</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_container</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">afragment</span> <span class="o">=</span> <span class="n">Afragment</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="s">&#34;hello world&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">getSupportFragmentManager</span><span class="o">().</span><span class="na">beginTransaction</span><span class="o">().</span><span class="na">add</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctn1</span><span class="o">,</span><span class="n">afragment</span><span class="o">,</span><span class="s">&#34;a&#34;</span><span class="o">).</span><span class="na">commitAllowingStateLoss</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">ctntv1</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">ctntv1</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onclick</span><span class="o">(</span><span class="n">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ctntv1</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">s</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">

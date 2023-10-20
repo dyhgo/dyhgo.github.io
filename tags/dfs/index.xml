@@ -17,7 +17,7 @@
     <pubDate>Mon, 04 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc166/</guid>
-    <description><![CDATA[A - A?C 题意 abc输出arc反之亦然 题解 1 2 3 4 5 6 7 8 9 10 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; s[1]=s[1]==&#39;B&#39;? &#39;R&#39;: &#39;B&#39;; cout&lt;&lt;s&lt;&lt;endl; return 0; } B - Trick or Treat 题意 snack_i被snuke_1,sn]]></description>
+    <description><![CDATA[A - A?C 题意 abc输出arc反之亦然 题解 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; s[1]=s[1]==&#39;B&#39;? &#39;R&#39;: &#39;B&#39;; cout&lt;&lt;s&lt;&lt;endl; return 0; } B - Trick or Treat 题意 snack_i被snuke_1,snu]]></description>
 </item><item>
     <title>abc165</title>
     <link>https://dyhgo.github.io/abc165/</link>
@@ -38,7 +38,7 @@
     <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/abc160/</guid>
-    <description><![CDATA[A - Coffee 题意 判断一个长度为6的字符串，第3位和第4位是否相等，第5位和第6位是否相等 题解 模拟 ac代码 1 2 3 4 5 6 7 8 9 10 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; if(s[2]==s[3] and]]></description>
+    <description><![CDATA[A - Coffee 题意 判断一个长度为6的字符串，第3位和第4位是否相等，第5位和第6位是否相等 题解 模拟 ac代码 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; if(s[2]==s[3] and s[4]==s[5])]]></description>
 </item><item>
     <title>Codeforces Round #629 (Div. 3)</title>
     <link>https://dyhgo.github.io/codeforces-round-629-div.-3/</link>

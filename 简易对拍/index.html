@@ -8,10 +8,9 @@
         <title>简易对拍 - This is DYH</title><meta name="Description" content="简易对拍"><meta property="og:title" content="简易对拍" />
 <meta property="og:description" content="简易对拍" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/%E7%AE%80%E6%98%93%E5%AF%B9%E6%8B%8D/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-27T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-01-27T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -131,7 +130,7 @@
 duipai_random_input_src.cpp是产生随机测试数据的代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -152,32 +151,32 @@ duipai_random_input_src.cpp是产生随机测试数据的代码</p>
 </span><span class="lnt">19
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span><span class="cpf">&lt;cstdlib&gt;</span><span class="cp">
-</span><span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp">#include</span><span class="cpf">&lt;ctime&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span>                <span class="c1">//数据组数
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
-	<span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
-	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
-	<span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">a</span><span class="o">=</span><span class="n">rand</span><span class="p">();</span>
-		<span class="n">b</span><span class="o">=</span><span class="n">rand</span><span class="p">();</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;cstdlib&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include&lt;ctime&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">t</span><span class="o">=</span><span class="mi">100</span><span class="p">;</span>                <span class="c1">//数据组数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	<span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="o">=</span><span class="n">rand</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">b</span><span class="o">=</span><span class="n">rand</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>将产生的随机测试数据写入duipai_random_input.txt中</p>
 <p>ac代码或暴力搜索正确的代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -218,52 +217,52 @@ duipai_random_input_src.cpp是产生随机测试数据的代码</p>
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//ac
-</span><span class="c1"></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span>  <span class="n">std</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">ad</span><span class="p">;</span>
-<span class="n">ll</span> <span class="nf">fun</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">50</span> <span class="n">and</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">60</span><span class="p">)</span> <span class="k">return</span> <span class="mi">50</span><span class="p">;</span> 
-	<span class="n">ll</span> <span class="n">m</span><span class="p">;</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">60</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-	<span class="k">else</span>
-	<span class="p">{</span>
-		<span class="n">m</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-		<span class="n">ll</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="mi">60</span><span class="p">;</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="k">return</span> <span class="n">n</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	
-<span class="p">}</span>
- <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
- 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
- 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_ac_output.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
-      <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">))</span> 
-      <span class="p">{</span>
-      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;input data are %lld %lld --- &#34;</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">);</span>
-      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span><span class="n">fun</span><span class="p">(</span><span class="n">t1</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
-	  <span class="p">}</span>
-	  <span class="c1">//cout&lt;&lt;fun(180);
-</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//ac
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span>  <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">ad</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="nf">fun</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">50</span> <span class="n">and</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">60</span><span class="p">)</span> <span class="k">return</span> <span class="mi">50</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">60</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">m</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ll</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">n</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_ac_output.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;input data are %lld %lld --- &#34;</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span><span class="n">fun</span><span class="p">(</span><span class="n">t1</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">	  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">//cout&lt;&lt;fun(180);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>从duipai_random_input.txt读入，写到duipai_ac_output.txt中</p>
 <p>wa代码</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -304,61 +303,61 @@ duipai_random_input_src.cpp是产生随机测试数据的代码</p>
 </span><span class="lnt">39
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="c1">//wa
-</span><span class="c1"></span><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span>  <span class="n">std</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">;</span>
-<span class="n">ll</span> <span class="n">ad</span><span class="p">;</span>
-<span class="n">ll</span> <span class="nf">fun</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">50</span> <span class="n">and</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">60</span><span class="p">)</span> <span class="k">return</span> <span class="mi">50</span><span class="p">;</span> 
-	<span class="n">ll</span> <span class="n">m</span><span class="p">;</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">60</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-	<span class="k">else</span>
-	<span class="p">{</span>
-		<span class="n">m</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-		<span class="n">ll</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="mi">60</span><span class="p">;</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="k">return</span> <span class="n">n</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-	
-<span class="p">}</span>
- <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
- <span class="p">{</span>
- 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
- 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_wa_output.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
-      <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">))</span> 
-      <span class="p">{</span>
-      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;input data are %lld %lld --- &#34;</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">);</span>
-      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span><span class="n">fun</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-	  <span class="p">}</span>
-	  <span class="c1">//cout&lt;&lt;fun(180);
-</span><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//wa
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span>  <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">ad</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="nf">fun</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="mi">50</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="mi">50</span> <span class="n">and</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">60</span><span class="p">)</span> <span class="k">return</span> <span class="mi">50</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">60</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">m</span><span class="o">=</span><span class="n">x</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ll</span> <span class="n">n</span><span class="o">=</span><span class="mi">50</span><span class="o">+</span><span class="n">m</span><span class="o">*</span><span class="mi">60</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">n</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">x</span><span class="o">-</span><span class="mi">10</span><span class="o">*</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"> 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_random_input.txt&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"> 	     <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;D:</span><span class="se">\\</span><span class="s">c++</span><span class="se">\\</span><span class="s">duipai</span><span class="se">\\</span><span class="s">duipai_wa_output.txt&#34;</span><span class="p">,</span><span class="s">&#34;w&#34;</span><span class="p">,</span><span class="n">stdout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      <span class="k">while</span><span class="p">(</span><span class="o">~</span><span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t1</span><span class="p">,</span><span class="o">&amp;</span><span class="n">t2</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;input data are %lld %lld --- &#34;</span><span class="p">,</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">      	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">fun</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="o">-</span><span class="n">fun</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	  <span class="c1">//cout&lt;&lt;fun(180);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>从duipai_random_input.txt读入，写到duipai_wa_output.txt中</p>
 <p>比较duipai_ac_output.txt 和 duipai_wa_output.txt</p>
 <p>在duipai文件夹下运行批处理命令（duipai.bat）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="nv">@echo</span> <span class="n">off</span>
-<span class="nb">fc </span><span class="n">duipai_ac_output</span><span class="p">.</span><span class="n">txt</span> <span class="n">duipai_wa_outout</span><span class="p">.</span><span class="n">txt</span>
-<span class="n">pause</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="nv">@echo</span> <span class="n">off</span>
+</span></span><span class="line"><span class="cl"><span class="nb">fc </span><span class="n">duipai_ac_output</span><span class="p">.</span><span class="py">txt</span> <span class="n">duipai_wa_outout</span><span class="p">.</span><span class="py">txt</span>
+</span></span><span class="line"><span class="cl"><span class="n">pause</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>echo off是不回显，fc是文件比较</p>
 <p>运行cpp和bat程序</p>
@@ -375,13 +374,13 @@ duipai_random_input_src.cpp是产生随机测试数据的代码</p>
 <p>要产生大随机数，可以用</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span><span class="o">=</span><span class="mi">123456789</span><span class="p">;</span>
-<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)((</span><span class="kt">double</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">RAND_MAX</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span><span class="o">=</span><span class="mi">123456789</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)((</span><span class="kt">double</span><span class="p">)(</span><span class="n">rand</span><span class="p">()</span><span class="o">*</span><span class="n">r</span><span class="p">)</span><span class="o">/</span><span class="n">RAND_MAX</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><a href="https://atcoder.jp/contests/abc148/tasks/abc148_e" target="_blank" rel="noopener noreffer">这题</a>也可对拍</p>
 </div><div class="post-footer" id="post-footer">

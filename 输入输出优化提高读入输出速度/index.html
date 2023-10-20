@@ -8,17 +8,16 @@
         <title>输入输出优化(提高读入输出速度) - This is DYH</title><meta name="Description" content="输入输出优化(提高读入输出速度)"><meta property="og:title" content="输入输出优化(提高读入输出速度)" />
 <meta property="og:description" content="输入输出优化(提高读入输出速度)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-01-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-01-14T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-01-14T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
 <meta name="twitter:title" content="输入输出优化(提高读入输出速度)"/>
 <meta name="twitter:description" content="输入输出优化(提高读入输出速度)"/>
 <meta name="application-name" content="This is DYH">
-<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/" /><link rel="next" href="https://dyhgo.github.io/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/" /><link rel="next" href="https://dyhgo.github.io/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -129,21 +128,21 @@
 <h2 id="2取消同步和绑定">2.取消同步和绑定</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
-<span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="c1">//cout.tie(0);
-</span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//cout.tie(0);
+</span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>此时只能用cin,cout</p>
 <h2 id="3对整型输入输出将每个数字变成字符">3.对整型输入输出，将每个数字变成字符</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -176,38 +175,38 @@
 </span><span class="lnt">31
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">read</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="kt">char</span> <span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
-	<span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span> <span class="n">or</span>  <span class="n">s</span><span class="o">&gt;</span><span class="sc">&#39;9&#39;</span><span class="p">)</span> 
-	<span class="p">{</span>
-		<span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">)</span>
-			<span class="n">f</span><span class="o">-=</span><span class="mi">1</span><span class="p">;</span>
-		<span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
-	<span class="p">}</span>
-	<span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="o">&gt;=</span><span class="sc">&#39;0&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="o">&lt;=</span><span class="sc">&#39;9&#39;</span><span class="p">)</span> 
-	<span class="p">{</span>
-		<span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="n">s</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
-		<span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
-	<span class="p">}</span>
-	<span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">f</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">10</span><span class="p">);</span>
-	<span class="n">putchar</span><span class="p">(</span><span class="kt">char</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">10</span><span class="o">+</span><span class="sc">&#39;0&#39;</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
-</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">read</span><span class="p">();</span>
-	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-	<span class="n">write</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span> 
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">read</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="kt">int</span> <span class="n">f</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="kt">char</span> <span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="o">&lt;</span><span class="sc">&#39;0&#39;</span> <span class="n">or</span>  <span class="n">s</span><span class="o">&gt;</span><span class="sc">&#39;9&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="o">==</span><span class="sc">&#39;-&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">f</span><span class="o">-=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">s</span><span class="o">&gt;=</span><span class="sc">&#39;0&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="o">&lt;=</span><span class="sc">&#39;9&#39;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="o">+</span><span class="n">s</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">s</span><span class="o">=</span><span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">write</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">10</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">write</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">putchar</span><span class="p">(</span><span class="kt">char</span><span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">10</span><span class="o">+</span><span class="sc">&#39;0&#39;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="n">read</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">write</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
@@ -235,7 +234,7 @@
     </div>
 
     <div class="post-nav">
-            <a href="/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/" class="next" rel="next" title="筛法求区间内质数个数？">筛法求区间内质数个数？<i class="fas fa-angle-right fa-fw"></i></a></div>
+            <a href="/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/" class="next" rel="next" title="字符串匹配算法(未完成)">字符串匹配算法(未完成)<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="valine" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.

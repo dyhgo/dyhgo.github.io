@@ -8,10 +8,9 @@
         <title>gflag - This is DYH</title><meta name="Description" content="gflag"><meta property="og:title" content="gflag" />
 <meta property="og:description" content="gflag" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/gflag/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/gflag/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-08-22T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-08-22T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2023-08-22T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/gflag\/"
-        },"genre": "posts","keywords": "note","wordcount":  290 ,
+        },"genre": "posts","keywords": "note","wordcount":  289 ,
         "url": "https:\/\/dyhgo.github.io\/gflag\/","datePublished": "2023-08-22T00:00:00+00:00","dateModified": "2023-08-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">gflag</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-08-22">2023-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 290 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-08-22">2023-08-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 289 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;<span id="/gflag/" class="leancloud_visitors" data-flag-title="gflag">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -126,46 +125,44 @@
 <p>描述信息可以使用<code>--help</code>显示</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;gflags/gflags.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="n">DEFINE_bool</span><span class="p">(</span><span class="n">big_menu</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="s">&#34;Include &#39;advanced&#39; options in the menu listing&#34;</span><span class="p">);</span>
-<span class="n">DEFINE_string</span><span class="p">(</span><span class="n">languages</span><span class="p">,</span> <span class="s">&#34;english,french,german&#34;</span><span class="p">,</span>
-                 <span class="s">&#34;comma-separated list of languages to offer in the &#39;lang&#39; menu&#34;</span><span class="p">);</span>
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;gflags/gflags.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">DEFINE_bool</span><span class="p">(</span><span class="n">big_menu</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="s">&#34;Include &#39;advanced&#39; options in the menu listing&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">DEFINE_string</span><span class="p">(</span><span class="n">languages</span><span class="p">,</span> <span class="s">&#34;english,french,german&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                 <span class="s">&#34;comma-separated list of languages to offer in the &#39;lang&#39; menu&#34;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>DECLARE_xxx()</code>，在不同的文件中声明，相当于<code>extern FLAGS_xxx</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">DECLARE_bool</span><span class="p">(</span><span class="n">big_menu</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">DECLARE_bool</span><span class="p">(</span><span class="n">big_menu</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>在main函数第一行，表示我要解析传入的参数，并对代码中设定的flag修改</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">gflags</span><span class="o">::</span><span class="n">ParseCommandLineFlags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">gflags</span><span class="o">::</span><span class="n">ParseCommandLineFlags</span><span class="p">(</span><span class="o">&amp;</span><span class="n">argc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">argv</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>可以在命令行中输入</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">app_containing_foo --nobig_menu -languages<span class="o">=</span><span class="s2">&#34;chinese,japanese,korean&#34;</span> ...
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">app_containing_foo --nobig_menu -languages<span class="o">=</span><span class="s2">&#34;chinese,japanese,korean&#34;</span> ...
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>其中bool型flag可以在前面加no来表示值为false，此处-和&ndash;都可以，=可以省略</p>
 </div><div class="post-footer" id="post-footer">

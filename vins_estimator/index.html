@@ -8,10 +8,9 @@
         <title>vins_estimator - This is DYH</title><meta name="Description" content="vins_estimator"><meta property="og:title" content="vins_estimator" />
 <meta property="og:description" content="vins_estimator" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/vins_estimator/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/vins_estimator/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-11-27T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-11-27T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2022-11-27T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/vins_estimator\/"
-        },"genre": "posts","keywords": "slam","wordcount":  4463 ,
+        },"genre": "posts","keywords": "slam","wordcount":  4635 ,
         "url": "https:\/\/dyhgo.github.io\/vins_estimator\/","datePublished": "2022-11-27T00:00:00+00:00","dateModified": "2022-11-27T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,8 +107,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">vins_estimator</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a>&nbsp;<a href="/categories/slam/"><i class="far fa-folder fa-fw"></i>slam</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-27">2022-11-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4463 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/vins_estimator/" class="leancloud_visitors" data-flag-title="vins_estimator">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-11-27">2022-11-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4635 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 10 分钟&nbsp;<span id="/vins_estimator/" class="leancloud_visitors" data-flag-title="vins_estimator">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -195,14 +194,15 @@ fastPredictIMU(t, linearAcceleration, angularVelocity)</p>
 <li></li>
 </ul>
 </li>
-<li>
-<p>发布最新的pvq信息
-pubLatestOdometry(latest_P, latest_Q, latest_V, t)</p>
-</li>
 </ul>
 </li>
 </ul>
 </li>
+</ul>
+<pre><code>	- 发布最新的pvq信息
+</code></pre>
+<p>pubLatestOdometry(latest_P, latest_Q, latest_V, t)</p>
+<ul>
 <li>
 <p>feature_callback</p>
 <ul>
@@ -375,534 +375,302 @@ processIMU(accVector[i].first, dt, accVector[i].second, gyrVector[i].second)</p>
 <li></li>
 </ul>
 </li>
-<li>
-<p>processImage(feature.second, feature.first)</p>
-<ul>
-<li>
-<p>addFeatureCheckParallax(frame_count, image, td)判断边缘化最老帧还是次新帧</p>
-<ul>
-<li>
-<p>更新feature数组</p>
-</li>
-<li>
-<p>compensatedParallax2(it_per_id, frame_count)算视差</p>
-<ul>
-<li>在归一化平面计算点的距离</li>
-</ul>
-</li>
-<li>
-<p>通过视差判断是否为关键帧</p>
-</li>
-</ul>
-</li>
-<li>
-<p>将当前帧封装成ImageFrame，装进all_image_frame</p>
-</li>
-<li>
-<p>获得特征点在两帧下的归一化坐标
-getCorresponding(frame_count - 1, frame_count)</p>
-</li>
-<li>
-<p>CalibrationExRotation(corres, pre_integrations[frame_count]-&gt;delta_q, calib_ric)</p>
-<ul>
-<li>
-<p>根据对极约束求位姿，8点法
-solveRelativeR(corres)</p>
-<ul>
-<li>
-<p>通过两帧的像素坐标(归一化坐标XY)求本质矩阵</p>
-</li>
-<li>
-<p>将E（-E）分解成R和t
-decomposeE()</p>
-<ul>
-<li></li>
-</ul>
-</li>
-<li>
-<p>检验四组解
-testTriangulation(ll, rr, R1, t1)获得真正的R</p>
-<ul>
-<li>通过cv::triangulatePoints()检验深度为正的点的比例</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>求qbc，详细看《手写VIO》第七讲第10页</p>
-</li>
-<li>
-<p>如果成功把结果给calib_ric_result</p>
-</li>
-</ul>
-</li>
-<li>
-<p>初始化</p>
-<ul>
-<li>
-<p>单目+imu</p>
-<ul>
-<li>
-<p>initialStructure()</p>
-<ul>
-<li>
-<p>imu激励是否足够</p>
-<ul>
-<li>计算所有帧的加速度的标准差</li>
-</ul>
-</li>
-<li>
-<p>创建Q、T、sfm_f、sfm_tracked_points</p>
-</li>
-<li>
-<p>把feature信息填充到sfm_f中</p>
-</li>
-<li>
-<p>确定参考帧l，求最新帧到它的位姿
-relativePose(relative_R, relative_T, l)</p>
-<ul>
-<li>
-<p>遍历滑窗，获得第i帧和最新帧的共视点</p>
-</li>
-<li>
-<p>计算共视点的平均视差并判断</p>
-</li>
-<li>
-<p>对极约束，五点法求位姿
-solveRelativeRT(corres, relative_R, relative_T)</p>
-<ul>
-<li>RANSAC求解本质矩阵E</li>
-<li>对极约束恢复位姿
-cv::recoverPose(E, ll, rr, cameraMatrix, rot, trans, mask)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>SFM
-sfm.construct(frame_count + 1, Q, T, l, relative_R, relative_T,sfm_f, sfm_tracked_points)</p>
-<ul>
-<li>
-<p>创建c_XXX数组表示第l帧相机在别的帧相机系下的表示</p>
-</li>
-<li>
-<p>三角化l和最新帧
-triangulateTwoFrames()</p>
-<ul>
-<li>遍历特征点，如果是这两个帧的共视点
-triangulatePoint()，求出在l相机系的空间坐标，更新sfm_f
-《手写VIO》</li>
-</ul>
-</li>
-<li>
-<p>pnp求l+1帧的位姿
-solveFrameByPnP()</p>
-<ul>
-<li>获得特征点的3d坐标和2d坐标</li>
-<li>将cv::Eigen转化为cv::Mat</li>
-<li>cv::solvePnP()求旋转向量和平移向量</li>
-</ul>
-</li>
-<li>
-<p>三角化l+1帧和最新帧
-triangulateTwoFrames()</p>
-</li>
-<li>
-<p>三角化l帧和l+1帧</p>
-</li>
-<li>
-<p>pnp求l-1帧</p>
-</li>
-<li>
-<p>三角化l-1帧和l帧</p>
-</li>
-<li>
-<p>triangulatePoint()三角化剩余点，更新sfm_f</p>
-</li>
-<li>
-<p>全局ba</p>
-<ul>
-<li>
-<p>用ceres求解，添加参数块，将先验设为恒定</p>
-</li>
-<li>
-<p>ReprojectionError3D定义残差</p>
-<ul>
-<li>重投影-光流</li>
-</ul>
-</li>
-<li>
-<p>添加残差块，ceres求解</p>
-</li>
-<li>
-<p>更新滑窗每一帧的q和T，填充sfm_tracked_points</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>pnp求所有帧</p>
-<ul>
-<li>如果当前帧在滑窗内，更新ImageFrame的R和T</li>
-<li>如果当前帧不在滑窗内，找这个帧被三角化的特征点，获得3d、2d坐标</li>
-<li>cv::solvePnP()求解该帧的位姿</li>
-<li>更新该帧ImageFrame的R和T</li>
-</ul>
-</li>
-<li>
-<p>视觉imu对齐
-visualInitialAlign()</p>
-<ul>
-<li>
-<p>VisualIMUAlignment(all_image_frame, Bgs, g, x)</p>
-<ul>
-<li>
-<p>solveGyroscopeBias(all_image_frame, Bgs)</p>
-<ul>
-<li></li>
-<li>ldlt求解
-更新滑窗内的Bgs数组</li>
-<li>所有帧重新预积分
-repropagate(Vector3d::Zero(), Bgs[0])</li>
-</ul>
-</li>
-<li>
-<p>LinearAlignment(all_image_frame, g, x)</p>
-<ul>
-<li></li>
-<li>
-<p>RefineGravity(all_image_frame, g, x)</p>
-<ul>
-<li></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
-<p>用尺度、优化后的速度更新滑窗内的Ps、Rs、Vs，并把坐标系从第l帧相机系转到世界系</p>
-<ul>
-<li>
-<p>对滑窗内的帧重新预积分
-repropagate(Vector3d::Zero(), Bgs[i])</p>
-</li>
-<li>
-<p>求将第l帧g变换到世界系的g的旋转，把参考系从第l帧变到第0帧body系（世界系），现在的Rs、Ps、Vs是第i帧imu在第0帧body系</p>
-</li>
-<li>
-<p>clearDepth()
-清楚feature数组FeaturePerId的深度</p>
-</li>
-<li>
-<p>重新求深度（相对于世界系）
+</ul>
+<pre><code>		- processImage(feature.second, feature.first)
+
+			- addFeatureCheckParallax(frame_count, image, td)判断边缘化最老帧还是次新帧
+
+				- 更新feature数组
+				- compensatedParallax2(it_per_id, frame_count)算视差
+
+					- 在归一化平面计算点的距离
+
+				- 通过视差判断是否为关键帧
+
+			- 将当前帧封装成ImageFrame，装进all_image_frame
+			- 获得特征点在两帧下的归一化坐标
+</code></pre>
+<p>getCorresponding(frame_count - 1, frame_count)
+- CalibrationExRotation(corres, pre_integrations[frame_count]-&gt;delta_q, calib_ric)</p>
+<pre><code>				- 根据对极约束求位姿，8点法
+</code></pre>
+<p>solveRelativeR(corres)</p>
+<pre><code>					- 通过两帧的像素坐标(归一化坐标XY)求本质矩阵
+					- 将E（-E）分解成R和t
+</code></pre>
+<p>decomposeE()</p>
+<pre><code>						- 
+
+					- 检验四组解
+</code></pre>
+<p>testTriangulation(ll, rr, R1, t1)获得真正的R</p>
+<pre><code>						- 通过cv::triangulatePoints()检验深度为正的点的比例
+
+				- 求qbc，详细看《手写VIO》第七讲第10页
+
+				- 如果成功把结果给calib_ric_result
+
+			- 初始化
+
+				- 单目+imu
+
+					- initialStructure()
+
+						- imu激励是否足够
+
+							- 计算所有帧的加速度的标准差
+
+						- 创建Q、T、sfm_f、sfm_tracked_points
+						- 把feature信息填充到sfm_f中
+						- 确定参考帧l，求最新帧到它的位姿
+</code></pre>
+<p>relativePose(relative_R, relative_T, l)</p>
+<pre><code>							- 遍历滑窗，获得第i帧和最新帧的共视点
+							- 计算共视点的平均视差并判断
+							- 对极约束，五点法求位姿
+</code></pre>
+<p>solveRelativeRT(corres, relative_R, relative_T)</p>
+<pre><code>								- RANSAC求解本质矩阵E
+								- 对极约束恢复位姿
+</code></pre>
+<p>cv::recoverPose(E, ll, rr, cameraMatrix, rot, trans, mask)</p>
+<pre><code>						- SFM
+</code></pre>
+<p>sfm.construct(frame_count + 1, Q, T, l, relative_R, relative_T,sfm_f, sfm_tracked_points)</p>
+<pre><code>							- 创建c_XXX数组表示第l帧相机在别的帧相机系下的表示
+							- 三角化l和最新帧
+</code></pre>
+<p>triangulateTwoFrames()</p>
+<pre><code>								- 遍历特征点，如果是这两个帧的共视点
+</code></pre>
+<p>triangulatePoint()，求出在l相机系的空间坐标，更新sfm_f
+《手写VIO》</p>
+<pre><code>							- pnp求l+1帧的位姿
+</code></pre>
+<p>solveFrameByPnP()</p>
+<pre><code>								- 获得特征点的3d坐标和2d坐标
+								- 将cv::Eigen转化为cv::Mat
+								- cv::solvePnP()求旋转向量和平移向量
+
+							- 三角化l+1帧和最新帧
+</code></pre>
+<p>triangulateTwoFrames()
+- 三角化l帧和l+1帧
+- pnp求l-1帧
+- 三角化l-1帧和l帧
+- triangulatePoint()三角化剩余点，更新sfm_f
+- 全局ba</p>
+<pre><code>								- 用ceres求解，添加参数块，将先验设为恒定
+								- ReprojectionError3D定义残差
+
+									- 重投影-光流
+
+								- 添加残差块，ceres求解
+								- 更新滑窗每一帧的q和T，填充sfm_tracked_points
+
+						- pnp求所有帧
+
+							- 如果当前帧在滑窗内，更新ImageFrame的R和T
+							- 如果当前帧不在滑窗内，找这个帧被三角化的特征点，获得3d、2d坐标
+							- cv::solvePnP()求解该帧的位姿
+							- 更新该帧ImageFrame的R和T
+
+						- 视觉imu对齐
+</code></pre>
+<p>visualInitialAlign()</p>
+<pre><code>							- VisualIMUAlignment(all_image_frame, Bgs, g, x)
+
+								- solveGyroscopeBias(all_image_frame, Bgs)
+
+									- 
+									- ldlt求解
+</code></pre>
+<p>更新滑窗内的Bgs数组
+- 所有帧重新预积分
+repropagate(Vector3d::Zero(), Bgs[0])</p>
+<pre><code>								- LinearAlignment(all_image_frame, g, x)
+
+									- 
+									- RefineGravity(all_image_frame, g, x)
+
+										- 
+
+							- 用尺度、优化后的速度更新滑窗内的Ps、Rs、Vs，并把坐标系从第l帧相机系转到世界系
+
+								- 对滑窗内的帧重新预积分
+</code></pre>
+<p>repropagate(Vector3d::Zero(), Bgs[i])
+- 求将第l帧g变换到世界系的g的旋转，把参考系从第l帧变到第0帧body系（世界系），现在的Rs、Ps、Vs是第i帧imu在第0帧body系
+- clearDepth()
+清楚feature数组FeaturePerId的深度
+- 重新求深度（相对于世界系）
 triangulate(frame_count, Ps, Rs, tic, ric)</p>
-<ul>
-<li>获得首次观测到这个特征点的帧
-获得左目右目的像素坐标
-triangulatePoint()三角化求世界系的空间坐标</li>
-<li>feature数组的FeaturePerId的深度是在首次观测到该特征点的帧的相机系的z</li>
-<li>三角化的两帧是首次观测到该特征点的帧和它的下一帧</li>
-<li>详细看手写VIO第6讲25页</li>
-<li>SVD求解</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>optimization()</p>
-</li>
-<li>
-<p>updateLatestStates()</p>
-</li>
-<li>
-<p>slideWindow()</p>
-</li>
-<li>
-<p>slideWindow()</p>
-</li>
-</ul>
-</li>
-<li>
-<p>双目+imu</p>
-<ul>
-<li>
-<p>initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)</p>
-<ul>
-<li>
-<p>遍历滑窗特征点，获得世界系3d坐标和最新帧的像素坐标</p>
-</li>
-<li>
-<p>solvePoseByPnP()求位姿</p>
-<ul>
-<li>主要是格式转换
-旋转向量和旋转矩阵转换
-cv::solvePnP()</li>
-</ul>
-</li>
-<li>
-<p>更新最新帧的Ps、Rs</p>
-</li>
-</ul>
-</li>
-<li>
-<p>triangulate(frame_count, Ps, Rs, tic, ric)</p>
-</li>
-<li>
-<p>更新all_image_frame的RT（all_image_frame都在滑窗内）</p>
-</li>
-<li>
-<p>solveGyroscopeBias(all_image_frame, Bgs)</p>
-</li>
-<li>
-<p>repropagate(Vector3d::Zero(), Bgs[i])重新预积分</p>
-</li>
-<li>
-<p>optimization()</p>
-</li>
-<li>
-<p>updateLatestStates()</p>
-</li>
-<li>
-<p>slideWindow()</p>
-</li>
-</ul>
-</li>
-<li>
-<p>仅双目</p>
-<ul>
-<li>initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)</li>
-<li>triangulate(frame_count, Ps, Rs, tic, ric)</li>
-<li>optimization()</li>
-<li>updateLatestStates()</li>
-<li>slideWindow()</li>
-</ul>
-</li>
-<li>
-<p>把当前帧信息pvqb给下一帧</p>
-</li>
-</ul>
-</li>
-<li>
-<p>initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)</p>
-</li>
-<li>
-<p>估计滑窗特征点的深度
-三角化滑窗中的特征点，把结果给feature数组featureperid的estimated_depth，这个深度是对于首次观测到它的帧的相机系
-triangulate(frame_count, Ps, Rs, tic, ric)，把</p>
-</li>
-<li>
-<p>optimization()</p>
-<ul>
-<li>
-<p>vector2double()</p>
-<ul>
-<li>填充para_Pose、para_SpeedBias、para_Ex_Pose、para_Feature、para_Td
-其中para_Feature是逆深度，取自于featurePerId.estimated_depth的倒数，且只有4帧及以上追踪到这个特征点才考虑</li>
-</ul>
-</li>
-<li>
-<p>添加参数块</p>
-</li>
-<li>
-<p>添加残差块（imu、视觉、先验）</p>
-</li>
-<li>
-<p>ceres::Solve()</p>
-</li>
-<li>
-<p>double2vector()</p>
-<ul>
-<li>
-<p>把double数组填进Ps、Rs等</p>
-</li>
-<li>
-<p>setDepth(dep)</p>
-<ul>
-<li>设置featurePerId的estimated_depth，通过深度正负设置featurePerId的solve_flag为1或2，为之后的removeFailures()使用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>边缘化</p>
-<ul>
-<li>
-<p>边缘化最老帧</p>
-<ul>
-<li>vector2double()</li>
-<li>把最老帧有关的因子 （先验因子、imu因子、视觉因子和drop_set增加进marginalization_info中</li>
-<li>求雅克比和残差
-marginalization_info-&gt;preMarginalize()</li>
-<li>构建H和b，反解出J和b
-marginalization_info-&gt;marginalize()</li>
-<li>填充addr_shift</li>
-<li>新值赋给旧值</li>
-</ul>
-</li>
-<li>
-<p>边缘化次新帧</p>
-<ul>
-<li>vector2double()</li>
-<li>边缘化先验因子中和次新帧有关的变量，通过drop_set的形式添加进marginalization_info中</li>
-<li>marginalization_info-&gt;preMarginalize()</li>
-<li>marginalization_info-&gt;marginalize()</li>
-<li>填充addr_shift</li>
-<li>新值赋给旧值</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>外点检测
-outliersRejection(removeIndex)</p>
-<ul>
-<li>获得这个特征点首次观测的帧和共视帧</li>
-<li>求重投影误差
-reprojectionError</li>
-<li>如果是双目，要增加和共视帧右目的重投影误差</li>
-<li>平均误差大于阈值，认为是外点</li>
-</ul>
-</li>
-<li>
-<p>去除外点
-removeOutlier(removeIndex)</p>
-<ul>
-<li>根据removeIndex把feature中对应的特征点去除</li>
-</ul>
-</li>
-<li>
-<p>removeOutliers(removeIndex)</p>
-<ul>
-<li>在featureTracker中把prev_pts、ids、track_cnt对应的点去除</li>
-</ul>
-</li>
-<li>
-<p>预测下一帧特征点出现的位置
-predictPtsInNextFrame()</p>
-<ul>
-<li>
-<p>获得的当前帧和上一帧的位姿
-getPoseInWorldFrame()</p>
-</li>
-<li>
-<p>假设下一帧的位姿和当前帧到前一帧的位姿相同，进而求下一帧位姿</p>
-</li>
-<li>
-<p>通过位姿重投影，形成预测点</p>
-</li>
-<li>
-<p>setPrediction(predictPts)</p>
-<ul>
-<li>填充featuretracker的predict_pts，存的是真正的像素坐标，用于下一帧光流追踪</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>slideWindow()</p>
-<ul>
-<li>
-<p>最老帧</p>
-<ul>
-<li>
-<p>信息前移
-Ps、Rs、Headers、pre_integrations、dt_buf、linear_acceleration_buf、angular_velocity_buf、Vs、Bas、Bgs</p>
-</li>
-<li>
-<p>第10帧信息赋值给第11帧，重新创建第11帧的预积分，清空第11帧的buf</p>
-</li>
-<li>
-<p>从all_image_frame中删除最老帧之前的帧</p>
-</li>
-<li>
-<p>slideWindowOld()</p>
-<ul>
-<li>
-<p>removeBackShiftDepth(R0, P0, R1, P1)</p>
-<ul>
-<li>start_frame&ndash;</li>
-<li>更新featurePerId和featurePerFrame</li>
-<li>重新计算featurePerId的estimated_depth</li>
-</ul>
-</li>
-<li>
-<p>removeBack()</p>
-<ul>
-<li>start_frame&ndash;</li>
-<li>更新featurePerId和featurePerFrame</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>次新帧</p>
-<ul>
-<li>
-<p>用最新帧信息覆盖次新帧</p>
-</li>
-<li>
-<p>对于imu，最新帧的buf直接拼接到次新帧上（此时的次新帧是最新帧，信息已被覆盖）</p>
-</li>
-<li>
-<p>对第11帧重新创建预积分，清空第11帧的buf</p>
-</li>
-<li>
-<p>slideWindowNew()</p>
-<ul>
-<li>
-<p>removeFront(frame_count)</p>
-<ul>
-<li>更新featurePerId和featurePerFrame</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>把滑窗中深度为负的点移除
-removeFailures()</p>
-</li>
-<li>
-<p>将滑窗中的Ps填充进key_poses数组中，用于可视化</p>
-</li>
-<li>
-<p>更新last_RP、last_R0P0</p>
-</li>
-<li>
-<p>updateLatestStates()</p>
-<ul>
-<li>更新latest_xxx变量，用于fastpredictimu()</li>
-<li>用最新的数据不断fastpredictimu()</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>printStatistics()输出数据</p>
-</li>
-<li>
-<p>向rziv发布</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<pre><code>									- 获得首次观测到这个特征点的帧
+</code></pre>
+<p>获得左目右目的像素坐标
+triangulatePoint()三角化求世界系的空间坐标
+- feature数组的FeaturePerId的深度是在首次观测到该特征点的帧的相机系的z
+- 三角化的两帧是首次观测到该特征点的帧和它的下一帧
+- 详细看手写VIO第6讲25页
+- SVD求解</p>
+<pre><code>					- optimization()
+					- updateLatestStates()
+					- slideWindow()
+					- slideWindow()
+
+				- 双目+imu
+
+					- initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)
+
+						- 遍历滑窗特征点，获得世界系3d坐标和最新帧的像素坐标
+						- solvePoseByPnP()求位姿
+
+							- 主要是格式转换
+</code></pre>
+<p>旋转向量和旋转矩阵转换
+cv::solvePnP()</p>
+<pre><code>						- 更新最新帧的Ps、Rs
+
+					- triangulate(frame_count, Ps, Rs, tic, ric)
+					- 更新all_image_frame的RT（all_image_frame都在滑窗内）
+					- solveGyroscopeBias(all_image_frame, Bgs)
+					- repropagate(Vector3d::Zero(), Bgs[i])重新预积分
+					- optimization()
+					- updateLatestStates()
+					- slideWindow()
+
+				- 仅双目
+
+					- initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)
+					- triangulate(frame_count, Ps, Rs, tic, ric)
+					- optimization()
+					- updateLatestStates()
+					- slideWindow()
+
+				- 把当前帧信息pvqb给下一帧
+
+			- initFramePoseByPnP(frame_count, Ps, Rs, tic, ric)
+			- 估计滑窗特征点的深度
+</code></pre>
+<p>三角化滑窗中的特征点，把结果给feature数组featureperid的estimated_depth，这个深度是对于首次观测到它的帧的相机系
+triangulate(frame_count, Ps, Rs, tic, ric)，把
+- optimization()</p>
+<pre><code>				- vector2double()
+
+					- 填充para_Pose、para_SpeedBias、para_Ex_Pose、para_Feature、para_Td
+</code></pre>
+<p>其中para_Feature是逆深度，取自于featurePerId.estimated_depth的倒数，且只有4帧及以上追踪到这个特征点才考虑</p>
+<pre><code>				- 添加参数块
+				- 添加残差块（imu、视觉、先验）
+				- ceres::Solve()
+				- double2vector()
+
+					- 把double数组填进Ps、Rs等
+					- setDepth(dep)
+
+						- 设置featurePerId的estimated_depth，通过深度正负设置featurePerId的solve_flag为1或2，为之后的removeFailures()使用
+
+				- 边缘化
+
+					- 边缘化最老帧
+
+						- vector2double()
+						- 把最老帧有关的因子 （先验因子、imu因子、视觉因子和drop_set增加进marginalization_info中
+						- 求雅克比和残差
+</code></pre>
+<p>marginalization_info-&gt;preMarginalize()
+- 构建H和b，反解出J和b
+marginalization_info-&gt;marginalize()
+- 填充addr_shift
+- 新值赋给旧值</p>
+<pre><code>					- 边缘化次新帧
+
+						- vector2double()
+						- 边缘化先验因子中和次新帧有关的变量，通过drop_set的形式添加进marginalization_info中
+						- marginalization_info-&gt;preMarginalize()
+						- marginalization_info-&gt;marginalize()
+						- 填充addr_shift
+						- 新值赋给旧值
+
+			- 外点检测
+</code></pre>
+<p>outliersRejection(removeIndex)</p>
+<pre><code>				- 获得这个特征点首次观测的帧和共视帧
+				- 求重投影误差
+</code></pre>
+<p>reprojectionError
+- 如果是双目，要增加和共视帧右目的重投影误差
+- 平均误差大于阈值，认为是外点</p>
+<pre><code>			- 去除外点
+</code></pre>
+<p>removeOutlier(removeIndex)</p>
+<pre><code>				- 根据removeIndex把feature中对应的特征点去除
+
+			- removeOutliers(removeIndex)
+
+				- 在featureTracker中把prev_pts、ids、track_cnt对应的点去除
+
+			- 预测下一帧特征点出现的位置
+</code></pre>
+<p>predictPtsInNextFrame()</p>
+<pre><code>				- 获得的当前帧和上一帧的位姿
+</code></pre>
+<p>getPoseInWorldFrame()
+- 假设下一帧的位姿和当前帧到前一帧的位姿相同，进而求下一帧位姿
+- 通过位姿重投影，形成预测点
+- setPrediction(predictPts)</p>
+<pre><code>					- 填充featuretracker的predict_pts，存的是真正的像素坐标，用于下一帧光流追踪
+
+			- slideWindow()
+
+				- 最老帧
+
+					- 信息前移
+</code></pre>
+<p>Ps、Rs、Headers、pre_integrations、dt_buf、linear_acceleration_buf、angular_velocity_buf、Vs、Bas、Bgs
+- 第10帧信息赋值给第11帧，重新创建第11帧的预积分，清空第11帧的buf
+- 从all_image_frame中删除最老帧之前的帧
+- slideWindowOld()</p>
+<pre><code>						- removeBackShiftDepth(R0, P0, R1, P1)
+
+							- start_frame--
+							- 更新featurePerId和featurePerFrame
+							- 重新计算featurePerId的estimated_depth
+
+						- removeBack()
+
+							- start_frame--
+							- 更新featurePerId和featurePerFrame
+
+				- 次新帧
+
+					- 用最新帧信息覆盖次新帧
+					- 对于imu，最新帧的buf直接拼接到次新帧上（此时的次新帧是最新帧，信息已被覆盖）
+					- 对第11帧重新创建预积分，清空第11帧的buf
+					- slideWindowNew()
+
+						- removeFront(frame_count)
+
+							- 更新featurePerId和featurePerFrame
+
+			- 把滑窗中深度为负的点移除
+</code></pre>
+<p>removeFailures()
+- 将滑窗中的Ps填充进key_poses数组中，用于可视化
+- 更新last_RP、last_R0P0
+- updateLatestStates()</p>
+<pre><code>				- 更新latest_xxx变量，用于fastpredictimu()
+				- 用最新的数据不断fastpredictimu()
+
+		- printStatistics()输出数据
+		- 向rziv发布
+</code></pre>
 <h2 id="integrationbase">IntegrationBase</h2>
 <h3 id="repropagate">repropagate()</h3>
 <ul>
@@ -925,12 +693,11 @@ result_linearized_ba, result_linearized_bg, 1)</p>
 <li></li>
 </ul>
 </li>
-<li>
-<p>新值赋给旧值</p>
-</li>
 </ul>
 </li>
 </ul>
+<pre><code>- 新值赋给旧值
+</code></pre>
 <h3 id="evaluate">evaluate()</h3>
 <ul>
 <li></li>
@@ -1001,15 +768,13 @@ cost_function-&gt;Evaluate(parameter_blocks.data(), residuals.data(), raw_jacobi
 <li></li>
 </ul>
 </li>
-<li>
-<p>将H和b分解出J和e</p>
-<ul>
-<li></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<pre><code>- 将H和b分解出J和e
+
+	- 
+</code></pre>
 <h3 id="marginalizationfactor-1">MarginalizationFactor</h3>
 <ul>
 <li>

@@ -8,10 +8,9 @@
         <title>今天你也要来点cmake吗 - This is DYH</title><meta name="Description" content="今天你也要来点cmake吗"><meta property="og:title" content="今天你也要来点cmake吗" />
 <meta property="og:description" content="今天你也要来点cmake吗" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/" />
-<meta property="og:image" content="https://dyhgo.github.io/logo.png"/>
+<meta property="og:url" content="https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-10-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2020-10-06T00:00:00+00:00" /><meta property="og:site_name" content="This is DYH" />
+<meta property="article:modified_time" content="2020-10-06T00:00:00+00:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
 
@@ -27,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97\/"
-        },"genre": "posts","keywords": "cpp, slam","wordcount":  1814 ,
+        },"genre": "posts","keywords": "cpp, slam","wordcount":  1813 ,
         "url": "https:\/\/dyhgo.github.io\/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97\/","datePublished": "2020-10-06T00:00:00+00:00","dateModified": "2020-10-06T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -108,7 +107,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">今天你也要来点cmake吗</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a>&nbsp;<a href="/categories/slam/"><i class="far fa-folder fa-fw"></i>slam</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1814 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1813 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/" class="leancloud_visitors" data-flag-title="今天你也要来点cmake吗">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
@@ -170,17 +169,17 @@
 <p><code>tt</code>文件夹下的<code>CMakeLists.txt</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">cmake_minimum_required(VERSION 3.5)
-project(sayHello)
-add_subdirectory(lib)
-add_subdirectory(src)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cmake_minimum_required(VERSION 3.5)
+</span></span><span class="line"><span class="cl">project(sayHello)
+</span></span><span class="line"><span class="cl">add_subdirectory(lib)
+</span></span><span class="line"><span class="cl">add_subdirectory(src)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解释一下，<code>cmake_minimum_required</code> 声明版本，不加构建的时候会报不是很严重的错</p>
 <p><code>project</code> 声明该工程的名字  <code>add_subdirectory</code> 关联子目录</p>
@@ -190,41 +189,41 @@ add_subdirectory(src)
 <p><code>hello.c</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&#34;hello.h&#34;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="kt">void</span> <span class="nf">sayHello</span><span class="p">(){</span><span class="n">printf</span><span class="p">(</span><span class="s">&#34;hello slam</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;hello.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">void</span> <span class="nf">sayHello</span><span class="p">(){</span><span class="nf">printf</span><span class="p">(</span><span class="s">&#34;hello slam</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>hello.h</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#pragma once
-</span><span class="cp"></span><span class="kt">void</span> <span class="nf">sayHello</span><span class="p">();</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#pragma once
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">void</span> <span class="nf">sayHello</span><span class="p">();</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>CMakeLists.txt</code>  （为了追踪，这几乎每个文件夹都有）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">add_library(hello SHARED hello.c)
-set(CMAKE_INSTALL_PREFIX /usr/local)
-install(TARGETS hello LIBRARY DESTINATION lib)
-install(FILES hello.h DESTINATION include)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">add_library(hello SHARED hello.c)
+</span></span><span class="line"><span class="cl">set(CMAKE_INSTALL_PREFIX /usr/local)
+</span></span><span class="line"><span class="cl">install(TARGETS hello LIBRARY DESTINATION lib)
+</span></span><span class="line"><span class="cl">install(FILES hello.h DESTINATION include)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解释一下 <code>add_library(hello SHARED hello.c)</code>   第一个参数指库的名字，如果是<code>hello</code>，库的名字会自动变成<code>libhello</code>  第二个参数指代库的类型（共享库（动态库），静态库） ，分别对应 <code>SHARED</code> <code>STATIC</code> ，如果是动态库则生成 <code>libhello.so</code> 如果是静态库，则生成 <code>libhello.a</code> ，第三个参数是库的源代码</p>
 <p><code>set(CMAKE_INSTALL_PREFIX /usr/local)</code>  <code>CMAKE_INSTALL_PREFIX</code>这是一个cmake变量，安装时路径是<code>&lt;prefix&gt;/&lt;custom&gt;</code></p>
@@ -234,15 +233,15 @@ install(FILES hello.h DESTINATION include)
 <p>在<code>build</code>文件夹下</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-bash" data-lang="bash">sudo cmake ..
-sudo make
-sudo make install
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo cmake ..
+</span></span><span class="line"><span class="cl">sudo make
+</span></span><span class="line"><span class="cl">sudo make install
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解释一下，这是cmake的最常用、最基本的命令， <code>..</code>表示用上一级的<code>CMakeLists.txt</code></p>
 <p><code>install</code>是安装命令，构建之后，会在<code>build</code>文件夹下生成与<code>tt</code>文件夹下类似的文件（注意这句话）</p>
@@ -262,28 +261,28 @@ sudo make install
 <p><code>useHello.c</code>  （注意<code>hello.h</code>要用双引号，不能用尖括号）</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#include</span> <span class="cpf">&#34;hello.h&#34;</span><span class="cp">
-</span><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">){</span><span class="n">sayHello</span><span class="p">();}</span>
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;hello.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span><span class="o">**</span> <span class="n">argv</span><span class="p">){</span><span class="nf">sayHello</span><span class="p">();}</span>
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>CMakeLists.txt</code></p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">add_executable(sayHello useHello.c)
-include_directories(/usr/local/include)
-link_directories(/usr/local/lib)
-target_link_libraries(sayHello hello)
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">add_executable(sayHello useHello.c)
+</span></span><span class="line"><span class="cl">include_directories(/usr/local/include)
+</span></span><span class="line"><span class="cl">link_directories(/usr/local/lib)
+</span></span><span class="line"><span class="cl">target_link_libraries(sayHello hello)
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>解释一下，<code>add_executable(sayHello useHello.c)</code> 第一个参数是程序名（自定义），第二个参数是程序源文件，这条指令的作用就是它的名字所描述的</p>
 <p><code>include_directories(/usr/local/include)</code>  注意，这条语句并不是包含了哪些目录的库（这么理解似乎也没什么问题），而是在包含库之后，它应该在哪个路径下搜索，由于<code>hello.h</code>是相对路径，如果装在<code>/usr/include</code>就没事了，因为它是默认的搜索路径，但是现在装在了 <code>/usr/local/include</code> 所以就要增加搜索路径（导向作用）</p>
@@ -294,7 +293,7 @@ target_link_libraries(sayHello hello)
 <h2 id="文件结构">文件结构</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
 </span><span class="lnt"> 3
 </span><span class="lnt"> 4
@@ -311,28 +310,26 @@ target_link_libraries(sayHello hello)
 </span><span class="lnt">15
 </span><span class="lnt">16
 </span><span class="lnt">17
-</span><span class="lnt">18
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">tt ---------------------------
- |
- |  build  -------------------
-          |     。。。
-          |     。。。
-          
-    lib ----------------------
-          |   hello.c
-          |   hello.h
-          |   CMakeLists.txt
-          
-    src -----------------------
-          |   useHello.c
-          |   CMakeLists.txt
-          
-    CMakeLists.txt ------------
-      
-
-</code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tt ---------------------------
+</span></span><span class="line"><span class="cl"> |
+</span></span><span class="line"><span class="cl"> |  build  -------------------
+</span></span><span class="line"><span class="cl">          |     。。。
+</span></span><span class="line"><span class="cl">          |     。。。
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">    lib ----------------------
+</span></span><span class="line"><span class="cl">          |   hello.c
+</span></span><span class="line"><span class="cl">          |   hello.h
+</span></span><span class="line"><span class="cl">          |   CMakeLists.txt
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">    src -----------------------
+</span></span><span class="line"><span class="cl">          |   useHello.c
+</span></span><span class="line"><span class="cl">          |   CMakeLists.txt
+</span></span><span class="line"><span class="cl">          
+</span></span><span class="line"><span class="cl">    CMakeLists.txt ------------
+</span></span><span class="line"><span class="cl">      
+</span></span></code></pre></td></tr></table>
 </div>
 </div><p>cmake好难，还有很多想写。。。下次一定</p>
 </div><div class="post-footer" id="post-footer">

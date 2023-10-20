@@ -73,6 +73,6 @@
     <pubDate>Sat, 04 Jul 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E6%9F%90%E4%B8%8D%E7%A7%91%E5%AD%A6%E7%9A%84%E6%9A%91%E5%81%87%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/</guid>
-    <description><![CDATA[简单思维 题目 题解 直接法，注意数组大小爆long long 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 #include&lt;bits/stdc++.h&gt; using ll = long long; const ll mod = 1e6+3; ll fac[mod+2]; int main(){ fac[0] = 1LL; fac[1] = 1LL; for(ll i=2;i&lt;mod+2;i++){ fac[i] = i*fac[i-1]; fac[i]]]></description>
+    <description><![CDATA[简单思维 题目 题解 直接法，注意数组大小爆long long 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include&lt;bits/stdc++.h&gt; using ll = long long; const ll mod = 1e6+3; ll fac[mod+2]; int main(){ fac[0] = 1LL; fac[1] = 1LL; for(ll i=2;i&lt;mod+2;i++){ fac[i] = i*fac[i-1]; fac[i] %=]]></description>
 </item></channel>
 </rss>
