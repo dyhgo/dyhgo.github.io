@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2023/10/21 11:58" placement="top" color="green">
+        <h4>版本V2.2<br>更新了文章左上角的视频，现在视频为cs2 IEM 悉尼，G2 vs Ence</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2023/10/18 00:17" placement="top" color="blue">
         <h4>好久没更新网站了，随便写点啥<br>不知不觉已经研二了，马上面临找工作和毕业论文的双重焦虑😫<br>所以说cs2什么时候能优化好<br>anyway, have a good day and enjoy life😀<br>下一次更新又会是什么时候</h4>
     </el-timeline-item>

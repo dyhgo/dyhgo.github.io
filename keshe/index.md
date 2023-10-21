@@ -13,7 +13,6 @@
 </head>
 <body>
 <div id="app">
-
 <el-input
         type="textarea"
         :rows="6"
@@ -83,12 +82,12 @@
     function func(){
         var tmp = document.getElementById('qwe');
         var str = tmp.value;
-
+    
         var fstr = '';
-
+    
         // tmp = document.getElementById('zxc');
         // tmp.value = str;
-
+    
         function do_word(s) {
             fstr += '(';
             fstr += dict[s];
@@ -96,7 +95,7 @@
             fstr += s;
             fstr += ') ';
         }
-
+    
         function do_id(s) {
             fstr += '(';
             fstr += 10;
@@ -104,7 +103,7 @@
             fstr += s;
             fstr += ') ';
         }
-
+    
         function do_num(s) {
             fstr += '(';
             fstr += 11;
@@ -112,7 +111,7 @@
             fstr += s;
             fstr += ') ';
         }
-
+    
         function do_symbol(s) {
             fstr += '(';
             fstr += dict[s];
@@ -138,7 +137,7 @@
             '<' : 20, '<>' : 21, '<=' : 22, '>' : 23, '>=' : 24, '=' : 25, ';' : 26,
             '(' : 27, ')' : 28, '#' : 0};
         var word = new Array('begin', 'if', 'then', 'while', 'do', 'end');
-
+    
         var i = 0;
         while(str[i] != '#'){
             var ch = str[i];
@@ -188,7 +187,7 @@
 
         tmp = document.getElementById('zxc');
         tmp.value = fstr;
-
+    
     }
 
 
@@ -199,26 +198,26 @@
     function func2() {
         var tmp = document.getElementById('qwe');
         var str = tmp.value;
-
+    
         var fstr = '';
-
+    
         var st_lex = [];
         var st_tok = [];
-
+    
         const NUM = 256, DIV = 257, MOD = 258, ID = 259, DONE = 260, NONE = -1, EOSTR = '\0';
-
+    
         const BUF_SIZE = 100, SYM_SIZE = 200;
-
+    
         var lookahead, lineno = 1, tokenval = NONE;
-
+    
         var lexbuf = '';
-
+    
         var I = 0;
-
+    
         var eflag = false;
-
+    
         var estr = '';
-
+    
         function emit(type, tval) {
             switch (type) {
                 case '+':
@@ -243,7 +242,7 @@
                     return;
             }
         }
-
+    
         function error(s) {
             fstr += 'line ' + lineno + ': ' + s + '\n';
             eflag = true;
@@ -254,7 +253,7 @@
             //alert('qqq');
             throw new  Error ('error');
         }
-
+    
         function insert(s, num) {
             if(st_lex.length >= SYM_SIZE){
                 error('symbol table full');
@@ -262,20 +261,20 @@
             st_lex.push(s);
             st_tok.push(num);
         }
-
+    
         function init() {
             insert('', 0);
             insert('div', DIV);
             insert('mod', MOD);
         }
-
+    
         function lookup(s) {
             for(var i = 1; i < st_lex.length; ++i){
                 if(st_lex[i] == s) return i;
             }
             return 0;
         }
-
+    
         function lex() {
             var tmp;
             while(true){
@@ -302,7 +301,7 @@
                         tmp = str[I];
                         I++;
                         ind++;
-
+    
                         var tmps = lexbuf;
                         if(tmps == 'DIV' || tmps == 'MOD'){
                             break;
@@ -311,7 +310,7 @@
                             error('the length of identifier is too long');
                         }
                     }
-
+    
                     if(tmp != '#'){
                         I--;
                     }
@@ -334,7 +333,7 @@
                         tokenval = pos;
                         return ID;
                     }
-
+    
                 }else if(tmp == '#'){
                     return DONE;
                 }else{
@@ -343,13 +342,13 @@
                 }
             }
         }
-
+    
         function match(x) {
             if(lookahead == x){
                 lookahead = lex();
             }else error('syntax error');
         }
-
+    
         function factor() {
             switch (lookahead) {
                 case '(':
@@ -409,7 +408,7 @@
                 }
             }
         }
-
+    
         function parse() {
             lookahead = lex();
             while (lookahead != DONE){
@@ -418,10 +417,10 @@
                 fstr += '\n';
             }
         }
-
+    
         init();
         parse();
-
+    
         tmp = document.getElementById('zxc');
         tmp.value = fstr;
         //if(eflag) tmp.value = estr; else tmp.value = fstr;
@@ -440,13 +439,13 @@
 
 
     function func3() {
-
+    
         var tmp = document.getElementById('qwe');
         var str = tmp.value;
         var fstr = '';
-
+    
         var id = [], tp = [], val = [];
-
+    
         function judge_is_id(s) {
             if ((s.split(' ')).length - 1 > 0){
                 return false;
@@ -456,10 +455,10 @@
             }
             return true;
         }
-
+    
         var int_num, char_num, string_num, float_num;
         int_num = char_num = string_num = float_num = 0;
-
+    
         var i = 0;
         while (str[i] != ';'){
             if(str[i] == ' '){
@@ -489,24 +488,24 @@
                 break;
             }
         }
-
+    
         var foo = str.split(',');
-
+    
         for(i = 0; i < foo.length; ++i){
             var cnt = foo[i];
             var left = cnt.split('=')[0];
             var right = cnt.split('=')[1];
-
+    
             left = left.replace(/(^\s*)|(\s*$)/g, "");
             right = right.replace(/(^\s*)|(\s*$)/g, "");
-
+    
             if(!judge_is_id(left)){
                 id.push(left);
                 tp.push('Wrong! It is not an identifier!');
                 val.push(' ');
             }else {
                 id.push(left);
-
+    
                 if(right[0] == '\'' && right[2] == '\''){
                     tp.push('char');
                     val.push(right[1]);
@@ -536,11 +535,11 @@
                         val.push(right);
                     }
                 }
-
+    
             }
-
+    
         }
-
+    
         var bar = id.length;
         for(i = 0; i < bar; ++i){
             fstr += (id[i] + ' ( ' + tp[i] + ' , ' + val[i] + ' ) \n');
@@ -565,11 +564,11 @@
 
 
     function func4() {
-
+    
         var tmp = document.getElementById('qwe');
         var str = tmp.value;
         var fstr = '';
-
+    
         var dict = {
             'S' : {
                 'm' : 'AT',
@@ -595,9 +594,9 @@
                 '(' : '(S)'
             }
         };
-
+    
         no_tm = ['m', '+', '*', '(', ')', '#'];
-
+    
         function PRINT(no, stk, s, pd) {
             var tchar = stk.slice(stk.length - 1, stk.length);
             if(no_tm.indexOf(tchar) == -1){
@@ -625,7 +624,7 @@
         var num = 1;
         var ind = 0;
         var stack = '#S';
-
+    
         while (stack.length != 1){
             if(stack.slice(stack.length - 1, stack.length) == str[ind]){
                 PRINT(num, stack, str, '\'' + str[ind] + '\' match');
@@ -658,12 +657,12 @@
                 }
             }
         }
-
+    
         PRINT(num, stack, str, 'acc');
-
+    
         tmp = document.getElementById('zxc');
         tmp.value = fstr;
-
+    
     }
 
 
@@ -692,10 +691,10 @@
         var tmp = document.getElementById('zxc');
         tmp.value = '';
     }
-
+    
     function func7(){
         var tmp = document.getElementById('qwe');
-
+    
         var fstr = '实验一: begin x:=9;if x>0 then x:=2*x+1/3;end#\n实验二: 4 - 5 * 6 div 4 + 8 mod 2;#\n实验三: const count=10,sum=81.5,char1=\'f\',string1=\"hj\", max=169;\n实验四: m+m*m#\n实验五: (2+3)*5\n';
         tmp.value = fstr;
     }
