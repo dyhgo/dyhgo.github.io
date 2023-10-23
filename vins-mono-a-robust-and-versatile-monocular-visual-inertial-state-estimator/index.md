@@ -108,10 +108,23 @@ $$
 \\end{array}
 $$
 
+{{< admonition type=tip title="This is a tip" open=false >}}
+一个 **技巧** 横幅
+{{< /admonition >}}
 
 
+行内公式: {{< raw >}}\(\mathbf{E}=\sum_{i} \mathbf{E}_{i}=\mathbf{E}_{1}+\mathbf{E}_{2}+\mathbf{E}_{3}+\cdots\){{< /raw >}}
 
-$$
+公式块:
+
+{{< raw >}}
+\[ a=b+c \\ d+e=f \]
+{{< /raw >}}
+
+
+原始的带有 Markdown 语法的内容: {{< raw >}}**Hello**{{< /raw >}}
+
+{{<raw>}}
 \boldsymbol{\Omega}(\boldsymbol{\omega})=\left[\begin{array}{cc}
 -\lfloor\boldsymbol{\omega}\rfloor_{\times} & \boldsymbol{\omega} \\
 -\boldsymbol{\omega}^{T} & 0
@@ -120,8 +133,11 @@ $$
 \omega_{z} & 0 & -\omega_{x} \\
 -\omega_{y} & \omega_{x} & 0
 \end{array}\right]
-$$
+{{</raw>}}
 
+{{<raw>}}
+123
+{{</raw>}}
 
 由上面的公式可以看出，Rwt是待优化变量，每次优化调整时，就需要重新传递才能使其他量更准确，很浪费时间，所以采用预积分的策略
 
