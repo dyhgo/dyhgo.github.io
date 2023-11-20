@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>mysql - This is DYH</title><meta name="Description" content="mysql"><meta property="og:title" content="mysql" />
+<meta property="og:description" content="mysql" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/mysql/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-20T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="mysql"/>
+<meta name="twitter:description" content="mysql"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/mysql/" /><link rel="prev" href="https://dyhgo.github.io/%E8%9B%8B%E7%82%92%E9%A5%AD/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "mysql",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/mysql\/"
+        },"genre": "posts","keywords": "mysql","wordcount":  7202 ,
+        "url": "https:\/\/dyhgo.github.io\/mysql\/","datePublished": "2023-11-20T00:00:00+00:00","dateModified": "2023-11-20T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "mysql"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/mysql/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/mysql/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">mysql</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/database/"><i class="far fa-folder fa-fw"></i>database</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-11-20">2023-11-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 7202 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 15 分钟&nbsp;<span id="/mysql/" class="leancloud_visitors" data-flag-title="mysql">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础">基础</a>
+      <ul>
+        <li><a href="#sql">SQL</a>
+          <ul>
+            <li><a href="#sql语言分类">SQL语言分类</a></li>
+            <li><a href="#ddl">DDL</a>
+              <ul>
+                <li><a href="#数据类型">数据类型</a></li>
+                <li><a href="#数据库">数据库</a></li>
+                <li><a href="#表">表</a></li>
+              </ul>
+            </li>
+            <li><a href="#dml">DML</a></li>
+            <li><a href="#dql">DQL</a>
+              <ul>
+                <li><a href="#基础查询">基础查询</a></li>
+                <li><a href="#条件查询">条件查询</a></li>
+                <li><a href="#聚合函数">聚合函数</a></li>
+                <li><a href="#分组查询">分组查询</a></li>
+                <li><a href="#排序查询">排序查询</a></li>
+                <li><a href="#分页查询">分页查询</a></li>
+                <li><a href="#语句的执行顺序">语句的执行顺序</a></li>
+              </ul>
+            </li>
+            <li><a href="#dcl">DCL</a></li>
+          </ul>
+        </li>
+        <li><a href="#函数">函数</a></li>
+        <li><a href="#约束">约束</a></li>
+        <li><a href="#多表查询">多表查询</a>
+          <ul>
+            <li><a href="#内连接">内连接</a></li>
+            <li><a href="#外连接">外连接</a></li>
+            <li><a href="#自连接">自连接</a></li>
+            <li><a href="#联合查询">联合查询</a></li>
+            <li><a href="#子查询">子查询</a>
+              <ul>
+                <li><a href="#标量子查询">标量子查询</a></li>
+                <li><a href="#行子查询">行子查询</a></li>
+                <li><a href="#列子查询">列子查询</a></li>
+                <li><a href="#表子查询">表子查询</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#事务">事务</a>
+          <ul>
+            <li><a href="#acid">ACID</a></li>
+            <li><a href="#并发事务带来的问题">并发事务带来的问题</a></li>
+            <li><a href="#事务隔离级别重要">事务隔离级别（重要）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#进阶">进阶</a>
+      <ul>
+        <li><a href="#存储引擎">存储引擎</a>
+          <ul>
+            <li><a href="#innodb">InnoDB</a></li>
+            <li><a href="#myisam">MyISAM</a></li>
+            <li><a href="#memory">Memory</a></li>
+          </ul>
+        </li>
+        <li><a href="#索引-重要">索引 （重要）</a>
+          <ul>
+            <li><a href="#结构">结构</a>
+              <ul>
+                <li><a href="#b树">b树</a></li>
+                <li><a href="#b树-1">b+树</a></li>
+                <li><a href="#hash表">hash表</a></li>
+              </ul>
+            </li>
+            <li><a href="#分类">分类</a></li>
+            <li><a href="#语法">语法</a></li>
+            <li><a href="#sql性能分析">SQL性能分析</a>
+              <ul>
+                <li><a href="#查看数据库增删改查的频次">查看数据库增删改查的频次</a></li>
+                <li><a href="#慢查询日志">慢查询日志</a></li>
+                <li><a href="#查看每条语句耗时">查看每条语句耗时</a></li>
+                <li><a href="#查询执行语句详情">查询执行语句详情</a></li>
+              </ul>
+            </li>
+            <li><a href="#使用规则">使用规则</a>
+              <ul>
+                <li><a href="#最左前缀法则">最左前缀法则</a></li>
+                <li><a href="#索引失效情况">索引失效情况</a></li>
+                <li><a href="#sql提示">SQL提示</a></li>
+                <li><a href="#覆盖索引和回表查询">覆盖索引和回表查询</a></li>
+                <li><a href="#前缀索引">前缀索引</a></li>
+                <li><a href="#单列索引和联合索引">单列索引和联合索引</a></li>
+              </ul>
+            </li>
+            <li><a href="#设计原则">设计原则</a></li>
+          </ul>
+        </li>
+        <li><a href="#sql优化">SQL优化</a>
+          <ul>
+            <li><a href="#插入数据">插入数据</a>
+              <ul>
+                <li><a href="#插入少量数据">插入少量数据</a></li>
+                <li><a href="#插入大量数据">插入大量数据</a></li>
+              </ul>
+            </li>
+            <li><a href="#主键优化">主键优化</a></li>
+            <li><a href="#order-by优化">order by优化</a></li>
+            <li><a href="#group-by优化">group by优化</a></li>
+            <li><a href="#limit优化">limit优化</a></li>
+            <li><a href="#count优化">count优化</a></li>
+            <li><a href="#update优化">update优化</a></li>
+          </ul>
+        </li>
+        <li><a href="#视图">视图</a>
+          <ul>
+            <li><a href="#检查选项">检查选项</a>
+              <ul>
+                <li><a href="#cascaded">cascaded</a></li>
+                <li><a href="#local">local</a></li>
+              </ul>
+            </li>
+            <li><a href="#视图的更新限制">视图的更新限制</a></li>
+            <li><a href="#视图的作用">视图的作用</a></li>
+          </ul>
+        </li>
+        <li><a href="#存储过程">存储过程</a>
+          <ul>
+            <li><a href="#基本语法">基本语法</a></li>
+            <li><a href="#变量">变量</a>
+              <ul>
+                <li><a href="#系统变量">系统变量</a></li>
+                <li><a href="#用户变量">用户变量</a></li>
+                <li><a href="#局部变量">局部变量</a></li>
+              </ul>
+            </li>
+            <li><a href="#条件语句">条件语句</a>
+              <ul>
+                <li><a href="#if">if</a></li>
+                <li><a href="#case">case</a></li>
+              </ul>
+            </li>
+            <li><a href="#参数和返回值">参数和返回值</a></li>
+            <li><a href="#循环">循环</a>
+              <ul>
+                <li><a href="#while">while</a></li>
+                <li><a href="#repeat">repeat</a></li>
+                <li><a href="#loop">loop</a></li>
+              </ul>
+            </li>
+            <li><a href="#指针">指针</a></li>
+            <li><a href="#处理程序">处理程序</a></li>
+            <li><a href="#函数-1">函数</a></li>
+          </ul>
+        </li>
+        <li><a href="#触发器">触发器</a></li>
+        <li><a href="#锁-重要">锁 （重要）</a>
+          <ul>
+            <li><a href="#全局锁">全局锁</a></li>
+            <li><a href="#表级锁">表级锁</a>
+              <ul>
+                <li><a href="#表锁">表锁</a></li>
+                <li><a href="#元数据锁">元数据锁</a></li>
+                <li><a href="#意向锁">意向锁</a></li>
+              </ul>
+            </li>
+            <li><a href="#行级锁">行级锁</a>
+              <ul>
+                <li><a href="#行锁">行锁</a></li>
+                <li><a href="#间隙锁临键锁">间隙锁/临键锁</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#innodb引擎">InnoDB引擎</a>
+          <ul>
+            <li><a href="#逻辑存储结构">逻辑存储结构</a></li>
+            <li><a href="#架构">架构</a>
+              <ul>
+                <li><a href="#内存架构">内存架构</a></li>
+                <li><a href="#磁盘架构">磁盘架构</a></li>
+                <li><a href="#后台线程">后台线程</a></li>
+              </ul>
+            </li>
+            <li><a href="#事务的原理">事务的原理</a>
+              <ul>
+                <li><a href="#redo-log">redo log</a></li>
+                <li><a href="#undo-log">undo log</a></li>
+              </ul>
+            </li>
+            <li><a href="#mvcc重要">MVCC（重要）</a>
+              <ul>
+                <li><a href="#隐藏字段">隐藏字段</a></li>
+                <li><a href="#undolog">undolog</a></li>
+                <li><a href="#readview">readview</a></li>
+                <li><a href="#mvcc原理rc级别">MVCC原理（RC级别）</a></li>
+                <li><a href="#mvcc原理rr级别">MVCC原理（RR级别）</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#mysql管理">MySQL管理</a>
+          <ul>
+            <li><a href="#系统级数据库">系统级数据库</a></li>
+            <li><a href="#mysql常用工具">mysql常用工具</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#运维">运维</a>
+      <ul>
+        <li><a href="#日志">日志</a>
+          <ul>
+            <li><a href="#错误日志">错误日志</a></li>
+            <li><a href="#二进制日志">二进制日志</a></li>
+            <li><a href="#查询日志">查询日志</a></li>
+            <li><a href="#慢查询日志-1">慢查询日志</a></li>
+          </ul>
+        </li>
+        <li><a href="#主从复制">主从复制</a></li>
+        <li><a href="#分库分表">分库分表</a></li>
+        <li><a href="#读写分离">读写分离</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="基础">基础</h2>
+<h3 id="sql">SQL</h3>
+<h4 id="sql语言分类">SQL语言分类</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2afe0b4cdc0245b98d53514141396a15.png"
+        data-srcset="https://img-blog.csdnimg.cn/2afe0b4cdc0245b98d53514141396a15.png, https://img-blog.csdnimg.cn/2afe0b4cdc0245b98d53514141396a15.png 1.5x, https://img-blog.csdnimg.cn/2afe0b4cdc0245b98d53514141396a15.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2afe0b4cdc0245b98d53514141396a15.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="ddl">DDL</h4>
+<h5 id="数据类型">数据类型</h5>
+<p>数值型</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/1148cd5ca9e743c0a5fe8a5853ab8af6.png"
+        data-srcset="https://img-blog.csdnimg.cn/1148cd5ca9e743c0a5fe8a5853ab8af6.png, https://img-blog.csdnimg.cn/1148cd5ca9e743c0a5fe8a5853ab8af6.png 1.5x, https://img-blog.csdnimg.cn/1148cd5ca9e743c0a5fe8a5853ab8af6.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/1148cd5ca9e743c0a5fe8a5853ab8af6.png"
+        title="请添加图片描述" /></p>
+<p>字符串类型</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/aa69d47a96fb4404a688d71fdb51c6d9.png"
+        data-srcset="https://img-blog.csdnimg.cn/aa69d47a96fb4404a688d71fdb51c6d9.png, https://img-blog.csdnimg.cn/aa69d47a96fb4404a688d71fdb51c6d9.png 1.5x, https://img-blog.csdnimg.cn/aa69d47a96fb4404a688d71fdb51c6d9.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/aa69d47a96fb4404a688d71fdb51c6d9.png"
+        title="请添加图片描述" /></p>
+<p>日期和时间型</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/5fe2320a10ca4bc0bbfe6ea349d4bec7.png"
+        data-srcset="https://img-blog.csdnimg.cn/5fe2320a10ca4bc0bbfe6ea349d4bec7.png, https://img-blog.csdnimg.cn/5fe2320a10ca4bc0bbfe6ea349d4bec7.png 1.5x, https://img-blog.csdnimg.cn/5fe2320a10ca4bc0bbfe6ea349d4bec7.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/5fe2320a10ca4bc0bbfe6ea349d4bec7.png"
+        title="请添加图片描述" /></p>
+<h5 id="数据库">数据库</h5>
+<p>查数据库<code>show databases;</code></p>
+<p>查当前数据库<code>select database();</code></p>
+<p>增加数据库<code>create database [if not exists]  xxx [default charset xxx] [collate xxx];</code></p>
+<p>删除数据<code>drop database [if exists] xxx;</code></p>
+<p>使用数据库<code>use xxx;</code></p>
+<h5 id="表">表</h5>
+<p>查询当前数据库的所有表<code>show tables;</code></p>
+<p>查询某个表的结构<code>desc xxx;</code></p>
+<p>查询建表的语句<code>show create table xxx;</code></p>
+<p>创建表</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">xxx</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">id</span><span class="w"> </span><span class="nb">int</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;student id&#39;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">name</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;name&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">)</span><span class="w"> </span><span class="k">comment</span><span class="w"> </span><span class="s1">&#39;student table&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>对已存在的表添加新的字段<code>alter table {table name} add {field name} {type} [comment] [restraint];</code></p>
+<p>对已存在的表修改某个字段的数据类型<code>alter table {table name} modify {field name} {new type};</code></p>
+<p>对已存在的表修改某个字段<code>alter table {table name} change {old field name} {new field name} {type} [comment] [restraint];</code></p>
+<p>删除字段<code>alter table {table name} drop {filed name};</code></p>
+<p>修改表名<code>alter table {table name} rename to {new table name};</code></p>
+<h4 id="dml">DML</h4>
+<p>添加数据
+<code>insert into {table name} ( {field name1},  {field name2}, ...) values ( {value1}, {value2}, ...);</code></p>
+<p>给全部字段添加数据
+<code>insert into {table name} values ( {value1}, {value2}, ...);</code></p>
+<p>一次性插入多条数据</p>
+<p>修改某条数据
+<code>update {table name} set {field name1} = {value1},  {field name2} =  {value2}, ... [where...];</code></p>
+<p>删除某条数据
+<code>delete from {table name} [where...];</code></p>
+<h4 id="dql">DQL</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="err">{</span><span class="n">fields</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="err">{</span><span class="n">tables</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="err">{</span><span class="n">conditions</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">{</span><span class="k">group</span><span class="w"> </span><span class="n">fields</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">having</span><span class="w"> </span><span class="err">{</span><span class="n">conditions</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">{</span><span class="n">sorting</span><span class="w"> </span><span class="n">fields</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">limit</span><span class="w"> </span><span class="err">{</span><span class="n">args</span><span class="err">}</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="基础查询">基础查询</h5>
+<p>查询几个字段的记录</p>
+<p>以下用<code>fd</code>代替<code>field name</code>，<code>tb</code>代替<code>table name</code>，<code>fds</code>代替<code>{fd1}, {fd2}, ...</code></p>
+<p><code>select {fd1}, {fd2}, ... from {tb};</code></p>
+<p><code>select * from {tb};</code></p>
+<p>设置别名，设置别名</p>
+<p><code>select {fd1} [as alias1], {fd2} [as alias2] ... from {tb};</code></p>
+<p>去除重复记录</p>
+<p><code>select distinct {fds} from {tb}</code></p>
+<h5 id="条件查询">条件查询</h5>
+<h5 id="聚合函数">聚合函数</h5>
+<p>count min max avg sum</p>
+<h5 id="分组查询">分组查询</h5>
+<p><code>group by  {fd} having {condition}</code></p>
+<h5 id="排序查询">排序查询</h5>
+<p><code>order by {fd1} asc|desc, {fd2} asc|desc;</code>先按fd1排，然后再排fd2</p>
+<p>asc可以省略</p>
+<h5 id="分页查询">分页查询</h5>
+<h5 id="语句的执行顺序">语句的执行顺序</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="err">{</span><span class="n">fields</span><span class="err">}</span><span class="w"> </span><span class="mi">4</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">from</span><span class="w"> </span><span class="err">{</span><span class="n">tables</span><span class="err">}</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">where</span><span class="w"> </span><span class="err">{</span><span class="n">conditions</span><span class="err">}</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">group</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">{</span><span class="k">group</span><span class="w"> </span><span class="n">fields</span><span class="err">}</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">having</span><span class="w"> </span><span class="err">{</span><span class="n">conditions</span><span class="err">}</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">order</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="err">{</span><span class="n">sorting</span><span class="w"> </span><span class="n">fields</span><span class="err">}</span><span class="w"> </span><span class="mi">5</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">limit</span><span class="w"> </span><span class="err">{</span><span class="n">args</span><span class="err">}</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> 
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dcl">DCL</h4>
+<h3 id="函数">函数</h3>
+<p>字符串函数</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/947dfa4f78a647189d9a7412a2a851a4.png"
+        data-srcset="https://img-blog.csdnimg.cn/947dfa4f78a647189d9a7412a2a851a4.png, https://img-blog.csdnimg.cn/947dfa4f78a647189d9a7412a2a851a4.png 1.5x, https://img-blog.csdnimg.cn/947dfa4f78a647189d9a7412a2a851a4.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/947dfa4f78a647189d9a7412a2a851a4.png"
+        title="在这里插入图片描述" /></p>
+<p>数值函数</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/eb1ec84ccb204e15a86dde948af26bf8.png"
+        data-srcset="https://img-blog.csdnimg.cn/eb1ec84ccb204e15a86dde948af26bf8.png, https://img-blog.csdnimg.cn/eb1ec84ccb204e15a86dde948af26bf8.png 1.5x, https://img-blog.csdnimg.cn/eb1ec84ccb204e15a86dde948af26bf8.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/eb1ec84ccb204e15a86dde948af26bf8.png"
+        title="在这里插入图片描述" /></p>
+<p>日期函数</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/95f7104fd1ff498498ccb584112d521b.png"
+        data-srcset="https://img-blog.csdnimg.cn/95f7104fd1ff498498ccb584112d521b.png, https://img-blog.csdnimg.cn/95f7104fd1ff498498ccb584112d521b.png 1.5x, https://img-blog.csdnimg.cn/95f7104fd1ff498498ccb584112d521b.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/95f7104fd1ff498498ccb584112d521b.png"
+        title="在这里插入图片描述" /></p>
+<p>流程函数</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/f561b692969b41c781c680f2995f43f8.png"
+        data-srcset="https://img-blog.csdnimg.cn/f561b692969b41c781c680f2995f43f8.png, https://img-blog.csdnimg.cn/f561b692969b41c781c680f2995f43f8.png 1.5x, https://img-blog.csdnimg.cn/f561b692969b41c781c680f2995f43f8.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/f561b692969b41c781c680f2995f43f8.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="约束">约束</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/ac0a8b12032f4411a3b6721d6bab54a6.png"
+        data-srcset="https://img-blog.csdnimg.cn/ac0a8b12032f4411a3b6721d6bab54a6.png, https://img-blog.csdnimg.cn/ac0a8b12032f4411a3b6721d6bab54a6.png 1.5x, https://img-blog.csdnimg.cn/ac0a8b12032f4411a3b6721d6bab54a6.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/ac0a8b12032f4411a3b6721d6bab54a6.png"
+        title="请添加图片描述" /></p>
+<p>外键相关的删除更新行为</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2ecb19d719d34ef1883f11357e6cc205.png"
+        data-srcset="https://img-blog.csdnimg.cn/2ecb19d719d34ef1883f11357e6cc205.png, https://img-blog.csdnimg.cn/2ecb19d719d34ef1883f11357e6cc205.png 1.5x, https://img-blog.csdnimg.cn/2ecb19d719d34ef1883f11357e6cc205.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2ecb19d719d34ef1883f11357e6cc205.png"
+        title="请添加图片描述" /></p>
+<h3 id="多表查询">多表查询</h3>
+<h4 id="内连接">内连接</h4>
+<p>查询两张表交集的部分</p>
+<p>隐式内连接</p>
+<p><code>select {fds} from {tbs} where {condition};</code></p>
+<p>显示内连接</p>
+<p><code>select {fds} from {tb1} [inner] join {tb2} on {condition};</code></p>
+<h4 id="外连接">外连接</h4>
+<p>查询某个表所有的信息加上另个相关联的表的部分信息就是外连接</p>
+<p>左外连接</p>
+<p><code>select {fds} from {tb1} left [outer] join {tb2} on {condition};</code></p>
+<p>右外连接</p>
+<p><code>select {fds} from {tb1} right [outer] join {tb2} on {condition};</code></p>
+<h4 id="自连接">自连接</h4>
+<p>必须起别名</p>
+<p><code>select {fds} from {tb1} {alias1} join {tb1} {alias2} on {condition};</code></p>
+<p>自连接可以包含内连接和外连接，只要语法和内连接和外连接一样就行</p>
+<h4 id="联合查询">联合查询</h4>
+<p>把两个查询结果联合成一张表</p>
+<p><code>select {fds} from {tbs} ... union [all] select {fds} from {tbs} ...;</code></p>
+<p>加all表示不对两次查询的结果去重</p>
+<p>与or的区别，如果条件很多则选择union性能更好，查询条件较少，选择or</p>
+<h4 id="子查询">子查询</h4>
+<p>子查询就是where语句的条件是DQL</p>
+<h5 id="标量子查询">标量子查询</h5>
+<p>子查询的结果是一行一列</p>
+<h5 id="行子查询">行子查询</h5>
+<p>子查询的结果是一行多列</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png"
+        data-srcset="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png, https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png 1.5x, https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png"
+        title="请添加图片描述" /></p>
+<h5 id="列子查询">列子查询</h5>
+<p>子查询的结果是一列多行</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png"
+        data-srcset="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png, https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png 1.5x, https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/deb83a4064c54049b7f97559e1b53e91.png"
+        title="请添加图片描述" /></p>
+<h5 id="表子查询">表子查询</h5>
+<p>子查询结果是多行多列</p>
+<h3 id="事务">事务</h3>
+<p>查看事务是自动提交还是手动提交</p>
+<p><code>select @@autocommit;</code></p>
+<p>如果是1，是自动提交，如果是0，是手动提交</p>
+<p>设置提交方式</p>
+<p><code>set @@autocommit=0;</code></p>
+<p>提交事务</p>
+<p>commit;`</p>
+<p>回滚事务，撤销所有未提交的修改</p>
+<p><code>rollback;</code></p>
+<p>开启事务</p>
+<p><code>start transaction;</code></p>
+<p><code>begin;</code></p>
+<h4 id="acid">ACID</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2e5d10d492934c89ad5177e3f428bfcd.png"
+        data-srcset="https://img-blog.csdnimg.cn/2e5d10d492934c89ad5177e3f428bfcd.png, https://img-blog.csdnimg.cn/2e5d10d492934c89ad5177e3f428bfcd.png 1.5x, https://img-blog.csdnimg.cn/2e5d10d492934c89ad5177e3f428bfcd.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2e5d10d492934c89ad5177e3f428bfcd.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="并发事务带来的问题">并发事务带来的问题</h4>
+<p>（没懂）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/b81bb31e1f3f4484b2aa09a36b8adf45.png"
+        data-srcset="https://img-blog.csdnimg.cn/b81bb31e1f3f4484b2aa09a36b8adf45.png, https://img-blog.csdnimg.cn/b81bb31e1f3f4484b2aa09a36b8adf45.png 1.5x, https://img-blog.csdnimg.cn/b81bb31e1f3f4484b2aa09a36b8adf45.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/b81bb31e1f3f4484b2aa09a36b8adf45.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="事务隔离级别重要">事务隔离级别（重要）</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/e4bcdfed6ef74a6f9ac76dd6a630ecef.png"
+        data-srcset="https://img-blog.csdnimg.cn/e4bcdfed6ef74a6f9ac76dd6a630ecef.png, https://img-blog.csdnimg.cn/e4bcdfed6ef74a6f9ac76dd6a630ecef.png 1.5x, https://img-blog.csdnimg.cn/e4bcdfed6ef74a6f9ac76dd6a630ecef.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/e4bcdfed6ef74a6f9ac76dd6a630ecef.png"
+        title="在这里插入图片描述" /></p>
+<p>查看事务隔离级别</p>
+<p><code>select @@transaction_isolation;</code></p>
+<p>设置事务隔离级别</p>
+<p><code>set [session|global] transaction isolation level {read uncommitted | read committed | repeatable read | serializable};</code></p>
+<h2 id="进阶">进阶</h2>
+<p>mysql体系结构</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/368946c889404bc684bc51db9067e5cc.png"
+        data-srcset="https://img-blog.csdnimg.cn/368946c889404bc684bc51db9067e5cc.png, https://img-blog.csdnimg.cn/368946c889404bc684bc51db9067e5cc.png 1.5x, https://img-blog.csdnimg.cn/368946c889404bc684bc51db9067e5cc.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/368946c889404bc684bc51db9067e5cc.png"
+        title="请添加图片描述" /></p>
+<h3 id="存储引擎">存储引擎</h3>
+<p>存储引擎就是存储数据、建立索引、更新/查询数据等技术的实现方式。存储引擎是基于表的，而不是基于库的，所以存储引擎也叫做表类型</p>
+<p>查当前数据库支持的存储引擎</p>
+<p><code>show engines;</code></p>
+<h4 id="innodb">InnoDB</h4>
+<p>特点</p>
+<ul>
+<li>DML操作遵循ACID模型，支持事务</li>
+<li>行级锁，提高并发访问性能</li>
+<li>支持外键约束</li>
+</ul>
+<p>InnoDB把每张数据库存在xxx.ibd文件中，xxx是表名</p>
+<p>InnoDB的逻辑存储结构</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/4641aaeafb7c4dac9ff2bc239ad7738d.png"
+        data-srcset="https://img-blog.csdnimg.cn/4641aaeafb7c4dac9ff2bc239ad7738d.png, https://img-blog.csdnimg.cn/4641aaeafb7c4dac9ff2bc239ad7738d.png 1.5x, https://img-blog.csdnimg.cn/4641aaeafb7c4dac9ff2bc239ad7738d.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/4641aaeafb7c4dac9ff2bc239ad7738d.png"
+        title="请添加图片描述" /></p>
+<h4 id="myisam">MyISAM</h4>
+<p>mysql早期存储引擎</p>
+<p>特点</p>
+<ul>
+<li>不支持事务，不支持外键</li>
+<li>支持表锁，不支持行锁</li>
+<li>访问速度快</li>
+</ul>
+<p>文件</p>
+<ul>
+<li>xxx.sdi 存储表结构信息</li>
+<li>xxx.MYD 存储数据</li>
+<li>xxx.MYI 存储引擎</li>
+</ul>
+<h4 id="memory">Memory</h4>
+<p>memory引擎的表数据存储在内存中，容易收到断电影响，所以作临时表或缓存表用</p>
+<p>特点</p>
+<ul>
+<li>内存存放，速度快</li>
+<li>hash索引</li>
+</ul>
+<p>文件</p>
+<p>xxx.sdi 存储表结构信息</p>
+<p>存储引擎对比（重要）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/7147bcac11ab490bb9b40c879e2dc71f.png"
+        data-srcset="https://img-blog.csdnimg.cn/7147bcac11ab490bb9b40c879e2dc71f.png, https://img-blog.csdnimg.cn/7147bcac11ab490bb9b40c879e2dc71f.png 1.5x, https://img-blog.csdnimg.cn/7147bcac11ab490bb9b40c879e2dc71f.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/7147bcac11ab490bb9b40c879e2dc71f.png"
+        title="请添加图片描述" /></p>
+<p>存储引擎选择</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/0905f519db5a4a7aaaf40875649e440b.png"
+        data-srcset="https://img-blog.csdnimg.cn/0905f519db5a4a7aaaf40875649e440b.png, https://img-blog.csdnimg.cn/0905f519db5a4a7aaaf40875649e440b.png 1.5x, https://img-blog.csdnimg.cn/0905f519db5a4a7aaaf40875649e440b.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/0905f519db5a4a7aaaf40875649e440b.png"
+        title="请添加图片描述" /></p>
+<p>现在一般使用innodb，myisam被mongodb取代，memory被redis取代</p>
+<h3 id="索引-重要">索引 （重要）</h3>
+<h4 id="结构">结构</h4>
+<h5 id="b树">b树</h5>
+<h5 id="b树-1">b+树</h5>
+<h5 id="hash表">hash表</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/a390ddc3929e46c781ff482a5c344844.png"
+        data-srcset="https://img-blog.csdnimg.cn/a390ddc3929e46c781ff482a5c344844.png, https://img-blog.csdnimg.cn/a390ddc3929e46c781ff482a5c344844.png 1.5x, https://img-blog.csdnimg.cn/a390ddc3929e46c781ff482a5c344844.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/a390ddc3929e46c781ff482a5c344844.png"
+        title="在这里插入图片描述" /></p>
+<h4 id="分类">分类</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/ce9c8135c77f4f0e8085ec0b498e5ab6.png"
+        data-srcset="https://img-blog.csdnimg.cn/ce9c8135c77f4f0e8085ec0b498e5ab6.png, https://img-blog.csdnimg.cn/ce9c8135c77f4f0e8085ec0b498e5ab6.png 1.5x, https://img-blog.csdnimg.cn/ce9c8135c77f4f0e8085ec0b498e5ab6.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/ce9c8135c77f4f0e8085ec0b498e5ab6.png"
+        title="在这里插入图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/7c18ca0f2f534b78b56da2b623b354c8.png"
+        data-srcset="https://img-blog.csdnimg.cn/7c18ca0f2f534b78b56da2b623b354c8.png, https://img-blog.csdnimg.cn/7c18ca0f2f534b78b56da2b623b354c8.png 1.5x, https://img-blog.csdnimg.cn/7c18ca0f2f534b78b56da2b623b354c8.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/7c18ca0f2f534b78b56da2b623b354c8.png"
+        title="在这里插入图片描述" /></p>
+<p>有了聚集索引和二级索引后，查数据用的是回表查询</p>
+<h4 id="语法">语法</h4>
+<p>创建索引</p>
+<p><code>create [unique | fulltext] index {index_name} on {table name} ({col_name1}, {col_name2}, ...);</code></p>
+<p>查看索引</p>
+<p><code>show index from {table_name};</code></p>
+<p>删除索引</p>
+<p><code>drop index {index_name} on {table_name};</code></p>
+<h4 id="sql性能分析">SQL性能分析</h4>
+<h5 id="查看数据库增删改查的频次">查看数据库增删改查的频次</h5>
+<p><code>show global status like 'Com_______';</code></p>
+<h5 id="慢查询日志">慢查询日志</h5>
+<h5 id="查看每条语句耗时">查看每条语句耗时</h5>
+<p><code>show profiles;</code></p>
+<h5 id="查询执行语句详情">查询执行语句详情</h5>
+<p><code>explain {language};</code></p>
+<h4 id="使用规则">使用规则</h4>
+<p>索引可以大幅提升查询时间</p>
+<h5 id="最左前缀法则">最左前缀法则</h5>
+<p>如果索引了多列（联合索引），要遵守最左前缀法则。最左前缀法则指的是查询从索引的最左列开始，并且不跳过索引中的列，如果跳过某一列，索引将部分失效（后面的字段索引失效）</p>
+<p>联合索引中，出现范围查询（指大于和小于），范围查询右侧的列索引失效</p>
+<p>所以尽量用大于等于和小于等于</p>
+<h5 id="索引失效情况">索引失效情况</h5>
+<p>在索引列上进行运算操作，索引失效</p>
+<p>字符串没加引号，失效</p>
+<p>模糊查询中，尾部模糊不会失效，头部模糊会失效</p>
+<p>or连接的所有条件必须都有索引，否则整个or语句不会用到索引</p>
+<p>mysql评估使用索引比全表扫描慢，则不使用索引</p>
+<h5 id="sql提示">SQL提示</h5>
+<p>建议mysql使用特定索引</p>
+<p><code>... from ... use index ({index name}) where ...;</code></p>
+<p>不使用特定索引</p>
+<p><code>... ignore index ...;</code></p>
+<p>强制使用特定索引</p>
+<p><code>... force index ...;</code></p>
+<h5 id="覆盖索引和回表查询">覆盖索引和回表查询</h5>
+<p>注意这里关注的是查询的字段就是select后面的内容而不是查询的条件（where后面的内容）</p>
+<p>覆盖索引指的是查询的字段最好是联合索引的子集（可以加上id，如果id是聚集索引的索引项），否则会回表查询</p>
+<p>回表查询就是先从二级索引中查，然后再到聚集索引中查</p>
+<p>explain语句的extra字段中，<code>using where; using index</code>不需要回表查询，<code>using index condition</code>就是要回表查询</p>
+<h5 id="前缀索引">前缀索引</h5>
+<p>对于varchar，text的字符串类型，把它们用做索引时，很耗费开销，所以取字符串的前缀作索引</p>
+<p><code>create index {index_name} on {table_name}(column(x));</code>表示取前x个字符</p>
+<p>前缀索引如果多个字符串前缀相同在b+树中怎么查询？先查到一个，然后回表查询比对，不是的话沿链表查询下一个，具体不知道</p>
+<h5 id="单列索引和联合索引">单列索引和联合索引</h5>
+<p>一般选择联合索引，单列索引容易造成回表查询</p>
+<h4 id="设计原则">设计原则</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/b2972c9d21e047ebbb0acd7418cca209.png"
+        data-srcset="https://img-blog.csdnimg.cn/b2972c9d21e047ebbb0acd7418cca209.png, https://img-blog.csdnimg.cn/b2972c9d21e047ebbb0acd7418cca209.png 1.5x, https://img-blog.csdnimg.cn/b2972c9d21e047ebbb0acd7418cca209.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/b2972c9d21e047ebbb0acd7418cca209.png"
+        title="在这里插入图片描述" /></p>
+<h3 id="sql优化">SQL优化</h3>
+<p>大部分都涉及到索引</p>
+<h4 id="插入数据">插入数据</h4>
+<h5 id="插入少量数据">插入少量数据</h5>
+<p>当需要插入多条数据时，使用批量插入</p>
+<p>手动提交事务</p>
+<p>主键顺序插入</p>
+<h5 id="插入大量数据">插入大量数据</h5>
+<p>load</p>
+<h4 id="主键优化">主键优化</h4>
+<p>插入数据最好按主键顺序插入，否则会产生“页分裂”</p>
+<p>当删除数据时会出现“页合并”</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/5482efe31fa44808baa0c739fc314bfe.png"
+        data-srcset="https://img-blog.csdnimg.cn/5482efe31fa44808baa0c739fc314bfe.png, https://img-blog.csdnimg.cn/5482efe31fa44808baa0c739fc314bfe.png 1.5x, https://img-blog.csdnimg.cn/5482efe31fa44808baa0c739fc314bfe.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/5482efe31fa44808baa0c739fc314bfe.png"
+        title="主键设计原则：" /></p>
+<h4 id="order-by优化">order by优化</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/428738a50abc4eca8140761f382c884f.png"
+        data-srcset="https://img-blog.csdnimg.cn/428738a50abc4eca8140761f382c884f.png, https://img-blog.csdnimg.cn/428738a50abc4eca8140761f382c884f.png 1.5x, https://img-blog.csdnimg.cn/428738a50abc4eca8140761f382c884f.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/428738a50abc4eca8140761f382c884f.png"
+        title="在这里插入图片描述" /></p>
+<p>using filesort和using index在explain语句的extra字段查看</p>
+<p>using filesort慢，using index快</p>
+<p>尽量把using filesort优化成using index</p>
+<p>按照order by后面的字段的顺序和升降序创建对应的索引</p>
+<p>前提是要用到覆盖索引（就是查询的字段是索引的子集（可以带主键）），覆盖索引不需要回表查询</p>
+<h4 id="group-by优化">group by优化</h4>
+<p>根据group by的条件建立联合索引，注意索引也是满足最左前缀法则，如果有where语句，where后面的条件也纳入最左前缀法则的范畴</p>
+<h4 id="limit优化">limit优化</h4>
+<p>通过覆盖索引和子查询进行优化</p>
+<h4 id="count优化">count优化</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/484af0d28e2a4d34a388ca550805ee86.png"
+        data-srcset="https://img-blog.csdnimg.cn/484af0d28e2a4d34a388ca550805ee86.png, https://img-blog.csdnimg.cn/484af0d28e2a4d34a388ca550805ee86.png 1.5x, https://img-blog.csdnimg.cn/484af0d28e2a4d34a388ca550805ee86.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/484af0d28e2a4d34a388ca550805ee86.png"
+        title="在这里插入图片描述" />
+性能</p>
+<p>count(字段) &lt; count(主键) &lt; count(1) &lt; count(*)</p>
+<h4 id="update优化">update优化</h4>
+<p>update的where跟着的字段要是索引，不然两个事务共同执行时行锁变成表锁，并发性能降低</p>
+<p>innodb的行锁是针对索引加的锁，不是针对记录加的锁，并且该索引不能失效，否则会从行锁变成表锁</p>
+<h3 id="视图">视图</h3>
+<p>创建视图</p>
+<p><code>create [or replace] view {view_name} as select ...;</code></p>
+<p>查看创建视图的语句</p>
+<p><code>show create view {view_name};</code></p>
+<p>查看视图数据，和表的操作一致</p>
+<p><code>select * from {view_name};</code></p>
+<p>修改视图</p>
+<p><code>create [or replace] view {view_name} as select ...;</code></p>
+<p>或者</p>
+<p><code>alter view {view_name} as select ...;</code></p>
+<p>删除视图</p>
+<p><code>drop view [if exists] {view_name};</code></p>
+<p>对视图的其他增删改查操作和表操作的语法一样</p>
+<p>注意：对视图的增删改操作将会影响基表，对基表的修改会影响视图</p>
+<p>注意：如果一个视图基于基于表的视图，那么对视图的修改仍然会影响基表</p>
+<p>注意：视图可以基于视图创建</p>
+<h4 id="检查选项">检查选项</h4>
+<p>由于对视图的修改会影响到基表或基视图</p>
+<p>如果不加检查选项，那么对视图的修改不会检查视图创建语句的where条件</p>
+<p>如果对视图增加或修改一条不满足条件的数据，基表或基视图会正常增加或修改，但是视图不显示（因为不满足条件）</p>
+<p>要想做到无法增加或修改不满足条件的数据就要使用检查选项</p>
+<h5 id="cascaded">cascaded</h5>
+<p>在创建视图的语句后面加上<code>with cascaded check option;</code>则对视图进行增加修改时会检查这条数据是否满足创建视图的语句的where条件，并且还会级联地检查这条数据是否满足基视图的where条件</p>
+<p>对视图增加或修改数据的判断逻辑是，如果这个视图没有加检查选项，则不做检查，然后检查这个视图基于的视图或表，如果它有加检查选项就检查是否满足条件，如果是级联的，就继续往下检查；如果没加检查选项，就继续查看它基于的表</p>
+<p>只要有一个视图加了级联，则它一定会判断这个视图基于的所有视图和表的条件</p>
+<h5 id="local">local</h5>
+<p>local就是只检查当前视图条件，不级联检查它基于的视图条件</p>
+<p>注意：要不要检查条件是一定会顺着链路一直进行下去的，但是local只负责当前视图，cascaded则会检查它所有的基视图或基表的条件，默认是cascaded</p>
+<h4 id="视图的更新限制">视图的更新限制</h4>
+<p>只有当视图中的每一条数据和基表是 一一对应关系时才可以更新</p>
+<h4 id="视图的作用">视图的作用</h4>
+<ul>
+<li>把那些经常查询的数据列出来，这样比较直观，也不需要重复写这些查询条件，有点像求质数的预处理操作</li>
+<li>安全性，给特定的用户提供特定的视图</li>
+</ul>
+<h3 id="存储过程">存储过程</h3>
+<p>就是把多条mysql语句集合在一起</p>
+<h4 id="基本语法">基本语法</h4>
+<p>创建过程</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="err">{</span><span class="n">procedure_name</span><span class="err">}</span><span class="p">([</span><span class="err">{</span><span class="n">aug1</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">aug2</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="err">{</span><span class="n">aug3</span><span class="err">}</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">begin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="err">{</span><span class="n">sql_statement</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>调用过程</p>
+<p><code>call {procedure_name}({aug1}, {aug2}, ...);</code></p>
+<p>查看该数据库具有的过程</p>
+<p><code>select * from information_schema.ROUTINES where ROUTINE_SCHEMA='{database_name}';</code></p>
+<p>查看创建过程的语句</p>
+<p><code>show create procedure {procedure_name};</code></p>
+<p>删除过程</p>
+<p><code>drop procedure [if exists] {procedure_name};</code></p>
+<p>注意在命令行中执行创建过程语句时，会出现遇到分号提前结束mysql语句的错误</p>
+<p>需要写输入以下命令</p>
+<p><code>delimiter xx</code></p>
+<p>表示mysql语句由xx结尾，然后把创建过程的语句最后的分号改成xx</p>
+<h4 id="变量">变量</h4>
+<p>变量分为系统变量、用户变量、局部变量</p>
+<h5 id="系统变量">系统变量</h5>
+<p>系统变量是系统定义的变量</p>
+<p>系统变量分为全局变量（global）和会话变量（session）</p>
+<p>注意：全局变量会在mysql服务器重启后变成默认值，如果想要永久修改全局变量，则要到<code>/etc/my.conf</code>这个文件中修改</p>
+<p>查看系统变量（没加session或者global默认是session）</p>
+<p><code>show [session |  global] variables;</code></p>
+<p><code>show [session | global] variables like 'xxx';</code></p>
+<p><code>select @@[session | global][.]{var_name};</code></p>
+<p>设置系统变量</p>
+<p><code>set [session | global] {var_name} = {var_value};</code></p>
+<p><code>set @@[session | global][.]{var_name} = {var_value};</code></p>
+<h5 id="用户变量">用户变量</h5>
+<p>定义和赋值，可以用<code>:=</code>，也可以用<code>=</code>，推荐使用<code>:=</code>，因为mysql的相等和赋值都是<code>=</code>，用<code>:=</code>不会混淆</p>
+<p><code>set @{var_name} = xxx [, @{var_name2} = xxx];</code></p>
+<p><code>set @{var_name} := xxx [, @{var_name2} := xxx];</code></p>
+<p><code>select @{var_name} := xxx [, @{var_name2} := xxx];</code></p>
+<p>把从表中查询到的某些字段（结果）赋值给用户变量</p>
+<p><code>select {field_name} into @{var_name} from {table_name};</code></p>
+<p>查看</p>
+<p><code>select @{var_name};</code></p>
+<p>注意：用户变量不需要声明和初始化，但是如果没有初始化，则默认值是null</p>
+<h5 id="局部变量">局部变量</h5>
+<p>局部变量需要声明，常用在过程中的局部变量和输入参数，局部变量的作用范围是begin end之间</p>
+<p>声明</p>
+<p><code>declare {var_name} {var_type} [default ...];</code></p>
+<p>变量类型就是数据库字段类型</p>
+<p>赋值</p>
+<p><code>set {var_name} = {var_value};</code></p>
+<p><code>set {var_name} := {var_value};</code></p>
+<p><code>select {field_name} into {var_name} from {table_name} ... ;</code></p>
+<h4 id="条件语句">条件语句</h4>
+<h5 id="if">if</h5>
+<p>if判断写在过程的begin和end内</p>
+<p>语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">if</span><span class="w"> </span><span class="err">{</span><span class="n">condition1</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">elseif</span><span class="w"> </span><span class="err">{</span><span class="n">condition2</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">else</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="case">case</h5>
+<p>语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">case</span><span class="w"> </span><span class="err">{</span><span class="n">var</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">when</span><span class="w"> </span><span class="err">{</span><span class="n">value1</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">[</span><span class="k">when</span><span class="w"> </span><span class="err">{</span><span class="n">value2</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">[</span><span class="k">else</span><span class="w"> </span><span class="p">...]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="k">case</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">case</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">when</span><span class="w"> </span><span class="err">{</span><span class="n">condition1</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">[</span><span class="k">when</span><span class="w"> </span><span class="err">{</span><span class="n">condition2</span><span class="err">}</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">[</span><span class="k">else</span><span class="w"> </span><span class="p">...]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="k">case</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="参数和返回值">参数和返回值</h4>
+<p>参数有三种，in表示传入的参数，out表示返回值，inout既可以作为形参，也可以作为返回值</p>
+<p>语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">procedure</span><span class="w"> </span><span class="err">{</span><span class="n">procedure_name</span><span class="err">}</span><span class="p">([</span><span class="k">in</span><span class="o">|</span><span class="k">out</span><span class="o">|</span><span class="k">inout</span><span class="w"> </span><span class="err">{</span><span class="n">para_name</span><span class="err">}</span><span class="w"> </span><span class="err">{</span><span class="n">para_type</span><span class="err">}</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">begin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>inout变量有点像传引用</p>
+<h4 id="循环">循环</h4>
+<h5 id="while">while</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">while</span><span class="w"> </span><span class="err">{</span><span class="n">condition</span><span class="err">}</span><span class="w"> </span><span class="k">do</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="n">while</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="repeat">repeat</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">repeat</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">until</span><span class="w"> </span><span class="err">{</span><span class="n">condition</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="n">repeat</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="loop">loop</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="p">[</span><span class="err">{</span><span class="n">loop_name1</span><span class="err">}</span><span class="p">:]</span><span class="w"> </span><span class="n">loop</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">iterate</span><span class="w"> </span><span class="err">{</span><span class="n">loop_name1</span><span class="err">}</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">leave</span><span class="w"> </span><span class="err">{</span><span class="n">loop_name1</span><span class="err">}</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="w"> </span><span class="n">loop</span><span class="w"> </span><span class="p">[</span><span class="err">{</span><span class="n">loop_name1</span><span class="err">}</span><span class="p">];</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="指针">指针</h4>
+<p>用来对查询结果集进行操作</p>
+<p>声明指针</p>
+<p><code>declare {cursor_name} cursor for {select_statement};</code></p>
+<p>打开指针</p>
+<p><code>open {cursor_name};</code></p>
+<p>获取指针记录</p>
+<p><code>fetch {cursor_name} into {var1} [, {var2}, {var3}, ...];</code></p>
+<p>关闭指针</p>
+<p><code>close {cursor_name};</code></p>
+<p>注意：在过程中，局部变量的声明要在指针的声明之前</p>
+<p>注意：指针指代查询结果集的一行，每次fetch之后，指针自动跳到下一行</p>
+<h4 id="处理程序">处理程序</h4>
+<p>可以定义在一个流程中，如果遇到了某种情况的相应处理措施</p>
+<p>handler_action是处理措施，有两种 continue继续执行当前程序，exit退出当前程序</p>
+<p>condition_value是触发条件</p>
+<ul>
+<li>sqlstate {value} ，这个value是状态码，比如02000</li>
+<li>sqlwarning，所有以01开头的状态码</li>
+<li>not found，所有以02开头的状态码</li>
+<li>sqlexception，除了sqlwarning和not found以外的状态码</li>
+</ul>
+<p>声明handler</p>
+<p><code>declare {handler_action} handler for {condition_value1} [, {condition_value2}, ...] {actions_before_handler_action};</code></p>
+<p>注意：这里的handler_action的作用范围是所在的begin end块</p>
+<h4 id="函数-1">函数</h4>
+<p>一种特殊的过程，它一定有返回值，且参数只能是in类型</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">function</span><span class="w"> </span><span class="err">{</span><span class="n">function_name</span><span class="err">}</span><span class="p">([</span><span class="k">in</span><span class="p">]</span><span class="w"> </span><span class="err">{</span><span class="n">para_name1</span><span class="err">}</span><span class="w"> </span><span class="err">{</span><span class="n">para_type1</span><span class="err">}</span><span class="p">,</span><span class="w"> </span><span class="p">[[</span><span class="k">in</span><span class="p">]</span><span class="w"> </span><span class="err">{</span><span class="n">para_name2</span><span class="err">}</span><span class="w"> </span><span class="err">{</span><span class="n">para_type2</span><span class="err">}</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">returns</span><span class="w"> </span><span class="err">{</span><span class="n">return_type</span><span class="err">}</span><span class="w"> </span><span class="k">deterministic</span><span class="o">|</span><span class="k">no</span><span class="w"> </span><span class="k">sql</span><span class="o">|</span><span class="k">reads</span><span class="w"> </span><span class="k">sql</span><span class="w"> </span><span class="k">data</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">begin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="err">{</span><span class="n">return_value</span><span class="err">}</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>characteristic说明</p>
+<ul>
+<li>deterministic 相同的输入总是产生相同的输出</li>
+<li>no sql 不包含sql语句</li>
+<li>reads sql data 有读数据的语句没有写数据的语句</li>
+</ul>
+<h3 id="触发器">触发器</h3>
+<p>有三种类型的触发器，并且用old和new来表示旧的数据和新的数据</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>old new</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insert类型触发器</td>
+<td>new表示新增的数据</td>
+</tr>
+<tr>
+<td>update类型的触发器</td>
+<td>old表示旧的数据 new表示更新后的数据</td>
+</tr>
+<tr>
+<td>delete类型触发器</td>
+<td>old表示要删除的数据</td>
+</tr>
+</tbody>
+</table>
+<p>mysql只支持行级触发器（update语句更新了多行就触发多次）不支持语句级触发器（update语句不管更新几行，只要是一条语句就触发一次）</p>
+<p>创建触发器</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">create</span><span class="w"> </span><span class="k">trigger</span><span class="w"> </span><span class="err">{</span><span class="k">trigger_name</span><span class="err">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">before</span><span class="o">|</span><span class="k">after</span><span class="w"> </span><span class="k">insert</span><span class="o">|</span><span class="k">update</span><span class="o">|</span><span class="k">delete</span><span class="w"> </span><span class="c1">--触发触发器的操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">on</span><span class="w"> </span><span class="err">{</span><span class="k">table_name</span><span class="err">}</span><span class="w"> </span><span class="cm">/*被监控的表*/</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="k">row</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">begin</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">end</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>查看触发器</p>
+<p><code>show triggers;</code></p>
+<p>删除触发器，如果不指定数据库名，则默认是当前数据库</p>
+<p><code>drop trigger [{db_name}.]{trigger_name};</code></p>
+<h3 id="锁-重要">锁 （重要）</h3>
+<h4 id="全局锁">全局锁</h4>
+<p>锁整个数据库</p>
+<p>典型的使用场景是数据库要做备份，要先加全局锁</p>
+<p>对当前数据库加全局锁</p>
+<p><code>flush tables with read lock;</code></p>
+<p>数据库数据备份（注意：这不是mysql语句，而是bash命令）</p>
+<p>-h是连接远程数据库</p>
+<p><code>mysqldump [-h {ip_addr}] -uxxx -pxxx {db_name} &gt; xxx.sql</code></p>
+<p>释放全局锁</p>
+<p><code>unlock tables;</code></p>
+<p>innodb引擎中使用如下语句可以通过不加锁实现数据一致性的备份（快照读方式）</p>
+<p><code>mysqldump --single-transaction -uxxx -pxxx {db_name} &gt; xxx.sql</code></p>
+<h4 id="表级锁">表级锁</h4>
+<p>表级锁分为表锁、元数据锁、意向锁</p>
+<h5 id="表锁">表锁</h5>
+<p>表锁分为表读锁和表写锁（又叫表共享锁和表排他锁）</p>
+<p>表读锁允许自己读，不允许自己写，允许别人读，不允许别人写</p>
+<p>表写锁允许自己读，允许自己写，不允许别人读，不允许别人写</p>
+<p>加锁</p>
+<p><code>lock tables {tb_name} read|write;</code></p>
+<p>释放锁</p>
+<p><code>unlock tables;</code> 或者客户端断开连接</p>
+<h5 id="元数据锁">元数据锁</h5>
+<p>meta data lock MDL</p>
+<p>元数据就是表结构，元数据锁是在访问一张表时系统自动加的，为了避免dml和ddl冲突，保证读写操作的正确性</p>
+<p>具体客户端在对数据表做操作时加哪些锁，看下表</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/a4ceddb9c5324a058ec68746eae20e5d.png"
+        data-srcset="https://img-blog.csdnimg.cn/a4ceddb9c5324a058ec68746eae20e5d.png, https://img-blog.csdnimg.cn/a4ceddb9c5324a058ec68746eae20e5d.png 1.5x, https://img-blog.csdnimg.cn/a4ceddb9c5324a058ec68746eae20e5d.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/a4ceddb9c5324a058ec68746eae20e5d.png"
+        title="请添加图片描述" />
+元数据锁会自动释放，当这条语句执行完后自动释放，当使用事务时，在commit之后才算语句执行完，才释放锁</p>
+<p>查看元数据锁</p>
+<p><code>select object_type, object_schema, object_name, lock_type, lock_duration from performance_schema.metadata_locks;</code></p>
+<h5 id="意向锁">意向锁</h5>
+<p>intension lock</p>
+<p>意向锁是为了解决表锁和行锁的冲突。当对一行数据进行修改时会加行锁，这个时候如果别人就不能加表锁，要加表锁时要一行一行判断是否有行锁，很耗时，所以在加入行锁的时候再加入意向锁，当别人要加表锁时，只需要判断是否有意向锁就行</p>
+<p>意向锁分为意向共享锁 is，与表读锁兼容，与表写锁互斥</p>
+<p>意向排他锁ix，与表读锁和表写锁都互斥</p>
+<p>意向锁之间不会互斥</p>
+<p>查看意向锁</p>
+<p><code>select object_schema, object_name, index_name, lock_type, lock_mode, lock_data from performance_schema.data_locks;</code></p>
+<p>在select语句后面加上<code>lock in share mode</code>就可以加上行共享锁和意向共享锁，当这条语句执行完后（如果时事务，则要提交）会自动释放锁</p>
+<p>update语句会自动加行排他锁和意向排他锁</p>
+<h4 id="行级锁">行级锁</h4>
+<p>应用在innodb存储引擎中</p>
+<p>行级锁分为行锁（record lock）、间隙锁（gap lock）、临键锁（next-key lock）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/6dd641b4f2954dc88b0f3c00b471b020.png"
+        data-srcset="https://img-blog.csdnimg.cn/6dd641b4f2954dc88b0f3c00b471b020.png, https://img-blog.csdnimg.cn/6dd641b4f2954dc88b0f3c00b471b020.png 1.5x, https://img-blog.csdnimg.cn/6dd641b4f2954dc88b0f3c00b471b020.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/6dd641b4f2954dc88b0f3c00b471b020.png"
+        title="请添加图片描述" /></p>
+<p>rc时read commmi，rr时repeatable read</p>
+<p>行锁</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/c04bfb2e277147838eca4815f6eb8433.png"
+        data-srcset="https://img-blog.csdnimg.cn/c04bfb2e277147838eca4815f6eb8433.png, https://img-blog.csdnimg.cn/c04bfb2e277147838eca4815f6eb8433.png 1.5x, https://img-blog.csdnimg.cn/c04bfb2e277147838eca4815f6eb8433.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/c04bfb2e277147838eca4815f6eb8433.png"
+        title="请添加图片描述" /></p>
+<p>间隙锁</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/3d69e5477a16441e83354197ced17d19.png"
+        data-srcset="https://img-blog.csdnimg.cn/3d69e5477a16441e83354197ced17d19.png, https://img-blog.csdnimg.cn/3d69e5477a16441e83354197ced17d19.png 1.5x, https://img-blog.csdnimg.cn/3d69e5477a16441e83354197ced17d19.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/3d69e5477a16441e83354197ced17d19.png"
+        title="请添加图片描述" /></p>
+<p>临键锁（行锁加间隙锁，锁的是一个记录和记录前的间隙）</p>
+<p>此图描述有误</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/09d59e011e724588974d3614addaea19.png"
+        data-srcset="https://img-blog.csdnimg.cn/09d59e011e724588974d3614addaea19.png, https://img-blog.csdnimg.cn/09d59e011e724588974d3614addaea19.png 1.5x, https://img-blog.csdnimg.cn/09d59e011e724588974d3614addaea19.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/09d59e011e724588974d3614addaea19.png"
+        title="请添加图片描述" /></p>
+<h5 id="行锁">行锁</h5>
+<p>分为共享锁和排他锁，其实就是读锁和写锁</p>
+<p>执行增删改查时加行锁的情况</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/29252fe4da864947a1ebc35c5e155f63.png"
+        data-srcset="https://img-blog.csdnimg.cn/29252fe4da864947a1ebc35c5e155f63.png, https://img-blog.csdnimg.cn/29252fe4da864947a1ebc35c5e155f63.png 1.5x, https://img-blog.csdnimg.cn/29252fe4da864947a1ebc35c5e155f63.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/29252fe4da864947a1ebc35c5e155f63.png"
+        title="请添加图片描述" /></p>
+<p>注意：加行级锁一定会加意向锁，一般同一时间加的一批行级锁对应一个意向锁</p>
+<p>注意：innodb的行级锁都是基于索引来加的，所以如果select语句的where条件不走索引，那么innodb对表中的所有数据都加锁，即锁变成了表锁。表锁是无论如何也不允许别人写的</p>
+<h5 id="间隙锁临键锁">间隙锁/临键锁</h5>
+<p>作用时避免幻读</p>
+<p>当对唯一索引进行等值操作时（看where后面的语句知是否走唯一索引），进行删改时，如果该记录不存在，则行级锁没法成为行锁，它会变成间隙锁，比如有数据id是3和7，改或删5，不存在，就锁住3和7之间的间隙，间隙锁的唯一作用就是防止别人在其中插入数据，也不能把已有的数据更新为间隙内的值，但是删掉间隙左右的记录是可以的</p>
+<p>注意：上面这种情况也会同步加上意向排他锁</p>
+<p>注意：可以对同一个间隙加多个间隙锁</p>
+<p>当对普通索引（非唯一索引）进行等值操作时，它会增加行锁、临键锁、间隙锁。比如有数据为2 2 2 3 3 3 3 7 7 9 9 9，对3进行等值操作，那么会在最后一个3和第一个7之间加间隙锁，在所有的3上加行锁，在第一个3和之前的间隙（最后一个2和第一个3之间）上加临键锁。最后还有一个意向锁</p>
+<p>对唯一索引进行范围查询时，它会增加行锁、临键锁，比如数据 2 3 5 7 9，查询&gt;= 7的，它对7加行锁，(7,9]加临键锁，[9,∞)加临键锁，再加一个意向锁</p>
+<p>[此处还有待认真学习 ！！！]</p>
+<h3 id="innodb引擎">InnoDB引擎</h3>
+<h4 id="逻辑存储结构">逻辑存储结构</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/88d263ea7d654450a83966144686c745.png"
+        data-srcset="https://img-blog.csdnimg.cn/88d263ea7d654450a83966144686c745.png, https://img-blog.csdnimg.cn/88d263ea7d654450a83966144686c745.png 1.5x, https://img-blog.csdnimg.cn/88d263ea7d654450a83966144686c745.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/88d263ea7d654450a83966144686c745.png"
+        title="请添加图片描述" /></p>
+<p>一个表空间表示一个数据库中的一张表，是idb文件</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/7fa9a016242d41918d22ee63a2cecb2d.png"
+        data-srcset="https://img-blog.csdnimg.cn/7fa9a016242d41918d22ee63a2cecb2d.png, https://img-blog.csdnimg.cn/7fa9a016242d41918d22ee63a2cecb2d.png 1.5x, https://img-blog.csdnimg.cn/7fa9a016242d41918d22ee63a2cecb2d.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/7fa9a016242d41918d22ee63a2cecb2d.png"
+        title="请添加图片描述" /></p>
+<h4 id="架构">架构</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/f4c48570724340ab9dc229fe79c2e24b.png"
+        data-srcset="https://img-blog.csdnimg.cn/f4c48570724340ab9dc229fe79c2e24b.png, https://img-blog.csdnimg.cn/f4c48570724340ab9dc229fe79c2e24b.png 1.5x, https://img-blog.csdnimg.cn/f4c48570724340ab9dc229fe79c2e24b.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/f4c48570724340ab9dc229fe79c2e24b.png"
+        title="请添加图片描述" /></p>
+<h5 id="内存架构">内存架构</h5>
+<h5 id="磁盘架构">磁盘架构</h5>
+<h5 id="后台线程">后台线程</h5>
+<h4 id="事务的原理">事务的原理</h4>
+<p>事务有acid性</p>
+<p>其中acd是有redo log和undo log实现的</p>
+<p>i是由锁和mvcc实现的</p>
+<h5 id="redo-log">redo log</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/7e7afa002671498fb5fe4adf85b0993a.png"
+        data-srcset="https://img-blog.csdnimg.cn/7e7afa002671498fb5fe4adf85b0993a.png, https://img-blog.csdnimg.cn/7e7afa002671498fb5fe4adf85b0993a.png 1.5x, https://img-blog.csdnimg.cn/7e7afa002671498fb5fe4adf85b0993a.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/7e7afa002671498fb5fe4adf85b0993a.png"
+        title="请添加图片描述" /></p>
+<p>保证了事务的持久性</p>
+<p>记录了数据的变更内容</p>
+<p>原理参考<a href="https://www.bilibili.com/video/BV1iq4y1u7vj/?p=139" target="_blank" rel="noopener noreffer">此处</a>和<a href="https://xiaolincoding.com/mysql/log/how_update.html#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-redo-log" target="_blank" rel="noopener noreffer">这个</a>，还有<a href="https://blog.csdn.net/qq_42500831/article/details/123792708" target="_blank" rel="noopener noreffer">这个</a></p>
+<p>Q：如果redo log buffer刷新redo log file失败了怎么办？</p>
+<p>A：则事务提交不成功，不需要维护提交不成功事务的持久性</p>
+<h5 id="undo-log">undo log</h5>
+<p>保证了事务的原子性</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/17996a0279914dbb841fef0a4f8f5442.png"
+        data-srcset="https://img-blog.csdnimg.cn/17996a0279914dbb841fef0a4f8f5442.png, https://img-blog.csdnimg.cn/17996a0279914dbb841fef0a4f8f5442.png 1.5x, https://img-blog.csdnimg.cn/17996a0279914dbb841fef0a4f8f5442.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/17996a0279914dbb841fef0a4f8f5442.png"
+        title="请添加图片描述" /></p>
+<h4 id="mvcc重要">MVCC（重要）</h4>
+<p>当前读</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/de783e1742ee44da9aaf09878b8587fd.png"
+        data-srcset="https://img-blog.csdnimg.cn/de783e1742ee44da9aaf09878b8587fd.png, https://img-blog.csdnimg.cn/de783e1742ee44da9aaf09878b8587fd.png 1.5x, https://img-blog.csdnimg.cn/de783e1742ee44da9aaf09878b8587fd.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/de783e1742ee44da9aaf09878b8587fd.png"
+        title="请添加图片描述" /></p>
+<p>快照读</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/1041ee82efe346e691b23acc36b1617b.png"
+        data-srcset="https://img-blog.csdnimg.cn/1041ee82efe346e691b23acc36b1617b.png, https://img-blog.csdnimg.cn/1041ee82efe346e691b23acc36b1617b.png 1.5x, https://img-blog.csdnimg.cn/1041ee82efe346e691b23acc36b1617b.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/1041ee82efe346e691b23acc36b1617b.png"
+        title="请添加图片描述" /></p>
+<p>MVCC</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/f0cc4996bad6427f87dc6ea847f0daf4.png"
+        data-srcset="https://img-blog.csdnimg.cn/f0cc4996bad6427f87dc6ea847f0daf4.png, https://img-blog.csdnimg.cn/f0cc4996bad6427f87dc6ea847f0daf4.png 1.5x, https://img-blog.csdnimg.cn/f0cc4996bad6427f87dc6ea847f0daf4.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/f0cc4996bad6427f87dc6ea847f0daf4.png"
+        title="请添加图片描述" /></p>
+<h5 id="隐藏字段">隐藏字段</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/af4d24ee242c4095955525c512124aa4.png"
+        data-srcset="https://img-blog.csdnimg.cn/af4d24ee242c4095955525c512124aa4.png, https://img-blog.csdnimg.cn/af4d24ee242c4095955525c512124aa4.png 1.5x, https://img-blog.csdnimg.cn/af4d24ee242c4095955525c512124aa4.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/af4d24ee242c4095955525c512124aa4.png"
+        title="请添加图片描述" /></p>
+<p>查看idb文件</p>
+<p><code>idb2sdi xxx.idb</code></p>
+<h5 id="undolog">undolog</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/c8964fbf8f1a4d03abb51fb4f4424eb4.png"
+        data-srcset="https://img-blog.csdnimg.cn/c8964fbf8f1a4d03abb51fb4f4424eb4.png, https://img-blog.csdnimg.cn/c8964fbf8f1a4d03abb51fb4f4424eb4.png 1.5x, https://img-blog.csdnimg.cn/c8964fbf8f1a4d03abb51fb4f4424eb4.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/c8964fbf8f1a4d03abb51fb4f4424eb4.png"
+        title="请添加图片描述" /></p>
+<p>参考<a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=143" target="_blank" rel="noopener noreffer">此处</a></p>
+<p>undolog 版本链</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/02e4f8d92cc8417684f72d466da792ee.png"
+        data-srcset="https://img-blog.csdnimg.cn/02e4f8d92cc8417684f72d466da792ee.png, https://img-blog.csdnimg.cn/02e4f8d92cc8417684f72d466da792ee.png 1.5x, https://img-blog.csdnimg.cn/02e4f8d92cc8417684f72d466da792ee.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/02e4f8d92cc8417684f72d466da792ee.png"
+        title="请添加图片描述" /></p>
+<h5 id="readview">readview</h5>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/81d0d9aa81ea4992a410293b0778bc9f.png"
+        data-srcset="https://img-blog.csdnimg.cn/81d0d9aa81ea4992a410293b0778bc9f.png, https://img-blog.csdnimg.cn/81d0d9aa81ea4992a410293b0778bc9f.png 1.5x, https://img-blog.csdnimg.cn/81d0d9aa81ea4992a410293b0778bc9f.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/81d0d9aa81ea4992a410293b0778bc9f.png"
+        title="请添加图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/c4208292e8cf428098dfb225ed4e0929.png"
+        data-srcset="https://img-blog.csdnimg.cn/c4208292e8cf428098dfb225ed4e0929.png, https://img-blog.csdnimg.cn/c4208292e8cf428098dfb225ed4e0929.png 1.5x, https://img-blog.csdnimg.cn/c4208292e8cf428098dfb225ed4e0929.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/c4208292e8cf428098dfb225ed4e0929.png"
+        title="请添加图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/e37e3404fd6a494fb72597449bc96a70.png"
+        data-srcset="https://img-blog.csdnimg.cn/e37e3404fd6a494fb72597449bc96a70.png, https://img-blog.csdnimg.cn/e37e3404fd6a494fb72597449bc96a70.png 1.5x, https://img-blog.csdnimg.cn/e37e3404fd6a494fb72597449bc96a70.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/e37e3404fd6a494fb72597449bc96a70.png"
+        title="请添加图片描述" /></p>
+<h5 id="mvcc原理rc级别">MVCC原理（RC级别）</h5>
+<p>参考<a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=145" target="_blank" rel="noopener noreffer">此处</a></p>
+<h5 id="mvcc原理rr级别">MVCC原理（RR级别）</h5>
+<p>参考<a href="https://www.bilibili.com/video/BV1Kr4y1i7ru?p=146" target="_blank" rel="noopener noreffer">此处</a></p>
+<p>事务的隔离性由mvcc（隐藏字段、undolog版本链、readview）和锁保证</p>
+<p>而事务的一致性是由redo log和undo log一起保证的</p>
+<p>事务的持久性有redo log保证</p>
+<p>事务的原子性由redo log保证</p>
+<h3 id="mysql管理">MySQL管理</h3>
+<h4 id="系统级数据库">系统级数据库</h4>
+<h4 id="mysql常用工具">mysql常用工具</h4>
+<p>在命令行使用的</p>
+<p>mysql</p>
+<p>mysqladmin是一个执行管理操作的客户端程序，可以用来检查服务器的配置和当前的状态、创建并删除数据库等</p>
+<p>mysqlbinlog由于服务器生成的日志文件是以二进制保存的，所以想要查看这些文件的文本格式，就要用这个工具</p>
+<p>mysqlshow用来查找存在哪些数据库、数据库中的表、表中的列和索引</p>
+<p>mysqldump用来备份数据库和在不同数据库间进行数据迁移。备份内容包括创建表和插入表的sql语句</p>
+<p>mysqlimport导入数据，用来导入mysqldump -T参数后的文本文件</p>
+<p><code>source xxx.sql</code>导入sql文件</p>
+<h2 id="运维">运维</h2>
+<h3 id="日志">日志</h3>
+<h4 id="错误日志">错误日志</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/f28978848c964605b4b1d276666c0931.png"
+        data-srcset="https://img-blog.csdnimg.cn/f28978848c964605b4b1d276666c0931.png, https://img-blog.csdnimg.cn/f28978848c964605b4b1d276666c0931.png 1.5x, https://img-blog.csdnimg.cn/f28978848c964605b4b1d276666c0931.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/f28978848c964605b4b1d276666c0931.png"
+        title="请添加图片描述" /></p>
+<h4 id="二进制日志">二进制日志</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/6a7466ea99f84fc7a96a21f8ca23c7ed.png"
+        data-srcset="https://img-blog.csdnimg.cn/6a7466ea99f84fc7a96a21f8ca23c7ed.png, https://img-blog.csdnimg.cn/6a7466ea99f84fc7a96a21f8ca23c7ed.png 1.5x, https://img-blog.csdnimg.cn/6a7466ea99f84fc7a96a21f8ca23c7ed.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/6a7466ea99f84fc7a96a21f8ca23c7ed.png"
+        title="请添加图片描述" /></p>
+<h4 id="查询日志">查询日志</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/efe710ce07b94b488e20cc04fcddb6af.png"
+        data-srcset="https://img-blog.csdnimg.cn/efe710ce07b94b488e20cc04fcddb6af.png, https://img-blog.csdnimg.cn/efe710ce07b94b488e20cc04fcddb6af.png 1.5x, https://img-blog.csdnimg.cn/efe710ce07b94b488e20cc04fcddb6af.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/efe710ce07b94b488e20cc04fcddb6af.png"
+        title="请添加图片描述" /></p>
+<p>记录客户端所有操作语句，默认是关闭</p>
+<h4 id="慢查询日志-1">慢查询日志</h4>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/2d7a3442f89d4dba8f3d6449eaadbd97.png"
+        data-srcset="https://img-blog.csdnimg.cn/2d7a3442f89d4dba8f3d6449eaadbd97.png, https://img-blog.csdnimg.cn/2d7a3442f89d4dba8f3d6449eaadbd97.png 1.5x, https://img-blog.csdnimg.cn/2d7a3442f89d4dba8f3d6449eaadbd97.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/2d7a3442f89d4dba8f3d6449eaadbd97.png"
+        title="请添加图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/dc62ec53ad58465481fc85b3cfe2264f.png"
+        data-srcset="https://img-blog.csdnimg.cn/dc62ec53ad58465481fc85b3cfe2264f.png, https://img-blog.csdnimg.cn/dc62ec53ad58465481fc85b3cfe2264f.png 1.5x, https://img-blog.csdnimg.cn/dc62ec53ad58465481fc85b3cfe2264f.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/dc62ec53ad58465481fc85b3cfe2264f.png"
+        title="请添加图片描述" /></p>
+<h3 id="主从复制">主从复制</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/6b109a98c3c741b192596e2704054474.png"
+        data-srcset="https://img-blog.csdnimg.cn/6b109a98c3c741b192596e2704054474.png, https://img-blog.csdnimg.cn/6b109a98c3c741b192596e2704054474.png 1.5x, https://img-blog.csdnimg.cn/6b109a98c3c741b192596e2704054474.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/6b109a98c3c741b192596e2704054474.png"
+        title="请添加图片描述" /></p>
+<p>原理</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/e18999f10a4f44889c1499af557805fb.png"
+        data-srcset="https://img-blog.csdnimg.cn/e18999f10a4f44889c1499af557805fb.png, https://img-blog.csdnimg.cn/e18999f10a4f44889c1499af557805fb.png 1.5x, https://img-blog.csdnimg.cn/e18999f10a4f44889c1499af557805fb.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/e18999f10a4f44889c1499af557805fb.png"
+        title="请添加图片描述" /></p>
+<h3 id="分库分表">分库分表</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/55f95403f04c46c684cb13adcaf56505.png"
+        data-srcset="https://img-blog.csdnimg.cn/55f95403f04c46c684cb13adcaf56505.png, https://img-blog.csdnimg.cn/55f95403f04c46c684cb13adcaf56505.png 1.5x, https://img-blog.csdnimg.cn/55f95403f04c46c684cb13adcaf56505.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/55f95403f04c46c684cb13adcaf56505.png"
+        title="请添加图片描述" /></p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/d0332537090248738cd7701914a6dcae.png"
+        data-srcset="https://img-blog.csdnimg.cn/d0332537090248738cd7701914a6dcae.png, https://img-blog.csdnimg.cn/d0332537090248738cd7701914a6dcae.png 1.5x, https://img-blog.csdnimg.cn/d0332537090248738cd7701914a6dcae.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/d0332537090248738cd7701914a6dcae.png"
+        title="请添加图片描述" /></p>
+<p>mycat是分库分表中间件</p>
+<h3 id="读写分离">读写分离</h3>
+<p>基于主从复制，一般通过mycat实现</p>
+<h2 id="参考">参考</h2>
+<p>黑马程序员</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-11-20</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/mysql/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/mysql/" data-title="mysql" data-hashtags="mysql"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/mysql/" data-hashtag="mysql"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/mysql/" data-title="mysql" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/mysql/" data-title="mysql"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/mysql/" data-title="mysql"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/mysql/" data-title="mysql" data-description="mysql"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/mysql/" data-title="mysql" data-description="mysql"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/mysql/" data-title="mysql"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mysql/">mysql</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/%E8%9B%8B%E7%82%92%E9%A5%AD/" class="prev" rel="prev" title="蛋炒饭"><i class="fas fa-angle-left fa-fw"></i>蛋炒饭</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.9d9de92308099c9446cdfea048e718b59bf5074cadab1ec5cfcab775acb354e6.js" integrity="sha256-nZ3pIwgJnJRGzf6gSOcYtZv1B0ytqx7Fz8q3dayzVOY="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>

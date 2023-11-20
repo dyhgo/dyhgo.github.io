@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2023/11/20 11:06" placement="top" color="green">
+        <h4>修复了图片无法正常显示的问题，问题是csdn图片的防盗链</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2023/10/21 11:58" placement="top" color="green">
         <h4>版本V2.2<br>更新了文章左上角的视频，现在视频为cs2 IEM 悉尼，G2 vs Ence</h4>
     </el-timeline-item>

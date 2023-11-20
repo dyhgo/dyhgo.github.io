@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/mysql/</link>
         <description>mysql - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 16 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+    <title>mysql</title>
+    <link>https://dyhgo.github.io/mysql/</link>
+    <pubDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/mysql/</guid>
+    <description><![CDATA[基础 SQL SQL语言分类 DDL 数据类型 数值型 字符串类型 日期和时间型 数据库 查数据库show databases; 查当前数据库select database(); 增加数据库create database [if not exists] xxx]]></description>
+</item><item>
     <title>mysql基础</title>
     <link>https://dyhgo.github.io/mysql%E5%9F%BA%E7%A1%80/</link>
     <pubDate>Tue, 16 Jun 2020 00:00:00 &#43;0000</pubDate>
