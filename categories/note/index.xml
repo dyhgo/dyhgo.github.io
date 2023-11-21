@@ -12,12 +12,19 @@
     <guid>https://dyhgo.github.io/protobuf/</guid>
     <description><![CDATA[protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json 它可以被序列化和反序列化，从而用于传输 参考链接 它的格式类似]]></description>
 </item><item>
-    <title>gflag</title>
-    <link>https://dyhgo.github.io/gflag/</link>
+    <title>gflags</title>
+    <link>https://dyhgo.github.io/gflags/</link>
     <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/gflag/</guid>
+    <guid>https://dyhgo.github.io/gflags/</guid>
     <description><![CDATA[文档链接 gflags相当于代码中的常量 gflags读取命令行的flags，然后修改代码中相应名字的“常量” 主要有三个函数 DEFINE_xxx]]></description>
+</item><item>
+    <title>git补充</title>
+    <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%85/</link>
+    <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/git%E8%A1%A5%E5%85%85/</guid>
+    <description><![CDATA[参考资料 问题 如果已经推到远程仓库，该怎么撤销 其他 从工作目录git add提交到暂存区后，想撤销 注意如果在工作目录创建文件，撤销操作只是不跟踪该]]></description>
 </item><item>
     <title>vins_estimator</title>
     <link>https://dyhgo.github.io/vins_estimator/</link>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/tf-idf/</guid>
     <description><![CDATA[记录一下tf-idf TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术]]></description>
-</item><item>
-    <title>相机模型</title>
-    <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
-    <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
-    <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
 </item></channel>
 </rss>

@@ -12,11 +12,11 @@
     <guid>https://dyhgo.github.io/protobuf/</guid>
     <description><![CDATA[protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json 它可以被序列化和反序列化，从而用于传输 参考链接 它的格式类似]]></description>
 </item><item>
-    <title>gflag</title>
-    <link>https://dyhgo.github.io/gflag/</link>
+    <title>gflags</title>
+    <link>https://dyhgo.github.io/gflags/</link>
     <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/gflag/</guid>
+    <guid>https://dyhgo.github.io/gflags/</guid>
     <description><![CDATA[文档链接 gflags相当于代码中的常量 gflags读取命令行的flags，然后修改代码中相应名字的“常量” 主要有三个函数 DEFINE_xxx]]></description>
 </item></channel>
 </rss>
