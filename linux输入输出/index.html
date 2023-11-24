@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>Linux输入输出 - This is DYH</title><meta name="Description" content="Linux输入输出"><meta property="og:title" content="Linux输入输出" />
+<meta property="og:description" content="Linux输入输出" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-11-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-24T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Linux输入输出"/>
+<meta name="twitter:description" content="Linux输入输出"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" /><link rel="prev" href="https://dyhgo.github.io/mysql/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Linux输入输出",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA\/"
+        },"genre": "posts","keywords": "shell, linux","wordcount":  2936 ,
+        "url": "https:\/\/dyhgo.github.io\/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA\/","datePublished": "2023-11-24T00:00:00+00:00","dateModified": "2023-11-24T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "Linux输入输出"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item language" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" selected>简体中文</option></select>
+                    </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">简体中文<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Linux输入输出</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-11-24">2023-11-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2936 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;<span id="/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" class="leancloud_visitors" data-flag-title="Linux输入输出">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#重定向">重定向</a>
+      <ul>
+        <li><a href="#21">2&gt;&amp;1</a></li>
+        <li><a href="#各种命令">各种命令</a></li>
+        <li><a href="#例子">例子</a></li>
+        <li><a href="#devnull">/dev/null</a></li>
+      </ul>
+    </li>
+    <li><a href="#管道">管道</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>万物皆文件 &ndash; Linus Torvalds</p>
+<h2 id="重定向">重定向</h2>
+<p>标准输入流<code>stdin</code>的文件描述符是<code>0</code>，标准输出流<code>stdout</code>的文件描述符是<code>1</code>，标准错误流的文件描述符是<code>2</code></p>
+<p>标准输入流一般是键盘在终端的输入，标准输出流和错误输出流一般显示在终端屏幕上</p>
+<p>我们可以将输入输出流重定向到其他文件</p>
+<p>输出有<code>&gt;</code>表示覆盖和<code>&gt;&gt;</code>表示追加，输入有<code>&lt;</code></p>
+<p>注意像<code>2&gt;</code>这种符号之间不能有空格</p>
+<h3 id="21">2&gt;&amp;1</h3>
+<p><code>2&gt;&amp;1</code>表示把错误输出<code>2</code>，重定向<code>&gt;&amp;</code>到标准输出<code>1</code>所在的文件描述符(默认是终端屏幕）</p>
+<p><code>command &gt; file 2&gt;&amp;1</code>表示command的标准输出先重定向到file，然后错误输出重定向到标准输出（现在是file），所以最后标准输出和错误输出都被重定向到file</p>
+<p><code>command 2&gt;&amp;1 &gt; file</code>表示command的错误输出重定向到标准输出（现在是终端）（相当于啥事没发生），然后标准输出重定向到file，最后只有标准输出重定向到file，错误输出还是在终端输出</p>
+<p>同理可以有<code>1&gt;&amp;2</code>等组合</p>
+<h3 id="各种命令">各种命令</h3>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command &gt; file</td>
+<td>将command的标准输出重定向到file</td>
+</tr>
+<tr>
+<td>command &raquo; file</td>
+<td>将command的标准输出重定向到file</td>
+</tr>
+<tr>
+<td>command 2&gt; file</td>
+<td>只将command的标准错误输出重定向到file</td>
+</tr>
+<tr>
+<td>command 2&raquo; file</td>
+<td>只将command的标准错误输出重定向到file</td>
+</tr>
+<tr>
+<td>command 2&gt;&amp;1</td>
+<td>将command的错误输出重定向到标准输出</td>
+</tr>
+<tr>
+<td>command &gt; file 2&gt;&amp;1</td>
+<td>将command的标准输出和错误输出重定向到file,此时2&gt;&amp;1只能写在最后</td>
+</tr>
+<tr>
+<td>command &raquo; file 2&gt;&amp;1</td>
+<td>将command的标准输出和错误输出重定向到file,此时2&gt;&amp;1只能写在最后</td>
+</tr>
+<tr>
+<td>command &amp;&gt; file</td>
+<td>command &gt; file 2&gt;&amp;1的简写，注意简写&amp;&gt;只能放在file前，不能放在后面</td>
+</tr>
+<tr>
+<td>command &gt;&amp; file</td>
+<td>同command &amp;&gt; file</td>
+</tr>
+<tr>
+<td>command &amp;&raquo; file</td>
+<td>command &raquo; file 2&gt;&amp;1的简写，注意&amp;&raquo;不能写成&raquo;&amp;</td>
+</tr>
+<tr>
+<td>command 2&gt;&amp;1 &gt; file</td>
+<td>将command的标准输出重定向到file</td>
+</tr>
+<tr>
+<td>command 2&gt;&amp;1 &raquo; file</td>
+<td>将command的标准输出重定向到file</td>
+</tr>
+<tr>
+<td>command &lt; input</td>
+<td>将command的标准输入重定向到input</td>
+</tr>
+<tr>
+<td>command &laquo; input</td>
+<td>一直从键盘输入，直到遇到字符input，here-document方式</td>
+</tr>
+<tr>
+<td>command &laquo;&lt; input</td>
+<td>input为单行字符串，here- string方式，其中input用单引号和双引号效果不一样，详见参考</td>
+</tr>
+<tr>
+<td>command &lt; file1 &gt; file2</td>
+<td>将command的标准输入重定向到file1，标准输出重定向到file2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="例子">例子</h3>
+<p><code>command &gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl"><span class="m">123</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">echo</span> <span class="s1">&#39;hello&#39;</span> &gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hello
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &gt;&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">echo</span> <span class="s1">&#39;world&#39;</span> &gt;&gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">world
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command 2&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">cd</span> <span class="m">123</span>
+</span></span><span class="line"><span class="cl">-bash: cd: 123: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hehe
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">cd</span> <span class="m">123</span> 2&gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">-bash: cd: 123: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">cd</span> <span class="m">123</span> &gt; a
+</span></span><span class="line"><span class="cl">-bash: cd: 123: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command 2&gt;&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">-bash: cd: 123: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ <span class="nb">cd</span> <span class="m">124</span> 2&gt;&gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">-bash: cd: 123: No such file or directory
+</span></span><span class="line"><span class="cl">-bash: cd: 124: No such file or directory
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &gt; file 2&gt;&amp;1</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">qqq
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b &gt; a 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &gt;&gt; file 2&gt;&amp;1</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b &gt;&gt; a 2&gt;<span class="p">&amp;</span><span class="m">1</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &amp;&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b <span class="p">&amp;</span>&gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &gt;&amp; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl"><span class="m">111</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b &gt;<span class="p">&amp;</span> a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &amp;&gt;&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b <span class="p">&amp;</span>&gt;&gt; a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command 2&gt;&amp;1 &gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">qqq
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command 2&gt;&amp;1 &gt;&gt; file</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls a b 2&gt;<span class="p">&amp;</span><span class="m">1</span> &gt;&gt; a
+</span></span><span class="line"><span class="cl">ls: cannot access <span class="s1">&#39;b&#39;</span>: No such file or directory
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">a
+</span></span><span class="line"><span class="cl">a
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &lt; input</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">world
+</span></span><span class="line"><span class="cl">hah
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ wc -l a
+</span></span><span class="line"><span class="cl"><span class="m">3</span> a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ wc -l &lt; a
+</span></span><span class="line"><span class="cl"><span class="m">3</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &lt;&lt; input</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ wc -l <span class="s">&lt;&lt; a
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; 123
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; 456
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; hello world
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; yes
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; no
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; a</span>
+</span></span><span class="line"><span class="cl"><span class="m">5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &lt;&lt;&lt; input</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ tr a-z A-Z <span class="o">&lt;&lt;&lt;</span> aa
+</span></span><span class="line"><span class="cl">AA
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ tr a-z A-Z <span class="o">&lt;&lt;&lt;</span> <span class="s1">&#39;hello world&#39;</span>
+</span></span><span class="line"><span class="cl">HELLO WORLD
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ tr a-z A-Z <span class="o">&lt;&lt;&lt;</span> <span class="s2">&#34;hello world&#34;</span>
+</span></span><span class="line"><span class="cl">HELLO WORLD
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ tr a-z A-Z <span class="o">&lt;&lt;&lt;</span> aa bb
+</span></span><span class="line"><span class="cl">tr: extra operand ‘bb’
+</span></span><span class="line"><span class="cl">Try <span class="s1">&#39;tr --help&#39;</span> <span class="k">for</span> more information.
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>command &lt; file1 &gt; file2</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">world
+</span></span><span class="line"><span class="cl">hah
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ tr a-z A-Z &lt; a &gt; r
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat r
+</span></span><span class="line"><span class="cl">HELLO
+</span></span><span class="line"><span class="cl">WORLD
+</span></span><span class="line"><span class="cl">HAH
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ cat a 
+</span></span><span class="line"><span class="cl">hello
+</span></span><span class="line"><span class="cl">world
+</span></span><span class="line"><span class="cl">hah
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat &gt; a <span class="s">&lt;&lt; qq
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; erfafsa
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; fafssvadrfgh
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; fvdsf
+</span></span></span><span class="line"><span class="cl"><span class="s">&gt; qq</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ cat a
+</span></span><span class="line"><span class="cl">erfafsa
+</span></span><span class="line"><span class="cl">fafssvadrfgh
+</span></span><span class="line"><span class="cl">fvdsf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="devnull">/dev/null</h3>
+<p>将输出流重定向到/dev/null就会消失，像掉进黑洞一样</p>
+<h2 id="管道">管道</h2>
+<p>管道将标准输出流转化成标准输入流</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ ps -ef <span class="p">|</span> grep <span class="s2">&#34;ba&#34;</span>
+</span></span><span class="line"><span class="cl">root          <span class="m">31</span>       <span class="m">2</span>  <span class="m">0</span> Nov22 ?        00:00:00 <span class="o">[</span>writeback<span class="o">]</span>
+</span></span><span class="line"><span class="cl">root         <span class="m">610</span>       <span class="m">1</span>  <span class="m">0</span> Nov22 ?        00:00:03 /usr/sbin/irqbalance --foreground
+</span></span><span class="line"><span class="cl">root        <span class="m">1086</span>       <span class="m">1</span>  <span class="m">0</span> Nov22 ttyS0    00:00:00 /sbin/agetty -o -p -- <span class="se">\u</span> --keep-baud 115200,57600,38400,9600 ttyS0 vt220
+</span></span><span class="line"><span class="cl">root       <span class="m">10451</span>   <span class="m">10361</span>  <span class="m">0</span> 20:18 pts/0    00:00:00 -bash
+</span></span><span class="line"><span class="cl">dyh        <span class="m">10468</span>   <span class="m">10467</span>  <span class="m">0</span> 20:18 pts/0    00:00:00 -bash
+</span></span><span class="line"><span class="cl">dyh        <span class="m">10560</span>   <span class="m">10468</span>  <span class="m">0</span> 21:02 pts/0    00:00:00 grep ba
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>有时候只使用管道是不行的，要通过<code>xargs</code>把标准输入转化成一个或多个下一个命令的参数，一般使用空格分开，但是如果标准输入中就有空格，需要额外处理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ ls -l
+</span></span><span class="line"><span class="cl">total <span class="m">12</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 20:39 a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">15</span> Nov <span class="m">24</span> 21:13 aa
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> dyh dyh <span class="m">4096</span> Nov <span class="m">24</span> 21:22 dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ~ -name <span class="s1">&#39;*a*&#39;</span>
+</span></span><span class="line"><span class="cl">/home/dyh/aa
+</span></span><span class="line"><span class="cl">/home/dyh/a
+</span></span><span class="line"><span class="cl">/home/dyh/dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls -l /home/dyh/aa /home/dyh/a /home/dyh/dir_a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 20:39 /home/dyh/a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">15</span> Nov <span class="m">24</span> 21:13 /home/dyh/aa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/home/dyh/dir_a:
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ~ -name <span class="s1">&#39;*a*&#39;</span> <span class="p">|</span> ls -l
+</span></span><span class="line"><span class="cl">total <span class="m">12</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 20:39 a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">15</span> Nov <span class="m">24</span> 21:13 aa
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> dyh dyh <span class="m">4096</span> Nov <span class="m">24</span> 21:22 dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ~ -name <span class="s1">&#39;*a*&#39;</span> <span class="p">|</span> xargs ls -l
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 20:39 /home/dyh/a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">15</span> Nov <span class="m">24</span> 21:13 /home/dyh/aa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/home/dyh/dir_a:
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于find命令，可以使用-exec选项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ find ~ -name <span class="s1">&#39;*a*&#39;</span> -exec ls -l <span class="o">{}</span> <span class="se">\;</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh <span class="m">15</span> Nov <span class="m">24</span> 21:13 /home/dyh/aa
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh <span class="m">29</span> Nov <span class="m">24</span> 20:39 /home/dyh/a
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不过如果要查找文件，最好用<code>whereis</code>或<code>locate</code>，这两个都比<code>find</code>快，不过<code>find</code>是最强大的查找工具</p>
+<p><code>find &lt;path&gt; -name &lt;name&gt; -exec &lt;command&gt; {} \;</code>和<code>find &lt;path&gt; -name &lt;name&gt; | xargs &lt;command&gt;</code>有什么区别</p>
+<p>Q:</p>
+<p><code>find &lt;path&gt; -name &lt;name&gt; -exec &lt;command&gt; {} \;</code>和<code>find &lt;path&gt; -name &lt;name&gt; | xargs &lt;command&gt;</code>都是Linux中的<code>find</code>命令，用于查找文件并对其执行指定的命令。两者的区别在于：</p>
+<p>A:</p>
+<ul>
+<li><code>find &lt;path&gt; -name &lt;name&gt; -exec &lt;command&gt; {} \;</code>会对每个查找到的文件都执行一次指定的命令，而<code>find &lt;path&gt; -name &lt;name&gt; | xargs &lt;command&gt;</code>则会将所有查找到的文件名作为参数传递给<code>xargs</code>命令，然后再一次性地执行指定的命令。</li>
+<li><code>find &lt;path&gt; -name &lt;name&gt; -exec &lt;command&gt; {} \;</code>可以保证命令的执行顺序，而<code>find &lt;path&gt; -name &lt;name&gt; | xargs &lt;command&gt;</code>则不能保证命令的执行顺序。</li>
+</ul>
+<p>例如，下面的命令将在当前目录下查找所有<code>.txt</code>文件，并对每个文件执行<code>ls -l</code>命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -name <span class="s2">&#34;*.txt&#34;</span> -type f -exec ls -l <span class="o">{}</span> <span class="se">\;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>而下面的命令则使用了<code>xargs</code>命令来执行相同的操作：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">find . -name <span class="s2">&#34;*.txt&#34;</span> -type f <span class="p">|</span> xargs ls -l
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这两个命令的效果是相同的，但是第二个命令可能会更快，因为它可以将多个文件名作为参数传递给<code>ls</code>命令，从而减少了命令的执行次数.</p>
+<p>总的来说，如果需要对每个查找到的文件执行指定的命令，并且命令的执行顺序很重要，那么应该使用<code>-exec</code>选项。如果只是需要对所有查找到的文件执行指定的命令，并且命令的执行顺序不重要，那么可以考虑使用<code>xargs</code>命令.</p>
+<p>以上答案来自于gpt-4</p>
+<p><code>xargs</code> 处理空格输入</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">dyh@0v0:~$ ls -l
+</span></span><span class="line"><span class="cl">total <span class="m">12</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">29</span> Nov <span class="m">24</span> 21:59  a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> Nov <span class="m">24</span> 22:00 <span class="s1">&#39;a a&#39;</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">15</span> Nov <span class="m">24</span> 21:13  aa
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> dyh  dyh  <span class="m">4096</span> Nov <span class="m">24</span> 21:22  dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls
+</span></span><span class="line"><span class="cl"> a  <span class="s1">&#39;a a&#39;</span>   aa   dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ./ -name <span class="s1">&#39;*a*&#39;</span>
+</span></span><span class="line"><span class="cl">./aa
+</span></span><span class="line"><span class="cl">./a a
+</span></span><span class="line"><span class="cl">./a
+</span></span><span class="line"><span class="cl">./dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ ls -l ./aa ./a<span class="se">\ </span>a ./a ./dir_a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">29</span> Nov <span class="m">24</span> 21:59  ./a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> Nov <span class="m">24</span> 22:00 <span class="s1">&#39;./a a&#39;</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">15</span> Nov <span class="m">24</span> 21:13  ./aa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./dir_a:
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ./ -name <span class="s1">&#39;*a*&#39;</span> <span class="p">|</span> ls -l
+</span></span><span class="line"><span class="cl">total <span class="m">12</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">29</span> Nov <span class="m">24</span> 21:59  a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> Nov <span class="m">24</span> 22:00 <span class="s1">&#39;a a&#39;</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">15</span> Nov <span class="m">24</span> 21:13  aa
+</span></span><span class="line"><span class="cl">drwxr-xr-x <span class="m">2</span> dyh  dyh  <span class="m">4096</span> Nov <span class="m">24</span> 21:22  dir_a
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ./ -name <span class="s1">&#39;*a*&#39;</span> <span class="p">|</span> xargs ls -l
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 21:59 ./a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 21:59 ./a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">29</span> Nov <span class="m">24</span> 21:59 a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh dyh   <span class="m">15</span> Nov <span class="m">24</span> 21:13 ./aa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./dir_a:
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span><span class="line"><span class="cl">dyh@0v0:~$ find ./ -name <span class="s1">&#39;*a*&#39;</span> -print0 <span class="p">|</span> xargs -0 ls -l
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">29</span> Nov <span class="m">24</span> 21:59  ./a
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> root root    <span class="m">0</span> Nov <span class="m">24</span> 22:00 <span class="s1">&#39;./a a&#39;</span>
+</span></span><span class="line"><span class="cl">-rw-r--r-- <span class="m">1</span> dyh  dyh    <span class="m">15</span> Nov <span class="m">24</span> 21:13  ./aa
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">./dir_a:
+</span></span><span class="line"><span class="cl">total <span class="m">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>-print0</code>和<code>-0</code>意思是不用空格分割了，用null分割</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://www.runoob.com/linux/linux-shell-io-redirections.html" target="_blank" rel="noopener noreffer">https://www.runoob.com/linux/linux-shell-io-redirections.html</a></p>
+<p><a href="https://www.redhat.com/sysadmin/linux-shell-redirection-pipelining" target="_blank" rel="noopener noreffer">https://www.redhat.com/sysadmin/linux-shell-redirection-pipelining</a></p>
+<p><a href="https://blog.csdn.net/succing/article/details/127355545" target="_blank" rel="noopener noreffer">https://blog.csdn.net/succing/article/details/127355545</a></p>
+<p><a href="https://blog.csdn.net/weixin_43025343/article/details/132537234" target="_blank" rel="noopener noreffer">https://blog.csdn.net/weixin_43025343/article/details/132537234</a></p>
+<p><a href="https://luzejia.blog.csdn.net/article/details/112059493?spm=1001.2014.3001.5502" target="_blank" rel="noopener noreffer">https://luzejia.blog.csdn.net/article/details/112059493?spm=1001.2014.3001.5502</a></p>
+<p><a href="https://blog.csdn.net/oqqHuTu12345678/article/details/129282059" target="_blank" rel="noopener noreffer">https://blog.csdn.net/oqqHuTu12345678/article/details/129282059</a></p>
+<p><a href="https://www.runoob.com/linux/linux-comm-xargs.html" target="_blank" rel="noopener noreffer">https://www.runoob.com/linux/linux-comm-xargs.html</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-11-24</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出" data-hashtags="shell,linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-hashtag="shell"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出" data-description="Linux输入输出"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出" data-description="Linux输入输出"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/" data-title="Linux输入输出"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/shell/">shell</a>,&nbsp;<a href="/tags/linux/">linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/mysql/" class="prev" rel="prev" title="mysql"><i class="fas fa-angle-left fa-fw"></i>mysql</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.9d9de92308099c9446cdfea048e718b59bf5074cadab1ec5cfcab775acb354e6.js" integrity="sha256-nZ3pIwgJnJRGzf6gSOcYtZv1B0ytqx7Fz8q3dayzVOY="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>
