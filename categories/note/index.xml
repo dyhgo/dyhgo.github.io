@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/categories/note/</link>
         <description>note - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/note/" rel="self" type="application/rss+xml" /><item>
+    <title>C&#43;&#43;互斥锁</title>
+    <link>https://dyhgo.github.io/c-%E4%BA%92%E6%96%A5%E9%94%81/</link>
+    <pubDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/c-%E4%BA%92%E6%96%A5%E9%94%81/</guid>
+    <description><![CDATA[std::mutex 最简单的互斥锁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 // mutex example #include &lt;iostream&gt; // std::cout #include &lt;thread&gt; // std::thread #include &lt;mutex&gt; // std::mutex std::mutex mtx; // mutex for critical section void print_block (int n, char c) { // critical section (exclusive access to std::cout signaled]]></description>
+</item><item>
     <title>protobuf</title>
     <link>https://dyhgo.github.io/protobuf/</link>
     <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/learning-cpp/</guid>
     <description><![CDATA[Introduction 学习一下c++ 教程视频地址，搬运自youtube 个人认为是一个非常不错的c++教程 空着的待补 How C++ works pre-process compile link Variables Functions Header Files 当我们需要在cpp文件中用]]></description>
-</item><item>
-    <title>tf-idf</title>
-    <link>https://dyhgo.github.io/tf-idf/</link>
-    <pubDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tf-idf/</guid>
-    <description><![CDATA[记录一下tf-idf TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术]]></description>
 </item></channel>
 </rss>
