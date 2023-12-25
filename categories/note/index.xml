@@ -12,6 +12,13 @@
     <guid>https://dyhgo.github.io/c-%E4%BA%92%E6%96%A5%E9%94%81/</guid>
     <description><![CDATA[std::mutex 最简单的互斥锁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 // mutex example #include &lt;iostream&gt; // std::cout #include &lt;thread&gt; // std::thread #include &lt;mutex&gt; // std::mutex std::mutex mtx; // mutex for critical section void print_block (int n, char c) { // critical section (exclusive access to std::cout signaled]]></description>
 </item><item>
+    <title>C&#43;&#43;类继承和可见性</title>
+    <link>https://dyhgo.github.io/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/</link>
+    <pubDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/</guid>
+    <description><![CDATA[三种继承方式，是否真正继承了，子类可访问吗，外部可访问吗 三种可见性，类自己可访问吗，外部可访问吗 继承默认是private继承 继承和可见性问题]]></description>
+</item><item>
     <title>protobuf</title>
     <link>https://dyhgo.github.io/protobuf/</link>
     <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
     <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
-</item><item>
-    <title>Learning CPP</title>
-    <link>https://dyhgo.github.io/learning-cpp/</link>
-    <pubDate>Wed, 09 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/learning-cpp/</guid>
-    <description><![CDATA[Introduction 学习一下c++ 教程视频地址，搬运自youtube 个人认为是一个非常不错的c++教程 空着的待补 How C++ works pre-process compile link Variables Functions Header Files 当我们需要在cpp文件中用]]></description>
 </item></channel>
 </rss>
