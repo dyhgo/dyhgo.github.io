@@ -6,8 +6,8 @@ this is da1yh
 
 a graduate student major in software engineering at Zhejiang University
 
-currently learning model compression
- 
+currently learning ...
+
 use c++, golang, python
 
 love swimming, coding, poppin
