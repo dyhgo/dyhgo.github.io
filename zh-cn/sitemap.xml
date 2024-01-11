@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/categories/"
@@ -15,11 +15,11 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/categories/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/tags/docker/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/docker/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://dyhgo.github.io/tags/docker/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/docker2/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/tags/"
@@ -32,7 +32,7 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://dyhgo.github.io/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/"
@@ -45,6 +45,7 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/"
                     /></url><url>
+            <loc>https://dyhgo.github.io/docker/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://dyhgo.github.io/c-%E4%BA%92%E6%96%A5%E9%94%81/</loc><lastmod>2023-12-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://dyhgo.github.io/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/</loc><lastmod>2023-12-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://dyhgo.github.io/tags/cpp/</loc><lastmod>2023-12-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
