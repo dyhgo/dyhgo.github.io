@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/linux/</link>
         <description>linux - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 13 Dec 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/linux/" rel="self" type="application/rss+xml" /><item>
+    <title>shell三剑客</title>
+    <link>https://dyhgo.github.io/shell%E4%B8%89%E5%89%91%E5%AE%A2/</link>
+    <pubDate>Wed, 13 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/shell%E4%B8%89%E5%89%91%E5%AE%A2/</guid>
+    <description><![CDATA[grep Global Regular Expression Print 用正则表达式查找文本 grep [-option] {pattern} {file} -A&lt;行数&gt; 除了显示匹配 pattern 的那一行外，显示该行之后的内容 -B&lt;行数&gt; 除了显示匹]]></description>
+</item><item>
     <title>Linux输入输出</title>
     <link>https://dyhgo.github.io/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/</link>
     <pubDate>Fri, 24 Nov 2023 00:00:00 &#43;0000</pubDate>
