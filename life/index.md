@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2024/02/01 16:24" placement="top" color="blue">
+        <h4>研二已经过去一半了，毕业论文和找工作的事儿是一点进度都没有，然而自己还在疯狂玩耍，属于是间歇性焦虑持续性摆烂</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2023/11/20 11:06" placement="top" color="green">
         <h4>修复了图片无法正常显示的问题，问题是csdn图片的防盗链</h4>
     </el-timeline-item>

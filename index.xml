@@ -4,9 +4,16 @@
         <link>https://dyhgo.github.io/</link>
         <description>这是一个网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 01 Feb 2024 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>test_password</title>
+    <link>https://dyhgo.github.io/test_password/</link>
+    <pubDate>Thu, 01 Feb 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/test_password/</guid>
+    <description><![CDATA[hahahah]]></description>
+</item><item>
     <title>docker2</title>
     <link>https://dyhgo.github.io/docker2/</link>
     <pubDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</guid>
     <description><![CDATA[此篇文章做简单记录，以防忘记 在市场上买好套肠 羊肚菌浸泡半个小时 点火，向锅中倒油 加入一些蒜 将套肠和羊肚菌倒入锅中翻炒 加入一些酱油和水（像这种比]]></description>
-</item><item>
-    <title>protobuf</title>
-    <link>https://dyhgo.github.io/protobuf/</link>
-    <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/protobuf/</guid>
-    <description><![CDATA[protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json 它可以被序列化和反序列化，从而用于传输 参考链接 它的格式类似]]></description>
 </item></channel>
 </rss>
