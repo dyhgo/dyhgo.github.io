@@ -185,6 +185,85 @@ func main() {
 ```
 
 
+## 使用M个协程按顺序交替打印N个数字
+
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func printN(m, n int) {
+	chs := make([]chan int, m)
+	for i := 0; i < m; i++ {
+		chs[i] = make(chan int)
+	}
+	var wg sync.WaitGroup
+	wg.Add(m)
+	for i := 0; i < m; i++ {
+		go func(id int) {
+			defer wg.Done()
+			for j := id + 1; j <= n; j += m {
+				x := <-chs[id]
+				fmt.Printf("goroutine: %d, number %d\n", id, x)
+				if x < n {
+					chs[(id+1)%m] <- x + 1
+				}
+			}
+		}(i)
+	}
+	chs[0] <- 1
+	wg.Wait()
+}
+
+func main() {
+	printN(4, 30)
+}
+
+```
+
+
+输出
+
+
+```
+goroutine: 0, number 1
+goroutine: 1, number 2
+goroutine: 2, number 3
+goroutine: 3, number 4
+goroutine: 0, number 5
+goroutine: 1, number 6
+goroutine: 2, number 7
+goroutine: 3, number 8
+goroutine: 0, number 9
+goroutine: 1, number 10
+goroutine: 2, number 11
+goroutine: 3, number 12
+goroutine: 0, number 13
+goroutine: 1, number 14
+goroutine: 2, number 15
+goroutine: 3, number 16
+goroutine: 0, number 17
+goroutine: 1, number 18
+goroutine: 2, number 19
+goroutine: 3, number 20
+goroutine: 0, number 21
+goroutine: 1, number 22
+goroutine: 2, number 23
+goroutine: 3, number 24
+goroutine: 0, number 25
+goroutine: 1, number 26
+goroutine: 2, number 27
+goroutine: 3, number 28
+goroutine: 0, number 29
+goroutine: 1, number 30
+```
+
+
+
 
 
 
