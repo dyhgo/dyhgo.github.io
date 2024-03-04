@@ -5,12 +5,12 @@
         <description>cpp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 22 Feb 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
-    <title>快速排序</title>
-    <link>https://dyhgo.github.io/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</link>
+    <title>C&#43;&#43;实现XXX</title>
+    <link>https://dyhgo.github.io/c-%E5%AE%9E%E7%8E%B0xxx/</link>
     <pubDate>Thu, 22 Feb 2024 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</guid>
-    <description><![CDATA[1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 #include &lt;bits/stdc++.h&gt; using namespace std; void quickSort(vector&lt;int&gt;&amp; a, int l, int r) { if (l &lt; r) { int ptrl = l, ptrr = r; int x = a[ptrl]; while (ptrl &lt; ptrr) {]]></description>
+    <guid>https://dyhgo.github.io/c-%E5%AE%9E%E7%8E%B0xxx/</guid>
+    <description><![CDATA[智能指针 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66]]></description>
 </item><item>
     <title>C&#43;&#43;互斥锁</title>
     <link>https://dyhgo.github.io/c-%E4%BA%92%E6%96%A5%E9%94%81/</link>

@@ -12,13 +12,6 @@
     <guid>https://dyhgo.github.io/tags/cpp/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>sort</title>
-    <link>https://dyhgo.github.io/tags/sort/</link>
-    <pubDate>Thu, 22 Feb 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/sort/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
     <title>redis</title>
     <link>https://dyhgo.github.io/tags/redis/</link>
     <pubDate>Tue, 20 Feb 2024 00:00:00 &#43;0000</pubDate>
@@ -73,6 +66,13 @@
     <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/tags/git/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>go</title>
+    <link>https://dyhgo.github.io/tags/go/</link>
+    <pubDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/tags/go/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
