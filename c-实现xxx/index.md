@@ -321,7 +321,11 @@ void _merge(vector<int>& a, int ll, int lr, int rl, int rr) {
     }
     int ptrl = ll, ptrr = rl, ptr = ll;
     while (ptrl <= lr or ptrr <= rr) {
-        if (ptrr > rr or b[ptrl] < b[ptrr]) {
+        if (ptrr > rr) {
+            a[ptr++] = b[ptrl++];
+        } else if (ptrl > lr) {
+            a[ptr++] = b[ptrr++];
+        } else if (b[ptrl] < b[ptrr]) {
             a[ptr++] = b[ptrl++];
         } else {
             a[ptr++] = b[ptrr++];
@@ -339,14 +343,15 @@ void mergeSort(vector<int>& a, int l, int r) {
 }
 
 int main() {
-    vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
-    //vector<int> a = {3, 2, 1};
+    //vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
+    vector<int> a = {3};
     mergeSort(a, 0, (int) a.size() - 1);
     for (int i : a) {
         cout << i << ' ';
     }
     return 0;
 }
+
 
 ```
 
