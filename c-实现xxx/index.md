@@ -350,3 +350,107 @@ int main() {
 
 ```
 
+
+
+
+
+## 冒泡排序
+
+不断交换，每次把最大值换到后面
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void bubbleSort(vector<int>& a, int l, int r) {
+    int n = (int) a.size();
+    for (int i = n - 1; i >= 0; --i) {
+        for (int j = 0; j < i; ++j) {
+            if (a[j] > a[j + 1]) swap(a[j], a[j + 1]);
+        }
+    }
+}
+
+int main() {
+    //vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
+    vector<int> a = {3, 2, 1};
+    bubbleSort(a, 0, (int) a.size() - 1);
+    for (int i : a) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+
+```
+
+
+## 选择排序
+
+每次选择最小值，放到最前面
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void selectionSort(vector<int>& a, int l, int r) {
+    int n = (int) a.size();
+    for (int i = 0; i < n; ++i) {
+        int mn = a[i];
+        int id = i;
+        for (int j = i + 1; j < n; ++j) {
+            if (a[j] < mn) {
+                mn = a[j];
+                id = j;
+            }
+        }
+        swap(a[i], a[id]);
+    }
+}
+
+int main() {
+    vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
+    //vector<int> a = {3};
+    selectionSort(a, 0, (int) a.size() - 1);
+    for (int i : a) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+
+```
+
+
+## 插入排序
+
+对于遍历到的数，每次往前看它应该被插到哪个位置
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void insertionSort(vector<int>& a, int l, int r) {
+    int n = (int) a.size();
+    for (int i = 0; i < n; ++i) {
+        for (int j = i; j > 0; --j) {
+            if (a[j] < a[j - 1]) {
+                swap(a[j], a[j - 1]);
+            } else break;
+        }
+    }
+}
+
+int main() {
+    //vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
+    vector<int> a = {3};
+    insertionSort(a, 0, (int) a.size() - 1);
+    for (int i : a) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+
+```
+
