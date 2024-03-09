@@ -305,3 +305,48 @@ int main() {
 
 ```
 
+
+
+## 归并排序
+
+```cpp
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void _merge(vector<int>& a, int ll, int lr, int rl, int rr) {
+    static vector<int> b(a.size());
+    for (int i = ll; i <= rr; ++i) {
+        b[i] = a[i];
+    }
+    int ptrl = ll, ptrr = rl, ptr = ll;
+    while (ptrl <= lr or ptrr <= rr) {
+        if (ptrr > rr or b[ptrl] < b[ptrr]) {
+            a[ptr++] = b[ptrl++];
+        } else {
+            a[ptr++] = b[ptrr++];
+        }
+    }
+}
+
+void mergeSort(vector<int>& a, int l, int r) {
+    if (l >= r) return;
+    int mid = (l + r) >> 1;
+    mergeSort(a, l, mid);
+    mergeSort(a, mid + 1, r);
+    _merge(a, l, mid, mid + 1, r);
+
+}
+
+int main() {
+    vector<int> a = {14, 12, -4, 5, 9, -1, 5, 5, 6, 2, 7, 8, 1};
+    //vector<int> a = {3, 2, 1};
+    mergeSort(a, 0, (int) a.size() - 1);
+    for (int i : a) {
+        cout << i << ' ';
+    }
+    return 0;
+}
+
+```
+
