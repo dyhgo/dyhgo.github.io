@@ -922,8 +922,62 @@ c = (a + b - 1) / b;    //ceil
 
 
 
+## 将野指针赋值给另一个指针
 
+```cpp
+int main() {
+    int* a; // wild pointer
+    int* b = a;
+    cout << a << '\n';
+    cout << b << '\n';
+    b = new int (3);
+    cout << a << '\n';
+    cout << b << '\n';
+    // a = b;
+    cout << *a << '\n';
+    cout << *b << '\n';
+    return 0;
+}
+```
 
+输出
 
+```
+0x1020a7198
+0x1020a7198
+0x1020a7198
+0x600003da8010
+-788462593
+3
+```
 
+可以看到原本a和b指向同一块区域，接着系统分配一块内存，存储值3，然后b指向了这块内存，但是a的指向不变，所以对a取值就是垃圾值
 
+解决的办法就是a=b
+
+```cpp
+int main() {
+    int* a; // wild pointer
+    int* b = a;
+    cout << a << '\n';
+    cout << b << '\n';
+    b = new int (3);
+    cout << a << '\n';
+    cout << b << '\n';
+    a = b;
+    cout << *a << '\n';
+    cout << *b << '\n';
+    return 0;
+}
+```
+
+输出为
+
+```
+0x104dc7190
+0x104dc7190
+0x104dc7190
+0x600002934030
+3
+3
+```
