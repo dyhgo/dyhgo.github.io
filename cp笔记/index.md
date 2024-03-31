@@ -284,6 +284,8 @@ int main() {
 }
 ```
 
+如果stl的元素是指针类型，则重载运算符函数中的参数不能加&，直接用比如const int*
+
 
 ```cpp
 #include <bits/stdc++.h>
