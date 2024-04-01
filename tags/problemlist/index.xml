@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/problemlist/</link>
         <description>problemlist - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/problemlist/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 01 Apr 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/problemlist/" rel="self" type="application/rss+xml" /><item>
+    <title>LC_HOT100</title>
+    <link>https://dyhgo.github.io/lc_hot100/</link>
+    <pubDate>Mon, 01 Apr 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/lc_hot100/</guid>
+    <description><![CDATA[1.两数之和 题意 题解 哈希表 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 class Solution { public: vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) { unordered_map&lt;int, vector&lt;int&gt;&gt; mp; for (int i = 0; i &lt; (int) nums.size(); ++i) { mp[nums[i]].push_back(i); } for (int i = 0; i &lt; (int) nums.size(); ++i) { if (nums[i] *]]></description>
+</item><item>
     <title>剑指offer</title>
     <link>https://dyhgo.github.io/%E5%89%91%E6%8C%87offer/</link>
     <pubDate>Sun, 24 Jul 2022 00:00:00 &#43;0000</pubDate>
