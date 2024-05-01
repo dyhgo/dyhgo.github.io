@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 16 Apr 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 01 May 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>git补充2</title>
+    <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</link>
+    <pubDate>Wed, 01 May 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</guid>
+    <description><![CDATA[如何更优雅地使用git，包含merge，pull，合并commit 实验工具是gitlab pre 在gitlab上登录，只能免费试用一个月 本地mer]]></description>
+</item><item>
     <title>C&#43;&#43; IPC</title>
     <link>https://dyhgo.github.io/c-_ipc/</link>
     <pubDate>Tue, 16 Apr 2024 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/</guid>
     <description><![CDATA[三种继承方式，是否真正继承了，子类可访问吗，外部可访问吗 三种可见性，类自己可访问吗，外部可访问吗 继承默认是private继承 继承和可见性问题]]></description>
-</item><item>
-    <title>shell三剑客</title>
-    <link>https://dyhgo.github.io/shell%E4%B8%89%E5%89%91%E5%AE%A2/</link>
-    <pubDate>Wed, 13 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/shell%E4%B8%89%E5%89%91%E5%AE%A2/</guid>
-    <description><![CDATA[grep Global Regular Expression Print 用正则表达式查找文本 grep [-option] {pattern} {file} -A&lt;行数&gt; 除了显示匹配 pattern 的那一行外，显示该行之后的内容 -B&lt;行数&gt; 除了显示匹]]></description>
 </item></channel>
 </rss>

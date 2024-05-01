@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/git/</link>
         <description>git - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 01 May 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
+    <title>git补充2</title>
+    <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</link>
+    <pubDate>Wed, 01 May 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</guid>
+    <description><![CDATA[如何更优雅地使用git，包含merge，pull，合并commit 实验工具是gitlab pre 在gitlab上登录，只能免费试用一个月 本地mer]]></description>
+</item><item>
     <title>git补充</title>
     <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%85/</link>
     <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
