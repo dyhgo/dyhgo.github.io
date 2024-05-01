@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/cpp/</link>
         <description>cpp - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 22 Feb 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 16 Apr 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+    <title>C&#43;&#43; IPC</title>
+    <link>https://dyhgo.github.io/c-_ipc/</link>
+    <pubDate>Tue, 16 Apr 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/c-_ipc/</guid>
+    <description><![CDATA[管道 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 #include &lt;iostream&gt; #include &lt;unistd.h&gt; int main() { int fd[2]; if (pipe(fd) == -1) { perror(&#34;pipe&#34;); return 1; } // create child process pid_t pid = fork(); char buf[256]; if (pid == -1) { perror(&#34;fork&#34;); return 1; } else if (pid]]></description>
+</item><item>
     <title>C&#43;&#43;实现XXX</title>
     <link>https://dyhgo.github.io/c-%E5%AE%9E%E7%8E%B0xxx/</link>
     <pubDate>Thu, 22 Feb 2024 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</guid>
     <description><![CDATA[A. Cubes Sorting 题意 对于一个数列，每次操作交换相邻的两个数，问是否需要达到n(n-1)/2次操作才可以让数列递增 题解 判断数列是否严格单调递减 1 2 3 4 5]]></description>
-</item><item>
-    <title>FFT &amp; NTT</title>
-    <link>https://dyhgo.github.io/fft-ntt/</link>
-    <pubDate>Thu, 24 Sep 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/fft-ntt/</guid>
-    <description><![CDATA[前言 一篇没什么用的文章，记录一下FFT和NTT的板子 fft和ntt的原理参考FFT &amp; NTT 概述 fft和ntt差不多，基础用法就是加速多项式乘法，]]></description>
 </item></channel>
 </rss>
