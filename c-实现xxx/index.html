@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/c-%E5%AE%9E%E7%8E%B0xxx\/"
-        },"genre": "posts","keywords": "cpp","wordcount":  2003 ,
+        },"genre": "posts","keywords": "cpp","wordcount":  2193 ,
         "url": "https:\/\/dyhgo.github.io\/c-%E5%AE%9E%E7%8E%B0xxx\/","datePublished": "2024-02-22T00:00:00+00:00","dateModified": "2024-02-22T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -110,8 +110,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">C&#43;&#43;实现XXX</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-02-22">2024-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2003 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/c-%E5%AE%9E%E7%8E%B0xxx/" class="leancloud_visitors" data-flag-title="C&#43;&#43;实现XXX">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-02-22">2024-02-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2193 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 5 分钟&nbsp;<span id="/c-%E5%AE%9E%E7%8E%B0xxx/" class="leancloud_visitors" data-flag-title="C&#43;&#43;实现XXX">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -707,6 +707,76 @@
 </span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对于顺序的数组，可以先随机洗牌</p>
+<p>对于有大量重复元素，会退化成O(n*n)，成为<code>荷兰国旗问题</code>，可以用如下解法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">sortArray</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">quickSort</span> <span class="kd">func</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">quickSort</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">l</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">r</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">l</span> <span class="o">&gt;=</span> <span class="nx">r</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">pivot</span> <span class="o">:=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">l</span> <span class="o">+</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Intn</span><span class="p">(</span><span class="nx">r</span><span class="o">-</span><span class="nx">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// pos := l + rand.Intn(r-l+1)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// nums[l], nums[pos] = nums[pos], nums[l]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">// pivot := nums[l]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="nx">samel</span><span class="p">,</span> <span class="nx">samer</span> <span class="o">:=</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">r</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">cur</span> <span class="o">:=</span> <span class="nx">l</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="nx">cur</span> <span class="o">&lt;=</span> <span class="nx">samer</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">pivot</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">samel</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">pivot</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">samer</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">samel</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">samer</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">nums</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>

@@ -305,6 +305,44 @@ int main() {
 
 ```
 
+对于顺序的数组，可以先随机洗牌
+
+对于有大量重复元素，会退化成O(n\*n)，成为`荷兰国旗问题`，可以用如下解法
+
+```go
+func sortArray(nums []int) []int {
+	n := len(nums)
+	var quickSort func([]int, int, int)
+	quickSort = func(nums []int, l int, r int) {
+		if l >= r {
+			return
+		}
+		pivot := nums[l + rand.Intn(r-l+1)]
+        // pos := l + rand.Intn(r-l+1)
+		// nums[l], nums[pos] = nums[pos], nums[l]
+		// pivot := nums[l]
+		samel, samer := l, r
+		cur := l
+		for cur <= samer {
+			if nums[cur] < pivot {
+				nums[cur], nums[samel] = nums[samel], nums[cur]
+				samel++
+				cur++
+			} else if nums[cur] > pivot {
+				nums[cur], nums[samer] = nums[samer], nums[cur]
+				samer--
+			} else {
+				cur++
+			}
+		}
+		quickSort(nums, l, samel-1)
+		quickSort(nums, samer+1, r)
+	}
+	quickSort(nums, 0, n-1)
+	return nums
+}
+```
+
 
 
 ## 归并排序
