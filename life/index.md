@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2024/05/18 11:47" placement="top" color="green">
+        <h4>版本V2.3<br>修改了导航栏分割线右边选项的加载逻辑，从原来的js加载css改为直接css加载，更加快速和规范</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2024/02/01 16:24" placement="top" color="blue">
         <h4>研二已经过去一半了，毕业论文和找工作的事儿是一点进度都没有，然而自己还在疯狂玩耍，属于是间歇性焦虑持续性摆烂</h4>
     </el-timeline-item>
