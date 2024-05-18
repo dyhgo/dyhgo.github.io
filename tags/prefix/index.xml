@@ -6,38 +6,38 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/prefix/" rel="self" type="application/rss+xml" /><item>
     <title>9th hhucpc (Senior)</title>
-    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
+    <link>https://dyhgo.github.io/posts/9th-hhucpcsenior/</link>
     <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
+    <guid>https://dyhgo.github.io/posts/9th-hhucpcsenior/</guid>
     <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
 </item><item>
     <title>abc172</title>
-    <link>https://dyhgo.github.io/abc172/</link>
+    <link>https://dyhgo.github.io/posts/abc172/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc172/</guid>
+    <guid>https://dyhgo.github.io/posts/abc172/</guid>
     <description><![CDATA[A - Calc 题意 看题目 题解 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long; int main(){ int a; cin&gt;&gt;a; cout&lt;&lt;a+a*a+a*a*a&lt;&lt;endl; return 0; } B - Minor Change 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long;]]></description>
 </item><item>
     <title>Codeforces Round #636 (Div. 3) A~E</title>
-    <link>https://dyhgo.github.io/codeforces-round-636-div.-3-a~e/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-636-div.-3-a~e/</link>
     <pubDate>Thu, 23 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-636-div.-3-a~e/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-636-div.-3-a~e/</guid>
     <description><![CDATA[A. Candies 题意 给一个数n，找一个数x，满足 x+2x+4x+8x+&hellip; = n 题解 等比数列求和，变成2^m 然后枚举，看哪个能整除 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20]]></description>
 </item><item>
     <title>Codeforces Round #634 (Div. 3) A~E</title>
-    <link>https://dyhgo.github.io/codeforces-round-634-div.-3-a~e/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-634-div.-3-a~e/</link>
     <pubDate>Tue, 14 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-634-div.-3-a~e/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-634-div.-3-a~e/</guid>
     <description><![CDATA[A. Candies and Two Sisters 题意 将一堆糖果分给两个女孩，其中一个要比另一个多，问有几种分法 题解 可以看出规律 ac代码 1 2 3 4 t=int(input()) for i in range(t): n=int(input()) print((int)((n-1)/2)) B. Construct the String 题意 输入a,b]]></description>
 </item><item>
     <title>Codeforces Round #632 (Div. 2) A~C</title>
-    <link>https://dyhgo.github.io/codeforces-round-632-div.-2-a~c/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-632-div.-2-a~c/</link>
     <pubDate>Thu, 09 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-632-div.-2-a~c/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-632-div.-2-a~c/</guid>
     <description><![CDATA[A. Little Artem 题意 给一网格染色，黑或白。要求满足以下条件的黑方块比白方块少1 如果是黑方块，则至少与一白方块边相邻，否则不计数 反之亦然 题解 左上角染白，]]></description>
 </item></channel>
 </rss>

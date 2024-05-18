@@ -6,59 +6,59 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/counting/" rel="self" type="application/rss+xml" /><item>
     <title>Codeforces Round #672 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</link>
     <pubDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</guid>
     <description><![CDATA[A. Cubes Sorting 题意 对于一个数列，每次操作交换相邻的两个数，问是否需要达到n(n-1)/2次操作才可以让数列递增 题解 判断数列是否严格单调递减 1 2 3 4 5]]></description>
 </item><item>
     <title>abc172</title>
-    <link>https://dyhgo.github.io/abc172/</link>
+    <link>https://dyhgo.github.io/posts/abc172/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc172/</guid>
+    <guid>https://dyhgo.github.io/posts/abc172/</guid>
     <description><![CDATA[A - Calc 题意 看题目 题解 1 2 3 4 5 6 7 8 9 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long; int main(){ int a; cin&gt;&gt;a; cout&lt;&lt;a+a*a+a*a*a&lt;&lt;endl; return 0; } B - Minor Change 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; using ll = long long;]]></description>
 </item><item>
     <title>西南科技大学第十六届ACM程序设计竞赛暨绵阳市邀请赛</title>
-    <link>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
+    <link>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
+    <guid>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
     <description><![CDATA[挺好的比赛 A-找规律 题解 玄学题，打表找规律或者猜测规则是每次洗牌是将一个位置移动到另一个固定位置 13次洗牌之后所有的位置都占过一遍，所以13]]></description>
 </item><item>
     <title>abc171</title>
-    <link>https://dyhgo.github.io/abc171/</link>
+    <link>https://dyhgo.github.io/posts/abc171/</link>
     <pubDate>Mon, 22 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc171/</guid>
+    <guid>https://dyhgo.github.io/posts/abc171/</guid>
     <description><![CDATA[A - αlphabet 题意 看题目 题解 1 2 3 4 5 6 7 8 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ char a; cin&gt;&gt;a; if(isupper(a)) cout&lt;&lt;&#39;A&#39;;else cout&lt;&lt;&#39;a&#39;; return 0; } B - Mix Juice 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){]]></description>
 </item><item>
     <title>abc169</title>
-    <link>https://dyhgo.github.io/abc169/</link>
+    <link>https://dyhgo.github.io/posts/abc169/</link>
     <pubDate>Mon, 08 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc169/</guid>
+    <guid>https://dyhgo.github.io/posts/abc169/</guid>
     <description><![CDATA[由于事情太多，拖了这么久 A - Multiplication 1 题意 输入两个数，求积 题解 1 2 n,m = map(int,input().split()) print(n*m) B - Multiplication 2 题意 输入很多大数，求积是否超过1e18 题解 用 __int128 ， 样例有个情况是前]]></description>
 </item><item>
     <title>abc168</title>
-    <link>https://dyhgo.github.io/abc168/</link>
+    <link>https://dyhgo.github.io/posts/abc168/</link>
     <pubDate>Tue, 19 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc168/</guid>
+    <guid>https://dyhgo.github.io/posts/abc168/</guid>
     <description><![CDATA[A - ∴ (Therefore) 题意 看题目 题解 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 #include&lt;bits/stdc++.h&gt; using namespace std; int main(){ string s; cin&gt;&gt;s; char c=s[s.length()-1]; switch(c){ case &#39;2&#39; :case &#39;4&#39;: case &#39;5&#39;: case &#39;7&#39;: case &#39;9&#39;: cout&lt;&lt;&#34;hon\n&#34;; break; case &#39;3&#39;: cout&lt;&lt;&#34;bon\n&#34;; break; default :cout&lt;&lt;&#34;pon\n&#34;; } return 0; } B - &hellip; (Triple Dots) 题意 看]]></description>
 </item><item>
     <title>abc167</title>
-    <link>https://dyhgo.github.io/abc167/</link>
+    <link>https://dyhgo.github.io/posts/abc167/</link>
     <pubDate>Mon, 11 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc167/</guid>
+    <guid>https://dyhgo.github.io/posts/abc167/</guid>
     <description><![CDATA[这个比赛尽犯些sb错🙃，先是把 j 写成 i ，然后把2E5写成1E5 A - Registration 题意 判断字符串T是不是S后加一个字符 题解 1 2 3 4 5 6 7 8 9 10 #include&lt;bits/stdc++.h&gt; using namespace std; using ll]]></description>
 </item><item>
     <title>hduoj1796</title>
-    <link>https://dyhgo.github.io/hduoj1796/</link>
+    <link>https://dyhgo.github.io/posts/hduoj1796/</link>
     <pubDate>Sat, 11 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/hduoj1796/</guid>
+    <guid>https://dyhgo.github.io/posts/hduoj1796/</guid>
     <description><![CDATA[How many integers can you find Problem Description Now you get a number N, and a M-integers set, you should find out how many integers which are small than N, that they can divided exactly by any integers in the set. For example, N=12, and M-integer set is {2,3}, so there is another set {2,3,4,6,8,9,10}, all the integers of the set can be divided exactly by 2 or 3. As]]></description>
 </item></channel>
 </rss>

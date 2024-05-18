@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>Matrix Decomposition - This is DYH</title><meta name="Description" content="Matrix Decomposition"><meta property="og:title" content="Matrix Decomposition" />
+<meta property="og:description" content="Matrix Decomposition" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/posts/matrix-decomposition/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-10-14T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Matrix Decomposition"/>
+<meta name="twitter:description" content="Matrix Decomposition"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/matrix-decomposition/" /><link rel="prev" href="https://dyhgo.github.io/posts/pandas/" /><link rel="next" href="https://dyhgo.github.io/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Matrix Decomposition",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/posts\/matrix-decomposition\/"
+        },"genre": "posts","keywords": "math","wordcount":  5603 ,
+        "url": "https:\/\/dyhgo.github.io\/posts\/matrix-decomposition\/","datePublished": "2022-10-14T00:00:00+00:00","dateModified": "2022-10-14T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "Matrix Decomposition"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span>
+
+                
+
+                <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                <option> 清单 </option>
+                                <option value="https://da1yh.xyz/music/">音乐</option>
+                                <option value="https://da1yh.xyz/anime/">番剧</option>
+                                <option value="https://da1yh.xyz/game/">游戏</option>
+                                <option value="https://da1yh.xyz/poppin/">poppin</option>
+                            </select></a>
+
+                        <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                            <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option > 搜索 </option>
+                                    <option value="https://www.baidu.com">百度</a></option>
+                                    <option value="https://www.google.com">google</option>
+                                    <option value="https://www.bing.com">bing</option>
+                                    <option value="https://www.yandex.com">yandex</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oj </option>\n' +
+                                        <option value="https://codeforces.com/">codeforces</option>
+                                        <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                        <option value="https://atcoder.jp/">atcoder</option>
+                                        <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                        <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                        <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                        <option value="http://poj.org/">poj</option>
+                                        <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                        <option value="https://www.luogu.com.cn/">luogu</option>
+                                    </select>
+                                    </a>
+
+                                    <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                            <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                            <option > oi </option>\n' +
+                                            <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                            <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                            <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                            <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                           <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                            <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                            <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                            </select>
+                                            </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            
+
+            <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option> 清单 </option>
+                            <option value="https://da1yh.xyz/music/">音乐</option>
+                            <option value="https://da1yh.xyz/anime/">番剧</option>
+                            <option value="https://da1yh.xyz/game/">游戏</option>
+                            <option value="https://da1yh.xyz/poppin/">poppin</option>
+                        </select></a>
+
+                    <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                        <option > 搜索 </option>
+                                <option value="https://www.baidu.com">百度</a></option>
+                                <option value="https://www.google.com">google</option>
+                                <option value="https://www.bing.com">bing</option>
+                                <option value="https://www.yandex.com">yandex</option>
+                            </select>
+                            </a>
+
+                            <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                    <option > oj </option>\n' +
+                                    <option value="https://codeforces.com/">codeforces</option>
+                                    <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                    <option value="https://atcoder.jp/">atcoder</option>
+                                    <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                    <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                    <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                    <option value="http://poj.org/">poj</option>
+                                    <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                    <option value="https://www.luogu.com.cn/">luogu</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oi </option>\n' +
+                                        <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                        <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                        <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                        <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                       <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                        <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                        <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                        </select>
+                                        </a>
+
+        </div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Matrix Decomposition</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-14">2022-10-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5603 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;<span id="/posts/matrix-decomposition/" class="leancloud_visitors" data-flag-title="Matrix Decomposition">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#definitions">Definitions</a>
+      <ul>
+        <li><a href="#unitary-matrix">Unitary matrix</a>
+          <ul>
+            <li><a href="#conjugate-transpose">Conjugate transpose</a></li>
+          </ul>
+        </li>
+        <li><a href="#definite-matrix">Definite matrix</a>
+          <ul>
+            <li><a href="#definitions-for-real-matrices">Definitions for real matrices</a></li>
+            <li><a href="#definitions-for-complex-matrices">Definitions for complex matrices</a></li>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#eigenvalues">Eigenvalues</a></li>
+          </ul>
+        </li>
+        <li><a href="#hermitian-matrix">Hermitian matrix</a></li>
+      </ul>
+    </li>
+    <li><a href="#eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</a></li>
+    <li><a href="#gramschmidt-process">Gram–Schmidt process</a></li>
+    <li><a href="#gaussian-elimination">Gaussian elimination</a>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#example-1">Example</a></li>
+        <li><a href="#applications">Applications</a>
+          <ul>
+            <li><a href="#computing-determinants">Computing determinants</a></li>
+            <li><a href="#finding-the-inverse-of-a-matrix">Finding the inverse of a matrix</a></li>
+            <li><a href="#computing-ranks-and-bases">Computing ranks and bases</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#lu-decomposition">LU decomposition</a>
+      <ul>
+        <li><a href="#introduction-1">Introduction</a></li>
+        <li><a href="#example-2">Example</a></li>
+        <li><a href="#existence-and-uniqueness">Existence and uniqueness</a>
+          <ul>
+            <li><a href="#square-matrices">Square matrices</a></li>
+            <li><a href="#symmetric-positive-definite-matrices">Symmetric positive-definite matrices</a></li>
+            <li><a href="#general-matrices">General matrices</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#rank-factorization">Rank factorization</a>
+      <ul>
+        <li><a href="#example-3">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#cholesky-decomposition">Cholesky decomposition</a>
+      <ul>
+        <li><a href="#ldl-decomposition">LDL decomposition</a></li>
+        <li><a href="#example-4">Example</a></li>
+        <li><a href="#computation">Computation</a></li>
+        <li><a href="#applications-1">Applications</a>
+          <ul>
+            <li><a href="#linear-least-squares">Linear least squares</a></li>
+            <li><a href="#non-linear-optimization">Non-linear optimization</a></li>
+            <li><a href="#monte-carlo-simulation">Monte Carlo simulation</a></li>
+            <li><a href="#kalman-filters">Kalman filters</a></li>
+            <li><a href="#matrix-inversion">Matrix inversion</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#qr-decomposition">QR decomposition</a>
+      <ul>
+        <li><a href="#computing-the-qr-decomposition">Computing the QR decomposition</a>
+          <ul>
+            <li><a href="#gramschmidt-process-1">Gram–Schmidt process</a>
+              <ul>
+                <li><a href="#example-5">Example</a></li>
+              </ul>
+            </li>
+            <li><a href="#householder-reflections">Householder reflections</a></li>
+          </ul>
+        </li>
+        <li><a href="#connection-to-a-determinant-or-a-product-of-eigenvalues">Connection to a determinant or a product of eigenvalues</a></li>
+      </ul>
+    </li>
+    <li><a href="#singular-value-decomposition">Singular value decomposition</a>
+      <ul>
+        <li><a href="#example-6">Example</a></li>
+      </ul>
+    </li>
+    <li><a href="#schur-complement">Schur complement</a>
+      <ul>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#application-to-solving-linear-equations">Application to solving linear equations</a></li>
+      </ul>
+    </li>
+    <li><a href="#something-confusing">Something confusing</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本文试图用最简洁清晰的语言解释各种矩阵分解，只记录矩阵分解的基础知识和过程，对性质和应用的讨论先挖个坑，下次再填</p>
+<p>有关矩阵分解的知识可以参考<a href="https://en.wikipedia.org/wiki/Matrix_decomposition" target="_blank" rel="noopener noreffer">这个</a></p>
+<p>为什么要矩阵分解？为了更好的计算，降低计算复杂度</p>
+<h2 id="definitions">Definitions</h2>
+<h3 id="unitary-matrix">Unitary matrix</h3>
+<h4 id="conjugate-transpose">Conjugate transpose</h4>
+<p>共轭转置 aka Hermitian transpose，计$A^H$为A的共轭转置（有时也写成$A^*$）</p>
+<p>对实矩阵，${\displaystyle {\boldsymbol {A}}^{\mathrm {H} }={\boldsymbol {A}}^{\mathsf {T}}}$</p>
+<p>对矩阵A，共轭转置后，每个元素的定义为</p>
+<p>$${\displaystyle \left({\boldsymbol {A}}^{\mathrm {H} }\right)_{ij}={\overline {{\boldsymbol {A}}_{ji}}}}$$</p>
+<p>比如矩阵A</p>
+<p>$$
+{\displaystyle {\boldsymbol {A}}={\begin{bmatrix}1&amp;-2-i&amp;5\\1+i&amp;i&amp;4-2i\end{bmatrix}}}
+$$</p>
+<p>$$
+{\displaystyle {\boldsymbol {A}}^{\mathsf {T}}={\begin{bmatrix}1&amp;1+i\\-2-i&amp;i\\5&amp;4-2i\end{bmatrix}}}
+$$</p>
+<p>$$
+{\displaystyle {\boldsymbol {A}}^{\mathrm {H} }={\begin{bmatrix}1&amp;1-i\\-2+i&amp;-i\\5&amp;4+2i\end{bmatrix}}}
+$$</p>
+<p>酉矩阵的定义为，对于方阵U，满足如下性质，U*是共轭转置，I是单位阵</p>
+<p>$$
+{\displaystyle U^{*}U=UU^{*}=UU^{-1}=I}
+$$</p>
+<p>酉矩阵的行列式绝对值为1，在特征空间中正交，当矩阵为实数阵时，就是正交矩阵（orthogonal matrix）</p>
+<p>正交矩阵就是各列向量线性无关，是实数下的酉矩阵</p>
+<h3 id="definite-matrix">Definite matrix</h3>
+<h4 id="definitions-for-real-matrices">Definitions for real matrices</h4>
+<p>假设M是n阶实对称矩阵</p>
+<p>$$
+{\displaystyle M{\text{ positive-definite}}\quad \iff \quad \mathbf {x} ^{\textsf {T}}M\mathbf {x} &gt;0{\text{ for all }}\mathbf {x} \in \mathbb {R} ^{n}\setminus \{\mathbf {0} \}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ positive semi-definite}}\quad \iff \quad \mathbf {x} ^{\textsf {T}}M\mathbf {x} \geq 0{\text{ for all }}\mathbf {x} \in \mathbb {R} ^{n}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ negative-definite}}\quad \iff \quad \mathbf {x} ^{\textsf {T}}M\mathbf {x} &lt;0{\text{ for all }}\mathbf {x} \in \mathbb {R} ^{n}\setminus \{\mathbf {0} \}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ negative semi-definite}}\quad \iff \quad \mathbf {x} ^{\textsf {T}}M\mathbf {x} \leq 0{\text{ for all }}\mathbf {x} \in \mathbb {R} ^{n}}
+$$</p>
+<h4 id="definitions-for-complex-matrices">Definitions for complex matrices</h4>
+<p>设M是n阶Hermite复矩阵</p>
+<p>$$
+{\displaystyle M{\text{ positive-definite}}\quad \iff \quad \mathbf {x} ^{*}M\mathbf {x} &gt;0{\text{ for all }}\mathbf {x} \in \mathbb {C} ^{n}\setminus \{\mathbf {0} \}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ positive semi-definite}}\quad \iff \quad \mathbf {x} ^{*}M\mathbf {x} \geq 0{\text{ for all }}\mathbf {x} \in \mathbb {C} ^{n}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ negative-definite}}\quad \iff \quad \mathbf {x} ^{*}M\mathbf {x} &lt;0{\text{ for all }}\mathbf {x} \in \mathbb {C} ^{n}\setminus \{\mathbf {0} \}}
+$$</p>
+<p>$$
+{\displaystyle M{\text{ negative semi-definite}}\quad \iff \quad \mathbf {x} ^{*}M\mathbf {x} \leq 0{\text{ for all }}\mathbf {x} \in \mathbb {C} ^{n}}
+$$</p>
+<p>正定矩阵的几何意义参考<a href="https://www.zhihu.com/question/304499772/answer/552481133" target="_blank" rel="noopener noreffer">此处</a></p>
+<p>实际上$x^TAx$的形式表示<a href="https://da1yh.xyz/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/#%E4%BA%8C%E6%AC%A1%E5%9E%8B" target="_blank" rel="noopener noreffer">二次型</a>（有一个概念叫合同与之相关），而根据定义，正定矩阵表示对所有的非零解，它的值都是大于0的，这在空间上是一个开口向上的抛物面（三维），正定矩阵如果看做一种空间变换，就相当于把一块布的四个角往上提了</p>
+<p>假设$y=x^TAx$，那么y&gt;0，且y有最小值</p>
+<figure><a class="lightgallery" href="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" title="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" data-thumbnail="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" data-sub-html="<h2>Illustration</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png"
+            data-srcset="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png, https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png 1.5x, https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png 2x"
+            data-sizes="auto"
+            alt="https://img-blog.csdnimg.cn/8b4e54024fd044438c0901d65d3e9026.png" />
+    </a><figcaption class="image-caption">Illustration</figcaption>
+    </figure>
+<p>当我们求一个二次型的极值时，假设它是正定矩阵，那么一定有最小值（如上图），而根据泰勒公式，Hessian矩阵就是二次型的矩阵A，所以判断Hessian矩阵是不是正定矩阵就行</p>
+<h4 id="example">Example</h4>
+<p>单位阵是正定矩阵也是正半定矩阵</p>
+<p>$$
+{\displaystyle\mathbf{z}^{\textsf{T}}I\mathbf{z}={\begin{bmatrix}a&amp;b\end{bmatrix}}{\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}}{\begin{bmatrix}a\\b\end{bmatrix}}=a^{2}+b^{2}.}
+$$</p>
+<p>这个矩阵M也是正定矩阵</p>
+<p>$$
+{\displaystyle M={\begin{bmatrix}2&amp;-1&amp;0\\-1&amp;2&amp;-1\\0&amp;-1&amp;2\end{bmatrix}}}
+$$</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf {z} ^{\textsf {T}}M\mathbf {z} =\left(\mathbf {z} ^{\textsf {T}}M\right)\mathbf {z} &amp;={\begin{bmatrix}(2a-b)&amp;(-a+2b-c)&amp;(-b+2c)\end{bmatrix}}{\begin{bmatrix}a\\b\\c\end{bmatrix}}\\&amp;=(2a-b)a+(-a+2b-c)b+(-b+2c)c\\&amp;=2a^{2}-ba-ab+2b^{2}-cb-bc+2c^{2}\\&amp;=2a^{2}-2ab+2b^{2}-2bc+2c^{2}\\&amp;=a^{2}+a^{2}-2ab+b^{2}+b^{2}-2bc+c^{2}+c^{2}\\&amp;=a^{2}+(a-b)^{2}+(b-c)^{2}+c^{2}\end{aligned}}}
+$$</p>
+<p>这个矩阵N不是正定矩阵</p>
+<p>$$
+{\displaystyle N={\begin{bmatrix}1&amp;2\\2&amp;1\end{bmatrix}}}
+$$</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}-1&amp;1\end{bmatrix}}N{\begin{bmatrix}-1&amp;1\end{bmatrix}}^{\textsf {T}}=-2&lt;0}
+$$</p>
+<h4 id="eigenvalues">Eigenvalues</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Condition(iff all eigenvalues are)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">positive definite</td>
+<td style="text-align:center">positive</td>
+</tr>
+<tr>
+<td style="text-align:center">positive semi-definite</td>
+<td style="text-align:center">non-negative</td>
+</tr>
+<tr>
+<td style="text-align:center">negative definite</td>
+<td style="text-align:center">negative</td>
+</tr>
+<tr>
+<td style="text-align:center">negative semi-definite</td>
+<td style="text-align:center">non-positive</td>
+</tr>
+<tr>
+<td style="text-align:center">indefinite</td>
+<td style="text-align:center">both positive and negative</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hermitian-matrix">Hermitian matrix</h3>
+<p>共轭转置为自身的方阵叫Hermite矩阵</p>
+<p>$$
+{\displaystyle A{\text{ Hermitian}}\quad \iff \quad a_{ij}={\overline {{a}_{ji}}}}
+$$</p>
+<p>或者</p>
+<p>$$
+{\displaystyle A{\text{ Hermitian}}\quad \iff \quad A=A^{\mathsf {H}}}
+$$</p>
+<p>Hermite矩阵的对角线必须为实数，如下就是一个Hermite矩阵，由此可见对称矩阵一定是Hermite矩阵</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}0&amp;a-ib&amp;c-id\\a+ib&amp;1&amp;m-in\\c+id&amp;m+in&amp;2\end{bmatrix}}}
+$$</p>
+<h2 id="eigenvalues-and-eigenvectors">Eigenvalues and eigenvectors</h2>
+<p>此处可以去看3b1b的视频，讲解非常清晰</p>
+<p>只有方阵才有特征值和特征向量</p>
+<p>方阵的秩不小于它的非零特征值的个数</p>
+<p>一个特征值可以有多个特征向量</p>
+<p>在实数范围内，可能没有特征值和特征向量，但是在复数范围内，一定有，且有无穷多个特征向量</p>
+<p>几何意义是：</p>
+<p>方阵可以看作是对空间的一种线性变换，特征向量就是变化后方向保持不变的向量，特征值就是特征向量在变换后放缩的倍率。</p>
+<p>行列式是平行四边形包围的面积，如果为负，就类似于平面翻转</p>
+<h2 id="gramschmidt-process">Gram–Schmidt process</h2>
+<p>施密特正交法用于在欧氏空间中，给定线性无关向量组求标准正交基的过程</p>
+<p>给定v，求e</p>
+<p>$$
+{\displaystyle \operatorname {proj} _{\mathbf {u} }(\mathbf {v} )={\frac {\langle \mathbf {u} ,\mathbf {v} \rangle }{\langle \mathbf {u} ,\mathbf {u} \rangle }}{\mathbf {u} }}
+$$</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf{u} _{1}&amp;=\mathbf {v} _{1},&amp;\mathbf {e} _{1}&amp;={\frac {\mathbf {u} _{1}}{|\mathbf {u} _{1}|}}\\\mathbf {u} _{2}&amp;=\mathbf {v} _{2}-\operatorname {proj} _{\mathbf {u} _{1}}(\mathbf {v} _{2}),&amp;\mathbf {e} _{2}&amp;={\frac {\mathbf {u} _{2}}{|\mathbf {u} _{2}|}}\\\mathbf {u} _{3}&amp;=\mathbf {v} _{3}-\operatorname {proj} _{\mathbf {u} _{1}}(\mathbf {v} _{3})-\operatorname {proj} _{\mathbf {u} _{2}}(\mathbf {v} _{3}),&amp;\mathbf {e} _{3}&amp;={\frac {\mathbf {u} _{3}}{|\mathbf {u} _{3}|}}\\\mathbf {u} _{4}&amp;=\mathbf {v} _{4}-\operatorname {proj} _{\mathbf {u} _{1}}(\mathbf {v} _{4})-\operatorname {proj} _{\mathbf {u} _{2}}(\mathbf {v} _{4})-\operatorname {proj} _{\mathbf {u} _{3}}(\mathbf {v} _{4}),&amp;\mathbf {e} _{4}&amp;={\mathbf {u} _{4} \over |\mathbf {u} _{4}|}\\&amp;{}\ \ \vdots &amp;&amp;{}\ \ \vdots \\\mathbf {u} _{k}&amp;=\mathbf {v} _{k}-\sum _{j=1}^{k-1}\operatorname {proj} _{\mathbf {u} _{j}}(\mathbf {v} _{k}),&amp;\mathbf {e} _{k}&amp;={\frac {\mathbf {u} _{k}}{|\mathbf {u} _{k}|}}\end{aligned}}}
+$$</p>
+<figure><a class="lightgallery" href="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center" title="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center" data-thumbnail="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center" data-sub-html="<h2>The modified Gram-Schmidt process being executed on three linearly independent, non-orthogonal vectors of a basis for R3</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center"
+            data-srcset="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center, https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center 1.5x, https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center 2x"
+            data-sizes="auto"
+            alt="https://img-blog.csdnimg.cn/27d9ab4bcfdf4777b9c1daab9a17c8cb.gif#pic_center" />
+    </a><figcaption class="image-caption">The modified Gram-Schmidt process being executed on three linearly independent, non-orthogonal vectors of a basis for R3</figcaption>
+    </figure>
+<h2 id="gaussian-elimination">Gaussian elimination</h2>
+<h3 id="introduction">Introduction</h3>
+<p>高斯消元可以用来求线性方程组的解，矩阵的秩，方阵的行列式，可逆矩阵的逆等等。</p>
+<p>高斯消元使用初等行变换（elementary row operations），使矩阵有更多的0元素</p>
+<p>初等行变换有3种</p>
+<ul>
+<li>交换两行</li>
+<li>对某一行乘上任意非零数</li>
+<li>将某一行的倍数加到另一行（减同理）</li>
+</ul>
+<p>高斯消元首先将矩阵变成行阶梯形式（row echelon form），此时可以判断方程无解、有唯一解、无穷多解，然后再变成最简行阶梯形式（reduced row echelon form），此时可以求出具体的解，转化到最简行阶梯矩阵的过程又叫Gauss–Jordan elimination</p>
+<p>首项系数（leading coefficients）是每一行的第一个非0数，比如下面红色的数</p>
+<p>$$
+\left[\begin{array}{cccc}
+0 &amp; \color{red}{2} &amp; 1 &amp; -1\\0 &amp; 0 &amp; \color{red}3 &amp; 1\\0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+$$</p>
+<p>最简行阶梯形式就是首项系数为1，首项系数所在的每一列，除了它以外全是0</p>
+<p>高斯消元的过程如下</p>
+<p>$$
+\left[\begin{array}{cccc}
+1 &amp; 3 &amp; 1 &amp; 9 \\1 &amp; 1 &amp; -1 &amp; 1 \\3 &amp; 11 &amp; 5 &amp; 35
+\end{array}\right] \rightarrow\left[\begin{array}{cccc}
+1 &amp; 3 &amp; 1 &amp; 9 \\0 &amp; -2 &amp; -2 &amp; -8 \\0 &amp; 2 &amp; 2 &amp; 8
+\end{array}\right] \rightarrow\left[\begin{array}{cccc}
+1 &amp; 3 &amp; 1 &amp; 9 \\0 &amp; -2 &amp; -2 &amp; -8 \\0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right] \rightarrow\left[\begin{array}{cccc}
+1 &amp; 0 &amp; -2 &amp; -3 \\0 &amp; 1 &amp; 1 &amp; 4 \\0 &amp; 0 &amp; 0 &amp; 0
+\end{array}\right]
+$$</p>
+<h3 id="example-1">Example</h3>
+<p>假设要求解的方程组为</p>
+<p>$$
+{\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\qquad (L_{1})\\-3x&amp;{}-{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-11&amp;\qquad (L_{2})\\-2x&amp;{}+{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-3&amp;\qquad (L_{3})\end{alignedat}}}
+$$</p>
+<p>高斯消元的过程如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">System of equations</th>
+<th style="text-align:center">Row operations</th>
+<th style="text-align:center">Augmented matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\-3x&amp;{}-{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-11&amp;\\-2x&amp;{}+{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-3&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\-3&amp;-1&amp;2&amp;-11\\-2&amp;1&amp;2&amp;-3\end{array}}\right]}$$</td>
+</tr>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;2y&amp;{}+{}&amp;z&amp;{}={}&amp;5&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {3}{2}}L_{1}&amp;\to L_{2}\\L_{3}+L_{1}&amp;\to L_{3}\end{aligned}}}$$</td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;2&amp;1&amp;5\end{array}}\right]}$$</td>
+</tr>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;&amp;&amp;-z&amp;{}={}&amp;1&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center">$${\displaystyle L_{3}+-4L_{2}\to L_{3}}$$</td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;&amp;&amp;{}={}7&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;&amp;&amp;{}={}{\tfrac {3}{2}}&amp;\\&amp;&amp;&amp;{}-{}&amp;z&amp;{}={}1&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {1}{2}}L_{3}&amp;\to L_{2}\\L_{1}-L_{3}&amp;\to L_{1}\end{aligned}}}$$</td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;{\frac {1}{2}}&amp;0&amp;{\frac {3}{2}}\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
+</tr>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;\quad &amp;&amp;{}={}&amp;7&amp;\\&amp;&amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;&amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center">$${\displaystyle {\begin{aligned}2L_{2}&amp;\to L_{2}\\-L_{3}&amp;\to L_{3}\end{aligned}}}$$</td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
+</tr>
+<tr>
+<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}x&amp;\quad &amp;&amp;\quad &amp;&amp;{}={}&amp;2&amp;\\&amp;\quad &amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;\quad &amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
+<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{1}-L_{2}&amp;\to L_{1}\\{\tfrac {1}{2}}L_{1}&amp;\to L_{1}\end{aligned}}}$$</td>
+<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}1&amp;0&amp;0&amp;2\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
+</tr>
+</tbody>
+</table>
+<h3 id="applications">Applications</h3>
+<h4 id="computing-determinants">Computing determinants</h4>
+<h4 id="finding-the-inverse-of-a-matrix">Finding the inverse of a matrix</h4>
+<h4 id="computing-ranks-and-bases">Computing ranks and bases</h4>
+<h2 id="lu-decomposition">LU decomposition</h2>
+<h3 id="introduction-1">Introduction</h3>
+<p>LU分解是把方阵A分成L乘上U，L是下三角矩阵（lower triangular matrix），U是上三角矩阵（upper triangular matrix）</p>
+<p>$$
+{\displaystyle A=LU}
+$$</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}a_{11}&amp;a_{12}&amp;a_{13}\\a_{21}&amp;a_{22}&amp;a_{23}\\a_{31}&amp;a_{32}&amp;a_{33}\end{bmatrix}}={\begin{bmatrix}\ell <em>{11}&amp;0&amp;0\\\ell <em>{21}&amp;\ell <em>{22}&amp;0\\\ell <em>{31}&amp;\ell <em>{32}&amp;\ell <em>{33}\end{bmatrix}}{\begin{bmatrix}u</em>{11}&amp;u</em>{12}&amp;u</em>{13}\\0&amp;u</em>{22}&amp;u</em>{23}\\0&amp;0&amp;u</em>{33}\end{bmatrix}}}
+$$</p>
+<p>只有对A进行适当的排列才能分解成功，比如a11=l11*u11，如果a11=0，那么l11和u11必然有一个为0，这样L或者U就是奇异矩阵，那么A不可能非奇异。</p>
+<p>有时候我们需要对A进行一定的重排列才可以LU分解</p>
+<p>假设P是对A的行重排列，那么就可以这样分解，称为LUP分解</p>
+<p>$$
+{\displaystyle PA=LU}
+$$</p>
+<p>假设Q是对A的列重排列，那么就可以这样分解</p>
+<p>$$
+{\displaystyle PAQ=LU}
+$$</p>
+<p>还可以这样分解，D是对角矩阵，称为LDU分解</p>
+<p>$$
+{\displaystyle A=LDU}
+$$</p>
+<h3 id="example-2">Example</h3>
+<p>假设要分解这样的矩阵</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}4&amp;3\\6&amp;3\end{bmatrix}}={\begin{bmatrix}\ell _{11}&amp;0\\\ell _{21}&amp;\ell _{22}\end{bmatrix}}{\begin{bmatrix}u_{11}&amp;u_{12}\\0&amp;u_{22}\end{bmatrix}}}
+$$</p>
+<p>一种方法是写成线性方程组</p>
+<p>$$
+{\displaystyle {\begin{aligned}\ell _{11}\cdot u_{11}+0\cdot 0&amp;=4\\\ell _{11}\cdot u_{12}+0\cdot u_{22}&amp;=3\\\ell _{21}\cdot u_{11}+\ell _{22}\cdot 0&amp;=6\\\ell _{21}\cdot u_{12}+\ell _{22}\cdot u_{22}&amp;=3\end{aligned}}}
+$$</p>
+<p>可以发现这个方程组有无穷多个解，有时候我们可以规定下三角矩阵的对角元为1，这样可以求出</p>
+<p>$$
+{\displaystyle {\begin{aligned}\ell _{11}=\ell _{22}&amp;=1\\\ell _{21}&amp;=1.5\\u_{11}&amp;=4\\u_{12}&amp;=3\\u_{22}&amp;=-1.5\end{aligned}}}
+$$</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}4&amp;3\\6&amp;3\end{bmatrix}}={\begin{bmatrix}1&amp;0\\1.5&amp;1\end{bmatrix}}{\begin{bmatrix}4&amp;3\\0&amp;-1.5\end{bmatrix}}}
+$$</p>
+<h3 id="existence-and-uniqueness">Existence and uniqueness</h3>
+<h4 id="square-matrices">Square matrices</h4>
+<h4 id="symmetric-positive-definite-matrices">Symmetric positive-definite matrices</h4>
+<h4 id="general-matrices">General matrices</h4>
+<h2 id="rank-factorization">Rank factorization</h2>
+<p>将秩为r的m*n矩阵A，分解成CF，C是m*r的列满秩矩阵，F是r*n的行满秩矩阵</p>
+<p>满秩分解可以求Moore-Penrose 伪逆（Moore-Penrose pseudoinverse），就是在方程组无解时，求最接近的解，在方程组无穷多解时求2范数最小的解</p>
+<p>任何有限维矩阵都有满秩分解</p>
+<p>如果${\textstyle A=C_{1}F_{1}}$是一个满秩分解，${\textstyle C_{2}=C_{1}R}$，${\textstyle F_{2}=R^{-1}F_{1}}$是另一个满秩分解，R是任意兼容维度下的可逆矩阵</p>
+<h3 id="example-3">Example</h3>
+<p>首先求A的最简行阶梯矩阵B，然后将B中每行非0首元（leading coefficient）所在的列在A中消去，产生矩阵C。将B中所有的全0行在B中消去产生矩阵F</p>
+<p>考虑如下矩阵</p>
+<p>$$
+{\displaystyle A={\begin{bmatrix}1&amp;3&amp;1&amp;4\\2&amp;7&amp;3&amp;9\\1&amp;5&amp;3&amp;1\\1&amp;2&amp;0&amp;8\end{bmatrix}}\sim {\begin{bmatrix}1&amp;0&amp;-2&amp;0\\0&amp;1&amp;1&amp;0\\0&amp;0&amp;0&amp;1\\0&amp;0&amp;0&amp;0\end{bmatrix}}=B{\text{}}}
+$$</p>
+<p>将A的第三列取出产生C，将B的最后一行去除产生F</p>
+<p>$$
+{\displaystyle C={\begin{bmatrix}1&amp;3&amp;4\\2&amp;7&amp;9\\1&amp;5&amp;1\\1&amp;2&amp;8\end{bmatrix}}{\text{,}}\qquad F={\begin{bmatrix}1&amp;0&amp;-2&amp;0\\0&amp;1&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{bmatrix}}{\text{}}}
+$$</p>
+<p>$$
+{\displaystyle A={\begin{bmatrix}1&amp;3&amp;1&amp;4\\2&amp;7&amp;3&amp;9\\1&amp;5&amp;3&amp;1\\1&amp;2&amp;0&amp;8\end{bmatrix}}={\begin{bmatrix}1&amp;3&amp;4\\2&amp;7&amp;9\\1&amp;5&amp;1\\1&amp;2&amp;8\end{bmatrix}}{\begin{bmatrix}1&amp;0&amp;-2&amp;0\\0&amp;1&amp;1&amp;0\\0&amp;0&amp;0&amp;1\end{bmatrix}}=CF{\text{}}}
+$$</p>
+<h2 id="cholesky-decomposition">Cholesky decomposition</h2>
+<p>一种常见的矩阵分解</p>
+<p>适用于方阵，对称矩阵，正定矩阵，Hermite矩阵</p>
+<p>Cholesky分解的效率大约是LU分解的两倍</p>
+<p>对于Hermite正定矩阵A，它可以被分解成如下形式，其中L是下三角矩阵，且对角元为正实数，L*为L的共轭转置，所有的Hermite正定矩阵（当然包括实对称正定矩阵）都有唯一的Cholesky分解</p>
+<p>$$
+{\displaystyle \mathbf {A} =\mathbf {LL} ^{*}}
+$$</p>
+<p>逆命题也成立，即如果一个矩阵能被分解成如上形式，它就是Hermite正定矩阵</p>
+<p>特殊地，当A是实对称正定矩阵时，L是下三角矩阵，且对角元为正实数</p>
+<p>$$
+{\displaystyle \mathbf {A} =\mathbf {LL} ^{\mathsf {T}}}
+$$</p>
+<h3 id="ldl-decomposition">LDL decomposition</h3>
+<p>由于Cholesky分解又叫平方根法，所以LDL分解又叫改进平方根法</p>
+<p>分解形式如下，L是单位下三角矩阵（主对角线全为1），D是对角阵</p>
+<p>这样分解的好处是避免提取平方根</p>
+<p>$$
+{\displaystyle \mathbf {A} =\mathbf {LDL} ^{*}}
+$$</p>
+<p>如何从Cholesky分解转LDL分解？</p>
+<p>假设正定矩阵A被分解成${\displaystyle \mathbf {A} =\mathbf {C} \mathbf {C} ^{*}}$，如果S是一个对角阵，包含了C的主对角元，那么${\displaystyle \mathbf {L} =\mathbf {C} \mathbf {S} ^{-1}}$，这样缩放了每一列元素，使对角线为1，${\displaystyle \mathbf {D} =\mathbf {S} ^{2}}$</p>
+<p>如果A是正定矩阵，那么D的对角元都是正的</p>
+<h3 id="example-4">Example</h3>
+<p>对一个实对称矩阵做Cholesky分解</p>
+<p>$$
+\left(\begin{array}{rrr}
+4 &amp; 12 &amp; -16 \\12 &amp; 37 &amp; -43 \\-16 &amp; -43 &amp; 98
+\end{array}\right)=\left(\begin{array}{rrr}
+2 &amp; 0 &amp; 0 \\6 &amp; 1 &amp; 0 \\-8 &amp; 5 &amp; 3
+\end{array}\right)\left(\begin{array}{rrr}
+2 &amp; 6 &amp; -8 \\0 &amp; 1 &amp; 5 \\0 &amp; 0 &amp; 3
+\end{array}\right)
+$$</p>
+<p>LDL分解</p>
+<p>$$
+\left(\begin{array}{rrr}
+4 &amp; 12 &amp; -16 \\12 &amp; 37 &amp; -43 \\-16 &amp; -43 &amp; 98
+\end{array}\right)=\left(\begin{array}{rrr}
+1 &amp; 0 &amp; 0 \\3 &amp; 1 &amp; 0 \\-4 &amp; 5 &amp; 1
+\end{array}\right)\left(\begin{array}{lll}
+4 &amp; 0 &amp; 0 \\0 &amp; 1 &amp; 0 \\0 &amp; 0 &amp; 9
+\end{array}\right)\left(\begin{array}{rrr}
+1 &amp; 3 &amp; -4 \\0 &amp; 1 &amp; 5 \\0 &amp; 0 &amp; 1
+\end{array}\right)
+$$</p>
+<h3 id="computation">Computation</h3>
+<p>n维时间复杂度是O(n^3)，Cholesky分解是一个迭代的过程，很适合计算机运算，此处只叙述LDL分解的迭代过程</p>
+<p>当A是对称时</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf {A} =\mathbf {LDL} ^{\mathrm {T} }&amp;={\begin{pmatrix}1&amp;0&amp;0\\L_{21}&amp;1&amp;0\\L_{31}&amp;L_{32}&amp;1\\\end{pmatrix}}{\begin{pmatrix}D_{1}&amp;0&amp;0\\0&amp;D_{2}&amp;0\\0&amp;0&amp;D_{3}\\\end{pmatrix}}{\begin{pmatrix}1&amp;L_{21}&amp;L_{31}\\0&amp;1&amp;L_{32}\\0&amp;0&amp;1\\\end{pmatrix}}\\[8pt]&amp;={\begin{pmatrix}D_{1}&amp;&amp;(\mathrm {symmetric} )\\L_{21}D_{1}&amp;L_{21}^{2}D_{1}+D_{2}&amp;\\L_{31}D_{1}&amp;L_{31}L_{21}D_{1}+L_{32}D_{2}&amp;L_{31}^{2}D_{1}+L_{32}^{2}D_{2}+D_{3}.\end{pmatrix}}\end{aligned}}}
+$$</p>
+<p>递归以下步骤</p>
+<p>$$
+{\displaystyle D_{j}=A_{jj}-\sum <em>{k=1}^{j-1}L</em>{jk}^{2}D_{k}}
+$$</p>
+<p>$$
+{\displaystyle L_{ij}={\frac {1}{D_{j}}}\left(A_{ij}-\sum <em>{k=1}^{j-1}L</em>{ik}L_{jk}D_{k}\right)\quad {\text{for }}i&gt;j}
+$$</p>
+<p>只要D的对角元能够一直保持非0，就能产生一个唯一的分解。如果A是实的，D和L也是实的</p>
+<h3 id="applications-1">Applications</h3>
+<h4 id="linear-least-squares">Linear least squares</h4>
+<h4 id="non-linear-optimization">Non-linear optimization</h4>
+<h4 id="monte-carlo-simulation">Monte Carlo simulation</h4>
+<h4 id="kalman-filters">Kalman filters</h4>
+<h4 id="matrix-inversion">Matrix inversion</h4>
+<h2 id="qr-decomposition">QR decomposition</h2>
+<p>适用于列线性无关的m*n的矩阵</p>
+<p>分解形式，Q是m*m的酉矩阵，R是m*n的上三角矩阵</p>
+<p>$$
+{\displaystyle A=QR}
+$$</p>
+<p>在很多时候，QR分解不唯一。但是如果A是满秩的，R是唯一的，且对角元都为正数，如果A是方阵，Q也是唯一的</p>
+<p>QR分解可以很快地计算线性方程组${\displaystyle A\mathbf {x} =\mathbf {b} }$，因为Q是正交的，所以方程组可以化为${\displaystyle R\mathbf {x} =Q^{\mathsf {T}}\mathbf {b} }$，因为R是上三角矩阵，所以很好计算</p>
+<p>接下来在实数空间上讨论</p>
+<p>假设A是方阵</p>
+<p>$$
+{\displaystyle A=QR}
+$$</p>
+<p>那么Q是正交矩阵，R是上三角矩阵，如果A是可逆的，且要求R对角元都为正数，则分解是唯一的</p>
+<p>如果A是m*n的矩阵，m&gt;=n，分解后Q是酉矩阵（实数下就是正交矩阵），R是上三角矩阵</p>
+<p>Q是m*m，R是m*n，R1是n*n，0是(m-n)*n，Q1是m*n，Q2是m*(m-n)，Q1和Q2都有正交列</p>
+<p>$$
+{\displaystyle A=QR=Q{\begin{bmatrix}R_{1}\\0\end{bmatrix}}={\begin{bmatrix}Q_{1}&amp;Q_{2}\end{bmatrix}}{\begin{bmatrix}R_{1}\\0\end{bmatrix}}=Q_{1}R_{1}}
+$$</p>
+<p>如果A是满秩（秩为n），且要求R1的对角元全为正数，则Q1和R1都是唯一的，但是一般Q2不是，R1是A*A（A是实的话就是A^TA）的Cholesky分解的上三角部分</p>
+<h3 id="computing-the-qr-decomposition">Computing the QR decomposition</h3>
+<p>有很多种方法计算QR分解</p>
+<h4 id="gramschmidt-process-1">Gram–Schmidt process</h4>
+<p>对于列满秩矩阵${\displaystyle A={\begin{bmatrix}\mathbf {a} _{1}&amp;\cdots &amp;\mathbf {a} _{n}\end{bmatrix}}}$，定义向量v和w的内积${\displaystyle \langle \mathbf {v} ,\mathbf {w} \rangle =\mathbf {v} ^{\textsf {T}}\mathbf {w} }$，定义投影${\displaystyle \operatorname {proj} _{\mathbf {u} }\mathbf {a} ={\frac {\left\langle \mathbf {u} ,\mathbf {a} \right\rangle }{\left\langle \mathbf {u} ,\mathbf {u} \right\rangle }}{\mathbf {u} }}$</p>
+<p>施密特正交化过程为</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf {u} _{1}&amp;=\mathbf {a} _{1},&amp;\mathbf {e} _{1}&amp;={\frac {\mathbf {u} _{1}}{\|\mathbf {u} _{1}\|}}\\\mathbf {u} _{2}&amp;=\mathbf {a} _{2}-\operatorname {proj} _{\mathbf {u} _{1}}\mathbf {a} _{2},&amp;\mathbf {e} _{2}&amp;={\frac {\mathbf {u} _{2}}{\|\mathbf {u} _{2}\|}}\\\mathbf {u} _{3}&amp;=\mathbf {a} _{3}-\operatorname {proj} _{\mathbf {u} _{1}}\mathbf {a} _{3}-\operatorname {proj} _{\mathbf {u} _{2}}\mathbf {a} _{3},&amp;\mathbf {e} _{3}&amp;={\frac {\mathbf {u} _{3}}{\|\mathbf {u} _{3}\|}}\\&amp;\;\;\vdots &amp;&amp;\;\;\vdots \\\mathbf {u} _{k}&amp;=\mathbf {a} _{k}-\sum _{j=1}^{k-1}\operatorname {proj} _{\mathbf {u} _{j}}\mathbf {a} _{k},&amp;\mathbf {e} _{k}&amp;={\frac {\mathbf {u} _{k}}{\|\mathbf {u} _{k}\|}}\end{aligned}}}
+$$</p>
+<p>在此基础上，求A的各列向量</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf {a} _{1}&amp;=\left\langle \mathbf {e} _{1},\mathbf {a} _{1}\right\rangle \mathbf {e} _{1}\\\mathbf {a} _{2}&amp;=\left\langle \mathbf {e} _{1},\mathbf {a} _{2}\right\rangle \mathbf {e} _{1}+\left\langle \mathbf {e} _{2},\mathbf {a} _{2}\right\rangle \mathbf {e} _{2}\\\mathbf {a} _{3}&amp;=\left\langle \mathbf {e} _{1},\mathbf {a} _{3}\right\rangle \mathbf {e} _{1}+\left\langle \mathbf {e} _{2},\mathbf {a} _{3}\right\rangle \mathbf {e} _{2}+\left\langle \mathbf {e} _{3},\mathbf {a} _{3}\right\rangle \mathbf {e} _{3}\\&amp;\;\;\vdots \\\mathbf {a} _{k}&amp;=\sum _{j=1}^{k}\left\langle \mathbf {e} _{j},\mathbf {a} _{k}\right\rangle \mathbf {e} _{j}\end{aligned}}}
+$$</p>
+<p>其中${\displaystyle \left\langle \mathbf {e} _{i},\mathbf {a} _{i}\right\rangle =\left\|\mathbf {u} _{i}\right\|}$</p>
+<p>那么Q和R可以写成如下形式</p>
+<p>$$
+{\displaystyle Q={\begin{bmatrix}\mathbf {e} _{1}&amp;\cdots &amp;\mathbf {e} _{n}\end{bmatrix}}}
+$$</p>
+<p>$$
+{\displaystyle R={\begin{bmatrix}\langle \mathbf {e} _{1},\mathbf {a} _{1}\rangle &amp;\langle \mathbf {e} _{1},\mathbf {a} _{2}\rangle &amp;\langle \mathbf {e} _{1},\mathbf {a} _{3}\rangle &amp;\cdots &amp;\langle \mathbf {e} _{1},\mathbf {a} _{n}\rangle \\0&amp;\langle \mathbf {e} _{2},\mathbf {a} _{2}\rangle &amp;\langle \mathbf {e} _{2},\mathbf {a} _{3}\rangle &amp;\cdots &amp;\langle \mathbf {e} _{2},\mathbf {a} _{n}\rangle \\0&amp;0&amp;\langle \mathbf {e} _{3},\mathbf {a} _{3}\rangle &amp;\cdots &amp;\langle \mathbf {e} _{3},\mathbf {a} _{n}\rangle \\\vdots &amp;\vdots &amp;\vdots &amp;\ddots &amp;\vdots \\0&amp;0&amp;0&amp;\cdots &amp;\langle \mathbf {e} _{n},\mathbf {a} _{n}\rangle \\\end{bmatrix}}}
+$$</p>
+<h5 id="example-5">Example</h5>
+<p>考虑如下矩阵</p>
+<p>$$
+{\displaystyle A={\begin{bmatrix}12&amp;-51&amp;4\\6&amp;167&amp;-68\\-4&amp;24&amp;-41\end{bmatrix}}}
+$$</p>
+<p>用施密特正交法可以计算出</p>
+<p>$$
+{\displaystyle {\begin{aligned}U={\begin{bmatrix}\mathbf {u} _{1}&amp;\mathbf {u} _{2}&amp;\mathbf {u} _{3}\end{bmatrix}}&amp;={\begin{bmatrix}12&amp;-69&amp;-58/5\\6&amp;158&amp;6/5\\-4&amp;30&amp;-33\end{bmatrix}}\\Q={\begin{bmatrix}{\frac {\mathbf {u} _{1}}{\|\mathbf {u} _{1}\|}}&amp;{\frac {\mathbf {u} _{2}}{\|\mathbf {u} _{2}\|}}&amp;{\frac {\mathbf {u} _{3}}{\|\mathbf {u} _{3}\|}}\end{bmatrix}}&amp;={\begin{bmatrix}6/7&amp;-69/175&amp;-58/175\\3/7&amp;158/175&amp;6/175\\-2/7&amp;6/35&amp;-33/35\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>$$
+{\displaystyle {\begin{aligned}Q^{\textsf {T}}A&amp;=Q^{\textsf {T}}Q\,R=R\\R&amp;=Q^{\textsf {T}}A={\begin{bmatrix}14&amp;21&amp;-14\\0&amp;175&amp;-70\\0&amp;0&amp;35\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>RQ分解就是把列看成行</p>
+<h4 id="householder-reflections">Householder reflections</h4>
+<h3 id="connection-to-a-determinant-or-a-product-of-eigenvalues">Connection to a determinant or a product of eigenvalues</h3>
+<p>$$
+{\displaystyle \det A=\det Q\det R}
+$$</p>
+<p>当Q的行列式为1时，rii是主对角元，也是特征值</p>
+<p>$$
+{\displaystyle \det A=\det R=\prod _{i}r_{ii}}
+$$</p>
+<h2 id="singular-value-decomposition">Singular value decomposition</h2>
+<p>适用于m*n的矩阵，分解形式</p>
+<p>$$
+{\displaystyle A=UDV^{*}}
+$$</p>
+<p>D是非负的对角阵，U和V是酉矩阵（实数上就是正交矩阵）</p>
+<p>D的对角元称为A的奇异值</p>
+<p>A的奇异值是唯一的，U和V不一定唯一</p>
+<p>在有些地方把奇异值分解的形式写成</p>
+<p>$$
+{\displaystyle \ \mathbf {M} =\mathbf {U\Sigma V^{*}} \ }
+$$</p>
+<p>其中，矩阵的大小为</p>
+<figure><a class="lightgallery" href="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png" title="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png" data-thumbnail="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png" data-sub-html="<h2>Visualization of the matrix multiplications in singular value decomposition</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png"
+            data-srcset="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png, https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png 1.5x, https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png 2x"
+            data-sizes="auto"
+            alt="https://img-blog.csdnimg.cn/21ff600a7d7c4361a193fb7b5736f2e0.png" />
+    </a><figcaption class="image-caption">Visualization of the matrix multiplications in singular value decomposition</figcaption>
+    </figure>
+<p>奇异值分解的几何意义是</p>
+<p>对于M在空间上所做的变换，U将空间进行旋转，Σ将空间进行缩放，V*再将空间进行旋转，Σ的对角元就是缩放的比例</p>
+<p>如果M的行列式是正的，那么U，V*可以都带反射（reflection）（就是将一张纸翻过来），或者都不带反射，如果M的行列式是负的，那么U或V*带反射</p>
+<p>如果M不是方阵，假设是m*n的，几何意义可以看作是n维空间到m维空间的变换，U和V*分别作用于m维和n维空间，Σ除了对min(m,n)维空间进行缩放后，在其他维度要补0，以便后续的计算</p>
+<figure><a class="lightgallery" href="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png" title="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png" data-thumbnail="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png" data-sub-html="<h2>Illustration</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png"
+            data-srcset="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png, https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png 1.5x, https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png 2x"
+            data-sizes="auto"
+            alt="https://img-blog.csdnimg.cn/eda7bbaf795e49809f3f01f7badfad03.png" />
+    </a><figcaption class="image-caption">Illustration</figcaption>
+    </figure>
+<figure><a class="lightgallery" href="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center" title="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center" data-thumbnail="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center" data-sub-html="<h2>Animated illustration of the SVD of a 2D, real shearing matrix M. First, we see the unit disc in blue together with the two canonical unit vectors. We then see the actions of M, which distorts the disk to an ellipse. The SVD decomposes M into three simple transformations: an initial rotation V⁎, a scaling {\displaystyle \mathbf {\Sigma } }\mathbf{\Sigma} along the coordinate axes, and a final rotation U. The lengths σ1 and σ2 of the semi-axes of the ellipse are the singular values of M, namely Σ1,1 and Σ2,2.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center"
+            data-srcset="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center, https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center 1.5x, https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center 2x"
+            data-sizes="auto"
+            alt="https://img-blog.csdnimg.cn/f66e2e1ade32496787f7d45d0d41ef17.gif#pic_center" />
+    </a><figcaption class="image-caption">Animated illustration of the SVD of a 2D, real shearing matrix M. First, we see the unit disc in blue together with the two canonical unit vectors. We then see the actions of M, which distorts the disk to an ellipse. The SVD decomposes M into three simple transformations: an initial rotation V⁎, a scaling {\displaystyle \mathbf {\Sigma } }\mathbf{\Sigma} along the coordinate axes, and a final rotation U. The lengths σ1 and σ2 of the semi-axes of the ellipse are the singular values of M, namely Σ1,1 and Σ2,2.</figcaption>
+    </figure>
+<h3 id="example-6">Example</h3>
+<p>$$
+\mathbf {M} ={\begin{bmatrix}1&amp;0&amp;0&amp;0&amp;2\\0&amp;0&amp;3&amp;0&amp;0\\0&amp;0&amp;0&amp;0&amp;0\\0&amp;2&amp;0&amp;0&amp;0\end{bmatrix}}
+$$</p>
+<p>$$
+{\displaystyle {\begin{aligned}\mathbf {U} &amp;={\begin{bmatrix}\color {Green}0&amp;\color {Blue}-1&amp;\color {Cyan}0&amp;\color {Emerald}0\\\color {Green}-1&amp;\color {Blue}0&amp;\color {Cyan}0&amp;\color {Emerald}0\\\color {Green}0&amp;\color {Blue}0&amp;\color {Cyan}0&amp;\color {Emerald}-1\\\color {Green}0&amp;\color {Blue}0&amp;\color {Cyan}-1&amp;\color {Emerald}0\end{bmatrix}}\\[6pt]{\boldsymbol {\Sigma }}&amp;={\begin{bmatrix}3&amp;0&amp;0&amp;0&amp;\color {Gray}{\mathit {0}}\\0&amp;{\sqrt {5}}&amp;0&amp;0&amp;\color {Gray}{\mathit {0}}\\0&amp;0&amp;2&amp;0&amp;\color {Gray}{\mathit {0}}\\0&amp;0&amp;0&amp;\color {Red}\mathbf {0} &amp;\color {Gray}{\mathit {0}}\end{bmatrix}}\\[6pt]\mathbf {V} ^{*}&amp;={\begin{bmatrix}\color {Violet}0&amp;\color {Violet}0&amp;\color {Violet}-1&amp;\color {Violet}0&amp;\color {Violet}0\\\color {Plum}-{\sqrt {0.2}}&amp;\color {Plum}0&amp;\color {Plum}0&amp;\color {Plum}0&amp;\color {Plum}-{\sqrt {0.8}}\\\color {Magenta}0&amp;\color {Magenta}-1&amp;\color {Magenta}0&amp;\color {Magenta}0&amp;\color {Magenta}0\\\color {Orchid}0&amp;\color {Orchid}0&amp;\color {Orchid}0&amp;\color {Orchid}1&amp;\color {Orchid}0\\\color {Purple}-{\sqrt {0.8}}&amp;\color {Purple}0&amp;\color {Purple}0&amp;\color {Purple}0&amp;\color {Purple}{\sqrt {0.2}}\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>另一个V*</p>
+<p>$$
+{\displaystyle \mathbf {V} ^{*}={\begin{bmatrix}\color {Violet}0&amp;\color {Violet}1&amp;\color {Violet}0&amp;\color {Violet}0&amp;\color {Violet}0\\\color {Plum}0&amp;\color {Plum}0&amp;\color {Plum}1&amp;\color {Plum}0&amp;\color {Plum}0\\\color {Magenta}{\sqrt {0.2}}&amp;\color {Magenta}0&amp;\color {Magenta}0&amp;\color {Magenta}0&amp;\color {Magenta}{\sqrt {0.8}}\\\color {Orchid}{\sqrt {0.4}}&amp;\color {Orchid}0&amp;\color {Orchid}0&amp;\color {Orchid}{\sqrt {0.5}}&amp;\color {Orchid}-{\sqrt {0.1}}\\\color {Purple}-{\sqrt {0.4}}&amp;\color {Purple}0&amp;\color {Purple}0&amp;\color {Purple}{\sqrt {0.5}}&amp;\color {Purple}{\sqrt {0.1}}\end{bmatrix}}}
+$$</p>
+<p>SVD分解的过程参考<a href="https://zhuanlan.zhihu.com/p/52890135" target="_blank" rel="noopener noreffer">此处</a></p>
+<h2 id="schur-complement">Schur complement</h2>
+<p>舒尔补的作用是将p+q维矩阵的求逆变成p维和q维矩阵的求逆，降低运算时间</p>
+<p><a href="https://blog.csdn.net/jdy_lyy/article/details/119258928" target="_blank" rel="noopener noreffer">SLAM和舒尔补</a></p>
+<p>假设A、B、C、D矩阵为 p × p, p × q, q × p, q × q</p>
+<p>$$
+{\displaystyle M=\left[{\begin{matrix}A&amp;B\\C&amp;D\end{matrix}}\right]}
+$$</p>
+<p>假设D是可逆的（即非奇异），则D在M中的舒尔补为</p>
+<p>$$
+{\displaystyle M/D:=A-BD^{-1}C}
+$$</p>
+<p>假设A是可逆的，则A在M中的舒尔补为</p>
+<p>$$
+{\displaystyle M/A:=D-CA^{-1}B}
+$$</p>
+<p>舒尔补在高斯消元中有用到，为了使M变成上三角矩阵，可以右乘一个下三角矩阵</p>
+<p>$$
+{\displaystyle {\begin{aligned}&amp;M={\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}\quad \to \quad {\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;0\\-D^{-1}C&amp;I_{q}\end{bmatrix}}={\begin{bmatrix}A-BD^{-1}C&amp;B\\0&amp;D\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>Ip是p阶单位阵，可以发现最后矩阵的左上角出现了D在M中的舒尔补</p>
+<p>将这个结果左乘一个矩阵后转化为对角阵</p>
+<p>$$
+{\displaystyle {\begin{aligned}&amp;{\begin{bmatrix}A-BD^{-1}C&amp;B\\0&amp;D\end{bmatrix}}\quad \to \quad {\begin{bmatrix}I_{p}&amp;-BD^{-1}\\0&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}A-BD^{-1}C&amp;B\\0&amp;D\end{bmatrix}}={\begin{bmatrix}A-BD^{-1}C&amp;0\\0&amp;D\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>由此可以引导出M的LDU分解</p>
+<p>$$
+{\displaystyle {\begin{aligned}M&amp;={\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}={\begin{bmatrix}I_{p}&amp;BD^{-1}\\0&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}A-BD^{-1}C&amp;0\\0&amp;D\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;0\\D^{-1}C&amp;I_{q}\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>所以M的逆可以由D的逆和舒尔补的逆组成</p>
+<p>$$
+{\displaystyle {\begin{aligned}M^{-1}={\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}^{-1}={}&amp;\left({\begin{bmatrix}I_{p}&amp;BD^{-1}\\0&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}A-BD^{-1}C&amp;0\\0&amp;D\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;0\\D^{-1}C&amp;I_{q}\end{bmatrix}}\right)^{-1}\\={}&amp;{\begin{bmatrix}I_{p}&amp;0\\-D^{-1}C&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}\left(A-BD^{-1}C\right)^{-1}&amp;0\\0&amp;D^{-1}\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;-BD^{-1}\\0&amp;I_{q}\end{bmatrix}}\\[4pt]={}&amp;{\begin{bmatrix}\left(A-BD^{-1}C\right)^{-1}&amp;-\left(A-BD^{-1}C\right)^{-1}BD^{-1}\\-D^{-1}C\left(A-BD^{-1}C\right)^{-1}&amp;D^{-1}+D^{-1}C\left(A-BD^{-1}C\right)^{-1}BD^{-1}\end{bmatrix}}\\[4pt]={}&amp;{\begin{bmatrix}\left(M/D\right)^{-1}&amp;-\left(M/D\right)^{-1}BD^{-1}\\-D^{-1}C\left(M/D\right)^{-1}&amp;D^{-1}+D^{-1}C\left(M/D\right)^{-1}BD^{-1}\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>这是一种形式，可以交换A和D来推导出另一种形式</p>
+<h3 id="properties">Properties</h3>
+<p>假设p和q都是1，AD-BC不为0</p>
+<p>$$
+M^{{-1}}={\frac  {1}{AD-BC}}\left[{\begin{matrix}D&amp;-B\\-C&amp;A\end{matrix}}\right]
+$$</p>
+<p>当A是可逆的，那么</p>
+<p>$$
+{\displaystyle {\begin{aligned}M&amp;={\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}={\begin{bmatrix}I_{p}&amp;0\\CA^{-1}&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}A&amp;0\\0&amp;D-CA^{-1}B\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;A^{-1}B\\0&amp;I_{q}\end{bmatrix}},\\[4pt]M^{-1}&amp;={\begin{bmatrix}A^{-1}+A^{-1}B(M/A)^{-1}CA^{-1}&amp;-A^{-1}B(M/A)^{-1}\\-(M/A)^{-1}CA^{-1}&amp;(M/A)^{-1}\end{bmatrix}}\end{aligned}}}
+$$</p>
+<p>当A（D）是可逆的，则</p>
+<p>$$
+{\displaystyle \det(M)=\det(A)\det \left(D-CA^{-1}B\right)}\\{\displaystyle \det(M)=\det(D)\det \left(A-BD^{-1}C\right)}
+$$</p>
+<p>当D是可逆的，则</p>
+<p>$$
+{\displaystyle \operatorname {rank} (M)=\operatorname {rank} (D)+\operatorname {rank} \left(A-BD^{-1}C\right)}
+$$</p>
+<h3 id="application-to-solving-linear-equations">Application to solving linear equations</h3>
+<p>假设要解这样的线性方程</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}{\begin{bmatrix}x\\y\end{bmatrix}}={\begin{bmatrix}u\\v\end{bmatrix}}}
+$$</p>
+<p>假设A是可逆的，可以得到</p>
+<p>$$
+{\displaystyle x=A^{-1}(u-By)}
+$$</p>
+<p>将上式代入可以得到</p>
+<p>$$
+{\displaystyle \left(D-CA^{-1}B\right)y=v-CA^{-1}u}
+$$</p>
+<p>定义A的舒尔补</p>
+<p>$$
+{\displaystyle S\ {\overset {\underset {\mathrm {def} }{}}{=}}\ D-CA^{-1}B}
+$$</p>
+<p>x和y可以变成</p>
+<p>$$
+{\displaystyle y=S^{-1}\left(v-CA^{-1}u\right)}
+$$</p>
+<p>$$
+{\displaystyle x=\left(A^{-1}+A^{-1}BS^{-1}CA^{-1}\right)u-A^{-1}BS^{-1}v}
+$$</p>
+<p>可以写成如下形式</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}x\\y\end{bmatrix}}={\begin{bmatrix}A^{-1}+A^{-1}BS^{-1}CA^{-1}&amp;-A^{-1}BS^{-1}\\-S^{-1}CA^{-1}&amp;S^{-1}\end{bmatrix}}{\begin{bmatrix}u\\v\end{bmatrix}}}
+$$</p>
+<p>大矩阵的逆可以分解成小矩阵的逆</p>
+<p>$$
+{\displaystyle {\begin{bmatrix}A&amp;B\\C&amp;D\end{bmatrix}}^{-1}={\begin{bmatrix}A^{-1}+A^{-1}BS^{-1}CA^{-1}&amp;-A^{-1}BS^{-1}\\-S^{-1}CA^{-1}&amp;S^{-1}\end{bmatrix}}={\begin{bmatrix}I_{p}&amp;-A^{-1}B\\&amp;I_{q}\end{bmatrix}}{\begin{bmatrix}A^{-1}&amp;\\&amp;S^{-1}\end{bmatrix}}{\begin{bmatrix}I_{p}&amp;\\-CA^{-1}&amp;I_{q}\end{bmatrix}}}
+$$</p>
+<h2 id="something-confusing">Something confusing</h2>
+<ul>
+<li>矩阵左乘一个行向量的几何意义</li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p>无水印的图来自wikipedia</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-10-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/matrix-decomposition/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition" data-hashtags="math"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-hashtag="math"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition" data-description="Matrix Decomposition"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition" data-description="Matrix Decomposition"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/posts/matrix-decomposition/" data-title="Matrix Decomposition"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/math/">math</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/pandas/" class="prev" rel="prev" title="Pandas"><i class="fas fa-angle-left fa-fw"></i>Pandas</a>
+            <a href="/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" class="next" rel="next" title="VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator">VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.e0a420c43c7b08527650f566b00e15f0cd14d4a550ef929202c23f3a5aa880c0.js" integrity="sha256-4KQgxDx7CFJ2UPVmsA4V8M0U1KVQ75KSAsI/OlqogMA="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>

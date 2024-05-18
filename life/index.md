@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2024/05/18 13:24" placement="top" color="green">
+        <h4>版本V2.4<br>修改了文章的url前缀，优化了项目的文件结构</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2024/05/18 11:47" placement="top" color="green">
         <h4>版本V2.3<br>修改了导航栏分割线右边选项的加载逻辑，从原来的js加载css改为直接css加载，更加快速和规范</h4>
     </el-timeline-item>

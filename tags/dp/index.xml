@@ -6,73 +6,73 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
     <title>9th hhucpc (Senior)</title>
-    <link>https://dyhgo.github.io/9th-hhucpcsenior/</link>
+    <link>https://dyhgo.github.io/posts/9th-hhucpcsenior/</link>
     <pubDate>Wed, 09 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/9th-hhucpcsenior/</guid>
+    <guid>https://dyhgo.github.io/posts/9th-hhucpcsenior/</guid>
     <description><![CDATA[u1s1,zyyyyy出的题目真的好好，补题的过程学到了好多（好菜啊o(╥﹏╥)o 题目链接 只贴了代码，题解参考此处 A 签到 1 2 3 4 5 6 7 8 9 10]]></description>
 </item><item>
     <title>abc184</title>
-    <link>https://dyhgo.github.io/abc184/</link>
+    <link>https://dyhgo.github.io/posts/abc184/</link>
     <pubDate>Wed, 02 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc184/</guid>
+    <guid>https://dyhgo.github.io/posts/abc184/</guid>
     <description><![CDATA[A - Determinant 题意 求二阶行列式 题解 1 2 3 4 5 6 7 8 9 #include &#34;bits/stdc++.h&#34; using namespace std; using ll = long long; int main() { int a, b, c, d; cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d; cout &lt;&lt; a * d - c * b &lt;&lt; endl; return 0; } B - Quizzes 题意 给n]]></description>
 </item><item>
     <title>Codeforces Round #672 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</link>
     <pubDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</guid>
     <description><![CDATA[A. Cubes Sorting 题意 对于一个数列，每次操作交换相邻的两个数，问是否需要达到n(n-1)/2次操作才可以让数列递增 题解 判断数列是否严格单调递减 1 2 3 4 5]]></description>
 </item><item>
     <title>西南科技大学第十六届ACM程序设计竞赛暨绵阳市邀请赛</title>
-    <link>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
+    <link>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
+    <guid>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
     <description><![CDATA[挺好的比赛 A-找规律 题解 玄学题，打表找规律或者猜测规则是每次洗牌是将一个位置移动到另一个固定位置 13次洗牌之后所有的位置都占过一遍，所以13]]></description>
 </item><item>
     <title>abc169</title>
-    <link>https://dyhgo.github.io/abc169/</link>
+    <link>https://dyhgo.github.io/posts/abc169/</link>
     <pubDate>Mon, 08 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc169/</guid>
+    <guid>https://dyhgo.github.io/posts/abc169/</guid>
     <description><![CDATA[由于事情太多，拖了这么久 A - Multiplication 1 题意 输入两个数，求积 题解 1 2 n,m = map(int,input().split()) print(n*m) B - Multiplication 2 题意 输入很多大数，求积是否超过1e18 题解 用 __int128 ， 样例有个情况是前]]></description>
 </item><item>
     <title>Codeforces Round #641 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-641-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-641-div.-2-a~d/</link>
     <pubDate>Wed, 13 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-641-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-641-div.-2-a~d/</guid>
     <description><![CDATA[A. Orac and Factors 题意 对于一个数，每一次操作加上他的最小因子（除1外） 问k次操作后，这个数是多少 题解 奇数找最小因子加一下就变成偶数，偶数最小因子是2 1]]></description>
 </item><item>
     <title>abc165</title>
-    <link>https://dyhgo.github.io/abc165/</link>
+    <link>https://dyhgo.github.io/posts/abc165/</link>
     <pubDate>Sun, 03 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc165/</guid>
+    <guid>https://dyhgo.github.io/posts/abc165/</guid>
     <description><![CDATA[A - We Love Golf 题意 询问在A到B之间是否有C的倍数 题解 特判边界是否满足条件，否则判断左右边界除以C的值是否大于等于1 ac代码 1 2 3 4 5 6 7 8 9 10 11]]></description>
 </item><item>
     <title>NC17134</title>
-    <link>https://dyhgo.github.io/nc17134/</link>
+    <link>https://dyhgo.github.io/posts/nc17134/</link>
     <pubDate>Sat, 02 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/nc17134/</guid>
+    <guid>https://dyhgo.github.io/posts/nc17134/</guid>
     <description><![CDATA[Symmetric Matrix 题目描述 Count the number of n x n matrices A satisfying the following condition modulo m. Ai, j ∈ {0, 1, 2} for all 1 ≤ i, j ≤ n. Ai, j = Aj, i for all 1 ≤ i, j ≤ n. Ai, 1 + Ai, 2 + &hellip; + Ai, n = 2 for all 1 ≤ i ≤ n. A1, 1 =]]></description>
 </item><item>
     <title>abc163</title>
-    <link>https://dyhgo.github.io/abc163/</link>
+    <link>https://dyhgo.github.io/posts/abc163/</link>
     <pubDate>Wed, 22 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc163/</guid>
+    <guid>https://dyhgo.github.io/posts/abc163/</guid>
     <description><![CDATA[A - Circle Pond 题意 求圆周长 题解 ac代码 1 print(int(input())*2*3.14159265) B - Homework 题意 给定假期的时间和每一项作业完成的时间，求这个假期能玩几天 题解 ac代码 1 2 3 4 5 6 7 n,m = map(int , input().split()) a]]></description>
 </item><item>
     <title>abc162</title>
-    <link>https://dyhgo.github.io/abc162/</link>
+    <link>https://dyhgo.github.io/posts/abc162/</link>
     <pubDate>Mon, 13 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc162/</guid>
+    <guid>https://dyhgo.github.io/posts/abc162/</guid>
     <description><![CDATA[A - Lucky 7 题意 问一个整数中是否含有数字7！ 题解 ac代码 1 2 3 4 5 s = input() if &#39;7&#39; in list(s): print(&#39;Yes&#39;) else: print(&#39;No&#39;) B - FizzBuzz Sum 题意 找出不大于n的自然数中不能被3和5整除的数的和]]></description>
 </item></channel>
 </rss>

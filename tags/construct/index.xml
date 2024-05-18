@@ -6,52 +6,52 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 05 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/construct/" rel="self" type="application/rss+xml" /><item>
     <title>Codeforces Round #688 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-688-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-688-div.-2-a~d/</link>
     <pubDate>Sat, 05 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-688-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-688-div.-2-a~d/</guid>
     <description><![CDATA[A. Cancel the Trains 题意 给一个铁路网，和每个火车所在的铁路（都在起点），每一时刻走一格，问有几辆车会相撞 题解 编号相同的横向和列向火车会相撞 1 2 3 4 5 6 7]]></description>
 </item><item>
     <title>Codeforces Round #644 (Div. 3)</title>
-    <link>https://dyhgo.github.io/codeforces-round-644-div.-3/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-644-div.-3/</link>
     <pubDate>Mon, 25 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-644-div.-3/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-644-div.-3/</guid>
     <description><![CDATA[可能是最简单的div3（不考dp dfs？） A. Minimal Square 题意 给俩相同的长方形，求面积最小的正方形使得容纳两个长方形，且长方形之间不重合 题解 两倍宽或两]]></description>
 </item><item>
     <title>Codeforces Round #643 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-643-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-643-div.-2-a~d/</link>
     <pubDate>Sat, 16 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-643-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-643-div.-2-a~d/</guid>
     <description><![CDATA[A. Sequence with Digits 题意 看题目 题解 模拟，minDigit(x) 等于0 时打断 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39]]></description>
 </item><item>
     <title>Codeforces Round #641 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-641-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-641-div.-2-a~d/</link>
     <pubDate>Wed, 13 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-641-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-641-div.-2-a~d/</guid>
     <description><![CDATA[A. Orac and Factors 题意 对于一个数，每一次操作加上他的最小因子（除1外） 问k次操作后，这个数是多少 题解 奇数找最小因子加一下就变成偶数，偶数最小因子是2 1]]></description>
 </item><item>
     <title>abc165</title>
-    <link>https://dyhgo.github.io/abc165/</link>
+    <link>https://dyhgo.github.io/posts/abc165/</link>
     <pubDate>Sun, 03 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc165/</guid>
+    <guid>https://dyhgo.github.io/posts/abc165/</guid>
     <description><![CDATA[A - We Love Golf 题意 询问在A到B之间是否有C的倍数 题解 特判边界是否满足条件，否则判断左右边界除以C的值是否大于等于1 ac代码 1 2 3 4 5 6 7 8 9 10 11]]></description>
 </item><item>
     <title>Codeforces Round #631 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-631-div.-2-a~d/</link>
     <pubDate>Sun, 05 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-631-div.-2-a~d/</guid>
     <description><![CDATA[A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数]]></description>
 </item><item>
     <title>Codeforces Round #630 (Div. 2) A~E</title>
-    <link>https://dyhgo.github.io/codeforces-round-630-div.-2-a~e/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-630-div.-2-a~e/</link>
     <pubDate>Wed, 01 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-630-div.-2-a~e/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-630-div.-2-a~e/</guid>
     <description><![CDATA[A. Exercising Walk 题意 给一坐标范围，初始位置，和左右上下移动的步数，问是否会出界 题解 加各种条件判断即可 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 #include&lt;bits/stdc++.h&gt; using namespace]]></description>
 </item></channel>
 </rss>

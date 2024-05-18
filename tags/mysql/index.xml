@@ -6,24 +6,24 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/mysql/" rel="self" type="application/rss+xml" /><item>
     <title>mysql</title>
-    <link>https://dyhgo.github.io/mysql/</link>
+    <link>https://dyhgo.github.io/posts/mysql/</link>
     <pubDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/mysql/</guid>
+    <guid>https://dyhgo.github.io/posts/mysql/</guid>
     <description><![CDATA[基础 SQL SQL语言分类 DDL 数据类型 数值型 字符串类型 日期和时间型 数据库 查数据库show databases; 查当前数据库select database(); 增加数据库create database [if not exists] xxx]]></description>
 </item><item>
     <title>mysql基础</title>
-    <link>https://dyhgo.github.io/mysql%E5%9F%BA%E7%A1%80/</link>
+    <link>https://dyhgo.github.io/posts/mysql%E5%9F%BA%E7%A1%80/</link>
     <pubDate>Tue, 16 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/mysql%E5%9F%BA%E7%A1%80/</guid>
+    <guid>https://dyhgo.github.io/posts/mysql%E5%9F%BA%E7%A1%80/</guid>
     <description><![CDATA[基本操作 进入数据库 1 mysql -uroot -p123456; 查看所有数据库 1 show databases； 使用某个数据库 1 use XXX; 查看某个数据库中的admin信息 1 select * from admin; 带条件的查询 1]]></description>
 </item><item>
     <title>mysql查询练习</title>
-    <link>https://dyhgo.github.io/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/</link>
+    <link>https://dyhgo.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/</link>
     <pubDate>Tue, 16 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/</guid>
+    <guid>https://dyhgo.github.io/posts/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/</guid>
     <description><![CDATA[数据准备 数据库 test3 建表 学生表 课程表 成绩表 教师表 Student Course Score Teacher 学号 课程号 学号 教师编号 姓名 课程名称 课程号 教师名字 性别 教师编号 成绩 教师性别 出生年月日 出生年]]></description>
 </item></channel>
 </rss>

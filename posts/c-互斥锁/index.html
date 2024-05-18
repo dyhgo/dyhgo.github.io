@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>C&#43;&#43;互斥锁 - This is DYH</title><meta name="Description" content="C&#43;&#43;互斥锁"><meta property="og:title" content="C&#43;&#43;互斥锁" />
+<meta property="og:description" content="C&#43;&#43;互斥锁" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-12-25T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-12-25T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="C&#43;&#43;互斥锁"/>
+<meta name="twitter:description" content="C&#43;&#43;互斥锁"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" /><link rel="prev" href="https://dyhgo.github.io/posts/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/" /><link rel="next" href="https://dyhgo.github.io/posts/docker/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "C++互斥锁",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/posts\/c-%E4%BA%92%E6%96%A5%E9%94%81\/"
+        },"genre": "posts","keywords": "cpp","wordcount":  1084 ,
+        "url": "https:\/\/dyhgo.github.io\/posts\/c-%E4%BA%92%E6%96%A5%E9%94%81\/","datePublished": "2023-12-25T00:00:00+00:00","dateModified": "2023-12-25T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "C++互斥锁"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span>
+
+                
+
+                <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                <option> 清单 </option>
+                                <option value="https://da1yh.xyz/music/">音乐</option>
+                                <option value="https://da1yh.xyz/anime/">番剧</option>
+                                <option value="https://da1yh.xyz/game/">游戏</option>
+                                <option value="https://da1yh.xyz/poppin/">poppin</option>
+                            </select></a>
+
+                        <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                            <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option > 搜索 </option>
+                                    <option value="https://www.baidu.com">百度</a></option>
+                                    <option value="https://www.google.com">google</option>
+                                    <option value="https://www.bing.com">bing</option>
+                                    <option value="https://www.yandex.com">yandex</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oj </option>\n' +
+                                        <option value="https://codeforces.com/">codeforces</option>
+                                        <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                        <option value="https://atcoder.jp/">atcoder</option>
+                                        <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                        <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                        <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                        <option value="http://poj.org/">poj</option>
+                                        <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                        <option value="https://www.luogu.com.cn/">luogu</option>
+                                    </select>
+                                    </a>
+
+                                    <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                            <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                            <option > oi </option>\n' +
+                                            <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                            <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                            <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                            <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                           <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                            <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                            <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                            </select>
+                                            </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            
+
+            <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option> 清单 </option>
+                            <option value="https://da1yh.xyz/music/">音乐</option>
+                            <option value="https://da1yh.xyz/anime/">番剧</option>
+                            <option value="https://da1yh.xyz/game/">游戏</option>
+                            <option value="https://da1yh.xyz/poppin/">poppin</option>
+                        </select></a>
+
+                    <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                        <option > 搜索 </option>
+                                <option value="https://www.baidu.com">百度</a></option>
+                                <option value="https://www.google.com">google</option>
+                                <option value="https://www.bing.com">bing</option>
+                                <option value="https://www.yandex.com">yandex</option>
+                            </select>
+                            </a>
+
+                            <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                    <option > oj </option>\n' +
+                                    <option value="https://codeforces.com/">codeforces</option>
+                                    <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                    <option value="https://atcoder.jp/">atcoder</option>
+                                    <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                    <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                    <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                    <option value="http://poj.org/">poj</option>
+                                    <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                    <option value="https://www.luogu.com.cn/">luogu</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oi </option>\n' +
+                                        <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                        <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                        <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                        <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                       <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                        <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                        <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                        </select>
+                                        </a>
+
+        </div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">C&#43;&#43;互斥锁</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2023-12-25">2023-12-25</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1084 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" class="leancloud_visitors" data-flag-title="C&#43;&#43;互斥锁">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#stdmutex">std::mutex</a></li>
+    <li><a href="#stdlock_guard">std::lock_guard</a></li>
+    <li><a href="#stdshared_mutex">std::shared_mutex</a></li>
+    <li><a href="#stdunique_lock和stdlock_guard的区别">std::unique_lock和std::lock_guard的区别</a></li>
+    <li><a href="#信号量">信号量</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="stdmutex">std::mutex</h2>
+<p>最简单的互斥锁</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// mutex example
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">       </span><span class="c1">// std::cout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">         </span><span class="c1">// std::thread
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">          </span><span class="c1">// std::mutex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>           <span class="c1">// mutex for critical section
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_block</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// critical section (exclusive access to std::cout signaled by locking mtx):
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// mtx.lock();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// mtx.unlock();
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">th1</span> <span class="p">(</span><span class="n">print_block</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="sc">&#39;*&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">th2</span> <span class="p">(</span><span class="n">print_block</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="sc">&#39;$&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">th1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">th2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">****************************************$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$**********
+</span></span><span class="line"><span class="cl">$$$$$$$$$$$$$$
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// mutex example
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">       </span><span class="c1">// std::cout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">         </span><span class="c1">// std::thread
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">          </span><span class="c1">// std::mutex
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>           <span class="c1">// mutex for critical section
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_block</span> <span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// critical section (exclusive access to std::cout signaled by locking mtx):
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">mtx</span><span class="p">.</span><span class="n">lock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">c</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mtx</span><span class="p">.</span><span class="n">unlock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">th1</span> <span class="p">(</span><span class="n">print_block</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="sc">&#39;*&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">th2</span> <span class="p">(</span><span class="n">print_block</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="sc">&#39;$&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">th1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">th2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+</span></span><span class="line"><span class="cl">**************************************************
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="stdlock_guard">std::lock_guard</h2>
+<p>能够在线程抛出异常和结束时自动解锁</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">// lock_guard example
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">       </span><span class="c1">// std::cout
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">         </span><span class="c1">// std::thread
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">          </span><span class="c1">// std::mutex, std::lock_guard
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp">      </span><span class="c1">// std::logic_error
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="n">std</span><span class="o">::</span><span class="n">mutex</span> <span class="n">mtx</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_even</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; is even</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">throw</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="p">(</span><span class="s">&#34;not even&#34;</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">print_thread_id</span> <span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// using a local lock_guard to lock mtx guarantees unlocking on destruction / exception:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">std</span><span class="o">::</span><span class="n">lock_guard</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">mutex</span><span class="o">&gt;</span> <span class="n">lck</span> <span class="p">(</span><span class="n">mtx</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">print_even</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">logic_error</span><span class="o">&amp;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;[exception caught]</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span> <span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">threads</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// spawn 10 threads:
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">threads</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="p">(</span><span class="n">print_thread_id</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="nl">th</span> <span class="p">:</span> <span class="n">threads</span><span class="p">)</span> <span class="n">th</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>一种可能的输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">2 is even
+</span></span><span class="line"><span class="cl">[exception caught]
+</span></span><span class="line"><span class="cl">[exception caught]
+</span></span><span class="line"><span class="cl">6 is even
+</span></span><span class="line"><span class="cl">4 is even
+</span></span><span class="line"><span class="cl">[exception caught]
+</span></span><span class="line"><span class="cl">[exception caught]
+</span></span><span class="line"><span class="cl">8 is even
+</span></span><span class="line"><span class="cl">[exception caught]
+</span></span><span class="line"><span class="cl">10 is even
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="stdshared_mutex">std::shared_mutex</h2>
+<p>读写锁，支持多读单写</p>
+<p>配合<code>std::unique_lock</code>和<code>std::shared_lock</code>，前者是写锁，后者是读锁</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;mutex&gt;</span><span class="cp">  </span><span class="c1">// 对于 std::unique_lock
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;shared_mutex&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ThreadSafeCounter</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadSafeCounter</span><span class="p">()</span> <span class="o">=</span> <span class="k">default</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 多个线程/读者能同时读计数器的值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">get</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">shared_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mutex_</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">value_</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 只有一个线程/写者能增加/写线程的值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">increment</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mutex_</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">value_</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 只有一个线程/写者能重置/写线程的值。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">void</span> <span class="nf">reset</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">std</span><span class="o">::</span><span class="n">unique_lock</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span><span class="o">&gt;</span> <span class="n">lock</span><span class="p">(</span><span class="n">mutex_</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">value_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">private</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">mutable</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_mutex</span> <span class="n">mutex_</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">value_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ThreadSafeCounter</span> <span class="n">counter</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">auto</span> <span class="n">increment_and_print</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="n">counter</span><span class="p">]()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">counter</span><span class="p">.</span><span class="n">increment</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">get_id</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span> <span class="o">&lt;&lt;</span> <span class="n">counter</span><span class="p">.</span><span class="n">get</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39;\n&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="c1">// 注意：写入 std::cout 实际上也要由另一互斥同步。省略它以保持示例简洁。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">thread1</span><span class="p">(</span><span class="n">increment_and_print</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">thread2</span><span class="p">(</span><span class="n">increment_and_print</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">thread1</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">thread2</span><span class="p">.</span><span class="n">join</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 解释：下列输出在单核机器上生成。 thread1 开始时，它首次进入循环并调用 increment() ，
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 随后调用 get() 。然而，在它能打印返回值到 std::cout 前，调度器将 thread1 置于休眠
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 并唤醒 thread2 ，它显然有足够时间一次运行全部三个循环迭代。再回到 thread1 ，它仍在首个
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 循环迭代中，它最终打印其局部的计数器副本的值，即 1 到 std::cout ，再运行剩下二个循环。
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 多核机器上，没有线程被置于休眠，且输出更可能为递增顺序。
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>在单核上运行，可能的输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">123084176803584 2
+</span></span><span class="line"><span class="cl">123084176803584 3
+</span></span><span class="line"><span class="cl">123084176803584 4
+</span></span><span class="line"><span class="cl">123084185655040 1
+</span></span><span class="line"><span class="cl">123084185655040 5
+</span></span><span class="line"><span class="cl">123084185655040 6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="stdunique_lock和stdlock_guard的区别">std::unique_lock和std::lock_guard的区别</h2>
+<p>std::unique_lock是std::lock_guard的扩展，它可以在生命周期内手动加锁和解锁</p>
+<h2 id="信号量">信号量</h2>
+<p>#include &lt;semaphore.h&gt;</p>
+<p>#include &lt;signal.h&gt;</p>
+<p>sem_init	初始化一个信号量，并给定初值</p>
+<p>sem_wait	信号量-1，如果信号量本来为0就会阻塞直到信号量&gt;0</p>
+<p>sem_post 信号量+1</p>
+<p>signal(某个信号，收到这个信号的处理函数)</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://cplusplus.com/reference/mutex/mutex/" target="_blank" rel="noopener noreffer">https://cplusplus.com/reference/mutex/mutex/</a></p>
+<p><a href="https://cplusplus.com/reference/mutex/lock_guard/" target="_blank" rel="noopener noreffer">https://cplusplus.com/reference/mutex/lock_guard/</a></p>
+<p><a href="https://zh.cppreference.com/w/cpp/thread/shared_mutex" target="_blank" rel="noopener noreffer">https://zh.cppreference.com/w/cpp/thread/shared_mutex</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2023-12-25</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁" data-hashtags="cpp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-hashtag="cpp"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁" data-description="C&#43;&#43;互斥锁"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁" data-description="C&#43;&#43;互斥锁"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/" data-title="C&#43;&#43;互斥锁"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">cpp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/" class="prev" rel="prev" title="C&#43;&#43;类继承和可见性"><i class="fas fa-angle-left fa-fw"></i>C&#43;&#43;类继承和可见性</a>
+            <a href="/posts/docker/" class="next" rel="next" title="docker">docker<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.e0a420c43c7b08527650f566b00e15f0cd14d4a550ef929202c23f3a5aa880c0.js" integrity="sha256-4KQgxDx7CFJ2UPVmsA4V8M0U1KVQ75KSAsI/OlqogMA="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>

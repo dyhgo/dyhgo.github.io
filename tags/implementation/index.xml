@@ -6,10 +6,10 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sat, 05 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/implementation/" rel="self" type="application/rss+xml" /><item>
     <title>Codeforces Round #688 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-688-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-688-div.-2-a~d/</link>
     <pubDate>Sat, 05 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-688-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-688-div.-2-a~d/</guid>
     <description><![CDATA[A. Cancel the Trains 题意 给一个铁路网，和每个火车所在的铁路（都在起点），每一时刻走一格，问有几辆车会相撞 题解 编号相同的横向和列向火车会相撞 1 2 3 4 5 6 7]]></description>
 </item></channel>
 </rss>

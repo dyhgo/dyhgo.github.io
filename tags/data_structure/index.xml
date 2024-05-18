@@ -6,24 +6,24 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/data_structure/" rel="self" type="application/rss+xml" /><item>
     <title>Codeforces Round #672 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</link>
     <pubDate>Fri, 25 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-672-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-672-div.-2-a~d/</guid>
     <description><![CDATA[A. Cubes Sorting 题意 对于一个数列，每次操作交换相邻的两个数，问是否需要达到n(n-1)/2次操作才可以让数列递增 题解 判断数列是否严格单调递减 1 2 3 4 5]]></description>
 </item><item>
     <title>abc170</title>
-    <link>https://dyhgo.github.io/abc170/</link>
+    <link>https://dyhgo.github.io/posts/abc170/</link>
     <pubDate>Mon, 15 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/abc170/</guid>
+    <guid>https://dyhgo.github.io/posts/abc170/</guid>
     <description><![CDATA[A - Five Variables 题意 找5个数中值为0的下标 题解 1 2 a = list(map(int , input().split())) print(a.index(0) + 1) B - Crane and Turtle 题意 鸡兔同笼问题 题解 1 2 n , m = map(int , input().split()) print(&#39;Yes&#39;) if (m - 2 * n) % 2 == 0 and (m - 2 * n)]]></description>
 </item><item>
     <title>Codeforces Round #631 (Div. 2) A~D</title>
-    <link>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-631-div.-2-a~d/</link>
     <pubDate>Sun, 05 Apr 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-631-div.-2-a~d/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-631-div.-2-a~d/</guid>
     <description><![CDATA[A. Dreamoon and Ranking Collection 题意 给n个数和数字k，你可以对数列进行扩充k个数，使得扩充后的数列出现1~m的 数字至少一次，求m的最大值 题解 用计数器对原始数列计数]]></description>
 </item></channel>
 </rss>

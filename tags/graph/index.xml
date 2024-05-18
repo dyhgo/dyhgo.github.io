@@ -6,17 +6,17 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/graph/" rel="self" type="application/rss+xml" /><item>
     <title>西南科技大学第十六届ACM程序设计竞赛暨绵阳市邀请赛</title>
-    <link>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
+    <link>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</link>
     <pubDate>Sun, 28 Jun 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
+    <guid>https://dyhgo.github.io/posts/%E8%A5%BF%E5%8D%97%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E7%AC%AC%E5%8D%81%E5%85%AD%E5%B1%8Aacm%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AB%9E%E8%B5%9B%E6%9A%A8%E7%BB%B5%E9%98%B3%E5%B8%82%E9%82%80%E8%AF%B7%E8%B5%9B/</guid>
     <description><![CDATA[挺好的比赛 A-找规律 题解 玄学题，打表找规律或者猜测规则是每次洗牌是将一个位置移动到另一个固定位置 13次洗牌之后所有的位置都占过一遍，所以13]]></description>
 </item><item>
     <title>Codeforces Round #629 (Div. 3)</title>
-    <link>https://dyhgo.github.io/codeforces-round-629-div.-3/</link>
+    <link>https://dyhgo.github.io/posts/codeforces-round-629-div.-3/</link>
     <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/codeforces-round-629-div.-3/</guid>
+    <guid>https://dyhgo.github.io/posts/codeforces-round-629-div.-3/</guid>
     <description><![CDATA[A. Divisibility Problem 题意 求一个数加上多少能被另一个数整除 题解 如果b|(a+k) 则k=b-a%b注意k=0特判 ac代码 1 2 3 4 5 6 7 8 9 10 11 12 #include&lt;bits/stdc++.h&gt; using namespace std; int t,a,b; int]]></description>
 </item></channel>
 </rss>

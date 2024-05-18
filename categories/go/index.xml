@@ -6,38 +6,38 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/go/" rel="self" type="application/rss+xml" /><item>
     <title>GO利用ftp服务器进行文件上传和下载</title>
-    <link>https://dyhgo.github.io/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+    <link>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
     <pubDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+    <guid>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
     <description><![CDATA[购买云服务器，这个云服务器将作为ftp服务器 假设云服务器是centos系统 先安装vsftpd 输入以下命令 1 sudo yum install vsftpd 启动vsftpd服务 1 sudo systemctl]]></description>
 </item><item>
     <title>GO与测试</title>
-    <link>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+    <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
     <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+    <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
     <description><![CDATA[参考 单元测试 规则 所有测试文件以_test.go结尾 func TestXxx(*testing.T) 初始化逻辑放到TestMain中 例子 文件名为nihao_test.go 1 2 3 4 5 6 7 8]]></description>
 </item><item>
     <title>GO与socks5代理服务器</title>
-    <link>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+    <link>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
     <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+    <guid>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
     <description><![CDATA[参考 Socks5原理 如果不设置代理服务器，网站先和服务器建立tcp连接，然后三次握手，之后网站发送http请求，服务器返回http响应。 当加]]></description>
 </item><item>
     <title>GO与并发</title>
-    <link>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
+    <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
     <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
+    <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
     <description><![CDATA[并发与并行 concurrncy和parallellism 并发指多个任务在同一时间段进行，并行指多个任务在同一时刻进行 单核cpu只能并发不能并]]></description>
 </item><item>
     <title>GO与http请求</title>
-    <link>https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
+    <link>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
     <pubDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</guid>
+    <guid>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</guid>
     <description><![CDATA[参考 任务 用go写一个http请求，输入一个单词，通过对彩云小译发起网络请求，返回单词的翻译结果 过程 打开网站 输入单词good，点击翻译 打开开发]]></description>
 </item></channel>
 </rss>

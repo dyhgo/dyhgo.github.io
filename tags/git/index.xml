@@ -6,24 +6,24 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 01 May 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/git/" rel="self" type="application/rss+xml" /><item>
     <title>git补充2</title>
-    <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</link>
+    <link>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</link>
     <pubDate>Wed, 01 May 2024 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/git%E8%A1%A5%E5%85%852/</guid>
+    <guid>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</guid>
     <description><![CDATA[如何更优雅地使用git，包含merge，pull，合并commit 实验工具是gitlab pre 在gitlab上登录，只能免费试用一个月 本地mer]]></description>
 </item><item>
     <title>git补充</title>
-    <link>https://dyhgo.github.io/git%E8%A1%A5%E5%85%85/</link>
+    <link>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%85/</link>
     <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/git%E8%A1%A5%E5%85%85/</guid>
+    <guid>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%85/</guid>
     <description><![CDATA[参考资料 问题 如果已经推到远程仓库，该怎么撤销 其他 从工作目录git add提交到暂存区后，想撤销 注意如果在工作目录创建文件，撤销操作只是不跟踪该]]></description>
 </item><item>
     <title>git</title>
-    <link>https://dyhgo.github.io/git/</link>
+    <link>https://dyhgo.github.io/posts/git/</link>
     <pubDate>Tue, 05 May 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/git/</guid>
+    <guid>https://dyhgo.github.io/posts/git/</guid>
     <description><![CDATA[git安装 用户名和邮箱 初始化或切换用户名和邮箱 git config --global user.name &quot;XXX&quot; git config --global user.email &quot;XXX&quot; 查看当前用户名和邮箱 git config --global user.name git config --global user.email 查看用户名和邮箱列表 git config --list 删除用户名和]]></description>
 </item></channel>
 </rss>

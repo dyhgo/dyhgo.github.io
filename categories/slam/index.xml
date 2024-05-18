@@ -6,59 +6,59 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
     <title>vins_estimator</title>
-    <link>https://dyhgo.github.io/vins_estimator/</link>
+    <link>https://dyhgo.github.io/posts/vins_estimator/</link>
     <pubDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/vins_estimator/</guid>
+    <guid>https://dyhgo.github.io/posts/vins_estimator/</guid>
     <description><![CDATA[vins_estimator rosNodeTest.cpp 读取配置文件的参数 readParameters(config_file); readParameters()将配置文件的参数读取到parameters.h中 estimator.setParameter() 设置estimator的外参、td]]></description>
 </item><item>
     <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</title>
-    <link>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</link>
+    <link>https://dyhgo.github.io/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</link>
     <pubDate>Thu, 03 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</guid>
+    <guid>https://dyhgo.github.io/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</guid>
     <description><![CDATA[简要记录一下论文的内容，防止遗忘，有些地方自己也没弄明白，记录不涉及公式的推导（公式推导参考崔华坤vins公式推导） Abstract VINS-Mono是一]]></description>
 </item><item>
     <title>Kalman Filter in One Dimension</title>
-    <link>https://dyhgo.github.io/kalman-filter-in-one-dimension/</link>
+    <link>https://dyhgo.github.io/posts/kalman-filter-in-one-dimension/</link>
     <pubDate>Wed, 21 Sep 2022 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/kalman-filter-in-one-dimension/</guid>
+    <guid>https://dyhgo.github.io/posts/kalman-filter-in-one-dimension/</guid>
     <description><![CDATA[参考资料 卡尔曼滤波就是用测量值（measured value）、测量不确定度（measurement uncertainty）、估计值（esti]]></description>
 </item><item>
     <title>相机模型</title>
-    <link>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
+    <link>https://dyhgo.github.io/posts/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</link>
     <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
+    <guid>https://dyhgo.github.io/posts/%E7%9B%B8%E6%9C%BA%E6%A8%A1%E5%9E%8B/</guid>
     <description><![CDATA[针孔相机模型 针孔相机模型和畸变模型把三维点投影到相机内的二维平面，构成相机的内参数（intrinsics） 根据三角形的相似性 $$ \frac{Z}{f}=-\frac{X}{X^{\prime}}=-\frac{Y}{Y^{\prime}} $$ 把成像平面]]></description>
 </item><item>
     <title>非线性优化</title>
-    <link>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</link>
+    <link>https://dyhgo.github.io/posts/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</link>
     <pubDate>Mon, 01 Mar 2021 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
+    <guid>https://dyhgo.github.io/posts/%E9%9D%9E%E7%BA%BF%E6%80%A7%E4%BC%98%E5%8C%96/</guid>
     <description><![CDATA[相关知识 主要是对高数、概率论、线性代数、数值计算方法、数学建模的一些复习和补充 矩阵求导 一篇矩阵求导入门的非常好的文章 全概率公式 $$ P(B)=\sum_{i=1}^{n} P\left(A_{i}\right) P\left(B \mid A_{i}\right) $$]]></description>
 </item><item>
     <title>李群与李代数</title>
-    <link>https://dyhgo.github.io/%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
+    <link>https://dyhgo.github.io/posts/%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0/</link>
     <pubDate>Sat, 07 Nov 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
+    <guid>https://dyhgo.github.io/posts/%E6%9D%8E%E7%BE%A4%E4%B8%8E%E6%9D%8E%E4%BB%A3%E6%95%B0/</guid>
     <description><![CDATA[群 与视觉slam有关的群 三维旋转矩阵构成了特殊正交群(special orthogonal group) $$S O(3)=\left\{R \in \mathbb{R}^{3 \times 3} \mid R R^{T}=I, \operatorname{det}(R)=1\right\}$$ 三维变换矩阵构成了特殊欧氏群（special euclidean g]]></description>
 </item><item>
     <title>三维空间的刚体运动</title>
-    <link>https://dyhgo.github.io/%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8/</link>
+    <link>https://dyhgo.github.io/posts/%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8/</link>
     <pubDate>Fri, 23 Oct 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8/</guid>
+    <guid>https://dyhgo.github.io/posts/%E4%B8%89%E7%BB%B4%E7%A9%BA%E9%97%B4%E7%9A%84%E5%88%9A%E4%BD%93%E8%BF%90%E5%8A%A8/</guid>
     <description><![CDATA[内积与外积 内积 外积 定义 ^ 符号 欧氏变换 euclidean transform 单次欧氏变换 同一个向量在两个坐标系中的表示，坐标系的变换包括一次旋转和一次平移 旋转 R为旋转矩阵（ro]]></description>
 </item><item>
     <title>今天你也要来点cmake吗</title>
-    <link>https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</link>
+    <link>https://dyhgo.github.io/posts/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</link>
     <pubDate>Tue, 06 Oct 2020 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</guid>
+    <guid>https://dyhgo.github.io/posts/%E4%BB%8A%E5%A4%A9%E4%BD%A0%E4%B9%9F%E8%A6%81%E6%9D%A5%E7%82%B9cmake%E5%90%97/</guid>
     <description><![CDATA[前言 很早就想写cmake，但是一直懒得写 今天也随便写点cmake 官方对cmake的解释 CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform]]></description>
 </item></channel>
 </rss>

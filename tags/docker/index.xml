@@ -6,17 +6,17 @@
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
     <title>docker2</title>
-    <link>https://dyhgo.github.io/docker2/</link>
+    <link>https://dyhgo.github.io/posts/docker2/</link>
     <pubDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/docker2/</guid>
+    <guid>https://dyhgo.github.io/posts/docker2/</guid>
     <description><![CDATA[参考链接 Containerize an application 构建应用的镜像 编写Dockerfile，构建镜像（假设镜像名叫getting-started） 1 docker build -t getting-started . 根据镜像创建容器 1 docker]]></description>
 </item><item>
     <title>docker</title>
-    <link>https://dyhgo.github.io/docker/</link>
+    <link>https://dyhgo.github.io/posts/docker/</link>
     <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
-    <guid>https://dyhgo.github.io/docker/</guid>
+    <guid>https://dyhgo.github.io/posts/docker/</guid>
     <description><![CDATA[参考资料 参考教程 docker的三个重要概念 image：镜像，就是各种环境的集合 container：由镜像生成一个一个的容器，是镜像的实例化 d]]></description>
 </item></channel>
 </rss>

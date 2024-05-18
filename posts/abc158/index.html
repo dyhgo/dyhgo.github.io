@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>abc158 - This is DYH</title><meta name="Description" content="abc158"><meta property="og:title" content="abc158" />
+<meta property="og:description" content="abc158" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dyhgo.github.io/posts/abc158/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-03-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-03-08T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+
+<meta name="twitter:title" content="abc158"/>
+<meta name="twitter:description" content="abc158"/>
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/abc158/" /><link rel="prev" href="https://dyhgo.github.io/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/" /><link rel="next" href="https://dyhgo.github.io/posts/ef-a-tale-of-melodies/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "abc158",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/posts\/abc158\/"
+        },"genre": "posts","keywords": "cpp, string, dp, suffix","wordcount":  1757 ,
+        "url": "https:\/\/dyhgo.github.io\/posts\/abc158\/","datePublished": "2020-03-08T00:00:00+00:00","dateModified": "2020-03-08T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "abc158"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><span class="menu-item delimiter"></span>
+
+                
+
+                <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                <option> 清单 </option>
+                                <option value="https://da1yh.xyz/music/">音乐</option>
+                                <option value="https://da1yh.xyz/anime/">番剧</option>
+                                <option value="https://da1yh.xyz/game/">游戏</option>
+                                <option value="https://da1yh.xyz/poppin/">poppin</option>
+                            </select></a>
+
+                        <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                            <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option > 搜索 </option>
+                                    <option value="https://www.baidu.com">百度</a></option>
+                                    <option value="https://www.google.com">google</option>
+                                    <option value="https://www.bing.com">bing</option>
+                                    <option value="https://www.yandex.com">yandex</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oj </option>\n' +
+                                        <option value="https://codeforces.com/">codeforces</option>
+                                        <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                        <option value="https://atcoder.jp/">atcoder</option>
+                                        <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                        <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                        <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                        <option value="http://poj.org/">poj</option>
+                                        <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                        <option value="https://www.luogu.com.cn/">luogu</option>
+                                    </select>
+                                    </a>
+
+                                    <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                            <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                            <option > oi </option>\n' +
+                                            <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                            <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                            <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                            <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                           <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                            <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                            <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                            </select>
+                                            </a><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            
+
+            <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option> 清单 </option>
+                            <option value="https://da1yh.xyz/music/">音乐</option>
+                            <option value="https://da1yh.xyz/anime/">番剧</option>
+                            <option value="https://da1yh.xyz/game/">游戏</option>
+                            <option value="https://da1yh.xyz/poppin/">poppin</option>
+                        </select></a>
+
+                    <a href="javascript:void(0);" class="menu-item language" title="搜索">搜索<i class="fas fa-chevron-right fa-fw"></i>
+                        <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                        <option > 搜索 </option>
+                                <option value="https://www.baidu.com">百度</a></option>
+                                <option value="https://www.google.com">google</option>
+                                <option value="https://www.bing.com">bing</option>
+                                <option value="https://www.yandex.com">yandex</option>
+                            </select>
+                            </a>
+
+                            <a href="javascript:void(0);" class="menu-item language" title="online judge">oj<i class="fas fa-chevron-right fa-fw"></i>
+                                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                    <option > oj </option>\n' +
+                                    <option value="https://codeforces.com/">codeforces</option>
+                                    <option value="https://ac.nowcoder.com/acm/home">nowcoder</option>
+                                    <option value="https://atcoder.jp/">atcoder</option>
+                                    <option value="https://leetcode-cn.com/problemset/algorithms/">leetcode</option>
+                                    <option value="http://acm.hhu.edu.cn/">hhuoj</option>
+                                    <option value="http://acm.hdu.edu.cn/">hduoj</option>
+                                    <option value="http://poj.org/">poj</option>
+                                    <option value="https://acm.ecnu.edu.cn/">eoj</option>
+                                    <option value="https://www.luogu.com.cn/">luogu</option>
+                                </select>
+                                </a>
+
+                                <a href="javascript:void(0);" class="menu-item language" title="online ide">oi<i class="fas fa-chevron-right fa-fw"></i>
+                                        <select class="language-select" id="language-select-desktop" onchange="location = this.value;target = '_blank'">
+                                        <option > oi </option>\n' +
+                                        <option value="https://www.tutorialspoint.com/compile_cpp_online.php">cpp</option>
+                                        <option value="https://www.tutorialspoint.com/compile_java_online.php">java</option>
+                                        <option value="https://www.tutorialspoint.com/execute_python3_online.php">python3</option>
+                                        <option value="https://www.tutorialspoint.com/compile_assembly_online.php">assembly</option>
+                                       <option value="https://www.tutorialspoint.com/execute_golang_online.php">go</option>
+                                        <option value="https://www.tutorialspoint.com/online_html_editor.php">html</option>
+                                        <option value="https://www.tutorialspoint.com/execute_bash_online.php">bash_shell</option>
+                                        </select>
+                                        </a>
+
+        </div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">abc158</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>abc</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-08">2020-03-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1757 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;<span id="/posts/abc158/" class="leancloud_visitors" data-flag-title="abc158">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_a"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_a">题目链接</a></a></li>
+        <li><a href="#题意">题意</a></li>
+        <li><a href="#题解">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_b"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_b">题目链接</a></a></li>
+        <li><a href="#题意-1">题意</a></li>
+        <li><a href="#题解-1">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_c"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_c">题目链接</a></a></li>
+        <li><a href="#题意-2">题意</a></li>
+        <li><a href="#题解-2">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_d"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_d">题目链接</a></a></li>
+        <li><a href="#题意-3">题意</a></li>
+        <li><a href="#题解-3">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_e"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_e">题目链接</a></a></li>
+        <li><a href="#题意-4">题意</a></li>
+        <li><a href="#题解-4">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#题目链接httpsatcoderjpcontestsabc158tasksabc158_f"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_f">题目链接</a></a></li>
+        <li><a href="#题意-5">题意</a></li>
+        <li><a href="#题解-5">题解</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="a---station-and-bus">A - Station and Bus</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_a"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_a" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意">题意</h3>
+<p>给一长度为3的，只含AB的字符串，问是否存在相邻两个字符不同的情况</p>
+<h3 id="题解">题解</h3>
+<p>签到题</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;A&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;A&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;A&#39;</span><span class="p">)</span> <span class="n">or</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;B&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;B&#39;</span> <span class="n">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="sc">&#39;B&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;No&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;Yes&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b---count-balls">B - Count Balls</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_b"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_b" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意-1">题意</h3>
+<p>有蓝球和红球若干，将他们排成一排，不断通过以下操作排列，在尾部加a个蓝球，在尾部加b个红球，问前n个球有多少个蓝球</p>
+<h3 id="题解-1">题解</h3>
+<p>签到题</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span><span class="o">=</span><span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">ll</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">m</span><span class="o">=</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">ans</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">n</span><span class="o">-=</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">&gt;</span><span class="n">a</span><span class="p">)</span> <span class="n">ans</span><span class="o">+=</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">ans</span><span class="o">+=</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="c---tax-increase">C - Tax Increase</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_c"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_c" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意-2">题意</h3>
+<p>给俩数a,b，问是否存在整数x使得，floor(x<em>0.08)=a &amp;&amp; floor(x</em>0.1)=b，若存在，输出满足这种条件的最小数，否则输出-1</p>
+<h3 id="题解-2">题解</h3>
+<p>由于数据不大，遍历x，判断是否满足条件</p>
+<p>或者求满足条件的两个区间，判断是否有交集</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">l1</span><span class="p">,</span><span class="n">r1</span><span class="p">,</span><span class="n">l2</span><span class="p">,</span><span class="n">r2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">l1</span><span class="o">=</span><span class="n">ceil</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="mf">0.08</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">t</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">0.08</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mf">0.08</span><span class="o">==</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">r1</span><span class="o">=</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="n">r1</span><span class="o">=</span><span class="n">floor</span><span class="p">((</span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">0.08</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="n">l2</span><span class="o">=</span><span class="n">ceil</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">t</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">0.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="mf">0.1</span><span class="o">==</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">r2</span><span class="o">=</span><span class="n">t</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="n">r2</span><span class="o">=</span><span class="n">floor</span><span class="p">((</span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mf">0.1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="n">flag</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">r1</span><span class="o">&lt;</span><span class="n">l2</span> <span class="n">or</span> <span class="n">r2</span><span class="o">&lt;</span><span class="n">l1</span><span class="p">)</span> <span class="n">flag</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">l2</span><span class="o">&gt;=</span><span class="n">l1</span> <span class="n">and</span> <span class="n">r2</span><span class="o">&lt;=</span><span class="n">r1</span><span class="p">)</span> <span class="n">ans</span><span class="o">=</span><span class="n">l2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">l1</span><span class="o">&gt;=</span><span class="n">l2</span> <span class="n">and</span> <span class="n">r1</span><span class="o">&lt;=</span><span class="n">r2</span><span class="p">)</span> <span class="n">ans</span><span class="o">=</span><span class="n">l1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">ans</span><span class="o">=</span><span class="n">max</span><span class="p">(</span><span class="n">l1</span><span class="p">,</span><span class="n">l2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;-</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//cout&lt;&lt;l1&lt;&lt;&#34; &#34;&lt;&lt;r1&lt;&lt;&#34; &#34;&lt;&lt;l2&lt;&lt;&#34; &#34;&lt;&lt;r2;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="d---string-formation">D - String Formation</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_d"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_d" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意-3">题意</h3>
+<p>对于一个字符串，有三种操作，倒置，在头部添加字符，在尾部添加字符，求最后得到的字符串</p>
+<h3 id="题解-3">题解</h3>
+<p>分别存储前缀和后缀，用一个bool来判断顺序，倒置操作给bool取反。</p>
+<p>在头部加，如果是顺序的就加在前缀，其他情况同理。</p>
+<p>最后通过bool量来控制输出顺序</p>
+<p>（直接模拟也可以）</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">char</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">pre</span><span class="p">,</span><span class="n">suf</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">order</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">order</span><span class="o">=</span><span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">q</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">q</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">t</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> <span class="n">order</span><span class="o">^=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">//!!
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">(</span><span class="n">f</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="n">pre</span><span class="o">+=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">else</span> <span class="n">suf</span><span class="o">+=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">if</span><span class="p">(</span><span class="n">order</span><span class="p">)</span> <span class="n">suf</span><span class="o">+=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">else</span> <span class="n">pre</span><span class="o">+=</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reverse</span><span class="p">(</span><span class="n">pre</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">pre</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">pre</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="o">&lt;&lt;</span><span class="n">suf</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reverse</span><span class="p">(</span><span class="n">suf</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">suf</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">		<span class="n">reverse</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="n">s</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">suf</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="o">&lt;&lt;</span><span class="n">pre</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>知识点</p>
+<p>1.bool的取反不能flag=-flag，可以用flag^=1</p>
+<p>2.string 在的插入函数 e.g.  s.insert(s.begin(),c)  or s.insert(s.end(),c)</p>
+<p>3.string的拼接 s=(string)&ldquo;aaa&rdquo;+&ldquo;bbb&rdquo;;  （一定要强制类型转换）</p>
+<p>s=&lsquo;a&rsquo;+(string)&ldquo;kkk&rdquo;; （string要强制类型转换，char是不能转成string）</p>
+<h1 id="e---divisible-substring">E - Divisible Substring</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_e"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_e" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意-4">题意</h3>
+<p>给一个仅由数字组成的字符串和质数p，问有几个子串（连续字符组成的）能够被p整除</p>
+<h3 id="题解-4">题解</h3>
+<p>个人感觉出的特别好的一道题</p>
+<p>动态规划+后缀</p>
+<p>从最后开始向前遍历每个数</p>
+<p>ans+=（以当前数为开头，满足条件的个数）</p>
+<p>要求以当前数开头，满足条件的个数，就是个区间问题</p>
+<p>这个区间问题可以用后缀来求</p>
+<p>当两个后缀模p的余数相等时，这个区间内的数能被p整除（2和5除外）</p>
+<p>所以问题转化成求此时的后缀（余数），查询之前和这个余数相等的个数</p>
+<p>然后ans+=个数</p>
+<p>注意特殊处理一下2和5</p>
+<p>以下是对上面结论的证明（实际并不需要严格证明）</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://img-blog.csdnimg.cn/20200308173734181.png"
+        data-srcset="https://img-blog.csdnimg.cn/20200308173734181.png, https://img-blog.csdnimg.cn/20200308173734181.png 1.5x, https://img-blog.csdnimg.cn/20200308173734181.png 2x"
+        data-sizes="auto"
+        alt="https://img-blog.csdnimg.cn/20200308173734181.png"
+        title="在这里插入图片描述" />
+ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span><span class="o">=</span><span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">mp</span><span class="p">;</span>  <span class="c1">//存余数和对应的个数 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">ll</span> <span class="n">ans</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="o">&gt;&gt;</span><span class="n">p</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="o">==</span><span class="mi">2</span> <span class="n">or</span> <span class="n">p</span><span class="o">==</span><span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">pt</span><span class="o">=</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="o">%</span><span class="n">pt</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span> <span class="n">ans</span><span class="o">+=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">mp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">num</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="o">~</span><span class="n">i</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">num</span><span class="o">=</span><span class="p">(</span><span class="n">num</span><span class="o">+</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="sc">&#39;0&#39;</span><span class="p">)</span><span class="o">*</span><span class="n">m</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">ans</span><span class="o">+=</span><span class="n">mp</span><span class="p">[</span><span class="n">num</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">mp</span><span class="p">[</span><span class="n">num</span><span class="p">]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">m</span><span class="o">=</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="f---removing-robots">F - Removing Robots</h1>
+<h3 id="题目链接httpsatcoderjpcontestsabc158tasksabc158_f"><a href="https://atcoder.jp/contests/abc158/tasks/abc158_f" target="_blank" rel="noopener noreffer">题目链接</a></h3>
+<h3 id="题意-5">题意</h3>
+<p>数轴上有n个点，每个点有两个属性（坐标和能够向右移动的距离），随意地激活其中几个点，激活的点必须向右移动该距离，若移动过程中碰到点则那个点被激活，求对于所有的激活情况，最后的结果有多少种</p>
+<h3 id="题解-5">题解</h3>
+<p>动态规划+栈优化</p>
+<p>从右往左遍历每个点</p>
+<p>给每个点设置一个数值，表示遍历到该点的集合数量（即答案）</p>
+<p>判断这个点是否可以覆盖右边的点，可以覆盖，则这个点的数值乘上覆盖点的数值</p>
+<p>用栈维护每个遍历的点，如果栈顶没有被覆盖，则栈里面都无需遍历</p>
+<p>被覆盖的点就出栈</p>
+<p>新的点入栈（因为旧的点被新的点覆盖，集合数已经被新的点记录）</p>
+<p>最后遍历一遍栈，累乘数值</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;bits/stdc++.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">ll</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span><span class="o">=</span><span class="mi">998244353</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">vector</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">vt</span><span class="p">;</span>  <span class="c1">//存输入 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">stack</span><span class="o">&lt;</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">stk</span><span class="p">;</span>   <span class="c1">//将不覆盖的点入栈 ，用栈优化（对于正在检测的点，如果栈顶不满足，则栈里面的都不满足） 
+</span></span></span><span class="line"><span class="cl"><span class="c1">//存点的坐标（identifier）和扫描到这个点时，它满足的集合数量 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//freopen(&#34;input.txt&#34;,&#34;r&#34;,stdin);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span><span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">t1</span><span class="o">&gt;&gt;</span><span class="n">t2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">t2</span><span class="o">+=</span><span class="n">t1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">vt</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sort</span><span class="p">(</span><span class="n">vt</span><span class="p">.</span><span class="n">rbegin</span><span class="p">(),</span><span class="n">vt</span><span class="p">.</span><span class="n">rend</span><span class="p">());</span>  <span class="c1">//这种题目几乎都要sort 此处逆序遍历 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ll</span> <span class="n">t</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//cout&lt;&lt;stk.empty()&lt;&lt;endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">vt</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="o">&gt;</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">first</span><span class="p">)</span>		<span class="c1">//遍历栈 注意开区间 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">t</span><span class="o">=</span><span class="p">(</span><span class="n">t</span><span class="o">*</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">second</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//cout&lt;&lt;t&lt;&lt;endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">make_pair</span><span class="p">(</span><span class="n">vt</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">,</span><span class="n">t</span><span class="o">+</span><span class="mi">1</span><span class="p">));</span>   <span class="c1">//!!!!! 一定要加1，因为枚举集合数的时候，对于每个点分两种情况（激活和不激活） 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span> 
+</span></span><span class="line"><span class="cl">	<span class="n">ll</span> <span class="n">ans</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ans</span><span class="o">=</span><span class="p">(</span><span class="n">ans</span><span class="o">*</span><span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">().</span><span class="n">second</span><span class="p">)</span><span class="o">%</span><span class="n">mod</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//cout&lt;&lt;ans&lt;&lt;endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">ans</span><span class="o">%</span><span class="n">mod</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> 
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>debug了一小时</p>
+<p>发现自己手贱，在声明vector的时候给它分配了空间，然后就出现迷之错误</p>
+<p>（我一定是有病才会这么做）</p>
+<p>感觉自己的思维和英语都退步了</p>
+<p>oh shake it 又没有学习android</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2020-03-08</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/abc158/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158" data-hashtags="cpp,string,dp,suffix"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/posts/abc158/" data-hashtag="cpp"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158" data-description="abc158"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158" data-description="abc158"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/posts/abc158/" data-title="abc158"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">cpp</a>,&nbsp;<a href="/tags/string/">string</a>,&nbsp;<a href="/tags/dp/">dp</a>,&nbsp;<a href="/tags/suffix/">suffix</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/" class="prev" rel="prev" title="波斯王子"><i class="fas fa-angle-left fa-fw"></i>波斯王子</a>
+            <a href="/posts/ef-a-tale-of-melodies/" class="next" rel="next" title="ef - a tale of melodies">ef - a tale of melodies<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.e0a420c43c7b08527650f566b00e15f0cd14d4a550ef929202c23f3a5aa880c0.js" integrity="sha256-4KQgxDx7CFJ2UPVmsA4V8M0U1KVQ75KSAsI/OlqogMA="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>
