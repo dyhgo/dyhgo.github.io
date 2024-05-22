@@ -180,4 +180,33 @@ mr时最后用合并commit，把同一个mr的多个commit在提交时就合并
 
 在开发过程中也可以多合并commit
 
+mr有冲突的时候可以提交mr，但是要在解决完冲突后才可以合并到master
+
+## 修改某个commit的变更内容
+
+
+假设要修改倒数第二个commit的变更内容
+
+`git rebase -i HEAD~3`
+
+或者
+
+`git rebase -i <3rd-to-last commit-id>`
+
+将要变更的commit那一行的第一个单词pick改成e或edit
+
+修改内容
+
+`git add .`
+
+可以修改提交信息也可以不改
+
+`git commit --amend` （注意这里和之前不一样要用commit，如果不用commit，直接用rebase，它会自动执行commit，然后编辑提交信息）
+
+`git rebase --continue`，如果倒数第二个提交和倒数第一个提交冲突，就无法rebase成功，需要解决冲突
+
+解决完冲突后，`git add .` 然后 `git rebase --continue`，就可以保持完整的提交数量，且倒数第二个提交是你最开始修改的（解决冲突前的），倒数第一个提交是解决冲突后的内容（因为冲突，不再是原来的内容），注意如果使用`git add .` 之后使用 `git commit --amend`， 则倒数第一个提交会没掉，倒数第二个提交变成解决冲突后的内容
+
+如果已提交到远程仓库，就	`git push -f`
+
 

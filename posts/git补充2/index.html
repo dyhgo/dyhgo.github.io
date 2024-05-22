@@ -29,7 +29,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/dyhgo.github.io\/posts\/git%E8%A1%A5%E5%85%852\/"
-        },"genre": "posts","keywords": "git","wordcount":  942 ,
+        },"genre": "posts","keywords": "git","wordcount":  1361 ,
         "url": "https:\/\/dyhgo.github.io\/posts\/git%E8%A1%A5%E5%85%852\/","datePublished": "2024-05-01T00:00:00+00:00","dateModified": "2024-05-01T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -205,8 +205,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">git补充2</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-05-01">2024-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 942 字&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 2 分钟&nbsp;<span id="/posts/git%E8%A1%A5%E5%85%852/" class="leancloud_visitors" data-flag-title="git补充2">
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2024-05-01">2024-05-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1361 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 3 分钟&nbsp;<span id="/posts/git%E8%A1%A5%E5%85%852/" class="leancloud_visitors" data-flag-title="git补充2">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
@@ -254,6 +254,7 @@
       </ul>
     </li>
     <li><a href="#merge-request">merge request</a></li>
+    <li><a href="#修改某个commit的变更内容">修改某个commit的变更内容</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>如何更优雅地使用git，包含merge，pull，合并commit</p>
@@ -361,6 +362,20 @@
 <h2 id="merge-request">merge request</h2>
 <p>mr时最后用合并commit，把同一个mr的多个commit在提交时就合并</p>
 <p>在开发过程中也可以多合并commit</p>
+<p>mr有冲突的时候可以提交mr，但是要在解决完冲突后才可以合并到master</p>
+<h2 id="修改某个commit的变更内容">修改某个commit的变更内容</h2>
+<p>假设要修改倒数第二个commit的变更内容</p>
+<p><code>git rebase -i HEAD~3</code></p>
+<p>或者</p>
+<p><code>git rebase -i &lt;3rd-to-last commit-id&gt;</code></p>
+<p>将要变更的commit那一行的第一个单词pick改成e或edit</p>
+<p>修改内容</p>
+<p><code>git add .</code></p>
+<p>可以修改提交信息也可以不改</p>
+<p><code>git commit --amend</code> （注意这里和之前不一样要用commit，如果不用commit，直接用rebase，它会自动执行commit，然后编辑提交信息）</p>
+<p><code>git rebase --continue</code>，如果倒数第二个提交和倒数第一个提交冲突，就无法rebase成功，需要解决冲突</p>
+<p>解决完冲突后，<code>git add .</code> 然后 <code>git rebase --continue</code>，就可以保持完整的提交数量，且倒数第二个提交是你最开始修改的（解决冲突前的），倒数第一个提交是解决冲突后的内容（因为冲突，不再是原来的内容），注意如果使用<code>git add .</code> 之后使用 <code>git commit --amend</code>， 则倒数第一个提交会没掉，倒数第二个提交变成解决冲突后的内容</p>
+<p>如果已提交到远程仓库，就	<code>git push -f</code></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
