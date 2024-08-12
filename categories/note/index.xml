@@ -33,6 +33,13 @@
     <guid>https://dyhgo.github.io/posts/docker2/</guid>
     <description><![CDATA[参考链接 Containerize an application 构建应用的镜像 编写Dockerfile，构建镜像（假设镜像名叫getting-started） 1 docker build -t getting-started . 根据镜像创建容器 1 docker]]></description>
 </item><item>
+    <title>C&#43;&#43;中继承和虚函数的关系汇总</title>
+    <link>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</link>
+    <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</guid>
+    <description><![CDATA[类C 继承 类B 继承 类A 基类指针指向派生类对象 如果是C-&gt;A, B-&gt;A，那么操作A和C时，不会触碰到B 析构函数和成员函数之间互不干扰]]></description>
+</item><item>
     <title>docker</title>
     <link>https://dyhgo.github.io/posts/docker/</link>
     <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/gflags/</guid>
     <description><![CDATA[文档链接 gflags相当于代码中的常量 gflags读取命令行的flags，然后修改代码中相应名字的“常量” 主要有三个函数 DEFINE_xxx]]></description>
-</item><item>
-    <title>git补充</title>
-    <link>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%85/</link>
-    <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%85/</guid>
-    <description><![CDATA[参考资料 问题 如果已经推到远程仓库，该怎么撤销 其他 从工作目录git add提交到暂存区后，想撤销 注意如果在工作目录创建文件，撤销操作只是不跟踪该]]></description>
 </item></channel>
 </rss>

@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://dyhgo.github.io/categories/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/categories/"
@@ -15,11 +15,11 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/categories/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/tags/git/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://dyhgo.github.io/tags/git/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/tags/"
@@ -32,7 +32,7 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
                     /></url><url>
-            <loc>https://dyhgo.github.io/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority><xhtml:link
+            <loc>https://dyhgo.github.io/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/"
@@ -60,6 +60,7 @@
             <loc>https://dyhgo.github.io/posts/test_password/</loc><lastmod>2024-02-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/docker/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/docker2/</loc><lastmod>2024-01-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/docker/</loc><lastmod>2023-12-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/</loc><lastmod>2023-12-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/c-%E7%B1%BB%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8F%AF%E8%A7%81%E6%80%A7/</loc><lastmod>2023-12-25T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
