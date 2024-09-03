@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 ## [1.两数之和](https://leetcode.cn/problems/two-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 
 ### 题意
@@ -10,6 +14,10 @@
 ### 题解
 
 哈希表
+
+哈希表的key表示数值，value是个vector，表示下标
+
+遍历每个数，分两种情况讨论。v + v == target和 v + a == target
 
 ```cpp
 class Solution {
@@ -40,6 +48,8 @@ public:
 ### 题解
 
 通过计数哈希，时间复杂度O(n(k + 26))
+
+遍历每个字符串，用哈希表存每个字符出现的次数，遍历a-z，按顺序重新组装作为该字符串的hash值
 
 ```cpp
 class Solution {
@@ -85,6 +95,10 @@ public:
 ### 题解
 
 哈希表，只从序列头开始计算，这样就不会重复计算
+
+去重
+
+遍历每个元素，假设值为v，如果找不到v-1，就说明他是序列头，那就一直找v v+1 v+2直到找不到
 
 ```cpp
 class Solution {
@@ -227,6 +241,8 @@ public:
 
 dp O(n)
 
+dp[i]表示以i结尾的最大子数组和，dp[i] = max(dp[i -1] + a[i], a[i])
+
 ```cpp
 class Solution {
 public:
@@ -251,8 +267,9 @@ public:
 
 ### 题意
 
-
 ### 题解
+
+要求空间复杂度为常数，就是把这一行要不要变成0的信息存储在ai0，把这一列要不要变成0的信息存储在a0i，然后用rowflag和colflag来判断最上面和最左边的行列是不是本来就有0
 
 
 ```cpp
@@ -306,7 +323,6 @@ public:
                 matrix[i][0] = 0;
             }
         }
-
     }
 };
 ```
@@ -316,6 +332,8 @@ public:
 ### 题意
 
 ### 题解
+
+没什么好方法，干就完事了
 
 ```cpp
 /**
@@ -424,15 +442,15 @@ public:
         if (root == nullptr) return ans;
         stack<TreeNode*> st;
         auto cnt = root;
-        while (cnt != nullptr || !st.empty()) {
-            while (cnt != nullptr) {
+        while (cnt != nullptr || !st.empty()) { //!st.empty() 是关键
+            while (cnt != nullptr) {	// 一直找左节点并入栈
                 st.emplace(cnt);
                 cnt = cnt->left;
             }
             cnt = st.top();
             st.pop();
-            ans.push_back(cnt->val);
-            cnt = cnt->right;
+            ans.push_back(cnt->val);	// 取出，打印节点
+            cnt = cnt->right; //去右节点，然后再一直找左节点
         }
         return ans;
     }
@@ -482,6 +500,8 @@ public:
 
 ### 题解
 
+dfs，遍历到pos时，交换pos和之后的数，然后遍历下一个数，注意回溯
+
 ```cpp
 class Solution {
 public:
@@ -493,9 +513,9 @@ public:
                 ans.emplace_back(nums);
                 return ;
             }
-            for (int i = pos; i < n; ++i) {
+            for (int i = pos; i < n; ++i) {	// 注意从pos开始遍历
                 swap(nums[pos], nums[i]);
-                dfs(pos + 1);
+                dfs(pos + 1);	// 从下一个数开始
                 swap(nums[pos], nums[i]);
             }
         };
@@ -523,7 +543,7 @@ public:
                 ans.emplace_back(nums);
                 return ;
             }
-            unordered_set<int> s;
+            unordered_set<int> s; //让它不出现5，6，6交换两次的情况，如果是5，5，5也不会重复交换
             for (int i = pos; i < n; ++i) {
                 if (s.find(nums[i]) == s.end()) {
                     s.insert(nums[i]);
@@ -576,13 +596,19 @@ public:
 };
 ```
 
-
-
 ## [146. LRU 缓存](https://leetcode.cn/problems/lru-cache/description/)
 
 ### 题意
 
 ### 题解
+
+使用双向链表，存一下sz和cap，判断是否需要逐出
+
+用一个哈希表存key和对应节点的映射，可以快速找到节点
+
+对于get操作，把节点移到头部 deleteNode addHead
+
+对于put操作，如果存在，和get操作一样。如果不存在，生成一个节点，addHead，判断是否需要逐出，removeTail
 
 ```cpp
 class LRUCache {
@@ -639,7 +665,7 @@ public:
         auto node = tail->prev;
         node->prev->next = tail;
         tail->prev = node->prev;
-        mp.erase(node->key);
+        mp.erase(node->key);	// 别忘了这一步
         delete node;
     }
     
@@ -795,10 +821,10 @@ public:
             if (end == nullptr) break;
             nxt = end->next;
             reverse(start, end);
-            pre->next = end;
-            start->next = nxt;
-            pre = start;
-            start = nxt;
+            pre->next = end;	// 注意这部分代码
+            start->next = nxt;	//
+            pre = start; //
+            start = nxt; //
         }
         return dummy->next;
     }
@@ -818,7 +844,7 @@ public:
     int lengthOfLIS(vector<int>& nums) {
         int n = (int) nums.size();
         const int inf = 0x3f3f3f3f;
-        vector<int> dp((size_t) n, inf);
+        vector<int> dp((size_t) n, inf);	//注意初始化
         for (int i = 0; i < n; ++i) {
             *lower_bound(dp.begin(), dp.end(), nums[i]) = nums[i];
         }
@@ -834,6 +860,8 @@ public:
 
 ### 题解
 
+通过快排，找第n-k个最小元素，快排的时候有个pivot，每次看pivot的位置（全局）跟n - k比较，然后递归查找
+
 ```cpp
 class Solution {
 public:
@@ -846,22 +874,20 @@ public:
                 if (ptrl < ptrr) swap(nums[ptrl], nums[ptrr]);
             }
             swap(nums[ptrr], nums[l]);
-            if (ptrr == k) return nums[ptrr];
+            if (ptrr == k) return nums[ptrr];	// 注意这里的k是对整个数组而言
             if (ptrr > k) return findKthSmallest(nums, l, ptrr - 1, k);
             else return findKthSmallest(nums, ptrr + 1, r, k);
         }
-        return nums[k];
+        return nums[k];	// 注意这里返回nums[k]，而不是随意返回
     }
     int findKthLargest(vector<int>& nums, int k) {
         mt19937 rng{random_device{}()};
         shuffle(nums.begin(), nums.end(), rng);
         int n = (int) nums.size();
-        return findKthSmallest(nums, 0, n - 1, n - k);
+        return findKthSmallest(nums, 0, n - 1, n - k);	// 注意n - k不是k
     }
 };
 ```
-
-
 
 ## [35.搜索插入位置](https://leetcode.cn/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-100-liked)
 
@@ -923,7 +949,7 @@ public:
                 }
             }
         }
-        return st.empty();
+        return st.empty();	// 注意这里
     }
 };
 ```
@@ -969,7 +995,7 @@ public:
 
 参考
 
-[01背包和完全背包，一维二维](https://da1yh.xyz/cp%E7%AC%94%E8%AE%B0/#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
+[01背包和完全背包，一维二维](https://da1yh.xyz/posts/cp%E7%AC%94%E8%AE%B0/#%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98)
 
 [初始化的区别](https://www.acwing.com/blog/content/458/)
 
@@ -1020,7 +1046,7 @@ class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         unordered_map<char, int> mp, mpp;
-        for (char i = 'a'; i <= 'z'; i++) {
+        for (char i = 'a'; i <= 'z'; i++) {	//预热
             mp[i] = 0;
             mpp[i] = 0;
         }
@@ -1059,6 +1085,8 @@ public:
 
 ### 题解
 
+用deque维护一个单调序列，比如头部是最大值
+
 
 ```cpp
 class Solution {
@@ -1090,8 +1118,9 @@ public:
 
 ### 题意
 
-
 ### 题解
+
+排序，然后顺序判断前后两个区间能不能合并
 
 ```cpp
 class Solution {
@@ -1111,7 +1140,7 @@ public:
             auto [prel, prer] = ans.back();
             //cout << l << ' ' << r << ' ' << prel << ' ' << prer ;
             if (prer < l) {
-                ans.emplace_back(l, r);[添加链接描述](https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-100-liked)
+                ans.emplace_back(l, r);
             } else {
                 ans.pop_back();
                 ans.emplace_back(min(l, prel), max(r, prer));
@@ -1277,6 +1306,8 @@ public:
 ### 题意
 
 ### 题解
+
+原地算法，
 
 ```cpp
 class Solution {
@@ -1446,6 +1477,10 @@ public:
 
 ### 题解
 
+dfs，dfs(pos)表示当前遍历到pos位置，当前字符串是t
+
+回溯
+
 ```cpp
 class Solution {
 public:
@@ -1532,6 +1567,12 @@ public:
 
 ### 题解
 
+遍历数组，只要考虑1～n的数，不断让这个数呆在它对应的位置
+
+如果nums[i] == i + 1就ok了
+
+否则就交换位置，然后不断判断，如果nums[i] == nums[nums[i] - 1]那交换也没用，这个数废了
+
 ```cpp
 class Solution {
 public:
@@ -1606,6 +1647,8 @@ public:
 
 看官方题解3
 
+思维
+
 ```cpp
 /**
  * Definition for a binary tree node.
@@ -1644,6 +1687,10 @@ public:
 ### 题意
 
 ### 题解
+
+因为值不相同，构建一个哈希表存深度，存父节点，dfs求这些值
+
+求一下深度差，然后让深度深的先走几步，再一起走
 
 ```cpp
 /**
@@ -1698,6 +1745,14 @@ public:
 
 ### 题解
 
+这种生成所有方案的题一般用dfs+回溯
+
+dfs(pos, lnum, rnum) 表示当前在pos，左括号有lnum个，右括号有rnum个
+
+dfs退出条件是pos == n * 2
+
+由于要生成有效的括号组合，所以rnum <= lnum
+
 ```cpp
 class Solution {
 public:
@@ -1735,6 +1790,8 @@ public:
 
 注意各种特判
 
+先找中间值，如果有中间值，两边都二分找一下
+
 ```cpp
 class Solution {
 public:
@@ -1750,9 +1807,9 @@ public:
                 r = mid - 1;
             }
         }
-        int start = l;
+        int start = l;	// start是中间位置，就是后半部分的起始
         cout << start << '\n';
-        if (start == n) {
+        if (start == n) {	//没有中间位置
             l = 0, r = n - 1;
             while (l <= r) {
                 int mid = (l + r) / 2;
@@ -1798,6 +1855,14 @@ public:
 
 ### 题解
 
+思维
+
+单调栈，从前往后遍历，存递减序列
+
+当前数>栈顶（最新的数），那ans[栈顶] = 当前数，然后栈顶没作用了可以滚了（因为它已经更新完前驱），当前数进场，形成递减序列
+
+注意是递减，不是严格递减
+
 ```cpp
 class Solution {
 public:
@@ -1825,6 +1890,8 @@ public:
 
 ### 题解
 
+判断最远可达范围
+
 ```cpp
 class Solution {
 public:
@@ -1848,15 +1915,17 @@ public:
 
 ### 题解
 
+思维
+
 ```cpp
 class Solution {
 public:
     int jump(vector<int>& nums) {
        int n = nums.size();
        if (n == 1) return 0;
-       int step = 0;
-       int maxreach = 0;
-       int end = 0;
+       int step = 0;	// 当前步数
+       int maxreach = 0;	//step + 1步可达的最远距离
+       int end = 0;	//step步可达的最远距离
        for (int i = 0; i < n; ++i) {
            if (i > end) {
                step++;
@@ -1875,6 +1944,16 @@ public:
 ### 题意
 
 ### 题解
+
+关键题
+
+dp
+
+注意单词长度只有20，可以遍历
+
+dp[i] 表示前i个字母是否能在字典中找到
+
+因为单词只有20个字母，所以遍历末尾的单词，dp[i] |= dp[i - x]
 
 ```cpp
 class Solution {
@@ -1918,6 +1997,8 @@ public:
 
 ### 题解
 
+dp\[i\]\[j\] 表示答案 
+
 ```cpp
 class Solution {
 public:
@@ -1943,6 +2024,12 @@ public:
 ### 题意
 
 ### 题解
+
+关键题
+
+dp\[i\]\[j\] 表示答案 
+
+之前做题的时候有遇到vector超时，数组没超时的现象，要注意
 
 ```cpp
 class Solution {
@@ -1979,6 +2066,8 @@ public:
 
 ### 题解
 
+最暴力的做法，bfs，把每一层拿出来，取最后的节点
+
 ```cpp
 /**
  * Definition for a binary tree node.
@@ -2000,7 +2089,7 @@ public:
         queue<pair<TreeNode*, int>> q;
         int d = -1;
         q.emplace(root, 0);
-        vector<int> qq;
+        vector<int> qq; // 当前层的临时变量
         while (!q.empty()) {
             auto now = q.front();
             q.pop();
@@ -2013,7 +2102,7 @@ public:
             if (now.first->left) q.emplace(now.first->left, now.second + 1);
             if (now.first->right) q.emplace(now.first->right, now.second + 1);
         }
-        if (!qq.empty()) tmp.push_back(qq);
+        if (!qq.empty()) tmp.push_back(qq);	//最后再push一次
         for (auto& i : tmp) {
             ans.push_back(i.back());
         }
@@ -2086,12 +2175,48 @@ public:
 };
 ```
 
+## [88. 合并两个有序数组](https://leetcode.cn/problems/merge-sorted-array/)
+
+### 题意
+
+### 题解
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int ptr = m + n - 1;
+        int ptr1 = m - 1;
+        int ptr2 = n - 1;
+        while (ptr1 >= 0 or ptr2 >= 0) {
+            if (ptr1 == -1) {
+                nums1[ptr] = nums2[ptr2];
+                ptr2--;
+            } else if (ptr2 == -1) {
+                nums1[ptr] = nums1[ptr1];
+                ptr1--;
+            } else if (nums1[ptr1] <= nums2[ptr2]) {
+                nums1[ptr] = nums2[ptr2];
+                ptr2--;
+            } else {
+                nums1[ptr] = nums1[ptr1];
+                ptr1--;
+            }
+            ptr--;
+        }
+    }
+};
+```
 
 ## [124.二叉树中的最大路径和](https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 
 ### 题意
 
 ### 题解
+
+dfs(node) 表示以node为起点向下的链中最大和
+
+dfs的过程不断更新ans，ans = max(ans, node, dfs(lnode) + node, dfs(rnode) + node, dfs(lnode) + dfs(rnode) + node)
 
 ```cpp
 /**
@@ -2141,12 +2266,12 @@ public:
         vector<int> ans(n, 1);
         int prod = 1;
         for (int i = 0; i < n - 1; ++i) {
-            prod *= nums[i];
+            prod *= nums[i];	// prefix mul
             ans[i + 1] *= prod;
         }
         prod = 1;
         for (int i = n - 1; i > 0; --i) {
-            prod *= nums[i];
+            prod *= nums[i];	// suf mul
             ans[i - 1] *= prod;
         }
         return ans;
@@ -2160,6 +2285,10 @@ public:
 
 ### 题解
 
+大思路是bfs
+
+最后判一下是不是没有新鲜橘子了
+
 ```cpp
 class Solution {
 public:
@@ -2168,7 +2297,7 @@ public:
         int m = grid[0].size();
         int ans = 0;
         int dir[][2] = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}};
-        queue<pair<int, int>> q;
+        queue<pair<int, int>> q;	//存坏橘子位置和时间
         for (int i = 0; i < n; ++i) {
             for (int j = 0; j < m; ++j) {
                 if (grid[i][j] == 2) {
@@ -2212,12 +2341,16 @@ public:
 
 ### 题解
 
+看数据量应该是dfs暴搜+回溯
+
+dfs(pos, sum)表示当前位置，和为sum
+
 ```cpp
 class Solution {
 public:
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         int n = candidates.size();
-        set<vector<int>> ans;
+        set<vector<int>> ans;	// 不用unordered_set，因为要自己写hash
         function<void(vector<int>&, int, int)> dfs = [&](vector<int>& v, int pos, int sum) {
             if (sum == target) {
                 ans.insert(v);
@@ -2225,7 +2358,7 @@ public:
             if (sum > target) return ;
             if (pos >= n) return ;
             v.push_back(candidates[pos]);
-            dfs(v, pos, sum + candidates[pos]);
+            dfs(v, pos, sum + candidates[pos]);	// 可重复选
             dfs(v, pos + 1, sum + candidates[pos]);
             v.pop_back();
             dfs(v, pos + 1, sum); 
@@ -2244,6 +2377,8 @@ public:
 ### 题意
 
 ### 题解
+
+dfs暴搜+回溯
 
 ```cpp
 class Solution {
@@ -2317,6 +2452,8 @@ public:
 
 ### 题解
 
+相当于之前那个题目的第一步，找中间元素
+
 ```cpp
 class Solution {
 public:
@@ -2331,7 +2468,7 @@ public:
                 r = mid - 1;
             }
         }
-        if (l == n) return nums[0];
+        if (l == n) return nums[0]; // 没旋转过
         return nums[l];
     }
 };
@@ -2343,6 +2480,8 @@ public:
 ### 题意
 
 ### 题解
+
+两个栈同步操作
 
 ```cpp
 class MinStack {
@@ -2389,15 +2528,19 @@ public:
 
 ### 题解
 
+像这种左括号右括号的题用stack
+
+主要是stack存数字和当前字符串（记录刚开始写的位置），遇到右括号出栈，开始重复
+
 ```cpp
 class Solution {
 public:
     string decodeString(string s) {
-        stack<pair<int, int>> st;
+        stack<pair<int, int>> st;	//存的是数字，和当前写入位置，先根据s写一遍，然后不断重复num - 1遍
         string ans = "";
         int pos = 0;
         for (int i = 0; i < s.length(); ++i) {
-            if (isdigit(s[i])) {
+            if (isdigit(s[i])) {	// 如果是数字，获取完整数字
                 string num;
                 while (i < s.length()) {
                     if (isdigit(s[i])) {
@@ -2409,7 +2552,7 @@ public:
                 st.emplace(foo, pos);
             } else if (s[i] == '[') {
                 continue;
-            } else if (s[i] == ']') {
+            } else if (s[i] == ']') {	// 开始重复num - 1遍
                 auto [x, y] = st.top();
                 st.pop();
                 string tmp = ans.substr(y);
@@ -2417,7 +2560,7 @@ public:
                     ans += tmp;
                 }
                 pos = ans.length();
-            } else {
+            } else {	// 是字符，开始写第一遍
                 ans += s[i];
                 pos++;
             }
@@ -2433,6 +2576,10 @@ public:
 ### 题意
 
 ### 题解
+
+dp
+
+由于数有正有负，所以要用两个dp存最大最小值
 
 ```cpp
 class Solution {
@@ -2462,6 +2609,10 @@ public:
 
 ### 题解
 
+dp\[i]\[j]表示word1的前i个字符和word2的前j个字符的答案
+
+注意初始化
+
 ```cpp
 class Solution {
 public:
@@ -2483,9 +2634,9 @@ public:
                 if (word1[i] == word2[j]) {
                     dp[i][j] = min(dp[i][j], dp[i - 1][j - 1]);
                 }
-                dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);
-                dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);
-                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + 1);
+                dp[i][j] = min(dp[i][j], dp[i - 1][j] + 1);	// 删除
+                dp[i][j] = min(dp[i][j], dp[i][j - 1] + 1);	// 增加
+                dp[i][j] = min(dp[i][j], dp[i - 1][j - 1] + 1);	// 替换
             }
         }
         return dp[n][m];
@@ -2499,6 +2650,10 @@ public:
 ### 题意
 
 ### 题解
+
+dp\[i]\[j]表示前i个字符和前j个字符的答案
+
+只要判断s1\[i] == s2\[j]的情况
 
 ```cpp
 class Solution {
@@ -2530,6 +2685,10 @@ public:
 
 ### 题解
 
+求每个字母最后出现的位置
+
+从左往右遍历
+
 ```cpp
 class Solution {
 public:
@@ -2540,21 +2699,21 @@ public:
         for (int i = 0; i < n; ++i) {
             mp[s[i]] = i;
         }
-        int pos = 0;
-        char now = s[0];
-        while (true) {
-            int end = mp[now];
-            int tmp = pos;
-            while (true) {
-                if (mp[s[tmp]] > end) {
+        int pos = 0;	// 新子区间的起点
+        char now = s[0];	//起点字符
+        while (true) {	// 大循环是遍历多个子区间
+            int end = mp[now];	// 当前子区间要遍历到的结尾
+            int tmp = pos;	// 当前遍历到的位置
+            while (true) {	// 小循环是遍历子区间内的元素
+                if (mp[s[tmp]] > end) {	// 扩大end
                     end = mp[s[tmp]];
+                    tmp++;	// 往后一格
+                } else if (tmp < end) {	// 无事发生
                     tmp++;
-                } else if (tmp < end) {
-                    tmp++;
-                } else break;
+                } else break;	// 到底了，可以打包这个子区间了
             }
             ans.push_back(end - pos + 1);
-            pos = end + 1;
+            pos = end + 1;	// 下一个子区间的起点
             now = s[pos];
             if (pos >= n) break;
         }
@@ -2571,7 +2730,9 @@ public:
 
 ### 题解
 
-预处理s[i][j]是否是回文串，然后dfs，回溯
+一看到求方案，想到dfs回溯
+
+预处理s\[i][j]是否是回文串，然后dfs，回溯
 
 ```cpp
 class Solution {
@@ -2580,7 +2741,7 @@ public:
         vector<vector<string>> ans;
         int n = s.length();
         vector<vector<bool>> dp(n + 3, vector<bool>(n + 3));
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n; ++i) { // len
             for (int j = 0; j < n - i + 1; ++j) {
                 if (i == 1) {
                     dp[j][j] = true;
@@ -2618,6 +2779,8 @@ public:
 
 ### 题解
 
+经典01🎒求方案问题
+
 注意特判边界，注意逻辑
 
 ```cpp
@@ -2648,15 +2811,44 @@ public:
 };
 ```
 
+这个代码逻辑更清晰
+
+```cpp
+class Solution {
+public:
+    bool canPartition(vector<int>& nums) {
+        int n = nums.size();
+        int sum = accumulate(nums.begin(), nums.end(), 0);
+        if (sum % 2 != 0) return false;
+        sum /= 2;
+        vector<vector<bool>> dp(n + 3, vector<bool>(sum + 3));
+        dp[0][0] = true;
+        nums.insert(nums.begin(), 0);
+        for (int i = 1; i <= n; ++i) {
+            for (int j = 0; j <= sum; ++j) {
+                dp[i][j] = dp[i][j] or dp[i - 1][j];
+                if (nums[i] <= j) {
+                    dp[i][j] = dp[i][j] or dp[i - 1][j - nums[i]];
+                }
+            }
+        }
+        return dp[n][sum];
+    }
+};
+```
+
+
 
 ## [75.颜色分类](https://leetcode.cn/problems/sort-colors/description/?envType=study-plan-v2&envId=top-100-liked)
 
-### 题意 
+### 题意
 
 
 ### 题解
 
 计数
+
+思维
 
 ```cpp
 class Solution {
@@ -2681,6 +2873,38 @@ public:
 };
 ```
 
+在草稿纸上模拟一下
+
+p0是下个0至少应该在的位置，p1是下个1至少应该在的位置
+
+p1和p0之间是0和1
+
+当前数如果是1，直接调换，
+
+当前数如果0，调换，如果p0 < p1就会把1调出去，1就在2的后面了，所以要把1跟p1交换
+
+```cpp
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int p0 = 0, p1 = 0;
+        int n = nums.size();
+        for (int i = 0; i < n; ++i) {
+            if (nums[i] == 1) {
+                swap(nums[i], nums[p1]);
+                p1++;
+            } else if (nums[i] == 0) {
+                swap(nums[i], nums[p0]);
+                if (p0 < p1) {
+                    swap(nums[i], nums[p1]);
+                }
+                p0++;
+                p1++;
+            }
+        }
+    }
+};
+```
 
 ## [31.下一个排列](https://leetcode.cn/problems/next-permutation/description/?envType=study-plan-v2&envId=top-100-liked)
 
@@ -2689,6 +2913,14 @@ public:
 ### 题解
 
 思维，注意特判
+
+比如524987663，答案是526346789
+
+首先找最后一个相邻顺序对，就是49，要把4换掉，用4之后比4大的最小的数交换，这里是6，不能用5
+
+然后把4之后的数排序
+
+找“4之后比4大的最小的数”有个技巧就是从后往前找，第一个>4的数就是目标，因为4之后的数都是倒序
 
 ```cpp
 class Solution {
@@ -2755,6 +2987,12 @@ public:
 
 ### 题解
 
+方案题，dfs+回溯
+
+由于条件限制比较多，要用很多数据结构来存储临时数据
+
+dfs(row)表示处理第row行
+
 一次dfs是处理一行，遍历这行所有的列，判断是否可以落子
 
 用三个集合存储当前哪些列，哪些正对角线，哪些反对角线有棋子
@@ -2765,7 +3003,9 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         vector<vector<string>> ans;
         unordered_set<int> col, diag1, diag2;
-        vector<int> queen(n, -1);
+      	// col存当前哪些列有皇后
+      	// diag存当前对角线上有没皇后，对角线上r - c和r + c值不变
+        vector<int> queen(n, -1);	//第i行的皇后在哪里列
         auto genBoard = [&]() -> vector<string> {
             vector<string> ret;
             for (int i = 0; i < n; ++i) {
@@ -2781,15 +3021,18 @@ public:
                 ans.push_back(board);
                 return ;
             }
-            for (int c = 0; c < n; ++c) {
+            for (int c = 0; c < n; ++c) {	// 遍历每一列
                 if (col.find(c) != col.end()) continue;
                 if (diag1.find(row - c) != diag1.end()) continue;
                 if (diag2.find(row + c) != diag2.end()) continue;
+              
                 queen[row] = c;
                 col.insert(c);
                 diag1.insert(row - c);
                 diag2.insert(row + c);
+              
                 dfs(row + 1);
+              
                 // backtrace
                 queen[row] = -c;
                 col.erase(c);
@@ -2819,7 +3062,7 @@ class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
         int nm = nums1.size() + nums2.size();
-        // findk表示从v1的pos1开始，从v2的pos2开始，找这两者中第k大的数
+        // findk表示从v1的pos1开始，从v2的pos2开始，找这两者中第k小的数
         function<int(vector<int>&, int, vector<int>&, int, int)> findk = [&](vector<int>& v1, int pos1, vector<int>& v2, int pos2, int k) {
             if (v1.size() - pos1 > v2.size() - pos2) {  // 这句话写在函数的最前面
                 return findk(v2, pos2, v1, pos1, k);    // 始终保持v1长度不大于v2
@@ -2853,11 +3096,17 @@ public:
 
 ### 题解
 
+思维，单调栈
+
+什么时候出栈，当这个元素用于更新ans，没有作用了就出栈
+
+看官方视频题解
+
 ```cpp
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
-        heights.push_back(0); // -1 is also ok
+        heights.push_back(0); // -1 is also ok 注意一下这行代码
         stack<int> s;
         s.push(-1);
         int ans = 0;
@@ -2880,6 +3129,10 @@ public:
 ### 题意
 
 ### 题解
+
+遍历的时候记录左括号和右括号的数量，如果相等就更新答案，右>左就全置零
+
+倒着再来一遍，以防((())
 
 ```cpp
 class Solution {
@@ -2911,6 +3164,8 @@ public:
 ### 题意
 
 ### 题解
+
+模拟
 
 ```cpp
 class Solution {
@@ -3005,6 +3260,12 @@ public:
 
 ### 题解
 
+dfs 构建🌲
+
+build(x, y)表示构建区间x～y的平衡二叉树
+
+因为已经有序，根节点是中间元素
+
 ```cpp
 /**
  * Definition for a binary tree node.
@@ -3039,6 +3300,8 @@ public:
 ### 题意
 
 ### 题解
+
+算深度
 
 ```cpp
 /**
@@ -3110,6 +3373,8 @@ public:
 
 迭代
 
+用队列存pair，左节点和右节点
+
 
 ```cpp
 /**
@@ -3151,6 +3416,8 @@ public:
 ### 题意
 
 ### 题解
+
+dfs
 
 ```cpp
 /**
@@ -3376,6 +3643,12 @@ public:
 
 双指针
 
+容量取决于两根柱子的距离和最短的柱子，可以由公式计算
+
+双指针表示这两根柱子，从最左和最右往中间逼近
+
+如果height\[i] < height\[j] 那么i++，这样才有机会寻找更大的容量
+
 ```cpp
 class Solution {
 public:
@@ -3403,16 +3676,20 @@ public:
 
 ### 题解
 
+分情况讨论，两个数相同和三个数都不相同
+
+用哈希表计数，对原数组去重
+
 ```cpp
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         sort(nums.begin(), nums.end());
-        unordered_map<int, int> mp;
+        unordered_map<int, int> mp;	//个数
         for (int i : nums) {
             mp[i]++;
         }
-        nums.erase(unique(nums.begin(), nums.end()), nums.end());
+        nums.erase(unique(nums.begin(), nums.end()), nums.end()); 
         vector<vector<int>> ans;
         int n = nums.size();
         for (int i = 0; i < n; ++i) {
@@ -3420,6 +3697,7 @@ public:
                 mp[nums[i]]--;
                 mp[nums[j]]--;
                 int now = -nums[i] - nums[j];
+              // 为了不重复计算，假设三数按顺序排
                 if (now > nums[j] and mp.find(now) != mp.end() and mp[now] > 0) {
                     ans.push_back({nums[i], nums[j], now});
                 }
@@ -3449,7 +3727,13 @@ public:
 
 ### 题解
 
+和盛最多水的容器有点像
+
 双指针，前后缀
+
+对于每一列，水的容量是min(左边柱子最大高度 - 右边柱子最大高度) - 当前柱子高度
+
+用双指针一左一右往中间逼近，不断求指针那一列的水的容量
 
 ```cpp
 class Solution {
@@ -3489,7 +3773,7 @@ class Solution {
 public:
     string minWindow(string s, string t) {
         int n = s.length();
-        unordered_map<char, int> mp, mpp;
+        unordered_map<char, int> mp, mpp;	// mp对t计数，mpp对滑窗计数
         for (char i : t) {
             mp[i]++;
         }
@@ -3705,6 +3989,14 @@ public:
 
 ### 题解
 
+在每个节点后面构造替身
+
+A->A'->B->B'->C->C'
+
+根据A、B、C的random指针，让A' B' C' 的random指针指向对应的替身
+
+断掉A和A'和B的连接
+
 ```cpp
 /*
 // Definition for a Node.
@@ -3729,10 +4021,10 @@ public:
         Node* ptr = head;
         // A->A'->B->B'->C->C'
         while (ptr) {
-            Node* tmp = new Node(ptr->val);
-            tmp->next = ptr->next;
-            ptr->next = tmp;
-            ptr = ptr->next->next;
+            Node* tmp = new Node(ptr->val);	// 构造替身
+            tmp->next = ptr->next;	// 连接后者
+            ptr->next = tmp;	//连接前者
+            ptr = ptr->next->next;	//下一个
         }
         // make random pointer of new list correct
         ptr = head;
@@ -3763,6 +4055,8 @@ public:
 时间复杂度O(knlogk)
 
 空间复杂度O(k)
+
+此处我用的是最直接的方法，把lists中的第一个元素加到小顶堆中，然后取出元素，添加它的next
 
 ```cpp
 /**
@@ -3809,6 +4103,14 @@ public:
 ### 题解
 
 哈希表+双向链表
+
+哈希表存key和节点的映射
+
+每个节点都有key和value
+
+双向链表的头部是最新的数据，尾部是最旧的数据，每次get(k)时，把节点调到最前面
+
+put(k,v)时先找有没有，有的话就更新值，调到最前面，没有的话生成节点直接插到最前面，如果超出容量，把最后一个节点删掉，记得在哈希表中删对应的key
 
 ```cpp
 class LRUCache {
@@ -3894,6 +4196,12 @@ public:
 
 ### 题解
 
+简单版是二叉树的中序遍历是有序的，时间复杂度是O(n)
+
+进阶版是针对频繁增删
+
+用哈希表存节点为根的树的节点个数，但是我不知道这种方法有什么意义
+
 ```cpp
 /**
  * Definition for a binary tree node.
@@ -3941,7 +4249,9 @@ public:
 
 ### 题解
 
-递归
+递归，找根
+
+用哈希表存元素位置
 
 ```cpp
 /**
@@ -3960,14 +4270,13 @@ private:
     unordered_map<int, int> mp;
 public:
     TreeNode* sol(vector<int>& pre, vector<int>& in, int prel, int prer, int inl, int inr) {
-        if (prel > prer) return nullptr;
+        if (prel > prer) return nullptr; // !!
         int rt = pre[prel];
         TreeNode* node = new TreeNode(rt);
         int leftSize = mp[rt] - inl;
         node->left = sol(pre, in, prel + 1, prel + leftSize, inl, inl + leftSize - 1);
         node->right = sol(pre, in, prel + leftSize + 1, prer, inl + leftSize + 1, inr);
         return node;
-        
     }
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
         int n = preorder.size();
@@ -4045,6 +4354,10 @@ public:
 
 ### 题解
 
+思维
+
+有数学公式，如果一个数可以表示成4 ^ k * (8 * m + 7)，就是4，否则一定小于4，小于4的分情况讨论
+
 ```cpp
 class Solution {
 public:
@@ -4076,6 +4389,8 @@ public:
 
 ### 题解
 
+dp\[i]表示前i个数的答案
+
 ```cpp
 class Solution {
 public:
@@ -4083,9 +4398,9 @@ public:
         int n = nums.size();
         if (n == 1) return nums[0];
         if (n == 2) return max(nums[0], nums[1]);
-        int foo = nums[0];
-        int bar = max(nums[0], nums[1]);
-        int hoge;
+        int foo = nums[0];	// dp[i - 2]
+        int bar = max(nums[0], nums[1]); // dp[i - 1]
+        int hoge; // dp[i]
         for (int i = 2; i < n; ++i) {
             hoge = max(foo + nums[i], bar);
             foo = bar;
@@ -4102,6 +4417,8 @@ public:
 ### 题意
 
 ### 题解
+
+拓扑序裸题
 
 ```cpp
 class Solution {
@@ -4142,6 +4459,8 @@ public:
 
 ### 题解
 
+记录候选人并计数，计数是候选人比别的数多几个
+
 ```cpp
 class Solution {
 public:
@@ -4180,7 +4499,7 @@ public:
     }
     
     void insert(string word) {
-        int p = 0;
+        int p = 0;	// 位置
         for (char i : word) {
             int num = i - 'a';
             cout << p << ' ';
@@ -4207,12 +4526,12 @@ public:
             if (!nx[p][num]) return false;
             p = nx[p][num];
         }
-        return p != 0;
+        return true;
     }
 private:
-    int nx[2005 * 26][26];
-    int cnt = 0;
-    bool exist[2005 * 26];
+    int nx[2005 * 26][26];	// 表示第i个节点的第j个分支是哪个节点，不存在就创建
+    int cnt = 0;	// 当前创建了几个节点
+    bool exist[2005 * 26];	// 表示第i个节点是否是单词末尾
 };
 
 /**
@@ -4231,6 +4550,8 @@ private:
 
 ### 题解
 
+堆，用哈希表求次数，按次数排序
+
 ```cpp
 class Solution {
 public:
@@ -4239,7 +4560,7 @@ public:
         for (int i : nums) {
             mp[i]++;
         }
-        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;	// 小顶堆
         for (auto& [x, y] : mp) {
             if ((int) pq.size() < k) {
                 pq.emplace(y, x);
@@ -4267,24 +4588,29 @@ public:
 
 ### 题解
 
+技巧题
+
 ```cpp
 class MedianFinder {
 public:
     /** initialize your data structure here. */
 
 
-    priority_queue<int> big;
-    priority_queue<int, vector<int>, greater<>> small;
+    priority_queue<int> big;	// 存小数
+    priority_queue<int, vector<int>, greater<>> small; // 存大数
 
     MedianFinder() {
 
     }
     
     void addNum(int num) {
+      	// 先加到堆里
         if (big.empty()) big.push(num);
         //else if (small.empty()) small.push(num);
         else if (num > big.top()) small.push(num);
         else big.push(num);
+      
+      	// 再调整
         if ((int) big.size() > (int) small.size() + 1) {
             small.push(big.top());
             big.pop();
@@ -4318,13 +4644,17 @@ public:
 
 ### 题解
 
+Manacher可以达到O(n)
+
+dp
+
 ```cpp
 class Solution {
 public:
     bool dp[1005][1005];
     string longestPalindrome(string s) {
         int n = s.length();
-        for (int i = 1; i <= n; ++i) {
+        for (int i = 1; i <= n; ++i) {	// len
             for (int j = 0; j <= n - i; ++j) {
                 if (i == 1) {
                     dp[j][j] = true;
@@ -4355,4 +4685,159 @@ public:
     }
 };
 ```
+
+## [213.打家劫舍II](https://leetcode.cn/problems/house-robber-ii/description/)
+
+### 题意
+
+### 题解
+
+与1不同的是，它是环形数组
+
+分两种情况，第0个数必选，第0个数必不选
+
+```go
+func rob(nums []int) int {
+	n := len(nums)
+	if n == 1 {
+		return nums[0]
+	}
+	if n == 2 {
+		return max(nums[0], nums[1])
+	}
+	if n == 3 {
+		return max(max(nums[0], nums[1]), nums[2])
+	}
+	dp := make([]int, n + 3)
+	ans := 0
+	dp[0] = nums[0]
+	dp[1] = dp[0]
+	for i := 2; i < n - 1; i++ {
+		dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])
+	}
+	ans = max(ans, dp[n - 2])
+	for i := range dp {
+		dp[i] = 0
+	}
+	dp[0] = 0
+	dp[1] = nums[1]
+	for i := 2; i < n; i++ {
+		dp[i] = max(dp[i - 1], dp[i - 2] + nums[i])
+	}
+	ans = max(ans, dp[n - 1])
+	return ans
+}
+```
+
+## [337.打家劫舍III](https://leetcode.cn/problems/house-robber-iii/description/)
+
+### 题意
+
+### 题解
+
+dfs，对于当前节点有选和不选两种情况，分别返回选这个节点的答案和不选节点的答案
+
+```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func rob(root *TreeNode) int {
+	var dfs func(node *TreeNode) (int, int)
+	dfs = func(node *TreeNode) (int, int) {
+		if node == nil {return 0, 0}
+		l1, l0 := dfs(node.Left)
+		r1, r0 := dfs(node.Right)
+		one := node.Val
+		one += l0 + r0
+		zero := max(l1, l0) + max(r1, r0)
+		return one, zero
+	}
+	one, zero := dfs(root)
+	return max(one, zero)
+}
+```
+
+## [2560.打家劫舍IV](https://leetcode.cn/problems/house-robber-iv/description/)
+
+### 题意
+
+### 题解
+
+二分
+
+```python
+class Solution:
+    def minCapability(self, nums: List[int], k: int) -> int:
+        n = len(nums)
+        l, r = 1, 10**9 + 3
+        def ok(m: int) -> bool:
+            tmp = []
+            for i in range(n):
+                if nums[i] <= m:
+                    tmp.append(i)
+            cnt = 1
+            if len(tmp) == 0:
+                return False
+            now = tmp[0]
+            for i in tmp:
+                if i == tmp[0]:
+                    continue
+                if i != now + 1:
+                    cnt += 1
+                    now = i
+            return cnt >= k
+        while l <= r:
+            mid = (l + r) // 2
+            if ok(mid):
+                r = mid - 1
+            else:
+                l = mid + 1
+        return l
+```
+
+## [43.字符串相乘](https://leetcode.cn/problems/multiply-strings/description/)
+
+### 题意
+
+### 题解
+
+看官方题解方法二，时间复杂度O(nm)
+
+还可以用fft
+
+```cpp
+class Solution {
+public:
+    string multiply(string num1, string num2) {
+        if (num1 == "0" or num2 == "0") return "0";
+        int n = (int) num1.size(), m = (int) num2.size();
+        vector<int> ans(m + n, 0);
+        for (int i = n - 1; i >= 0; --i) {
+            int x = num1[i] - '0';
+            for (int j = m - 1; j >= 0; --j) {
+                int y = num2[j] - '0';
+                ans[i + j + 1] += x * y;
+            }
+        }
+        for (int i = n + m - 1; i > 0; --i) {
+            ans[i - 1] += ans[i] / 10;
+            ans[i] %= 10;
+        }
+        // !!
+        int index = ans[0] == 0 ? 1 : 0;
+        string fans;
+        while (index < m + n) {
+            fans += ans[index] + '0';
+            index++;
+        }
+        return fans;
+    }
+};
+```
+
 
