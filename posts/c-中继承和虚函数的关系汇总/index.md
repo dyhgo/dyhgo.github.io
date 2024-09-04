@@ -11,6 +11,14 @@
 
 如果是像这样 B* b = new B 或者 C* c = new C 这种，那构造函数一定会调用基类的，析构函数一定会调用基类的
 
+怎么判断构造函数有没有调用基类的，析构函数有没有调用基类的？
+
+假设是 C -> B -> A （不涉及虚函数）
+
+如果是new C，不管前面是哪个类的指针指向它，那么就是A create，B create，C create
+
+如果是delete C，那么就是C delete，B delete，A delete
+
 ## 一级继承 （B->A)
 
 ### A没有虚函数
@@ -559,7 +567,7 @@ B destroy
 A destroy
 ```
 
-### AB都是虚的
+### 成员函数和析构函数都是虚的
 
 ```cpp
 #include <bits/stdc++.h>
