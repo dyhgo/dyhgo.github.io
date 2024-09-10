@@ -2018,6 +2018,19 @@ public:
 };
 ```
 
+```cpp
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        long long ans = 1;
+        for (int i = 1, j = n; i < m; ++i, j++) {
+            ans = ans * j / i;
+        }
+        return ans;
+    }
+};
+```
+
 
 ## [64.最小路径和](https://leetcode.cn/problems/minimum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked)
 
