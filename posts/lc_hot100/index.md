@@ -2366,13 +2366,13 @@ public:
         set<vector<int>> ans;	// 不用unordered_set，因为要自己写hash
         function<void(vector<int>&, int, int)> dfs = [&](vector<int>& v, int pos, int sum) {
             if (sum == target) {
-                ans.insert(v);
+                ans.insert(v); // 这之后加return 可以不用set
             }
             if (sum > target) return ;
             if (pos >= n) return ;
             v.push_back(candidates[pos]);
             dfs(v, pos, sum + candidates[pos]);	// 可重复选
-            dfs(v, pos + 1, sum + candidates[pos]);
+            dfs(v, pos + 1, sum + candidates[pos]); //把它删掉 可以不用set
             v.pop_back();
             dfs(v, pos + 1, sum); 
         };
