@@ -4,9 +4,16 @@
         <link>https://dyhgo.github.io/</link>
         <description>这是一个网站</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 01 May 2024 00:00:00 &#43;0000</lastBuildDate>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>hotcode</title>
+    <link>https://dyhgo.github.io/posts/hotcode/</link>
+    <pubDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/hotcode/</guid>
+    <description><![CDATA[912. 排序数组 题意 题解 改进版快排，针对数据重复问题，荷兰国旗问题 如果数据是有序的，直接随机洗牌就行 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23]]></description>
+</item><item>
     <title>git补充2</title>
     <link>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</link>
     <pubDate>Wed, 01 May 2024 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/docker/</guid>
     <description><![CDATA[参考资料 参考教程 docker的三个重要概念 image：镜像，就是各种环境的集合 container：由镜像生成一个一个的容器，是镜像的实例化 d]]></description>
-</item><item>
-    <title>C&#43;&#43;互斥锁</title>
-    <link>https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/</link>
-    <pubDate>Mon, 25 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/c-%E4%BA%92%E6%96%A5%E9%94%81/</guid>
-    <description><![CDATA[std::mutex 最简单的互斥锁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 // mutex example #include &lt;iostream&gt; // std::cout #include &lt;thread&gt; // std::thread #include &lt;mutex&gt; // std::mutex std::mutex mtx; // mutex for critical section void print_block (int n, char c) { // critical section (exclusive access to std::cout signaled]]></description>
 </item></channel>
 </rss>
