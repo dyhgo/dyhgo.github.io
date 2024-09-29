@@ -498,6 +498,104 @@ func (this *MyQueue) Empty() bool {
  */
 ```
 
+## [225. 用队列实现栈](https://leetcode.cn/problems/implement-stack-using-queues/)
+
+### 题意
+
+### 题解
+
+两个栈，入栈时间复杂度O(n)，其他O(1)，始终让一个队列为空，入栈时，入这个队列，然后把另一个队列的数倒过去
+
+```cpp
+class MyStack {
+private:
+    queue<int> q1, q2;
+public:
+    MyStack() {
+        
+    }
+    
+    void push(int x) {
+        q1.push(x);
+        while (!q2.empty()) {
+            q1.push(q2.front());
+            q2.pop();
+        }
+        swap(q1, q2);
+    }
+    
+    int pop() {
+        int x = q2.front();
+        q2.pop();
+        return x;
+    }
+    
+    int top() {
+        int x = q2.front();
+        return x;
+    }
+    
+    bool empty() {
+        return q2.empty();
+    }
+};
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * bool param_4 = obj->empty();
+ */
+```
+
+用一个栈实现，时间复杂度入栈O(n)，其他O(1)
+
+```cpp
+class MyStack {
+private:
+    queue<int> q;
+public:
+    MyStack() {
+
+    }
+    
+    void push(int x) {
+        q.push(x);
+        int sz = q.size();
+        for (int i = 1; i < sz; ++i) {
+            q.push(q.front());
+            q.pop();
+        }
+    }
+    
+    int pop() {
+        int x = q.front();
+        q.pop();
+        return x;
+    }
+    
+    int top() {
+        return q.front();
+    }
+    
+    bool empty() {
+        return q.empty();
+    }
+};
+
+/**
+ * Your MyStack object will be instantiated and called as such:
+ * MyStack* obj = new MyStack();
+ * obj->push(x);
+ * int param_2 = obj->pop();
+ * int param_3 = obj->top();
+ * bool param_4 = obj->empty();
+ */
+```
+
+
 
 ## [69.x的平方根](https://leetcode.cn/problems/sqrtx/)
 
