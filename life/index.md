@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2025/04/09 17:57" placement="top" color="blue">
+        <h4>论文提交了</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2024/11/15 23:04" placement="top" color="blue">
         <h4>毕业论文到底要怎么写啊😫</h4>
     </el-timeline-item>
