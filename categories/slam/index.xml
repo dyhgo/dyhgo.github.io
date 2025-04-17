@@ -5,12 +5,12 @@
         <description>slam - 分类 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/slam/" rel="self" type="application/rss+xml" /><item>
-    <title>vins_estimator</title>
+    <title>vins-estimator代码全网最详细解析</title>
     <link>https://dyhgo.github.io/posts/vins_estimator/</link>
     <pubDate>Sun, 27 Nov 2022 00:00:00 &#43;0000</pubDate>
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/vins_estimator/</guid>
-    <description><![CDATA[vins_estimator rosNodeTest.cpp 读取配置文件的参数 readParameters(config_file); readParameters()将配置文件的参数读取到parameters.h中 estimator.setParameter() 设置estimator的外参、td]]></description>
+    <description><![CDATA[代码地址 下载PDF食用 vins_estimator]]></description>
 </item><item>
     <title>VINS-Mono: A Robust and Versatile Monocular Visual-Inertial State Estimator</title>
     <link>https://dyhgo.github.io/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/</link>
