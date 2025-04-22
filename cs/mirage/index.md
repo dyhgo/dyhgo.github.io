@@ -12,9 +12,9 @@
 | a1丢警家烟| {{< image src="/images/cs2/mirage/smoke_aramp2ct_1.jpg">}}|{{< image src="/images/cs2/mirage/smoke_aramp2ct_2.jpg">}} |
 | 匪家vip慢烟| {{< image src="/images/cs2/mirage/smoke_t2window_slow_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_t2window_slow_2.jpg">}}|
 | 匪家拱门烟|{{< image src="/images/cs2/mirage/smoke_t2connector_1.jpg">}} | {{< image src="/images/cs2/mirage/smoke_t2connector_2.jpg">}}|
-| 沙袋丢b小烟| {{< image src="/images/cs2/mirage/smoke_midboxes2bshort.jpg">}}| {{< image src="/images/cs2/mirage/smoke_midboxes2bshort.jpg">}}|
+| 沙袋丢b小烟| {{< image src="/images/cs2/mirage/smoke_midboxes2bshort_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_midboxes2bshort_2.jpg">}}|
 | 沙袋丢拱门烟| {{< image src="/images/cs2/mirage/smoke_midboxes2connector_1.jpg">}}|{{< image src="/images/cs2/mirage/smoke_midboxes2connector_2.jpg">}} |
-| b2进攻闪|{{< image src="/images/cs2/mirage/flash_baprs2bsite.jpg">}} | {{< image src="/images/cs2/mirage/flash_baprs2bsite.jpg">}}|
+| b2进攻闪|{{< image src="/images/cs2/mirage/flash_baprs2bsite_1.jpg">}} | {{< image src="/images/cs2/mirage/flash_baprs2bsite_2.jpg">}}|
 | b2丢超市烟| {{< image src="/images/cs2/mirage/smoke_backalley2market_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_backalley2market_2.jpg">}}|
 |b2丢b小烟 | {{< image src="/images/cs2/mirage/smoke_backalley2bshort_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_backalley2bshort_2.jpg">}}|
 |下水道丢vip烟 |{{< image src="/images/cs2/mirage/smoke_underpass2window_1.jpg">}} | {{< image src="/images/cs2/mirage/smoke_underpass2window_2.jpg">}}|
