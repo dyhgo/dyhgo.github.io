@@ -2,6 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://dyhgo.github.io/cs/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/dust2/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://dyhgo.github.io/en/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://dyhgo.github.io/fr/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://dyhgo.github.io/"
+                    /></url><url>
             <loc>https://dyhgo.github.io/categories/</loc><lastmod>2024-09-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -31,19 +46,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
-                    /></url><url>
-            <loc>https://dyhgo.github.io/</loc><lastmod>2024-09-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://dyhgo.github.io/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://dyhgo.github.io/fr/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://dyhgo.github.io/"
                     /></url><url>
             <loc>https://dyhgo.github.io/tags/git/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</loc><lastmod>2024-05-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -94,11 +96,11 @@
             <loc>https://dyhgo.github.io/tags/python/</loc><lastmod>2022-10-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/kalman-filter-in-one-dimension/</loc><lastmod>2022-09-21T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E5%89%91%E6%8C%87offer/</loc><lastmod>2022-07-24T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/tags/cs/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/game/</loc><lastmod>2022-07-13T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/learning-cpp/</loc><lastmod>2022-02-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/courses/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/tags/cs/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/tf-idf/</loc><lastmod>2021-10-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-cf/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/</loc><lastmod>2021-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -258,4 +260,8 @@
             <loc>https://dyhgo.github.io/posts/ford-fulkerson-algorithm/</loc><lastmod>2020-01-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E7%AD%9B%E6%B3%95%E6%B1%82%E5%8C%BA%E9%97%B4%E5%86%85%E8%B4%A8%E6%95%B0%E4%B8%AA%E6%95%B0/</loc><lastmod>2020-01-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%B9%E9%85%8D%E7%AE%97%E6%B3%95%E6%9C%AA%E5%AE%8C%E6%88%90/</loc><lastmod>2020-01-17T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</loc><lastmod>2020-01-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://dyhgo.github.io/posts/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E4%BC%98%E5%8C%96%E6%8F%90%E9%AB%98%E8%AF%BB%E5%85%A5%E8%BE%93%E5%87%BA%E9%80%9F%E5%BA%A6/</loc><lastmod>2020-01-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/ancient/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/anubis/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/inferno/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/mirage/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

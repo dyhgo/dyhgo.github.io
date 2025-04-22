@@ -4,7 +4,14 @@
         <link>https://dyhgo.github.io/tags/cs/</link>
         <description>cs - 标签 - This is DYH</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cs/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/cs/" rel="self" type="application/rss+xml" /><item>
+    <title>CS:GO参数设置</title>
+    <link>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
+    <pubDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
+    <description><![CDATA[N卡设置 Config文件 默认 命名为conf.cfg 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rate &#34;786432&#34; alias +cjump &#34;+jump; +duck&#34; alias -cjump &#34;-jump; -duck&#34; bind &#34;space&#34; &#34;+cjump&#34; cl_interp &#34;0&#34; cl_interp_ratio &#34;1&#34; viewmodel_recoil &#34;0&#34; bind &#34;Capslock&#34;&#34;+jump;-attack;-attack2;-jump&#34; sv_grenade_trajectory &#34;1&#34; bind &#34;MWHEELDOWN&#34; &#34;toggle]]></description>
+</item><item>
     <title>tf-idf</title>
     <link>https://dyhgo.github.io/posts/tf-idf/</link>
     <pubDate>Tue, 05 Oct 2021 00:00:00 &#43;0000</pubDate>
