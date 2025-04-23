@@ -17,7 +17,7 @@
     <div class="block">
     <el-timeline>
     <el-timeline-item timestamp="2025/04/22 23:49" placement="top" color="green">
-        <h4>版本V2.5<br>去掉标题栏的一些分区，增加cs道具分区，并更新某些地图的基础道具</h4>
+        <h4>版本V2.5<br>去掉标题栏的一些分区，对分区的url进行重新设计，增加cs道具分区便于速查，并更新某些地图的基础道具</h4>
     </el-timeline-item>
     <el-timeline-item timestamp="2025/04/09 17:57" placement="top" color="blue">
         <h4>论文提交了</h4>

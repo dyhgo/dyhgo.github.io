@@ -7,6 +7,13 @@
             <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 22 Apr 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>balisong</title>
+    <link>https://dyhgo.github.io/posts/balisong/</link>
+    <pubDate>Wed, 26 Feb 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/balisong/</guid>
+    <description><![CDATA[开刀 正手风车 正手快开 反手快开 八字开刀 垫指开刀 后甩开刀 tweak fan 绕指 y2k 反y2k 正反y2k 短停 食指 + 拇指 同向 正 食指 + 拇指 异向 反 阶梯 8ball ufo helix 食指无限转 拇指]]></description>
+</item><item>
     <title>hotcode</title>
     <link>https://dyhgo.github.io/posts/hotcode/</link>
     <pubDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</pubDate>
@@ -69,12 +76,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</guid>
     <description><![CDATA[类C 继承 类B 继承 类A 基类指针指向派生类对象 如果是C-&gt;A, B-&gt;A，那么操作A和C时，不会触碰到B 析构函数和成员函数之间互不干扰]]></description>
-</item><item>
-    <title>docker</title>
-    <link>https://dyhgo.github.io/posts/docker/</link>
-    <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/docker/</guid>
-    <description><![CDATA[参考资料 参考教程 docker的三个重要概念 image：镜像，就是各种环境的集合 container：由镜像生成一个一个的容器，是镜像的实例化 d]]></description>
 </item></channel>
 </rss>
