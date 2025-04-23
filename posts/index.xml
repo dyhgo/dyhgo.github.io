@@ -12,6 +12,13 @@
     <guid>https://dyhgo.github.io/posts/balisong/</guid>
     <description><![CDATA[开刀 正手风车 正手快开 反手快开 八字开刀 垫指开刀 后甩开刀 tweak fan 绕指 y2k 反y2k 正反y2k 短停 食指 + 拇指 同向 正 食指 + 拇指 异向 反 阶梯 8ball ufo helix 食指无限转 拇指]]></description>
 </item><item>
+    <title>装机</title>
+    <link>https://dyhgo.github.io/posts/%E8%A3%85%E6%9C%BA/</link>
+    <pubDate>Sun, 05 Jan 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/%E8%A3%85%E6%9C%BA/</guid>
+    <description><![CDATA[记录一下第一次装机，好玩，就是有点麻烦，特别是理线，而且我装了9把风扇，理线理到爆炸，最后还是一坨直接塞到看不见的地方得了 最后成功点亮，烤鸡]]></description>
+</item><item>
     <title>hotcode</title>
     <link>https://dyhgo.github.io/posts/hotcode/</link>
     <pubDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</pubDate>
@@ -67,12 +74,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/docker2/</guid>
     <description><![CDATA[参考链接 Containerize an application 构建应用的镜像 编写Dockerfile，构建镜像（假设镜像名叫getting-started） 1 docker build -t getting-started . 根据镜像创建容器 1 docker]]></description>
-</item><item>
-    <title>C&#43;&#43;中继承和虚函数的关系汇总</title>
-    <link>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</link>
-    <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/c-%E4%B8%AD%E7%BB%A7%E6%89%BF%E5%92%8C%E8%99%9A%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%E6%B1%87%E6%80%BB/</guid>
-    <description><![CDATA[类C 继承 类B 继承 类A 基类指针指向派生类对象 如果是C-&gt;A, B-&gt;A，那么操作A和C时，不会触碰到B 析构函数和成员函数之间互不干扰]]></description>
 </item></channel>
 </rss>
