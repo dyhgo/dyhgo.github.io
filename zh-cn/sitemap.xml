@@ -2,13 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://dyhgo.github.io/cs/ancient/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/cs/anubis/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/cs/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/cs/dust2/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/cs/inferno/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/cs/mirage/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://dyhgo.github.io/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2025-04-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/</loc><lastmod>2025-04-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://dyhgo.github.io/en/"
@@ -21,8 +16,14 @@
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/"
                     /></url><url>
+            <loc>https://dyhgo.github.io/posts/%E7%9B%B8%E5%86%8C%E6%B5%8B%E8%AF%95/</loc><lastmod>2025-04-23T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/ancient/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/anubis/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/dust2/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/inferno/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/cs/mirage/</loc><lastmod>2025-04-22T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://dyhgo.github.io/posts/balisong/</loc><lastmod>2025-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2025-02-26T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/%E8%A3%85%E6%9C%BA/</loc><lastmod>2025-01-05T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/</loc><lastmod>2024-09-20T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
