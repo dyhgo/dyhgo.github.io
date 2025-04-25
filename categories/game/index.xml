@@ -1,78 +1,82 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>GAME - 分类 - This is DYH</title>
-        <link>https://dyhgo.github.io/categories/game/</link>
-        <description>GAME - 分类 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/game/" rel="self" type="application/rss+xml" /><item>
-    <title>CS:GO参数设置</title>
-    <link>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
-    <pubDate>Wed, 13 Jul 2022 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
-    <description><![CDATA[N卡设置 Config文件 默认 命名为conf.cfg 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 rate &#34;786432&#34; alias +cjump &#34;+jump; +duck&#34; alias -cjump &#34;-jump; -duck&#34; bind &#34;space&#34; &#34;+cjump&#34; cl_interp &#34;0&#34; cl_interp_ratio &#34;1&#34; viewmodel_recoil &#34;0&#34; bind &#34;Capslock&#34;&#34;+jump;-attack;-attack2;-jump&#34; sv_grenade_trajectory &#34;1&#34; bind &#34;MWHEELDOWN&#34; &#34;toggle]]></description>
-</item><item>
-    <title>steep</title>
-    <link>https://dyhgo.github.io/posts/steep/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/steep/</guid>
-    <description><![CDATA[steep是育碧在2016年12月2日发行的滑雪游戏 在steam上要一百多，在育碧商城上免费 在很早以前就看过有人玩育碧的肖恩怀特滑雪 但是一直]]></description>
-</item><item>
-    <title>极限竞速地平线4</title>
-    <link>https://dyhgo.github.io/posts/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</guid>
-    <description><![CDATA[Forza Horizon 4是微软在2018年10月2日发行的开车游戏 用xbox玩就很爽 风景做得很不错 有关汽车的专业知识做得很丰富 嘉年华的各种活动安排得很合理 整个]]></description>
-</item><item>
-    <title>赛博朋克2077</title>
-    <link>https://dyhgo.github.io/posts/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</link>
-    <pubDate>Tue, 02 Mar 2021 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</guid>
-    <description><![CDATA[cyberpunk2077是CD Projekt RED开发的rpg游戏 经历了一次次跳票，终于在年底玩到这款游戏 小黑盒的评分 小黑盒社区的玩家评分并不高，很多]]></description>
-</item><item>
-    <title>杀手2</title>
-    <link>https://dyhgo.github.io/posts/%E6%9D%80%E6%89%8B2/</link>
-    <pubDate>Sat, 28 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E6%9D%80%E6%89%8B2/</guid>
-    <description><![CDATA[杀手2由IO Interactive开发，2018年发行的潜行刺杀游戏，与羞辱不同的是这是第三人称 杀手2最大的特点是刺杀方法的丰富性 游玩过程中]]></description>
-</item><item>
-    <title>看门狗2</title>
-    <link>https://dyhgo.github.io/posts/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
-    <pubDate>Tue, 24 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
-    <description><![CDATA[Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏 骇入系统是其游戏特色 玩了130+小时 看门狗2的这个特色很新颖，但是]]></description>
-</item><item>
-    <title>光环1</title>
-    <link>https://dyhgo.github.io/posts/%E5%85%89%E7%8E%AF1/</link>
-    <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E5%85%89%E7%8E%AF1/</guid>
-    <description><![CDATA[halo1是微软于2001年发行的第一人称射击游戏 halo是一个很注重武器选择的游戏，合适的武器会非常高效 剧情 2160-2200：早期冲突 这]]></description>
-</item><item>
-    <title>刺客信条2</title>
-    <link>https://dyhgo.github.io/posts/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
-    <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
-    <description><![CDATA[ac2由育碧蒙特利尔工作室开发 十年前玩的游戏，环境渲染和剧情真的超棒 背景音乐选的十分用心 后来主角ezio也成为了刺客信条系列的标志 刺客信条系]]></description>
-</item><item>
-    <title>刻痕</title>
-    <link>https://dyhgo.github.io/posts/%E5%88%BB%E7%97%95/</link>
-    <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E5%88%BB%E7%97%95/</guid>
-    <description><![CDATA[《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏 《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第]]></description>
-</item><item>
-    <title>波斯王子</title>
-    <link>https://dyhgo.github.io/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
-    <pubDate>Sun, 08 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
-    <description><![CDATA[波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏 波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生 这是我201]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GAME on This is DYH</title>
+    <link>https://dyhgo.github.io/categories/game/</link>
+    <description>Recent content in GAME on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 13 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS:GO参数设置</title>
+      <link>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</guid>
+      <description>&lt;h2 id=&#34;n卡设置&#34;&gt;N卡设置&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/1f809747808247e6bec47c3a2aad22b3.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/1f809747808247e6bec47c3a2aad22b3.png, https://img-blog.csdnimg.cn/1f809747808247e6bec47c3a2aad22b3.png 1.5x, https://img-blog.csdnimg.cn/1f809747808247e6bec47c3a2aad22b3.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/1f809747808247e6bec47c3a2aad22b3.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/0ffe9c46cc734005bd648ccb2eacd039.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/0ffe9c46cc734005bd648ccb2eacd039.png, https://img-blog.csdnimg.cn/0ffe9c46cc734005bd648ccb2eacd039.png 1.5x, https://img-blog.csdnimg.cn/0ffe9c46cc734005bd648ccb2eacd039.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/0ffe9c46cc734005bd648ccb2eacd039.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/b85e30538bb84fbda11f3087bded4d96.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/b85e30538bb84fbda11f3087bded4d96.png, https://img-blog.csdnimg.cn/b85e30538bb84fbda11f3087bded4d96.png 1.5x, https://img-blog.csdnimg.cn/b85e30538bb84fbda11f3087bded4d96.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/b85e30538bb84fbda11f3087bded4d96.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/401e92df049547b4977e6ed3f714a5be.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/401e92df049547b4977e6ed3f714a5be.png, https://img-blog.csdnimg.cn/401e92df049547b4977e6ed3f714a5be.png 1.5x, https://img-blog.csdnimg.cn/401e92df049547b4977e6ed3f714a5be.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/401e92df049547b4977e6ed3f714a5be.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&#xA;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/7cb99ef884b24348a850107bb7ee8943.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/7cb99ef884b24348a850107bb7ee8943.png, https://img-blog.csdnimg.cn/7cb99ef884b24348a850107bb7ee8943.png 1.5x, https://img-blog.csdnimg.cn/7cb99ef884b24348a850107bb7ee8943.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/7cb99ef884b24348a850107bb7ee8943.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/0b619c67fb304c14841f51d515aa5152.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/0b619c67fb304c14841f51d515aa5152.png, https://img-blog.csdnimg.cn/0b619c67fb304c14841f51d515aa5152.png 1.5x, https://img-blog.csdnimg.cn/0b619c67fb304c14841f51d515aa5152.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/0b619c67fb304c14841f51d515aa5152.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/12dc3d60657e478c9e5a77998d84e3f9.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/12dc3d60657e478c9e5a77998d84e3f9.png, https://img-blog.csdnimg.cn/12dc3d60657e478c9e5a77998d84e3f9.png 1.5x, https://img-blog.csdnimg.cn/12dc3d60657e478c9e5a77998d84e3f9.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/12dc3d60657e478c9e5a77998d84e3f9.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/686559301aa1427c81a563b5d5b1bcd3.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/686559301aa1427c81a563b5d5b1bcd3.png, https://img-blog.csdnimg.cn/686559301aa1427c81a563b5d5b1bcd3.png 1.5x, https://img-blog.csdnimg.cn/686559301aa1427c81a563b5d5b1bcd3.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/686559301aa1427c81a563b5d5b1bcd3.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>steep</title>
+      <link>https://dyhgo.github.io/posts/steep/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/steep/</guid>
+      <description>&lt;p&gt;steep是育碧在2016年12月2日发行的滑雪游戏&lt;/p&gt;&#xA;&lt;p&gt;在steam上要一百多，在育碧商城上免费&lt;/p&gt;&#xA;&lt;p&gt;在很早以前就看过有人玩育碧的肖恩怀特滑雪&lt;/p&gt;&#xA;&lt;p&gt;但是一直找不到，可能因为知名度很低&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>极限竞速地平线4</title>
+      <link>https://dyhgo.github.io/posts/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E6%9E%81%E9%99%90%E7%AB%9E%E9%80%9F%E5%9C%B0%E5%B9%B3%E7%BA%BF4/</guid>
+      <description>&lt;p&gt;Forza Horizon 4是微软在2018年10月2日发行的开车游戏&lt;/p&gt;&#xA;&lt;p&gt;用xbox玩就很爽&lt;/p&gt;&#xA;&lt;p&gt;风景做得很不错&lt;/p&gt;&#xA;&lt;p&gt;有关汽车的专业知识做得很丰富&lt;/p&gt;&#xA;&lt;p&gt;嘉年华的各种活动安排得很合理&lt;/p&gt;&#xA;&lt;p&gt;整个游戏体系很完善&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>赛博朋克2077</title>
+      <link>https://dyhgo.github.io/posts/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</link>
+      <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E8%B5%9B%E5%8D%9A%E6%9C%8B%E5%85%8B2077/</guid>
+      <description>&lt;p&gt;cyberpunk2077是CD Projekt RED开发的rpg游戏&lt;/p&gt;&#xA;&lt;p&gt;经历了一次次跳票，终于在年底玩到这款游戏&lt;/p&gt;&#xA;&lt;p&gt;小黑盒的评分&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20210304110754145.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20210304110754145.png, https://img-blog.csdnimg.cn/20210304110754145.png 1.5x, https://img-blog.csdnimg.cn/20210304110754145.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20210304110754145.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;小黑盒社区的玩家评分并不高，很多人都很失望&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>杀手2</title>
+      <link>https://dyhgo.github.io/posts/%E6%9D%80%E6%89%8B2/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E6%9D%80%E6%89%8B2/</guid>
+      <description>&lt;p&gt;杀手2由IO Interactive开发，2018年发行的潜行刺杀游戏，与羞辱不同的是这是第三人称&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20200328175706409.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20200328175706409.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200328175706409.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200328175706409.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20200328175706409.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;杀手2最大的特点是刺杀方法的丰富性&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>看门狗2</title>
+      <link>https://dyhgo.github.io/posts/%E7%9C%8B%E9%97%A8%E7%8B%972/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E7%9C%8B%E9%97%A8%E7%8B%972/</guid>
+      <description>&lt;p&gt;Watch_dogs2是ubisoft于2016年11月发行的角色扮演游戏&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20200324223722585.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20200324223722585.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200324223722585.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200324223722585.PNG?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20200324223722585.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;骇入系统是其游戏特色&lt;/p&gt;&#xA;&lt;p&gt;玩了130+小时&lt;/p&gt;&#xA;&lt;p&gt;看门狗2的这个特色很新颖，但是剧情很平淡，后面的玩法基本与前面重复&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>波斯王子</title>
+      <link>https://dyhgo.github.io/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E6%B3%A2%E6%96%AF%E7%8E%8B%E5%AD%90/</guid>
+      <description>&lt;p&gt;波斯王子 prince of persia是ubisoft于1989年发行的一款单机游戏&#xA;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20200308225600498.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20200308225600498.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200308225600498.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200308225600498.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20200308225600498.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&#xA;波斯王子有好多部，前3部是一个完整的故事，后面则是一些衍生&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>刺客信条2</title>
+      <link>https://dyhgo.github.io/posts/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E5%88%BA%E5%AE%A2%E4%BF%A1%E6%9D%A12/</guid>
+      <description>&lt;p&gt;ac2由育碧蒙特利尔工作室开发&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20200308231856222.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20200308231856222.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200308231856222.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200308231856222.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20200308231856222.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&#xA;十年前玩的游戏，环境渲染和剧情真的超棒&lt;/p&gt;&#xA;&lt;p&gt;背景音乐选的十分用心&lt;/p&gt;&#xA;&lt;p&gt;后来主角ezio也成为了刺客信条系列的标志&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>光环1</title>
+      <link>https://dyhgo.github.io/posts/%E5%85%89%E7%8E%AF1/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E5%85%89%E7%8E%AF1/</guid>
+      <description>&lt;p&gt;halo1是微软于2001年发行的第一人称射击游戏&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/20200308233707597.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/20200308233707597.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70, https://img-blog.csdnimg.cn/20200308233707597.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 1.5x, https://img-blog.csdnimg.cn/20200308233707597.jpg?x-oss-process=image/watermark%2ctype_ZmFuZ3poZW5naGVpdGk%2cshadow_10%2ctext_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3%2csize_16%2ccolor_FFFFFF%2ct_70 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/20200308233707597.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNzM3Njk3,size_16,color_FFFFFF,t_70&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;halo是一个很注重武器选择的游戏，合适的武器会非常高效&lt;/p&gt;&#xA;&lt;h3 id=&#34;剧情&#34;&gt;剧情&lt;/h3&gt;&#xA;&lt;p&gt;2160-2200：早期冲突&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>刻痕</title>
+      <link>https://dyhgo.github.io/posts/%E5%88%BB%E7%97%95/</link>
+      <pubDate>Sun, 08 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E5%88%BB%E7%97%95/</guid>
+      <description>&lt;p&gt;《刻痕》是由蓝天使制作组制作的2D动画游戏，于2008年发行，是一款恐怖推理解谜游戏&lt;/p&gt;&#xA;&lt;p&gt;《刻痕》是国内原创推理悬疑解谜（猎奇）游戏的始祖，国内第一个以R15作为GALGAME正式标准的游戏，也是国内第一个R15类型的推理悬疑解谜（猎奇）类游戏，刻痕系列首次在国内提出了带有悬疑、血腥、恐怖或者猎奇要素的游戏，要以R15作为分类标准的概念，此分类概念在后来在国内整个GALGAME行业业界被得以广泛认可，并被普遍流传使用。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

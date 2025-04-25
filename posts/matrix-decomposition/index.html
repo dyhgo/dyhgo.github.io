@@ -8,17 +8,22 @@
 
         <meta name="referrer" content="no-referrer" />
 
-        <title>Matrix Decomposition - This is DYH</title><meta name="Description" content="Matrix Decomposition"><meta property="og:title" content="Matrix Decomposition" />
-<meta property="og:description" content="Matrix Decomposition" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyhgo.github.io/posts/matrix-decomposition/" /><meta property="og:image" content="https://dyhgo.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-10-14T00:00:00+00:00" />
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://dyhgo.github.io/logo.png"/>
+        <title>Matrix Decomposition - This is DYH</title><meta name="Description" content="Matrix Decomposition"><meta property="og:url" content="https://dyhgo.github.io/posts/matrix-decomposition/">
+  <meta property="og:site_name" content="This is DYH">
+  <meta property="og:title" content="Matrix Decomposition">
+  <meta property="og:description" content="Matrix Decomposition">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-10-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-10-14T00:00:00+00:00">
+    <meta property="article:tag" content="Math">
+    <meta property="og:image" content="https://dyhgo.github.io/logo.png">
 
-<meta name="twitter:title" content="Matrix Decomposition"/>
-<meta name="twitter:description" content="Matrix Decomposition"/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dyhgo.github.io/logo.png">
+  <meta name="twitter:title" content="Matrix Decomposition">
+  <meta name="twitter:description" content="Matrix Decomposition">
 <meta name="application-name" content="This is DYH">
 <meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/matrix-decomposition/" /><link rel="prev" href="https://dyhgo.github.io/posts/pandas/" /><link rel="next" href="https://dyhgo.github.io/posts/vins-mono-a-robust-and-versatile-monocular-visual-inertial-state-estimator/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.1e2694bed152fa2922dbe909a441838ed693d88b1330f97485bfa8ed78da42df.css" integrity="sha256-HiaUvtFS&#43;iki2&#43;kJpEGDjtaT2IsTMPl0hb&#43;o7XjaQt8="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
     {
@@ -174,7 +179,7 @@
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Matrix Decomposition</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>note</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-14">2022-10-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5603 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 12 分钟&nbsp;<span id="/posts/matrix-decomposition/" class="leancloud_visitors" data-flag-title="Matrix Decomposition">
                         <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
@@ -373,34 +378,34 @@ $$</p>
 $$</p>
 <h4 id="eigenvalues">Eigenvalues</h4>
 <table>
-<thead>
-<tr>
-<th style="text-align:center">Type</th>
-<th style="text-align:center">Condition(iff all eigenvalues are)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">positive definite</td>
-<td style="text-align:center">positive</td>
-</tr>
-<tr>
-<td style="text-align:center">positive semi-definite</td>
-<td style="text-align:center">non-negative</td>
-</tr>
-<tr>
-<td style="text-align:center">negative definite</td>
-<td style="text-align:center">negative</td>
-</tr>
-<tr>
-<td style="text-align:center">negative semi-definite</td>
-<td style="text-align:center">non-positive</td>
-</tr>
-<tr>
-<td style="text-align:center">indefinite</td>
-<td style="text-align:center">both positive and negative</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">Type</th>
+          <th style="text-align: center">Condition(iff all eigenvalues are)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">positive definite</td>
+          <td style="text-align: center">positive</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">positive semi-definite</td>
+          <td style="text-align: center">non-negative</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">negative definite</td>
+          <td style="text-align: center">negative</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">negative semi-definite</td>
+          <td style="text-align: center">non-positive</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">indefinite</td>
+          <td style="text-align: center">both positive and negative</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="hermitian-matrix">Hermitian matrix</h3>
 <p>共轭转置为自身的方阵叫Hermite矩阵</p>
@@ -480,50 +485,50 @@ $$</p>
 $$</p>
 <p>高斯消元的过程如下</p>
 <table>
-<thead>
-<tr>
-<th style="text-align:center">System of equations</th>
-<th style="text-align:center">Row operations</th>
-<th style="text-align:center">Augmented matrix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\-3x&amp;{}-{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-11&amp;\\-2x&amp;{}+{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-3&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\-3&amp;-1&amp;2&amp;-11\\-2&amp;1&amp;2&amp;-3\end{array}}\right]}$$</td>
-</tr>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;2y&amp;{}+{}&amp;z&amp;{}={}&amp;5&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {3}{2}}L_{1}&amp;\to L_{2}\\L_{3}+L_{1}&amp;\to L_{3}\end{aligned}}}$$</td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;2&amp;1&amp;5\end{array}}\right]}$$</td>
-</tr>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;&amp;&amp;-z&amp;{}={}&amp;1&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center">$${\displaystyle L_{3}+-4L_{2}\to L_{3}}$$</td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
-</tr>
-<tr>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;&amp;&amp;{}={}7&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;&amp;&amp;{}={}{\tfrac {3}{2}}&amp;\\&amp;&amp;&amp;{}-{}&amp;z&amp;{}={}1&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {1}{2}}L_{3}&amp;\to L_{2}\\L_{1}-L_{3}&amp;\to L_{1}\end{aligned}}}$$</td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;{\frac {1}{2}}&amp;0&amp;{\frac {3}{2}}\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
-</tr>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;\quad &amp;&amp;{}={}&amp;7&amp;\\&amp;&amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;&amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center">$${\displaystyle {\begin{aligned}2L_{2}&amp;\to L_{2}\\-L_{3}&amp;\to L_{3}\end{aligned}}}$$</td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
-</tr>
-<tr>
-<td style="text-align:center">$${\displaystyle {\begin{alignedat}{4}x&amp;\quad &amp;&amp;\quad &amp;&amp;{}={}&amp;2&amp;\\&amp;\quad &amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;\quad &amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
-<td style="text-align:center">$${\displaystyle {\begin{aligned}L_{1}-L_{2}&amp;\to L_{1}\\{\tfrac {1}{2}}L_{1}&amp;\to L_{1}\end{aligned}}}$$</td>
-<td style="text-align:center">$${\displaystyle \left[{\begin{array}{rrr|r}1&amp;0&amp;0&amp;2\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th style="text-align: center">System of equations</th>
+          <th style="text-align: center">Row operations</th>
+          <th style="text-align: center">Augmented matrix</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\-3x&amp;{}-{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-11&amp;\\-2x&amp;{}+{}&amp;y&amp;{}+{}&amp;2z&amp;{}={}&amp;-3&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\-3&amp;-1&amp;2&amp;-11\\-2&amp;1&amp;2&amp;-3\end{array}}\right]}$$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;2y&amp;{}+{}&amp;z&amp;{}={}&amp;5&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {3}{2}}L_{1}&amp;\to L_{2}\\L_{3}+L_{1}&amp;\to L_{3}\end{aligned}}}$$</td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;2&amp;1&amp;5\end{array}}\right]}$$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;{}-{}&amp;z&amp;{}={}&amp;8&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;{}+{}&amp;{\tfrac {1}{2}}z&amp;{}={}&amp;1&amp;\\&amp;&amp;&amp;&amp;-z&amp;{}={}&amp;1&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center">$${\displaystyle L_{3}+-4L_{2}\to L_{3}}$$</td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;-1&amp;8\\0&amp;{\frac {1}{2}}&amp;{\frac {1}{2}}&amp;1\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;&amp;&amp;{}={}7&amp;\\&amp;&amp;{\tfrac {1}{2}}y&amp;&amp;&amp;{}={}{\tfrac {3}{2}}&amp;\\&amp;&amp;&amp;{}-{}&amp;z&amp;{}={}1&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center">$${\displaystyle {\begin{aligned}L_{2}+{\tfrac {1}{2}}L_{3}&amp;\to L_{2}\\L_{1}-L_{3}&amp;\to L_{1}\end{aligned}}}$$</td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;{\frac {1}{2}}&amp;0&amp;{\frac {3}{2}}\\0&amp;0&amp;-1&amp;1\end{array}}\right]}$$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}2x&amp;{}+{}&amp;y&amp;\quad &amp;&amp;{}={}&amp;7&amp;\\&amp;&amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;&amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center">$${\displaystyle {\begin{aligned}2L_{2}&amp;\to L_{2}\\-L_{3}&amp;\to L_{3}\end{aligned}}}$$</td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}2&amp;1&amp;0&amp;7\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">$${\displaystyle {\begin{alignedat}{4}x&amp;\quad &amp;&amp;\quad &amp;&amp;{}={}&amp;2&amp;\\&amp;\quad &amp;y&amp;\quad &amp;&amp;{}={}&amp;3&amp;\\&amp;\quad &amp;&amp;\quad &amp;z&amp;{}={}&amp;-1&amp;\end{alignedat}}}$$</td>
+          <td style="text-align: center">$${\displaystyle {\begin{aligned}L_{1}-L_{2}&amp;\to L_{1}\\{\tfrac {1}{2}}L_{1}&amp;\to L_{1}\end{aligned}}}$$</td>
+          <td style="text-align: center">$${\displaystyle \left[{\begin{array}{rrr|r}1&amp;0&amp;0&amp;2\\0&amp;1&amp;0&amp;3\\0&amp;0&amp;1&amp;-1\end{array}}\right]}$$</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="applications">Applications</h3>
 <h4 id="computing-determinants">Computing determinants</h4>
@@ -884,7 +889,7 @@ $$</p>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/math/">math</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/math/">Math</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -897,7 +902,7 @@ $$</p>
                 Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">DYH</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

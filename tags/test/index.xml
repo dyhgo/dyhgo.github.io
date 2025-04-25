@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>test - 标签 - This is DYH</title>
-        <link>https://dyhgo.github.io/tags/test/</link>
-        <description>test - 标签 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Mon, 02 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/test/" rel="self" type="application/rss+xml" /><item>
-    <title>test for music and video</title>
-    <link>https://dyhgo.github.io/posts/test-for-music-and-video/</link>
-    <pubDate>Mon, 02 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/test-for-music-and-video/</guid>
-    <description><![CDATA[paste a music below [video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://pl]]></description>
-</item><item>
-    <title>test</title>
-    <link>https://dyhgo.github.io/posts/test/</link>
-    <pubDate>Thu, 27 Feb 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/test/</guid>
-    <description><![CDATA[Button Try Element]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Test on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/test/</link>
+    <description>Recent content in Test on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 02 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/tags/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test for music and video</title>
+      <link>https://dyhgo.github.io/posts/test-for-music-and-video/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/test-for-music-and-video/</guid>
+      <description>&lt;p&gt;paste a music below&lt;/p&gt;&#xA;&lt;p&gt;[video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://player.bilibili.com/player.html?aid=93185992)(image-https://ss.csdn.net/p?http://i0.hdslb.com/bfs/archive/393b26d243ae8f1c7b3cf4d1ba0bea2fd4015d85.jpg)(title-【暴走大事件】致 杠 精)]&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>test</title>
+      <link>https://dyhgo.github.io/posts/test/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/test/</guid>
+      <description>&lt;body&gt;&lt;input id=&#34;setMediaURL&#34; type=&#34;button&#34; class=&#34;btn btn-default&#34; value=&#34;设置&#34;&gt;&lt;/body&gt;&#xD;&#xA;&lt;head&gt;&#xD;&#xA;  &lt;meta charset=&#34;UTF-8&#34;&gt;&#xD;&#xA;  &lt;!-- import CSS --&gt;&#xD;&#xA;  &lt;link rel=&#34;stylesheet&#34; href=&#34;https://unpkg.com/element-ui/lib/theme-chalk/index.css&#34;&gt;&#xD;&#xA;&lt;/head&gt;&#xD;&#xA;&lt;body&gt;&#xD;&#xA;  &lt;div id=&#34;app&#34;&gt;&#xD;&#xA;    &lt;el-button @click=&#34;visible = true&#34;&gt;Button&lt;/el-button&gt;&#xD;&#xA;    &lt;el-dialog :visible.sync=&#34;visible&#34; title=&#34;Hello world&#34;&gt;&#xD;&#xA;      &lt;p&gt;Try Element&lt;/p&gt;&#xD;&#xA;    &lt;/el-dialog&gt;&#xD;&#xA;  &lt;/div&gt;&#xD;&#xA;&lt;/body&gt;&#xD;&#xA;  &lt;!-- import Vue before Element --&gt;&#xD;&#xA;  &lt;script src=&#34;https://unpkg.com/vue/dist/vue.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;  &lt;!-- import JavaScript --&gt;&#xD;&#xA;  &lt;script src=&#34;https://unpkg.com/element-ui/lib/index.js&#34;&gt;&lt;/script&gt;&#xD;&#xA;  &lt;script&gt;&#xD;&#xA;    new Vue({&#xD;&#xA;      el: &#39;#app&#39;,&#xD;&#xA;      data: function() {&#xD;&#xA;        return { visible: false }&#xD;&#xA;      }&#xD;&#xA;    })&#xD;&#xA;  &lt;/script&gt;</description>
+    </item>
+  </channel>
 </rss>

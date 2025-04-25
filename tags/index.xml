@@ -1,78 +1,320 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - 标签 - This is DYH</title>
-        <link>https://dyhgo.github.io/tags/</link>
-        <description>Tags - 标签 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>problemlist</title>
-    <link>https://dyhgo.github.io/tags/problemlist/</link>
-    <pubDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/problemlist/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>git</title>
-    <link>https://dyhgo.github.io/tags/git/</link>
-    <pubDate>Wed, 01 May 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/git/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>cpp</title>
-    <link>https://dyhgo.github.io/tags/cpp/</link>
-    <pubDate>Tue, 16 Apr 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/cpp/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>redis</title>
-    <link>https://dyhgo.github.io/tags/redis/</link>
-    <pubDate>Tue, 20 Feb 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/redis/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>linux</title>
-    <link>https://dyhgo.github.io/tags/linux/</link>
-    <pubDate>Thu, 01 Feb 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/linux/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>shell</title>
-    <link>https://dyhgo.github.io/tags/shell/</link>
-    <pubDate>Thu, 01 Feb 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/shell/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>docker</title>
-    <link>https://dyhgo.github.io/tags/docker/</link>
-    <pubDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/docker/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>mysql</title>
-    <link>https://dyhgo.github.io/tags/mysql/</link>
-    <pubDate>Mon, 20 Nov 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/mysql/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>cooking</title>
-    <link>https://dyhgo.github.io/tags/cooking/</link>
-    <pubDate>Thu, 12 Oct 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/cooking/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>note</title>
-    <link>https://dyhgo.github.io/tags/note/</link>
-    <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/tags/note/</guid>
-    <description><![CDATA[]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/</link>
+    <description>Recent content in Tags on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 20 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Problemlist</title>
+      <link>https://dyhgo.github.io/tags/problemlist/</link>
+      <pubDate>Fri, 20 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/problemlist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Git</title>
+      <link>https://dyhgo.github.io/tags/git/</link>
+      <pubDate>Wed, 01 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cpp</title>
+      <link>https://dyhgo.github.io/tags/cpp/</link>
+      <pubDate>Tue, 16 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/cpp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redis</title>
+      <link>https://dyhgo.github.io/tags/redis/</link>
+      <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/redis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://dyhgo.github.io/tags/linux/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Shell</title>
+      <link>https://dyhgo.github.io/tags/shell/</link>
+      <pubDate>Thu, 01 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/shell/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docker</title>
+      <link>https://dyhgo.github.io/tags/docker/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>https://dyhgo.github.io/tags/mysql/</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cooking</title>
+      <link>https://dyhgo.github.io/tags/cooking/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/cooking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Note</title>
+      <link>https://dyhgo.github.io/tags/note/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/note/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Go</title>
+      <link>https://dyhgo.github.io/tags/go/</link>
+      <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/go/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Slam</title>
+      <link>https://dyhgo.github.io/tags/slam/</link>
+      <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/slam/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Math</title>
+      <link>https://dyhgo.github.io/tags/math/</link>
+      <pubDate>Fri, 14 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/math/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://dyhgo.github.io/tags/python/</link>
+      <pubDate>Sun, 09 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cs</title>
+      <link>https://dyhgo.github.io/tags/cs/</link>
+      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/cs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Binary_search</title>
+      <link>https://dyhgo.github.io/tags/binary_search/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/binary_search/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dfs</title>
+      <link>https://dyhgo.github.io/tags/dfs/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/dfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dp</title>
+      <link>https://dyhgo.github.io/tags/dp/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/dp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graph_theory</title>
+      <link>https://dyhgo.github.io/tags/graph_theory/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/graph_theory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Greedy</title>
+      <link>https://dyhgo.github.io/tags/greedy/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/greedy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Number_theory</title>
+      <link>https://dyhgo.github.io/tags/number_theory/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/number_theory/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prefix</title>
+      <link>https://dyhgo.github.io/tags/prefix/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/prefix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Segment_tree</title>
+      <link>https://dyhgo.github.io/tags/segment_tree/</link>
+      <pubDate>Wed, 09 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/segment_tree/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Construct</title>
+      <link>https://dyhgo.github.io/tags/construct/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/construct/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Implementation</title>
+      <link>https://dyhgo.github.io/tags/implementation/</link>
+      <pubDate>Sat, 05 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/implementation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bfs</title>
+      <link>https://dyhgo.github.io/tags/bfs/</link>
+      <pubDate>Wed, 02 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/bfs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Assembly</title>
+      <link>https://dyhgo.github.io/tags/assembly/</link>
+      <pubDate>Sat, 07 Nov 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/assembly/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bit</title>
+      <link>https://dyhgo.github.io/tags/bit/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/bit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Counting</title>
+      <link>https://dyhgo.github.io/tags/counting/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/counting/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data_structure</title>
+      <link>https://dyhgo.github.io/tags/data_structure/</link>
+      <pubDate>Fri, 25 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/data_structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Graph</title>
+      <link>https://dyhgo.github.io/tags/graph/</link>
+      <pubDate>Sun, 28 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/graph/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Computational_geometry</title>
+      <link>https://dyhgo.github.io/tags/computational_geometry/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/computational_geometry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Suffix</title>
+      <link>https://dyhgo.github.io/tags/suffix/</link>
+      <pubDate>Sat, 02 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/suffix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>String</title>
+      <link>https://dyhgo.github.io/tags/string/</link>
+      <pubDate>Tue, 14 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/string/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Binary</title>
+      <link>https://dyhgo.github.io/tags/binary/</link>
+      <pubDate>Wed, 01 Apr 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/binary/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lca</title>
+      <link>https://dyhgo.github.io/tags/lca/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/lca/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>https://dyhgo.github.io/tags/java/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xml</title>
+      <link>https://dyhgo.github.io/tags/xml/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/xml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://dyhgo.github.io/tags/test/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Union_find</title>
+      <link>https://dyhgo.github.io/tags/union_find/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/union_find/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://dyhgo.github.io/tags/hugo/</link>
+      <pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Search</title>
+      <link>https://dyhgo.github.io/tags/search/</link>
+      <pubDate>Thu, 20 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/search/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poj</title>
+      <link>https://dyhgo.github.io/tags/poj/</link>
+      <pubDate>Mon, 27 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/poj/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sort</title>
+      <link>https://dyhgo.github.io/tags/sort/</link>
+      <pubDate>Thu, 23 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/tags/sort/</guid>
+      <description></description>
+    </item>
+  </channel>
 </rss>

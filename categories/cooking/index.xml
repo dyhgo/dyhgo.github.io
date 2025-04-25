@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>cooking - 分类 - This is DYH</title>
-        <link>https://dyhgo.github.io/categories/cooking/</link>
-        <description>cooking - 分类 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 12 Oct 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/cooking/" rel="self" type="application/rss+xml" /><item>
-    <title>蛋炒饭</title>
-    <link>https://dyhgo.github.io/posts/%E8%9B%8B%E7%82%92%E9%A5%AD/</link>
-    <pubDate>Thu, 12 Oct 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E8%9B%8B%E7%82%92%E9%A5%AD/</guid>
-    <description><![CDATA[蛋炒饭需要使用隔夜饭，所以提前一天把饭拿到冰箱中 拿出隔夜饭，打两个蛋 切两根火腿 鸡蛋液倒四分之一到米饭中 抓一抓米饭，使其松散（颗粒分开） 点火，]]></description>
-</item><item>
-    <title>套肠炒羊肚菌</title>
-    <link>https://dyhgo.github.io/posts/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</link>
-    <pubDate>Wed, 11 Oct 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</guid>
-    <description><![CDATA[此篇文章做简单记录，以防忘记 在市场上买好套肠 羊肚菌浸泡半个小时 点火，向锅中倒油 加入一些蒜 将套肠和羊肚菌倒入锅中翻炒 加入一些酱油和水（像这种比]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cooking on This is DYH</title>
+    <link>https://dyhgo.github.io/categories/cooking/</link>
+    <description>Recent content in Cooking on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 12 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/categories/cooking/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>蛋炒饭</title>
+      <link>https://dyhgo.github.io/posts/%E8%9B%8B%E7%82%92%E9%A5%AD/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E8%9B%8B%E7%82%92%E9%A5%AD/</guid>
+      <description>&lt;p&gt;蛋炒饭需要使用隔夜饭，所以提前一天把饭拿到冰箱中&lt;/p&gt;&#xA;&lt;p&gt;拿出隔夜饭，打两个蛋&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/d40b7a9c3f6048e892579e5e87d1b707.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/d40b7a9c3f6048e892579e5e87d1b707.png, https://img-blog.csdnimg.cn/d40b7a9c3f6048e892579e5e87d1b707.png 1.5x, https://img-blog.csdnimg.cn/d40b7a9c3f6048e892579e5e87d1b707.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/d40b7a9c3f6048e892579e5e87d1b707.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;切两根火腿&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/cd01d088d8f7426c9ee61c20d04edc10.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/cd01d088d8f7426c9ee61c20d04edc10.png, https://img-blog.csdnimg.cn/cd01d088d8f7426c9ee61c20d04edc10.png 1.5x, https://img-blog.csdnimg.cn/cd01d088d8f7426c9ee61c20d04edc10.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/cd01d088d8f7426c9ee61c20d04edc10.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;鸡蛋液倒四分之一到米饭中&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/76f7a3ce41b144e2829b9a2deed1b623.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/76f7a3ce41b144e2829b9a2deed1b623.png, https://img-blog.csdnimg.cn/76f7a3ce41b144e2829b9a2deed1b623.png 1.5x, https://img-blog.csdnimg.cn/76f7a3ce41b144e2829b9a2deed1b623.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/76f7a3ce41b144e2829b9a2deed1b623.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>套肠炒羊肚菌</title>
+      <link>https://dyhgo.github.io/posts/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</link>
+      <pubDate>Wed, 11 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E5%A5%97%E8%82%A0%E7%82%92%E7%BE%8A%E8%82%9A%E8%8F%8C/</guid>
+      <description>&lt;p&gt;此篇文章做简单记录，以防忘记&lt;/p&gt;&#xA;&lt;p&gt;在市场上买好套肠&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/3db624d262e54e91b54a8ddde041aac5.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/3db624d262e54e91b54a8ddde041aac5.png, https://img-blog.csdnimg.cn/3db624d262e54e91b54a8ddde041aac5.png 1.5x, https://img-blog.csdnimg.cn/3db624d262e54e91b54a8ddde041aac5.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/3db624d262e54e91b54a8ddde041aac5.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;羊肚菌浸泡半个小时&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/469ce6a1eb224e67b9096a831cc8fe61.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/469ce6a1eb224e67b9096a831cc8fe61.png, https://img-blog.csdnimg.cn/469ce6a1eb224e67b9096a831cc8fe61.png 1.5x, https://img-blog.csdnimg.cn/469ce6a1eb224e67b9096a831cc8fe61.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/469ce6a1eb224e67b9096a831cc8fe61.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;点火，向锅中倒油&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/db5b08e282fd412ea0945105d678cf1e.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/db5b08e282fd412ea0945105d678cf1e.png, https://img-blog.csdnimg.cn/db5b08e282fd412ea0945105d678cf1e.png 1.5x, https://img-blog.csdnimg.cn/db5b08e282fd412ea0945105d678cf1e.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/db5b08e282fd412ea0945105d678cf1e.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;加入一些蒜&lt;/p&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/cc04c1331d4d49e4b4ab4299ec944513.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/cc04c1331d4d49e4b4ab4299ec944513.png, https://img-blog.csdnimg.cn/cc04c1331d4d49e4b4ab4299ec944513.png 1.5x, https://img-blog.csdnimg.cn/cc04c1331d4d49e4b4ab4299ec944513.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/cc04c1331d4d49e4b4ab4299ec944513.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

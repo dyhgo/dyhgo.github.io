@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>anime - 分类 - This is DYH</title>
-        <link>https://dyhgo.github.io/categories/anime/</link>
-        <description>anime - 分类 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/categories/anime/" rel="self" type="application/rss+xml" /><item>
-    <title>星际牛仔</title>
-    <link>https://dyhgo.github.io/posts/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</link>
-    <pubDate>Sun, 29 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</guid>
-    <description><![CDATA[《星际牛仔》（カウボーイビバップ；Cowboy Bebop），是日本SUNRISE动画 公司制作的原创电视动画，于1998年10月23日-199]]></description>
-</item><item>
-    <title>ef - a tale of melodies</title>
-    <link>https://dyhgo.github.io/posts/ef-a-tale-of-melodies/</link>
-    <pubDate>Mon, 09 Mar 2020 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/ef-a-tale-of-melodies/</guid>
-    <description><![CDATA[《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anime on This is DYH</title>
+    <link>https://dyhgo.github.io/categories/anime/</link>
+    <description>Recent content in Anime on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 29 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/categories/anime/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>星际牛仔</title>
+      <link>https://dyhgo.github.io/posts/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</link>
+      <pubDate>Sun, 29 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/%E6%98%9F%E9%99%85%E7%89%9B%E4%BB%94/</guid>
+      <description>&lt;p&gt;《星际牛仔》（カウボーイビバップ；Cowboy Bebop），是日本SUNRISE动画&lt;/p&gt;&#xA;&lt;p&gt;公司制作的原创电视动画，于1998年10月23日-1999年4月23日在东京电视台和&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>ef - a tale of melodies</title>
+      <link>https://dyhgo.github.io/posts/ef-a-tale-of-melodies/</link>
+      <pubDate>Mon, 09 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/ef-a-tale-of-melodies/</guid>
+      <description>&lt;p&gt;《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故事内容由原作游戏《ef - the latter tale.》的第四章及终章改篇而成，终章的修改幅度比较大，加入了一些原创的情节。共12话。&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

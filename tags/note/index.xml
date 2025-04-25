@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>note - 标签 - This is DYH</title>
-        <link>https://dyhgo.github.io/tags/note/</link>
-        <description>note - 标签 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/note/" rel="self" type="application/rss+xml" /><item>
-    <title>protobuf</title>
-    <link>https://dyhgo.github.io/posts/protobuf/</link>
-    <pubDate>Wed, 23 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/protobuf/</guid>
-    <description><![CDATA[protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json 它可以被序列化和反序列化，从而用于传输 参考链接 它的格式类似]]></description>
-</item><item>
-    <title>gflags</title>
-    <link>https://dyhgo.github.io/posts/gflags/</link>
-    <pubDate>Tue, 22 Aug 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/gflags/</guid>
-    <description><![CDATA[文档链接 gflags相当于代码中的常量 gflags读取命令行的flags，然后修改代码中相应名字的“常量” 主要有三个函数 DEFINE_xxx]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/note/</link>
+    <description>Recent content in Note on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 23 Aug 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>protobuf</title>
+      <link>https://dyhgo.github.io/posts/protobuf/</link>
+      <pubDate>Wed, 23 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/protobuf/</guid>
+      <description>&lt;p&gt;protobuf是一个类似于用来定义网络传输过程中数据包格式的东西，有点像json&lt;/p&gt;&#xA;&lt;p&gt;它可以被序列化和反序列化，从而用于传输&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://protobuf.dev/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>gflags</title>
+      <link>https://dyhgo.github.io/posts/gflags/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/gflags/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gflags.github.io/gflags/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;文档链接&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;gflags相当于代码中的常量&lt;/p&gt;&#xA;&lt;p&gt;gflags读取命令行的flags，然后修改代码中相应名字的“常量”&lt;/p&gt;&#xA;&lt;p&gt;主要有三个函数&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

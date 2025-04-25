@@ -1,22 +1,26 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>docker - 标签 - This is DYH</title>
-        <link>https://dyhgo.github.io/tags/docker/</link>
-        <description>docker - 标签 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/docker/" rel="self" type="application/rss+xml" /><item>
-    <title>docker2</title>
-    <link>https://dyhgo.github.io/posts/docker2/</link>
-    <pubDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/docker2/</guid>
-    <description><![CDATA[参考链接 Containerize an application 构建应用的镜像 编写Dockerfile，构建镜像（假设镜像名叫getting-started） 1 docker build -t getting-started . 根据镜像创建容器 1 docker]]></description>
-</item><item>
-    <title>docker</title>
-    <link>https://dyhgo.github.io/posts/docker/</link>
-    <pubDate>Tue, 26 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/docker/</guid>
-    <description><![CDATA[参考资料 参考教程 docker的三个重要概念 image：镜像，就是各种环境的集合 container：由镜像生成一个一个的容器，是镜像的实例化 d]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/docker/</link>
+    <description>Recent content in Docker on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 11 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker2</title>
+      <link>https://dyhgo.github.io/posts/docker2/</link>
+      <pubDate>Thu, 11 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/docker2/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://docs.docker.com/get-started/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考链接&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;containerize-an-application&#34;&gt;Containerize an application&lt;/h2&gt;&#xA;&lt;p&gt;构建应用的镜像&lt;/p&gt;&#xA;&lt;p&gt;编写Dockerfile，构建镜像（假设镜像名叫getting-started）&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;docker build -t getting-started .&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;根据镜像创建容器&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>docker</title>
+      <link>https://dyhgo.github.io/posts/docker/</link>
+      <pubDate>Tue, 26 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/docker/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://vuepress.mirror.docker-practice.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考资料&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV11L411g7U1/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考教程&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;docker的三个重要概念&lt;/p&gt;&#xA;&lt;p&gt;image：镜像，就是各种环境的集合&lt;/p&gt;&#xA;&lt;p&gt;container：由镜像生成一个一个的容器，是镜像的实例化&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>

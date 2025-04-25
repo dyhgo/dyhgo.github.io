@@ -2,92 +2,50 @@
 
 
 
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
 
-  <link href="https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1/dist/fjGallery.css" rel="stylesheet">
   
+  <link href="
+https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css
+" rel="stylesheet">
+
+<link href="
+https://cdn.jsdelivr.net/npm/swipebox@1.4.6/src/css/swipebox.min.css
+" rel="stylesheet">
 
 </head>
 
 
 <body>
   
-  <div class="fj-gallery">
-  <div class="fj-gallery-item">
-    <a href="/images/pcbuilding/IMG_7320.JPG" data-fancybox="gallery" data-caption="" data-thumb="/images/pcbuilding/IMG_7320.JPG"><img src="/images/pcbuilding/IMG_7320.JPG" alt="">
-  
-  
-  
-  </a>
-  </div>
-  <div class="fj-gallery-item">
-
-  <a href="/images/pcbuilding/IMG_7320.JPG" data-fancybox="gallery" data-caption="" data-thumb="/images/pcbuilding/IMG_7320.JPG"><img src="/images/pcbuilding/IMG_7320.JPG" alt="">
-  
-  
-  
-  </a>
-    
-  </div>
-
-  <div class="fj-gallery-item">
-
-  <a href="/images/cs/dust2/smoke_xbox2ct_2.jpg" data-fancybox="gallery" data-caption="" data-thumb="/images/cs/dust2/smoke_xbox2ct_2.jpg"><img src="/images/cs/dust2/smoke_xbox2ct_2.jpg" alt="">
-  
-  
-  
-  </a>
-    
-  </div>
-
-
-<div class="fj-gallery-item">
-
-  <a href="/images/IMG_7926.JPG" data-fancybox="gallery" data-caption="" data-thumb="/images/IMG_7926.JPG"><img src="/images/IMG_7926.JPG" alt="">
-  
-  
-  
-  </a>
-    
-  </div>
-
-  <div class="fj-gallery-item">
-
-  <a href="/images/avatar.png" data-fancybox="gallery" data-caption="" data-thumb="/images/avatar.png"><img src="/images/avatar.png" alt="">
-  
-  
-  
-  </a>
-    
-  </div>
-
-
-  <div class="fj-gallery-item">
-
-  <a href="/images/tmp.png" data-fancybox="gallery" data-caption="" data-thumb="/images/tmp.png"><img src="/images/tmp.png" alt="">
-  
-  
-  
-  </a>
-    
-  </div>
-
-</div>
-<script src="https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2.1/dist/fjGallery.min.js"></script>
-<script>
-  fjGallery(document.querySelectorAll('.fj-gallery'), {
-  itemSelector: '.fj-gallery-item'
-});
-</script>
+  <script src= "https://code.jquery.com/jquery-3.7.1.min.js" ></script>
+  <script src= "https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" ></script>
+  <script src= "https://cdn.jsdelivr.net/npm/swipebox@1.4.6/src/js/jquery.swipebox.min.js" ></script>
+  <script src= "https://cdn.jsdelivr.net/npm/jquery-lazy@1.7.11/jquery.lazy.min.js" ></script>
 </body>
 
 
 
   
 </html>
+
+{{<gallery
+    globalMatch="images/pcbuilding/*"
+    sortOrder="asc"
+    rowHeight="300"
+    margins="5"
+    thumbnailResizeOptions="1600x1600 q90 Lanczos"
+    showExif=true
+    previewType="blur"
+    embedPreview=true
+    loadJQuery=true
+>}}
 
 
 
@@ -98,6 +56,7 @@
 {{< image src="/images/pcbuilding/IMG_7325.JPG" height=3024 width=4032 >}}
 {{< image src="/images/pcbuilding/IMG_7329.JPG" height=3024 width=4032 >}}
 {{< image src="/images/pcbuilding/IMG_7334.JPG" height=3024 width=4032 >}} -->
+
 
 
 

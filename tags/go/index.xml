@@ -1,43 +1,47 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>go - 标签 - This is DYH</title>
-        <link>https://dyhgo.github.io/tags/go/</link>
-        <description>go - 标签 - This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>244882973@qq.com (DYH)</managingEditor>
-            <webMaster>244882973@qq.com (DYH)</webMaster><lastBuildDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/tags/go/" rel="self" type="application/rss+xml" /><item>
-    <title>GO利用ftp服务器进行文件上传和下载</title>
-    <link>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
-    <pubDate>Tue, 11 Apr 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
-    <description><![CDATA[购买云服务器，这个云服务器将作为ftp服务器 假设云服务器是centos系统 先安装vsftpd 输入以下命令 1 sudo yum install vsftpd 启动vsftpd服务 1 sudo systemctl]]></description>
-</item><item>
-    <title>GO与测试</title>
-    <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
-    <pubDate>Sat, 18 Feb 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
-    <description><![CDATA[参考 单元测试 规则 所有测试文件以_test.go结尾 func TestXxx(*testing.T) 初始化逻辑放到TestMain中 例子 文件名为nihao_test.go 1 2 3 4 5 6 7 8]]></description>
-</item><item>
-    <title>GO与socks5代理服务器</title>
-    <link>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-    <description><![CDATA[参考 Socks5原理 如果不设置代理服务器，网站先和服务器建立tcp连接，然后三次握手，之后网站发送http请求，服务器返回http响应。 当加]]></description>
-</item><item>
-    <title>GO与并发</title>
-    <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
-    <pubDate>Thu, 09 Feb 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
-    <description><![CDATA[并发与并行 concurrncy和parallellism 并发指多个任务在同一时间段进行，并行指多个任务在同一时刻进行 单核cpu只能并发不能并]]></description>
-</item><item>
-    <title>GO与http请求</title>
-    <link>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
-    <pubDate>Tue, 07 Feb 2023 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</guid>
-    <description><![CDATA[参考 任务 用go写一个http请求，输入一个单词，通过对彩云小译发起网络请求，返回单词的翻译结果 过程 打开网站 输入单词good，点击翻译 打开开发]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on This is DYH</title>
+    <link>https://dyhgo.github.io/tags/go/</link>
+    <description>Recent content in Go on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 11 Apr 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GO利用ftp服务器进行文件上传和下载</title>
+      <link>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</link>
+      <pubDate>Tue, 11 Apr 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/go%E5%88%A9%E7%94%A8ftp%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E8%A1%8C%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%92%8C%E4%B8%8B%E8%BD%BD/</guid>
+      <description>&lt;p&gt;购买云服务器，这个云服务器将作为ftp服务器&lt;/p&gt;&#xA;&lt;p&gt;假设云服务器是centos系统&lt;/p&gt;&#xA;&lt;p&gt;先安装vsftpd&lt;/p&gt;&#xA;&lt;p&gt;输入以下命令&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo yum install vsftpd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;启动vsftpd服务&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo systemctl start vsftpd&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;确认 vsftpd 服务已启动及其状态是否为“active”&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GO与测试</title>
+      <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Sat, 18 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E6%B5%8B%E8%AF%95/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/Moonlight-Zhao/go-project-example/tree/v0.1&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;单元测试&#34;&gt;单元测试&lt;/h2&gt;&#xA;&lt;h3 id=&#34;规则&#34;&gt;规则&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;所有测试文件以_test.go结尾&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;func TestXxx(*testing.T)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;初始化逻辑放到TestMain中&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;例子&lt;/p&gt;&#xA;&lt;p&gt;文件名为nihao_test.go&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;&#xA;&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14&#xA;&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td class=&#34;lntd&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;package&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hello&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;testing&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;HelloTom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;string&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Jerry&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;func&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;TestHelloTom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;testing&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&lt;span class=&#34;nx&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;HelloTom&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&lt;span class=&#34;nx&#34;&gt;expectOutput&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;Tom&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;expectOutput&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&#x9;&lt;span class=&#34;nx&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nf&#34;&gt;Errorf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Expect %s do not match actual %s&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;expectOutput&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;output&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&#x9;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;在命令行输入`go test nihao_test.go``&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GO与socks5代理服务器</title>
+      <link>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/go%E4%B8%8Esocks5%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/wangkechun/go-by-example&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;socks5原理&#34;&gt;Socks5原理&lt;/h2&gt;&#xA;&lt;p&gt;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://img-blog.csdnimg.cn/9a512ade87134363879ab7bbe5a4d024.png&#34;&#xD;&#xA;        data-srcset=&#34;https://img-blog.csdnimg.cn/9a512ade87134363879ab7bbe5a4d024.png, https://img-blog.csdnimg.cn/9a512ade87134363879ab7bbe5a4d024.png 1.5x, https://img-blog.csdnimg.cn/9a512ade87134363879ab7bbe5a4d024.png 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://img-blog.csdnimg.cn/9a512ade87134363879ab7bbe5a4d024.png&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果不设置代理服务器，网站先和服务器建立tcp连接，然后三次握手，之后网站发送http请求，服务器返回http响应。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GO与并发</title>
+      <link>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Thu, 09 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/</guid>
+      <description>&lt;h2 id=&#34;并发与并行&#34;&gt;并发与并行&lt;/h2&gt;&#xA;&lt;p&gt;concurrncy和parallellism&lt;/p&gt;&#xA;&lt;p&gt;并发指多个任务在同一时间段进行，并行指多个任务在同一时刻进行&lt;/p&gt;&#xA;&lt;p&gt;单核cpu只能并发不能并行，现在的多核cpu既能并发又能并行&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>GO与http请求</title>
+      <link>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</link>
+      <pubDate>Tue, 07 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/wangkechun/go-by-example&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;参考&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;任务&#34;&gt;任务&lt;/h2&gt;&#xA;&lt;p&gt;用go写一个http请求，输入一个单词，通过对彩云小译发起网络请求，返回单词的翻译结果&lt;/p&gt;&#xA;&lt;h2 id=&#34;过程&#34;&gt;过程&lt;/h2&gt;&#xA;&lt;p&gt;打开&lt;a href=&#34;https://fanyi.caiyunapp.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;网站&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
 </rss>
