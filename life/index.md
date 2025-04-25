@@ -16,6 +16,12 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2025/04/25 19:52" placement="top" color="green">
+        <h4>版本V2.6<br>去掉标题栏搜索分区，增加相册分区，增加“烟火”子分区。
+        <br>相册分区需具备“自适应图片排版”和“预览”功能。
+        <br>相册分区在技术上使用gallery，其中对比了light-gallery、fj-gallery和hugo-shortcode-gallery后决定选择最后者。
+        <br>light-gallery在自适应图片排版上做得不好，感觉图片间留有很大的空隙；fj-gallery是hexo主题butterfly使用的，其排版合理，但是在我网站上预览功能出错，想接light-gallery的预览功能，最后导致排版有问题；hugo-shortcode-gallery排版合理，预览功能尚可，这个功能搞了两天了，踩了很多坑😅😅😅</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2025/04/22 23:49" placement="top" color="green">
         <h4>版本V2.5<br>去掉标题栏的一些分区，对分区的url进行重新设计，增加cs道具分区便于速查，并更新某些地图的基础道具</h4>
     </el-timeline-item>
