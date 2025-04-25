@@ -171,60 +171,6 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/flask%E5%AD%A6%E4%B9%A0/">Flask学习</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-12">2020-06-12</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python-web/"><i class="far fa-folder fa-fw"></i>Python Web</a></span></div><div class="content"><h2 id="扩展的地址">扩展的地址</h2>
-<p><a href="https://flask.pocoo.org/extensions" target="_blank" rel="noopener noreffer">flask扩展的地址</a></p>
-<h2 id="requirementtxt">requirement.txt</h2>
-<p>用来存项目的依赖和版本</p>
-<h3 id="生成requirementtxt">生成requirement.txt</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">freeze</span> <span class="p">&gt;</span> <span class="n">requirement</span><span class="p">.</span><span class="py">txt</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="安装requirementtxt">安装requirement.txt</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="n">-r</span> <span class="n">requirement</span><span class="p">.</span><span class="py">txt</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="基本框架">基本框架</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="s1">&#39;hello world&#39;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>Flask-RESTful</p></div><div class="post-footer">
-        <a href="/posts/flask%E5%AD%A6%E4%B9%A0/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/python%E5%AD%A6%E4%B9%A0/">Python学习</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-11">2020-06-11</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div><div class="content"><p>记录一下第n次学python。。。</p>
 <h2 id="打印">打印</h2>
@@ -875,6 +821,55 @@
 <p>问有多少个snuke没有snack</p></div><div class="post-footer">
         <a href="/posts/abc166/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/dfs/">Dfs</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/abc165/">abc165</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-05-03">2020-05-03</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---we-love-golf"><a href="https://atcoder.jp/contests/abc165/tasks/abc165_a" target="_blank" rel="noopener noreffer">A - We Love Golf</a></h1>
+<h2 id="题意">题意</h2>
+<p>询问在A到B之间是否有C的倍数</p>
+<h2 id="题解">题解</h2>
+<p>特判边界是否满足条件，否则判断左右边界除以C的值是否大于等于1</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="o">&gt;&gt;</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="p">)</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;OK&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="p">(</span><span class="kt">double</span><span class="p">)</span><span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="o">/</span><span class="n">a</span><span class="p">)</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;OK&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="o">/</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="o">/</span><span class="n">a</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    	<span class="n">puts</span><span class="p">(</span><span class="s">&#34;OK&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    	
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">puts</span><span class="p">(</span><span class="s">&#34;NG&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b---1"><a href="https://atcoder.jp/contests/abc165/tasks/abc165_b" target="_blank" rel="noopener noreffer">B - 1%</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>初始有100円，每年利息1%，每年结算时将小数部分抛弃，问多久能达到A円</p></div><div class="post-footer">
+        <a href="/posts/abc165/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/dp/">Dp</a>,&nbsp;<a href="/tags/dfs/">Dfs</a>,&nbsp;<a href="/tags/construct/">Construct</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

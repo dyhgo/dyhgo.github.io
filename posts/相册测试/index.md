@@ -38,10 +38,10 @@ https://cdn.jsdelivr.net/npm/swipebox@1.4.6/src/css/swipebox.min.css
 {{<gallery
     globalMatch="images/pcbuilding/*"
     sortOrder="asc"
-    rowHeight="300"
+    rowHeight="200"
     margins="5"
-    thumbnailResizeOptions="1600x1600 q90 Lanczos"
-    showExif=true
+    thumbnailResizeOptions="600x600 q90 Lanczos"
+    showExif=false
     previewType="blur"
     embedPreview=true
     loadJQuery=true
