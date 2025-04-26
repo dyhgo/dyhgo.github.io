@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2025/04/27 00:12" placement="top" color="green">
+        <h4>版本v2.9<br>参考DoIt主题，添加card插件</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2025/04/26 22:51" placement="top" color="green">
         <h4>版本v2.8<br>参考DoIt主题，添加tab插件，添加tailwind.css</h4>
     </el-timeline-item>
