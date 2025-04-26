@@ -16,8 +16,12 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2025/04/26 22:51" placement="top" color="green">
+        <h4>版本v2.8<br>参考DoIt主题，添加tab插件，添加tailwind.css</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2025/04/25 23:14" placement="top" color="yellow">
-        <h4>目前存在的问题：<br>文章目录的点击由于之前设置了baseurl（为了标题栏选项能被正确点击），现在没法正常使用<br>图片排版目前在移动端比较粗暴，比较丑<br>本地测试和线上测试不一致，本地测试图片加载不出来</h4>
+        <h4>目前存在的问题：<br>文章目录的点击由于之前设置了baseurl（为了标题栏选项能被正确点击），现在没法正常使用<br>图片排版目前在移动端比较粗暴，比较丑<br>本地测试和线上测试不一致，本地测试图片加载不出来<br>
+        移动端背景图片只有局部，很丑</h4>
     </el-timeline-item>
     <el-timeline-item timestamp="2025/04/25 23:14" placement="top" color="green">
         <h4>版本V2.7<br>增加相册-足迹子分区</h4>
