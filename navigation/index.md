@@ -9,7 +9,7 @@
 {{< script >}}
 
 // 使用动态import()语法
-import('./lib/tabs/tabs.min.js')
+import('../lib/tabs/tabs.min.js')
   .catch(error => console.error('模块加载失败:', error));
 
 {{< /script >}}
