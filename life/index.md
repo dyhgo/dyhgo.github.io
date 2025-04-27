@@ -16,6 +16,9 @@
   <div id="app">
     <div class="block">
     <el-timeline>
+    <el-timeline-item timestamp="2025/04/27 20:32" placement="top" color="green">
+        <h4>版本v2.10<br>添加导航分区，包括一下站点和资源</h4>
+    </el-timeline-item>
     <el-timeline-item timestamp="2025/04/27 00:12" placement="top" color="green">
         <h4>版本v2.9<br>参考DoIt主题，添加card插件</h4>
     </el-timeline-item>
@@ -192,3 +195,11 @@
     })
   </script>
 </html>
+
+
+
+
+
+
+
+
