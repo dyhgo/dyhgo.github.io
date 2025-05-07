@@ -18,3 +18,8 @@
 | b2丢超市烟| {{< image src="/images/cs2/mirage/smoke_backalley2market_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_backalley2market_2.jpg">}}|
 |b2丢b小烟 | {{< image src="/images/cs2/mirage/smoke_backalley2bshort_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_backalley2bshort_2.jpg">}}|
 |下水道丢vip烟 |{{< image src="/images/cs2/mirage/smoke_underpass2window_1.jpg">}} | {{< image src="/images/cs2/mirage/smoke_underpass2window_2.jpg">}}|
+|b2回防烟（火） | {{< image src="/images/cs2/mirage/smoke_bsite2baprs_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_bsite2baprs_2.jpg">}}|
+|a回防闪| {{< image src="/images/cs2/mirage/flash_a_rotation.jpg">}}| {{< image src="/images/cs2/mirage/flash_a_rotation.jpg">}}|
+| b回防闪| {{< image src="/images/cs2/mirage/flash_b_rotation.jpg">}}|{{< image src="/images/cs2/mirage/flash_b_rotation.jpg">}} |
+
+
