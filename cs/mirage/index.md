@@ -21,5 +21,9 @@
 |b2回防烟（火） | {{< image src="/images/cs2/mirage/smoke_bsite2baprs_1.jpg">}}| {{< image src="/images/cs2/mirage/smoke_bsite2baprs_2.jpg">}}|
 |a回防闪| {{< image src="/images/cs2/mirage/flash_a_rotation.jpg">}}| {{< image src="/images/cs2/mirage/flash_a_rotation.jpg">}}|
 | b回防闪| {{< image src="/images/cs2/mirage/flash_b_rotation.jpg">}}|{{< image src="/images/cs2/mirage/flash_b_rotation.jpg">}} |
+| jungle丢匪跳火| {{< image src="/images/cs2/mirage/molotov_jungle2tetris_1.jpg">}}| {{< image src="/images/cs2/mirage/molotov_jungle2tetris_2.jpg">}}|
+| jungle丢a点回防闪| {{< image src="/images/cs2/mirage/flash_jungle2asite_1.jpg">}}| {{< image src="/images/cs2/mirage/flash_jungle2asite_2.jpg">}}|
+
+
 
 
