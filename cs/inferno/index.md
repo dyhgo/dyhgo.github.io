@@ -5,7 +5,7 @@
 | 内容 | 站位 | 瞄点 |
 |-------|-------|-------|
 | 香蕉道丢警家烟（弃用）| {{< image src="/images/cs2/inferno/smoke_banana2ct_1_deprecated.jpg">}}|{{< image src="/images/cs2/inferno/smoke_banana2ct_2_deprecated.jpg">}} |
-| 矮墙丢棺材烟| {{< image src="/images/cs2/inferno/smoke_banana2coffins_1.jpg">}}|{{< image src="/images/cs2/inferno/smoke_banana2coffins_2.jpg">}} |
+| 矮墙丢棺材烟（弃用）| {{< image src="/images/cs2/inferno/smoke_banana2coffins_1_deprecated.jpg">}}|{{< image src="/images/cs2/inferno/smoke_banana2coffins_2_deprecated.jpg">}} |
 | 木板丢三箱火| {{< image src="/images/cs2/inferno/molotov_car2quad_1.jpg">}}| {{< image src="/images/cs2/inferno/molotov_car2quad_2.jpg">}}|
 | 木板丢一箱二箱火|{{< image src="/images/cs2/inferno/molotov_car21st2nd_1.jpg">}} | {{< image src="/images/cs2/inferno/molotov_car21st2nd_2.jpg">}}|
 |香蕉道反清闪 | {{< image src="/images/cs2/inferno/flash_ct2banana_1.jpg">}}| {{< image src="/images/cs2/inferno/flash_ct2banana_2.jpg">}}|
@@ -20,4 +20,7 @@
 |vip下丢连接前点深烟 |{{< image src="/images/cs2/inferno/smoke_stairs2along_1.jpg">}} | {{< image src="/images/cs2/inferno/smoke_stairs2along_2.jpg">}}|
 |b进攻闪 |{{< image src="/images/cs2/inferno/flash_banana2bsite_1.jpg">}} |{{< image src="/images/cs2/inferno/flash_banana2bsite_2.jpg">}} |
 | b回防闪（跑双键）|{{< image src="/images/cs2/inferno/flash_b_rotation_1.jpg">}} | {{< image src="/images/cs2/inferno/flash_b_rotation_2.jpg">}}|
+| 矮墙丢棺材烟| {{< image src="/images/cs2/inferno/smoke_banana2coffins_1.png">}}|{{< image src="/images/cs2/inferno/smoke_banana2coffins_2.png">}} |
+| b进攻闪（更好用）|{{< image src="/images/cs2/inferno/flash_bpop_1.png">}} |{{< image src="/images/cs2/inferno/flash_bpop_2.png">}} |
+
 

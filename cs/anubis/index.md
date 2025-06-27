@@ -15,8 +15,9 @@
 | a回防包点雷|{{<image src="/images/cs2/anubis/grenade_heaven2asite_1.jpg">}} | {{<image src="/images/cs2/anubis/grenade_heaven2asite_2.jpg">}}|
 |喷泉自助闪 | {{<image src="/images/cs2/anubis/flash_fountain_self_1.jpg">}}|{{<image src="/images/cs2/anubis/flash_fountain_self_2.jpg">}} |
 | a点进攻闪| {{<image src="/images/cs2/anubis/flash_main2asite_1.jpg">}}| {{<image src="/images/cs2/anubis/flash_main2asite_2.jpg">}}|
-| a外丢连接烟| {{<image src="/images/cs2/anubis/smoke_boat2connector_1.jpg">}}|{{<image src="/images/cs2/anubis/smoke_boat2connector_2.jpg">}} |
+| a外跳台丢连接烟| {{<image src="/images/cs2/anubis/smoke_upper2connector_1.jpg">}}|{{<image src="/images/cs2/anubis/smoke_upper2connector_2.jpg">}} |
 | a外丢天堂烟| {{<image src="/images/cs2/anubis/smoke_boat2heaven_1.jpg">}}| {{<image src="/images/cs2/anubis/smoke_boat2heaven_2.jpg">}}|
+| a外跳台下丢连接烟|{{<image src="/images/cs2/anubis/smoke_drop2connector_1.png">}} |{{<image src="/images/cs2/anubis/smoke_drop2connector_2.png">}}|
 
 
 
