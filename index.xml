@@ -3,9 +3,17 @@
         <title>This is DYH</title>
         <link>https://dyhgo.github.io/</link>
         <description>这是一个网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 21 May 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 13 Jul 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>CS2游戏内设置对应指令</title>
+    <link>https://dyhgo.github.io/posts/cs2_in_game_setting_command/</link>
+    <pubDate>Sun, 13 Jul 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/cs2_in_game_setting_command/</guid>
+    <description><![CDATA[<p>打游戏时突然蓝屏，然后电脑强制更新，重启后设置全变成默认。。。</p>
+<p>为了后续方便在不同电脑上玩且在重装系统后能一键恢复设置，所以将原来的设置保存到cfg文件，最后加载cfg文件即可</p>]]></description>
+</item><item>
     <title>balisong</title>
     <link>https://dyhgo.github.io/posts/balisong/</link>
     <pubDate>Wed, 26 Feb 2025 00:00:00 &#43;0000</pubDate>
@@ -932,24 +940,5 @@
     <author>作者</author>
     <guid>https://dyhgo.github.io/posts/test_password/</guid>
     <description><![CDATA[<p>hahahah</p>]]></description>
-</item><item>
-    <title>docker2</title>
-    <link>https://dyhgo.github.io/posts/docker2/</link>
-    <pubDate>Thu, 11 Jan 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/docker2/</guid>
-    <description><![CDATA[<p><a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreffer">参考链接</a></p>
-<h2 id="containerize-an-application">Containerize an application</h2>
-<p>构建应用的镜像</p>
-<p>编写Dockerfile，构建镜像（假设镜像名叫getting-started）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker build -t getting-started .
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>根据镜像创建容器</p>]]></description>
 </item></channel>
 </rss>

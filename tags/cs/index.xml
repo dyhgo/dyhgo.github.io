@@ -6,8 +6,15 @@
     <description>Recent content in Cs on This is DYH</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Jul 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dyhgo.github.io/tags/cs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS2游戏内设置对应指令</title>
+      <link>https://dyhgo.github.io/posts/cs2_in_game_setting_command/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/cs2_in_game_setting_command/</guid>
+      <description>&lt;p&gt;打游戏时突然蓝屏，然后电脑强制更新，重启后设置全变成默认。。。&lt;/p&gt;&#xA;&lt;p&gt;为了后续方便在不同电脑上玩且在重装系统后能一键恢复设置，所以将原来的设置保存到cfg文件，最后加载cfg文件即可&lt;/p&gt;</description>
+    </item>
     <item>
       <title>CS:GO参数设置</title>
       <link>https://dyhgo.github.io/posts/csgo%E5%8F%82%E6%95%B0%E8%AE%BE%E7%BD%AE/</link>

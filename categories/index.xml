@@ -6,8 +6,15 @@
     <description>Recent content in Categories on This is DYH</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 13 Jul 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dyhgo.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>GAME</title>
+      <link>https://dyhgo.github.io/categories/game/</link>
+      <pubDate>Sun, 13 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/categories/game/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Problemlist</title>
       <link>https://dyhgo.github.io/categories/problemlist/</link>
@@ -55,13 +62,6 @@
       <link>https://dyhgo.github.io/categories/slam/</link>
       <pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate>
       <guid>https://dyhgo.github.io/categories/slam/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GAME</title>
-      <link>https://dyhgo.github.io/categories/game/</link>
-      <pubDate>Wed, 13 Jul 2022 00:00:00 +0000</pubDate>
-      <guid>https://dyhgo.github.io/categories/game/</guid>
       <description></description>
     </item>
     <item>

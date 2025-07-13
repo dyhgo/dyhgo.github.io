@@ -171,6 +171,12 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/tf-idf/">tf-idf</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-10-05">2021-10-05</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a>&nbsp;<a href="/categories/courses/"><i class="far fa-folder fa-fw"></i>Courses</a></span></div><div class="content"><p>记录一下tf-idf</p>
+<p>TF-IDF（term frequency–inverse document frequency）是一种用于信息检索与数据挖掘的常用加权技术。TF为词频，定义为</p></div><div class="post-footer">
+        <a href="/posts/tf-idf/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cs/">Cs</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-cf/">每日一题 (CF)</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-10-02">2021-10-02</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>Problemlist</a></span></div><div class="content"><h2 id="扫描线">扫描线</h2>
 <h3 id="题意">题意</h3>
@@ -2225,41 +2231,6 @@ $$</p>
 <p>给一个数组，刚开始时可以选择将一个数改成任何数，也可以不改，做以下操作直到每个数相等</p></div><div class="post-footer">
         <a href="/posts/codeforces-round-688-div.-2-a~d/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/greedy/">Greedy</a>,&nbsp;<a href="/tags/construct/">Construct</a>,&nbsp;<a href="/tags/implementation/">Implementation</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/abc184/">abc184</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-12-02">2020-12-02</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h2 id="a---determinant"><a href="https://atcoder.jp/contests/abc184/tasks/abc184_a" target="_blank" rel="noopener noreffer">A - Determinant</a></h2>
-<h3 id="题意">题意</h3>
-<p>求二阶行列式</p>
-<h3 id="题解">题解</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&#34;bits/stdc++.h&#34;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span> <span class="o">&gt;&gt;</span> <span class="n">c</span> <span class="o">&gt;&gt;</span> <span class="n">d</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">*</span> <span class="n">d</span> <span class="o">-</span> <span class="n">c</span> <span class="o">*</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="b---quizzes"><a href="https://atcoder.jp/contests/abc184/tasks/abc184_b" target="_blank" rel="noopener noreffer">B - Quizzes</a></h2>
-<h3 id="题意-1">题意</h3>
-<p>给n个问题，和答题情况，答对加1，答错减1（为0不扣分），初始分数x，求最终分数</p></div><div class="post-footer">
-        <a href="/posts/abc184/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/bfs/">Bfs</a>,&nbsp;<a href="/tags/dp/">Dp</a>,&nbsp;<a href="/tags/binary_search/">Binary_search</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
