@@ -6,8 +6,15 @@
     <description>Recent content in Note on This is DYH</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 01 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dyhgo.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>广告基本术语</title>
+      <link>https://dyhgo.github.io/posts/ad_terms/</link>
+      <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/ad_terms/</guid>
+      <description>&lt;h2 id=&#34;角色&#34;&gt;角色&lt;/h2&gt;&#xA;&lt;table&gt;&#xA;  &lt;thead&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;th&gt;角色&lt;/th&gt;&#xA;          &lt;th&gt;作用&lt;/th&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/thead&gt;&#xA;  &lt;tbody&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;用户&lt;/td&gt;&#xA;          &lt;td&gt;看广告&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;流量主&lt;/td&gt;&#xA;          &lt;td&gt;提供广告位&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;广告主&lt;/td&gt;&#xA;          &lt;td&gt;投放广告&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;需求方平台DSP&lt;/td&gt;&#xA;          &lt;td&gt;为广告主提供服务，相当于中介&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;供给方平台SSP&lt;/td&gt;&#xA;          &lt;td&gt;为流量主提供服务，相当于中介&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;广告交易平台&lt;/td&gt;&#xA;          &lt;td&gt;类似拍卖场，对接DSP和SSP，可以对广告位竞价&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;      &lt;tr&gt;&#xA;          &lt;td&gt;数据管理平台&lt;/td&gt;&#xA;          &lt;td&gt;对接DSP，拥有用户数据、画像、标签&lt;/td&gt;&#xA;      &lt;/tr&gt;&#xA;  &lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;a class=&#34;lightgallery&#34; href=&#34;https://dyhgo.github.io/images/ad_terms/IMG792.jpg&#34; title=&#34;/images/ad_terms/IMG792.jpg&#34; data-thumbnail=&#34;/images/ad_terms/IMG792.jpg&#34;&gt;&#xD;&#xA;        &lt;img&#xD;&#xA;            class=&#34;lazyload&#34;&#xD;&#xA;            src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;            data-src=&#34;https://dyhgo.github.io/images/ad_terms/IMG792.jpg&#34;&#xD;&#xA;            data-srcset=&#34;https://dyhgo.github.io/images/ad_terms/IMG792.jpg, https://dyhgo.github.io/images/ad_terms/IMG792.jpg 1.5x, https://dyhgo.github.io/images/ad_terms/IMG792.jpg 2x&#34;&#xD;&#xA;            data-sizes=&#34;auto&#34;&#xD;&#xA;            alt=&#34;/images/ad_terms/IMG792.jpg&#34; /&gt;&#xD;&#xA;    &lt;/a&gt;&#xA;&lt;h2 id=&#34;指标&#34;&gt;指标&lt;/h2&gt;&#xA;&lt;p&gt;一般按某个广告位来讲&lt;/p&gt;</description>
+    </item>
     <item>
       <title>git补充2</title>
       <link>https://dyhgo.github.io/posts/git%E8%A1%A5%E5%85%852/</link>
