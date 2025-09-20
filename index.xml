@@ -3,9 +3,17 @@
         <title>This is DYH</title>
         <link>https://dyhgo.github.io/</link>
         <description>这是一个网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 25 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Sep 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://dyhgo.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>vim指令速查</title>
+    <link>https://dyhgo.github.io/posts/vim/</link>
+    <pubDate>Sun, 07 Sep 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/vim/</guid>
+    <description><![CDATA[<p>vim有三种模式，命令模式（command line），输入模式（insert mode），命令行模式（command-line mode）
+</p>]]></description>
+</item><item>
     <title>广告基本术语</title>
     <link>https://dyhgo.github.io/posts/ad_terms/</link>
     <pubDate>Mon, 25 Aug 2025 00:00:00 &#43;0000</pubDate>
@@ -959,29 +967,5 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>对于顺序的数组，可以先随机洗牌</p>]]></description>
-</item><item>
-    <title>redis</title>
-    <link>https://dyhgo.github.io/posts/redis/</link>
-    <pubDate>Tue, 20 Feb 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/redis/</guid>
-    <description><![CDATA[<h2 id="基础篇">基础篇</h2>
-<h3 id="redis命令">redis命令</h3>
-<h4 id="通用命令">通用命令</h4>
-<p></p>
-<h4 id="string类型">String类型</h4>
-<p></p>
-<p></p>
-<h4 id="key的层级结构">key的层级结构</h4>
-<p>e.g.</p>
-<p><code>douyin:user:1</code></p>
-<p><code>douyin:user:2</code></p>
-<p><code>douyin:product:1</code></p>
-<h4 id="hash类型">Hash类型</h4>
-<p></p>
-<p></p>
-<h4 id="list类型">List类型</h4>
-<p></p>
-<p></p>]]></description>
 </item></channel>
 </rss>

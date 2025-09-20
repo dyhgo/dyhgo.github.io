@@ -6,8 +6,15 @@
     <description>Recent content in Linux on This is DYH</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 01 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 07 Sep 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://dyhgo.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim指令速查</title>
+      <link>https://dyhgo.github.io/posts/vim/</link>
+      <pubDate>Sun, 07 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/vim/</guid>
+      <description>&lt;p&gt;vim有三种模式，命令模式（command line），输入模式（insert mode），命令行模式（command-line mode）&#xA;&lt;img&#xD;&#xA;        class=&#34;lazyload&#34;&#xD;&#xA;        src=&#34;https://dyhgo.github.io/svg/loading.min.svg&#34;&#xD;&#xA;        data-src=&#34;https://i-blog.csdnimg.cn/img_convert/b2615e7cc613c7bad43a20d6b4819cf9.png#pic_center&#34;&#xD;&#xA;        data-srcset=&#34;https://i-blog.csdnimg.cn/img_convert/b2615e7cc613c7bad43a20d6b4819cf9.png#pic_center, https://i-blog.csdnimg.cn/img_convert/b2615e7cc613c7bad43a20d6b4819cf9.png#pic_center 1.5x, https://i-blog.csdnimg.cn/img_convert/b2615e7cc613c7bad43a20d6b4819cf9.png#pic_center 2x&#34;&#xD;&#xA;        data-sizes=&#34;auto&#34;&#xD;&#xA;        alt=&#34;https://i-blog.csdnimg.cn/img_convert/b2615e7cc613c7bad43a20d6b4819cf9.png#pic_center&#34;&#xD;&#xA;        title=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;</description>
+    </item>
     <item>
       <title>test_password</title>
       <link>https://dyhgo.github.io/posts/test_password/</link>
