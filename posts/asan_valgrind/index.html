@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>使用ASAN和Valgrind调试C&#43;&#43;内存问题 - This is DYH</title><meta name="Description" content="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><meta property="og:url" content="https://dyhgo.github.io/posts/asan_valgrind/">
+  <meta property="og:site_name" content="This is DYH">
+  <meta property="og:title" content="使用ASAN和Valgrind调试C&#43;&#43;内存问题">
+  <meta property="og:description" content="使用ASAN和Valgrind调试C&#43;&#43;内存问题">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-03T00:00:00+00:00">
+    <meta property="article:tag" content="Note">
+    <meta property="og:image" content="https://dyhgo.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dyhgo.github.io/logo.png">
+  <meta name="twitter:title" content="使用ASAN和Valgrind调试C&#43;&#43;内存问题">
+  <meta name="twitter:description" content="使用ASAN和Valgrind调试C&#43;&#43;内存问题">
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/asan_valgrind/" /><link rel="prev" href="https://dyhgo.github.io/posts/golang_panic_fatal_exit/" /><link rel="next" href="https://dyhgo.github.io/posts/gdb_quickstart/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.752cbb922952a861725d3bef4af3169a092317cab31c1bfd208914ce3d67358d.css" integrity="sha256-dSy7kilSqGFyXTvvSvMWmgkjF8qzHBv9IIkUzj1nNY0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "使用ASAN和Valgrind调试C++内存问题",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/posts\/asan_valgrind\/"
+        },"genre": "posts","keywords": "note","wordcount":  4431 ,
+        "url": "https:\/\/dyhgo.github.io\/posts\/asan_valgrind\/","datePublished": "2025-10-03T00:00:00+00:00","dateModified": "2025-10-03T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "使用ASAN和Valgrind调试C++内存问题"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><a class="menu-item" href="/navigation/"> 导航 </a><span class="menu-item delimiter"></span>
+
+                
+
+                <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                <option> 清单 </option>
+                                <option value="https://da1yh.xyz/list/music/">音乐</option>
+                                <option value="https://da1yh.xyz/list/anime/">番剧</option>
+                                <option value="https://da1yh.xyz/list/game/">游戏</option>
+                                <option value="https://da1yh.xyz/list/poppin/">poppin</option>
+                            </select></a>
+
+                            <a href="javascript:void(0);" class="menu-item language" title="时光">时光<i class="fas fa-chevron-right fa-fw"></i>
+                                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                            <option> 时光 </option>
+                                            <option value="https://da1yh.xyz/album/footprint/">足迹</option>
+                                            <option value="https://da1yh.xyz/album/dish/">烟火</option>
+                                        </select></a>
+
+                        
+
+                                <a href="javascript:void(0);" class="menu-item language" title="CS">CS<i class="fas fa-chevron-right fa-fw"></i>
+                                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                    <option > CS </option>
+                                            <option value="https://da1yh.xyz/cs/dust2/">dust2</option>
+                                            <option value="https://da1yh.xyz/cs/inferno/">inferno</option>
+                                            <option value="https://da1yh.xyz/cs/mirage/">mirage</option>
+                                            <option value="https://da1yh.xyz/cs/ancient/">ancient</option>
+                                            <option value="https://da1yh.xyz/cs/anubis/">anubis</option>
+                                            <option value="https://da1yh.xyz/cs/train/">train</option>
+                                        </select>
+                                        </a>
+
+                                <span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a class="menu-item" href="/navigation/" title="">导航</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            
+
+            <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option> 清单 </option>
+                            <option value="https://da1yh.xyz/list/music/">音乐</option>
+                            <option value="https://da1yh.xyz/list/anime/">番剧</option>
+                            <option value="https://da1yh.xyz/list/game/">游戏</option>
+                            <option value="https://da1yh.xyz/list/poppin/">poppin</option>
+                        </select></a>
+            
+                        <a href="javascript:void(0);" class="menu-item language" title="时光">时光<i class="fas fa-chevron-right fa-fw"></i>
+                            <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                        <option> 时光 </option>
+                                        <option value="https://da1yh.xyz/album/footprint/">足迹</option>
+                                        <option value="https://da1yh.xyz/album/dish/">烟火</option>
+                                    </select></a>
+                
+
+                    
+
+                            <a href="javascript:void(0);" class="menu-item language" title="CS">CS<i class="fas fa-chevron-right fa-fw"></i>
+                                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                            <option> CS </option>
+                                            <option value="https://da1yh.xyz/cs/dust2/">dust2</option>
+                                            <option value="https://da1yh.xyz/cs/inferno/">inferno</option>
+                                            <option value="https://da1yh.xyz/cs/mirage/">mirage</option>
+                                            <option value="https://da1yh.xyz/cs/ancient/">ancient</option>
+                                            <option value="https://da1yh.xyz/cs/anubis/">anubis</option>
+                                            <option value="https://da1yh.xyz/cs/train/">train</option>
+                                        </select></a>
+
+                            
+
+        </div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">使用ASAN和Valgrind调试C&#43;&#43;内存问题</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2025-10-03">2025-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 4431 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 9 分钟&nbsp;<span id="/posts/asan_valgrind/" class="leancloud_visitors" data-flag-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#valgrind安装">Valgrind安装</a></li>
+    <li><a href="#asan安装">ASAN安装</a></li>
+    <li><a href="#valgrind的使用">Valgrind的使用</a></li>
+    <li><a href="#asan的使用">ASAN的使用</a></li>
+    <li><a href="#两者对比">两者对比</a></li>
+    <li><a href="#内存泄露">内存泄露</a>
+      <ul>
+        <li><a href="#asan调试结果">ASAN调试结果</a></li>
+        <li><a href="#valgrind调试结果">Valgrind调试结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#访问野指针">访问野指针</a>
+      <ul>
+        <li><a href="#asan调试结果-1">ASAN调试结果</a></li>
+        <li><a href="#valgrind调试结果-1">Valgrind调试结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#数组越界">数组越界</a>
+      <ul>
+        <li><a href="#asan调试结果-2">ASAN调试结果</a></li>
+        <li><a href="#valgrind调试结果-2">Valgrind调试结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#重复释放">重复释放</a>
+      <ul>
+        <li><a href="#asan调试结果-3">ASAN调试结果</a></li>
+        <li><a href="#valgrind调试结果-3">Valgrind调试结果</a></li>
+      </ul>
+    </li>
+    <li><a href="#参考">参考</a></li>
+    <li><a href="#使用心得">使用心得</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>以下针对C++中常见的内存问题，使用Address Sanitizer和Valgrind进行调试</p>
+<p>Linux环境 CentOS 7.9</p>
+<h2 id="valgrind安装">Valgrind安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install valgrind
+</span></span><span class="line"><span class="cl">valgrind --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="asan安装">ASAN安装</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install libasan
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="valgrind的使用">Valgrind的使用</h2>
+<p>valgrind是一套工具集，最常用的工具是memcheck</p>
+<p>先编译，带<code>-g</code>，然后运行</p>
+<p><code>valgrind [选项] 可执行程序 [程序参数]</code>，比如<code>valgrind --leak-check=yes ./your_program</code></p>
+<p>常用的选项有</p>
+<ul>
+<li>&ndash;leak-check=yes：启用内存泄漏检测</li>
+<li>&ndash;leak-check=full：显示更详细的内存泄漏信息</li>
+<li>&ndash;show-leak-kinds=all：显示所有类型的内存泄漏</li>
+<li>&ndash;track-origins=yes：跟踪未初始化内存的来源</li>
+<li>&ndash;vgdb=yes：启用调试模式，可配合 gdb 使用</li>
+</ul>
+<p>假设C代码为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 有内存泄漏的函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">leak_memory</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 分配内存但未释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="c1">// 使用内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 没有free(ptr)，导致内存泄漏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 正常的内存分配和释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">normal_memory</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span> <span class="c1">// 正确释放内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">leak_memory</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">normal_memory</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译它 <code>gcc test.c -o test -g</code>，运行<code>valgrind --leak-check=full ./test</code> <strong>（注意此处不能写test，要写./test，让它实际运行起来）</strong></p>
+<p>输出的结果为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==5322== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==5322== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==5322== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==5322== Command: ./test
+</span></span><span class="line"><span class="cl">==5322== 
+</span></span><span class="line"><span class="cl">==5322== 
+</span></span><span class="line"><span class="cl">==5322== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==5322==     in use at exit: 40 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==5322==   total heap usage: 2 allocs, 1 frees, 60 bytes allocated
+</span></span><span class="line"><span class="cl">==5322== 
+</span></span><span class="line"><span class="cl">==5322== 40 bytes in 1 blocks are definitely lost in loss record 1 of 1
+</span></span><span class="line"><span class="cl">==5322==    at 0x4C29F73: malloc (vg_replace_malloc.c:309)
+</span></span><span class="line"><span class="cl">==5322==    by 0x40058E: leak_memory (test.c:5)
+</span></span><span class="line"><span class="cl">==5322==    by 0x4005E1: main (test.c:20)
+</span></span><span class="line"><span class="cl">==5322== 
+</span></span><span class="line"><span class="cl">==5322== LEAK SUMMARY:
+</span></span><span class="line"><span class="cl">==5322==    definitely lost: 40 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==5322==    indirectly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==5322==      possibly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==5322==    still reachable: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==5322==         suppressed: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==5322== 
+</span></span><span class="line"><span class="cl">==5322== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==5322== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>信息解读</p>
+<ul>
+<li>HEAP SUMMARY：显示堆内存使用概况，这里显示有 40 字节未释放，总共分配2次，一共分配60字节</li>
+<li>definitely lost：确定的内存泄漏，40 字节，位于leak_memory函数的第 5 行</li>
+<li>LEAK SUMMARY：汇总各类内存泄漏情况</li>
+</ul>
+<p>内存泄露类型</p>
+<ul>
+<li>definitely lost：确定的内存泄漏，必须修复</li>
+<li>indirectly lost：间接泄漏，通常是由于指向它的指针被泄漏导致</li>
+<li>possibly lost：可能的泄漏，需要进一步检查</li>
+<li>still reachable：仍然可访问的内存，通常不需要修复</li>
+</ul>
+<p>当修复上述代码后，使用Valgrind检测结果为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==5428== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==5428== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==5428== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==5428== Command: ./test
+</span></span><span class="line"><span class="cl">==5428== 
+</span></span><span class="line"><span class="cl">==5428== 
+</span></span><span class="line"><span class="cl">==5428== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==5428==     in use at exit: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==5428==   total heap usage: 2 allocs, 2 frees, 60 bytes allocated
+</span></span><span class="line"><span class="cl">==5428== 
+</span></span><span class="line"><span class="cl">==5428== All heap blocks were freed -- no leaks are possible
+</span></span><span class="line"><span class="cl">==5428== 
+</span></span><span class="line"><span class="cl">==5428== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==5428== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="asan的使用">ASAN的使用</h2>
+<p>注意ASAN在检测不到内存问题时，无输出</p>
+<p>在编译时添加flag</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># GCC或Clang通用
+</span></span><span class="line"><span class="cl">-fsanitize=address  # 启用AddressSanitizer
+</span></span><span class="line"><span class="cl">-g                  # 保留调试信息（用于定位错误位置）
+</span></span><span class="line"><span class="cl">-fno-omit-frame-pointer  # 优化栈跟踪显示（可选，推荐添加）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 编译多个文件（链接时也需要添加ASan标志）
+</span></span><span class="line"><span class="cl">g++ -fsanitize=address -g -fno-omit-frame-pointer -o app file1.cpp file2.cpp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>然后直接运行可执行文件即可</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">./app
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>比如有如下C代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 有内存泄漏的函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">leak_memory</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">10</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">// 分配内存但未释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span> <span class="c1">// 使用内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 没有free(ptr)，导致内存泄漏
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 正常的内存分配和释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">normal_memory</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="nf">malloc</span><span class="p">(</span><span class="mi">5</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">ptr</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ptr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span> <span class="c1">// 正确释放内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">leak_memory</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">normal_memory</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>编译并执行它 <code>gcc -fsanitize=address -g -fno-omit-frame-pointer -o test test.c &amp;&amp; ./test</code></p>
+<p>ASAN无法检测出错误</p>
+<p>比如如下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdlib.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="o">*</span><span class="n">pp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="p">)</span><span class="nf">malloc</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">ptr</span><span class="p">);</span>       
+</span></span><span class="line"><span class="cl">    <span class="nf">free</span><span class="p">(</span><span class="n">pp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">*</span><span class="n">pp</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>       
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>因为asan在检测到内存泄漏后就会停止，如果要检测出所有的内存错误，可以通过设置 ASAN_OPTIONS 环境变量中的 halt_on_error=0 选项实现</p>
+<p><code>export ASAN_OPTIONS=&quot;halt_on_error=0:detect_leaks=1&quot;</code></p>
+<p>但是程序一旦遇到内存错误，就是不稳定的，后续检测出的内存错误可能是之前引起的，所以一般只检测最先出现的内存错误</p>
+<p>执行./test，输出</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">=================================================================
+</span></span><span class="line"><span class="cl">==7806== ERROR: AddressSanitizer: heap-use-after-free on address 0x60040000dff0 at pc 0x400770 bp 0x7fff72479600 sp 0x7fff724795f0
+</span></span><span class="line"><span class="cl">WRITE of size 4 at 0x60040000dff0 thread T0
+</span></span><span class="line"><span class="cl">    #0 0x40076f (/root/test+0x40076f)
+</span></span><span class="line"><span class="cl">    #1 0x7f6356c2c554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">    #2 0x400638 (/root/test+0x400638)
+</span></span><span class="line"><span class="cl">0x60040000dff0 is located 0 bytes inside of 4-byte region [0x60040000dff0,0x60040000dff4)
+</span></span><span class="line"><span class="cl">freed by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f6356fedff9 (/usr/lib64/libasan.so.0.0.0+0x15ff9)
+</span></span><span class="line"><span class="cl">    #1 0x40072c (/root/test+0x40072c)
+</span></span><span class="line"><span class="cl">    #2 0x7f6356c2c554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">previously allocated by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f6356fee119 (/usr/lib64/libasan.so.0.0.0+0x16119)
+</span></span><span class="line"><span class="cl">    #1 0x40070e (/root/test+0x40070e)
+</span></span><span class="line"><span class="cl">    #2 0x7f6356c2c554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">Shadow bytes around the buggy address:
+</span></span><span class="line"><span class="cl">  0x0c00ffff9ba0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bb0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bc0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bd0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9be0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">=&gt;0x0c00ffff9bf0: fa fa fa fa fa fa fa fa fa fa fd fa fa fa[fd]fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">Shadow byte legend (one shadow byte represents 8 application bytes):
+</span></span><span class="line"><span class="cl">  Addressable:           00
+</span></span><span class="line"><span class="cl">  Partially addressable: 01 02 03 04 05 06 07 
+</span></span><span class="line"><span class="cl">  Heap left redzone:     fa
+</span></span><span class="line"><span class="cl">  Heap righ redzone:     fb
+</span></span><span class="line"><span class="cl">  Freed Heap region:     fd
+</span></span><span class="line"><span class="cl">  Stack left redzone:    f1
+</span></span><span class="line"><span class="cl">  Stack mid redzone:     f2
+</span></span><span class="line"><span class="cl">  Stack right redzone:   f3
+</span></span><span class="line"><span class="cl">  Stack partial redzone: f4
+</span></span><span class="line"><span class="cl">  Stack after return:    f5
+</span></span><span class="line"><span class="cl">  Stack use after scope: f8
+</span></span><span class="line"><span class="cl">  Global redzone:        f9
+</span></span><span class="line"><span class="cl">  Global init order:     f6
+</span></span><span class="line"><span class="cl">  Poisoned by user:      f7
+</span></span><span class="line"><span class="cl">  ASan internal:         fe
+</span></span><span class="line"><span class="cl">==7806== ABORTING
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中<code>heap-use-after-free</code>，表明内存错误类型</p>
+<p><code>WRITE of size 4 at 0x60040000dff0</code> 表示写4字节</p>
+<p><code>freed by thread T0 here</code> 表示在此处被释放</p>
+<p><code>previously allocated by thread T0 here</code> 表示在此处分配内存</p>
+<p><code>at pc 0x400770</code> 表示在此地址产生错误</p>
+<p>通过<code>addr2line -e test 0x400770</code> 可以查看地址对应的代码位置，输出为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x400770
+</span></span><span class="line"><span class="cl">/root/test.c:8
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="两者对比">两者对比</h2>
+<table>
+  <thead>
+      <tr>
+          <th>特性</th>
+          <th>ASan</th>
+          <th>Valgrind (memcheck)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>速度</td>
+          <td>快（2-3 倍慢于原始程序）</td>
+          <td>慢（10-50 倍慢于原始程序）</td>
+      </tr>
+      <tr>
+          <td>内存开销</td>
+          <td>大（2-3 倍内存使用）</td>
+          <td>更大（5-10 倍内存使用）</td>
+      </tr>
+      <tr>
+          <td>检测范围</td>
+          <td>支持更多内存错误（如溢出）</td>
+          <td>支持内存泄漏和部分错误</td>
+      </tr>
+      <tr>
+          <td>使用方式</td>
+          <td>编译时插入检测代码</td>
+          <td>运行时拦截内存操作</td>
+      </tr>
+      <tr>
+          <td>适合场景</td>
+          <td>开发阶段快速检测</td>
+          <td>发布前全面检测</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="内存泄露">内存泄露</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span> <span class="c1">// 堆上分配100个int的数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 使用内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 错误：未执行delete[] p; 函数结束后p销毁，但堆内存未释放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="asan调试结果">ASAN调试结果</h3>
+<p>无信息输出</p>
+<h3 id="valgrind调试结果">Valgrind调试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==8327== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==8327== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==8327== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==8327== Command: ./test
+</span></span><span class="line"><span class="cl">==8327== 
+</span></span><span class="line"><span class="cl">==8327== 
+</span></span><span class="line"><span class="cl">==8327== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==8327==     in use at exit: 400 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==8327==   total heap usage: 1 allocs, 0 frees, 400 bytes allocated
+</span></span><span class="line"><span class="cl">==8327== 
+</span></span><span class="line"><span class="cl">==8327== 400 bytes in 1 blocks are definitely lost in loss record 1 of 1
+</span></span><span class="line"><span class="cl">==8327==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+</span></span><span class="line"><span class="cl">==8327==    by 0x40069E: func() (test.cpp:6)
+</span></span><span class="line"><span class="cl">==8327==    by 0x4006B7: main (test.cpp:13)
+</span></span><span class="line"><span class="cl">==8327== 
+</span></span><span class="line"><span class="cl">==8327== LEAK SUMMARY:
+</span></span><span class="line"><span class="cl">==8327==    definitely lost: 400 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==8327==    indirectly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==8327==      possibly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==8327==    still reachable: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==8327==         suppressed: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==8327== 
+</span></span><span class="line"><span class="cl">==8327== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==8327== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="访问野指针">访问野指针</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 释放p指向的内存，但p本身未置空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 错误：p已成野指针，再访问其指向的内存（此时为“垃圾内存”）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 行为未定义：可能崩溃、修改其他变量数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="asan调试结果-1">ASAN调试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ ./test 
+</span></span><span class="line"><span class="cl">=================================================================
+</span></span><span class="line"><span class="cl">==9244== ERROR: AddressSanitizer: heap-use-after-free on address 0x60040000dff0 at pc 0x400993 bp 0x7ffcfec78040 sp 0x7ffcfec78030
+</span></span><span class="line"><span class="cl">WRITE of size 4 at 0x60040000dff0 thread T0
+</span></span><span class="line"><span class="cl">    #0 0x400992 (/root/test+0x400992)
+</span></span><span class="line"><span class="cl">    #1 0x4009a7 (/root/test+0x4009a7)
+</span></span><span class="line"><span class="cl">    #2 0x7f958947e554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">    #3 0x400838 (/root/test+0x400838)
+</span></span><span class="line"><span class="cl">0x60040000dff0 is located 0 bytes inside of 4-byte region [0x60040000dff0,0x60040000dff4)
+</span></span><span class="line"><span class="cl">freed by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f958a05c379 (/usr/lib64/libasan.so.0.0.0+0x12379)
+</span></span><span class="line"><span class="cl">    #1 0x40095b (/root/test+0x40095b)
+</span></span><span class="line"><span class="cl">    #2 0x4009a7 (/root/test+0x4009a7)
+</span></span><span class="line"><span class="cl">    #3 0x7f958947e554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">previously allocated by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f958a05c139 (/usr/lib64/libasan.so.0.0.0+0x12139)
+</span></span><span class="line"><span class="cl">    #1 0x40090e (/root/test+0x40090e)
+</span></span><span class="line"><span class="cl">    #2 0x4009a7 (/root/test+0x4009a7)
+</span></span><span class="line"><span class="cl">    #3 0x7f958947e554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">Shadow bytes around the buggy address:
+</span></span><span class="line"><span class="cl">  0x0c00ffff9ba0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bb0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bc0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9bd0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9be0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">=&gt;0x0c00ffff9bf0: fa fa fa fa fa fa fa fa fa fa fa fa fa fa[fd]fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c00: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c10: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c20: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c30: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">  0x0c00ffff9c40: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+</span></span><span class="line"><span class="cl">Shadow byte legend (one shadow byte represents 8 application bytes):
+</span></span><span class="line"><span class="cl">  Addressable:           00
+</span></span><span class="line"><span class="cl">  Partially addressable: 01 02 03 04 05 06 07 
+</span></span><span class="line"><span class="cl">  Heap left redzone:     fa
+</span></span><span class="line"><span class="cl">  Heap righ redzone:     fb
+</span></span><span class="line"><span class="cl">  Freed Heap region:     fd
+</span></span><span class="line"><span class="cl">  Stack left redzone:    f1
+</span></span><span class="line"><span class="cl">  Stack mid redzone:     f2
+</span></span><span class="line"><span class="cl">  Stack right redzone:   f3
+</span></span><span class="line"><span class="cl">  Stack partial redzone: f4
+</span></span><span class="line"><span class="cl">  Stack after return:    f5
+</span></span><span class="line"><span class="cl">  Stack use after scope: f8
+</span></span><span class="line"><span class="cl">  Global redzone:        f9
+</span></span><span class="line"><span class="cl">  Global init order:     f6
+</span></span><span class="line"><span class="cl">  Poisoned by user:      f7
+</span></span><span class="line"><span class="cl">  ASan internal:         fe
+</span></span><span class="line"><span class="cl">==9244== ABORTING
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x400993
+</span></span><span class="line"><span class="cl">/root/test.cpp:9
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="valgrind调试结果-1">Valgrind调试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==9173== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==9173== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==9173== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==9173== Command: ./test
+</span></span><span class="line"><span class="cl">==9173== 
+</span></span><span class="line"><span class="cl">==9173== Invalid write of size 4
+</span></span><span class="line"><span class="cl">==9173==    at 0x400709: func() (test.cpp:9)
+</span></span><span class="line"><span class="cl">==9173==    by 0x400719: main (test.cpp:15)
+</span></span><span class="line"><span class="cl">==9173==  Address 0x5a25040 is 0 bytes inside a block of size 4 free&#39;d
+</span></span><span class="line"><span class="cl">==9173==    at 0x4C2B51D: operator delete(void*) (vg_replace_malloc.c:586)
+</span></span><span class="line"><span class="cl">==9173==    by 0x400704: func() (test.cpp:7)
+</span></span><span class="line"><span class="cl">==9173==    by 0x400719: main (test.cpp:15)
+</span></span><span class="line"><span class="cl">==9173==  Block was alloc&#39;d at
+</span></span><span class="line"><span class="cl">==9173==    at 0x4C2A593: operator new(unsigned long) (vg_replace_malloc.c:344)
+</span></span><span class="line"><span class="cl">==9173==    by 0x4006EE: func() (test.cpp:6)
+</span></span><span class="line"><span class="cl">==9173==    by 0x400719: main (test.cpp:15)
+</span></span><span class="line"><span class="cl">==9173== 
+</span></span><span class="line"><span class="cl">==9173== 
+</span></span><span class="line"><span class="cl">==9173== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==9173==     in use at exit: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==9173==   total heap usage: 1 allocs, 1 frees, 4 bytes allocated
+</span></span><span class="line"><span class="cl">==9173== 
+</span></span><span class="line"><span class="cl">==9173== All heap blocks were freed -- no leaks are possible
+</span></span><span class="line"><span class="cl">==9173== 
+</span></span><span class="line"><span class="cl">==9173== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==9173== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="数组越界">数组越界</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span> <span class="c1">// 数组下标范围0-4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 错误：下标5超出数组边界，访问了数组后面的“无关内存”
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">arr</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 更隐蔽的情况：动态数组越界
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">p</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// 同样越界，破坏堆内存结构 可能导致delete失效
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="asan调试结果-2">ASAN调试结果</h3>
+<p>只显示出最开始的数组越界的错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">=================================================================
+</span></span><span class="line"><span class="cl">==9998== ERROR: AddressSanitizer: stack-buffer-overflow on address 0x7fffb7660554 at pc 0x400a79 bp 0x7fffb7660500 sp 0x7fffb76604f0
+</span></span><span class="line"><span class="cl">WRITE of size 4 at 0x7fffb7660554 thread T0
+</span></span><span class="line"><span class="cl">    #0 0x400a78 (/root/test+0x400a78)
+</span></span><span class="line"><span class="cl">    #1 0x400af0 (/root/test+0x400af0)
+</span></span><span class="line"><span class="cl">    #2 0x7fb9d1fd3554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">    #3 0x4007f8 (/root/test+0x4007f8)
+</span></span><span class="line"><span class="cl">Address 0x7fffb7660554 is located at offset 52 in frame &lt;func&gt; of T0&#39;s stack:
+</span></span><span class="line"><span class="cl">  This frame has 1 object(s):
+</span></span><span class="line"><span class="cl">    [32, 52) &#39;arr&#39;
+</span></span><span class="line"><span class="cl">HINT: this may be a false positive if your program uses some custom stack unwind mechanism or swapcontext
+</span></span><span class="line"><span class="cl">      (longjmp and C++ exceptions *are* supported)
+</span></span><span class="line"><span class="cl">Shadow bytes around the buggy address:
+</span></span><span class="line"><span class="cl">  0x100076ec4050: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec4060: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec4070: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec4080: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec4090: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">=&gt;0x100076ec40a0: 00 00 00 00 f1 f1 f1 f1 00 00[04]f4 f3 f3 f3 f3
+</span></span><span class="line"><span class="cl">  0x100076ec40b0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec40c0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec40d0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec40e0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">  0x100076ec40f0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</span></span><span class="line"><span class="cl">Shadow byte legend (one shadow byte represents 8 application bytes):
+</span></span><span class="line"><span class="cl">  Addressable:           00
+</span></span><span class="line"><span class="cl">  Partially addressable: 01 02 03 04 05 06 07 
+</span></span><span class="line"><span class="cl">  Heap left redzone:     fa
+</span></span><span class="line"><span class="cl">  Heap righ redzone:     fb
+</span></span><span class="line"><span class="cl">  Freed Heap region:     fd
+</span></span><span class="line"><span class="cl">  Stack left redzone:    f1
+</span></span><span class="line"><span class="cl">  Stack mid redzone:     f2
+</span></span><span class="line"><span class="cl">  Stack right redzone:   f3
+</span></span><span class="line"><span class="cl">  Stack partial redzone: f4
+</span></span><span class="line"><span class="cl">  Stack after return:    f5
+</span></span><span class="line"><span class="cl">  Stack use after scope: f8
+</span></span><span class="line"><span class="cl">  Global redzone:        f9
+</span></span><span class="line"><span class="cl">  Global init order:     f6
+</span></span><span class="line"><span class="cl">  Poisoned by user:      f7
+</span></span><span class="line"><span class="cl">  ASan internal:         fe
+</span></span><span class="line"><span class="cl">==9998== ABORTING
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x7fffb7660554
+</span></span><span class="line"><span class="cl">??:0
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x400a79
+</span></span><span class="line"><span class="cl">/root/test.cpp:9
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="valgrind调试结果-2">Valgrind调试结果</h3>
+<p>代码中有2个错误，前面是数组越界，后面是数组越界+内存泄露</p>
+<p>从valgrind可以看出只显示出第二个错误</p>
+<p>在最后2 errors from 2 contexts表明一共存在两个错误，都属于后面那个大错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==9890== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==9890== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==9890== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==9890== Command: ./test
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== Invalid write of size 4
+</span></span><span class="line"><span class="cl">==9890==    at 0x4006D5: func() (test.cpp:12)
+</span></span><span class="line"><span class="cl">==9890==    by 0x4006E5: main (test.cpp:18)
+</span></span><span class="line"><span class="cl">==9890==  Address 0x5a25068 is 12 bytes after a block of size 28 alloc&#39;d
+</span></span><span class="line"><span class="cl">==9890==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+</span></span><span class="line"><span class="cl">==9890==    by 0x4006C8: func() (test.cpp:11)
+</span></span><span class="line"><span class="cl">==9890==    by 0x4006E5: main (test.cpp:18)
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==9890==     in use at exit: 28 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==9890==   total heap usage: 1 allocs, 0 frees, 28 bytes allocated
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== 28 bytes in 1 blocks are definitely lost in loss record 1 of 1
+</span></span><span class="line"><span class="cl">==9890==    at 0x4C2AC38: operator new[](unsigned long) (vg_replace_malloc.c:433)
+</span></span><span class="line"><span class="cl">==9890==    by 0x4006C8: func() (test.cpp:11)
+</span></span><span class="line"><span class="cl">==9890==    by 0x4006E5: main (test.cpp:18)
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== LEAK SUMMARY:
+</span></span><span class="line"><span class="cl">==9890==    definitely lost: 28 bytes in 1 blocks
+</span></span><span class="line"><span class="cl">==9890==    indirectly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==9890==      possibly lost: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==9890==    still reachable: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==9890==         suppressed: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==9890== 
+</span></span><span class="line"><span class="cl">==9890== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==9890== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="重复释放">重复释放</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 第一次释放，p指向的内存已回收
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// 错误：再次释放同一块内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="asan调试结果-3">ASAN调试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ ./test 
+</span></span><span class="line"><span class="cl">=================================================================
+</span></span><span class="line"><span class="cl">==10180== ERROR: AddressSanitizer: attempting double-free on 0x60040000dff0:
+</span></span><span class="line"><span class="cl">    #0 0x7f7524f6b379 (/usr/lib64/libasan.so.0.0.0+0x12379)
+</span></span><span class="line"><span class="cl">    #1 0x400967 (/root/test+0x400967)
+</span></span><span class="line"><span class="cl">    #2 0x400972 (/root/test+0x400972)
+</span></span><span class="line"><span class="cl">    #3 0x7f752438d554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">0x60040000dff0 is located 0 bytes inside of 4-byte region [0x60040000dff0,0x60040000dff4)
+</span></span><span class="line"><span class="cl">freed by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f7524f6b379 (/usr/lib64/libasan.so.0.0.0+0x12379)
+</span></span><span class="line"><span class="cl">    #1 0x40095b (/root/test+0x40095b)
+</span></span><span class="line"><span class="cl">    #2 0x400972 (/root/test+0x400972)
+</span></span><span class="line"><span class="cl">    #3 0x7f752438d554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">previously allocated by thread T0 here:
+</span></span><span class="line"><span class="cl">    #0 0x7f7524f6b139 (/usr/lib64/libasan.so.0.0.0+0x12139)
+</span></span><span class="line"><span class="cl">    #1 0x40090e (/root/test+0x40090e)
+</span></span><span class="line"><span class="cl">    #2 0x400972 (/root/test+0x400972)
+</span></span><span class="line"><span class="cl">    #3 0x7f752438d554 (/usr/lib64/libc-2.17.so+0x22554)
+</span></span><span class="line"><span class="cl">==10180== ABORTING
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x60040000dff0
+</span></span><span class="line"><span class="cl">??:0
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x400967
+</span></span><span class="line"><span class="cl">/root/test.cpp:9
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x400972
+</span></span><span class="line"><span class="cl">/root/test.cpp:14
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x40095b
+</span></span><span class="line"><span class="cl">/root/test.cpp:7
+</span></span><span class="line"><span class="cl">root@iZbp1cqyppyocyfsztmoftZ:~$ addr2line -e test 0x40090e
+</span></span><span class="line"><span class="cl">/root/test.cpp:6
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="valgrind调试结果-3">Valgrind调试结果</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">==10122== Memcheck, a memory error detector
+</span></span><span class="line"><span class="cl">==10122== Copyright (C) 2002-2017, and GNU GPL&#39;d, by Julian Seward et al.
+</span></span><span class="line"><span class="cl">==10122== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+</span></span><span class="line"><span class="cl">==10122== Command: ./test
+</span></span><span class="line"><span class="cl">==10122== 
+</span></span><span class="line"><span class="cl">==10122== Invalid free() / delete / delete[] / realloc()
+</span></span><span class="line"><span class="cl">==10122==    at 0x4C2B51D: operator delete(void*) (vg_replace_malloc.c:586)
+</span></span><span class="line"><span class="cl">==10122==    by 0x400710: func() (test.cpp:9)
+</span></span><span class="line"><span class="cl">==10122==    by 0x40071B: main (test.cpp:14)
+</span></span><span class="line"><span class="cl">==10122==  Address 0x5a25040 is 0 bytes inside a block of size 4 free&#39;d
+</span></span><span class="line"><span class="cl">==10122==    at 0x4C2B51D: operator delete(void*) (vg_replace_malloc.c:586)
+</span></span><span class="line"><span class="cl">==10122==    by 0x400704: func() (test.cpp:7)
+</span></span><span class="line"><span class="cl">==10122==    by 0x40071B: main (test.cpp:14)
+</span></span><span class="line"><span class="cl">==10122==  Block was alloc&#39;d at
+</span></span><span class="line"><span class="cl">==10122==    at 0x4C2A593: operator new(unsigned long) (vg_replace_malloc.c:344)
+</span></span><span class="line"><span class="cl">==10122==    by 0x4006EE: func() (test.cpp:6)
+</span></span><span class="line"><span class="cl">==10122==    by 0x40071B: main (test.cpp:14)
+</span></span><span class="line"><span class="cl">==10122== 
+</span></span><span class="line"><span class="cl">==10122== 
+</span></span><span class="line"><span class="cl">==10122== HEAP SUMMARY:
+</span></span><span class="line"><span class="cl">==10122==     in use at exit: 0 bytes in 0 blocks
+</span></span><span class="line"><span class="cl">==10122==   total heap usage: 1 allocs, 2 frees, 4 bytes allocated
+</span></span><span class="line"><span class="cl">==10122== 
+</span></span><span class="line"><span class="cl">==10122== All heap blocks were freed -- no leaks are possible
+</span></span><span class="line"><span class="cl">==10122== 
+</span></span><span class="line"><span class="cl">==10122== For lists of detected and suppressed errors, rerun with: -s
+</span></span><span class="line"><span class="cl">==10122== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="参考">参考</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/703368720" target="_blank" rel="noopener noreffer">https://zhuanlan.zhihu.com/p/703368720</a></p>
+<h2 id="使用心得">使用心得</h2>
+<p>结合使用，各有优劣</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-10-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/asan_valgrind/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题" data-hashtags="note"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-hashtag="note"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题" data-description="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题" data-description="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/posts/asan_valgrind/" data-title="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/note/">Note</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/golang_panic_fatal_exit/" class="prev" rel="prev" title="panic, log.Fatal, os.Exit, runtime.Goexit的区别"><i class="fas fa-angle-left fa-fw"></i>panic, log.Fatal, os.Exit, runtime.Goexit的区别</a>
+            <a href="/posts/gdb_quickstart/" class="next" rel="next" title="gdb基础使用">gdb基础使用<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><link rel="stylesheet" href="/main.cee4d41798cc7e17000570aa340a0d41670781e5b0127a4cac77a7793ef10537.css" integrity="sha256-zuTUF5jMfhcABXCqNAoNQWcHgeWwEnpMrHeneT7xBTc="><link rel="stylesheet" href="/tailwind.0aca0d020ddca272b891183c202e30f524a4cf25ae18868d146576407b56e20a.css" integrity="sha256-CsoNAg3conK4kRg8IC4w9SSkzyWuGIaNFGV2QHtW4go="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.5fd579a1842c92ebb7bb1903945ba43ed11ac396369c88d598feba761bde2ce8.js" integrity="sha256-X9V5oYQskuu3uxkDlFukPtEaw5Y2nIjVmP66dhveLOg="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>

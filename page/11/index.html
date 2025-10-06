@@ -171,6 +171,87 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/hduoj1711kmp/">hduoj1711(kmp)</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-17">2020-03-17</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/algorithm/"><i class="far fa-folder fa-fw"></i>Algorithm</a>&nbsp;<a href="/categories/hduoj/"><i class="far fa-folder fa-fw"></i>Hduoj</a></span></div><div class="content"><h1 id="number-sequence"><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1711" target="_blank" rel="noopener noreffer">Number Sequence</a></h1>
+<h3 id="problem-description">Problem Description</h3>
+<p>Given two sequences of numbers : a[1], a[2], &hellip;&hellip; , a[N], and b[1], b[2], &hellip;&hellip; , b[M] (1 &lt;= M &lt;= 10000, 1 &lt;= N &lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], &hellip;&hellip; , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</p></div><div class="post-footer">
+        <a href="/posts/hduoj1711kmp/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/string/">String</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/codeforces-round-628-div.-2-a~d/">Codeforces Round #628 (Div. 2) A~D</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-16">2020-03-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><h1 id="a-ehab-and-gcd"><a href="https://codeforces.com/contest/1325/problem/A" target="_blank" rel="noopener noreffer">A. EhAb AnD gCd</a></h1>
+<h3 id="题意">题意</h3>
+<p>给一正整数x，求正整数a,b满足gcd(a,b)+lcm(a,b)=x</p>
+<h3 id="题解">题解</h3>
+<p>数论思维题，a=1，b=x-1满足条件</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;iostream&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="s">&#34; &#34;</span><span class="o">&lt;&lt;</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b-copycopycopycopycopy"><a href="https://codeforces.com/contest/1325/problem/B" target="_blank" rel="noopener noreffer">B. CopyCopyCopyCopyCopy</a></h1>
+<h3 id="题意-1">题意</h3>
+<p>给一数列，将数列无限复制，求最长严格单调子序列的个数</p></div><div class="post-footer">
+        <a href="/posts/codeforces-round-628-div.-2-a~d/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/number_theory/">Number_theory</a>,&nbsp;<a href="/tags/greedy/">Greedy</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/">二进制编码</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-15">2020-03-15</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a>&nbsp;<a href="/categories/courses/"><i class="far fa-folder fa-fw"></i>Courses</a></span></div><div class="content"><h4 id="二进制转十进制">二进制转十进制</h4>
+<p>除2取余</p>
+<h3 id="十进制转二进制">十进制转二进制</h3>
+<p>乘2次幂</p>
+<h3 id="小数进制转换">小数进制转换</h3>
+<p>e.g.</p>
+<p>3.59375</p>
+<p>整数部分3的二进制位11</p>
+<p>小数部分0.59375</p>
+<p>0.59375*2=1.1875 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; 1</br></p>
+<p>0.1875*2=0.375 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0</br></p>
+<p>0.375*2=0.75 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;0</br></p>
+<p>0.75*2=1.5 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1</br></p>
+<p>0.5*2=1 &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;1</br></p>
+<p>二进制位0.10011</p>
+<p>所以3.59375的二进制表示为11.10011</p></div><div class="post-footer">
+        <a href="/posts/%E4%BA%8C%E8%BF%9B%E5%88%B6%E7%BC%96%E7%A0%81/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/binary/">Binary</a>,&nbsp;<a href="/tags/cs/">Cs</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/codeforces-round-627-div.-3/">Codeforces Round #627 (Div. 3)</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-13">2020-03-13</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><h1 id="a-yet-another-tetris-problem-link">A. Yet Another Tetris Problem <a href="https://codeforces.com/contest/1324/problem/A" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="b-yet-another-palindrome-problem-link">B. Yet Another Palindrome Problem <a href="https://codeforces.com/contest/1324/problem/B" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="c-frog-jumps-link">C. Frog Jumps <a href="https://codeforces.com/contest/1324/problem/C" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="d-pair-of-topics-link">D. Pair of Topics <a href="https://codeforces.com/contest/1324/problem/D" target="_blank" rel="noopener noreffer">link</a></h1>
+<h1 id="e-sleeping-schedule-link">E. Sleeping Schedule <a href="https://codeforces.com/contest/1324/problem/E" target="_blank" rel="noopener noreffer">link</a></h1>
+<h3 id="题意">题意</h3>
+<p>假设一天有h个小时，DIO一共要睡n次，每次睡ai个小时（按顺序睡觉），每次刚睡醒，就要继续睡觉，一直睡下去，直至睡眠次数耗光。</p></div><div class="post-footer">
+        <a href="/posts/codeforces-round-627-div.-3/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/dfs/">Dfs</a>,&nbsp;<a href="/tags/dp/">Dp</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/ef-a-tale-of-melodies/">ef - a tale of melodies</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-09">2020-03-09</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/anime/"><i class="far fa-folder fa-fw"></i>Anime</a></span></div><div class="content"><p>《ef - a tale of melodies.》由日本动画公司SHAFT制作电视动画，并于2008年10月6日开始播放，是动画《悠久之翼》系列的第二季。故事内容由原作游戏《ef - the latter tale.》的第四章及终章改篇而成，终章的修改幅度比较大，加入了一些原创的情节。共12话。</p></div><div class="post-footer">
         <a href="/posts/ef-a-tale-of-melodies/">阅读全文</a></div>
@@ -316,462 +397,6 @@
 <p>[video(video-HXuIKyFl-1583157343324)(type-bilibili)(url-https://player.bilibili.com/player.html?aid=93185992)(image-https://ss.csdn.net/p?http://i0.hdslb.com/bfs/archive/393b26d243ae8f1c7b3cf4d1ba0bea2fd4015d85.jpg)(title-【暴走大事件】致 杠 精)]</p></div><div class="post-footer">
         <a href="/posts/test-for-music-and-video/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/test/">Test</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/test/">test</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-27">2020-02-27</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/test/"><i class="far fa-folder fa-fw"></i>Test</a></span></div><div class="content"><body><input id="setMediaURL" type="button" class="btn btn-default" value="设置"></body>
-<head>
-  <meta charset="UTF-8">
-  <!-- import CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-</head>
-<body>
-  <div id="app">
-    <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible" title="Hello world">
-      <p>Try Element</p>
-    </el-dialog>
-  </div>
-</body>
-  <!-- import Vue before Element -->
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <!-- import JavaScript -->
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: function() {
-        return { visible: false }
-      }
-    })
-  </script></div><div class="post-footer">
-        <a href="/posts/test/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/test/">Test</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">用hugo搭建个人博客网站</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-27">2020-02-27</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div><div class="content"><p><a href="https://dyhgo.fun" target="_blank" rel="noopener noreffer">效果展示</a></p>
-<p>在hugo官网也有说明如何搭建个人网站</p>
-<h3 id="注册github账号">注册github账号</h3>
-<h3 id="创建github仓库">创建github仓库</h3>
-<p>仓库的名字必须是   用户名.github.io</p>
-<p>建议全小写</p>
-<h3 id="安装git-bash非必须但建议">安装git bash（非必须，但建议）</h3>
-<p><a href="https://git-scm.com/download" target="_blank" rel="noopener noreffer">点击此处</a></p></div><div class="post-footer">
-        <a href="/posts/%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">Hugo</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/cloud/">Cloud</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-26">2020-02-26</time></span></div><div class="content"><!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <!-- import CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <style type="text/css">
-        .el-tabs--border-card {background : #fff0}
-        .el-tabs--border-card>.el-tabs__content{height:500px}
-        el-container{
-            width:50px;
-            height:100px
-        }
-    </style>
-</head>
-<body>
-<div id="app">
-<el-tabs type="border-card">
-<el-tab-pane label="学习">
-   fail to load
-</el-tab-pane>
-<el-tab-pane label="软件">fail to load</el-tab-pane>
-<el-tab-pane label="资料">fail to load</el-tab-pane>
-<el-tab-pane label="分区1">fail to load</el-tab-pane>
-<el-tab-pane label="课程">fail to load</el-tab-pane>
-<el-tab-pane label="说明">fail to load</el-tab-pane>
-</el-tabs>
-</div>
-</body>
-<!-- import Vue before Element -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- import JavaScript -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<script>
-    var Main = {
-        data() {
-            return {
-            }
-        }
-    }
-    var Ctor = Vue.extend(Main)
-    new Ctor().$mount('#app')
-
-
-​    
-
-</script>
-</html></div><div class="post-footer">
-        <a href="/posts/cloud/">阅读全文</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/game/">Game</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-02-26">2020-02-26</time></span></div><div class="content"><!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-<meta name="referrer" content="never">
-<br>
-<br>
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/447040/Watch_Dogs_2/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/447040/header.jpg?" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/1293830/_4/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1293830/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://www.xiaoheihe.cn/games/detail/900004502" target="_blank">
-<img src="https://cdn.max-c.com/heybox/dailynews/img/f03b514aecd5568e8bdde647c97abbbf.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Watch_Dogs2&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Watch Dogs: Legion&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Forza Horizon 4</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/1551360/Forza_Horizon_5/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1551360/header.jpg?" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/403640/Dishonored_2/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/403640/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/205100/Dishonored/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/205100/header.jpg?" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Forza Horizon 5&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dishonored&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dishonored 2</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/33230/Assassins_Creed_2/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/33230/header.jpg?" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/289650/Assassins_Creed_Unity/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/289650/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/48190/Assassins_Creed_Brotherhood/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/48190/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Assassin's Creed 2&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Assassin's Creed Brotherhood&emsp;&emsp;Assassin's Creed Unity</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/582160/Assassins_Creed_Origins/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/582160/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://www.xiaoheihe.cn/games/detail/900006184" target="_blank">
-<img src="https://cdn.max-c.com/heybox/dailynews/img/afad246341b983d3711ea1d0f4b6b4eb.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/812140/Assassins_Creed_Odyssey/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/812140/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Assassin's Creed Origins&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Assassin's Creed Odyssey&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Assassin's Creed Valhalla</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/412020/Metro_Exodus/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/412020/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/570/Dota_2/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/570/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/578080/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Metro Exodus&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PUBG&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Dota 2</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/730/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://www.xiaoheihe.cn/games/detail/900007713" target="_blank">
-<img src="https://cdn2.unrealengine.com/mad-std-key-art-wide-3840-x-2160-3840x2160-957796634.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/271590/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">CS:GO&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Grand Theft Auto V&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Riders Republic</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/13600/Prince_of_Persia_The_Sands_of_Time/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/13600/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/13530/Prince_of_Persia_The_Two_Thrones/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/13530/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/13500/Prince_of_Persia_Warrior_Within/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/13500/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">PoP: The Sands of Time&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PoP: Warrior Within&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;PoP: The Two Thrones</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/863550/HITMAN_2/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/863550/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/700330/SCP_Secret_Laboratory/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/700330/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/477160/Human_Fall_Flat/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/477160/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">HITMAN 2&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Human: Fall Flat&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;SCP: Secret Laboratory</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/1091500/Cyberpunk_2077/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1091500/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/1238840/Battlefield_1/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1238840/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice__GOTY_Edition/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/814380/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Cyberpunk 2077&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Sekiro: Shadows Die Twice&emsp;&emsp;&emsp;&emsp;Battlefield 1</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/460920/Steep/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/460920/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/1064221/Halo_Combat_Evolved_Anniversary/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1064221/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/325120/Notch__The_Innocent_LunA_Eclipsed_SinnerS/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/325120/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Steep&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Notch&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Halo: Combat Evolved</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/374320/DARK_SOULS_III/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/374320/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://www.xiaoheihe.cn/games/detail/900000012" target="_blank">
-<img src="https://cdn.max-c.com/pc_game/head/8352b3f4bf48fcaa13129be08c796fd0.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://www.xiaoheihe.cn/games/detail/1172470" target="_blank">
-<img src="https://cdn.max-c.com/heybox/game/header/1172470_4I3vE.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">DARK SOULS III&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Apex Legends&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Overwatch
-</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/1426210/It_Takes_Two/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1426210/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/203160/Tomb_Raider/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/203160/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/524220/NieRAutomata/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/524220/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">It Takes Two&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;NieR:Automata&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Tomb Raider
-</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/319630/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/292030/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/638970/Yakuza_0/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/638970/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Life is Strange - Episode 1&emsp;&emsp;&emsp;&emsp;&emsp;Yakuza 0&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Witcher 3: Wild Hunt
-</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/500/Left_4_Dead/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/500/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/601150/Devil_May_Cry_5/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/601150/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/264710/Subnautica/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/264710/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">Left 4 Dead&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Subnautica&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Devil May Cry 5
-</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-<div  align="center">
-<div>
-<a href="https://store.steampowered.com/app/637650/FINAL_FANTASY_XV_WINDOWS_EDITION/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/637650/header.jpg" height="115"   align="left"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/1593500/God_of_War/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/1593500/header.jpg" height=115"   align="right"/>  
-</a>
-</div>
-<div>
-<a href="https://store.steampowered.com/app/553640/ICEY/" target="_blank">
-<img src="https://media.st.dl.pinyuncloud.com/steam/apps/553640/header.jpg" height="115"   />  
-</a>
-</div>
-<div>
-<h4 align="left">FINAL FANTASY XV&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;ICEY&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;God of War
-</h4>
-</div>
-</div>
-<br>
-<br>
-<!-- ============================================================================ -->
-</body>
-</html></div><div class="post-footer">
-        <a href="/posts/game/">阅读全文</a></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -797,6 +422,10 @@
                 </li><li class="page-item ">
                     <span class="page-link">
                         <a href="/page/13/">13</a>
+                    </span>
+                </li><li class="page-item ">
+                    <span class="page-link">
+                        <a href="/page/14/">14</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

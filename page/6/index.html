@@ -171,6 +171,198 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/fft-ntt/">FFT &amp; NTT</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-09-24">2020-09-24</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/algorithm/"><i class="far fa-folder fa-fw"></i>Algorithm</a></span></div><div class="content"><h2 id="前言">前言</h2>
+<p>一篇没什么用的文章，记录一下FFT和NTT的板子</p>
+<p>fft和ntt的原理参考<a href="https://blog.csdn.net/enjoy_pascal/article/details/81478582" target="_blank" rel="noopener noreffer">FFT</a> &amp; <a href="https://blog.csdn.net/enjoy_pascal/article/details/81771910?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160095020619724848323912%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160095020619724848323912&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-81771910.pc_first_rank_v2_rank_v28&amp;utm_term=ntt&amp;spm=1018.2118.3001.4187" target="_blank" rel="noopener noreffer">NTT</a></p>
+<h2 id="概述">概述</h2>
+<p>fft和ntt差不多，基础用法就是加速多项式乘法，把多项式从系数表示转成点值表示来方便计算，而要转成点值表示，不能选择任意点。有些点的若干次方是1（实际上可以是-1,+i,-i等等），这样不需要做所有的次方运算，而这些点在复平面单位圆上。在ntt中是拿<a href="https://blog.csdn.net/enjoy_pascal/article/details/81771910?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160095020619724848323912%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&amp;request_id=160095020619724848323912&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-81771910.pc_first_rank_v2_rank_v28&amp;utm_term=ntt&amp;spm=1018.2118.3001.4187" target="_blank" rel="noopener noreffer">原根</a>替换fft的单位根。
+它们的时间复杂度都是O(nlgn)</p></div><div class="post-footer">
+        <a href="/posts/fft-ntt/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/number_theory/">Number_theory</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">无聊的做题记录</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-09-06">2020-09-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>Problemlist</a></span></div><div class="content"><h2 id="数学公式">数学公式</h2>
+<p><a href="https://ac.nowcoder.com/acm/problem/15097" target="_blank" rel="noopener noreffer">题目</a></p>
+<h3 id="题解">题解</h3>
+<p>错排公式</p>
+<p>Dn = floor(n!/e + 0.5) = (n - 1) * (Dn-1 + Dn-2)</p>
+<p>D1 = 0 , D2 = 1</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="c1">//457ms/1000ms  488k/32768k
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&#34;bits/stdc++.h&#34;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="n">ll</span> <span class="n">mod</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">one</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">to</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ll</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">one</span> <span class="o">+</span> <span class="n">to</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">%=</span> <span class="n">mod</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">one</span> <span class="o">=</span> <span class="n">to</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">to</span> <span class="o">=</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>===============================================================</p></div><div class="post-footer">
+        <a href="/posts/%E6%97%A0%E8%81%8A%E7%9A%84%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/problemlist/">Problemlist</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/hhu_spider/">hhu_spider</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-08-11">2020-08-11</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python-web/"><i class="far fa-folder fa-fw"></i>Python Web</a></span></div><div class="content"><h2 id="hhu健康打卡脚本返校版">hhu健康打卡脚本（返校版）</h2>
+<h3 id="环境">环境</h3>
+<p>必装环境 python， requests</p>
+<p>推荐环境 anaconda,  pycharm</p>
+<h3 id="功能说明">功能说明</h3>
+<p>定时打卡、同时多人打卡、发邮件反馈打卡信息、失败重新打卡</p>
+<p>（为什么不用发信息，国内手机号在twilio上不能用了）</p></div><div class="post-footer">
+        <a href="/posts/hhu_spider/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/python%E7%88%AC%E8%99%AB/">Python爬虫</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-08-11">2020-08-11</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/python-web/"><i class="far fa-folder fa-fw"></i>Python Web</a></span></div><div class="content"><h2 id="urllib模块">urllib模块</h2>
+<p>不使用</p>
+<h2 id="requests模块">requests模块</h2>
+<h3 id="获得网页源码">获得网页源码</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://dyhgo.fun&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="带参数的url和ua伪装">带参数的url和UA伪装</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#测试一下带参数的url和ua伪装</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.baidu.com/s&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;输入您要搜索的内容，我们将返回百度搜索该信息的网页源码&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;wd&#39;</span> <span class="p">:</span> <span class="n">name</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="案例有道翻译查词">案例：有道翻译查词</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1">#有道翻译的结果获取，查询look单词并将结果存储</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;i&#39;</span><span class="p">:</span> <span class="s1">&#39;look&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;from&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;to&#39;</span><span class="p">:</span> <span class="s1">&#39;AUTO&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;smartresult&#39;</span><span class="p">:</span> <span class="s1">&#39;dict&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;client&#39;</span><span class="p">:</span> <span class="s1">&#39;fanyideskweb&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;salt&#39;</span><span class="p">:</span> <span class="s1">&#39;16119129043609&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;sign&#39;</span><span class="p">:</span> <span class="s1">&#39;288cdf16af5fa68411381ba3c9f7f874&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;lts&#39;</span><span class="p">:</span> <span class="s1">&#39;1611912904360&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;bv&#39;</span><span class="p">:</span> <span class="s1">&#39;44a53b4124e8b822ebfd881c5a599938&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;doctype&#39;</span><span class="p">:</span> <span class="s1">&#39;json&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;2.1&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;keyfrom&#39;</span><span class="p">:</span> <span class="s1">&#39;fanyi.web&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;action&#39;</span><span class="p">:</span> <span class="s1">&#39;FY_BY_REALTlME&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://fanyi.youdao.com/translate_o?smartresult=dict&amp;smartresult=rule&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s1">&#39;User-Agent&#39;</span> <span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;look.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">(),</span> <span class="n">fp</span><span class="o">=</span><span class="n">f</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="案例获取豆瓣影单">案例：获取豆瓣影单</h3>
+<p><a href="https://movie.douban.com/typerank?type_name=%E5%96%9C%E5%89%A7&amp;type=24&amp;interval_id=100:90&amp;action=" target="_blank" rel="noopener noreffer">网站链接</a></p></div><div class="post-footer">
+        <a href="/posts/python%E7%88%AC%E8%99%AB/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/abc173/">abc173</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-07-06">2020-07-06</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---payment"><a href="https://atcoder.jp/contests/abc173/tasks/abc173_a" target="_blank" rel="noopener noreffer">A - Payment</a></h1>
 <h2 id="题解">题解</h2>
@@ -880,233 +1072,6 @@
 </div><p>生成的文件结构</p></div><div class="post-footer">
         <a href="/posts/django%E5%AD%A6%E4%B9%A0/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/install-ubuntu-in-vmware/">install ubuntu in vmware</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-19">2020-06-19</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class="content"><h2 id="安装vmware">安装vmware</h2>
-<p><a href="https://my.vmware.com/cn/web/vmware/info/slug/desktop_end_user_computing/vmware_workstation_pro/15_0" target="_blank" rel="noopener noreffer">点击这里</a></p>
-<p>需要注册账号</p>
-<p>vmware的安装基本选择默认选项，一直next</p>
-<h2 id="准备一个ubuntu镜像文件">准备一个ubuntu镜像文件</h2>
-<p><a href="https://releases.ubuntu.com/?_ga=2.211393685.1613111575.1592462511-1712759206.1592462511" target="_blank" rel="noopener noreffer">点击这里</a></p>
-<p>选择对应版本的ubuntu文件</p></div><div class="post-footer">
-        <a href="/posts/install-ubuntu-in-vmware/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/linux/">Linux</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/">mysql查询练习</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-16">2020-06-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/database/"><i class="far fa-folder fa-fw"></i>Database</a></span></div><div class="content"><h2 id="数据准备">数据准备</h2>
-<h3 id="数据库">数据库</h3>
-<p>test3</p>
-<h3 id="建表">建表</h3>
-<table>
-  <thead>
-      <tr>
-          <th>学生表</th>
-          <th>课程表</th>
-          <th>成绩表</th>
-          <th>教师表</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Student</td>
-          <td>Course</td>
-          <td>Score</td>
-          <td>Teacher</td>
-      </tr>
-      <tr>
-          <td>学号</td>
-          <td>课程号</td>
-          <td>学号</td>
-          <td>教师编号</td>
-      </tr>
-      <tr>
-          <td>姓名</td>
-          <td>课程名称</td>
-          <td>课程号</td>
-          <td>教师名字</td>
-      </tr>
-      <tr>
-          <td>性别</td>
-          <td>教师编号</td>
-          <td>成绩</td>
-          <td>教师性别</td>
-      </tr>
-      <tr>
-          <td>出生年月日</td>
-          <td></td>
-          <td></td>
-          <td>出生年月日</td>
-      </tr>
-      <tr>
-          <td>所在班级</td>
-          <td></td>
-          <td></td>
-          <td>职称</td>
-      </tr>
-      <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>所在部门</td>
-      </tr>
-  </tbody>
-</table>
-<h3 id="学生表">学生表</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20201120101323394.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20201120101323394.png#pic_center, https://img-blog.csdnimg.cn/20201120101323394.png#pic_center 1.5x, https://img-blog.csdnimg.cn/20201120101323394.png#pic_center 2x"
-        data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20201120101323394.png#pic_center"
-        title="在这里插入图片描述" /></p></div><div class="post-footer">
-        <a href="/posts/mysql%E6%9F%A5%E8%AF%A2%E7%BB%83%E4%B9%A0/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mysql/">Mysql</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/mysql%E5%9F%BA%E7%A1%80/">mysql基础</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-16">2020-06-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/database/"><i class="far fa-folder fa-fw"></i>Database</a></span></div><div class="content"><h2 id="基本操作">基本操作</h2>
-<h3 id="进入数据库">进入数据库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mysql -uroot -p123456<span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="查看所有数据库">查看所有数据库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">show databases；
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="使用某个数据库">使用某个数据库</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">use XXX<span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="查看某个数据库中的admin信息">查看某个数据库中的admin信息</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">select</span> * from admin<span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="带条件的查询">带条件的查询</h3>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="k">select</span> * from admin where <span class="nv">id</span> <span class="o">=</span> 1<span class="p">;</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="mysql数据类型">mysql数据类型</h3>
-<p><a href="https://www.runoob.com/mysql/mysql-data-types.html" target="_blank" rel="noopener noreffer">链家</a></p>
-<h3 id="查看当前在哪个数据库">查看当前在哪个数据库</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/20201120093303559.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/20201120093303559.png#pic_center, https://img-blog.csdnimg.cn/20201120093303559.png#pic_center 1.5x, https://img-blog.csdnimg.cn/20201120093303559.png#pic_center 2x"
-        data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/20201120093303559.png#pic_center"
-        title="在这里插入图片描述" /></p>
-<h3 id="查看数据库中有哪些表">查看数据库中有哪些表</h3>
-<p><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="https://img-blog.csdnimg.cn/202011200933260.png#pic_center"
-        data-srcset="https://img-blog.csdnimg.cn/202011200933260.png#pic_center, https://img-blog.csdnimg.cn/202011200933260.png#pic_center 1.5x, https://img-blog.csdnimg.cn/202011200933260.png#pic_center 2x"
-        data-sizes="auto"
-        alt="https://img-blog.csdnimg.cn/202011200933260.png#pic_center"
-        title="在这里插入图片描述" /></p></div><div class="post-footer">
-        <a href="/posts/mysql%E5%9F%BA%E7%A1%80/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/mysql/">Mysql</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/abc170/">abc170</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-06-15">2020-06-15</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---five-variables"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_a" target="_blank" rel="noopener noreffer">A - Five Variables</a></h1>
-<h2 id="题意">题意</h2>
-<p>找5个数中值为0的下标</p>
-<h2 id="题解">题解</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="b---crane-and-turtle"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_b" target="_blank" rel="noopener noreffer">B - Crane and Turtle</a></h1>
-<h2 id="题意-1">题意</h2>
-<p>鸡兔同笼问题</p>
-<h2 id="题解-1">题解</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span> <span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Yes&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;No&#39;</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="c---forbidden-list"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_c" target="_blank" rel="noopener noreffer">C - Forbidden List</a></h1>
-<h2 id="题意-2">题意</h2>
-<p>给一数x 和一数列，找不在数列中离x最近的数</p>
-<h2 id="题解-2">题解</h2>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">x</span> <span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">b</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="n">t</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
-</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span><span class="o">-</span><span class="n">t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">t</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">x</span><span class="o">+</span><span class="n">t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">t</span>
-</span></span><span class="line"><span class="cl">        <span class="k">break</span>
-</span></span><span class="line"><span class="cl">    <span class="n">t</span> <span class="o">+=</span> <span class="mi">1</span>
-</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="d---not-divisible"><a href="https://atcoder.jp/contests/abc170/tasks/abc170_d" target="_blank" rel="noopener noreffer">D - Not Divisible</a></h1>
-<h2 id="题意-3">题意</h2>
-<p>给一数列，对于数列中的每个数，如果都不能被其他数整除，计数器 + 1</p></div><div class="post-footer">
-        <a href="/posts/abc170/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/bfs/">Bfs</a>,&nbsp;<a href="/tags/greedy/">Greedy</a>,&nbsp;<a href="/tags/data_structure/">Data_structure</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -1137,7 +1102,7 @@
                     <span class="page-link" aria-hidden="true">&hellip;</span>
                 </li><li class="page-item ">
                     <span class="page-link">
-                        <a href="/page/13/">13</a>
+                        <a href="/page/14/">14</a>
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">

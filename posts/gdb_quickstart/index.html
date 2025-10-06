@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+
+        <meta name="referrer" content="no-referrer" />
+
+        <title>gdb基础使用 - This is DYH</title><meta name="Description" content="gdb基础使用"><meta property="og:url" content="https://dyhgo.github.io/posts/gdb_quickstart/">
+  <meta property="og:site_name" content="This is DYH">
+  <meta property="og:title" content="gdb基础使用">
+  <meta property="og:description" content="gdb基础使用">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-03T00:00:00+00:00">
+    <meta property="article:tag" content="Note">
+    <meta property="og:image" content="https://dyhgo.github.io/logo.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dyhgo.github.io/logo.png">
+  <meta name="twitter:title" content="gdb基础使用">
+  <meta name="twitter:description" content="gdb基础使用">
+<meta name="application-name" content="This is DYH">
+<meta name="apple-mobile-web-app-title" content="This is DYH"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://dyhgo.github.io/posts/gdb_quickstart/" /><link rel="prev" href="https://dyhgo.github.io/posts/asan_valgrind/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.2a4fac315e6fcbfcde3ab5e799cd49ecd778838cf27902c7300e76683ec37cce.css" integrity="sha256-Kk&#43;sMV5vy/zeOrXnmc1J7Nd4g4zyeQLHMA52aD7DfM4="><link rel="stylesheet" href="/css/style.min.752cbb922952a861725d3bef4af3169a092317cab31c1bfd208914ce3d67358d.css" integrity="sha256-dSy7kilSqGFyXTvvSvMWmgkjF8qzHBv9IIkUzj1nNY0="><link rel="stylesheet" href="/lib/fontawesome-free/all.min.b726a2cced0a9e28dc93be27ae974937e87d68df8b09baf2a4fca2ba5c5a0404.css" integrity="sha256-tyaizO0Knijck74nrpdJN&#43;h9aN&#43;LCbrypPyiulxaBAQ="><link rel="stylesheet" href="/lib/animate/animate.min.4c055e6d0d9ba2b8f1be4719110e92c1b9499ed0759f0d1c48fccd16a7b31dcf.css" integrity="sha256-TAVebQ2borjxvkcZEQ6SwblJntB1nw0cSPzNFqezHc8="><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "gdb基础使用",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/dyhgo.github.io\/posts\/gdb_quickstart\/"
+        },"genre": "posts","keywords": "note","wordcount":  5062 ,
+        "url": "https:\/\/dyhgo.github.io\/posts\/gdb_quickstart\/","datePublished": "2025-10-03T00:00:00+00:00","dateModified": "2025-10-03T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "dyh"
+            },"description": "gdb基础使用"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="This is DYH">DYH</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/"> 关于 </a><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><a class="menu-item" href="/life/"> 随想 </a><a class="menu-item" href="/navigation/"> 导航 </a><span class="menu-item delimiter"></span>
+
+                
+
+                <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                <option> 清单 </option>
+                                <option value="https://da1yh.xyz/list/music/">音乐</option>
+                                <option value="https://da1yh.xyz/list/anime/">番剧</option>
+                                <option value="https://da1yh.xyz/list/game/">游戏</option>
+                                <option value="https://da1yh.xyz/list/poppin/">poppin</option>
+                            </select></a>
+
+                            <a href="javascript:void(0);" class="menu-item language" title="时光">时光<i class="fas fa-chevron-right fa-fw"></i>
+                                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                            <option> 时光 </option>
+                                            <option value="https://da1yh.xyz/album/footprint/">足迹</option>
+                                            <option value="https://da1yh.xyz/album/dish/">烟火</option>
+                                        </select></a>
+
+                        
+
+                                <a href="javascript:void(0);" class="menu-item language" title="CS">CS<i class="fas fa-chevron-right fa-fw"></i>
+                                    <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                    <option > CS </option>
+                                            <option value="https://da1yh.xyz/cs/dust2/">dust2</option>
+                                            <option value="https://da1yh.xyz/cs/inferno/">inferno</option>
+                                            <option value="https://da1yh.xyz/cs/mirage/">mirage</option>
+                                            <option value="https://da1yh.xyz/cs/ancient/">ancient</option>
+                                            <option value="https://da1yh.xyz/cs/anubis/">anubis</option>
+                                            <option value="https://da1yh.xyz/cs/train/">train</option>
+                                        </select>
+                                        </a>
+
+                                <span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="This is DYH">DYH</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/about/" title="">关于</a><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a class="menu-item" href="/life/" title="">随想</a><a class="menu-item" href="/navigation/" title="">导航</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a>
+            
+
+            <a href="javascript:void(0);" class="menu-item language" title="清单">清单<i class="fas fa-chevron-right fa-fw"></i>
+                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                            <option> 清单 </option>
+                            <option value="https://da1yh.xyz/list/music/">音乐</option>
+                            <option value="https://da1yh.xyz/list/anime/">番剧</option>
+                            <option value="https://da1yh.xyz/list/game/">游戏</option>
+                            <option value="https://da1yh.xyz/list/poppin/">poppin</option>
+                        </select></a>
+            
+                        <a href="javascript:void(0);" class="menu-item language" title="时光">时光<i class="fas fa-chevron-right fa-fw"></i>
+                            <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                        <option> 时光 </option>
+                                        <option value="https://da1yh.xyz/album/footprint/">足迹</option>
+                                        <option value="https://da1yh.xyz/album/dish/">烟火</option>
+                                    </select></a>
+                
+
+                    
+
+                            <a href="javascript:void(0);" class="menu-item language" title="CS">CS<i class="fas fa-chevron-right fa-fw"></i>
+                                <select class="language-select" id="language-select-desktop" onchange="location = this.value; target = '_blank'">
+                                            <option> CS </option>
+                                            <option value="https://da1yh.xyz/cs/dust2/">dust2</option>
+                                            <option value="https://da1yh.xyz/cs/inferno/">inferno</option>
+                                            <option value="https://da1yh.xyz/cs/mirage/">mirage</option>
+                                            <option value="https://da1yh.xyz/cs/ancient/">ancient</option>
+                                            <option value="https://da1yh.xyz/cs/anubis/">anubis</option>
+                                            <option value="https://da1yh.xyz/cs/train/">train</option>
+                                        </select></a>
+
+                            
+
+        </div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">gdb基础使用</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2025-10-03">2025-10-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 5062 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 11 分钟&nbsp;<span id="/posts/gdb_quickstart/" class="leancloud_visitors" data-flag-title="gdb基础使用">
+                        <i class="far fa-eye fa-fw"></i>&nbsp;<span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#gdb安装">gdb安装</a></li>
+    <li><a href="#基础命令简介">基础命令简介</a></li>
+    <li><a href="#基础命令示例">基础命令示例</a></li>
+    <li><a href="#调试正在运行的程序">调试正在运行的程序</a></li>
+    <li><a href="#调试corefile">调试corefile</a>
+      <ul>
+        <li><a href="#空指针解引用">空指针解引用</a></li>
+        <li><a href="#野指针解引用">野指针解引用</a></li>
+        <li><a href="#数组越界">数组越界</a></li>
+        <li><a href="#栈溢出">栈溢出</a></li>
+        <li><a href="#非法修改只读内存">非法修改只读内存</a></li>
+        <li><a href="#断言失败">断言失败</a></li>
+        <li><a href="#除零错误">除零错误</a></li>
+      </ul>
+    </li>
+    <li><a href="#调试多线程程序">调试多线程程序</a></li>
+    <li><a href="#调试多进程程序">调试多进程程序</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="gdb安装">gdb安装</h2>
+<p>Linux版本 CentOS Linux release 7.9.2009</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">yum install gdb
+</span></span><span class="line"><span class="cl">gdb --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="基础命令简介">基础命令简介</h2>
+<p>查看gdb的命令</p>
+<p><code>man gdb</code></p>
+<p>以下三种使用gdb调试的方式</p>
+<p><code>gdb program</code> 调试可执行文件</p>
+<p><code>gdb program core</code>  调试corefile</p>
+<p><code>gdb -p 1234</code>  调试正在运行的程序，1234为pid</p>
+<p>查看gdb中的某个命令，在进入gdb中使用</p>
+<p><code>help xxx</code></p>
+<table>
+  <thead>
+      <tr>
+          <th>命令</th>
+          <th>简写</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>run [arglist]</td>
+          <td>r</td>
+          <td>运行程序（可带命令行参数，如r 10 20）</td>
+      </tr>
+      <tr>
+          <td>break [file:]functiop</td>
+          <td>b</td>
+          <td>设置断点（如b main.c:10在 main.c 第 10 行设断点，b func在函数 func 处设断点）</td>
+      </tr>
+      <tr>
+          <td>next</td>
+          <td>n</td>
+          <td>单步执行（不进入函数内部）</td>
+      </tr>
+      <tr>
+          <td>step</td>
+          <td>s</td>
+          <td>单步执行（进入函数内部）</td>
+      </tr>
+      <tr>
+          <td>print expr</td>
+          <td>p</td>
+          <td>查看变量值（如p num打印变量 num 的值，p array[0]打印数组首元素）</td>
+      </tr>
+      <tr>
+          <td>continue</td>
+          <td>c</td>
+          <td>从当前位置继续执行，直到下一个断点或程序结束</td>
+      </tr>
+      <tr>
+          <td>info break</td>
+          <td>i b</td>
+          <td>查看所有断点信息</td>
+      </tr>
+      <tr>
+          <td>delete num</td>
+          <td>d</td>
+          <td>删除断点（如d 1删除编号为 1 的断点）</td>
+      </tr>
+      <tr>
+          <td>backtrace</td>
+          <td>bt</td>
+          <td>查看函数调用栈（定位程序崩溃位置常用）</td>
+      </tr>
+      <tr>
+          <td>quit</td>
+          <td>q</td>
+          <td>退出 GDB</td>
+      </tr>
+      <tr>
+          <td>list [file:]function</td>
+          <td>l</td>
+          <td>显示此刻源代码</td>
+      </tr>
+      <tr>
+          <td>frame num</td>
+          <td>f</td>
+          <td>进入某个调用栈</td>
+      </tr>
+  </tbody>
+</table>
+<p>要让gdb调试，就要在gcc编译时加上<code>-g</code></p>
+<p>比如有如下代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;hello world</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行<code>gcc test.c -o test -g</code>，然后执行<code>gdb test</code></p>
+<h2 id="基础命令示例">基础命令示例</h2>
+<p>假设代码为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 计算1到n的和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;1到%d的和为：%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">num</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>演示run和quit</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 15335) exited normally]
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) q
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>演示break、info break、print、continue</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) b main
+</span></span><span class="line"><span class="cl">Breakpoint 2 at 0x400563: file test.c, line 15.
+</span></span><span class="line"><span class="cl">(gdb) b 17
+</span></span><span class="line"><span class="cl">Breakpoint 3 at 0x400577: file test.c, line 17.
+</span></span><span class="line"><span class="cl">(gdb) i b
+</span></span><span class="line"><span class="cl">Num     Type           Disp Enb Address            What
+</span></span><span class="line"><span class="cl">2       breakpoint     keep y   0x0000000000400563 in main at test.c:15
+</span></span><span class="line"><span class="cl">3       breakpoint     keep y   0x0000000000400577 in main at test.c:17
+</span></span><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 2, main () at test.c:15
+</span></span><span class="line"><span class="cl">15          int num = 5;
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) p num
+</span></span><span class="line"><span class="cl">$1 = 0
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) p num
+</span></span><span class="line"><span class="cl">$2 = 5
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 3, main () at test.c:17
+</span></span><span class="line"><span class="cl">17          printf(&#34;1到%d的和为：%d\n&#34;, num, result);  
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 15552) exited normally]
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">The program is not being run.
+</span></span><span class="line"><span class="cl">(gdb) q
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>演示next、step、bt、frame</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) l 1
+</span></span><span class="line"><span class="cl">1       #include &lt;stdio.h&gt;
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">3       // 计算1到n的和
+</span></span><span class="line"><span class="cl">4       int calculate_sum(int n) {
+</span></span><span class="line"><span class="cl">5           int sum = 0;
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">10          }
+</span></span><span class="line"><span class="cl">(gdb) 
+</span></span><span class="line"><span class="cl">11          return sum;
+</span></span><span class="line"><span class="cl">12      }
+</span></span><span class="line"><span class="cl">13
+</span></span><span class="line"><span class="cl">14      int main() {
+</span></span><span class="line"><span class="cl">15          int num = 5;
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">17          printf(&#34;1到%d的和为：%d\n&#34;, num, result);  
+</span></span><span class="line"><span class="cl">18          return 0;
+</span></span><span class="line"><span class="cl">19      }(gdb) b 15
+</span></span><span class="line"><span class="cl">Breakpoint 1 at 0x400563: file test.c, line 15.
+</span></span><span class="line"><span class="cl">(gdb) i b
+</span></span><span class="line"><span class="cl">Num     Type           Disp Enb Address            What
+</span></span><span class="line"><span class="cl">1       breakpoint     keep y   0x0000000000400563 in main at test.c:15
+</span></span><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 1, main () at test.c:15
+</span></span><span class="line"><span class="cl">15          int num = 5;
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) s
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:5
+</span></span><span class="line"><span class="cl">5           int sum = 0;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">$1 = 1
+</span></span><span class="line"><span class="cl">(gdb) p num
+</span></span><span class="line"><span class="cl">No symbol &#34;num&#34; in current context.
+</span></span><span class="line"><span class="cl">(gdb) p sum== 1
+</span></span><span class="line"><span class="cl">$2 = 1
+</span></span><span class="line"><span class="cl">(gdb) p sum ==0
+</span></span><span class="line"><span class="cl">$3 = 0
+</span></span><span class="line"><span class="cl">(gdb) bf
+</span></span><span class="line"><span class="cl">Undefined command: &#34;bf&#34;.  Try &#34;help&#34;.
+</span></span><span class="line"><span class="cl">(gdb) bt
+</span></span><span class="line"><span class="cl">#0  calculate_sum (n=5) at test.c:9
+</span></span><span class="line"><span class="cl">#1  0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">(gdb) f 1
+</span></span><span class="line"><span class="cl">#1  0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) p num
+</span></span><span class="line"><span class="cl">$4 = 5
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">No symbol &#34;sum&#34; in current context.
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">$5 = 1
+</span></span><span class="line"><span class="cl">(gdb) bt
+</span></span><span class="line"><span class="cl">#0  calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">#1  0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">(gdb) f 1
+</span></span><span class="line"><span class="cl">#1  0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">$6 = 3
+</span></span><span class="line"><span class="cl">(gdb) b 17
+</span></span><span class="line"><span class="cl">Breakpoint 2 at 0x400577: file test.c, line 17.
+</span></span><span class="line"><span class="cl">(gdb) i b
+</span></span><span class="line"><span class="cl">Num     Type           Disp Enb Address            What
+</span></span><span class="line"><span class="cl">1       breakpoint     keep y   0x0000000000400563 in main at test.c:15
+</span></span><span class="line"><span class="cl">        breakpoint already hit 1 time
+</span></span><span class="line"><span class="cl">2       breakpoint     keep y   0x0000000000400577 in main at test.c:17
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 2, main () at test.c:17
+</span></span><span class="line"><span class="cl">17          printf(&#34;1到%d的和为：%d\n&#34;, num, result);  
+</span></span><span class="line"><span class="cl">(gdb) p num
+</span></span><span class="line"><span class="cl">$7 = 5
+</span></span><span class="line"><span class="cl">(gdb) p result
+</span></span><span class="line"><span class="cl">$8 = 15
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 16344) exited normally]
+</span></span><span class="line"><span class="cl">(gdb) q
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>finish</code> 命令在进入函数时，完成函数然后退出</p>
+<p><code>return</code> 命令可带参数，在进入函数时，可直接退出</p>
+<p>演示下return命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">b</span> <span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Breakpoint</span> <span class="mi">1</span> <span class="nx">at</span> <span class="mh">0x400563</span><span class="p">:</span> <span class="nx">file</span> <span class="nx">test</span><span class="p">.</span><span class="nx">c</span><span class="p">,</span> <span class="nx">line</span> <span class="mf">15.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">i</span> <span class="nx">b</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Num</span>     <span class="nx">Type</span>           <span class="nx">Disp</span> <span class="nx">Enb</span> <span class="nx">Address</span>            <span class="nx">What</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>       <span class="nx">breakpoint</span>     <span class="nx">keep</span> <span class="nx">y</span>   <span class="mh">0x0000000000400563</span> <span class="nx">in</span> <span class="nx">main</span> <span class="nx">at</span> <span class="nx">test</span><span class="p">.</span><span class="nx">c</span><span class="p">:</span><span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">r</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Starting</span> <span class="nx">program</span><span class="p">:</span> <span class="o">/</span><span class="nx">root</span><span class="o">/</span><span class="nx">test</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="nf">main</span> <span class="p">()</span> <span class="nx">at</span> <span class="nx">test</span><span class="p">.</span><span class="nx">c</span><span class="p">:</span><span class="mi">15</span>
+</span></span><span class="line"><span class="cl"><span class="mi">15</span>          <span class="kt">int</span> <span class="nx">num</span> <span class="p">=</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Missing</span> <span class="nx">separate</span> <span class="nx">debuginfos</span><span class="p">,</span> <span class="nx">use</span><span class="p">:</span> <span class="nx">debuginfo</span><span class="o">-</span><span class="nx">install</span> <span class="nx">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="nx">el7_9</span><span class="mf">.3</span><span class="p">.</span><span class="nf">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">s</span>
+</span></span><span class="line"><span class="cl"><span class="mi">16</span>          <span class="kt">int</span> <span class="nx">result</span> <span class="p">=</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">s</span>
+</span></span><span class="line"><span class="cl"><span class="nf">calculate_sum</span> <span class="p">(</span><span class="nx">n</span><span class="p">=</span><span class="mi">5</span><span class="p">)</span> <span class="nx">at</span> <span class="nx">test</span><span class="p">.</span><span class="nx">c</span><span class="p">:</span><span class="mi">5</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>           <span class="kt">int</span> <span class="nx">sum</span> <span class="p">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">s</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="kt">int</span> <span class="nx">i</span> <span class="p">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="nf">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="nf">while</span> <span class="p">(</span><span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="nx">sum</span> <span class="o">+=</span> <span class="nx">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="nx">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="k">return</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Make</span> <span class="nx">calculate_sum</span> <span class="k">return</span> <span class="nx">now</span><span class="err">?</span> <span class="p">(</span><span class="nx">y</span> <span class="nx">or</span> <span class="nx">n</span><span class="p">)</span> <span class="nx">y</span>
+</span></span><span class="line"><span class="cl"><span class="err">#</span><span class="mi">0</span>  <span class="mh">0x0000000000400574</span> <span class="nx">in</span> <span class="nf">main</span> <span class="p">()</span> <span class="nx">at</span> <span class="nx">test</span><span class="p">.</span><span class="nx">c</span><span class="p">:</span><span class="mi">16</span>
+</span></span><span class="line"><span class="cl"><span class="mi">16</span>          <span class="kt">int</span> <span class="nx">result</span> <span class="p">=</span> <span class="nf">calculate_sum</span><span class="p">(</span><span class="nx">num</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">p</span> <span class="nx">result</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="mi">1</span> <span class="p">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">17</span>          <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;1到%d的和为：%d\n&#34;</span><span class="p">,</span> <span class="nx">num</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>  
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">p</span> <span class="nx">result</span>
+</span></span><span class="line"><span class="cl"><span class="err">$</span><span class="mi">2</span> <span class="p">=</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="nx">gdb</span><span class="p">)</span> <span class="nx">c</span>
+</span></span><span class="line"><span class="cl"><span class="nx">Continuing</span><span class="p">.</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span><span class="nx">到5的和为</span><span class="err">：</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">Inferior</span> <span class="mi">1</span> <span class="p">(</span><span class="nx">process</span> <span class="mi">17355</span><span class="p">)</span> <span class="nx">exited</span> <span class="nx">normally</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>演示下finish命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) b 15
+</span></span><span class="line"><span class="cl">Breakpoint 1 at 0x400563: file test.c, line 15.
+</span></span><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 1, main () at test.c:15
+</span></span><span class="line"><span class="cl">15          int num = 5;
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) s
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:5
+</span></span><span class="line"><span class="cl">5           int sum = 0;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) finish 
+</span></span><span class="line"><span class="cl">Run till exit from #0  calculate_sum (n=5) at test.c:8
+</span></span><span class="line"><span class="cl">0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">Value returned is $1 = 15
+</span></span><span class="line"><span class="cl">(gdb) p re
+</span></span><span class="line"><span class="cl">Display all 123 possibilities? (y or n)
+</span></span><span class="line"><span class="cl">(gdb) p result
+</span></span><span class="line"><span class="cl">$2 = 0
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">17          printf(&#34;1到%d的和为：%d\n&#34;, num, result);  
+</span></span><span class="line"><span class="cl">(gdb) p result
+</span></span><span class="line"><span class="cl">$3 = 15
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 17754) exited normally]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>通过<code>b 行号 if 条件</code>设置条件断点，演示如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) l 1
+</span></span><span class="line"><span class="cl">1       #include &lt;stdio.h&gt;
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">3       // 计算1到n的和
+</span></span><span class="line"><span class="cl">4       int calculate_sum(int n) {
+</span></span><span class="line"><span class="cl">5           int sum = 0;
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">10          }
+</span></span><span class="line"><span class="cl">(gdb) b 8 if sum &gt; 5
+</span></span><span class="line"><span class="cl">Breakpoint 1 at 0x400544: file test.c, line 8.
+</span></span><span class="line"><span class="cl">(gdb) i b
+</span></span><span class="line"><span class="cl">Num     Type           Disp Enb Address            What
+</span></span><span class="line"><span class="cl">1       breakpoint     keep y   0x0000000000400544 in calculate_sum at test.c:8
+</span></span><span class="line"><span class="cl">        stop only if sum &gt; 5
+</span></span><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 1, calculate_sum (n=5) at test.c:8
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">$1 = 6
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 1, calculate_sum (n=5) at test.c:8
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) p sum
+</span></span><span class="line"><span class="cl">$2 = 10
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 18140) exited normally]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>shell xxx</code> 可以在gdb中运行shell命令</p>
+<p><code>set logging on</code> 可以将gdb调试的信息输出到日志中</p>
+<p><code>set var xxx=xxx</code>可以设置变量的值，用于快速调试</p>
+<p>演示如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">set</span> <span class="n">logging</span> <span class="n">on</span>
+</span></span><span class="line"><span class="cl"><span class="n">Copying</span> <span class="n">output</span> <span class="n">to</span> <span class="n">gdb</span><span class="o">.</span><span class="n">txt</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">shell</span> <span class="n">ls</span>
+</span></span><span class="line"><span class="cl"><span class="n">gdb</span><span class="o">.</span><span class="n">txt</span>  <span class="n">test</span>  <span class="n">test</span><span class="o">.</span><span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">l</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>       <span class="c1">#include &lt;stdio.h&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>       <span class="o">//</span> <span class="err">计算</span><span class="mi">1</span><span class="err">到</span><span class="n">n的和</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>       <span class="ne">int</span> <span class="n">calculate_sum</span><span class="p">(</span><span class="ne">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>           <span class="ne">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="ne">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span>          <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">b</span> <span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span> <span class="n">at</span> <span class="mh">0x400544</span><span class="p">:</span> <span class="n">file</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">,</span> <span class="n">line</span> <span class="mf">8.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">i</span> <span class="n">b</span>
+</span></span><span class="line"><span class="cl"><span class="n">Num</span>     <span class="n">Type</span>           <span class="n">Disp</span> <span class="n">Enb</span> <span class="n">Address</span>            <span class="n">What</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>       <span class="k">breakpoint</span>     <span class="n">keep</span> <span class="n">y</span>   <span class="mh">0x0000000000400544</span> <span class="ow">in</span> <span class="n">calculate_sum</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">r</span>
+</span></span><span class="line"><span class="cl"><span class="n">Starting</span> <span class="n">program</span><span class="p">:</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">test</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Missing</span> <span class="n">separate</span> <span class="n">debuginfos</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span> <span class="n">debuginfo</span><span class="o">-</span><span class="n">install</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="n">el7_9</span><span class="o">.</span><span class="mf">3.</span><span class="n">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">n</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">sum</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">set</span> <span class="k">var</span> <span class="n">sum</span><span class="o">=</span><span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">sum</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">finish</span>
+</span></span><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">till</span> <span class="n">exit</span> <span class="n">from</span> <span class="c1">#0  calculate_sum (n=5) at test.c:7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">finish</span>
+</span></span><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">till</span> <span class="n">exit</span> <span class="n">from</span> <span class="c1">#0  calculate_sum (n=5) at test.c:8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span><span class="err">到</span><span class="mi">5</span><span class="err">的和为：</span><span class="mi">114</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">Inferior</span> <span class="mi">1</span> <span class="p">(</span><span class="n">process</span> <span class="mi">18358</span><span class="p">)</span> <span class="n">exited</span> <span class="n">normally</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">q</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="err">@</span><span class="n">iZbp1cqyppyocyfsztmoftZ</span><span class="p">:</span><span class="o">~$</span> <span class="n">ls</span>
+</span></span><span class="line"><span class="cl"><span class="n">gdb</span><span class="o">.</span><span class="n">txt</span>  <span class="n">test</span>  <span class="n">test</span><span class="o">.</span><span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="err">@</span><span class="n">iZbp1cqyppyocyfsztmoftZ</span><span class="p">:</span><span class="o">~$</span> <span class="n">cat</span> <span class="n">gdb</span><span class="o">.</span><span class="n">txt</span> 
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>       <span class="c1">#include &lt;stdio.h&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span>       <span class="o">//</span> <span class="err">计算</span><span class="mi">1</span><span class="err">到</span><span class="n">n的和</span>
+</span></span><span class="line"><span class="cl"><span class="mi">4</span>       <span class="ne">int</span> <span class="n">calculate_sum</span><span class="p">(</span><span class="ne">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mi">5</span>           <span class="ne">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="ne">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">10</span>          <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span> <span class="n">at</span> <span class="mh">0x400544</span><span class="p">:</span> <span class="n">file</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">,</span> <span class="n">line</span> <span class="mf">8.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Num</span>     <span class="n">Type</span>           <span class="n">Disp</span> <span class="n">Enb</span> <span class="n">Address</span>            <span class="n">What</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>       <span class="k">breakpoint</span>     <span class="n">keep</span> <span class="n">y</span>   <span class="mh">0x0000000000400544</span> <span class="ow">in</span> <span class="n">calculate_sum</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="n">Starting</span> <span class="n">program</span><span class="p">:</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">test</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Missing</span> <span class="n">separate</span> <span class="n">debuginfos</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span> <span class="n">debuginfo</span><span class="o">-</span><span class="n">install</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="n">el7_9</span><span class="o">.</span><span class="mf">3.</span><span class="n">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="mi">9</span>               <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">100</span>
+</span></span><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">till</span> <span class="n">exit</span> <span class="n">from</span> <span class="c1">#0  calculate_sum (n=5) at test.c:7</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Run</span> <span class="n">till</span> <span class="n">exit</span> <span class="n">from</span> <span class="c1">#0  calculate_sum (n=5) at test.c:8</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Breakpoint</span> <span class="mi">1</span><span class="p">,</span> <span class="n">calculate_sum</span> <span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">at</span> <span class="n">test</span><span class="o">.</span><span class="n">c</span><span class="p">:</span><span class="mi">8</span>
+</span></span><span class="line"><span class="cl"><span class="mi">8</span>               <span class="n">sum</span> <span class="o">+=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="n">Inferior</span> <span class="mi">1</span> <span class="p">(</span><span class="n">process</span> <span class="mi">18358</span><span class="p">)</span> <span class="n">exited</span> <span class="n">normally</span><span class="p">]</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>watch var</code> 表示监控某个变量，当变量发生变化时会停在此处，当执行n时，如果碰到变量改变，则会输出old value和new value，如果执行c，则会在变量改变时停住，演示如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) l 0
+</span></span><span class="line"><span class="cl">1       #include &lt;stdio.h&gt;
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">3       // 计算1到n的和
+</span></span><span class="line"><span class="cl">4       int calculate_sum(int n) {
+</span></span><span class="line"><span class="cl">5           int sum = 0;
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">10          }
+</span></span><span class="line"><span class="cl">(gdb) b 6
+</span></span><span class="line"><span class="cl">Breakpoint 1 at 0x40053b: file test.c, line 6.
+</span></span><span class="line"><span class="cl">(gdb) r
+</span></span><span class="line"><span class="cl">Starting program: /root/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Breakpoint 1, calculate_sum (n=5) at test.c:6
+</span></span><span class="line"><span class="cl">6           int i = 1;
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64
+</span></span><span class="line"><span class="cl">(gdb) p i
+</span></span><span class="line"><span class="cl">$1 = 0
+</span></span><span class="line"><span class="cl">(gdb) p *i
+</span></span><span class="line"><span class="cl">Cannot access memory at address 0x0
+</span></span><span class="line"><span class="cl">(gdb) p &amp;i
+</span></span><span class="line"><span class="cl">$2 = (int *) 0x7fffffffe3f8
+</span></span><span class="line"><span class="cl">(gdb) watch i
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">(gdb) info w
+</span></span><span class="line"><span class="cl">Ambiguous info command &#34;w&#34;: warranty, watchpoints, win.
+</span></span><span class="line"><span class="cl">(gdb) info watchpoints
+</span></span><span class="line"><span class="cl">Num     Type           Disp Enb Address            What
+</span></span><span class="line"><span class="cl">2       hw watchpoint  keep y                      i
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Old value = 0
+</span></span><span class="line"><span class="cl">New value = 2
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">9               i++;
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Old value = 2
+</span></span><span class="line"><span class="cl">New value = 3
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8               sum += i;
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Old value = 3
+</span></span><span class="line"><span class="cl">New value = 4
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Old value = 4
+</span></span><span class="line"><span class="cl">New value = 5
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">Hardware watchpoint 2: i
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Old value = 5
+</span></span><span class="line"><span class="cl">New value = 6
+</span></span><span class="line"><span class="cl">calculate_sum (n=5) at test.c:7
+</span></span><span class="line"><span class="cl">7           while (i &lt;= n) {
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Watchpoint 2 deleted because the program has left the block in
+</span></span><span class="line"><span class="cl">which its expression is valid.
+</span></span><span class="line"><span class="cl">0x0000000000400574 in main () at test.c:16
+</span></span><span class="line"><span class="cl">16          int result = calculate_sum(num);
+</span></span><span class="line"><span class="cl">(gdb) c
+</span></span><span class="line"><span class="cl">Continuing.
+</span></span><span class="line"><span class="cl">1到5的和为：15
+</span></span><span class="line"><span class="cl">[Inferior 1 (process 19421) exited normally]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>x/FMT ADDRESS</code> （如x/10xw 0x123456查看从 0x123456 开始的 10 个 4 字节值，以十六进制显示）</p>
+<h2 id="调试正在运行的程序">调试正在运行的程序</h2>
+<p>假设代码为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">func</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行该程序</p>
+<p>通过查看该进程号来用gdb调试，注意gdb调试时，程序会停止，执行continue会持续执行，直到ctrl+c，再执行continue时继续执行，执行next会单步执行，退出gdb后程序会继续执行</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">root</span><span class="err">@</span><span class="n">iZbp1cqyppyocyfsztmoftZ</span><span class="p">:</span><span class="o">~$</span> <span class="n">ps</span> <span class="o">-</span><span class="n">ef</span> <span class="o">|</span> <span class="n">grep</span> <span class="n">test</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span>     <span class="mi">21402</span> <span class="mi">21346</span>  <span class="mi">0</span> <span class="mi">00</span><span class="p">:</span><span class="mi">07</span> <span class="n">pts</span><span class="o">/</span><span class="mi">0</span>    <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="o">./</span><span class="n">test</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span>     <span class="mi">21465</span> <span class="mi">21380</span>  <span class="mi">0</span> <span class="mi">00</span><span class="p">:</span><span class="mi">08</span> <span class="n">pts</span><span class="o">/</span><span class="mi">1</span>    <span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span> <span class="n">grep</span> <span class="o">--</span><span class="n">color</span><span class="o">=</span><span class="n">auto</span> <span class="n">test</span>
+</span></span><span class="line"><span class="cl"><span class="n">root</span><span class="err">@</span><span class="n">iZbp1cqyppyocyfsztmoftZ</span><span class="p">:</span><span class="o">~$</span> <span class="n">gdb</span> <span class="o">-</span><span class="n">p</span> <span class="mi">21402</span>
+</span></span><span class="line"><span class="cl"><span class="n">GNU</span> <span class="n">gdb</span> <span class="p">(</span><span class="n">GDB</span><span class="p">)</span> <span class="n">Red</span> <span class="n">Hat</span> <span class="n">Enterprise</span> <span class="n">Linux</span> <span class="mf">7.6</span><span class="o">.</span><span class="mi">1</span><span class="o">-</span><span class="mf">120.</span><span class="n">el7</span>
+</span></span><span class="line"><span class="cl"><span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="mi">2013</span> <span class="n">Free</span> <span class="n">Software</span> <span class="n">Foundation</span><span class="p">,</span> <span class="n">Inc</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">License</span> <span class="n">GPLv3</span><span class="o">+</span><span class="p">:</span> <span class="n">GNU</span> <span class="n">GPL</span> <span class="n">version</span> <span class="mi">3</span> <span class="ow">or</span> <span class="n">later</span> <span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">gnu</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">licenses</span><span class="o">/</span><span class="n">gpl</span><span class="o">.</span><span class="n">html</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="n">This</span> <span class="n">is</span> <span class="n">free</span> <span class="n">software</span><span class="p">:</span> <span class="n">you</span> <span class="n">are</span> <span class="n">free</span> <span class="n">to</span> <span class="n">change</span> <span class="ow">and</span> <span class="n">redistribute</span> <span class="n">it</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">There</span> <span class="n">is</span> <span class="n">NO</span> <span class="n">WARRANTY</span><span class="p">,</span> <span class="n">to</span> <span class="n">the</span> <span class="n">extent</span> <span class="n">permitted</span> <span class="n">by</span> <span class="n">law</span><span class="o">.</span>  <span class="n">Type</span> <span class="s2">&#34;show copying&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="ow">and</span> <span class="s2">&#34;show warranty&#34;</span> <span class="k">for</span> <span class="n">details</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">This</span> <span class="n">GDB</span> <span class="n">was</span> <span class="n">configured</span> <span class="n">as</span> <span class="s2">&#34;x86_64-redhat-linux-gnu&#34;</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">For</span> <span class="n">bug</span> <span class="n">reporting</span> <span class="n">instructions</span><span class="p">,</span> <span class="n">please</span> <span class="n">see</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="o">.</span><span class="n">gnu</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">software</span><span class="o">/</span><span class="n">gdb</span><span class="o">/</span><span class="n">bugs</span><span class="o">/&gt;.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Attaching</span> <span class="n">to</span> <span class="n">process</span> <span class="mi">21402</span>
+</span></span><span class="line"><span class="cl"><span class="n">Reading</span> <span class="n">symbols</span> <span class="n">from</span> <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">test</span><span class="o">...</span><span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Reading</span> <span class="n">symbols</span> <span class="n">from</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mf">6.</span><span class="o">..</span><span class="p">(</span><span class="n">no</span> <span class="n">debugging</span> <span class="n">symbols</span> <span class="n">found</span><span class="p">)</span><span class="o">...</span><span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Loaded</span> <span class="n">symbols</span> <span class="k">for</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="n">Reading</span> <span class="n">symbols</span> <span class="n">from</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">ld</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">so</span><span class="o">.</span><span class="mf">2.</span><span class="o">..</span><span class="p">(</span><span class="n">no</span> <span class="n">debugging</span> <span class="n">symbols</span> <span class="n">found</span><span class="p">)</span><span class="o">...</span><span class="n">done</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Loaded</span> <span class="n">symbols</span> <span class="k">for</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">ld</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">x86</span><span class="o">-</span><span class="mf">64.</span><span class="n">so</span><span class="o">.</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x00007f5e577609e0</span> <span class="ow">in</span> <span class="n">__nanosleep_nocancel</span> <span class="p">()</span> <span class="n">from</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="n">Missing</span> <span class="n">separate</span> <span class="n">debuginfos</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span> <span class="n">debuginfo</span><span class="o">-</span><span class="n">install</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="n">el7_9</span><span class="o">.</span><span class="mf">3.</span><span class="n">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">bf</span>
+</span></span><span class="line"><span class="cl"><span class="n">Undefined</span> <span class="n">command</span><span class="p">:</span> <span class="s2">&#34;bf&#34;</span><span class="o">.</span>  <span class="n">Try</span> <span class="s2">&#34;help&#34;</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">bt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x00007f5e577609e0 in __nanosleep_nocancel () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#1  0x00007f5e57760894 in sleep () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#2  0x000000000040059d in func () at test.c:6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#3  0x00000000004005cb in main () at test.c:12</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="n">No</span> <span class="n">symbol</span> <span class="s2">&#34;i&#34;</span> <span class="ow">in</span> <span class="n">current</span> <span class="n">context</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">f</span> <span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#2  0x000000000040059d in func () at test.c:6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>               <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">21</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="n">q</span> 
+</span></span><span class="line"><span class="cl"><span class="o">^</span><span class="n">C</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">received</span> <span class="k">signal</span> <span class="n">SIGINT</span><span class="p">,</span> <span class="n">Interrupt</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x00007f5e577609e0</span> <span class="ow">in</span> <span class="n">__nanosleep_nocancel</span> <span class="p">()</span> <span class="n">from</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">6</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl"><span class="n">Continuing</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="o">^</span><span class="n">C</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">received</span> <span class="k">signal</span> <span class="n">SIGINT</span><span class="p">,</span> <span class="n">Interrupt</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="mh">0x00007f5e577609e0</span> <span class="ow">in</span> <span class="n">__nanosleep_nocancel</span> <span class="p">()</span> <span class="n">from</span> <span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">libc</span><span class="o">.</span><span class="n">so</span><span class="o">.</span><span class="mi">6</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="调试corefile">调试corefile</h2>
+<p>使用<code>ulimit -a</code>查看<code>core file size</code>是否为0，如果为0，不能生成corefile，需要<code>ulimit -c unlimited</code> (临时生效，重启后需重新设置)</p>
+<p>当程序core时，会生成core.xxx文件，xxx为进程号</p>
+<p>接下来用几个出错的C++例子说明gdb调试corefile的过程</p>
+<p>centos 安装g++</p>
+<p><code>yum install gcc-c++</code></p>
+<p>执行可执行文件时，会出现 <code>xxx (core dumped)</code></p>
+<p>使用 <code>gdb program core.xxx</code> 来调试corefile</p>
+<h3 id="空指针解引用">空指针解引用</h3>
+<p>SIGSEGV 段错误</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span> <span class="c1">// 空指针，未指向任何有效内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// 错误：解引用空指针，触发coredump
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Core</span> <span class="n">was</span> <span class="n">generated</span> <span class="n">by</span> <span class="err">`</span><span class="o">./</span><span class="n">test</span><span class="s1">&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">terminated</span> <span class="n">with</span> <span class="k">signal</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Segmentation</span> <span class="n">fault</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x000000000040065d in main () at test.cpp:6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">//</span> <span class="err">错误：解引用空指针，触发</span><span class="n">coredump</span>
+</span></span><span class="line"><span class="cl"><span class="n">Missing</span> <span class="n">separate</span> <span class="n">debuginfos</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span> <span class="n">debuginfo</span><span class="o">-</span><span class="n">install</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="n">el7_9</span><span class="o">.</span><span class="mf">3.</span><span class="n">x86_64</span> <span class="n">libgcc</span><span class="o">-</span><span class="mf">4.8</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="mf">44.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span> <span class="n">libstdc</span><span class="o">++-</span><span class="mf">4.8</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="mf">44.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">bt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x000000000040065d in main () at test.cpp:6</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">f</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x000000000040065d in main () at test.cpp:6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="o">//</span> <span class="err">错误：解引用空指针，触发</span><span class="n">coredump</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">p</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">1</span> <span class="o">=</span> <span class="p">(</span><span class="ne">int</span> <span class="o">*</span><span class="p">)</span> <span class="mh">0x0</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="o">&amp;</span><span class="n">p</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">2</span> <span class="o">=</span> <span class="p">(</span><span class="ne">int</span> <span class="o">**</span><span class="p">)</span> <span class="mh">0x7ffc0f05bf28</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="o">*</span><span class="n">p</span>
+</span></span><span class="line"><span class="cl"><span class="n">Cannot</span> <span class="n">access</span> <span class="n">memory</span> <span class="n">at</span> <span class="n">address</span> <span class="mh">0x0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="野指针解引用">野指针解引用</h3>
+<p>SIGSEGV 段错误（未定义行为，可能正常运行）</p>
+<p>如果正常运行说明，内存已释放，但未被os回收</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span> <span class="c1">// 释放内存后，p变为野指针（指向“无效内存”）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// 错误：访问已释放的内存，触发coredump
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>可以看出虽然delete了，但是20被正常写入，但是不要做这种危险的行为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">(gdb) start
+</span></span><span class="line"><span class="cl">Temporary breakpoint 1 at 0x4006e5: file test.cpp, line 5.
+</span></span><span class="line"><span class="cl">Starting program: /root/test_core/test 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Temporary breakpoint 1, main () at test.cpp:5
+</span></span><span class="line"><span class="cl">5           int* p = new int(5); 
+</span></span><span class="line"><span class="cl">Missing separate debuginfos, use: debuginfo-install glibc-2.17-326.el7_9.3.x86_64 libgcc-4.8.5-44.el7.x86_64 libstdc++-4.8.5-44.el7.x86_64
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">6           delete p; // 释放内存后，p变为野指针（指向“无效内存”）
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">7           *p = 20; // 错误：访问已释放的内存，触发coredump
+</span></span><span class="line"><span class="cl">(gdb) n
+</span></span><span class="line"><span class="cl">8           return 0;
+</span></span><span class="line"><span class="cl">(gdb) p p
+</span></span><span class="line"><span class="cl">$1 = (int *) 0x602010
+</span></span><span class="line"><span class="cl">(gdb) x/4xw p
+</span></span><span class="line"><span class="cl">0x602010:       0x00000014      0x00000000      0x00000000      0x00000000
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="数组越界">数组越界</h3>
+<p>SIGSEGV 段错误（未定义行为，可能正常运行）</p>
+<p>如果正常运行说明，越界的内存仍是该进程的，不会占用到别的进程去</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">};</span> <span class="c1">// 数组下标合法范围：0~2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// 错误：下标10超出范围，访问非法内存
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="栈溢出">栈溢出</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 无终止条件的递归：每次调用都会在栈上创建新栈帧
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">infinite_recursion</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">infinite_recursion</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">infinite_recursion</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 另一种场景：局部数组过大（栈默认大小通常几MB）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// char huge_arr[1024*1024*10]; // 10MB数组，直接撑满栈
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>使用<code>bt</code>发现调用栈过多</p>
+<h3 id="非法修改只读内存">非法修改只读内存</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 字符串常量&#34;hello&#34;存储在只读数据区，指针str指向该区域
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">char</span><span class="o">*</span> <span class="n">str</span> <span class="o">=</span> <span class="s">&#34;hello&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;H&#39;</span><span class="p">;</span> <span class="c1">// 错误：修改只读内存，触发coredump
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Core</span> <span class="n">was</span> <span class="n">generated</span> <span class="n">by</span> <span class="err">`</span><span class="o">./</span><span class="n">test</span><span class="s1">&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">terminated</span> <span class="n">with</span> <span class="k">signal</span> <span class="mi">11</span><span class="p">,</span> <span class="n">Segmentation</span> <span class="n">fault</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x000000000040065d in main () at test.cpp:6</span>
+</span></span><span class="line"><span class="cl"><span class="mi">6</span>           <span class="nb">str</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;H&#39;</span><span class="p">;</span> <span class="o">//</span> <span class="err">错误：修改只读内存，触发</span><span class="n">coredump</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="断言失败">断言失败</h3>
+<p>SIGABRT</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">age</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 断言“age为正数”，若条件不满足则触发abort()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">assert</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="s">&#34;Age must be positive&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行程序时，产生<code>test: test.cpp:7: int main(): Assertion age &gt; 0 &amp;&amp; &quot;Age must be positive&quot;failed.Aborted (core dumped)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Core</span> <span class="n">was</span> <span class="n">generated</span> <span class="n">by</span> <span class="err">`</span><span class="o">./</span><span class="n">test</span><span class="s1">&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">terminated</span> <span class="n">with</span> <span class="k">signal</span> <span class="mi">6</span><span class="p">,</span> <span class="n">Aborted</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x00007fb265c32387 in raise () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="n">Missing</span> <span class="n">separate</span> <span class="n">debuginfos</span><span class="p">,</span> <span class="n">use</span><span class="p">:</span> <span class="n">debuginfo</span><span class="o">-</span><span class="n">install</span> <span class="n">glibc</span><span class="o">-</span><span class="mf">2.17</span><span class="o">-</span><span class="mf">326.</span><span class="n">el7_9</span><span class="o">.</span><span class="mf">3.</span><span class="n">x86_64</span> <span class="n">libgcc</span><span class="o">-</span><span class="mf">4.8</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="mf">44.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span> <span class="n">libstdc</span><span class="o">++-</span><span class="mf">4.8</span><span class="o">.</span><span class="mi">5</span><span class="o">-</span><span class="mf">44.</span><span class="n">el7</span><span class="o">.</span><span class="n">x86_64</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">bt</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x00007fb265c32387 in raise () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#1  0x00007fb265c33a78 in abort () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#2  0x00007fb265c2b1a6 in __assert_fail_base () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#3  0x00007fb265c2b252 in __assert_fail () from /lib64/libc.so.6</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#4  0x00000000004006cb in main () at test.cpp:7</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">f</span> <span class="mi">4</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#4  0x00000000004006cb in main () at test.cpp:7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="nb">assert</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="s2">&#34;Age must be positive&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">gdb</span><span class="p">)</span> <span class="n">p</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl"><span class="o">$</span><span class="mi">1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="除零错误">除零错误</h3>
+<p>SIGFPE</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// 错误：整数除零，触发coredump
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">result</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行该程序，会出现 <code>Floating point exception (core dumped)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">Core</span> <span class="n">was</span> <span class="n">generated</span> <span class="n">by</span> <span class="err">`</span><span class="o">./</span><span class="n">test</span><span class="s1">&#39;.</span>
+</span></span><span class="line"><span class="cl"><span class="n">Program</span> <span class="n">terminated</span> <span class="n">with</span> <span class="k">signal</span> <span class="mi">8</span><span class="p">,</span> <span class="n">Arithmetic</span> <span class="n">exception</span><span class="o">.</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#0  0x00000000004007c7 in main () at test.cpp:7</span>
+</span></span><span class="line"><span class="cl"><span class="mi">7</span>           <span class="ne">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span> <span class="o">//</span> <span class="err">错误：整数除零，触发</span><span class="n">coredump</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="调试多线程程序">调试多线程程序</h2>
+<p>to be continued</p>
+<h2 id="调试多进程程序">调试多进程程序</h2>
+<p>to be continued</p>
+<h2 id="参考">参考</h2>
+<p><a href="https://www.cnblogs.com/xvic/p/15997498.html" target="_blank" rel="noopener noreffer">https://www.cnblogs.com/xvic/p/15997498.html</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2025-10-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/posts/gdb_quickstart/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用" data-hashtags="note"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-hashtag="note"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 WhatsApp" data-sharer="whatsapp" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Line" data-sharer="line" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Myspace" data-sharer="myspace" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用" data-description="gdb基础使用"><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="分享到 Blogger" data-sharer="blogger" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用" data-description="gdb基础使用"><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://dyhgo.github.io/posts/gdb_quickstart/" data-title="gdb基础使用"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/note/">Note</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/asan_valgrind/" class="prev" rel="prev" title="使用ASAN和Valgrind调试C&#43;&#43;内存问题"><i class="fas fa-angle-left fa-fw"></i>使用ASAN和Valgrind调试C&#43;&#43;内存问题</a></div>
+</div>
+<div id="comments"><div id="valine" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://valine.js.org/">Valine</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/valine/valine.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.814eba54011def7fdeead06ae5cf964a245c347d0f4972e71cc3de1482b1b473.css" integrity="sha256-gU66VAEd73/e6tBq5c&#43;WSiRcNH0PSXLnHMPeFIKxtHM="><link rel="stylesheet" href="/lib/katex/katex.min.83d2c4be21429a6cef2c092c196964cdccf38cbe4f39171c67e7a8f10c6a4585.css" integrity="sha256-g9LEviFCmmzvLAksGWlkzczzjL5PORccZ&#43;eo8QxqRYU="><link rel="stylesheet" href="/lib/katex/copy-tex.min.d48d43b8d4d2f95eca78538681a96abcf115c70a069d8cbdff877584834e15cc.css" integrity="sha256-1I1DuNTS&#43;V7KeFOGgalqvPEVxwoGnYy9/4d1hINOFcw="><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.d15ac8c0ae2d09eb2a19e5080e0f3ebfa7190fb705e3b7d265395b38ad583b40.css" integrity="sha256-0VrIwK4tCesqGeUIDg8&#43;v6cZD7cF47fSZTlbOK1YO0A="><link rel="stylesheet" href="/custom.9163908f8597aa34994fe26730bb60361e235b3ad22ad37e142e94ece2e1b6e8.css" integrity="sha256-kWOQj4WXqjSZT&#43;JnMLtgNh4jWzrSKtN&#43;FC6U7OLhtug="><link rel="stylesheet" href="/main.cee4d41798cc7e17000570aa340a0d41670781e5b0127a4cac77a7793ef10537.css" integrity="sha256-zuTUF5jMfhcABXCqNAoNQWcHgeWwEnpMrHeneT7xBTc="><link rel="stylesheet" href="/tailwind.0aca0d020ddca272b891183c202e30f524a4cf25ae18868d146576407b56e20a.css" integrity="sha256-CsoNAg3conK4kRg8IC4w9SSkzyWuGIaNFGV2QHtW4go="><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.fill%2CArray.prototype.find%2CArray.from%2CIntersectionObserver%2CMath.sign%2CObject.assign%2CPromise%2CObject.entries%2CElement.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2Chtml5shiv%2CObject.values%2Cfetch%2CElement.prototype.after"></script><script type="text/javascript" src="/lib/object-fit-images/ofi.min.2bf7b7119396b4bcde352b2edf8fc235006924dcd23fba7e5dcef964cb12a113.js" integrity="sha256-K/e3EZOWtLzeNSsu34/CNQBpJNzSP7p&#43;Xc75ZMsSoRM="></script><script type="text/javascript" src="/lib/valine/Valine.min.439d65236ece5f69c175b1618c71d000d272975733f3ab7f6758f9762144cc40.js" integrity="sha256-Q51lI27OX2nBdbFhjHHQANJyl1cz86t/Z1j5diFEzEA="></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.adf0d4e8468fc715a1802c36ffde0be850e44b63408ad9a18510e15190f16fa9.js" integrity="sha256-rfDU6EaPxxWhgCw2/94L6FDkS2NAitmhhRDhUZDxb6k="></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.8859b6b08e22fcedffc390cf0ad0277cbc03e5114e9eb507030e03f72fcf9ef8.js" integrity="sha256-iFm2sI4i/O3/w5DPCtAnfLwD5RFOnrUHAw4D9y/Pnvg="></script><script type="text/javascript" src="/lib/lunr/lunr.min.ed3e8bffe3502debff130154fc29cc0ff2e7e978a635b6c37fc7dd236975a983.js" integrity="sha256-7T6L/&#43;NQLev/EwFU/CnMD/Ln6XimNbbDf8fdI2l1qYM="></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.9eb7268578ef2dcd2d2a1fe25794e947bf956fcb28847b856083596de1b72758.js" integrity="sha256-nrcmhXjvLc0tKh/iV5TpR7&#43;Vb8sohHuFYINZbeG3J1g="></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.6cf07e552d88208e432b59a8fbb387a0d7b052c77c02fbbb7ac2dbdac1b2aec9.js" integrity="sha256-bPB&#43;VS2III5DK1mo&#43;7OHoNewUsd8Avu7esLb2sGyrsk="></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.498676c34eb225e85357ab0ce19c3c1244f3bd0bf595e5684d1b9d50ea4fbc42.js" integrity="sha256-SYZ2w06yJehTV6sM4Zw8EkTzvQv1leVoTRudUOpPvEI="></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.c5230c24989df5ffea19c876f99df31c4e287f4be86309895b1c2a8090b88b74.js" integrity="sha256-xSMMJJid9f/qGch2&#43;Z3zHE4of0voYwmJWxwqgJC4i3Q="></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.6ad7d729c09ebdf3520dd9df32869f4e7084fe7a606833a51e78aa3c7230073e.js" integrity="sha256-atfXKcCevfNSDdnfMoafTnCE/npgaDOlHniqPHIwBz4="></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.c0fdeff5891fa308636d6429da4e31538516797ccb425792776ad19db625a1d0.js" integrity="sha256-wP3v9YkfowhjbWQp2k4xU4UWeXzLQleSd2rRnbYlodA="></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.6551cb357807487f572a08d6a6e2cf8697b94d9409582067032e793c0e5e759b.js" integrity="sha256-ZVHLNXgHSH9XKgjWpuLPhpe5TZQJWCBnAy55PA5edZs="></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.d1c077a0d2c2fffa378c65d45894c78d917c5275aa113389d51bef6efaff87c1.js" integrity="sha256-0cB3oNLC//o3jGXUWJTHjZF8UnWqETOJ1Rvvbvr/h8E="></script><script type="text/javascript" src="/lib/sharer/sharer.min.73956988a603dde38a27beccd2d62429de847bc78adea990e97d1e60563d0ef8.js" integrity="sha256-c5VpiKYD3eOKJ77M0tYkKd6Ee8eK3qmQ6X0eYFY9Dvg="></script><script type="text/javascript" src="/lib/katex/katex.min.17f5dd6b9f123dd7140abfb18521b3f4c036cd004f6f40121182a8865f140877.js" integrity="sha256-F/Xda58SPdcUCr&#43;xhSGz9MA2zQBPb0ASEYKohl8UCHc="></script><script type="text/javascript" src="/lib/katex/auto-render.min.f74776a677f0d2be0af0264058f928e2ba455d0b19bc985304660d922a43a6b2.js" integrity="sha256-90d2pnfw0r4K8CZAWPko4rpFXQsZvJhTBGYNkipDprI="></script><script type="text/javascript" src="/lib/katex/copy-tex.min.2ab2237329021bc443986c8327f6e61357fb68a54e5d233d224023718c02207d.js" integrity="sha256-KrIjcykCG8RDmGyDJ/bmE1f7aKVOXSM9IkAjcYwCIH0="></script><script type="text/javascript" src="/lib/katex/mhchem.min.5cea356d6025c5a2f18c454c83ec5674dbb04fab1cd1d75569e77788c6b6f888.js" integrity="sha256-XOo1bWAlxaLxjEVMg&#43;xWdNuwT6sc0ddVaed3iMa2&#43;Ig="></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.e55842a856a6d829feca3c3ad736c136b6c7549e9247274f78aa296259e06e24.js" integrity="sha256-5VhCqFam2Cn&#43;yjw61zbBNrbHVJ6SRydPeKopYlngbiQ="></script><script type="text/javascript" src="/custom.5fd579a1842c92ebb7bb1903945ba43ed11ac396369c88d598feba761bde2ce8.js" integrity="sha256-X9V5oYQskuu3uxkDlFukPtEaw5Y2nIjVmP66dhveLOg="></script><script type="text/javascript" src="/live2d.2804c53faebaa60fb8f704a891a66b4f8735dd3a6dc66ab694fd1c5444fffbde.js" integrity="sha256-KATFP666pg&#43;49wSokaZrT4c13Tptxmq2lP0cVET/&#43;94="></script><script type="text/javascript" src="/snowflakes.5edc2d34e69483e3fc0d1e22bb50967f7a7d439f957f10644418075e9108158e.js" integrity="sha256-XtwtNOaUg&#43;P8DR4iu1CWf3p9Q5&#43;VfxBkRBgHXpEIFY4="></script><script type="text/javascript" src="/LAppDefine.c0476f17d95f5a300a8abc3d63669c97189602da1c1a00e79267d1b677c8c984.js" integrity="sha256-wEdvF9lfWjAKirw9Y2aclxiWAtocGgDnkmfRtnfIyYQ="></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{"valine":{"appId":"wFpQIRY9dXNYEXsldYeTUd4D-gzGzoHsz","appKey":"xUWQQCxz4MVS4Fs5TDz5z2kQ","avatar":"mp","el":"#valine","emojiCDN":"https://cdn.jsdelivr.net/npm/emoji-datasource-google@5.0.1/img/google/64/","emojiMaps":{"100":"1f4af.png","alien":"1f47d.png","anger":"1f4a2.png","angry":"1f620.png","anguished":"1f627.png","astonished":"1f632.png","black_heart":"1f5a4.png","blue_heart":"1f499.png","blush":"1f60a.png","bomb":"1f4a3.png","boom":"1f4a5.png","broken_heart":"1f494.png","brown_heart":"1f90e.png","clown_face":"1f921.png","cold_face":"1f976.png","cold_sweat":"1f630.png","confounded":"1f616.png","confused":"1f615.png","cry":"1f622.png","crying_cat_face":"1f63f.png","cupid":"1f498.png","dash":"1f4a8.png","disappointed":"1f61e.png","disappointed_relieved":"1f625.png","dizzy":"1f4ab.png","dizzy_face":"1f635.png","drooling_face":"1f924.png","exploding_head":"1f92f.png","expressionless":"1f611.png","face_vomiting":"1f92e.png","face_with_cowboy_hat":"1f920.png","face_with_hand_over_mouth":"1f92d.png","face_with_head_bandage":"1f915.png","face_with_monocle":"1f9d0.png","face_with_raised_eyebrow":"1f928.png","face_with_rolling_eyes":"1f644.png","face_with_symbols_on_mouth":"1f92c.png","face_with_thermometer":"1f912.png","fearful":"1f628.png","flushed":"1f633.png","frowning":"1f626.png","ghost":"1f47b.png","gift_heart":"1f49d.png","green_heart":"1f49a.png","grimacing":"1f62c.png","grin":"1f601.png","grinning":"1f600.png","hankey":"1f4a9.png","hear_no_evil":"1f649.png","heart":"2764-fe0f.png","heart_decoration":"1f49f.png","heart_eyes":"1f60d.png","heart_eyes_cat":"1f63b.png","heartbeat":"1f493.png","heartpulse":"1f497.png","heavy_heart_exclamation_mark_ornament":"2763-fe0f.png","hole":"1f573-fe0f.png","hot_face":"1f975.png","hugging_face":"1f917.png","hushed":"1f62f.png","imp":"1f47f.png","innocent":"1f607.png","japanese_goblin":"1f47a.png","japanese_ogre":"1f479.png","joy":"1f602.png","joy_cat":"1f639.png","kiss":"1f48b.png","kissing":"1f617.png","kissing_cat":"1f63d.png","kissing_closed_eyes":"1f61a.png","kissing_heart":"1f618.png","kissing_smiling_eyes":"1f619.png","laughing":"1f606.png","left_speech_bubble":"1f5e8-fe0f.png","love_letter":"1f48c.png","lying_face":"1f925.png","mask":"1f637.png","money_mouth_face":"1f911.png","nauseated_face":"1f922.png","nerd_face":"1f913.png","neutral_face":"1f610.png","no_mouth":"1f636.png","open_mouth":"1f62e.png","orange_heart":"1f9e1.png","partying_face":"1f973.png","pensive":"1f614.png","persevere":"1f623.png","pleading_face":"1f97a.png","pouting_cat":"1f63e.png","purple_heart":"1f49c.png","rage":"1f621.png","relaxed":"263a-fe0f.png","relieved":"1f60c.png","revolving_hearts":"1f49e.png","right_anger_bubble":"1f5ef-fe0f.png","robot_face":"1f916.png","rolling_on_the_floor_laughing":"1f923.png","scream":"1f631.png","scream_cat":"1f640.png","see_no_evil":"1f648.png","shushing_face":"1f92b.png","skull":"1f480.png","skull_and_crossbones":"2620-fe0f.png","sleeping":"1f634.png","sleepy":"1f62a.png","slightly_frowning_face":"1f641.png","slightly_smiling_face":"1f642.png","smile":"1f604.png","smile_cat":"1f638.png","smiley":"1f603.png","smiley_cat":"1f63a.png","smiling_face_with_3_hearts":"1f970.png","smiling_imp":"1f608.png","smirk":"1f60f.png","smirk_cat":"1f63c.png","sneezing_face":"1f927.png","sob":"1f62d.png","space_invader":"1f47e.png","sparkling_heart":"1f496.png","speak_no_evil":"1f64a.png","speech_balloon":"1f4ac.png","star-struck":"1f929.png","stuck_out_tongue":"1f61b.png","stuck_out_tongue_closed_eyes":"1f61d.png","stuck_out_tongue_winking_eye":"1f61c.png","sunglasses":"1f60e.png","sweat":"1f613.png","sweat_drops":"1f4a6.png","sweat_smile":"1f605.png","thinking_face":"1f914.png","thought_balloon":"1f4ad.png","tired_face":"1f62b.png","triumph":"1f624.png","two_hearts":"1f495.png","unamused":"1f612.png","upside_down_face":"1f643.png","weary":"1f629.png","white_frowning_face":"2639-fe0f.png","white_heart":"1f90d.png","wink":"1f609.png","woozy_face":"1f974.png","worried":"1f61f.png","yawning_face":"1f971.png","yellow_heart":"1f49b.png","yum":"1f60b.png","zany_face":"1f92a.png","zipper_mouth_face":"1f910.png","zzz":"1f4a4.png"},"enableQQ":true,"highlight":true,"lang":"zh-cn","pageSize":10,"placeholder":"说点什么吧...","recordIP":true,"visitor":true}},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":50,"type":"lunr"},"twemoji":true};</script><script type="text/javascript" src="/js/theme.min.09729ab43fbb7b49c065c597d41bb70983c7852ea77794a00b8f78099b049b43.js" integrity="sha256-CXKatD&#43;7e0nAZcWX1Bu3CYPHhS6nd5SgC494CZsEm0M="></script></body>
+</html>
