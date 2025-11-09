@@ -171,6 +171,154 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/codeforces-round-644-div.-3/">Codeforces Round #644 (Div. 3)</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-05-25">2020-05-25</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><p>可能是最简单的div3（不考dp dfs？）</p>
+<h1 id="a-minimal-square"><a href="https://codeforces.com/contest/1360/problem/A" target="_blank" rel="noopener noreffer">A. Minimal Square</a></h1>
+<h2 id="题意">题意</h2>
+<p>给俩相同的长方形，求面积最小的正方形使得容纳两个长方形，且长方形之间不重合</p>
+<h2 id="题解">题解</h2>
+<p>两倍宽或两倍长</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">ll</span> <span class="o">=</span> <span class="kt">long</span> <span class="kt">long</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">pii</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="n">pll</span> <span class="o">=</span> <span class="n">pair</span><span class="o">&lt;</span><span class="n">ll</span><span class="p">,</span><span class="n">ll</span><span class="o">&gt;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span>  <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span> <span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">)</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b-honest-coach"><a href="https://codeforces.com/contest/1360/problem/B" target="_blank" rel="noopener noreffer">B. Honest Coach</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>把一堆数分成两堆，求第一堆最大值和第二堆最小值的差的最小值</p></div><div class="post-footer">
+        <a href="/posts/codeforces-round-644-div.-3/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/greedy/">Greedy</a>,&nbsp;<a href="/tags/construct/">Construct</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/abc168/">abc168</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-05-19">2020-05-19</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a----therefore"><a href="https://atcoder.jp/contests/abc168/tasks/abc168_a" target="_blank" rel="noopener noreffer">A - ∴ (Therefore)</a></h1>
+<h2 id="题意">题意</h2>
+<p>看题目</p>
+<h2 id="题解">题解</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="k">switch</span><span class="p">(</span><span class="n">c</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="sc">&#39;2&#39;</span> <span class="o">:</span><span class="k">case</span> <span class="sc">&#39;4&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;5&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;7&#39;</span><span class="o">:</span> <span class="k">case</span> <span class="sc">&#39;9&#39;</span><span class="o">:</span> 
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;hon</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">case</span> <span class="sc">&#39;3&#39;</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;bon</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">default</span> <span class="o">:</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;pon</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b--"><a href="https://atcoder.jp/contests/abc168/tasks/abc168_b" target="_blank" rel="noopener noreffer">B - &hellip; (Triple Dots)</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>看题目</p>
+<h2 id="题解-1">题解</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">k</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="o">&lt;=</span><span class="n">k</span><span class="p">)</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">k</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span><span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;...&#34;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="c----colon"><a href="https://atcoder.jp/contests/abc168/tasks/abc168_c" target="_blank" rel="noopener noreffer">C - : (Colon)</a></h1>
+<h2 id="题意-2">题意</h2>
+<p>给定时针和分针的长度，起始为12点，问经过h小时m分钟后，时针和分针不连接的端点的距离</p></div><div class="post-footer">
+        <a href="/posts/abc168/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/bfs/">Bfs</a>,&nbsp;<a href="/tags/counting/">Counting</a>,&nbsp;<a href="/tags/computational_geometry/">Computational_geometry</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/codeforces-round-643-div.-2-a~d/">Codeforces Round #643 (Div. 2) A~D</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-05-16">2020-05-16</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><h1 id="a-sequence-with-digits"><a href="https://codeforces.com/contest/1355/problem/A" target="_blank" rel="noopener noreffer">A. Sequence with Digits</a></h1>
 <h2 id="题意">题意</h2>
@@ -630,78 +778,6 @@ Each test case contains two integers n and m.</p></div><div class="post-footer">
 <p>给一数n，问是否可以构造一个数列</p></div><div class="post-footer">
         <a href="/posts/codeforces-round-636-div.-3-a~e/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/prefix/">Prefix</a>,&nbsp;<a href="/tags/graph_theory/">Graph_theory</a>,&nbsp;<a href="/tags/bfs/">Bfs</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/abc163/">abc163</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-04-22">2020-04-22</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---circle-pond"><a href="https://atcoder.jp/contests/abc163/tasks/abc163_a" target="_blank" rel="noopener noreffer">A - Circle Pond</a></h1>
-<h2 id="题意">题意</h2>
-<p>求圆周长</p>
-<h2 id="题解">题解</h2>
-<p>ac代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="mf">3.14159265</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="b---homework"><a href="https://atcoder.jp/contests/abc163/tasks/abc163_b" target="_blank" rel="noopener noreffer">B - Homework</a></h1>
-<h2 id="题意-1">题意</h2>
-<p>给定假期的时间和每一项作业完成的时间，求这个假期能玩几天</p>
-<h2 id="题解-1">题解</h2>
-<p>ac代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">n</span><span class="p">,</span><span class="n">m</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span> <span class="p">,</span> <span class="nb">input</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-</span></span><span class="line"><span class="cl"><span class="n">s</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">n</span><span class="o">&gt;=</span><span class="n">s</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">s</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="k">else</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="c---management"><a href="https://atcoder.jp/contests/abc163/tasks/abc163_c" target="_blank" rel="noopener noreffer">C - management</a></h1>
-<h2 id="题意-2">题意</h2>
-<p>告诉每个员工的老板，询问每个老板有多少个员工</p></div><div class="post-footer">
-        <a href="/posts/abc163/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/greedy/">Greedy</a>,&nbsp;<a href="/tags/graph_theory/">Graph_theory</a>,&nbsp;<a href="/tags/dp/">Dp</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/codeforces-round-634-div.-3-a~e/">Codeforces Round #634 (Div. 3) A~E</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-04-14">2020-04-14</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><h1 id="a-candies-and-two-sisters"><a href="https://codeforces.com/contest/1335/problem/A" target="_blank" rel="noopener noreffer">A. Candies and Two Sisters</a></h1>
-<h2 id="题意">题意</h2>
-<p>将一堆糖果分给两个女孩，其中一个要比另一个多，问有几种分法</p>
-<h2 id="题解">题解</h2>
-<p>可以看出规律</p>
-<p>ac代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">t</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-</span></span><span class="line"><span class="cl">    <span class="n">n</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">((</span><span class="nb">int</span><span class="p">)((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="b-construct-the-string"><a href="https://codeforces.com/contest/1335/problem/B" target="_blank" rel="noopener noreffer">B. Construct the String</a></h1>
-<h2 id="题意-1">题意</h2>
-<p>输入a,b,c 构造字符串，使字符串的长度为a，任意b个字符有c个不同字符</p></div><div class="post-footer">
-        <a href="/posts/codeforces-round-634-div.-3-a~e/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/prefix/">Prefix</a>,&nbsp;<a href="/tags/string/">String</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>

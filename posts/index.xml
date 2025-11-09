@@ -204,6 +204,27 @@
     <description><![CDATA[<p>打游戏时突然蓝屏，然后电脑强制更新，重启后设置全变成默认。。。</p>
 <p>为了后续方便在不同电脑上玩且在重装系统后能一键恢复设置，所以将原来的设置保存到cfg文件，最后加载cfg文件即可</p>]]></description>
 </item><item>
+    <title>ECONOMICS</title>
+    <link>https://dyhgo.github.io/posts/economics/</link>
+    <pubDate>Fri, 23 May 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/economics/</guid>
+    <description><![CDATA[<h2 id="专业化与贸易">专业化与贸易</h2>
+<p>specialization &amp; trade</p>
+<p>工业革命给人们生活的方方面面都带来了翻天覆地的变化。在工业革命之后，专业化显得尤为突出。</p>
+<p><strong>专业化</strong>（specialization）是指一个国家专注于生产自己有优势的产品，即各司其职。</p>]]></description>
+</item><item>
+    <title>分期还款方式</title>
+    <link>https://dyhgo.github.io/posts/stage_repay/</link>
+    <pubDate>Fri, 23 May 2025 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/stage_repay/</guid>
+    <description><![CDATA[<p>假设本金10W，分12期（月），年化6%</p>
+<h2 id="先息后本">先息后本</h2>
+<p>每月只还利息，最后一个月利息和本金一起还</p>
+<p>每月利息：100000 × (6% ÷ 12) = 500 元</p>
+<p>每月还款额：仅还利息，即500 元</p>]]></description>
+</item><item>
     <title>balisong</title>
     <link>https://dyhgo.github.io/posts/balisong/</link>
     <pubDate>Wed, 26 Feb 2025 00:00:00 &#43;0000</pubDate>
@@ -260,91 +281,5 @@
 <li>后甩 + 反搓</li>
 <li>y2k + 正手抛接 + 绕指 + 八字收刀 + 8ball + ufo + helix + 颠刀 + 反手收刀 + 反搓 + xo2 + 四指转 + tweak fan</li>
 </ul>]]></description>
-</item><item>
-    <title>装机</title>
-    <link>https://dyhgo.github.io/posts/%E8%A3%85%E6%9C%BA/</link>
-    <pubDate>Sun, 05 Jan 2025 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/%E8%A3%85%E6%9C%BA/</guid>
-    <description><![CDATA[<p>记录一下第一次装机，好玩，就是有点麻烦，特别是理线，而且我装了9把风扇，理线理到爆炸，最后还是一坨直接塞到看不见的地方得了</p>
-<p>最后成功点亮，烤鸡</p>
-<p>带灯的好，但是平时还是不要开了</p>]]></description>
-</item><item>
-    <title>hotcode</title>
-    <link>https://dyhgo.github.io/posts/hotcode/</link>
-    <pubDate>Fri, 20 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/hotcode/</guid>
-    <description><![CDATA[<h2 id="912-排序数组"><a href="https://leetcode.cn/problems/sort-an-array/description/" target="_blank" rel="noopener noreffer">912. 排序数组</a></h2>
-<h3 id="题意">题意</h3>
-<h3 id="题解">题解</h3>
-<p>改进版快排，针对数据重复问题，荷兰国旗问题
-如果数据是有序的，直接随机洗牌就行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">sortArray</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">quickSort</span> <span class="kd">func</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">quickSort</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">l</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">r</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">l</span> <span class="o">&gt;=</span> <span class="nx">r</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">pivot</span> <span class="o">:=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">l</span> <span class="o">+</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Intn</span><span class="p">(</span><span class="nx">r</span><span class="o">-</span><span class="nx">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">samel</span><span class="p">,</span> <span class="nx">samer</span> <span class="o">:=</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">r</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">cur</span> <span class="o">:=</span> <span class="nx">l</span>
-</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="nx">cur</span> <span class="o">&lt;=</span> <span class="nx">samer</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">pivot</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">samel</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">pivot</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">samer</span><span class="o">--</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">samel</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">samer</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">nums</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="103-二叉树的锯齿形层序遍历"><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/description/" target="_blank" rel="noopener noreffer">103. 二叉树的锯齿形层序遍历</a></h2>
-<h3 id="题意-1">题意</h3>
-<h3 id="题解-1">题解</h3>
-<p>和层序遍历差不多</p>]]></description>
 </item></channel>
 </rss>

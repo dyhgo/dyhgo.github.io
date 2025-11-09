@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Finance and Economics on This is DYH</title>
+    <link>https://dyhgo.github.io/categories/finance-and-economics/</link>
+    <description>Recent content in Finance and Economics on This is DYH</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 23 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dyhgo.github.io/categories/finance-and-economics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ECONOMICS</title>
+      <link>https://dyhgo.github.io/posts/economics/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/economics/</guid>
+      <description>&lt;h2 id=&#34;专业化与贸易&#34;&gt;专业化与贸易&lt;/h2&gt;&#xA;&lt;p&gt;specialization &amp;amp; trade&lt;/p&gt;&#xA;&lt;p&gt;工业革命给人们生活的方方面面都带来了翻天覆地的变化。在工业革命之后，专业化显得尤为突出。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;专业化&lt;/strong&gt;（specialization）是指一个国家专注于生产自己有优势的产品，即各司其职。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>分期还款方式</title>
+      <link>https://dyhgo.github.io/posts/stage_repay/</link>
+      <pubDate>Fri, 23 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://dyhgo.github.io/posts/stage_repay/</guid>
+      <description>&lt;p&gt;假设本金10W，分12期（月），年化6%&lt;/p&gt;&#xA;&lt;h2 id=&#34;先息后本&#34;&gt;先息后本&lt;/h2&gt;&#xA;&lt;p&gt;每月只还利息，最后一个月利息和本金一起还&lt;/p&gt;&#xA;&lt;p&gt;每月利息：100000 × (6% ÷ 12) = 500 元&lt;/p&gt;&#xA;&lt;p&gt;每月还款额：仅还利息，即500 元&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
