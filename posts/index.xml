@@ -3,7 +3,16 @@
         <title>所有文章 - This is DYH</title>
         <link>https://dyhgo.github.io/posts/</link>
         <description>所有文章 | This is DYH</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 03 Oct 2025 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Feb 2026 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://dyhgo.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>coffee</title>
+    <link>https://dyhgo.github.io/posts/coffee/</link>
+    <pubDate>Sun, 15 Feb 2026 00:00:00 &#43;0000</pubDate>
+    <author>作者</author>
+    <guid>https://dyhgo.github.io/posts/coffee/</guid>
+    <description><![CDATA[<h2 id="咖啡的种类">咖啡的种类</h2>
+<p>我们经常在咖啡店看到很多种咖啡，比如美式、拿铁、卡布奇诺、焦糖玛奇朵、摩卡等等。他们有什么区别呢？</p>
+<p>咖啡店卖的这些咖啡，他们都是用意式浓缩咖啡液，然后加上不同的东西，比如水、牛奶、燕麦奶、巧克力酱、焦糖糖浆等等，添加这些原料的比例不同就能制作出不同的咖啡，就会有不同的甜度和口感。</p>]]></description>
+</item><item>
     <title>gdb基础使用</title>
     <link>https://dyhgo.github.io/posts/gdb_quickstart/</link>
     <pubDate>Fri, 03 Oct 2025 00:00:00 &#43;0000</pubDate>
@@ -224,62 +233,5 @@
 <p>每月只还利息，最后一个月利息和本金一起还</p>
 <p>每月利息：100000 × (6% ÷ 12) = 500 元</p>
 <p>每月还款额：仅还利息，即500 元</p>]]></description>
-</item><item>
-    <title>balisong</title>
-    <link>https://dyhgo.github.io/posts/balisong/</link>
-    <pubDate>Wed, 26 Feb 2025 00:00:00 &#43;0000</pubDate>
-    <author>作者</author>
-    <guid>https://dyhgo.github.io/posts/balisong/</guid>
-    <description><![CDATA[<h2 id="开刀">开刀</h2>
-<ul>
-<li>正手风车</li>
-<li>正手快开</li>
-<li>反手快开</li>
-<li>八字开刀</li>
-<li>垫指开刀</li>
-<li>后甩开刀</li>
-<li>tweak fan</li>
-</ul>
-<h2 id="绕指">绕指</h2>
-<ul>
-<li>y2k</li>
-<li>反y2k</li>
-<li>正反y2k</li>
-<li>短停</li>
-<li>食指 + 拇指 同向 正</li>
-<li>食指 + 拇指 异向 反</li>
-<li>阶梯</li>
-<li>8ball</li>
-<li>ufo</li>
-<li>helix</li>
-<li>食指无限转</li>
-<li>拇指无限转</li>
-<li>y3k</li>
-<li>三指转</li>
-<li>xo2</li>
-<li>下平y2k</li>
-<li>四指转</li>
-<li>吻别</li>
-<li>水平四指</li>
-</ul>
-<h2 id="搓柄">搓柄</h2>
-<ul>
-<li>正搓</li>
-<li>反搓</li>
-<li>下搓</li>
-</ul>
-<h2 id="抛接">抛接</h2>
-<ul>
-<li>颠刀</li>
-<li>正手抛接</li>
-<li>反手抛接</li>
-</ul>
-<h2 id="连招">连招</h2>
-<ul>
-<li>y2k + 8ball + ufo + helix</li>
-<li>正搓 + 下搓 + 后甩 + 反搓</li>
-<li>后甩 + 反搓</li>
-<li>y2k + 正手抛接 + 绕指 + 八字收刀 + 8ball + ufo + helix + 颠刀 + 反手收刀 + 反搓 + xo2 + 四指转 + tweak fan</li>
-</ul>]]></description>
 </item></channel>
 </rss>

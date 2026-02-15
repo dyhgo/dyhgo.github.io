@@ -171,6 +171,15 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/">GO与http请求</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-07">2023-02-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>Go</a></span></div><div class="content"><p><a href="https://github.com/wangkechun/go-by-example" target="_blank" rel="noopener noreffer">参考</a></p>
+<h2 id="任务">任务</h2>
+<p>用go写一个http请求，输入一个单词，通过对彩云小译发起网络请求，返回单词的翻译结果</p>
+<h2 id="过程">过程</h2>
+<p>打开<a href="https://fanyi.caiyunapp.com/" target="_blank" rel="noopener noreffer">网站</a></p></div><div class="post-footer">
+        <a href="/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">Go</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/vins_estimator/">vins-estimator代码全网最详细解析</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2022-11-27">2022-11-27</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a>&nbsp;<a href="/categories/slam/"><i class="far fa-folder fa-fw"></i>Slam</a></span></div><div class="content"><a href="https://github.com/HKUST-Aerial-Robotics/VINS-Fusion" target="_blank" rel="noopener noreffer">代码地址</a>
 <p>下载<a href="/images/vins_estimator.pdf" rel="">PDF</a>食用</p>
@@ -398,139 +407,6 @@ dtype: float64
 <p>在这篇文章下更新LeetCode的每日一题，之所以选择LeetCode，是因为好像只有它有每日一题版块，每日一题并不是为了提高编程水平，而是保持手感，从10月2日开始更新，应该过几天批量更新一次</p></div><div class="post-footer">
         <a href="/posts/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98-leetcode/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/problemlist/">Problemlist</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/simplest-colorful-bash-promt/">simplest colorful bash promt</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2021-03-17">2021-03-17</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class="content"><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">######################### begin ###############################</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">bash_prompt<span class="o">()</span> <span class="o">{</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">NO_FORMAT</span><span class="o">=</span><span class="s2">&#34;\[\033[0m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">ORANGE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;208m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">TOXIC_GREEN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;118m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">RED_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;1m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">CYAN_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;87m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">BLACK_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;0m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">WHITE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;15m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">GRAY_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;90m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">BLUE_BOLD</span><span class="o">=</span><span class="s2">&#34;\[\033[1;38;5;74m\]&#34;</span>
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_USER_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_AT_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_HOST_COLOR</span><span class="o">=</span><span class="nv">$CYAN_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_COLON_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_PATH_COLOR</span><span class="o">=</span><span class="nv">$ORANGE_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR_COLOR</span><span class="o">=</span><span class="nv">$WHITE_BOLD</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_INPUT_COLOR</span><span class="o">=</span><span class="nv">$TOXIC_GREEN_BOLD</span>
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_USER</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_USER_COLOR</span><span class="s2">\u&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_AT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_AT_COLOR</span><span class="s2">@&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_HOST</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_HOST_COLOR</span><span class="s2">\h&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_COLON</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_COLON_COLOR</span><span class="s2">:&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_PATH</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_PATH_COLOR</span><span class="s2">\w&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_DOLLAR</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_DOLLAR_COLOR</span>$<span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">local</span> <span class="nv">PROMT_INPUT</span><span class="o">=</span>$<span class="s2">&#34;</span><span class="nv">$PROMT_INPUT_COLOR</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl">	<span class="nv">PS1</span><span class="o">=</span><span class="s2">&#34;</span><span class="si">${</span><span class="nv">PROMT_USER</span><span class="si">}${</span><span class="nv">PROMT_AT</span><span class="si">}${</span><span class="nv">PROMT_HOST</span><span class="si">}${</span><span class="nv">PROMT_COLON</span><span class="si">}${</span><span class="nv">PROMT_PATH</span><span class="si">}${</span><span class="nv">PROMT_DOLLAR</span><span class="si">}</span><span class="s2"> </span><span class="si">${</span><span class="nv">PROMT_INPUT</span><span class="si">}</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="nv">none</span><span class="o">=</span><span class="s2">&#34;</span><span class="k">$(</span>tput sgr0<span class="k">)</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="nb">trap</span> <span class="s1">&#39;echo -ne &#34;${none}&#34;&#39;</span> DEBUG
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	
-</span></span><span class="line"><span class="cl"><span class="o">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">bash_prompt
-</span></span><span class="line"><span class="cl"><span class="nb">unset</span> bash_prompt
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">################################# end ###############################</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>inspired by <a href="https://github.com/ChrisTitusTech/scripts" target="_blank" rel="noopener noreffer">https://github.com/ChrisTitusTech/scripts</a></p></div><div class="post-footer">
-        <a href="/posts/simplest-colorful-bash-promt/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/shell/">Shell</a>,&nbsp;<a href="/tags/linux/">Linux</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -563,7 +439,7 @@ dtype: float64
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

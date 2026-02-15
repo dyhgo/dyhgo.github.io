@@ -2,6 +2,21 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://dyhgo.github.io/posts/coffee/</loc><lastmod>2026-02-15T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2026-02-15T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://dyhgo.github.io/</loc><lastmod>2026-02-15T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://dyhgo.github.io/en/"
+                        /><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://dyhgo.github.io/fr/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://dyhgo.github.io/"
+                    /></url><url>
             <loc>https://dyhgo.github.io/categories/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -18,7 +33,6 @@
             <loc>https://dyhgo.github.io/posts/gdb_quickstart/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/categories/note/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/note/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://dyhgo.github.io/posts/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/tags/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -31,19 +45,6 @@
                     rel="alternate"
                     hreflang="zh-cn"
                     href="https://dyhgo.github.io/tags/"
-                    /></url><url>
-            <loc>https://dyhgo.github.io/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://dyhgo.github.io/en/"
-                        /><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://dyhgo.github.io/fr/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="zh-cn"
-                    href="https://dyhgo.github.io/"
                     /></url><url>
             <loc>https://dyhgo.github.io/posts/asan_valgrind/</loc><lastmod>2025-10-03T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://dyhgo.github.io/posts/golang_panic_fatal_exit/</loc><lastmod>2025-10-02T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

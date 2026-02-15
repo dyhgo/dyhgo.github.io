@@ -171,6 +171,12 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/coffee/">coffee</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2026-02-15">2026-02-15</time></span></div><div class="content"><h2 id="咖啡的种类">咖啡的种类</h2>
+<p>我们经常在咖啡店看到很多种咖啡，比如美式、拿铁、卡布奇诺、焦糖玛奇朵、摩卡等等。他们有什么区别呢？</p>
+<p>咖啡店卖的这些咖啡，他们都是用意式浓缩咖啡液，然后加上不同的东西，比如水、牛奶、燕麦奶、巧克力酱、焦糖糖浆等等，添加这些原料的比例不同就能制作出不同的咖啡，就会有不同的甜度和口感。</p></div><div class="post-footer">
+        <a href="/posts/coffee/">阅读全文</a></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/gdb_quickstart/">gdb基础使用</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2025-10-03">2025-10-03</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/note/"><i class="far fa-folder fa-fw"></i>Note</a></span></div><div class="content"><h2 id="gdb安装">gdb安装</h2>
 <p>Linux版本 CentOS Linux release 7.9.2009</p>
@@ -446,81 +452,6 @@
 <p>最后成功点亮，烤鸡</p>
 <p>带灯的好，但是平时还是不要开了</p></div><div class="post-footer">
         <a href="/posts/%E8%A3%85%E6%9C%BA/">阅读全文</a></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/hotcode/">hotcode</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2024-09-20">2024-09-20</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/problemlist/"><i class="far fa-folder fa-fw"></i>Problemlist</a></span></div><div class="content"><h2 id="912-排序数组"><a href="https://leetcode.cn/problems/sort-an-array/description/" target="_blank" rel="noopener noreffer">912. 排序数组</a></h2>
-<h3 id="题意">题意</h3>
-<h3 id="题解">题解</h3>
-<p>改进版快排，针对数据重复问题，荷兰国旗问题
-如果数据是有序的，直接随机洗牌就行</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">sortArray</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">int</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">n</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">nums</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">quickSort</span> <span class="kd">func</span><span class="p">([]</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="nx">quickSort</span> <span class="p">=</span> <span class="kd">func</span><span class="p">(</span><span class="nx">nums</span> <span class="p">[]</span><span class="kt">int</span><span class="p">,</span> <span class="nx">l</span> <span class="kt">int</span><span class="p">,</span> <span class="nx">r</span> <span class="kt">int</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="nx">l</span> <span class="o">&gt;=</span> <span class="nx">r</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">return</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">pivot</span> <span class="o">:=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">l</span> <span class="o">+</span> <span class="nx">rand</span><span class="p">.</span><span class="nf">Intn</span><span class="p">(</span><span class="nx">r</span><span class="o">-</span><span class="nx">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">samel</span><span class="p">,</span> <span class="nx">samer</span> <span class="o">:=</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">r</span>
-</span></span><span class="line"><span class="cl">		<span class="nx">cur</span> <span class="o">:=</span> <span class="nx">l</span>
-</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="nx">cur</span> <span class="o">&lt;=</span> <span class="nx">samer</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&lt;</span> <span class="nx">pivot</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samel</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">samel</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span> <span class="p">&gt;</span> <span class="nx">pivot</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">]</span> <span class="p">=</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">samer</span><span class="p">],</span> <span class="nx">nums</span><span class="p">[</span><span class="nx">cur</span><span class="p">]</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">samer</span><span class="o">--</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nx">cur</span><span class="o">++</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">l</span><span class="p">,</span> <span class="nx">samel</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">		<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="nx">samer</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="nf">quickSort</span><span class="p">(</span><span class="nx">nums</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">nums</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="103-二叉树的锯齿形层序遍历"><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/description/" target="_blank" rel="noopener noreffer">103. 二叉树的锯齿形层序遍历</a></h2>
-<h3 id="题意-1">题意</h3>
-<h3 id="题解-1">题解</h3>
-<p>和层序遍历差不多</p></div><div class="post-footer">
-        <a href="/posts/hotcode/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/problemlist/">Problemlist</a></div></div>
 </article><ul class="pagination"><li class="page-item active">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -541,7 +472,7 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

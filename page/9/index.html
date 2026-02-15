@@ -171,6 +171,68 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/codeforces-round-636-div.-3-a~e/">Codeforces Round #636 (Div. 3) A~E</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-04-23">2020-04-23</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/codeforces/"><i class="far fa-folder fa-fw"></i>Codeforces</a></span></div><div class="content"><h1 id="a-candies"><a href="https://codeforces.com/contest/1343/problem/A" target="_blank" rel="noopener noreffer">A. Candies</a></h1>
+<h2 id="题意">题意</h2>
+<p>给一个数n，找一个数x，满足 x+2x+4x+8x+&hellip; = n</p>
+<h2 id="题解">题解</h2>
+<p>等比数列求和，变成2^m</p>
+<p>然后枚举，看哪个能整除</p>
+<p>ac代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">n</span><span class="p">,</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">[</span><span class="mi">32</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">30</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span><span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">30</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span><span class="p">((</span><span class="kt">double</span><span class="p">)</span><span class="n">n</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">				<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">n</span><span class="o">/</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="b-balanced-array"><a href="https://codeforces.com/contest/1343/problem/B" target="_blank" rel="noopener noreffer">B. Balanced Array</a></h1>
+<h2 id="题意-1">题意</h2>
+<p>给一数n，问是否可以构造一个数列</p></div><div class="post-footer">
+        <a href="/posts/codeforces-round-636-div.-3-a~e/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/prefix/">Prefix</a>,&nbsp;<a href="/tags/graph_theory/">Graph_theory</a>,&nbsp;<a href="/tags/bfs/">Bfs</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/abc163/">abc163</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-04-22">2020-04-22</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---circle-pond"><a href="https://atcoder.jp/contests/abc163/tasks/abc163_a" target="_blank" rel="noopener noreffer">A - Circle Pond</a></h1>
 <h2 id="题意">题意</h2>
@@ -487,43 +549,6 @@
 <p>给n个合数上色，要求相同颜色的数字必须不互质，求最小着色数和着色方案</p></div><div class="post-footer">
         <a href="/posts/codeforces-round-630-div.-2-a~e/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/number_theory/">Number_theory</a>,&nbsp;<a href="/tags/string/">String</a>,&nbsp;<a href="/tags/binary/">Binary</a>,&nbsp;<a href="/tags/construct/">Construct</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/abc160/">abc160</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2020-03-29">2020-03-29</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/abc/"><i class="far fa-folder fa-fw"></i>Abc</a></span></div><div class="content"><h1 id="a---coffee"><a href="https://atcoder.jp/contests/abc160/tasks/abc160_a" target="_blank" rel="noopener noreffer">A - Coffee</a></h1>
-<h2 id="题意">题意</h2>
-<p>判断一个长度为6的字符串，第3位和第4位是否相等，第5位和第6位是否相等</p>
-<h2 id="题解">题解</h2>
-<p>模拟</p>
-<p>ac代码</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="cp">#include&lt;bits/stdc++.h&gt;
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">	<span class="n">string</span> <span class="n">s</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">s</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">if</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="n">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">==</span><span class="n">s</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;Yes&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;No&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h1 id="b---golden-coins"><a href="https://atcoder.jp/contests/abc160/tasks/abc160_b" target="_blank" rel="noopener noreffer">B - Golden Coins</a></h1>
-<h2 id="题意-1">题意</h2>
-<p>高桥有许多钱，可以兑换成各种硬币，每获得一枚500円的硬币，就能获得1000</p></div><div class="post-footer">
-        <a href="/posts/abc160/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a>,&nbsp;<a href="/tags/greedy/">Greedy</a>,&nbsp;<a href="/tags/dfs/">Dfs</a>,&nbsp;<a href="/tags/graph_theory/">Graph_theory</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -558,7 +583,7 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

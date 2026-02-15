@@ -171,6 +171,66 @@
         alt="/images/avatar.png"
         title="/images/avatar.png" /></a></div><h1 class="home-title">^_^</h1><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/dyhgo" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github-alt fa-fw"></i></a><a href="https:///stackoverflow.com/" title="stackoverflow" rel=" me"><i class="fab fa-codepen fa-fw"></i></a><a href="https:///www.zhihu.com/explore" title="zhihu" rel=" me"><i data-svg-src="/lib/simple-icons/icons/zhihu.min.svg"></i></a><a href="https:///www.bilibili.com" title="bilibili" rel=" me"><i data-svg-src="/svg/icons/bilibili.min.svg"></i></a><a href="mailto:244882973@qq.com" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="/posts/shell%E4%B8%89%E5%89%91%E5%AE%A2/">shell三剑客</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-12-13">2023-12-13</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class="content"><h2 id="grep">grep</h2>
+<p>Global Regular Expression Print</p>
+<p>用正则表达式查找文本</p>
+<p><code>grep [-option] {pattern} {file}</code></p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>-A&lt;行数&gt;</td>
+          <td>除了显示匹配 pattern 的那一行外，显示该行之后的内容</td>
+      </tr>
+      <tr>
+          <td>-B&lt;行数&gt;</td>
+          <td>除了显示匹配 pattern 的那一行外，显示该行之前的内容</td>
+      </tr>
+      <tr>
+          <td>-C&lt;行数&gt;</td>
+          <td>除了显示匹配 pattern 的那一行外，显示该行前、后的内容</td>
+      </tr>
+      <tr>
+          <td>-c</td>
+          <td>统计匹配的行数</td>
+      </tr>
+      <tr>
+          <td>-e</td>
+          <td>同时匹配多个pattern</td>
+      </tr>
+      <tr>
+          <td>-i</td>
+          <td>忽略字符的大小写</td>
+      </tr>
+      <tr>
+          <td>-n</td>
+          <td>显示匹配的行号</td>
+      </tr>
+      <tr>
+          <td>-o</td>
+          <td>只显示匹配的字符串</td>
+      </tr>
+      <tr>
+          <td>-v</td>
+          <td>显示没有匹配pattern的那一行，相当于反向匹配</td>
+      </tr>
+      <tr>
+          <td>-w</td>
+          <td>匹配整个单词</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="sed">sed</h2>
+<p>stream editor</p></div><div class="post-footer">
+        <a href="/posts/shell%E4%B8%89%E5%89%91%E5%AE%A2/">阅读全文</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/shell/">Shell</a>,&nbsp;<a href="/tags/linux/">Linux</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/linux%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/">Linux输入输出</a>
     </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-11-24">2023-11-24</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div><div class="content"><p>万物皆文件 &ndash; Linus Torvalds</p>
 <h2 id="重定向">重定向</h2>
@@ -429,15 +489,6 @@
 <p>单核cpu只能并发不能并行，现在的多核cpu既能并发又能并行</p></div><div class="post-footer">
         <a href="/posts/go%E4%B8%8E%E5%B9%B6%E5%8F%91/">阅读全文</a><div class="post-tags">
                 <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">Go</a></div></div>
-</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/">GO与http请求</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>dyh</a></span>&nbsp;<span class="post-publish">发布于 <time datetime="2023-02-07">2023-02-07</time></span>&nbsp;<span class="post-category">收录于 <a href="/categories/go/"><i class="far fa-folder fa-fw"></i>Go</a></span></div><div class="content"><p><a href="https://github.com/wangkechun/go-by-example" target="_blank" rel="noopener noreffer">参考</a></p>
-<h2 id="任务">任务</h2>
-<p>用go写一个http请求，输入一个单词，通过对彩云小译发起网络请求，返回单词的翻译结果</p>
-<h2 id="过程">过程</h2>
-<p>打开<a href="https://fanyi.caiyunapp.com/" target="_blank" rel="noopener noreffer">网站</a></p></div><div class="post-footer">
-        <a href="/posts/go%E4%B8%8Ehttp%E8%AF%B7%E6%B1%82/">阅读全文</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/go/">Go</a></div></div>
 </article><ul class="pagination"><li class="page-item ">
                     <span class="page-link">
                         <a href="/">1</a>
@@ -466,7 +517,7 @@
                     </span>
                 </li></ul></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
